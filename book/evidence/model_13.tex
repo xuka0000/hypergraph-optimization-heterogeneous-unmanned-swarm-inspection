@@ -1,0 +1,31 @@
+\section{电池身份、位置与周转状态}
+\noindent 每对电池始终作为一个物理单元，不在两个飞机之间分拆。对每个$p$定义占用指示函数：
+\begin{align}
+ B_p^{pre}(t)&=\sum_\ell\beta_{p\ell}\mathbf1_{[s_\ell-h^{pre},s_\ell)}(t),\\
+ B_p^{air}(t)&=\sum_\ell\beta_{p\ell}\mathbf1_{[s_\ell,e_\ell)}(t),\\
+ B_p^{post}(t)&=\sum_\ell\beta_{p\ell}\mathbf1_{[e_\ell,e_\ell+h^{post})}(t),\\
+ B_p^{cool}(t)&=\sum_\ell\beta_{p\ell}\mathbf1_{[e_\ell+h^{post},e_\ell+h^{post}+h^{cool})}(t),\\
+ B_p^{idle}(t)+c_p(t)+B_p^{pre}(t)+B_p^{air}(t)+B_p^{post}(t)+B_p^{cool}(t)&=1,
+ \label{eng:eq:batteryavailability}
+\end{align}
+\noindent $B_p^{idle}\in\{0,1\}$；所有模式非负，上式同时禁止同一对电池重叠航次、飞行充电和回收中充电。$h^{cool}=0$为当前参考假设；不声称已模拟真实芯温和冷却时间。进行中动作从真实剩余区间接续。
+\begin{equation}
+ \operatorname{loc}_p(t)=
+ \begin{cases}
+ (u,\ell,\mathbf p_\ell(t)),&\beta_{p\ell}y_{u\ell}=1,\ t\in[s_\ell,e_\ell),\\
+ (c(p),\mathbf q_{c(p)}(t)),&\text{否则}.
+ \end{cases}
+ \label{eng:eq:batterylocation}
+\end{equation}
+\noindent 无跨车辆换电；换电只在停靠准备/回收区间发生，120/240s已包含操作时间。选择哪个电池对、何时充、充到多少后再次使用都是变量。初始库存为每车4对；不存在额外免费满电池或车辆之间瞬时搬运。
+
+\noindent 充电必须发生在载车停车且允许充电的温区：
+\begin{align}
+ c_p(t)&\le\sum_j\eta_{c(p),j}(t),\qquad c_p(t)\le\chi^{charge}(\mathbf q_{c(p)},t),\\
+ \sum_{p:c(p)=v}c_p(t)&\le1,\qquad
+ \sum_{p:c(p)=v}P_p^{in}(t)\le1000\ \mathrm W.
+ \label{eng:eq:chargingcapacity}
+\end{align}
+\noindent $\chi^{charge}=1$当且仅当预报环境温度在0--40℃内且数据有效。本版不用环境温度冒充芯温状态；若加入热模型，须增加热容、热阻、发热和芯温观测，不能沿用零冷却假设宣称热安全。
+\clearpage
+

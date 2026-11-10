@@ -1,0 +1,57 @@
+{
+  "observed_at": "2026-11-07T12:47:26.481029+00:00",
+  "task_id": "hypergraph_four_factor_stress",
+  "scope": "report recovery and complete fixed batch audit",
+  "checks": [
+    "236 original-input decisions verified",
+    "59 SCIP target reached",
+    "frozen runtime untouched",
+    "no solver restarted",
+    "original33-case queue preserved"
+  ],
+  "receipt": "research_quality/hypergraph_four_factor_stress_self_check_receipt.json",
+  "check_dispatch_attempts": [
+    {
+      "entry": "unversioned wrapper without policy",
+      "result": "missing default local policy"
+    },
+    {
+      "entry": "unversioned wrapper with shared policy",
+      "result": "running checker path mismatch"
+    },
+    {
+      "entry": "version1.2 with --report",
+      "result": "unsupported argument"
+    },
+    {
+      "entry": "version1.2 with shared policy; captured JSON stdout",
+      "result": "exit0;record_valid=true;task_ready=true;stage_ready=false"
+    }
+  ],
+  "phone_pdf_update": "pending;shared build_paper_modules.py absent; existing PDFs not represented as current stress report",
+  "station_publication": "pending;shared component absent;local review retained",
+  "user_acceptance": null,
+  "parameter_and_result_explanation": {
+    "observed_at": "2026-11-07T12:56:37.994786+00:00",
+    "user_specified": "OFAT four factors; same mathematical problem; SCIP no10s and gap<=5%; direct design/execute authority",
+    "agent_selected": "n256/1024/4096/16384;r4/8/16/32;Delta4/8/16/32;W1/10/100/1000;seeds0,1,2;base256/4/4/100;ILS1000stagnation;95%-2x auxiliary threshold",
+    "user_acceptance_threshold": null,
+    "scope": "39 controlled synthetic conditions plus20 derived public conditions,one topology;no battery/weather/rendezvous geographic modeling",
+    "trace_observation": {
+      "scenario_id": "reg_s1_spread1",
+      "ILS_objective": 55,
+      "ILS_seconds": 0.07596500002546236,
+      "SCIP_first_observed_ge_55_seconds": 18.0511652000132,
+      "SCIP_first_observed_final_56_seconds": 137.11464210000122,
+      "SCIP_gap05_stop_seconds": 3163.606117200048,
+      "source": "raw/reg_s1_spread1__SCIP.json"
+    },
+    "interpretation": "Total-to-gap5 ratios include bound-certification cost; not equivalent to time-to-same-quality or universal hypergraph advantage. Higher r harms heuristic quality; large W helped SCIP in tested controlled block. Public65k ILS higherquality but muchslower."
+  },
+  "paper_configuration_audit": {
+    "observed_at": "2026-11-07T13:14:01.457674+00:00",
+    "evidence": "总结\\03_实验数据\\超图与SCIP组合任务对比\\原作者ILS迭代\\论文实验核对.json",
+    "finding": "Kernel fidelity holds but CLIdefaultgreedy+ILS1000 is not paperpreferredreductions+pin+ILS15/50/1500. Fixedstressresultsvalidonlyforrecordedconfiguration. No claim of fullpaperreproduction.",
+    "new_experiments": 0
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "observed_at": "2026-11-10T15:52:27.381519+00:00",
+  "pdf_pages": 221,
+  "title": "超图优化与异构无人集群巡检",
+  "english_title": "Hypergraph Optimization and Heterogeneous Unmanned Swarm Inspection",
+  "full_regional_joint_solve_complete": false,
+  "full_execution_replanning_loop_complete": false,
+  "same_aircraft_measurement_calibration_groups_unresolved": 9,
+  "scope": "Current teaching monograph, component code, reference inputs and preserved historical positive/negative evidence. No new research comparison is launched by packaging.",
+  "historical_version_warning": "conditional-613b has one unrecovered exact source hash; frozen package README documents it."
+}

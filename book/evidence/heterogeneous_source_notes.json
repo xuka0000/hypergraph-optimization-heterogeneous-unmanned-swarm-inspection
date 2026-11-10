@@ -1,0 +1,97 @@
+{
+  "scope": "Representative literature extension, not completed systematic review or new algorithm comparison",
+  "prior_discussion": {
+    "local_time": "2026-11-09 20:11–20:16 +08",
+    "threads": [
+      "heterogeneous team decision optimization",
+      "robot embodied intelligence",
+      "their interaction"
+    ],
+    "status": "proposal only; suggested 60–80 literature records /20–30 deep readings not yet performed"
+  },
+  "current_scene": {
+    "towers": 237,
+    "photo_tasks": 2133,
+    "cars": 2,
+    "uavs": 4,
+    "battery_pairs": 8,
+    "shift_s": 28800,
+    "known_heterogeneity": "ground versus air; UAVs currently same reference configuration",
+    "full_current_joint_execution": false
+  },
+  "sources": {
+    "Korsah2013": "iTax includes interrelated utilities and constraints; IJRR32(12)1495–1512; DOI10.1177/0278364913496484; CMU institutional abstract/metadata read, full PDF not obtained here. Do not invent detailed class labels.",
+    "CBBA2009": "Choi/Brunet/How, IEEE TRO25(4)912–926, DOI10.1109/TRO.2009.2022423. MIT institutional abstract verified. Market-based selection plus local consensus. Guarantees under scoring/connectivity assumptions only; full PDF blocked429, do not extend theorem.",
+    "STRATA2020": "Ravichandar, Shaw, Chernova; arXiv1903.05149v3 dated2020-02-06, first2019-03-12; cite pinned author preprint, publication issue unverified. stochastic continuous traits, aggregatable/nonaggregatable, species and agent variation; assignment population dynamics not full rotor MINLP.",
+    "TAMP2021": "Garrett et al., Annual Review4:265–293, DOI10.1146/annurev-control-091420-084139; accessed arXiv2010.01083v1 author manuscript2020, venue2021. Discrete and continuous integration; own equations must be marked general derivation not copied theorem.",
+    "EMOS2025": "ICLR2025 final PDF. Robot Resume from URDF skeleton plus kinematics; centralized discussion and decentralized parallel action. Ideal semantic/geometric reconstruction assumed. Habitat-MAS four task types: perception/navigation/manipulation/rearrangement. See exact selected pages for counts. PDF8 explicitly disables PyBullet contact physics and snaps gripped objects; M100 model credit is geometry, not an energy-accurate UAV simulation. Do not cite its success as flight/battery validation.",
+    "COHERENT2025": "ICRA2025 accepted; arXiv2409.15146v3 2025-03-29. PEFA loop. Benchmark100 tasks/5 scenes; main comparison40 tasks=5x8=10mono+15dual+15trio; tableII author-reported SR0.975 AS12.4 vs without-history .750 AS16.5. AS failed trials=2*GT+1, success deadline2*GT. These are cited original results, NOT local reproduction.",
+    "PARTNR2025": "ICLR2025 final.100000 tasks,60houses,5819uniqueobjects are benchmark-generation scale, NOT evaluation trial denominator. Human–robot household coordination, spatial/temporal/heterogeneous constraints; planning/perception/skills evaluated separately. Full PDF6 section3.3 refines abstract scale:100000 train episodes in37houses;1000validation in13houses;1000test in10houses,60houses total. Do not call100000 all evaluated episodes or all splits total; use split-specific denominators.",
+    "MATAMP2026": "Tao et al., Artificial Intelligence Review, DOI10.1007/s10462-026-11588-5,2026. Taxonomy: integration strategy,communication architecture,adaptability; published review, not proposed solver. Final PDF identifies59:198, published online23May2026.",
+    "HARL2024": "Zhong et al., JMLR25(32):1–67, January2024. HARL uses multi-agent advantage decomposition and sequential policy updates; heterogeneous policies need not share parameters. HATRPO/HAPPO are learning algorithms, not black-box constraint-hypergraph optimizers. Theoretical monotonicity/Nash results require exact framework assumptions, not unconditional finite NN guarantees. No local training performed.",
+    "NoMaD2024": "Sridhar et al., ICRA2024. Goal-masked diffusion policy unifies goal-conditioned navigation and goal-agnostic exploration; ground robot navigation, not multi-UAV scheduling. Author project verified.",
+    "OpenVLA2024": "Kim et al., CoRL2024 conference, proceedings PMLR270:2679–2713 published Jan12,2025. Vision-language input to robotic manipulation action policy; no claim that its output is a fleet plan or safe UAV controller. arXiv author version retained."
+  },
+  "reading_pages": {
+    "STRATA2020": [
+      1,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12
+    ],
+    "TAMP2021": [
+      1,
+      2,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "EMOS2025": [
+      4,
+      5,
+      6,
+      7,
+      8,
+      9
+    ],
+    "COHERENT2025": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "PARTNR2025": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "MATAMP2026": [
+      1,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ]
+  },
+  "table_style": "VPP chapter3 PDF57 tables3.1–3.4: short names/numbers/units, no paragraph cells; benchmark matrix also PARTNR PDF3 Table1.",
+  "evidence_boundary": "Teaching examples are authored exact finite arithmetic/enumeration. No native public algorithm, LLM training, full237-tower run or new physical experiment performed."
+}

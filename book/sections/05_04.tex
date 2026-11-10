@@ -1,0 +1,417 @@
+\section{车辆停靠、起降和会合}
+\label{sec:05_04}
+
+第\ref{sec:05_03}节建立了航次内部的连续飞行轨迹。要使这条轨迹能够执行，还必须确定无人机从哪一辆车、哪一次停车驻留中起飞，以及在何时、何处返回所属车辆。车辆在无人机飞行期间可以继续行驶，因此起飞位置与回收位置不能预先合并为同一个固定点。另一方面，车辆到达回收地点并不等于立即完成回收：进入平台保护区、落地接触和落地处理分别占用时间，并与同车其他飞机竞争平台及操作人员。
+
+以下沿用车辆集合$\mathcal V$、飞机集合$\mathcal U$、航次集合$\mathcal L_k$、航次启用变量$b_\ell\in\{0,1\}$和飞机分配变量$y_{u\ell}\in\{0,1\}$。固定映射$c(u)\in\mathcal V$表示飞机$u$所属的载车，且$\mathcal U_v=\{u\in\mathcal U:c(u)=v\}$。式\eqref{s0502:one_aircraft}保证每个启用航次恰由一架飞机执行。所有时刻使用共同时间坐标，单位为$\mathrm{s}$，当前规划边界为$\tau_k$，班次终点为$T$；首次规划时$\tau_0=0$。
+
+$\mathcal L_k$继续采用第\ref{sec:05_02}节的作用域，包含尚未起飞的新航次槽与当前尚未结束飞行的航次。已经落地、仅剩处理工作的历史航次不加入$\mathcal L_k$。下文先建立完整航次的驻留与接触条件，再用独立的剩余操作输入连接已经发生的执行状态。
+
+\subsection{停靠选择与完整驻留区间}
+
+令$\mathcal P$为第\ref{sec:04_07}节的候选停靠点索引集合。对于车辆$v\in\mathcal V$、停靠点$j\in\mathcal P$和航向$\theta$，$\mathcal P_{vj}(\theta)\subseteq\mathbb R^2$表示该车辆在该航向下允许的水平参考位置集合。它同时包含停靠位置限制与完整车身足迹的道路容纳条件，不能用一个与车辆尺寸、朝向无关的平面区域替代。
+
+二元函数$\eta_{vj}(t)$表示车辆$v$在时刻$t$是否处于停车模式$j$。沿用式\eqref{s0407:parking_mode_constraints}和式\eqref{s0407:parking_indicator}，本节使用的停车接口为
+\begin{equation}
+ \begin{aligned}
+ \eta_{vj}(t)=1\quad\Longrightarrow\quad
+ &\mu_v(t)=j,\qquad V_v(t)=0,\\
+ &\mathbf q_v(t)\in\mathcal P_{vj}(\theta_v(t)),
+ \end{aligned}
+ \qquad v\in\mathcal V,\ j\in\mathcal P,\ t\in[\tau_k,T].
+ \label{s0504:parking_interface}
+\end{equation}
+其中$\mu_v$为道路或停车模式，$V_v$为车辆速度，单位为$\mathrm{m/s}$；$\mathbf q_v\in\mathbb R^2$为水平参考位置，单位为$\mathrm m$；$\theta_v\in\mathbb R$为连续展开航向，单位为$\mathrm{rad}$。模式索引和$\eta_{vj}$均无量纲。车辆足迹仍为第\ref{sec:04_07}节定义的$\mathcal F_v^{\mathrm{car}}(t)$，车辆实体仍为$\mathcal O_v^{\mathrm{car}}(t)$。进入、离开停车模式必须满足该节的道路门户、模式切换和连续运动条件。
+
+对每个启用航次，定义起飞停靠点与回收停靠点
+\begin{equation}
+ j_\ell^{\mathrm L},j_\ell^{\mathrm R}\in\mathcal P,
+ \qquad \ell\in\mathcal L_k:\ b_\ell=1.
+ \label{s0504:parking_choices}
+\end{equation}
+两个变量是无量纲索引，允许相等，也允许不同。对尚未执行的停靠事件，它们由优化选择；已经发生或已绑定的停靠事件则按执行记录固定。它们表示停靠地点，不表示一次唯一的停车事件。同一地点可以在不同时刻再次访问，实际使用哪一次驻留，由停车模式函数与航次时间共同确定。
+
+令$h^{\mathrm{pre}}>0$为起飞前准备时长，$h^{\mathrm{post}}>0$为落地后处理时长，均为给定参数，单位为$\mathrm{s}$。准备包括占用飞机与平台的起飞前作业，落地处理包括接收飞机并完成释放该次操作资源所需的作业。这两个时长属于服务模型参数，不能解释为已经通过现场测时得到的普遍常数。
+
+除实际起飞时刻$s_\ell$和实际落地时刻$e_\ell$外，引入离开起飞保护区的时刻$s_\ell^+$与进入降落保护区的时刻$e_\ell^-$。上标$+$、$-$在这里标识保护区边界事件，不表示同一时刻的左右极限。令$\mathcal L_k^{\mathrm{new}}$表示第\ref{sec:05_02}节的新航次槽集合，$\mathcal L_k^{\mathrm{pre}}\subseteq\mathcal L_k^{\mathrm{new}}$表示根据执行记录已经开始准备、尚未起飞的槽集合。后者是由当前状态确定的集合，不由优化器选择。对尚未开始准备的启用航次，要求
+\begin{equation}
+ \begin{gathered}
+ \tau_k\le s_\ell-h^{\mathrm{pre}}
+ <s_\ell\le s_\ell^+\le e_\ell^-\le e_\ell
+ <e_\ell+h^{\mathrm{post}}\le T,\\
+ \ell\in\mathcal L_k^{\mathrm{new}}\setminus\mathcal L_k^{\mathrm{pre}}:
+ \quad b_\ell=1.
+ \end{gathered}
+ \label{s0504:complete_time_order}
+\end{equation}
+所有事件时刻均为实数，单位为$\mathrm{s}$。该时间链将完整航次分为准备、起飞保护、常规飞行、降落保护和落地处理等阶段。这里不另设任意的保护区穿越时长下界；穿越非零空间距离所需的时间由保护区几何和第\ref{sec:04_04}节的运动约束共同限制。
+
+对于上述尚未开始准备的航次，其完整驻留条件为
+\begin{align}
+ y_{u\ell}=1\quad&\Longrightarrow\quad
+ \eta_{c(u),j_\ell^{\mathrm L}}(t)=1,
+ &&\forall t\in[s_\ell-h^{\mathrm{pre}},s_\ell^+],
+ \label{s0504:launch_dwell}\\
+ y_{u\ell}=1\quad&\Longrightarrow\quad
+ \eta_{c(u),j_\ell^{\mathrm R}}(t)=1,
+ &&\forall t\in[e_\ell^-,e_\ell+h^{\mathrm{post}}].
+ \label{s0504:recovery_dwell}
+\end{align}
+两式共同量化于$u\in\mathcal U$与$\ell\in\mathcal L_k^{\mathrm{new}}\setminus\mathcal L_k^{\mathrm{pre}}$。对于已经开始的航次，保留其中当前边界以后的部分，具体规则在本节末给出。
+
+驻留条件不仅要求车辆在起飞和落地瞬间出现，还要求车辆在整个准备与起飞保护过程、整个降落保护与处理过程中保持停车。由第\ref{sec:04_07}节的运动学，停车时$\dot{\mathbf q}_v=\mathbf0$且$\dot\theta_v=0$，平台位置与航向在各自驻留区间内保持不变；静止调整转向轮不构成平台航向的瞬时改变。
+
+式\eqref{s0504:launch_dwell}和式\eqref{s0504:recovery_dwell}没有要求车辆在$[s_\ell^+,e_\ell^-]$内一直停车。在这一间隔中，车辆可以等待，也可以沿第\ref{sec:04_07}节定义的连续道路路线前往另一停靠点。即使$j_\ell^{\mathrm L}=j_\ell^{\mathrm R}$，也不能据此认定车辆始终未离开该地点。即使两个索引不同，也不能只凭两个端点的位置认定转移可行：车辆必须在可用时间内完成符合方向、转弯、速度和几何条件的实际行驶。
+
+\subsection{接触位置、速度与姿态}
+
+会合位置应按无人机机体中心定义。令$h$为与车辆位置采用同一坐标系的地形高度函数，$H_v^{\mathrm{car}}>0$为平台表面相对车辆地形基点的高度，$r^{\mathrm{body}}>0$为参考球形机体半径。高度和半径均以$\mathrm m$计量。平台位于车辆参考位置正上方时，无人机中心的对接位置为
+\begin{equation}
+ \mathbf p_v^{\mathrm{dock}}(t)=
+ \begin{pmatrix}
+ q_{vx}(t)\\
+ q_{vy}(t)\\
+ h(\mathbf q_v(t))+H_v^{\mathrm{car}}+r^{\mathrm{body}}
+ \end{pmatrix},
+ \qquad v\in\mathcal V,\quad t\in[\tau_k,T].
+ \label{s0504:dock_position}
+\end{equation}
+若使用第\ref{sec:04_03}节的局部坐标，则$\mathbf q_v$和$h$必须同时采用相应的局部位置与局部地形高度。不能只平移水平坐标，却继续代入未经竖直平移的源高度。式\eqref{s0504:dock_position}中的$r^{\mathrm{body}}$使球形机体的下表面与平台表面接触；将机体中心直接放在平台表面会造成机体与车体重叠。
+
+对每个有效分配$y_{u\ell}=1$，记$v=c(u)$。尚未发生的起飞与落地接触满足
+\begin{align}
+ \mathbf p_\ell(s_\ell)&=\mathbf p_v^{\mathrm{dock}}(s_\ell),
+ &\mathbf p_\ell(e_\ell)&=\mathbf p_v^{\mathrm{dock}}(e_\ell),
+ \label{s0504:contact_positions}\\
+ \mathbf v_\ell(s_\ell)&=\mathbf0,
+ &\mathbf v_\ell(e_\ell)&=\mathbf0,
+ \label{s0504:contact_velocities}\\
+ R_\ell(s_\ell)&=R_z(\theta_v(s_\ell)),
+ &R_\ell(e_\ell)&=R_z(\theta_v(e_\ell)).
+ \label{s0504:contact_attitudes}
+\end{align}
+左列施加于尚未起飞的新航次，右列施加于$\mathcal L_k$中尚未落地的航次；过去的起飞条件不重新作为未来端点条件。位置和速度分别以$\mathrm m$、$\mathrm{m/s}$计量。$R_\ell(t)\in\mathrm{SO}(3)$是无量纲的机体到世界坐标旋转矩阵。绕竖直轴旋转的矩阵为
+\begin{equation}
+ R_z(\theta)=
+ \begin{pmatrix}
+ \cos\theta&-\sin\theta&0\\
+ \sin\theta&\cos\theta&0\\
+ 0&0&1
+ \end{pmatrix},
+ \qquad \theta\in\mathbb R,
+ \label{s0504:yaw_rotation}
+\end{equation}
+其中$\theta$以$\mathrm{rad}$计量。式\eqref{s0504:contact_attitudes}表示接触时机体保持水平，水平朝向与载车一致。这一条件继承平面底盘加地形高度参考的车辆模型，不额外声称已经处理坡道上的车体俯仰与侧倾。
+
+位置会合、速度匹配和姿态匹配承担不同作用。仅满足位置相等，可能仍允许无人机以非零速度穿过平台；仅令速度为零，也不能保证落在所属车辆上。这里车辆在接触时已经停车，因此飞机的零速度同时给出零相对平移速度。接触姿态还排除了在落地瞬间任意重置机体朝向的拼接方式。
+
+为使$s_\ell^+$和$e_\ell^-$具有明确的空间意义，令$r^{\mathrm{pad}}>0$为平台保护区的水平半径，$r_f>r^{\mathrm{body}}$为常规飞行所用的中心净距参数，单位均为$\mathrm m$。定义保护区外边界高度
+\begin{equation}
+ z_v^{\mathrm{safe}}(t)
+ =h(\mathbf q_v(t))+H_v^{\mathrm{car}}+r_f,
+ \qquad v\in\mathcal V,\quad t\in[\tau_k,T].
+ \label{s0504:protection_height}
+\end{equation}
+记$\mathbf p_{\ell,xy}(t)\in\mathbb R^2$为无人机位置的水平分量。对于$y_{u\ell}=1$、$v=c(u)$，起降保护段的待规划部分满足
+\begin{align}
+ \|\mathbf p_{\ell,xy}(t)-\mathbf q_v(t)\|
+ &\le r^{\mathrm{pad}},
+ \label{s0504:protection_horizontal}\\
+ p_{\ell,z}(t)&\ge p_{v,z}^{\mathrm{dock}}(t),
+ \label{s0504:protection_vertical}\\
+ &t\in\bigl([s_\ell,s_\ell^+]\cup[e_\ell^-,e_\ell]\bigr)
+       \cap[\tau_k,T].\notag
+\end{align}
+保护段边界条件为
+\begin{align}
+ p_{\ell,z}(s_\ell^+)&=z_v^{\mathrm{safe}}(s_\ell^+),
+ &&s_\ell^+\in[\tau_k,T],
+ \label{s0504:launch_protection_endpoint}\\
+ p_{\ell,z}(e_\ell^-)&=z_v^{\mathrm{safe}}(e_\ell^-),
+ &&e_\ell^-\in[\tau_k,T].
+ \label{s0504:recovery_protection_endpoint}
+\end{align}
+上述各式共同量化于全部有效的飞机与航次分配，各距离和高度等式的单位均为$\mathrm m$。已经通过的保护段边界保留为历史事件，不在未来轨迹中重新生成。对于完整保护段，正的高度差$r_f-r^{\mathrm{body}}$与有限飞行速度共同排除了瞬时完成起飞或降落保护段的可能。
+
+这些条件定义了驻留与保护段的接口，但尚未给出完整接触安全条件。起落过程中，本车与地形的中心净距如何从机体半径连续过渡到常规飞行裕度，以及飞机与其他飞机、车辆、塔柱和导线如何分离，统一在第\ref{sec:05_06}节规定。保护区不能因被选中就自动获得无障碍资格。
+
+起飞与落地还涉及平台接触力的切换。机体位置、速度和姿态在接触边界连续；加速度可以具有不同的单侧值，不将式\eqref{s0503:join_acceleration}跨接触强制施加。释放后进入气动飞行的一侧须满足第\ref{sec:04_04}节的动力学，飞行内部的加加速度限制仍然有效。停放时由平台接触力支承重量，不能把停放状态按空中悬停强制施加推力或悬停功率。
+
+\subsection{跨航次的云台与焦距状态}
+
+飞机完成一个航次后，云台与镜头仍是同一套物理设备。若下一航次可以独立指定初始云台角和焦距，就相当于允许在车载期间无时间代价地改变设备状态。为避免这种重置，对每架飞机定义覆盖整个待规划时段的函数
+\begin{equation}
+ \Gamma_u:[\tau_k,T]\longrightarrow\mathbb R^2,
+ \qquad
+ F_u:[\tau_k,T]\longrightarrow\mathbb R_{>0},
+ \qquad u\in\mathcal U.
+ \label{s0504:global_camera_states}
+\end{equation}
+$\Gamma_u(t)$的两个分量为相对机体的连续展开云台角，单位为$\mathrm{rad}$；$F_u(t)$为焦距，单位为$\mathrm{mm}$。它们同时覆盖飞行、准备、处理和随车运输时段，不能在航次边界重新初始化。
+
+为明确全时段的约束作用域，令$r\in\{1,2\}$为云台轴索引，$\underline\gamma_r,\overline\gamma_r$为第\ref{sec:04_04}节相应轴的角度界，$\overline\omega_r^{\mathrm{gim}}>0$和$\overline\alpha_r^{\mathrm{gim}}>0$分别表示该节已有的角速度与角加速度上界；这里仅为这些边界采用统一分量记号。以$0<\underline f\le\overline f$和$\overline{\dot f}>0$表示已有焦距下界、上界及变焦速率上界。要求
+\begin{align}
+ \underline\gamma_r\le\Gamma_{u,r}(t)
+ &\le\overline\gamma_r,
+ &&u\in\mathcal U,\ r\in\{1,2\},\ t\in[\tau_k,T],
+ \label{s0504:global_gimbal_range}\\
+ |\dot\Gamma_{u,r}(t)|&\le\overline\omega_r^{\mathrm{gim}},
+ &&u\in\mathcal U,\ r\in\{1,2\},
+ \label{s0504:global_gimbal_rate}\\
+ |\ddot\Gamma_{u,r}(t)|&\le\overline\alpha_r^{\mathrm{gim}},
+ &&u\in\mathcal U,\ r\in\{1,2\},
+ \label{s0504:global_gimbal_acceleration}\\
+ \underline f\le F_u(t)&\le\overline f,
+ &&u\in\mathcal U,\ t\in[\tau_k,T],
+ \label{s0504:global_focal_range}\\
+ |\dot F_u(t)|&\le\overline{\dot f},
+ &&u\in\mathcal U.
+ \label{s0504:global_focal_rate}
+\end{align}
+导数不等式在$[\tau_k,T]$上几乎处处成立，并要求$\Gamma_u$连续可微、其一阶导数绝对连续，$F_u$绝对连续。因此不能利用分段点的跳变绕过导数界。角度、角速度和角加速度的单位依次为$\mathrm{rad}$、$\mathrm{rad/s}$、$\mathrm{rad/s^2}$；焦距与变焦速率的单位分别为$\mathrm{mm}$、$\mathrm{mm/s}$。这些条件将已有设备边界延伸到地面时段，并未另加焦距二阶导数约束。
+
+航次上的相机状态必须是同一架飞机全时段状态的限制：
+\begin{equation}
+ \begin{aligned}
+ y_{u\ell}=1\quad\Longrightarrow\quad
+ &\gamma_\ell(t)=\Gamma_u(t),\qquad f_\ell(t)=F_u(t),\\
+ &t\in[\max\{s_\ell,\tau_k\},e_\ell],\\
+ &u\in\mathcal U,\qquad\ell\in\mathcal L_k.
+ \end{aligned}
+ \label{s0504:sortie_camera_restriction}
+\end{equation}
+当前边界的$\Gamma_u(\tau_k)$、$F_u(\tau_k)$以及云台角速度由实际接续状态给定；首次规划使用源初值记录。车载期间机体随所属车辆运输，机体朝向按车辆航向连接，云台角仍相对于该机体定义。运输不抹去云台与镜头的内部状态。
+
+例如，飞机$u$先执行航次$\ell$，再执行航次$\ell'$，且$\tau_k\le e_\ell\le s_{\ell'}\le T$。由全时段导数界可得
+\begin{align}
+ |f_{\ell'}(s_{\ell'})-f_\ell(e_\ell)|
+ &\le\overline{\dot f}(s_{\ell'}-e_\ell),
+ \label{s0504:between_sortie_focal}\\
+ |\gamma_{\ell',r}(s_{\ell'})-\gamma_{\ell,r}(e_\ell)|
+ &\le\overline\omega_r^{\mathrm{gim}}(s_{\ell'}-e_\ell),
+ \qquad r\in\{1,2\}.
+ \label{s0504:between_sortie_gimbal}
+\end{align}
+这两个不等式量化于$u\in\mathcal U$、$\ell,\ell'\in\mathcal L_k$且$y_{u\ell}=y_{u\ell'}=1$的有序航次对，是连续状态约束的必要推论。右侧分别以$\mathrm{mm}$和$\mathrm{rad}$计量，说明地面调整同样需要时间。满足端点界仍不能代替整个调整过程的角度范围、角加速度和初始状态约束。
+
+未飞行飞机的存放属于车载状态，不把同车库存中的每架飞机都放成悬浮在同一对接点的飞行球。对接位置用于起落接触，车载载荷则纳入车辆参考包络。否则会人为制造库存飞机之间的重叠冲突，并错误地把正常随车运输当作飞行。
+
+\subsection{飞机、平台与操作人员的占用}
+
+飞机资源从准备开始便已投入该航次，直至落地处理结束才释放。平台则在起飞离开保护区后释放，并在回收进入保护区前重新被占用。二者必须采用不同的时间集合。
+
+只对启用航次$\ell\in\mathcal L_k$、$b_\ell=1$，定义
+\begin{align}
+ D_\ell
+ &=[s_\ell-h^{\mathrm{pre}},e_\ell+h^{\mathrm{post}}),
+ \label{s0504:aircraft_interval}\\
+ H_\ell
+ &=[s_\ell-h^{\mathrm{pre}},s_\ell^+)
+   \cup[e_\ell^-,e_\ell+h^{\mathrm{post}}),
+ \label{s0504:pad_intervals}\\
+ O_\ell
+ &=[s_\ell-h^{\mathrm{pre}},s_\ell)
+   \cup[e_\ell,e_\ell+h^{\mathrm{post}}).
+ \label{s0504:operator_intervals}
+\end{align}
+三者都是由绝对时刻组成的集合，且$O_\ell\subseteq H_\ell\subseteq D_\ell$。$D_\ell$表示飞机的整次作业占用；$H_\ell$表示平台连同起降保护段的占用；$O_\ell$表示准备与落地处理期间明确需要的操作员服务。降落尚未接触平台时已经占用起降保护资源，不能等到$e_\ell$才开始记平台占用。已经执行的时间前缀只用于确定剩余占用，不成为新的待优化动作。
+
+对于任意时间集合$A$，定义无量纲指标函数
+\begin{equation}
+ \mathbb I_A(t)=
+ \begin{cases}
+ 1,&t\in A,\\
+ 0,&t\notin A.
+ \end{cases}
+ \label{s0504:interval_indicator}
+\end{equation}
+为了计入当前边界前已经落地的飞机，还需要一类不属于未来飞行路径的输入。令$\mathcal R_k^{\mathrm{post}}$为截至$\tau_k$已经落地、但落地处理尚未结束的历史操作记录集合，并规定
+\begin{equation}
+ \mathcal R_k^{\mathrm{post}}\cap\mathcal L_k=\varnothing.
+ \label{s0504:residual_disjointness}
+\end{equation}
+$\rho\in\mathcal R_k^{\mathrm{post}}$是无量纲记录索引。每条记录给定飞机身份$\widehat u_\rho\in\mathcal U$、载车身份$\widehat v_\rho=c(\widehat u_\rho)\in\mathcal V$、回收停靠点$\widehat j_\rho\in\mathcal P$、实际落地时刻$\widehat e_\rho\le\tau_k$及既定处理结束时刻$\widehat d_\rho>\tau_k$。在当前固定处理时长模型中，
+\begin{equation}
+ \widehat d_\rho=\widehat e_\rho+h^{\mathrm{post}},
+ \qquad
+ h_{\rho,k}^{\mathrm{post,rem}}
+ =\widehat d_\rho-\tau_k>0,
+ \qquad\rho\in\mathcal R_k^{\mathrm{post}}.
+ \label{s0504:remaining_recovery_duration}
+\end{equation}
+三个时刻与剩余时长均以$\mathrm{s}$计量，均为执行状态展开得到的已知输入，不由优化器重选。没有此类操作时，$\mathcal R_k^{\mathrm{post}}$为空。
+
+定义历史处理记录的剩余时间集合
+\begin{equation}
+ A_\rho^k=[\tau_k,\widehat d_\rho)\cap[\tau_k,T],
+ \qquad\rho\in\mathcal R_k^{\mathrm{post}},
+ \label{s0504:historical_residual_interval}
+\end{equation}
+并据此构造三个已知的无量纲占用计数函数：
+\begin{align}
+ r_u^{\mathrm{aircraft}}(t)
+ &=\sum_{\substack{\rho\in\mathcal R_k^{\mathrm{post}}\\
+                    \widehat u_\rho=u}}
+       \mathbb I_{A_\rho^k}(t),
+ &&u\in\mathcal U,
+ \label{s0504:residual_aircraft_indicator}\\
+ r_v^{\mathrm{pad}}(t)
+ &=\sum_{\substack{\rho\in\mathcal R_k^{\mathrm{post}}\\
+                    \widehat v_\rho=v}}
+       \mathbb I_{A_\rho^k}(t),
+ &&v\in\mathcal V,
+ \label{s0504:residual_pad_indicator}\\
+ r_v^{\mathrm{op}}(t)
+ &=\sum_{\substack{\rho\in\mathcal R_k^{\mathrm{post}}\\
+                    \widehat v_\rho=v}}
+       \mathbb I_{A_\rho^k}(t),
+ &&v\in\mathcal V,
+ \label{s0504:residual_operator_indicator}
+\end{align}
+其中$t\in[\tau_k,T]$，三个函数取值均属于$\mathbb Z_{\ge0}$。在物理一致的单机记录中，$r_u^{\mathrm{aircraft}}(t)$只能为$0$或$1$；采用求和形式可以显式暴露重复记录或相互冲突的执行输入，而不是将重复占用截断为$1$。在一名操作员绑定一个平台、处理期间同时占用二者的假设下，$r_v^{\mathrm{pad}}=r_v^{\mathrm{op}}$。它们分别进入平台与人员约束，以保留各资源的物理含义。
+
+令$\mathcal L_k^{\mathrm{act}}=\{\ell\in\mathcal L_k:b_\ell=1\}$为给定决策下的启用航次集合。同一飞机的占用约束为
+\begin{equation}
+ r_u^{\mathrm{aircraft}}(t)
+ +\sum_{\ell\in\mathcal L_k^{\mathrm{act}}}
+ y_{u\ell}\mathbb I_{D_\ell}(t)\le1,
+ \qquad u\in\mathcal U,\quad t\in[\tau_k,T].
+ \label{s0504:aircraft_capacity}
+\end{equation}
+该式限制准备、飞行和处理的整体重叠。第一航次即使已经落地，只要处理尚未结束，同一架飞机就不能开始第二航次的准备。第一航次若仍属于本次计划，其处理占用由$D_\ell$计入；若已在当前边界前落地，其剩余占用由$r_u^{\mathrm{aircraft}}$计入。两种来源必须互斥。
+
+用$C_v^{\mathrm{pad}}:=K_v^{\mathrm{pad}}\in\mathbb Z_{\ge1}$表示第\ref{sec:04_02}节给定的车辆$v$起降位容量，单位为位。平台容量约束为
+\begin{equation}
+ r_v^{\mathrm{pad}}(t)
+ +\sum_{u\in\mathcal U_v}
+ \sum_{\ell\in\mathcal L_k^{\mathrm{act}}}
+ y_{u\ell}\mathbb I_{H_\ell}(t)
+ \le C_v^{\mathrm{pad}},
+ \qquad v\in\mathcal V,\quad t\in[\tau_k,T].
+ \label{s0504:pad_capacity}
+\end{equation}
+参考配置中$C_v^{\mathrm{pad}}=1$。一般符号保留容量接口，但不能仅通过增大右侧就宣称已建立多个空间分离平台的几何模型；若配置多个实际平台，还须为各平台明确位置和接触关系。
+
+本模型采用一名操作员绑定一个起降位的服务假设，准备和回收各需要该位的一名操作员。人员服务约束为
+\begin{equation}
+ r_v^{\mathrm{op}}(t)
+ +\sum_{u\in\mathcal U_v}
+ \sum_{\ell\in\mathcal L_k^{\mathrm{act}}}
+ y_{u\ell}\mathbb I_{O_\ell}(t)
+ \le C_v^{\mathrm{pad}},
+ \qquad v\in\mathcal V,\quad t\in[\tau_k,T].
+ \label{s0504:operator_capacity}
+\end{equation}
+右侧的数值在绑定假设下同时表示可用操作员人数。由于$O_\ell\subseteq H_\ell$且$r_v^{\mathrm{op}}=r_v^{\mathrm{pad}}$，式\eqref{s0504:operator_capacity}由平台容量约束蕴含；列出它是为了明确人员资源含义，不是额外增加一组可自由扩充的人力。对于参考单平台配置，同车两架飞机不能同时进行准备与回收，也不能在另一架尚未离开起飞保护区时占用平台开始新的准备。这里没有引入跨车辆借调人员或脱离平台独立执行服务的机制。
+
+未启用航次不创建$D_\ell$、$H_\ell$和$O_\ell$，因而不产生占用。采用启用集合求和，避免对未启用航次的占位时间作物理解释；这些时间即使在有限转录中被固定为零，也不代表真实操作发生。历史剩余操作则由已发生事实确定，不能通过将某个新航次槽设为不启用而删除。
+
+上述占用集合取半开区间。若一项占用在$t_b$结束，另一项从$t_b$开始，则前者在$t_b$的指标为零，后者为一，不会因为共享时间边界而被计为两项同时占用。但半开约定只处理资源计数，不删除连续轨迹的端点状态，也不免除该时刻的几何分离。两架飞机即使在计数上能够交接平台，仍须满足第\ref{sec:05_06}节在同一时刻的距离条件。
+
+\subsection{正在执行动作的剩余会合条件}
+
+当前边界$\tau_k$可能位于准备、飞行或落地处理之中。这三种状态对应不同的数学对象。准备中航次仍使用已绑定的新航次槽；空中航次使用第\ref{sec:05_02}节的进行中飞行集合；已经落地的剩余处理使用$\mathcal R_k^{\mathrm{post}}$。分类以执行状态为依据，不能仅通过选择一个有利的时间不等式来改变资源身份。若落地恰发生于$\tau_k$，则按该事件是否已经执行完成确定边界状态，同一操作只保留一种表示。
+
+对$\mathcal L_k$中已经开始的航次，占用在当前规划时段上的限制为
+\begin{align}
+ D_\ell^k&=D_\ell\cap[\tau_k,T],
+ \label{s0504:remaining_aircraft_interval}\\
+ H_\ell^k&=H_\ell\cap[\tau_k,T],
+ \label{s0504:remaining_pad_intervals}\\
+ O_\ell^k&=O_\ell\cap[\tau_k,T],
+ \qquad\ell\in\mathcal L_k^{\mathrm{act}}.
+ \label{s0504:remaining_operator_intervals}
+\end{align}
+对$t\in[\tau_k,T]$，使用这些限制集合与使用原占用集合得到相同的指标值。其作用是保留当前以后的占用，而不要求优化器重新生成过去的过程。式\eqref{s0504:aircraft_capacity}至式\eqref{s0504:operator_capacity}的求和已经包含这些航次，不能再将它们加入历史处理函数而重复计数。
+
+对于$\ell\in\mathcal L_k^{\mathrm{pre}}$，令$\widehat a_\ell^{\mathrm{pre}}\le\tau_k$为记录中的准备开始时刻，$\widehat u_\ell\in\mathcal U$为已绑定飞机，$\widehat j_\ell^{\mathrm L}\in\mathcal P$为已绑定起飞停靠点。时间以$\mathrm{s}$计量，身份和停靠点索引无量纲。这些量均为输入，满足准备尚未结束的状态条件$\tau_k<\widehat a_\ell^{\mathrm{pre}}+h^{\mathrm{pre}}$。在固定准备时长模型下，要求
+\begin{equation}
+ \begin{aligned}
+ b_\ell&=1,\qquad y_{\widehat u_\ell,\ell}=1,\\
+ j_\ell^{\mathrm L}&=\widehat j_\ell^{\mathrm L},\qquad
+ s_\ell=\widehat a_\ell^{\mathrm{pre}}+h^{\mathrm{pre}},\\
+ \tau_k<s_\ell&\le s_\ell^+\le e_\ell^-\le e_\ell
+ <e_\ell+h^{\mathrm{post}}\le T,
+ \qquad\ell\in\mathcal L_k^{\mathrm{pre}}.
+ \end{aligned}
+ \label{s0504:prepared_slot_binding}
+\end{equation}
+已绑定的电池身份也由执行状态固定，并与第\ref{sec:05_02}节的飞机、电池和载车兼容条件共同使用。这里的准备记录与已有新槽一一对应，不为同一次准备另建一个新航次。其剩余准备时长为$s_\ell-\tau_k$，不是重新领取$h^{\mathrm{pre}}$。
+
+准备中航次的未来驻留要求为
+\begin{equation}
+ \eta_{c(\widehat u_\ell),\widehat j_\ell^{\mathrm L}}(t)=1,
+ \qquad t\in[\tau_k,s_\ell^+],\quad
+ \ell\in\mathcal L_k^{\mathrm{pre}}.
+ \label{s0504:prepared_remaining_dwell}
+\end{equation}
+车辆在$\tau_k$的实际位置、航向和停车状态仍为接续输入；因此不能在同一个停靠区域内重新选择一个起飞平台位置。准备完成后的起飞接触条件、飞行条件以及回收驻留条件保持有效。式\eqref{s0504:complete_time_order}中的$\tau_k\le s_\ell-h^{\mathrm{pre}}$不施加于这些槽，避免与已知准备起点位于过去的事实冲突。
+
+对于第\ref{sec:05_02}节的空中航次集合$\mathcal L_k^{\mathrm{air}}$，已有时间域为$s_\ell\le\tau_k\le e_\ell$，过去的起飞时刻与飞机身份固定。未来轨迹从$\tau_k$的实际位置、速度、加速度和姿态接续，不再将过去的起飞位置、零速度和起飞姿态作为待优化端点。各保护事件仍保持$s_\ell\le s_\ell^+\le e_\ell^-\le e_\ell$的先后关系；已经发生的事件取记录值，尚未发生的事件由剩余计划确定。
+
+若当前仍处于起飞保护段，即$\tau_k<s_\ell^+$，则必须保留
+\begin{equation}
+ y_{u\ell}=1\quad\Longrightarrow\quad
+ \eta_{c(u),j_\ell^{\mathrm L}}(t)=1,
+ \qquad t\in[\tau_k,s_\ell^+],\quad
+ \ell\in\mathcal L_k^{\mathrm{air}},\ u\in\mathcal U.
+ \label{s0504:airborne_launch_remainder}
+\end{equation}
+若起飞保护段已结束，该剩余驻留为空。无论是否已经进入降落保护段，尚未落地航次均保留
+\begin{equation}
+ \begin{aligned}
+ y_{u\ell}=1\quad\Longrightarrow\quad
+ &\eta_{c(u),j_\ell^{\mathrm R}}(t)=1,
+ \quad t\in[\max\{\tau_k,e_\ell^-\},e_\ell+h^{\mathrm{post}}],\\
+ &e_\ell+h^{\mathrm{post}}\le T,
+ \quad u\in\mathcal U,\ \ell\in\mathcal L_k^{\mathrm{air}}.
+ \end{aligned}
+ \label{s0504:airborne_recovery_remainder}
+\end{equation}
+若降落保护已经开始，回收车辆、停靠点及当前驻留状态须按执行记录固定。删除过去的起飞约束不等于允许当前飞行状态跳变，也不等于允许清除尚未结束的保护段。
+
+对于$\rho\in\mathcal R_k^{\mathrm{post}}$，不存在需要重新规划的飞行区间。它不生成$s_\ell,e_\ell$等未来飞行变量，也不进入第\ref{sec:05_02}节的路径度约束。其飞机、平台和操作员占用由式\eqref{s0504:residual_aircraft_indicator}至式\eqref{s0504:residual_operator_indicator}完整保留。令$\widehat{\mathbf q}_\rho\in\mathbb R^2$和$\widehat\theta_\rho\in\mathbb R$为当前回收载车的已知水平位置与航向，单位分别为$\mathrm m$和$\mathrm{rad}$。未来剩余处理期间要求
+\begin{equation}
+ \begin{aligned}
+ \eta_{\widehat v_\rho,\widehat j_\rho}(t)&=1,\\
+ \mathbf q_{\widehat v_\rho}(t)&=\widehat{\mathbf q}_\rho,
+ \qquad\theta_{\widehat v_\rho}(t)=\widehat\theta_\rho,\\
+ &t\in[\tau_k,\min\{\widehat d_\rho,T\}],
+ \qquad\rho\in\mathcal R_k^{\mathrm{post}}.
+ \end{aligned}
+ \label{s0504:historical_recovery_dwell}
+\end{equation}
+该式保留实际物理车辆的驻留，而不只是一个抽象平台计数。若既定班次要求在$T$以前完成全部处理，还必须满足
+\begin{equation}
+ \widehat d_\rho\le T,
+ \qquad\rho\in\mathcal R_k^{\mathrm{post}}.
+ \label{s0504:historical_processing_horizon}
+\end{equation}
+由于$\widehat d_\rho$是已知输入，违反该条件表示当前状态无法在规定班次内完成既定处理；不能通过将剩余区间截断到$T$而宣称处理已经结束。
+
+历史记录进入$\mathcal R_k^{\mathrm{post}}$后，不得同时保留为$\mathcal L_k$中的航次；准备中的新槽和仍在空中的航次也不得进入这些历史处理函数。这样，三个容量约束的左侧分别由互不重复的历史剩余占用和本次航次占用组成。若已知输入本身违反资源容量，模型应保留这一冲突，而不能通过删除实际占用得到形式上的可行方案。
+
+全时段云台与焦距同样从当前值接续，而不是回到首次规划的初值。若新的安全事件使原承诺动作失效，应按第\ref{sec:05_07}节处理实际状态与恢复动作，不能通过更换历史资源身份或清空剩余占用获得形式可行性。
+
+上述接口与第\ref{sec:05_03}节及第\ref{sec:05_07}节的剩余服务、曝光前缀和延迟验收共同接续。车机同步同时满足道路连续运动、飞行连续运动、资源占用及同一时刻的空间安全条件；当前区域程序的完整滚动运行仍需实际验证。
+
+
+\subsection{准备及处理期间的旋翼状态接续}
+起飞接触时刻$s_\ell$是脱离平台的边界，不是把停转旋翼瞬时置为悬停推力的时刻。令$\sigma_\ell$为准备期间开始驱动旋翼的时刻，$\epsilon_\ell$为落地后完成停转的时刻，均以秒计。尚未发生的完整航次满足
+\begin{equation}
+ s_\ell-h^{\mathrm{pre}}\le\sigma_\ell<s_\ell,
+ \qquad e_\ell<\epsilon_\ell\le e_\ell+h^{\mathrm{post}}.
+ \label{s0504:ground_mode_intervals}
+\end{equation}
+在$[\sigma_\ell,s_\ell]$及$[e_\ell,\epsilon_\ell]$中，施加式\eqref{s0404:contact_complementarity}、\eqref{s0404:contact_wrench}及\eqref{s0404:ground_drive}。平台位置与航向取所属车辆同一时刻的状态，足点必须落在支撑矩形内。该区间包含在原有飞机、平台及操作员占用中，不增加一个可以与其他任务重叠的独立资源区间。
+\begin{align}
+ \Omega_{r,\ell}(\sigma_\ell)&=0,
+ &\Omega_{r,\ell}(\epsilon_\ell)&=0,\\
+ f_{r,\ell}(s_\ell^-)&=f_{r,\ell}(s_\ell^+),
+ &f_{r,\ell}(e_\ell^-)&=f_{r,\ell}(e_\ell^+).
+ \label{s0504:rotor_handoff}
+\end{align}
+位置、速度、姿态、机体角速度及电池六维状态在两处交界连续。电池的物理身份从准备至处理结束保持不变，启动和制动的正端口耗能进入同一账本；没有通过状态清零省去地面能耗。被车辆存放的飞机在驱动起点和停转终点均与静止平台保持零相对角速度。已开始的模式使用观测状态继续，不重新施加过去的零转速初值。
+
+取准备120s、处理240s，第\ref{sec:04_04}节的1s启动和1s停转分别可以容纳在相应区间内。该数值例仅证明参考起落循环与时间定义相容；全任务是否因平台、电池或天气发生冲突，仍由共同变量求解。
+

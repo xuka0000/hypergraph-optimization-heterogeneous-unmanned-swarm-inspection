@@ -1,0 +1,2207 @@
+{
+  "protocol": {
+    "experiment_id": "inspection_weather_information_component",
+    "profile_sha256": "7a62160e1f9b4341e8a7a0accb6c155ea62b0af1074c09c4dbcf686dd844c1b6",
+    "source_sha256": "80c64fbcc8a0897f24b25827704e8c6907b8b7b8db98ec615261d647bf6d3732",
+    "validator_sha256": "ee906bf12ed583f4e60a8324f976661ac494295294024274a3a0181506aec04a",
+    "purpose": "verify common field, causal packet availability, near-ground domain and nonanticipative decisions",
+    "scope": "component reference experiments; not full mission or empirical forecast verification"
+  },
+  "observed_at": "2026-11-10T09:24:08.251861+00:00",
+  "checks": [
+    {
+      "name": "wind_from_direction_conversion",
+      "passed": true
+    },
+    {
+      "name": "future_forecast_not_available",
+      "passed": true
+    },
+    {
+      "name": "received_update_becomes_available",
+      "passed": true
+    },
+    {
+      "name": "hindcast_rejected_as_online_forecast",
+      "passed": true
+    },
+    {
+      "name": "receipt_before_issue_rejected",
+      "passed": true
+    },
+    {
+      "name": "outside_weather_domain_rejected",
+      "passed": true
+    },
+    {
+      "name": "near_ground_ramp_continuous",
+      "passed": true
+    },
+    {
+      "name": "common_observation_prefix",
+      "passed": true
+    },
+    {
+      "name": "source_knot_and_hourly_flags",
+      "passed": true
+    },
+    {
+      "name": "terminal_hour_uses_own_flags",
+      "passed": true
+    },
+    {
+      "name": "positive_density_and_shared_bounded_residual",
+      "passed": true
+    },
+    {
+      "name": "event_availability_filters_future",
+      "passed": true
+    },
+    {
+      "name": "nonanticipative_SCIP_enumeration_False",
+      "passed": true
+    },
+    {
+      "name": "nonanticipative_SCIP_enumeration_True",
+      "passed": true
+    },
+    {
+      "name": "anticipative_solution_is_rejected",
+      "passed": true
+    }
+  ],
+  "all_checks_passed": true,
+  "decision_examples": [
+    {
+      "nonanticipativity": false,
+      "status": "optimal",
+      "objective": 6.0,
+      "route_choices": [
+        0,
+        1,
+        0
+      ],
+      "oracle_objective": 6.0,
+      "wall_s": 0.0011366000398993492,
+      "online_executable_before_observation": false
+    },
+    {
+      "nonanticipativity": true,
+      "status": "optimal",
+      "objective": 9.0,
+      "route_choices": [
+        0,
+        0,
+        0
+      ],
+      "oracle_objective": 9.0,
+      "wall_s": 0.00041589990723878145,
+      "online_executable_before_observation": true
+    }
+  ],
+  "sampled_weather": [
+    {
+      "scenario": "nominal",
+      "time_s": 0,
+      "height_agl_m": 0,
+      "wind_enu_mps": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "temperature_C": 28.7,
+      "density_kg_m3": 1.1570767022666126,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 0,
+      "height_agl_m": 15,
+      "wind_enu_mps": [
+        -0.634830133936846,
+        1.4024178055074186,
+        0.0
+      ],
+      "temperature_C": 28.7,
+      "density_kg_m3": 1.1551139894801858,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 0,
+      "height_agl_m": 30,
+      "wind_enu_mps": [
+        -1.269660267873692,
+        2.804835611014837,
+        0.0
+      ],
+      "temperature_C": 28.7,
+      "density_kg_m3": 1.1531546059816742,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 0,
+      "height_agl_m": 60,
+      "wind_enu_mps": [
+        -1.335020184822901,
+        3.0660679415404255,
+        0.0
+      ],
+      "temperature_C": 28.7,
+      "density_kg_m3": 1.1492458042685116,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 0,
+      "height_agl_m": 100,
+      "wind_enu_mps": [
+        -1.3831881948520293,
+        3.258587181221639,
+        0.0
+      ],
+      "temperature_C": 28.7,
+      "density_kg_m3": 1.1440546712294335,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 600,
+      "height_agl_m": 0,
+      "wind_enu_mps": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "temperature_C": 29.033333333333335,
+      "density_kg_m3": 1.1557450244933303,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 600,
+      "height_agl_m": 15,
+      "wind_enu_mps": [
+        -0.6101866732897364,
+        1.39262122391119,
+        -0.0
+      ],
+      "temperature_C": 29.033333333333335,
+      "density_kg_m3": 1.1537867313004513,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 600,
+      "height_agl_m": 30,
+      "wind_enu_mps": [
+        -1.2203733465794728,
+        2.78524244782238,
+        -0.0
+      ],
+      "temperature_C": 29.033333333333335,
+      "density_kg_m3": 1.1518317562375646,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 600,
+      "height_agl_m": 60,
+      "wind_enu_mps": [
+        -1.2822903313724925,
+        3.038126579706488,
+        -0.0
+      ],
+      "temperature_C": 29.033333333333335,
+      "density_kg_m3": 1.1479317380223504,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 600,
+      "height_agl_m": 100,
+      "wind_enu_mps": [
+        -1.3279210188594606,
+        3.2244934842156647,
+        -0.0
+      ],
+      "temperature_C": 29.033333333333335,
+      "density_kg_m3": 1.142752247389333,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 900,
+      "height_agl_m": 0,
+      "wind_enu_mps": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "temperature_C": 29.2,
+      "density_kg_m3": 1.1550801496106098,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.03160602794142788,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 900,
+      "height_agl_m": 15,
+      "wind_enu_mps": [
+        -0.5978649429661816,
+        1.3877229331130754,
+        -0.0
+      ],
+      "temperature_C": 29.2,
+      "density_kg_m3": 1.1531240609307247,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.03160602794142788,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 900,
+      "height_agl_m": 30,
+      "wind_enu_mps": [
+        -1.1957298859323633,
+        2.7754458662261507,
+        -0.0
+      ],
+      "temperature_C": 29.2,
+      "density_kg_m3": 1.1511712848200368,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.03160602794142788,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 900,
+      "height_agl_m": 60,
+      "wind_enu_mps": [
+        -1.255925404647288,
+        3.0241558987895187,
+        -0.0
+      ],
+      "temperature_C": 29.2,
+      "density_kg_m3": 1.1472756478768613,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.03160602794142788,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 900,
+      "height_agl_m": 100,
+      "wind_enu_mps": [
+        -1.3002874308631758,
+        3.2074466357126776,
+        -0.0
+      ],
+      "temperature_C": 29.2,
+      "density_kg_m3": 1.1421019645896309,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.03160602794142788,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 1800,
+      "height_agl_m": 0,
+      "wind_enu_mps": [
+        -0.0,
+        0.0,
+        -0.0
+      ],
+      "temperature_C": 29.7,
+      "density_kg_m3": 1.1530893651684218,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.04908421805556329,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 1800,
+      "height_agl_m": 15,
+      "wind_enu_mps": [
+        -0.5608997519955173,
+        1.3730280607187324,
+        -0.0
+      ],
+      "temperature_C": 29.7,
+      "density_kg_m3": 1.1511398689888566,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.04908421805556329,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 1800,
+      "height_agl_m": 30,
+      "wind_enu_mps": [
+        -1.1217995039910347,
+        2.746056121437465,
+        -0.0
+      ],
+      "temperature_C": 29.7,
+      "density_kg_m3": 1.1491936687683637,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.04908421805556329,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 1800,
+      "height_agl_m": 60,
+      "wind_enu_mps": [
+        -1.176830624471675,
+        2.9822438560386115,
+        -0.0
+      ],
+      "temperature_C": 29.7,
+      "density_kg_m3": 1.1453111339244695,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.04908421805556329,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 1800,
+      "height_agl_m": 100,
+      "wind_enu_mps": [
+        -1.2173866668743225,
+        3.1563060902037163,
+        -0.0
+      ],
+      "temperature_C": 29.7,
+      "density_kg_m3": 1.1401548174976874,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.04908421805556329,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 3600,
+      "height_agl_m": 0,
+      "wind_enu_mps": [
+        -0.0,
+        0.0,
+        -0.0
+      ],
+      "temperature_C": 30.7,
+      "density_kg_m3": 1.14912495926235,
+      "gust10_mps": 6.0,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.049997730003511875,
+      "source_hour": "2025-07-01T09:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 3600,
+      "height_agl_m": 15,
+      "wind_enu_mps": [
+        -0.48696937005418867,
+        1.3436383159300465,
+        -0.0
+      ],
+      "temperature_C": 30.7,
+      "density_kg_m3": 1.1471885541270657,
+      "gust10_mps": 6.0,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.049997730003511875,
+      "source_hour": "2025-07-01T09:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 3600,
+      "height_agl_m": 30,
+      "wind_enu_mps": [
+        -0.9739387401083773,
+        2.687276631860093,
+        -0.0
+      ],
+      "temperature_C": 30.7,
+      "density_kg_m3": 1.1452554120527891,
+      "gust10_mps": 6.0,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.049997730003511875,
+      "source_hour": "2025-07-01T09:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 3600,
+      "height_agl_m": 60,
+      "wind_enu_mps": [
+        -1.018641064120449,
+        2.8984197705367976,
+        -0.0
+      ],
+      "temperature_C": 30.7,
+      "density_kg_m3": 1.1413988951020233,
+      "gust10_mps": 6.0,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.049997730003511875,
+      "source_hour": "2025-07-01T09:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 3600,
+      "height_agl_m": 100,
+      "wind_enu_mps": [
+        -1.0515851388966158,
+        3.0540249991857933,
+        -0.0
+      ],
+      "temperature_C": 30.7,
+      "density_kg_m3": 1.1362770659753891,
+      "gust10_mps": 6.0,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.049997730003511875,
+      "source_hour": "2025-07-01T09:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 14400,
+      "height_agl_m": 0,
+      "wind_enu_mps": [
+        -0.0,
+        0.0,
+        -0.0
+      ],
+      "temperature_C": 34.1,
+      "density_kg_m3": 1.1355176510073899,
+      "gust10_mps": 5.2,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.05,
+      "source_hour": "2025-07-01T12:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 14400,
+      "height_agl_m": 15,
+      "wind_enu_mps": [
+        -0.1998874518745495,
+        1.2069652218977092,
+        -0.0
+      ],
+      "temperature_C": 34.1,
+      "density_kg_m3": 1.1336253324077654,
+      "gust10_mps": 5.2,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.05,
+      "source_hour": "2025-07-01T12:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 14400,
+      "height_agl_m": 30,
+      "wind_enu_mps": [
+        -0.399774903749099,
+        2.4139304437954183,
+        -0.0
+      ],
+      "temperature_C": 34.1,
+      "density_kg_m3": 1.1317361673211483,
+      "gust10_mps": 5.2,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.05,
+      "source_hour": "2025-07-01T12:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 14400,
+      "height_agl_m": 60,
+      "wind_enu_mps": [
+        -0.38835709662918266,
+        2.580601208513724,
+        -0.0
+      ],
+      "temperature_C": 34.1,
+      "density_kg_m3": 1.1279672766746156,
+      "gust10_mps": 5.2,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.05,
+      "source_hour": "2025-07-01T12:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 14400,
+      "height_agl_m": 100,
+      "wind_enu_mps": [
+        -0.37994256562097833,
+        2.703431827664487,
+        -0.0
+      ],
+      "temperature_C": 34.1,
+      "density_kg_m3": 1.1229616058549472,
+      "gust10_mps": 5.2,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.05,
+      "source_hour": "2025-07-01T12:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 28799,
+      "height_agl_m": 0,
+      "wind_enu_mps": [
+        -0.0,
+        0.0,
+        -0.0
+      ],
+      "temperature_C": 35.400444444444446,
+      "density_kg_m3": 1.1304357954665982,
+      "gust10_mps": 3.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.05,
+      "source_hour": "2025-07-01T15:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 28799,
+      "height_agl_m": 15,
+      "wind_enu_mps": [
+        -0.21249166294932548,
+        1.0098605308335726,
+        -0.0
+      ],
+      "temperature_C": 35.400444444444446,
+      "density_kg_m3": 1.1285598789337978,
+      "gust10_mps": 3.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.05,
+      "source_hour": "2025-07-01T15:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 28799,
+      "height_agl_m": 30,
+      "wind_enu_mps": [
+        -0.42498332589865095,
+        2.0197210616671453,
+        -0.0
+      ],
+      "temperature_C": 35.400444444444446,
+      "density_kg_m3": 1.1266870754153344,
+      "gust10_mps": 3.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.05,
+      "source_hour": "2025-07-01T15:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 28799,
+      "height_agl_m": 60,
+      "wind_enu_mps": [
+        -0.4092341120063998,
+        2.1553272264126306,
+        -0.0
+      ],
+      "temperature_C": 35.400444444444446,
+      "density_kg_m3": 1.1229507867662598,
+      "gust10_mps": 3.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.05,
+      "source_hour": "2025-07-01T15:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "nominal",
+      "time_s": 28799,
+      "height_agl_m": 100,
+      "wind_enu_mps": [
+        -0.3976274832326463,
+        2.2552643041868885,
+        -0.0
+      ],
+      "temperature_C": 35.400444444444446,
+      "density_kg_m3": 1.11798833507141,
+      "gust10_mps": 3.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.05,
+      "source_hour": "2025-07-01T15:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 0,
+      "height_agl_m": 0,
+      "wind_enu_mps": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "temperature_C": 28.7,
+      "density_kg_m3": 1.1570767022666126,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 0,
+      "height_agl_m": 15,
+      "wind_enu_mps": [
+        -0.634830133936846,
+        1.4024178055074186,
+        0.0
+      ],
+      "temperature_C": 28.7,
+      "density_kg_m3": 1.1551139894801858,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 0,
+      "height_agl_m": 30,
+      "wind_enu_mps": [
+        -1.269660267873692,
+        2.804835611014837,
+        0.0
+      ],
+      "temperature_C": 28.7,
+      "density_kg_m3": 1.1531546059816742,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 0,
+      "height_agl_m": 60,
+      "wind_enu_mps": [
+        -1.335020184822901,
+        3.0660679415404255,
+        0.0
+      ],
+      "temperature_C": 28.7,
+      "density_kg_m3": 1.1492458042685116,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 0,
+      "height_agl_m": 100,
+      "wind_enu_mps": [
+        -1.3831881948520293,
+        3.258587181221639,
+        0.0
+      ],
+      "temperature_C": 28.7,
+      "density_kg_m3": 1.1440546712294335,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 600,
+      "height_agl_m": 0,
+      "wind_enu_mps": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "temperature_C": 29.033333333333335,
+      "density_kg_m3": 1.1557450244933303,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 600,
+      "height_agl_m": 15,
+      "wind_enu_mps": [
+        -0.6101866732897364,
+        1.39262122391119,
+        -0.0
+      ],
+      "temperature_C": 29.033333333333335,
+      "density_kg_m3": 1.1537867313004513,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 600,
+      "height_agl_m": 30,
+      "wind_enu_mps": [
+        -1.2203733465794728,
+        2.78524244782238,
+        -0.0
+      ],
+      "temperature_C": 29.033333333333335,
+      "density_kg_m3": 1.1518317562375646,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 600,
+      "height_agl_m": 60,
+      "wind_enu_mps": [
+        -1.2822903313724925,
+        3.038126579706488,
+        -0.0
+      ],
+      "temperature_C": 29.033333333333335,
+      "density_kg_m3": 1.1479317380223504,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 600,
+      "height_agl_m": 100,
+      "wind_enu_mps": [
+        -1.3279210188594606,
+        3.2244934842156647,
+        -0.0
+      ],
+      "temperature_C": 29.033333333333335,
+      "density_kg_m3": 1.142752247389333,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 900,
+      "height_agl_m": 0,
+      "wind_enu_mps": [
+        0.0,
+        0.0,
+        -0.0
+      ],
+      "temperature_C": 30.464241117657114,
+      "density_kg_m3": 1.1502704285186358,
+      "gust10_mps": 7.364241117657115,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.06321205588285576,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 900,
+      "height_agl_m": 15,
+      "wind_enu_mps": [
+        -0.5978649429661815,
+        1.611211299950627,
+        -1.362771993827271e-15
+      ],
+      "temperature_C": 30.464241117657114,
+      "density_kg_m3": 1.148330589275446,
+      "gust10_mps": 7.364241117657115,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.06321205588285576,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 900,
+      "height_agl_m": 30,
+      "wind_enu_mps": [
+        -1.195729885932363,
+        3.222422599901254,
+        -2.725543987654542e-15
+      ],
+      "temperature_C": 30.464241117657114,
+      "density_kg_m3": 1.1463940214162684,
+      "gust10_mps": 7.364241117657115,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.06321205588285576,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 900,
+      "height_agl_m": 60,
+      "wind_enu_mps": [
+        -1.2559254046472879,
+        3.471132632464622,
+        -2.725543987654542e-15
+      ],
+      "temperature_C": 30.464241117657114,
+      "density_kg_m3": 1.1425306777915414,
+      "gust10_mps": 7.364241117657115,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.06321205588285576,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 900,
+      "height_agl_m": 100,
+      "wind_enu_mps": [
+        -1.3002874308631756,
+        3.654423369387781,
+        -2.725543987654542e-15
+      ],
+      "temperature_C": 30.464241117657114,
+      "density_kg_m3": 1.1373997978545265,
+      "gust10_mps": 7.364241117657115,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.06321205588285576,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 1800,
+      "height_agl_m": 0,
+      "wind_enu_mps": [
+        -0.0,
+        0.0,
+        -0.0
+      ],
+      "temperature_C": 31.66336872222253,
+      "density_kg_m3": 1.1456620675961742,
+      "gust10_mps": 8.063368722222531,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.09816843611112658,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 1800,
+      "height_agl_m": 15,
+      "wind_enu_mps": [
+        -0.5608997519955176,
+        0.8821858801630995,
+        -4.232774699117131e-15
+      ],
+      "temperature_C": 31.66336872222253,
+      "density_kg_m3": 1.1437375943004588,
+      "gust10_mps": 8.063368722222531,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.09816843611112658,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 1800,
+      "height_agl_m": 30,
+      "wind_enu_mps": [
+        -1.1217995039910351,
+        1.764371760326199,
+        -8.465549398234262e-15
+      ],
+      "temperature_C": 31.66336872222253,
+      "density_kg_m3": 1.1418163537184476,
+      "gust10_mps": 8.063368722222531,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.09816843611112658,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 1800,
+      "height_agl_m": 60,
+      "wind_enu_mps": [
+        -1.1768306244716755,
+        2.0005594949273457,
+        -8.465549398234262e-15
+      ],
+      "temperature_C": 31.66336872222253,
+      "density_kg_m3": 1.1379835489835197,
+      "gust10_mps": 8.063368722222531,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.09816843611112658,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 1800,
+      "height_agl_m": 100,
+      "wind_enu_mps": [
+        -1.217386666874323,
+        2.1746217290924506,
+        -8.465549398234262e-15
+      ],
+      "temperature_C": 31.66336872222253,
+      "density_kg_m3": 1.1328931486836549,
+      "gust10_mps": 8.063368722222531,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.09816843611112658,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 3600,
+      "height_agl_m": 0,
+      "wind_enu_mps": [
+        -0.0,
+        0.0,
+        -0.0
+      ],
+      "temperature_C": 32.699909200140475,
+      "density_kg_m3": 1.1416109940493149,
+      "gust10_mps": 7.9999092001404755,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.09999546000702375,
+      "source_hour": "2025-07-01T09:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 3600,
+      "height_agl_m": 15,
+      "wind_enu_mps": [
+        -0.48696937005418917,
+        1.3436383159300467,
+        -8.623102698003278e-15
+      ],
+      "temperature_C": 32.699909200140475,
+      "density_kg_m3": 1.1396998193419217,
+      "gust10_mps": 7.9999092001404755,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.09999546000702375,
+      "source_hour": "2025-07-01T09:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 3600,
+      "height_agl_m": 30,
+      "wind_enu_mps": [
+        -0.9739387401083783,
+        2.6872766318600934,
+        -1.7246205396006556e-14
+      ],
+      "temperature_C": 32.699909200140475,
+      "density_kg_m3": 1.1377918441383712,
+      "gust10_mps": 7.9999092001404755,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.09999546000702375,
+      "source_hour": "2025-07-01T09:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 3600,
+      "height_agl_m": 60,
+      "wind_enu_mps": [
+        -1.01864106412045,
+        2.898419770536798,
+        -1.7246205396006556e-14
+      ],
+      "temperature_C": 32.699909200140475,
+      "density_kg_m3": 1.1339854708265653,
+      "gust10_mps": 7.9999092001404755,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.09999546000702375,
+      "source_hour": "2025-07-01T09:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 3600,
+      "height_agl_m": 100,
+      "wind_enu_mps": [
+        -1.0515851388966166,
+        3.0540249991857937,
+        -1.7246205396006556e-14
+      ],
+      "temperature_C": 32.699909200140475,
+      "density_kg_m3": 1.1289301072646074,
+      "gust10_mps": 7.9999092001404755,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.09999546000702375,
+      "source_hour": "2025-07-01T09:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 14400,
+      "height_agl_m": 0,
+      "wind_enu_mps": [
+        -0.0,
+        0.0,
+        -0.0
+      ],
+      "temperature_C": 36.1,
+      "density_kg_m3": 1.1281739636928716,
+      "gust10_mps": 7.2,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.1,
+      "source_hour": "2025-07-01T12:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 14400,
+      "height_agl_m": 15,
+      "wind_enu_mps": [
+        -0.19988745187455148,
+        1.2069652218977085,
+        -3.44939768161378e-14
+      ],
+      "temperature_C": 36.1,
+      "density_kg_m3": 1.1263060321056,
+      "gust10_mps": 7.2,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.1,
+      "source_hour": "2025-07-01T12:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 14400,
+      "height_agl_m": 30,
+      "wind_enu_mps": [
+        -0.39977490374910296,
+        2.413930443795417,
+        -6.89879536322756e-14
+      ],
+      "temperature_C": 36.1,
+      "density_kg_m3": 1.1244411932757636,
+      "gust10_mps": 7.2,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.1,
+      "source_hour": "2025-07-01T12:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 14400,
+      "height_agl_m": 60,
+      "wind_enu_mps": [
+        -0.3883570966291866,
+        2.580601208513723,
+        -6.89879536322756e-14
+      ],
+      "temperature_C": 36.1,
+      "density_kg_m3": 1.120720773414009,
+      "gust10_mps": 7.2,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.1,
+      "source_hour": "2025-07-01T12:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 14400,
+      "height_agl_m": 100,
+      "wind_enu_mps": [
+        -0.3799425656209823,
+        2.7034318276644855,
+        -6.89879536322756e-14
+      ],
+      "temperature_C": 36.1,
+      "density_kg_m3": 1.1157793549635444,
+      "gust10_mps": 7.2,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.1,
+      "source_hour": "2025-07-01T12:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 28799,
+      "height_agl_m": 0,
+      "wind_enu_mps": [
+        -0.0,
+        0.0,
+        -0.0
+      ],
+      "temperature_C": 37.400444444444446,
+      "density_kg_m3": 1.1231555882365691,
+      "gust10_mps": 5.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.1,
+      "source_hour": "2025-07-01T15:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 28799,
+      "height_agl_m": 15,
+      "wind_enu_mps": [
+        -0.21598231436454227,
+        1.0085515353898626,
+        -0.020905692653523104
+      ],
+      "temperature_C": 37.400444444444446,
+      "density_kg_m3": 1.1213037464685451,
+      "gust10_mps": 5.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.1,
+      "source_hour": "2025-07-01T15:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 28799,
+      "height_agl_m": 30,
+      "wind_enu_mps": [
+        -0.43196462872908453,
+        2.0171030707797253,
+        -0.04181138530704621
+      ],
+      "temperature_C": 37.400444444444446,
+      "density_kg_m3": 1.1194549579889252,
+      "gust10_mps": 5.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.1,
+      "source_hour": "2025-07-01T15:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 28799,
+      "height_agl_m": 60,
+      "wind_enu_mps": [
+        -0.4162154148368334,
+        2.1527092355252107,
+        -0.04181138530704621
+      ],
+      "temperature_C": 37.400444444444446,
+      "density_kg_m3": 1.115766520766338,
+      "gust10_mps": 5.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.1,
+      "source_hour": "2025-07-01T15:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "east_hot",
+      "time_s": 28799,
+      "height_agl_m": 100,
+      "wind_enu_mps": [
+        -0.4046087860630799,
+        2.2526463132994685,
+        -0.04181138530704621
+      ],
+      "temperature_C": 37.400444444444446,
+      "density_kg_m3": 1.1108675019796055,
+      "gust10_mps": 5.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.1,
+      "source_hour": "2025-07-01T15:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 0,
+      "height_agl_m": 0,
+      "wind_enu_mps": [
+        -0.0,
+        0.0,
+        -0.0
+      ],
+      "temperature_C": 28.7,
+      "density_kg_m3": 1.1570767022666126,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 0,
+      "height_agl_m": 15,
+      "wind_enu_mps": [
+        -0.634830133936846,
+        1.4024178055074186,
+        -0.0
+      ],
+      "temperature_C": 28.7,
+      "density_kg_m3": 1.1551139894801858,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 0,
+      "height_agl_m": 30,
+      "wind_enu_mps": [
+        -1.269660267873692,
+        2.804835611014837,
+        -0.0
+      ],
+      "temperature_C": 28.7,
+      "density_kg_m3": 1.1531546059816742,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 0,
+      "height_agl_m": 60,
+      "wind_enu_mps": [
+        -1.335020184822901,
+        3.0660679415404255,
+        -0.0
+      ],
+      "temperature_C": 28.7,
+      "density_kg_m3": 1.1492458042685116,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 0,
+      "height_agl_m": 100,
+      "wind_enu_mps": [
+        -1.3831881948520293,
+        3.258587181221639,
+        -0.0
+      ],
+      "temperature_C": 28.7,
+      "density_kg_m3": 1.1440546712294335,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 600,
+      "height_agl_m": 0,
+      "wind_enu_mps": [
+        -0.0,
+        0.0,
+        0.0
+      ],
+      "temperature_C": 29.033333333333335,
+      "density_kg_m3": 1.1557450244933303,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 600,
+      "height_agl_m": 15,
+      "wind_enu_mps": [
+        -0.6101866732897364,
+        1.39262122391119,
+        0.0
+      ],
+      "temperature_C": 29.033333333333335,
+      "density_kg_m3": 1.1537867313004513,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 600,
+      "height_agl_m": 30,
+      "wind_enu_mps": [
+        -1.2203733465794728,
+        2.78524244782238,
+        0.0
+      ],
+      "temperature_C": 29.033333333333335,
+      "density_kg_m3": 1.1518317562375646,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 600,
+      "height_agl_m": 60,
+      "wind_enu_mps": [
+        -1.2822903313724925,
+        3.038126579706488,
+        0.0
+      ],
+      "temperature_C": 29.033333333333335,
+      "density_kg_m3": 1.1479317380223504,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 600,
+      "height_agl_m": 100,
+      "wind_enu_mps": [
+        -1.3279210188594606,
+        3.2244934842156647,
+        0.0
+      ],
+      "temperature_C": 29.033333333333335,
+      "density_kg_m3": 1.142752247389333,
+      "gust10_mps": 6.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 900,
+      "height_agl_m": 0,
+      "wind_enu_mps": [
+        -0.0,
+        0.0,
+        0.0
+      ],
+      "temperature_C": 27.935758882342885,
+      "density_kg_m3": 1.1599302621657437,
+      "gust10_mps": 7.364241117657115,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 900,
+      "height_agl_m": 15,
+      "wind_enu_mps": [
+        -0.5978649429661818,
+        1.1642345662755238,
+        1.362771993827271e-15
+      ],
+      "temperature_C": 27.935758882342885,
+      "density_kg_m3": 1.1579577190159185,
+      "gust10_mps": 7.364241117657115,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 900,
+      "height_agl_m": 30,
+      "wind_enu_mps": [
+        -1.1957298859323635,
+        2.3284691325510476,
+        2.725543987654542e-15
+      ],
+      "temperature_C": 27.935758882342885,
+      "density_kg_m3": 1.1559885303147224,
+      "gust10_mps": 7.364241117657115,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 900,
+      "height_agl_m": 60,
+      "wind_enu_mps": [
+        -1.2559254046472883,
+        2.5771791651144156,
+        2.725543987654542e-15
+      ],
+      "temperature_C": 27.935758882342885,
+      "density_kg_m3": 1.152060193450014,
+      "gust10_mps": 7.364241117657115,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 900,
+      "height_agl_m": 100,
+      "wind_enu_mps": [
+        -1.300287430863176,
+        2.7604699020375745,
+        2.725543987654542e-15
+      ],
+      "temperature_C": 27.935758882342885,
+      "density_kg_m3": 1.1468431689557244,
+      "gust10_mps": 7.364241117657115,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 1800,
+      "height_agl_m": 0,
+      "wind_enu_mps": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "temperature_C": 27.73663127777747,
+      "density_kg_m3": 1.160613593094019,
+      "gust10_mps": 8.063368722222531,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 1800,
+      "height_agl_m": 15,
+      "wind_enu_mps": [
+        -0.5608997519955171,
+        1.8638702412743653,
+        4.232774699117131e-15
+      ],
+      "temperature_C": 27.73663127777747,
+      "density_kg_m3": 1.158638582800247,
+      "gust10_mps": 8.063368722222531,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 1800,
+      "height_agl_m": 30,
+      "wind_enu_mps": [
+        -1.1217995039910342,
+        3.7277404825487306,
+        8.465549398234262e-15
+      ],
+      "temperature_C": 27.73663127777747,
+      "density_kg_m3": 1.1566669333715243,
+      "gust10_mps": 8.063368722222531,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 1800,
+      "height_agl_m": 60,
+      "wind_enu_mps": [
+        -1.1768306244716746,
+        3.9639282171498773,
+        8.465549398234262e-15
+      ],
+      "temperature_C": 27.73663127777747,
+      "density_kg_m3": 1.1527336942422897,
+      "gust10_mps": 8.063368722222531,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 1800,
+      "height_agl_m": 100,
+      "wind_enu_mps": [
+        -1.217386666874322,
+        4.137990451314982,
+        8.465549398234262e-15
+      ],
+      "temperature_C": 27.73663127777747,
+      "density_kg_m3": 1.1475101730259187,
+      "gust10_mps": 8.063368722222531,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T08:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 3600,
+      "height_agl_m": 0,
+      "wind_enu_mps": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "temperature_C": 28.700090799859524,
+      "density_kg_m3": 1.1567384920992958,
+      "gust10_mps": 7.9999092001404755,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T09:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 3600,
+      "height_agl_m": 15,
+      "wind_enu_mps": [
+        -0.48696937005418817,
+        1.3436383159300462,
+        8.623102698003278e-15
+      ],
+      "temperature_C": 28.700090799859524,
+      "density_kg_m3": 1.1547763535978615,
+      "gust10_mps": 7.9999092001404755,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T09:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 3600,
+      "height_agl_m": 30,
+      "wind_enu_mps": [
+        -0.9739387401083763,
+        2.6872766318600925,
+        1.7246205396006556e-14
+      ],
+      "temperature_C": 28.700090799859524,
+      "density_kg_m3": 1.1528175434092007,
+      "gust10_mps": 7.9999092001404755,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T09:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 3600,
+      "height_agl_m": 60,
+      "wind_enu_mps": [
+        -1.0186410641204482,
+        2.898419770536797,
+        1.7246205396006556e-14
+      ],
+      "temperature_C": 28.700090799859524,
+      "density_kg_m3": 1.1489098853969342,
+      "gust10_mps": 7.9999092001404755,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T09:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 3600,
+      "height_agl_m": 100,
+      "wind_enu_mps": [
+        -1.0515851388966149,
+        3.054024999185793,
+        1.7246205396006556e-14
+      ],
+      "temperature_C": 28.700090799859524,
+      "density_kg_m3": 1.1437202712579635,
+      "gust10_mps": 7.9999092001404755,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T09:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 14400,
+      "height_agl_m": 0,
+      "wind_enu_mps": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "temperature_C": 32.1,
+      "density_kg_m3": 1.1429575700967094,
+      "gust10_mps": 7.2,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T12:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 14400,
+      "height_agl_m": 15,
+      "wind_enu_mps": [
+        -0.19988745187454754,
+        1.2069652218977098,
+        3.44939768161378e-14
+      ],
+      "temperature_C": 32.1,
+      "density_kg_m3": 1.141040383766931,
+      "gust10_mps": 7.2,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T12:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 14400,
+      "height_agl_m": 30,
+      "wind_enu_mps": [
+        -0.3997749037490951,
+        2.4139304437954197,
+        6.89879536322756e-14
+      ],
+      "temperature_C": 32.1,
+      "density_kg_m3": 1.1391264133075567,
+      "gust10_mps": 7.2,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T12:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 14400,
+      "height_agl_m": 60,
+      "wind_enu_mps": [
+        -0.3883570966291787,
+        2.5806012085137255,
+        6.89879536322756e-14
+      ],
+      "temperature_C": 32.1,
+      "density_kg_m3": 1.1353080984319859,
+      "gust10_mps": 7.2,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T12:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 14400,
+      "height_agl_m": 100,
+      "wind_enu_mps": [
+        -0.3799425656209744,
+        2.703431827664488,
+        6.89879536322756e-14
+      ],
+      "temperature_C": 32.1,
+      "density_kg_m3": 1.1302369138620942,
+      "gust10_mps": 7.2,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T12:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 28799,
+      "height_agl_m": 0,
+      "wind_enu_mps": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "temperature_C": 33.400444444444446,
+      "density_kg_m3": 1.137810997923181,
+      "gust10_mps": 5.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T15:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 28799,
+      "height_agl_m": 15,
+      "wind_enu_mps": [
+        -0.2090010115341087,
+        1.0111695262772826,
+        0.020905692653523104
+      ],
+      "temperature_C": 33.400444444444446,
+      "density_kg_m3": 1.1359105340817095,
+      "gust10_mps": 5.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T15:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 28799,
+      "height_agl_m": 30,
+      "wind_enu_mps": [
+        -0.4180020230682174,
+        2.0223390525545653,
+        0.04181138530704621
+      ],
+      "temperature_C": 33.400444444444446,
+      "density_kg_m3": 1.1340132445484659,
+      "gust10_mps": 5.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T15:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 28799,
+      "height_agl_m": 60,
+      "wind_enu_mps": [
+        -0.40225280917596623,
+        2.1579452173000506,
+        0.04181138530704621
+      ],
+      "temperature_C": 33.400444444444446,
+      "density_kg_m3": 1.1302281672075751,
+      "gust10_mps": 5.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T15:00Z",
+      "synthetic_weather_scenario": true
+    },
+    {
+      "scenario": "west_cool",
+      "time_s": 28799,
+      "height_agl_m": 100,
+      "wind_enu_mps": [
+        -0.3906461804022127,
+        2.2578822950743085,
+        0.04181138530704621
+      ],
+      "temperature_C": 33.400444444444446,
+      "density_kg_m3": 1.1252010425870185,
+      "gust10_mps": 5.1,
+      "previous_hour_precipitation_mm": 0.0,
+      "daylight": true,
+      "visibility_m": 5000.0,
+      "flight_screen_pass": true,
+      "power_residual_fraction": 0.0,
+      "source_hour": "2025-07-01T15:00Z",
+      "synthetic_weather_scenario": true
+    }
+  ],
+  "wall_s": 0.018008399987593293,
+  "actual_forecast_calibration": false,
+  "complete_joint_model_verified": false
+}

@@ -1,0 +1,3741 @@
+{
+  "conditions": 59,
+  "runs": 236,
+  "controlled_groups": [
+    {
+      "axis": "base",
+      "level": null,
+      "n": 256,
+      "conditions": [
+        "S01",
+        "S11",
+        "S21"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.8487253673812946,
+          "quality_min": 0.7987804878048781,
+          "quality_max": 0.8763837638376384,
+          "time_ratio_mean": 155.98080972587272,
+          "time_ratio_min": 48.69347142324874,
+          "time_ratio_max": 365.0438539805742,
+          "support_count": 0,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.9717712599431584,
+          "quality_min": 0.9497232472324724,
+          "quality_max": 0.9920262664165104,
+          "time_ratio_mean": 43.465038187145964,
+          "time_ratio_min": 15.418357071879413,
+          "time_ratio_max": 95.69532225396756,
+          "support_count": 2,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 1.0128432486554724,
+          "quality_min": 1.0028142589118199,
+          "quality_max": 1.0218778486782134,
+          "time_ratio_mean": 2.1057753808671573,
+          "time_ratio_min": 0.594108113633648,
+          "time_ratio_max": 4.742838532502336,
+          "support_count": 1,
+          "planned": 3
+        }
+      }
+    },
+    {
+      "axis": "degree",
+      "level": 16,
+      "n": 256,
+      "conditions": [
+        "S02",
+        "S12",
+        "S22"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.8006387593927167,
+          "quality_min": 0.765906362545018,
+          "quality_max": 0.8561721404303511,
+          "time_ratio_mean": 2114.0416643314297,
+          "time_ratio_min": 445.159303125007,
+          "time_ratio_max": 5344.352256445847,
+          "support_count": 0,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.9029826854320752,
+          "quality_min": 0.8400926998841252,
+          "quality_max": 0.963985594237695,
+          "time_ratio_mean": 378.46828149377365,
+          "time_ratio_min": 196.27236441159627,
+          "time_ratio_max": 742.5896182807749,
+          "support_count": 1,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 0.9865075126187236,
+          "quality_min": 0.9629200463499421,
+          "quality_max": 1.0,
+          "time_ratio_mean": 30.716818762572203,
+          "time_ratio_min": 6.833327056078097,
+          "time_ratio_max": 74.99082768725994,
+          "support_count": 3,
+          "planned": 3
+        }
+      }
+    },
+    {
+      "axis": "degree",
+      "level": 32,
+      "n": 256,
+      "conditions": [
+        "S03",
+        "S13",
+        "S23"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.6867238032578314,
+          "quality_min": 0.6623134328358209,
+          "quality_max": 0.7305502846299811,
+          "time_ratio_mean": 483.0494162047106,
+          "time_ratio_min": 198.9592263383535,
+          "time_ratio_max": 731.0921457575565,
+          "support_count": 0,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.9199507135175095,
+          "quality_min": 0.8880597014925373,
+          "quality_max": 0.952561669829222,
+          "time_ratio_mean": 115.66862033495369,
+          "time_ratio_min": 54.76782543145869,
+          "time_ratio_max": 174.0504119601395,
+          "support_count": 1,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 0.9410949921244747,
+          "quality_min": 0.9192307692307692,
+          "quality_max": 0.952561669829222,
+          "time_ratio_mean": 4.408919060755722,
+          "time_ratio_min": 1.8131879387656011,
+          "time_ratio_max": 6.652843244273505,
+          "support_count": 1,
+          "planned": 3
+        }
+      }
+    },
+    {
+      "axis": "degree",
+      "level": 8,
+      "n": 256,
+      "conditions": [
+        "S04",
+        "S14",
+        "S24"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.7620064208181979,
+          "quality_min": 0.6987788331071914,
+          "quality_max": 0.8739376770538244,
+          "time_ratio_mean": 340.66620282402306,
+          "time_ratio_min": 126.4805041232292,
+          "time_ratio_max": 589.2268890623474,
+          "support_count": 0,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.9515980569328392,
+          "quality_min": 0.9220963172804533,
+          "quality_max": 0.9686544342507645,
+          "time_ratio_mean": 87.70620114940152,
+          "time_ratio_min": 44.04526170594912,
+          "time_ratio_max": 136.8508338803855,
+          "support_count": 2,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 0.9866612806033099,
+          "quality_min": 0.9686544342507645,
+          "quality_max": 1.003541076487252,
+          "time_ratio_mean": 6.851680781027032,
+          "time_ratio_min": 2.6640617881687225,
+          "time_ratio_max": 13.743222542036694,
+          "support_count": 3,
+          "planned": 3
+        }
+      }
+    },
+    {
+      "axis": "rank",
+      "level": 16,
+      "n": 256,
+      "conditions": [
+        "S05",
+        "S15",
+        "S25"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.7502009140120969,
+          "quality_min": 0.7050487156775908,
+          "quality_max": 0.7819947043248014,
+          "time_ratio_mean": 10850.037884624213,
+          "time_ratio_min": 10605.773024445078,
+          "time_ratio_max": 11119.618496489624,
+          "support_count": 0,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.8656826515012056,
+          "quality_min": 0.8127118644067797,
+          "quality_max": 0.9131975199291408,
+          "time_ratio_mean": 4371.025961230619,
+          "time_ratio_min": 3821.6461032590705,
+          "time_ratio_max": 4654.331599913439,
+          "support_count": 0,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 0.9693767066904219,
+          "quality_min": 0.9302736098852604,
+          "quality_max": 1.0,
+          "time_ratio_mean": 230.21277113778203,
+          "time_ratio_min": 219.07055647454186,
+          "time_ratio_max": 248.20424035033565,
+          "support_count": 2,
+          "planned": 3
+        }
+      }
+    },
+    {
+      "axis": "rank",
+      "level": 32,
+      "n": 256,
+      "conditions": [
+        "S06",
+        "S16",
+        "S26"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.7054379298707507,
+          "quality_min": 0.6015132408575031,
+          "quality_max": 0.7635869565217391,
+          "time_ratio_mean": 11846.021187463251,
+          "time_ratio_min": 7381.8863507036285,
+          "time_ratio_max": 18003.04538471203,
+          "support_count": 0,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.8136101639752363,
+          "quality_min": 0.7578814627994955,
+          "quality_max": 0.90625,
+          "time_ratio_mean": 5984.142268772674,
+          "time_ratio_min": 4646.032035840798,
+          "time_ratio_max": 8321.800785052501,
+          "support_count": 0,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 0.9146627601137788,
+          "quality_min": 0.8604368932038835,
+          "quality_max": 0.9773013871374527,
+          "time_ratio_mean": 312.54448689067493,
+          "time_ratio_min": 182.23699722852018,
+          "time_ratio_max": 469.7084568897617,
+          "support_count": 1,
+          "planned": 3
+        }
+      }
+    },
+    {
+      "axis": "rank",
+      "level": 8,
+      "n": 256,
+      "conditions": [
+        "S07",
+        "S17",
+        "S27"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.7991731355677282,
+          "quality_min": 0.7300242130750605,
+          "quality_max": 0.8409090909090909,
+          "time_ratio_mean": 3119.8144975954383,
+          "time_ratio_min": 334.482292337487,
+          "time_ratio_max": 6163.425491842086,
+          "support_count": 0,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.8970358656312878,
+          "quality_min": 0.8422077922077922,
+          "quality_max": 0.9763922518159807,
+          "time_ratio_mean": 1535.3803292668647,
+          "time_ratio_min": 237.84386001804063,
+          "time_ratio_max": 3331.882981689069,
+          "support_count": 1,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 0.9882444999655302,
+          "quality_min": 0.9716012084592145,
+          "quality_max": 1.0058441558441558,
+          "time_ratio_mean": 80.31005981793619,
+          "time_ratio_min": 6.989853997999876,
+          "time_ratio_max": 166.30813675985166,
+          "support_count": 3,
+          "planned": 3
+        }
+      }
+    },
+    {
+      "axis": "spread",
+      "level": 1,
+      "n": 256,
+      "conditions": [
+        "S08",
+        "S18",
+        "S28"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.7692147034252298,
+          "quality_min": 0.7678571428571429,
+          "quality_max": 0.7719298245614035,
+          "time_ratio_mean": 4971252.779594008,
+          "time_ratio_min": 1193702.715404163,
+          "time_ratio_max": 6959098.366036181,
+          "support_count": 0,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.7633667502088555,
+          "quality_min": 0.75,
+          "quality_max": 0.7857142857142857,
+          "time_ratio_mean": 1576473.0068563146,
+          "time_ratio_min": 274924.4813200388,
+          "time_ratio_max": 2249737.3055119812,
+          "support_count": 0,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 0.9763993316624895,
+          "quality_min": 0.9649122807017544,
+          "quality_max": 0.9821428571428571,
+          "time_ratio_mean": 52558.791489057694,
+          "time_ratio_min": 11749.090415021044,
+          "time_ratio_max": 104281.70890386461,
+          "support_count": 3,
+          "planned": 3
+        }
+      }
+    },
+    {
+      "axis": "spread",
+      "level": 10,
+      "n": 256,
+      "conditions": [
+        "S09",
+        "S19",
+        "S29"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.8168750849593062,
+          "quality_min": 0.78839590443686,
+          "quality_max": 0.8482758620689655,
+          "time_ratio_mean": 3838.9101220959287,
+          "time_ratio_min": 2617.292493281935,
+          "time_ratio_max": 4920.376895622198,
+          "support_count": 0,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.921657595000307,
+          "quality_min": 0.8862068965517241,
+          "quality_max": 0.9401993355481728,
+          "time_ratio_mean": 1153.3610362875277,
+          "time_ratio_min": 900.2351927761238,
+          "time_ratio_max": 1355.1360490473103,
+          "support_count": 0,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 1.0013056787289005,
+          "quality_min": 0.9867109634551495,
+          "quality_max": 1.013793103448276,
+          "time_ratio_mean": 56.464448995987944,
+          "time_ratio_min": 30.896161386844792,
+          "time_ratio_max": 92.76586726008141,
+          "support_count": 3,
+          "planned": 3
+        }
+      }
+    },
+    {
+      "axis": "spread",
+      "level": 1000,
+      "n": 256,
+      "conditions": [
+        "S10",
+        "S20",
+        "S30"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.9044513968323008,
+          "quality_min": 0.8406019307211812,
+          "quality_max": 0.9776465868057546,
+          "time_ratio_mean": 40.43036968549737,
+          "time_ratio_min": 26.618922248248506,
+          "time_ratio_max": 51.37868481107445,
+          "support_count": 1,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.9784672253846469,
+          "quality_min": 0.9489432703003337,
+          "quality_max": 1.003267037313005,
+          "time_ratio_mean": 13.587140052971936,
+          "time_ratio_min": 11.449646807363738,
+          "time_ratio_max": 15.860282870653865,
+          "support_count": 2,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 1.0014711220649204,
+          "quality_min": 1.0,
+          "quality_max": 1.0044133661947612,
+          "time_ratio_mean": 0.8888103547018683,
+          "time_ratio_min": 0.6837762270377664,
+          "time_ratio_max": 1.1822963411839293,
+          "support_count": 0,
+          "planned": 3
+        }
+      }
+    },
+    {
+      "axis": "n",
+      "level": 1024,
+      "n": 1024,
+      "conditions": [
+        "S31",
+        "S32",
+        "S33"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.8914683795468706,
+          "quality_min": 0.8451969592259848,
+          "quality_max": 0.9321111768184506,
+          "time_ratio_mean": 412.12626525396934,
+          "time_ratio_min": 96.79394257498382,
+          "time_ratio_max": 1030.25660310624,
+          "support_count": 0,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.9688188660273608,
+          "quality_min": 0.9454042847270214,
+          "quality_max": 0.9977528089887641,
+          "time_ratio_mean": 163.71733044925108,
+          "time_ratio_min": 34.23660917420117,
+          "time_ratio_max": 406.62063906700797,
+          "support_count": 2,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 1.0048291599612345,
+          "quality_min": 0.9892612697663441,
+          "quality_max": 1.0264931992903608,
+          "time_ratio_mean": 3.8378443708370096,
+          "time_ratio_min": 0.6272765641333085,
+          "time_ratio_max": 10.13038554001214,
+          "support_count": 1,
+          "planned": 3
+        }
+      }
+    },
+    {
+      "axis": "n",
+      "level": 4096,
+      "n": 4096,
+      "conditions": [
+        "S34",
+        "S37",
+        "S38"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.88793849817915,
+          "quality_min": 0.8783721199490564,
+          "quality_max": 0.9047361948468761,
+          "time_ratio_mean": 1234.9807714215144,
+          "time_ratio_min": 493.4449564327046,
+          "time_ratio_max": 1652.1879596996278,
+          "support_count": 0,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.9690172857714799,
+          "quality_min": 0.9620238508741461,
+          "quality_max": 0.9815831308677525,
+          "time_ratio_mean": 1049.5615083210441,
+          "time_ratio_min": 890.624343102664,
+          "time_ratio_max": 1232.9705771914714,
+          "support_count": 3,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 1.0026223912663563,
+          "quality_min": 0.9944714599976844,
+          "quality_max": 1.0161672515672335,
+          "time_ratio_mean": 5.133141566423189,
+          "time_ratio_min": 3.907222576783299,
+          "time_ratio_max": 6.487192855131473,
+          "support_count": 3,
+          "planned": 3
+        }
+      }
+    },
+    {
+      "axis": "n",
+      "level": 16384,
+      "n": 16384,
+      "conditions": [
+        "S39",
+        "S56",
+        "S57"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.8793848067224241,
+          "quality_min": 0.8756687879643507,
+          "quality_max": 0.8815141692839534,
+          "time_ratio_mean": 20606.884703384483,
+          "time_ratio_min": 14467.5524547474,
+          "time_ratio_max": 29871.10127428686,
+          "support_count": 0,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.9472237872517743,
+          "quality_min": 0.9448221083664883,
+          "quality_max": 0.9495160110915634,
+          "time_ratio_mean": 8607.74783171759,
+          "time_ratio_min": 6146.487223021536,
+          "time_ratio_max": 11356.92374004368,
+          "support_count": 0,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 0.9779295713665194,
+          "quality_min": 0.9766946851719119,
+          "quality_max": 0.9801213613074964,
+          "time_ratio_mean": 12.375091849536194,
+          "time_ratio_min": 8.350071466545891,
+          "time_ratio_max": 15.245663083655845,
+          "support_count": 3,
+          "planned": 3
+        }
+      }
+    }
+  ],
+  "rows": [
+    {
+      "id": "S01",
+      "scenario_id": "reg_s0_base",
+      "family": "controlled_regular",
+      "axis": "base",
+      "level": null,
+      "seed": 0,
+      "n": 256,
+      "m": 256,
+      "nnz": 1024,
+      "r": 4,
+      "Delta": 4,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 2273.5,
+      "SCIP_gap": 0.036235186873290796,
+      "methods": {
+        "Streaming": {
+          "objective": 1911,
+          "total_seconds": 0.0006081,
+          "quality_to_scip": 0.8710118505013673,
+          "time_ratio_to_scip": 48.69347142324874,
+          "quality_to_valid_upper_bound": 0.8405542115680669,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 2136,
+          "total_seconds": 0.0015356999938376248,
+          "quality_to_scip": 0.9735642661804923,
+          "time_ratio_to_scip": 19.28143523559093,
+          "quality_to_valid_upper_bound": 0.9395205630085771,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 2242,
+          "total_seconds": 0.030203100002836436,
+          "quality_to_scip": 1.0218778486782134,
+          "time_ratio_to_scip": 0.9803794964654877,
+          "quality_to_valid_upper_bound": 0.9861447107983285,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 2194,
+          "total_seconds": 0.029610499972477555,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9650318891576863,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S02",
+      "scenario_id": "reg_s0_degree16",
+      "family": "controlled_regular",
+      "axis": "degree",
+      "level": 16,
+      "seed": 0,
+      "n": 256,
+      "m": 64,
+      "nnz": 1024,
+      "r": 4,
+      "Delta": 16,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 891.5411312131934,
+      "SCIP_gap": 0.03307199445329473,
+      "methods": {
+        "Streaming": {
+          "objective": 673,
+          "total_seconds": 0.0004928,
+          "quality_to_scip": 0.779837775202781,
+          "time_ratio_to_scip": 552.6134334234354,
+          "quality_to_valid_upper_bound": 0.7548726317137983,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 725,
+          "total_seconds": 0.0013874999713152647,
+          "quality_to_scip": 0.8400926998841252,
+          "time_ratio_to_scip": 196.27236441159627,
+          "quality_to_valid_upper_bound": 0.8131986002860383,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 831,
+          "total_seconds": 0.039852900023106486,
+          "quality_to_scip": 0.9629200463499421,
+          "time_ratio_to_scip": 6.833327056078097,
+          "quality_to_valid_upper_bound": 0.9320938439140659,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 863,
+          "total_seconds": 0.272327899991069,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9679867476508289,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S03",
+      "scenario_id": "reg_s0_degree32",
+      "family": "controlled_regular",
+      "axis": "degree",
+      "level": 32,
+      "seed": 0,
+      "n": 256,
+      "m": 32,
+      "nnz": 1024,
+      "r": 4,
+      "Delta": 32,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 541.4667917207514,
+      "SCIP_gap": 0.010199238284983985,
+      "methods": {
+        "Streaming": {
+          "objective": 355,
+          "total_seconds": 0.0003896,
+          "quality_to_scip": 0.6623134328358209,
+          "time_ratio_to_scip": 731.0921457575565,
+          "quality_to_valid_upper_bound": 0.6556265415129702,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 476,
+          "total_seconds": 0.0016365000046789646,
+          "quality_to_scip": 0.8880597014925373,
+          "time_ratio_to_scip": 174.0504119601395,
+          "quality_to_valid_upper_bound": 0.8790936162258417,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 510,
+          "total_seconds": 0.04281379998428747,
+          "quality_to_scip": 0.9514925373134329,
+          "time_ratio_to_scip": 6.652843244273505,
+          "quality_to_valid_upper_bound": 0.9418860173848304,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 536,
+          "total_seconds": 0.284833499987144,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9899037359181747,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S04",
+      "scenario_id": "reg_s0_degree8",
+      "family": "controlled_regular",
+      "axis": "degree",
+      "level": 8,
+      "seed": 0,
+      "n": 256,
+      "m": 128,
+      "nnz": 1024,
+      "r": 4,
+      "Delta": 8,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 1354.1353325010905,
+      "SCIP_gap": 0.03527166093355578,
+      "methods": {
+        "Streaming": {
+          "objective": 933,
+          "total_seconds": 0.0004738,
+          "quality_to_scip": 0.713302752293578,
+          "time_ratio_to_scip": 589.2268890623474,
+          "quality_to_valid_upper_bound": 0.6890005582209773,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 1267,
+          "total_seconds": 0.002039999992121011,
+          "quality_to_scip": 0.9686544342507645,
+          "time_ratio_to_scip": 136.8508338803855,
+          "quality_to_valid_upper_bound": 0.9356524193633207,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 1267,
+          "total_seconds": 0.020313700020778924,
+          "quality_to_scip": 0.9686544342507645,
+          "time_ratio_to_scip": 13.743222542036694,
+          "quality_to_valid_upper_bound": 0.9356524193633207,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 1308,
+          "total_seconds": 0.27917570003774017,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9659300430364826,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S05",
+      "scenario_id": "reg_s0_rank16",
+      "family": "controlled_regular",
+      "axis": "rank",
+      "level": 16,
+      "seed": 0,
+      "n": 256,
+      "m": 1024,
+      "nnz": 4096,
+      "r": 16,
+      "Delta": 4,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 1170.2881355932204,
+      "SCIP_gap": 0.03291097581043286,
+      "methods": {
+        "Streaming": {
+          "objective": 886,
+          "total_seconds": 0.0009418,
+          "quality_to_scip": 0.7819947043248014,
+          "time_ratio_to_scip": 11119.618496489624,
+          "quality_to_valid_upper_bound": 0.757078511738381,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 987,
+          "total_seconds": 0.002740299969445914,
+          "quality_to_scip": 0.8711385701676964,
+          "time_ratio_to_scip": 3821.6461032590705,
+          "quality_to_valid_upper_bound": 0.8433820441148782,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 1054,
+          "total_seconds": 0.04219290002947673,
+          "quality_to_scip": 0.9302736098852604,
+          "time_ratio_to_scip": 248.20424035033565,
+          "quality_to_valid_upper_bound": 0.9006329022260199,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 1133,
+          "total_seconds": 10.472456699993927,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9681376453719929,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S06",
+      "scenario_id": "reg_s0_rank32",
+      "family": "controlled_regular",
+      "axis": "rank",
+      "level": 32,
+      "seed": 0,
+      "n": 256,
+      "m": 2048,
+      "nnz": 8192,
+      "r": 32,
+      "Delta": 4,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 765.1299016727387,
+      "SCIP_gap": 0.039578670751003665,
+      "methods": {
+        "Streaming": {
+          "objective": 562,
+          "total_seconds": 0.0015622,
+          "quality_to_scip": 0.7635869565217391,
+          "time_ratio_to_scip": 18003.04538471203,
+          "quality_to_valid_upper_bound": 0.7345157976068469,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 667,
+          "total_seconds": 0.0033795999479480088,
+          "quality_to_scip": 0.90625,
+          "time_ratio_to_scip": 8321.800785052501,
+          "quality_to_valid_upper_bound": 0.8717473968038556,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 667,
+          "total_seconds": 0.05987619998631999,
+          "quality_to_scip": 0.90625,
+          "time_ratio_to_scip": 469.7084568897617,
+          "quality_to_valid_upper_bound": 0.8717473968038556,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 736,
+          "total_seconds": 28.12435749999713,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9619281619904614,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S07",
+      "scenario_id": "reg_s0_rank8",
+      "family": "controlled_regular",
+      "axis": "rank",
+      "level": 8,
+      "seed": 0,
+      "n": 256,
+      "m": 512,
+      "nnz": 2048,
+      "r": 8,
+      "Delta": 4,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 1611.2882266731804,
+      "SCIP_gap": 0.04629105628128595,
+      "methods": {
+        "Streaming": {
+          "objective": 1295,
+          "total_seconds": 0.0009556,
+          "quality_to_scip": 0.8409090909090909,
+          "time_ratio_to_scip": 6163.425491842086,
+          "quality_to_valid_upper_bound": 0.803704749133419,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 1297,
+          "total_seconds": 0.0017676999559625983,
+          "quality_to_scip": 0.8422077922077922,
+          "time_ratio_to_scip": 3331.882981689069,
+          "quality_to_valid_upper_bound": 0.8049459919892236,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 1549,
+          "total_seconds": 0.03541479998966679,
+          "quality_to_scip": 1.0058441558441558,
+          "time_ratio_to_scip": 166.30813675985166,
+          "quality_to_valid_upper_bound": 0.9613425918205916,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 1540,
+          "total_seconds": 5.8897694000042975,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9557569989694713,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S08",
+      "scenario_id": "reg_s0_spread1",
+      "family": "controlled_regular",
+      "axis": "spread",
+      "level": 1,
+      "seed": 0,
+      "n": 256,
+      "m": 256,
+      "nnz": 1024,
+      "r": 4,
+      "Delta": 4,
+      "weight_ratio": 1.0,
+      "SCIP_upper_bound": 59.849641130063,
+      "SCIP_gap": 0.04999370403619296,
+      "methods": {
+        "Streaming": {
+          "objective": 44,
+          "total_seconds": 0.0004343,
+          "quality_to_scip": 0.7719298245614035,
+          "time_ratio_to_scip": 1193702.715404163,
+          "quality_to_valid_upper_bound": 0.7351756697150589,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 43,
+          "total_seconds": 0.0018856999813579023,
+          "quality_to_scip": 0.7543859649122807,
+          "time_ratio_to_scip": 274924.4813200388,
+          "quality_to_valid_upper_bound": 0.7184671317669894,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 55,
+          "total_seconds": 0.04412469995440915,
+          "quality_to_scip": 0.9649122807017544,
+          "time_ratio_to_scip": 11749.090415021044,
+          "quality_to_valid_upper_bound": 0.9189695871438236,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 57,
+          "total_seconds": 518.425089300028,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9523866630399627,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S09",
+      "scenario_id": "reg_s0_spread10",
+      "family": "controlled_regular",
+      "axis": "spread",
+      "level": 10,
+      "seed": 0,
+      "n": 256,
+      "m": 256,
+      "nnz": 1024,
+      "r": 4,
+      "Delta": 4,
+      "weight_ratio": 10.0,
+      "SCIP_upper_bound": 312.94385230372313,
+      "SCIP_gap": 0.03968057243761838,
+      "methods": {
+        "Streaming": {
+          "objective": 245,
+          "total_seconds": 0.0004889,
+          "quality_to_scip": 0.813953488372093,
+          "time_ratio_to_scip": 2617.292493281935,
+          "quality_to_valid_upper_bound": 0.7828880426838319,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 283,
+          "total_seconds": 0.0014213999966159463,
+          "quality_to_scip": 0.9401993355481728,
+          "time_ratio_to_scip": 900.2351927761238,
+          "quality_to_valid_upper_bound": 0.9043155758347936,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 297,
+          "total_seconds": 0.027980700018815696,
+          "quality_to_scip": 0.9867109634551495,
+          "time_ratio_to_scip": 45.73131834103763,
+          "quality_to_valid_upper_bound": 0.9490520354167269,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 301,
+          "total_seconds": 1.279594299965538,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.961833881011565,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S10",
+      "scenario_id": "reg_s0_spread1000",
+      "family": "controlled_regular",
+      "axis": "spread",
+      "level": 1000,
+      "seed": 0,
+      "n": 256,
+      "m": 256,
+      "nnz": 1024,
+      "r": 4,
+      "Delta": 4,
+      "weight_ratio": 1000.0,
+      "SCIP_upper_bound": 18298.0,
+      "SCIP_gap": 0.04877629391872528,
+      "methods": {
+        "Streaming": {
+          "objective": 17057,
+          "total_seconds": 0.000441,
+          "quality_to_scip": 0.9776465868057546,
+          "time_ratio_to_scip": 51.37868481107445,
+          "quality_to_valid_upper_bound": 0.9321783801508362,
+          "supports_predefined_tradeoff": true,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 17504,
+          "total_seconds": 0.0014285999932326376,
+          "quality_to_scip": 1.003267037313005,
+          "time_ratio_to_scip": 15.860282870653865,
+          "quality_to_valid_upper_bound": 0.9566072794840966,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 17524,
+          "total_seconds": 0.01916440000059083,
+          "quality_to_scip": 1.0044133661947612,
+          "time_ratio_to_scip": 1.1822963411839293,
+          "quality_to_valid_upper_bound": 0.9577002951142202,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 17447,
+          "total_seconds": 0.02265800000168383,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9534921849382446,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S11",
+      "scenario_id": "reg_s1_base",
+      "family": "controlled_regular",
+      "axis": "base",
+      "level": null,
+      "seed": 1,
+      "n": 256,
+      "m": 256,
+      "nnz": 1024,
+      "r": 4,
+      "Delta": 4,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 2209.5,
+      "SCIP_gap": 0.019142066420664208,
+      "methods": {
+        "Streaming": {
+          "objective": 1900,
+          "total_seconds": 0.0004193,
+          "quality_to_scip": 0.8763837638376384,
+          "time_ratio_to_scip": 54.20510377379517,
+          "quality_to_valid_upper_bound": 0.8599230595157276,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 2059,
+          "total_seconds": 0.0014740999904461205,
+          "quality_to_scip": 0.9497232472324724,
+          "time_ratio_to_scip": 15.418357071879413,
+          "quality_to_valid_upper_bound": 0.9318850418646752,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 2198,
+          "total_seconds": 0.038256000028923154,
+          "quality_to_scip": 1.0138376383763839,
+          "time_ratio_to_scip": 0.594108113633648,
+          "quality_to_valid_upper_bound": 0.99479520253451,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 2168,
+          "total_seconds": 0.022728200012352318,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9812174700158407,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S12",
+      "scenario_id": "reg_s1_degree16",
+      "family": "controlled_regular",
+      "axis": "degree",
+      "level": 16,
+      "seed": 1,
+      "n": 256,
+      "m": 64,
+      "nnz": 1024,
+      "r": 4,
+      "Delta": 16,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 873.8305084745763,
+      "SCIP_gap": 0.049016216656153994,
+      "methods": {
+        "Streaming": {
+          "objective": 638,
+          "total_seconds": 0.000421,
+          "quality_to_scip": 0.765906362545018,
+          "time_ratio_to_scip": 5344.352256445847,
+          "quality_to_valid_upper_bound": 0.7301187058732252,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 803,
+          "total_seconds": 0.00302990002091974,
+          "quality_to_scip": 0.963985594237695,
+          "time_ratio_to_scip": 742.5896182807749,
+          "quality_to_valid_upper_bound": 0.9189425091163007,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 833,
+          "total_seconds": 0.030003299994859844,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 74.99082768725994,
+          "quality_to_valid_upper_bound": 0.9532741097059508,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 833,
+          "total_seconds": 2.2499722999637015,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9532741097059508,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S13",
+      "scenario_id": "reg_s1_degree32",
+      "family": "controlled_regular",
+      "axis": "degree",
+      "level": 32,
+      "seed": 1,
+      "n": 256,
+      "m": 32,
+      "nnz": 1024,
+      "r": 4,
+      "Delta": 32,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 545.8333333333334,
+      "SCIP_gap": 0.03573687539531949,
+      "methods": {
+        "Streaming": {
+          "objective": 385,
+          "total_seconds": 0.0003826,
+          "quality_to_scip": 0.7305502846299811,
+          "time_ratio_to_scip": 198.9592263383535,
+          "quality_to_valid_upper_bound": 0.7053435114503817,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 502,
+          "total_seconds": 0.0013898999895900488,
+          "quality_to_scip": 0.952561669829222,
+          "time_ratio_to_scip": 54.76782543145869,
+          "quality_to_valid_upper_bound": 0.9196946564885495,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 502,
+          "total_seconds": 0.04198229999747127,
+          "quality_to_scip": 0.952561669829222,
+          "time_ratio_to_scip": 1.8131879387656011,
+          "quality_to_valid_upper_bound": 0.9196946564885495,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 527,
+          "total_seconds": 0.07612179999705404,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9654961832061068,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S14",
+      "scenario_id": "reg_s1_degree8",
+      "family": "controlled_regular",
+      "axis": "degree",
+      "level": 8,
+      "seed": 1,
+      "n": 256,
+      "m": 128,
+      "nnz": 1024,
+      "r": 4,
+      "Delta": 8,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 1424.6230890741347,
+      "SCIP_gap": 0.008939864783381655,
+      "methods": {
+        "Streaming": {
+          "objective": 1234,
+          "total_seconds": 0.0004155,
+          "quality_to_scip": 0.8739376770538244,
+          "time_ratio_to_scip": 306.2912152864926,
+          "quality_to_valid_upper_bound": 0.8661940196420508,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 1302,
+          "total_seconds": 0.0015478000277653337,
+          "quality_to_scip": 0.9220963172804533,
+          "time_ratio_to_scip": 82.22250786186997,
+          "quality_to_valid_upper_bound": 0.9139259429286467,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 1417,
+          "total_seconds": 0.03068259998690337,
+          "quality_to_scip": 1.003541076487252,
+          "time_ratio_to_scip": 4.147758012875681,
+          "quality_to_valid_upper_bound": 0.9946490484868605,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 1412,
+          "total_seconds": 0.1272639999515377,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9911393482451991,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S15",
+      "scenario_id": "reg_s1_rank16",
+      "family": "controlled_regular",
+      "axis": "rank",
+      "level": 16,
+      "seed": 1,
+      "n": 256,
+      "m": 1024,
+      "nnz": 4096,
+      "r": 16,
+      "Delta": 4,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 1174.837445953471,
+      "SCIP_gap": 0.04060004070280862,
+      "methods": {
+        "Streaming": {
+          "objective": 796,
+          "total_seconds": 0.0010402,
+          "quality_to_scip": 0.7050487156775908,
+          "time_ratio_to_scip": 10605.773024445078,
+          "quality_to_valid_upper_bound": 0.6775405420908973,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 1031,
+          "total_seconds": 0.0023791000130586326,
+          "quality_to_scip": 0.9131975199291408,
+          "time_ratio_to_scip": 4637.100180519348,
+          "quality_to_valid_upper_bound": 0.8775682146931095,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 1104,
+          "total_seconds": 0.04939089994877577,
+          "quality_to_scip": 0.9778565101860053,
+          "time_ratio_to_scip": 223.3635165884686,
+          "quality_to_valid_upper_bound": 0.9397044704376265,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 1129,
+          "total_seconds": 11.03212510002777,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9609840100761596,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S16",
+      "scenario_id": "reg_s1_rank32",
+      "family": "controlled_regular",
+      "axis": "rank",
+      "level": 32,
+      "seed": 1,
+      "n": 256,
+      "m": 2048,
+      "nnz": 8192,
+      "r": 32,
+      "Delta": 4,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 860.1795348671784,
+      "SCIP_gap": 0.043907202508710934,
+      "methods": {
+        "Streaming": {
+          "objective": 619,
+          "total_seconds": 0.0022851,
+          "quality_to_scip": 0.7512135922330098,
+          "time_ratio_to_scip": 7381.8863507036285,
+          "quality_to_valid_upper_bound": 0.7196172135106431,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 640,
+          "total_seconds": 0.0036306999973021448,
+          "quality_to_scip": 0.7766990291262136,
+          "time_ratio_to_scip": 4646.032035840798,
+          "quality_to_valid_upper_bound": 0.7440307215618928,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 709,
+          "total_seconds": 0.09256269998149946,
+          "quality_to_scip": 0.8604368932038835,
+          "time_ratio_to_scip": 182.23699722852018,
+          "quality_to_valid_upper_bound": 0.8242465337302842,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 824,
+          "total_seconds": 16.868348499992862,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9579395540109369,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S17",
+      "scenario_id": "reg_s1_rank8",
+      "family": "controlled_regular",
+      "axis": "rank",
+      "level": 8,
+      "seed": 1,
+      "n": 256,
+      "m": 512,
+      "nnz": 2048,
+      "r": 8,
+      "Delta": 4,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 1736.974110157867,
+      "SCIP_gap": 0.04953118438541872,
+      "methods": {
+        "Streaming": {
+          "objective": 1368,
+          "total_seconds": 0.0012424,
+          "quality_to_scip": 0.8265861027190332,
+          "time_ratio_to_scip": 334.482292337487,
+          "quality_to_valid_upper_bound": 0.7875765056024167,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 1444,
+          "total_seconds": 0.0017472000326961279,
+          "quality_to_scip": 0.8725075528700906,
+          "time_ratio_to_scip": 237.84386001804063,
+          "quality_to_valid_upper_bound": 0.831330755913662,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 1608,
+          "total_seconds": 0.05945200001588091,
+          "quality_to_scip": 0.9716012084592145,
+          "time_ratio_to_scip": 6.989853997999876,
+          "quality_to_valid_upper_bound": 0.9257478223747704,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 1655,
+          "total_seconds": 0.4155608000000939,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9528063719093564,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S18",
+      "scenario_id": "reg_s1_spread1",
+      "family": "controlled_regular",
+      "axis": "spread",
+      "level": 1,
+      "seed": 1,
+      "n": 256,
+      "m": 256,
+      "nnz": 1024,
+      "r": 4,
+      "Delta": 4,
+      "weight_ratio": 1.0,
+      "SCIP_upper_bound": 58.799930316383886,
+      "SCIP_gap": 0.04999875564971225,
+      "methods": {
+        "Streaming": {
+          "objective": 43,
+          "total_seconds": 0.0004546,
+          "quality_to_scip": 0.7678571428571429,
+          "time_ratio_to_scip": 6959098.366036181,
+          "quality_to_valid_upper_bound": 0.7312933836593097,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 44,
+          "total_seconds": 0.001434899982996285,
+          "quality_to_scip": 0.7857142857142857,
+          "time_ratio_to_scip": 2204757.233736924,
+          "quality_to_valid_upper_bound": 0.7483002065351076,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 55,
+          "total_seconds": 0.07596500002546236,
+          "quality_to_scip": 0.9821428571428571,
+          "time_ratio_to_scip": 41645.57514828742,
+          "quality_to_valid_upper_bound": 0.9353752581688846,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 56,
+          "total_seconds": 3163.606117200048,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9523820810446825,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S19",
+      "scenario_id": "reg_s1_spread10",
+      "family": "controlled_regular",
+      "axis": "spread",
+      "level": 10,
+      "seed": 1,
+      "n": 256,
+      "m": 256,
+      "nnz": 1024,
+      "r": 4,
+      "Delta": 4,
+      "weight_ratio": 10.0,
+      "SCIP_upper_bound": 304.2338201577817,
+      "SCIP_gap": 0.04908213847510924,
+      "methods": {
+        "Streaming": {
+          "objective": 246,
+          "total_seconds": 0.0007101,
+          "quality_to_scip": 0.8482758620689655,
+          "time_ratio_to_scip": 3979.0609773836527,
+          "quality_to_valid_upper_bound": 0.8085886042269053,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 257,
+          "total_seconds": 0.0023453999892808497,
+          "quality_to_scip": 0.8862068965517241,
+          "time_ratio_to_scip": 1204.7118670391487,
+          "quality_to_valid_upper_bound": 0.8447450052289214,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 294,
+          "total_seconds": 0.09145250002620742,
+          "quality_to_scip": 1.013793103448276,
+          "time_ratio_to_scip": 30.896161386844792,
+          "quality_to_valid_upper_bound": 0.9663619904175209,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 290,
+          "total_seconds": 2.825531200040132,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9532142082349696,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S20",
+      "scenario_id": "reg_s1_spread1000",
+      "family": "controlled_regular",
+      "axis": "spread",
+      "level": 1000,
+      "seed": 1,
+      "n": 256,
+      "m": 256,
+      "nnz": 1024,
+      "r": 4,
+      "Delta": 4,
+      "weight_ratio": 1000.0,
+      "SCIP_upper_bound": 17980.0,
+      "SCIP_gap": 0.0,
+      "methods": {
+        "Streaming": {
+          "objective": 16094,
+          "total_seconds": 0.0004586,
+          "quality_to_scip": 0.8951056729699667,
+          "time_ratio_to_scip": 43.29350199716916,
+          "quality_to_valid_upper_bound": 0.8951056729699667,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 17062,
+          "total_seconds": 0.001476000004913658,
+          "quality_to_scip": 0.9489432703003337,
+          "time_ratio_to_scip": 13.451490480898206,
+          "quality_to_valid_upper_bound": 0.9489432703003337,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 17980,
+          "total_seconds": 0.02903639996657148,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 0.6837762270377664,
+          "quality_to_valid_upper_bound": 1.0,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 17980,
+          "total_seconds": 0.019854400015901774,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 1.0,
+          "supports_predefined_tradeoff": false,
+          "status": "optimal"
+        }
+      }
+    },
+    {
+      "id": "S21",
+      "scenario_id": "reg_s2_base",
+      "family": "controlled_regular",
+      "axis": "base",
+      "level": null,
+      "seed": 2,
+      "n": 256,
+      "m": 256,
+      "nnz": 1024,
+      "r": 4,
+      "Delta": 4,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 2155.3168358714047,
+      "SCIP_gap": 0.01093660219108995,
+      "methods": {
+        "Streaming": {
+          "objective": 1703,
+          "total_seconds": 0.0004629,
+          "quality_to_scip": 0.7987804878048781,
+          "time_ratio_to_scip": 365.0438539805742,
+          "quality_to_valid_upper_bound": 0.7901390513248921,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 2115,
+          "total_seconds": 0.0017657999997027218,
+          "quality_to_scip": 0.9920262664165104,
+          "time_ratio_to_scip": 95.69532225396756,
+          "quality_to_valid_upper_bound": 0.981294241663034,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 2138,
+          "total_seconds": 0.03562820004299283,
+          "quality_to_scip": 1.0028142589118199,
+          "time_ratio_to_scip": 4.742838532502336,
+          "quality_to_valid_upper_bound": 0.9919655265605516,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 2132,
+          "total_seconds": 0.1689788000076078,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9891817131090253,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S22",
+      "scenario_id": "reg_s2_degree16",
+      "family": "controlled_regular",
+      "axis": "degree",
+      "level": 16,
+      "seed": 2,
+      "n": 256,
+      "m": 64,
+      "nnz": 1024,
+      "r": 4,
+      "Delta": 16,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 918.0576351735963,
+      "SCIP_gap": 0.039702871091275516,
+      "methods": {
+        "Streaming": {
+          "objective": 756,
+          "total_seconds": 0.0007175,
+          "quality_to_scip": 0.8561721404303511,
+          "time_ratio_to_scip": 445.159303125007,
+          "quality_to_valid_upper_bound": 0.8234777110230638,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 799,
+          "total_seconds": 0.0016250999760814011,
+          "quality_to_scip": 0.9048697621744054,
+          "time_ratio_to_scip": 196.54286178894986,
+          "quality_to_valid_upper_bound": 0.8703157289780793,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 880,
+          "total_seconds": 0.030930899956729263,
+          "quality_to_scip": 0.9966024915062288,
+          "time_ratio_to_scip": 10.326301544378573,
+          "quality_to_valid_upper_bound": 0.9585454837305504,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 883,
+          "total_seconds": 0.31940179999219254,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9618132524250863,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S23",
+      "scenario_id": "reg_s2_degree32",
+      "family": "controlled_regular",
+      "axis": "degree",
+      "level": 32,
+      "seed": 2,
+      "n": 256,
+      "m": 32,
+      "nnz": 1024,
+      "r": 4,
+      "Delta": 32,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 541.5609353182497,
+      "SCIP_gap": 0.041463337150480145,
+      "methods": {
+        "Streaming": {
+          "objective": 347,
+          "total_seconds": 0.0004098,
+          "quality_to_scip": 0.6673076923076923,
+          "time_ratio_to_scip": 519.0968765182218,
+          "quality_to_valid_upper_bound": 0.6407404548041941,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 478,
+          "total_seconds": 0.0017998999683186412,
+          "quality_to_scip": 0.9192307692307692,
+          "time_ratio_to_scip": 118.18762361326284,
+          "quality_to_valid_upper_bound": 0.8826338253498696,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 478,
+          "total_seconds": 0.0446834999602288,
+          "quality_to_scip": 0.9192307692307692,
+          "time_ratio_to_scip": 4.760725999228061,
+          "quality_to_valid_upper_bound": 0.8826338253498696,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 520,
+          "total_seconds": 0.2127258999971673,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9601874250668038,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S24",
+      "scenario_id": "reg_s2_degree8",
+      "family": "controlled_regular",
+      "axis": "degree",
+      "level": 8,
+      "seed": 2,
+      "n": 256,
+      "m": 128,
+      "nnz": 1024,
+      "r": 4,
+      "Delta": 8,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 1526.2307692307693,
+      "SCIP_gap": 0.03543471453919235,
+      "methods": {
+        "Streaming": {
+          "objective": 1030,
+          "total_seconds": 0.0005078,
+          "quality_to_scip": 0.6987788331071914,
+          "time_ratio_to_scip": 126.4805041232292,
+          "quality_to_valid_upper_bound": 0.674865178166423,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 1421,
+          "total_seconds": 0.0014581999857909977,
+          "quality_to_scip": 0.9640434192672999,
+          "time_ratio_to_scip": 44.04526170594912,
+          "quality_to_valid_upper_bound": 0.9310518623053273,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 1456,
+          "total_seconds": 0.02410859998781234,
+          "quality_to_scip": 0.9877883310719131,
+          "time_ratio_to_scip": 2.6640617881687225,
+          "quality_to_valid_upper_bound": 0.9539841741847689,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 1474,
+          "total_seconds": 0.06422679999377578,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9657779345799102,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S25",
+      "scenario_id": "reg_s2_rank16",
+      "family": "controlled_regular",
+      "axis": "rank",
+      "level": 16,
+      "seed": 2,
+      "n": 256,
+      "m": 1024,
+      "nnz": 4096,
+      "r": 16,
+      "Delta": 4,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 1236.0568926988315,
+      "SCIP_gap": 0.04750584127019616,
+      "methods": {
+        "Streaming": {
+          "objective": 901,
+          "total_seconds": 0.0009339,
+          "quality_to_scip": 0.7635593220338983,
+          "time_ratio_to_scip": 10824.722132937939,
+          "quality_to_valid_upper_bound": 0.7289308488323207,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 959,
+          "total_seconds": 0.0021719999494962394,
+          "quality_to_scip": 0.8127118644067797,
+          "time_ratio_to_scip": 4654.331599913439,
+          "quality_to_valid_upper_bound": 0.7758542553054335,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 1180,
+          "total_seconds": 0.04614590003620833,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 219.07055647454186,
+          "quality_to_valid_upper_bound": 0.9546486144529839,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 1180,
+          "total_seconds": 10.10920799995074,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9546486144529839,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S26",
+      "scenario_id": "reg_s2_rank32",
+      "family": "controlled_regular",
+      "axis": "rank",
+      "level": 32,
+      "seed": 2,
+      "n": 256,
+      "m": 2048,
+      "nnz": 8192,
+      "r": 32,
+      "Delta": 4,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 830.2984763968249,
+      "SCIP_gap": 0.0470346486719115,
+      "methods": {
+        "Streaming": {
+          "objective": 477,
+          "total_seconds": 0.0017614,
+          "quality_to_scip": 0.6015132408575031,
+          "time_ratio_to_scip": 10153.131826974097,
+          "quality_to_valid_upper_bound": 0.5744922019729531,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 601,
+          "total_seconds": 0.0035878000198863447,
+          "quality_to_scip": 0.7578814627994955,
+          "time_ratio_to_scip": 4984.593985424723,
+          "quality_to_valid_upper_bound": 0.7238360867625678,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 775,
+          "total_seconds": 0.06259880005382001,
+          "quality_to_scip": 0.9773013871374527,
+          "time_ratio_to_scip": 285.6880065537429,
+          "quality_to_valid_upper_bound": 0.9333992799350916,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 793,
+          "total_seconds": 17.883726400032174,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9550782309529389,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S27",
+      "scenario_id": "reg_s2_rank8",
+      "family": "controlled_regular",
+      "axis": "rank",
+      "level": 8,
+      "seed": 2,
+      "n": 256,
+      "m": 512,
+      "nnz": 2048,
+      "r": 8,
+      "Delta": 4,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 1732.1636255622507,
+      "SCIP_gap": 0.04852519707158031,
+      "methods": {
+        "Streaming": {
+          "objective": 1206,
+          "total_seconds": 0.0006343,
+          "quality_to_scip": 0.7300242130750605,
+          "time_ratio_to_scip": 2861.5357086067424,
+          "quality_to_valid_upper_bound": 0.6962390747632395,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 1613,
+          "total_seconds": 0.0017513000057078898,
+          "quality_to_scip": 0.9763922518159807,
+          "time_ratio_to_scip": 1036.4141460934843,
+          "quality_to_valid_upper_bound": 0.9312053296791919,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 1631,
+          "total_seconds": 0.026837399986106902,
+          "quality_to_scip": 0.9872881355932204,
+          "time_ratio_to_scip": 67.63218869595703,
+          "quality_to_valid_upper_bound": 0.9415969576607328,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 1652,
+          "total_seconds": 1.8150720999692567,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9537205236391972,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S28",
+      "scenario_id": "reg_s2_spread1",
+      "family": "controlled_regular",
+      "axis": "spread",
+      "level": 1,
+      "seed": 2,
+      "n": 256,
+      "m": 256,
+      "nnz": 1024,
+      "r": 4,
+      "Delta": 4,
+      "weight_ratio": 1.0,
+      "SCIP_upper_bound": 58.79999975372581,
+      "SCIP_gap": 0.04999999560224655,
+      "methods": {
+        "Streaming": {
+          "objective": 43,
+          "total_seconds": 0.0004597,
+          "quality_to_scip": 0.7678571428571429,
+          "time_ratio_to_scip": 6760957.25734168,
+          "quality_to_valid_upper_bound": 0.7312925200697019,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 42,
+          "total_seconds": 0.0013814999838359654,
+          "quality_to_scip": 0.75,
+          "time_ratio_to_scip": 2249737.3055119812,
+          "quality_to_valid_upper_bound": 0.7142857172773833,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 55,
+          "total_seconds": 0.0298039999906905,
+          "quality_to_scip": 0.9821428571428571,
+          "time_ratio_to_scip": 104281.70890386461,
+          "quality_to_valid_upper_bound": 0.9353741535775257,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 56,
+          "total_seconds": 3108.0120511999703,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9523809563698444,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S29",
+      "scenario_id": "reg_s2_spread10",
+      "family": "controlled_regular",
+      "axis": "spread",
+      "level": 10,
+      "seed": 2,
+      "n": 256,
+      "m": 256,
+      "nnz": 1024,
+      "r": 4,
+      "Delta": 4,
+      "weight_ratio": 10.0,
+      "SCIP_upper_bound": 304.60331210191083,
+      "SCIP_gap": 0.03960174778809157,
+      "methods": {
+        "Streaming": {
+          "objective": 231,
+          "total_seconds": 0.0004484,
+          "quality_to_scip": 0.78839590443686,
+          "time_ratio_to_scip": 4920.376895622198,
+          "quality_to_valid_upper_bound": 0.7583633887825703,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 275,
+          "total_seconds": 0.0016280999989248812,
+          "quality_to_scip": 0.9385665529010239,
+          "time_ratio_to_scip": 1355.1360490473103,
+          "quality_to_valid_upper_bound": 0.9028135580744885,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 294,
+          "total_seconds": 0.023783499957062304,
+          "quality_to_scip": 1.0034129692832765,
+          "time_ratio_to_scip": 92.76586726008141,
+          "quality_to_valid_upper_bound": 0.9651897675414531,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 293,
+          "total_seconds": 2.2062969999969937,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9619068091484549,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S30",
+      "scenario_id": "reg_s2_spread1000",
+      "family": "controlled_regular",
+      "axis": "spread",
+      "level": 1000,
+      "seed": 2,
+      "n": 256,
+      "m": 256,
+      "nnz": 1024,
+      "r": 4,
+      "Delta": 4,
+      "weight_ratio": 1000.0,
+      "SCIP_upper_bound": 17610.0,
+      "SCIP_gap": 0.0,
+      "methods": {
+        "Streaming": {
+          "objective": 14803,
+          "total_seconds": 0.0006458,
+          "quality_to_scip": 0.8406019307211812,
+          "time_ratio_to_scip": 26.618922248248506,
+          "quality_to_valid_upper_bound": 0.8406019307211812,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 17314,
+          "total_seconds": 0.0015014000236988068,
+          "quality_to_scip": 0.983191368540602,
+          "time_ratio_to_scip": 11.449646807363738,
+          "quality_to_valid_upper_bound": 0.983191368540602,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 17610,
+          "total_seconds": 0.021478500042576343,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 0.8003584958839093,
+          "quality_to_valid_upper_bound": 1.0,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 17610,
+          "total_seconds": 0.017190499987918884,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 1.0,
+          "supports_predefined_tradeoff": false,
+          "status": "optimal"
+        }
+      }
+    },
+    {
+      "id": "S31",
+      "scenario_id": "reg_s0_n1024",
+      "family": "controlled_regular",
+      "axis": "n",
+      "level": 1024,
+      "seed": 0,
+      "n": 1024,
+      "m": 1024,
+      "nnz": 4096,
+      "r": 4,
+      "Delta": 4,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 8728.23076923077,
+      "SCIP_gap": 0.005324898552265972,
+      "methods": {
+        "Streaming": {
+          "objective": 7338,
+          "total_seconds": 0.0014492,
+          "quality_to_scip": 0.8451969592259848,
+          "time_ratio_to_scip": 109.32825008068431,
+          "quality_to_valid_upper_bound": 0.8407202094000898,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 8208,
+          "total_seconds": 0.003150200005620718,
+          "quality_to_scip": 0.9454042847270214,
+          "time_ratio_to_scip": 50.294743106544075,
+          "quality_to_valid_upper_bound": 0.9403967673420466,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 8671,
+          "total_seconds": 0.2096105000237003,
+          "quality_to_scip": 0.9987330108269984,
+          "time_ratio_to_scip": 0.7558710083655797,
+          "quality_to_valid_upper_bound": 0.9934430274881684,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 8682,
+          "total_seconds": 0.15843850001692772,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9947033058069746,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S32",
+      "scenario_id": "reg_s1_n1024",
+      "family": "controlled_regular",
+      "axis": "n",
+      "level": 1024,
+      "seed": 1,
+      "n": 1024,
+      "m": 1024,
+      "nnz": 4096,
+      "r": 4,
+      "Delta": 4,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 8585.31862789985,
+      "SCIP_gap": 0.013136491373595606,
+      "methods": {
+        "Streaming": {
+          "objective": 7602,
+          "total_seconds": 0.0017416,
+          "quality_to_scip": 0.8970970025961765,
+          "time_ratio_to_scip": 1030.25660310624,
+          "quality_to_valid_upper_bound": 0.8854650979750078,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 8163,
+          "total_seconds": 0.004412700014654547,
+          "quality_to_scip": 0.9632995043662969,
+          "time_ratio_to_scip": 406.62063906700797,
+          "quality_to_valid_upper_bound": 0.9508092074151525,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 8383,
+          "total_seconds": 0.1771201000083238,
+          "quality_to_scip": 0.9892612697663441,
+          "time_ratio_to_scip": 10.13038554001214,
+          "quality_to_valid_upper_bound": 0.976434348372072,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 8474,
+          "total_seconds": 1.7942948999698274,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9870338384951614,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S33",
+      "scenario_id": "reg_s2_n1024",
+      "family": "controlled_regular",
+      "axis": "n",
+      "level": 1024,
+      "seed": 2,
+      "n": 1024,
+      "m": 1024,
+      "nnz": 4096,
+      "r": 4,
+      "Delta": 4,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 8874.466666666667,
+      "SCIP_gap": 0.049611669623497,
+      "methods": {
+        "Streaming": {
+          "objective": 7881,
+          "total_seconds": 0.0017136,
+          "quality_to_scip": 0.9321111768184506,
+          "time_ratio_to_scip": 96.79394257498382,
+          "quality_to_valid_upper_bound": 0.8880533665872878,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 8436,
+          "total_seconds": 0.004844699986279011,
+          "quality_to_scip": 0.9977528089887641,
+          "time_ratio_to_scip": 34.23660917420117,
+          "quality_to_valid_upper_bound": 0.9505923360652658,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 8679,
+          "total_seconds": 0.26442259998293594,
+          "quality_to_scip": 1.0264931992903608,
+          "time_ratio_to_scip": 0.6272765641333085,
+          "quality_to_valid_upper_bound": 0.9779742632421102,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 8455,
+          "total_seconds": 0.16586609999649227,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9527333097951426,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S34",
+      "scenario_id": "reg_s0_n4096",
+      "family": "controlled_regular",
+      "axis": "n",
+      "level": 4096,
+      "seed": 0,
+      "n": 4096,
+      "m": 4096,
+      "nnz": 16384,
+      "r": 4,
+      "Delta": 4,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 34923.23314126845,
+      "SCIP_gap": 0.01885325849019607,
+      "methods": {
+        "Streaming": {
+          "objective": 30188,
+          "total_seconds": 0.0220925,
+          "quality_to_scip": 0.8807071797415177,
+          "time_ratio_to_scip": 493.4449564327046,
+          "quality_to_valid_upper_bound": 0.8644102302294322,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 33024,
+          "total_seconds": 0.008841600036248565,
+          "quality_to_scip": 0.9634448755725413,
+          "time_ratio_to_scip": 1232.9705771914714,
+          "quality_to_valid_upper_bound": 0.9456169154331778,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 34182,
+          "total_seconds": 2.7900721000041813,
+          "quality_to_scip": 0.9972284622341512,
+          "time_ratio_to_scip": 3.907222576783299,
+          "quality_to_valid_upper_bound": 0.9787753574169357,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 34277,
+          "total_seconds": 10.901432699989527,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9814956095658622,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S35",
+      "scenario_id": "sb_LHG_n4096",
+      "family": "public_LHG",
+      "axis": "n",
+      "level": 4096,
+      "seed": 0,
+      "n": 4096,
+      "m": 5808,
+      "nnz": 10962,
+      "r": 269,
+      "Delta": 1507,
+      "weight_ratio": 1.0300438843254192,
+      "SCIP_upper_bound": 7011670.0,
+      "SCIP_gap": 0.0,
+      "methods": {
+        "Streaming": {
+          "objective": 5793839,
+          "total_seconds": 0.0051988,
+          "quality_to_scip": 0.8263137027270251,
+          "time_ratio_to_scip": 15.90009233385489,
+          "quality_to_valid_upper_bound": 0.8263137027270251,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 6965836,
+          "total_seconds": 0.008236399968154728,
+          "quality_to_scip": 0.9934631835211868,
+          "time_ratio_to_scip": 10.036108050221868,
+          "quality_to_valid_upper_bound": 0.9934631835211868,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 7011661,
+          "total_seconds": 6.190381000051275,
+          "quality_to_scip": 0.9999987164256161,
+          "time_ratio_to_scip": 0.013353200719723086,
+          "quality_to_valid_upper_bound": 0.9999987164256161,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 7011670,
+          "total_seconds": 0.0826614000252448,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 1.0,
+          "supports_predefined_tradeoff": false,
+          "status": "optimal"
+        }
+      }
+    },
+    {
+      "id": "S36",
+      "scenario_id": "sb_random100_n4096",
+      "family": "public_random100",
+      "axis": "n",
+      "level": 4096,
+      "seed": 0,
+      "n": 4096,
+      "m": 5808,
+      "nnz": 10962,
+      "r": 269,
+      "Delta": 1507,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 43979.0,
+      "SCIP_gap": 0.0,
+      "methods": {
+        "Streaming": {
+          "objective": 35354,
+          "total_seconds": 0.0051106,
+          "quality_to_scip": 0.8038836717524273,
+          "time_ratio_to_scip": 16.92372715906191,
+          "quality_to_valid_upper_bound": 0.8038836717524273,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 43770,
+          "total_seconds": 0.010787400009576231,
+          "quality_to_scip": 0.9952477318720299,
+          "time_ratio_to_scip": 8.017724376802772,
+          "quality_to_valid_upper_bound": 0.9952477318720299,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 43957,
+          "total_seconds": 18.94370639999397,
+          "quality_to_scip": 0.9994997612496873,
+          "time_ratio_to_scip": 0.004565653531197534,
+          "quality_to_valid_upper_bound": 0.9994997612496873,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 43979,
+          "total_seconds": 0.0864904000191018,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 1.0,
+          "supports_predefined_tradeoff": false,
+          "status": "optimal"
+        }
+      }
+    },
+    {
+      "id": "S37",
+      "scenario_id": "reg_s1_n4096",
+      "family": "controlled_regular",
+      "axis": "n",
+      "level": 4096,
+      "seed": 1,
+      "n": 4096,
+      "m": 4096,
+      "nnz": 16384,
+      "r": 4,
+      "Delta": 4,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 34934.6010372647,
+      "SCIP_gap": 0.0478598949358019,
+      "methods": {
+        "Streaming": {
+          "objective": 30163,
+          "total_seconds": 0.0064716,
+          "quality_to_scip": 0.9047361948468761,
+          "time_ratio_to_scip": 1652.1879596996278,
+          "quality_to_valid_upper_bound": 0.8634133238798165,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 32725,
+          "total_seconds": 0.010430599970277399,
+          "quality_to_scip": 0.9815831308677525,
+          "time_ratio_to_scip": 1025.089604668997,
+          "quality_to_valid_upper_bound": 0.9367503571914927,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 33878,
+          "total_seconds": 1.648216700006742,
+          "quality_to_scip": 1.0161672515672335,
+          "time_ratio_to_scip": 6.487192855131473,
+          "quality_to_valid_upper_bound": 0.9697548846732893,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 33339,
+          "total_seconds": 10.692299599992111,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9543260552607234,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S38",
+      "scenario_id": "reg_s2_n4096",
+      "family": "controlled_regular",
+      "axis": "n",
+      "level": 4096,
+      "seed": 2,
+      "n": 4096,
+      "m": 4096,
+      "nnz": 16384,
+      "r": 4,
+      "Delta": 4,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 34961.24507661261,
+      "SCIP_gap": 0.011961476108967611,
+      "methods": {
+        "Streaming": {
+          "objective": 30346,
+          "total_seconds": 0.0061193,
+          "quality_to_scip": 0.8783721199490564,
+          "time_ratio_to_scip": 1559.3093981322106,
+          "quality_to_valid_upper_bound": 0.867989682103742,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 33236,
+          "total_seconds": 0.010713699972257018,
+          "quality_to_scip": 0.9620238508741461,
+          "time_ratio_to_scip": 890.624343102664,
+          "quality_to_valid_upper_bound": 0.9506526420088306,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 34357,
+          "total_seconds": 1.9064664000179619,
+          "quality_to_scip": 0.9944714599976844,
+          "time_ratio_to_scip": 5.005009267354797,
+          "quality_to_valid_upper_bound": 0.9827167174599046,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 34548,
+          "total_seconds": 9.541881999990437,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9881799096197219,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S39",
+      "scenario_id": "reg_s0_n16384",
+      "family": "controlled_regular",
+      "axis": "n",
+      "level": 16384,
+      "seed": 0,
+      "n": 16384,
+      "m": 16384,
+      "nnz": 65536,
+      "r": 4,
+      "Delta": 4,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 140585.03528243912,
+      "SCIP_gap": 0.005989604734515812,
+      "methods": {
+        "Streaming": {
+          "objective": 123114,
+          "total_seconds": 0.0267278,
+          "quality_to_scip": 0.8809714629189684,
+          "time_ratio_to_scip": 14467.5524547474,
+          "quality_to_valid_upper_bound": 0.8757262090709773,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 132037,
+          "total_seconds": 0.0464776000007987,
+          "quality_to_scip": 0.9448221083664883,
+          "time_ratio_to_scip": 8319.832532087554,
+          "quality_to_valid_upper_bound": 0.9391966914169357,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 136970,
+          "total_seconds": 46.309286100033205,
+          "quality_to_scip": 0.9801213613074964,
+          "time_ratio_to_scip": 8.350071466545891,
+          "quality_to_valid_upper_bound": 0.9742857746190666,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 139748,
+          "total_seconds": 386.6858484999975,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9940460570304834,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S40",
+      "scenario_id": "sb_LHG_degree_cap128",
+      "family": "public_LHG",
+      "axis": "degree_cap",
+      "level": 128,
+      "seed": 0,
+      "n": 16384,
+      "m": 33966,
+      "nnz": 62561,
+      "r": 8618,
+      "Delta": 128,
+      "weight_ratio": 17.014869888475836,
+      "SCIP_upper_bound": 57592431.15625,
+      "SCIP_gap": 0.03755175570793317,
+      "methods": {
+        "Streaming": {
+          "objective": 46232681,
+          "total_seconds": 0.0253901,
+          "quality_to_scip": 0.8329011014050441,
+          "time_ratio_to_scip": 36.405937749274024,
+          "quality_to_valid_upper_bound": 0.802756196809427,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 56477940,
+          "total_seconds": 0.049818100000265986,
+          "quality_to_scip": 1.0174737309975166,
+          "time_ratio_to_scip": 18.554509305712326,
+          "quality_to_valid_upper_bound": 0.9806486523684622,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 57420603,
+          "total_seconds": 28.966534599952865,
+          "quality_to_scip": 1.0344561995451178,
+          "time_ratio_to_scip": 0.03191097633229991,
+          "quality_to_valid_upper_bound": 0.9970164802422765,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 55508008,
+          "total_seconds": 0.9243504000478424,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9638073421385026,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S41",
+      "scenario_id": "sb_LHG_degree_cap32",
+      "family": "public_LHG",
+      "axis": "degree_cap",
+      "level": 32,
+      "seed": 0,
+      "n": 16384,
+      "m": 34038,
+      "nnz": 62561,
+      "r": 8618,
+      "Delta": 32,
+      "weight_ratio": 17.014869888475836,
+      "SCIP_upper_bound": 58214835.15625,
+      "SCIP_gap": 0.041039369859043245,
+      "methods": {
+        "Streaming": {
+          "objective": 46690355,
+          "total_seconds": 0.0280117,
+          "quality_to_scip": 0.8349503630343371,
+          "time_ratio_to_scip": 34.51072944597874,
+          "quality_to_valid_upper_bound": 0.8020353381518985,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 56972240,
+          "total_seconds": 0.05458370002452284,
+          "quality_to_scip": 1.0188183934536241,
+          "time_ratio_to_scip": 17.710492318908592,
+          "quality_to_valid_upper_bound": 0.9786550085916271,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 57978993,
+          "total_seconds": 22.351052000012714,
+          "quality_to_scip": 1.0368218715346091,
+          "time_ratio_to_scip": 0.04325094854691281,
+          "quality_to_valid_upper_bound": 0.9959487619329851,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 55919917,
+          "total_seconds": 0.9667042000219226,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9605784650924393,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S42",
+      "scenario_id": "sb_LHG_n16384",
+      "family": "public_LHG",
+      "axis": "n",
+      "level": 16384,
+      "seed": 0,
+      "n": 16384,
+      "m": 33944,
+      "nnz": 62561,
+      "r": 8618,
+      "Delta": 1507,
+      "weight_ratio": 17.014869888475836,
+      "SCIP_upper_bound": 57372760.15625,
+      "SCIP_gap": 0.00881106963028686,
+      "methods": {
+        "Streaming": {
+          "objective": 46067920,
+          "total_seconds": 0.0271369,
+          "quality_to_scip": 0.8100329760024588,
+          "time_ratio_to_scip": 20.14176637731095,
+          "quality_to_valid_upper_bound": 0.8029580566550713,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 56276562,
+          "total_seconds": 0.05003220000071451,
+          "quality_to_scip": 0.9895361239675438,
+          "time_ratio_to_scip": 10.924666514697408,
+          "quality_to_valid_upper_bound": 0.980893403886015,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 57219187,
+          "total_seconds": 39.32378310000058,
+          "quality_to_scip": 1.0061107236890923,
+          "time_ratio_to_scip": 0.01389960621577229,
+          "quality_to_valid_upper_bound": 0.9973232391847323,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 56871660,
+          "total_seconds": 0.5465851000044495,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9912658872453531,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S43",
+      "scenario_id": "sb_LHG_rank_cap32",
+      "family": "public_LHG",
+      "axis": "rank_cap",
+      "level": 32,
+      "seed": 0,
+      "n": 16384,
+      "m": 22352,
+      "nnz": 46876,
+      "r": 32,
+      "Delta": 1507,
+      "weight_ratio": 17.014869888475836,
+      "SCIP_upper_bound": 57381778.15625,
+      "SCIP_gap": 0.008971748387299722,
+      "methods": {
+        "Streaming": {
+          "objective": 49161174,
+          "total_seconds": 0.0250446,
+          "quality_to_scip": 0.8644248623401993,
+          "time_ratio_to_scip": 18.977092867266222,
+          "quality_to_valid_upper_bound": 0.8567384207950932,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 56395426,
+          "total_seconds": 0.03491390001727268,
+          "quality_to_scip": 0.9916282381024281,
+          "time_ratio_to_scip": 13.612735895686452,
+          "quality_to_valid_upper_bound": 0.9828107077204166,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 57246583,
+          "total_seconds": 59.237226199998986,
+          "quality_to_scip": 1.006594546119297,
+          "time_ratio_to_scip": 0.008023226786799544,
+          "quality_to_valid_upper_bound": 0.9976439357476539,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 56871541,
+          "total_seconds": 0.47527370002353564,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9911080281468339,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S44",
+      "scenario_id": "sb_LHG_rank_cap8",
+      "family": "public_LHG",
+      "axis": "rank_cap",
+      "level": 8,
+      "seed": 0,
+      "n": 16384,
+      "m": 22062,
+      "nnz": 44684,
+      "r": 8,
+      "Delta": 1507,
+      "weight_ratio": 17.014869888475836,
+      "SCIP_upper_bound": 57573576.6875,
+      "SCIP_gap": 0.008056468937506202,
+      "methods": {
+        "Streaming": {
+          "objective": 49201211,
+          "total_seconds": 0.0213477,
+          "quality_to_scip": 0.8614646141808573,
+          "time_ratio_to_scip": 20.51170383806306,
+          "quality_to_valid_upper_bound": 0.8545797192183519,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 56692296,
+          "total_seconds": 0.033373699989169836,
+          "quality_to_scip": 0.9926261144398857,
+          "time_ratio_to_scip": 13.120442149534373,
+          "quality_to_valid_upper_bound": 0.9846929661451563,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 57405861,
+          "total_seconds": 35.141053700004704,
+          "quality_to_scip": 1.005119932883053,
+          "time_ratio_to_scip": 0.012460573998774548,
+          "quality_to_valid_upper_bound": 0.9970869329795101,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 57113444,
+          "total_seconds": 0.43787770002381876,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9920079190146979,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S45",
+      "scenario_id": "sb_LHG_scale_control10",
+      "family": "public_LHG",
+      "axis": "scale_control",
+      "level": 10,
+      "seed": 0,
+      "n": 16384,
+      "m": 33944,
+      "nnz": 62561,
+      "r": 8618,
+      "Delta": 1507,
+      "weight_ratio": 17.014869888475836,
+      "SCIP_upper_bound": 573727601.5625,
+      "SCIP_gap": 0.00881106963028686,
+      "methods": {
+        "Streaming": {
+          "objective": 460679200,
+          "total_seconds": 0.0270872,
+          "quality_to_scip": 0.8100329760024588,
+          "time_ratio_to_scip": 20.800876427945497,
+          "quality_to_valid_upper_bound": 0.8029580566550713,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 562765620,
+          "total_seconds": 0.050597499997820705,
+          "quality_to_scip": 0.9895361239675438,
+          "time_ratio_to_scip": 11.135678640314506,
+          "quality_to_valid_upper_bound": 0.980893403886015,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 572102470,
+          "total_seconds": 65.09144390001893,
+          "quality_to_scip": 1.0059535276445246,
+          "time_ratio_to_scip": 0.008656091587774433,
+          "quality_to_valid_upper_bound": 0.9971674161081424,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 568716600,
+          "total_seconds": 0.5634374999790452,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9912658872453531,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S46",
+      "scenario_id": "sb_LHG_weight_spread1",
+      "family": "public_LHG",
+      "axis": "weight_spread",
+      "level": 1,
+      "seed": 0,
+      "n": 16384,
+      "m": 33944,
+      "nnz": 62561,
+      "r": 8618,
+      "Delta": 1507,
+      "weight_ratio": 1.0,
+      "SCIP_upper_bound": 6267.760416666667,
+      "SCIP_gap": 0.007192739300444636,
+      "methods": {
+        "Streaming": {
+          "objective": 4952,
+          "total_seconds": 0.0307251,
+          "quality_to_scip": 0.7957576731479994,
+          "time_ratio_to_scip": 19.053239858032512,
+          "quality_to_valid_upper_bound": 0.7900748705761128,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 6122,
+          "total_seconds": 0.049108499952126294,
+          "quality_to_scip": 0.9837698859071188,
+          "time_ratio_to_scip": 11.920801908686435,
+          "quality_to_valid_upper_bound": 0.976744417945671,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 6234,
+          "total_seconds": 19.04748530004872,
+          "quality_to_scip": 1.0017676361883336,
+          "time_ratio_to_scip": 0.030734382557078936,
+          "quality_to_valid_upper_bound": 0.9946136395742099,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 6223,
+          "total_seconds": 0.5854126999620348,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9928586267356927,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S47",
+      "scenario_id": "sb_LHG_weight_spread1000",
+      "family": "public_LHG",
+      "axis": "weight_spread",
+      "level": 1000,
+      "seed": 0,
+      "n": 16384,
+      "m": 33944,
+      "nnz": 62561,
+      "r": 8618,
+      "Delta": 1507,
+      "weight_ratio": 1000.0,
+      "SCIP_upper_bound": 6004692.262820513,
+      "SCIP_gap": 0.006124733827498486,
+      "methods": {
+        "Streaming": {
+          "objective": 5757349,
+          "total_seconds": 0.0283967,
+          "quality_to_scip": 0.9646807824013482,
+          "time_ratio_to_scip": 19.666126697002095,
+          "quality_to_valid_upper_bound": 0.9588083365484027,
+          "supports_predefined_tradeoff": true,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 5895216,
+          "total_seconds": 0.05288019997533411,
+          "quality_to_scip": 0.9877812832442407,
+          "time_ratio_to_scip": 10.560722165144025,
+          "quality_to_valid_upper_bound": 0.981768214251651,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 5996265,
+          "total_seconds": 80.4979002000182,
+          "quality_to_scip": 1.0047126918458167,
+          "time_ratio_to_scip": 0.006937486550445861,
+          "quality_to_valid_upper_bound": 0.998596553753022,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 5968139,
+          "total_seconds": 0.5584530999767594,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.993912550182323,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S48",
+      "scenario_id": "sb_random100_degree_cap128",
+      "family": "public_random100",
+      "axis": "degree_cap",
+      "level": 128,
+      "seed": 0,
+      "n": 16384,
+      "m": 33966,
+      "nnz": 62561,
+      "r": 8618,
+      "Delta": 128,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 390736.5,
+      "SCIP_gap": 0.014963270437637672,
+      "methods": {
+        "Streaming": {
+          "objective": 349454,
+          "total_seconds": 0.031471,
+          "quality_to_scip": 0.9077293129961348,
+          "time_ratio_to_scip": 18.04017667019684,
+          "quality_to_valid_upper_bound": 0.8943469576044214,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 371334,
+          "total_seconds": 0.050975400023162365,
+          "quality_to_scip": 0.9645640247703753,
+          "time_ratio_to_scip": 11.13757615888825,
+          "quality_to_valid_upper_bound": 0.9503437738731857,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 389509,
+          "total_seconds": 90.2773871999816,
+          "quality_to_scip": 1.011774759985038,
+          "time_ratio_to_scip": 0.00628886610032374,
+          "quality_to_valid_upper_bound": 0.9968584967106989,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 384976,
+          "total_seconds": 0.5677423999877647,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9852573281482534,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S49",
+      "scenario_id": "sb_random100_degree_cap32",
+      "family": "public_random100",
+      "axis": "degree_cap",
+      "level": 32,
+      "seed": 0,
+      "n": 16384,
+      "m": 34038,
+      "nnz": 62561,
+      "r": 8618,
+      "Delta": 32,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 396978.0,
+      "SCIP_gap": 0.045019953879687054,
+      "methods": {
+        "Streaming": {
+          "objective": 354300,
+          "total_seconds": 0.0329991,
+          "quality_to_scip": 0.9326727669028841,
+          "time_ratio_to_scip": 26.114821312830042,
+          "quality_to_valid_upper_bound": 0.892492782975379,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 376559,
+          "total_seconds": 0.06554739997955039,
+          "quality_to_scip": 0.991268203308448,
+          "time_ratio_to_scip": 13.147212555388396,
+          "quality_to_valid_upper_bound": 0.9485639002665135,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 394239,
+          "total_seconds": 50.57929419999709,
+          "quality_to_scip": 1.0378097063252218,
+          "time_ratio_to_scip": 0.01703791271931706,
+          "quality_to_valid_upper_bound": 0.9931003733204359,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 379876,
+          "total_seconds": 0.86176559998421,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9569195270266866,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S50",
+      "scenario_id": "sb_random100_n16384",
+      "family": "public_random100",
+      "axis": "n",
+      "level": 16384,
+      "seed": 0,
+      "n": 16384,
+      "m": 33944,
+      "nnz": 62561,
+      "r": 8618,
+      "Delta": 1507,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 388606.5,
+      "SCIP_gap": 0.014890116347396874,
+      "methods": {
+        "Streaming": {
+          "objective": 348012,
+          "total_seconds": 0.0278771,
+          "quality_to_scip": 0.9088729580444236,
+          "time_ratio_to_scip": 19.135989756215842,
+          "quality_to_valid_upper_bound": 0.8955382887316604,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 369231,
+          "total_seconds": 0.05527900002198294,
+          "quality_to_scip": 0.9642887922591765,
+          "time_ratio_to_scip": 9.650245116967815,
+          "quality_to_valid_upper_bound": 0.9501410810164009,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 387628,
+          "total_seconds": 117.08107529999688,
+          "quality_to_scip": 1.0123346521983259,
+          "time_ratio_to_scip": 0.0045562948466789386,
+          "quality_to_valid_upper_bound": 0.9974820287360093,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 382905,
+          "total_seconds": 0.5334559000330046,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9853283462834512,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S51",
+      "scenario_id": "sb_random100_rank_cap32",
+      "family": "public_random100",
+      "axis": "rank_cap",
+      "level": 32,
+      "seed": 0,
+      "n": 16384,
+      "m": 22352,
+      "nnz": 46876,
+      "r": 32,
+      "Delta": 1507,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 388669.5,
+      "SCIP_gap": 0.013300118883744213,
+      "methods": {
+        "Streaming": {
+          "objective": 355847,
+          "total_seconds": 0.0256912,
+          "quality_to_scip": 0.9277285904976432,
+          "time_ratio_to_scip": 17.716151833632814,
+          "quality_to_valid_upper_bound": 0.9155516447778898,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 370852,
+          "total_seconds": 0.03583299997262657,
+          "quality_to_scip": 0.9668481208025695,
+          "time_ratio_to_scip": 12.701956306642577,
+          "quality_to_valid_upper_bound": 0.9541577098280158,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 387448,
+          "total_seconds": 120.61784999998054,
+          "quality_to_scip": 1.0101155466566554,
+          "time_ratio_to_scip": 0.003773481288120297,
+          "quality_to_valid_upper_bound": 0.9968572270270757,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 383568,
+          "total_seconds": 0.45514919998822734,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9868744524589658,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S52",
+      "scenario_id": "sb_random100_rank_cap8",
+      "family": "public_random100",
+      "axis": "rank_cap",
+      "level": 8,
+      "seed": 0,
+      "n": 16384,
+      "m": 22062,
+      "nnz": 44684,
+      "r": 8,
+      "Delta": 1507,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 389518.5,
+      "SCIP_gap": 0.01355286097161146,
+      "methods": {
+        "Streaming": {
+          "objective": 361725,
+          "total_seconds": 0.0264713,
+          "quality_to_scip": 0.9412323384767506,
+          "time_ratio_to_scip": 16.588905721012228,
+          "quality_to_valid_upper_bound": 0.9286465212820444,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 372111,
+          "total_seconds": 0.034947499982081354,
+          "quality_to_scip": 0.9682573963727199,
+          "time_ratio_to_scip": 12.56541670327738,
+          "quality_to_valid_upper_bound": 0.955310209913008,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 388526,
+          "total_seconds": 124.0869010000024,
+          "quality_to_scip": 1.0109703104264787,
+          "time_ratio_to_scip": 0.0035388900558699786,
+          "quality_to_valid_upper_bound": 0.9974519823833784,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 384310,
+          "total_seconds": 0.43912990001263097,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9866283629660723,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S53",
+      "scenario_id": "sb_random100_scale_control10",
+      "family": "public_random100",
+      "axis": "scale_control",
+      "level": 10,
+      "seed": 0,
+      "n": 16384,
+      "m": 33944,
+      "nnz": 62561,
+      "r": 8618,
+      "Delta": 1507,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 3886065.0,
+      "SCIP_gap": 0.014890116347396874,
+      "methods": {
+        "Streaming": {
+          "objective": 3480120,
+          "total_seconds": 0.0303164,
+          "quality_to_scip": 0.9088729580444236,
+          "time_ratio_to_scip": 18.11270797256727,
+          "quality_to_valid_upper_bound": 0.8955382887316604,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 3692310,
+          "total_seconds": 0.24988769995979965,
+          "quality_to_scip": 0.9642887922591765,
+          "time_ratio_to_scip": 2.1974354882928457,
+          "quality_to_valid_upper_bound": 0.9501410810164009,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 3868630,
+          "total_seconds": 95.91164280002704,
+          "quality_to_scip": 1.010336767605542,
+          "time_ratio_to_scip": 0.0057251870987594395,
+          "quality_to_valid_upper_bound": 0.9955134564141361,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 3829050,
+          "total_seconds": 0.5491120999795385,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9853283462834512,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S54",
+      "scenario_id": "sb_random100_weight_spread1",
+      "family": "public_random100",
+      "axis": "weight_spread",
+      "level": 1,
+      "seed": 0,
+      "n": 16384,
+      "m": 33944,
+      "nnz": 62561,
+      "r": 8618,
+      "Delta": 1507,
+      "weight_ratio": 1.0,
+      "SCIP_upper_bound": 6267.760416666667,
+      "SCIP_gap": 0.007192739300444636,
+      "methods": {
+        "Streaming": {
+          "objective": 4952,
+          "total_seconds": 0.0292619,
+          "quality_to_scip": 0.7957576731479994,
+          "time_ratio_to_scip": 19.416063206937057,
+          "quality_to_valid_upper_bound": 0.7900748705761128,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 6122,
+          "total_seconds": 0.05477049999171868,
+          "quality_to_scip": 0.9837698859071188,
+          "time_ratio_to_scip": 10.373301321714722,
+          "quality_to_valid_upper_bound": 0.976744417945671,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 6241,
+          "total_seconds": 23.790016099985223,
+          "quality_to_scip": 1.0028924955809095,
+          "time_ratio_to_scip": 0.023881904811128916,
+          "quality_to_valid_upper_bound": 0.9957304659259936,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 6223,
+          "total_seconds": 0.5681508999550715,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9928586267356927,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S55",
+      "scenario_id": "sb_random100_weight_spread1000",
+      "family": "public_random100",
+      "axis": "weight_spread",
+      "level": 1000,
+      "seed": 0,
+      "n": 16384,
+      "m": 33944,
+      "nnz": 62561,
+      "r": 8618,
+      "Delta": 1507,
+      "weight_ratio": 1000.0,
+      "SCIP_upper_bound": 1489976.0,
+      "SCIP_gap": 0.02176532346936746,
+      "methods": {
+        "Streaming": {
+          "objective": 1359913,
+          "total_seconds": 0.0286969,
+          "quality_to_scip": 0.9325733745611996,
+          "time_ratio_to_scip": 19.955674654501028,
+          "quality_to_valid_upper_bound": 0.9127079899273546,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 1429225,
+          "total_seconds": 0.055857400002423674,
+          "quality_to_scip": 0.980104742919018,
+          "time_ratio_to_scip": 10.252285283022525,
+          "quality_to_valid_upper_bound": 0.9592268600299602,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 1483308,
+          "total_seconds": 45.78121059999103,
+          "quality_to_scip": 1.0171926785563663,
+          "time_ratio_to_scip": 0.012508756157550425,
+          "quality_to_valid_upper_bound": 0.9955247601303645,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 1458237,
+          "total_seconds": 0.5726659999927506,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9786983146037251,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S56",
+      "scenario_id": "reg_s1_n16384",
+      "family": "controlled_regular",
+      "axis": "n",
+      "level": 16384,
+      "seed": 1,
+      "n": 16384,
+      "m": 16384,
+      "nnz": 65536,
+      "r": 4,
+      "Delta": 4,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 139041.62743453088,
+      "SCIP_gap": 0.006650792659664773,
+      "methods": {
+        "Streaming": {
+          "objective": 120950,
+          "total_seconds": 0.0296087,
+          "quality_to_scip": 0.8756687879643507,
+          "time_ratio_to_scip": 29871.10127428686,
+          "quality_to_valid_upper_bound": 0.8698833740057488,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 131150,
+          "total_seconds": 0.1438942999811843,
+          "quality_to_scip": 0.9495160110915634,
+          "time_ratio_to_scip": 6146.487223021536,
+          "quality_to_valid_upper_bound": 0.9432426994696482,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 134904,
+          "total_seconds": 65.37135859997943,
+          "quality_to_scip": 0.9766946851719119,
+          "time_ratio_to_scip": 13.529540998406842,
+          "quality_to_valid_upper_bound": 0.9702418080766559,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 138123,
+          "total_seconds": 884.4444762999774,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9933931481421747,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S57",
+      "scenario_id": "reg_s2_n16384",
+      "family": "controlled_regular",
+      "axis": "n",
+      "level": 16384,
+      "seed": 2,
+      "n": 16384,
+      "m": 16384,
+      "nnz": 65536,
+      "r": 4,
+      "Delta": 4,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 139963.1527529626,
+      "SCIP_gap": 0.005923233262870969,
+      "methods": {
+        "Streaming": {
+          "objective": 122653,
+          "total_seconds": 0.0327982,
+          "quality_to_scip": 0.8815141692839534,
+          "time_ratio_to_scip": 17482.000381119193,
+          "quality_to_valid_upper_bound": 0.8763235007751267,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 131811,
+          "total_seconds": 0.05048710003029555,
+          "quality_to_scip": 0.9473332422972711,
+          "time_ratio_to_scip": 11356.92374004368,
+          "quality_to_valid_upper_bound": 0.9417550077101271,
+          "supports_predefined_tradeoff": false,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 135935,
+          "total_seconds": 37.609262500016484,
+          "quality_to_scip": 0.9769726676201497,
+          "time_ratio_to_scip": 15.245663083655845,
+          "quality_to_valid_upper_bound": 0.9712199055699156,
+          "supports_predefined_tradeoff": true,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 139139,
+          "total_seconds": 573.3781449000235,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9941116448382865,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S58",
+      "scenario_id": "sb_LHG_n65536",
+      "family": "public_LHG",
+      "axis": "n",
+      "level": 65536,
+      "seed": 0,
+      "n": 65536,
+      "m": 105235,
+      "nnz": 235201,
+      "r": 8618,
+      "Delta": 1507,
+      "weight_ratio": 17.016728624535315,
+      "SCIP_upper_bound": 249744451.2916667,
+      "SCIP_gap": 0.018646811632009506,
+      "methods": {
+        "Streaming": {
+          "objective": 197554303,
+          "total_seconds": 0.1535918,
+          "quality_to_scip": 0.805775903465883,
+          "time_ratio_to_scip": 41.567116213049815,
+          "quality_to_valid_upper_bound": 0.791025794480151,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 241254249,
+          "total_seconds": 0.275647200003732,
+          "quality_to_scip": 0.9840173435906283,
+          "time_ratio_to_scip": 23.161375119664072,
+          "quality_to_valid_upper_bound": 0.9660044407483099,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 248887226,
+          "total_seconds": 565.0332379000029,
+          "quality_to_scip": 1.0151503983756172,
+          "time_ratio_to_scip": 0.011299102020439693,
+          "quality_to_valid_upper_bound": 0.9965675902418125,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 245172761,
+          "total_seconds": 6.3843681999715045,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.981694527073486,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    },
+    {
+      "id": "S59",
+      "scenario_id": "sb_random100_n65536",
+      "family": "public_random100",
+      "axis": "n",
+      "level": 65536,
+      "seed": 0,
+      "n": 65536,
+      "m": 105235,
+      "nnz": 235201,
+      "r": 8618,
+      "Delta": 1507,
+      "weight_ratio": 100.0,
+      "SCIP_upper_bound": 1667758.5,
+      "SCIP_gap": 0.03200450731975362,
+      "methods": {
+        "Streaming": {
+          "objective": 1495366,
+          "total_seconds": 0.1426517,
+          "quality_to_scip": 0.925328488562769,
+          "time_ratio_to_scip": 41.36619822958724,
+          "quality_to_valid_upper_bound": 0.8966322162351443,
+          "supports_predefined_tradeoff": false,
+          "status": "approximate_one_pass_complete"
+        },
+        "Greedy": {
+          "objective": 1577472,
+          "total_seconds": 0.2899119000067003,
+          "quality_to_scip": 0.9761354621611621,
+          "time_ratio_to_scip": 20.35431625901258,
+          "quality_to_valid_upper_bound": 0.9458635647787135,
+          "supports_predefined_tradeoff": true,
+          "status": "greedy_complete"
+        },
+        "ILS1000": {
+          "objective": 1652265,
+          "total_seconds": 1240.4823723000009,
+          "quality_to_scip": 1.022417170883358,
+          "time_ratio_to_scip": 0.0047569869848666495,
+          "quality_to_valid_upper_bound": 0.9907099858882447,
+          "supports_predefined_tradeoff": false,
+          "status": "author_stagnation_rule_complete"
+        },
+        "SCIP": {
+          "objective": 1616038,
+          "total_seconds": 5.90095849998761,
+          "quality_to_scip": 1.0,
+          "time_ratio_to_scip": 1.0,
+          "quality_to_valid_upper_bound": 0.9689880159507507,
+          "supports_predefined_tradeoff": false,
+          "status": "gaplimit"
+        }
+      }
+    }
+  ],
+  "aggregation": "Within each predefined condition across the three structural seeds only; no inferential significance test. Public-derived cases share a single topology."
+}

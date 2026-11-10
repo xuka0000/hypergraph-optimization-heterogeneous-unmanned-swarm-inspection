@@ -1,0 +1,30 @@
+{
+  "observed_at": "2026-11-10T03:04:19.969988+00:00",
+  "inputs": [
+    {
+      "path": "evidence/verified_stress_rows.json",
+      "sha256": "f1bf15c365adf6d6d0655b24abd65480009f2a21200b4443fb1dc2d90febe8e6"
+    },
+    {
+      "path": "evidence/verified_initial_rows.json",
+      "sha256": "2015f3455510d119c6df977dc0320f20923c5624c03cad5e14ab068e26949f43"
+    },
+    {
+      "path": "evidence/verified_author_summary.json",
+      "sha256": "f677291179a2bbde571e768956a75c531734ee3b966fbddfb8826ca9092f144c"
+    },
+    {
+      "path": "evidence/snapshot/research_quality/hypergraph_cross_scenario_comparison.json",
+      "sha256": "69f84c37fdf39458df89b2cd7aaf767afb155009f72ced5293d868fcfb875452"
+    }
+  ],
+  "generated_tables": [
+    "author_results.tex",
+    "controlled_support.tex",
+    "initial_results.tex",
+    "stress_objectives.tex",
+    "stress_parameters.tex",
+    "stress_times.tex"
+  ],
+  "no_new_experiments": true
+}

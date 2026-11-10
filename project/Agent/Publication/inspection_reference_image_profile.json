@@ -1,0 +1,74 @@
+{
+  "profile_id": "inspection_reference_image_acceptance",
+  "parameters": {
+    "image_width_px": 5184,
+    "image_height_px": 3888,
+    "diagonal_fov_deg_at_wide": 66.6,
+    "focal_length_mm_bounds": [
+      6.83,
+      119.94
+    ],
+    "projection": "ideal square-pixel pinhole; fx(f)=hypot(width,height)/(2*tan(66.6deg/2))*f/6.83",
+    "principal_point_px": [
+      2592,
+      1944
+    ],
+    "distortion": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "mount_offset_m": [
+      0,
+      0,
+      0
+    ],
+    "gimbal_pitch_deg": [
+      -120,
+      30
+    ],
+    "gimbal_yaw_deg": [
+      -320,
+      320
+    ],
+    "gimbal_rate_max_deg_s": 30.0,
+    "gimbal_acceleration_max_deg_s2": 30.0,
+    "yaw_rate_max_deg_s": 30.0,
+    "yaw_acceleration_max_deg_s2": 30.0,
+    "focus_min_m": 8.0,
+    "observation_max_m": 25.0,
+    "incidence_angle_max_deg": 30.0,
+    "frame_border_px": 32,
+    "gsd_max_m_per_px": 0.005,
+    "blur_max_px": 1.0,
+    "exposure_bounds_s": [
+      0.001,
+      0.001
+    ],
+    "zoom_rate_max_mm_s": 10.0,
+    "required_frames": 1,
+    "settle_focus_readout_min_s": 1.0,
+    "exposure_role": "fixed declared daylight reference; not calibrated low-light guarantee"
+  },
+  "minimum_visibility_m": 1000.0,
+  "source_scene_sha256": "d0c668d7cfeea2e7973e6ab387be38e499aea4e935a6530dfaf8900438b8520d",
+  "hardware_source": "https://enterprise.dji.com/zenmuse-h20-series/specs",
+  "manufacturer_fields": [
+    "image dimensions",
+    "focal range",
+    "wide diagonal FOV"
+  ],
+  "declared_assumptions": [
+    "ideal distortion-free projection",
+    "principal point at center",
+    "zero mounting offset",
+    "GSD0.005m/px",
+    "blur1px",
+    "exposure0.001s",
+    "visibility1000m",
+    "0.5m template patch"
+  ],
+  "image_quality_role": "simulated geometry; real image content/illumination acceptance remains a measured validation requirement"
+}

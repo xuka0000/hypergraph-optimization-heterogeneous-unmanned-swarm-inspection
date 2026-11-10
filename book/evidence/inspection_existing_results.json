@@ -1,0 +1,1299 @@
+{
+  "purpose": "Previously saved data and independent-validation records; arithmetic/binding recheck only, not a new physical or optimization run",
+  "pilot_protocol": {
+    "task_id": "inspection_joint_execution",
+    "case": "regional_nine_task_parked_carrier_pilot",
+    "frozen_at": "2026-11-08T07:14:13.666336+00:00",
+    "scene": "rommerskirchen",
+    "scene_sha256": "d0c668d7cfeea2e7973e6ab387be38e499aea4e935a6530dfaf8900438b8520d",
+    "tower_id": "OSM_269894017",
+    "selection": "nearest tower to original V1 depot; no selection by solver results",
+    "stop_id": "P012",
+    "start_UTC": "2025-07-01T08:00:00+00:00",
+    "tasks": [
+      "OSM_269894017_P01",
+      "OSM_269894017_P02",
+      "OSM_269894017_P03",
+      "OSM_269894017_P04",
+      "OSM_269894017_P05",
+      "OSM_269894017_P08",
+      "OSM_269894017_P09",
+      "OSM_269894017_P10",
+      "OSM_269894017_P11"
+    ],
+    "initial_soc_conditions": [
+      1.0,
+      0.2
+    ],
+    "conditions_role": "reference and charging-boundary diagnostic, not a stress benchmark",
+    "restrictions": [
+      "one tower, all nine required observations",
+      "one sortie; task sequence is free",
+      "one carrier parked at a source stop, no driving",
+      "one aircraft and one battery pair",
+      "same launch/recovery stop",
+      "septic rest-to-rest transfer initialization, at most3 subsegments",
+      "camera look-at rotation derived, focal length fixed to wide reference",
+      "reference M300 energy proxy, not transferred M100 calibration",
+      "ground contact exemption only inside vertical departure/arrival column",
+      "sampled force/body-rate/weather checks; no full continuous safety certificate"
+    ],
+    "formal_comparison": false,
+    "complete_joint_solver": false,
+    "field_calibrated": false,
+    "scipy_viewpoint_iterations": 2,
+    "SCIP_gap": 0.05,
+    "SCIP_time_limit_s": null,
+    "termination": "finite two alternating geometry/sequence updates; no global joint gap claim"
+  },
+  "pilot_result": {
+    "status": "restricted_pilot_candidate_requires_independent_replay",
+    "task_count": 9,
+    "sequence": [
+      "OSM_269894017_P01",
+      "OSM_269894017_P10",
+      "OSM_269894017_P11",
+      "OSM_269894017_P09",
+      "OSM_269894017_P08",
+      "OSM_269894017_P02",
+      "OSM_269894017_P04",
+      "OSM_269894017_P05",
+      "OSM_269894017_P03"
+    ],
+    "flight_seconds": 904.108801413304,
+    "aircraft_energy_Wh": 203.02425771640875,
+    "energy_reserve_Wh": 109.60000000000001,
+    "solver_history": [
+      {
+        "status": "gaplimit",
+        "seconds": 1.011148100020364,
+        "variables": 99,
+        "constraints": 92,
+        "time_limit_seconds": null,
+        "target_gap": 0.05,
+        "gap_scope": "task order at CURRENT geometry; not full joint model gap",
+        "objective_s": 947.4437253721186,
+        "bound_s": 903.2470732101234,
+        "gap": 0.04893085565715824,
+        "sequence": [
+          4,
+          3,
+          2,
+          1,
+          5,
+          6,
+          7,
+          8,
+          0
+        ]
+      },
+      {
+        "status": "gaplimit",
+        "seconds": 0.6789926999481395,
+        "variables": 99,
+        "constraints": 92,
+        "time_limit_seconds": null,
+        "target_gap": 0.05,
+        "gap_scope": "task order at CURRENT geometry; not full joint model gap",
+        "objective_s": 907.0374325231272,
+        "bound_s": 876.8794094622777,
+        "gap": 0.034392440665636174,
+        "sequence": [
+          0,
+          8,
+          7,
+          6,
+          5,
+          1,
+          3,
+          4,
+          2
+        ]
+      },
+      {
+        "status": "gaplimit",
+        "seconds": 0.7145404999610037,
+        "variables": 99,
+        "constraints": 92,
+        "time_limit_seconds": null,
+        "target_gap": 0.05,
+        "gap_scope": "task order at CURRENT geometry; not full joint model gap",
+        "objective_s": 904.108801413304,
+        "bound_s": 862.3974915782919,
+        "gap": 0.048366687336573025,
+        "sequence": [
+          0,
+          7,
+          8,
+          6,
+          5,
+          1,
+          3,
+          4,
+          2
+        ]
+      }
+    ],
+    "charging_cases": [
+      {
+        "status": "optimal",
+        "feasible": true,
+        "initial_Wh": 548.0,
+        "launch_Wh": 548.0,
+        "duration_s": 0.0,
+        "phases": [],
+        "charge_energy_Wh": 0.0,
+        "input_energy_Wh": 0.0,
+        "initial_SOC": 1.0,
+        "launch_s": 120.0,
+        "complete_recovery_s": 1264.108801413304,
+        "same_weather_hour_verified": true
+      },
+      {
+        "status": "optimal",
+        "feasible": true,
+        "initial_Wh": 109.60000000000001,
+        "launch_Wh": 312.62425771640875,
+        "duration_s": 952.6685711406042,
+        "phases": [
+          {
+            "start_s": 0.0,
+            "end_s": 952.6685711406042,
+            "input_power_W": 852.4444444444443,
+            "stored_Wh": 203.02425771640873
+          }
+        ],
+        "charge_energy_Wh": 203.02425771640873,
+        "input_energy_Wh": 225.58250857378746,
+        "initial_SOC": 0.2,
+        "launch_s": 1072.6685711406042,
+        "complete_recovery_s": 2216.777372553908,
+        "same_weather_hour_verified": true
+      }
+    ],
+    "sampled_maxima": {
+      "ground_speed_mps": 5.000000000000001,
+      "air_speed_mps": 8.160379136394173,
+      "vertical_speed_mps": 1.000000000000006,
+      "acceleration_mps2": 0.9994103571402364,
+      "jerk_mps3": 1.2037633225112487,
+      "tilt_deg": 8.037953899451967,
+      "thrust_N": 74.30447333807822
+    },
+    "limits": {
+      "ground_speed_mps": 5.0,
+      "air_speed_mps": 12.0,
+      "vertical_speed_mps": 1.0,
+      "acceleration_mps2": 3.0,
+      "jerk_mps3": 5.0,
+      "tilt_deg": 25.0,
+      "thrust_N": 137.34
+    },
+    "diagnostic_violations": [],
+    "restrictions": [
+      "one tower, all nine required observations",
+      "one sortie; task sequence is free",
+      "one carrier parked at a source stop, no driving",
+      "one aircraft and one battery pair",
+      "same launch/recovery stop",
+      "septic rest-to-rest transfer initialization, at most3 subsegments",
+      "camera look-at rotation derived, focal length fixed to wide reference",
+      "reference M300 energy proxy, not transferred M100 calibration",
+      "ground contact exemption only inside vertical departure/arrival column",
+      "sampled force/body-rate/weather checks; no full continuous safety certificate"
+    ],
+    "complete_joint_solver": false,
+    "geometry_occlusion_certified": false,
+    "calibrated_M300_energy": false,
+    "elapsed_seconds": 32.716654299991205
+  },
+  "pilot_validation": {
+    "observed_at": "2026-11-08T07:16:39.672170+00:00",
+    "candidate_sha256": "db7de0c92c870c1c10bbc4b76e912bb9bda6ea71cc830867f7346a39c3d837d9",
+    "camera_rows": [
+      {
+        "task_id": "OSM_269894017_P01",
+        "max_GSD_m_per_px": 0.0026272385461829774,
+        "all_samples_in_FOV": true,
+        "gimbal_pitch_deg": -0.30864411265532044,
+        "gimbal_yaw_deg": 0.007673074354582123,
+        "cylinder_occluders": [],
+        "wire_occluders": [],
+        "ideal_stationary_exposure_blur_px": 0.0,
+        "image_quality_measured": false,
+        "reference_optical_pass": true
+      },
+      {
+        "task_id": "OSM_269894017_P10",
+        "max_GSD_m_per_px": 0.0017318194574420464,
+        "all_samples_in_FOV": true,
+        "gimbal_pitch_deg": -0.6095451239922235,
+        "gimbal_yaw_deg": -0.003269796162972588,
+        "cylinder_occluders": [],
+        "wire_occluders": [],
+        "ideal_stationary_exposure_blur_px": 0.0,
+        "image_quality_measured": false,
+        "reference_optical_pass": true
+      },
+      {
+        "task_id": "OSM_269894017_P11",
+        "max_GSD_m_per_px": 0.0018832640694886342,
+        "all_samples_in_FOV": true,
+        "gimbal_pitch_deg": -12.031933619184414,
+        "gimbal_yaw_deg": 0.14106515919608084,
+        "cylinder_occluders": [],
+        "wire_occluders": [],
+        "ideal_stationary_exposure_blur_px": 0.0,
+        "image_quality_measured": false,
+        "reference_optical_pass": true
+      },
+      {
+        "task_id": "OSM_269894017_P09",
+        "max_GSD_m_per_px": 0.0016949805828393749,
+        "all_samples_in_FOV": true,
+        "gimbal_pitch_deg": 1.0148979083406526,
+        "gimbal_yaw_deg": -0.025247687300028993,
+        "cylinder_occluders": [],
+        "wire_occluders": [],
+        "ideal_stationary_exposure_blur_px": 0.0,
+        "image_quality_measured": false,
+        "reference_optical_pass": true
+      },
+      {
+        "task_id": "OSM_269894017_P08",
+        "max_GSD_m_per_px": 0.0017527469942653603,
+        "all_samples_in_FOV": true,
+        "gimbal_pitch_deg": 8.88891238160476,
+        "gimbal_yaw_deg": -0.1334149518717106,
+        "cylinder_occluders": [],
+        "wire_occluders": [],
+        "ideal_stationary_exposure_blur_px": 0.0,
+        "image_quality_measured": false,
+        "reference_optical_pass": true
+      },
+      {
+        "task_id": "OSM_269894017_P02",
+        "max_GSD_m_per_px": 0.0018160304496540787,
+        "all_samples_in_FOV": true,
+        "gimbal_pitch_deg": 11.844542177473393,
+        "gimbal_yaw_deg": 0.1467555090233171,
+        "cylinder_occluders": [],
+        "wire_occluders": [],
+        "ideal_stationary_exposure_blur_px": 0.0,
+        "image_quality_measured": false,
+        "reference_optical_pass": true
+      },
+      {
+        "task_id": "OSM_269894017_P04",
+        "max_GSD_m_per_px": 0.0020618331752544536,
+        "all_samples_in_FOV": true,
+        "gimbal_pitch_deg": 0.051924694814664295,
+        "gimbal_yaw_deg": -0.010480255263703884,
+        "cylinder_occluders": [],
+        "wire_occluders": [],
+        "ideal_stationary_exposure_blur_px": 0.0,
+        "image_quality_measured": false,
+        "reference_optical_pass": true
+      },
+      {
+        "task_id": "OSM_269894017_P05",
+        "max_GSD_m_per_px": 0.00211044495522628,
+        "all_samples_in_FOV": true,
+        "gimbal_pitch_deg": -10.43507470620567,
+        "gimbal_yaw_deg": -0.14819967118950364,
+        "cylinder_occluders": [],
+        "wire_occluders": [],
+        "ideal_stationary_exposure_blur_px": 0.0,
+        "image_quality_measured": false,
+        "reference_optical_pass": true
+      },
+      {
+        "task_id": "OSM_269894017_P03",
+        "max_GSD_m_per_px": 0.002257633059516564,
+        "all_samples_in_FOV": true,
+        "gimbal_pitch_deg": 9.238604263660696,
+        "gimbal_yaw_deg": 0.10625900255246738,
+        "cylinder_occluders": [],
+        "wire_occluders": [],
+        "ideal_stationary_exposure_blur_px": 0.0,
+        "image_quality_measured": false,
+        "reference_optical_pass": true
+      }
+    ],
+    "photo_tasks": 9,
+    "reference_optical_pass": 9,
+    "independent_energy_Wh": 203.0242678605995,
+    "energy_quadrature_delta_Wh": 1.0144190753180737e-05,
+    "max_C3_join_error": 0.0,
+    "independent_failures": [],
+    "runner_failures": 0,
+    "evaluated_restricted_pilot_pass": true,
+    "complete_joint_solver": false,
+    "full_body_gimbal_rate_trajectory_checked": false,
+    "field_ready": false,
+    "status": "partial_implementation_validation; missing constraints are not counted as pass"
+  },
+  "unified_result": {
+    "observed_at": "2026-11-08T13:37:31.219622+00:00",
+    "solver_status": "timelimit",
+    "solver_seconds": 900.0,
+    "solution_count": 1,
+    "dual_bound": 0.0,
+    "primal_bound": 1045.4278963346005,
+    "gap": 1e+20,
+    "nodes": 1,
+    "construction_seconds": 11.436569100013003,
+    "warm_start_only_unknown": true,
+    "full_continuous_acceptance": false,
+    "complete_contract_implemented": false,
+    "attempt": 8,
+    "code_sha256": "64d916499cb9d6ea0dc8e6808e8e60f7caaaa2455521914ba39733063ba54c20",
+    "entry_sha256": "fa4b3ad68b559e1c0b8a9ee7c696fbc88a1794134515fd1f7a1c08d3aed12513",
+    "collocation_order": 5,
+    "logfile": "unified_SOC1_attempt8_scip.log",
+    "makespan_s": 1045.4278963345996,
+    "aircraft_energy_Wh": 308.1937372343925,
+    "complete_component": 1.0,
+    "route_selection": [
+      0,
+      0
+    ],
+    "scope": "single finite joint MINLP; not independently accepted or full continuous-domain optimal",
+    "sortie_files": [
+      "unified_SOC1_sortie0.json",
+      "unified_SOC1_sortie1.json"
+    ],
+    "objective_improvement_over_initializer": -9.094947017729282e-13,
+    "improved_over_initializer": false
+  },
+  "unified_validation": {
+    "observed_at": "2026-11-08T13:39:20.987741+00:00",
+    "seconds": 10.60648289998062,
+    "evaluator_sha256": "87bfe5adec5162d599becbf7ad48086a38739f3ac9eb5f33032c703e25d204f1",
+    "force_enclosure_sha256": "c31f8aac813ee195992c8eaebe3ccfcbedd8130de97569f4fb1a77f39b9e62c5",
+    "complete": true,
+    "rows": [
+      {
+        "slot": 0,
+        "source_file": "unified_SOC1_sortie0.json",
+        "source_sha256": "802d912acce29af02241e46fa1ea18741cdde5cef671ee0a50f4896d96d7ef1b",
+        "all_pass": true,
+        "failures": [],
+        "stats": {
+          "accepted_intervals": 143,
+          "evaluations": 267,
+          "max_depth": 7
+        },
+        "max_C3_error": 6.781167247428064e-07,
+        "max_pose_C2_error": 4.3775210583775005e-10,
+        "energy_Wh": 153.60343250869417,
+        "NLP_energy_Wh": 153.59954739247277,
+        "energy_difference_Wh": 0.003885116221397311,
+        "optical_passed_tasks": [
+          "OSM_269894017_P02",
+          "OSM_269894017_P03",
+          "OSM_269894017_P04",
+          "OSM_269894017_P05"
+        ],
+        "capture_count": 4,
+        "accepted_bounds": {
+          "airspeed_upper_mps": 8.251914456914735,
+          "thrust_upper_N": 78.79248278494329,
+          "body_rate_component_upper_deg_s": 29.530693524889973,
+          "blur_upper_px": 0.5494938267639496
+        }
+      },
+      {
+        "slot": 1,
+        "source_file": "unified_SOC1_sortie1.json",
+        "source_sha256": "8d3c271c28bfe6f808dc01eb356ce5e14abe2d59c6fcf36c22889b6cf37409b4",
+        "all_pass": true,
+        "failures": [],
+        "stats": {
+          "accepted_intervals": 405,
+          "evaluations": 787,
+          "max_depth": 10
+        },
+        "max_C3_error": 8.279632457732168e-07,
+        "max_pose_C2_error": 9.123159012727652e-08,
+        "energy_Wh": 154.59827786176496,
+        "NLP_energy_Wh": 154.5941898419197,
+        "energy_difference_Wh": 0.0040880198452555305,
+        "optical_passed_tasks": [
+          "OSM_269894017_P01",
+          "OSM_269894017_P08",
+          "OSM_269894017_P09",
+          "OSM_269894017_P10",
+          "OSM_269894017_P11"
+        ],
+        "capture_count": 5,
+        "accepted_bounds": {
+          "airspeed_upper_mps": 8.28499386347213,
+          "thrust_upper_N": 78.11216905671641,
+          "body_rate_component_upper_deg_s": 29.973752247455057,
+          "blur_upper_px": 0.9943768441277815
+        }
+      }
+    ],
+    "all_pass": true,
+    "min_separation_bound_m": 16.85018551720864,
+    "scope": "numerical interval/collision-hull enclosures; source reference physics; not measured image/flight validation"
+  },
+  "independent_unified_aircraft_Wh": 308.2017103704591,
+  "trajectory_resource_audit": {
+    "flights": 65,
+    "optional_slots": 156,
+    "tasks": 2133,
+    "airtime_s": 89102.84232033901,
+    "airtime_upper_s": 86400,
+    "fixed_duration_energy_lower_Wh": 19166.97552741037,
+    "reference_quadrature_Wh": 19492.584272658045,
+    "optimistic_fleet_Wh_upper": 15782.399999999998,
+    "necessary_checks": {
+      "slot_capacity": true,
+      "weather_airtime": false,
+      "fixed_duration_energy": false
+    },
+    "passing_necessary_checks_is_not_feasibility": true,
+    "no_infeasibility_claim_for_free_joint_problem": true
+  },
+  "fixed_candidate_airtime_hours": 24.750789533427504,
+  "available_fleet_airtime_hours": 24.0,
+  "refined_energy": {
+    "status": "reference_energy_values_ready",
+    "flights": 65,
+    "towers": 237,
+    "tasks": 2133,
+    "total_reference_Wh": 19492.592707517182,
+    "changed_segments": 76,
+    "bounded_active_segments": 4536,
+    "verified_zero_duration_segments": 4191,
+    "all_ready": true,
+    "formal_interval_certificate": false,
+    "regional_schedule_feasible": null,
+    "rows": [
+      {
+        "index": 0,
+        "towers": [
+          "OSM_269885430"
+        ],
+        "ready": true,
+        "energy_Wh": 172.5481409490917,
+        "previous_order9_Wh": 172.54729105595194
+      },
+      {
+        "index": 1,
+        "towers": [
+          "OSM_269885502"
+        ],
+        "ready": true,
+        "energy_Wh": 184.29839220019895,
+        "previous_order9_Wh": 184.29761412795034
+      },
+      {
+        "index": 2,
+        "towers": [
+          "OSM_727618592",
+          "OSM_7856378861"
+        ],
+        "ready": true,
+        "energy_Wh": 166.84131950598325,
+        "previous_order9_Wh": 166.84103288156197
+      },
+      {
+        "index": 3,
+        "towers": [
+          "OSM_1535786869",
+          "OSM_7856378853"
+        ],
+        "ready": true,
+        "energy_Wh": 166.54847676532503,
+        "previous_order9_Wh": 166.54813537455126
+      },
+      {
+        "index": 4,
+        "towers": [
+          "OSM_269904897",
+          "OSM_269904926"
+        ],
+        "ready": true,
+        "energy_Wh": 230.55195418457578,
+        "previous_order9_Wh": 230.55256155094486
+      },
+      {
+        "index": 5,
+        "towers": [
+          "OSM_269904886",
+          "OSM_269905905",
+          "OSM_269905916"
+        ],
+        "ready": true,
+        "energy_Wh": 289.52464615665957,
+        "previous_order9_Wh": 289.52408692959546
+      },
+      {
+        "index": 6,
+        "towers": [
+          "OSM_6611622079",
+          "OSM_269905908",
+          "OSM_269905919"
+        ],
+        "ready": true,
+        "energy_Wh": 278.005692543093,
+        "previous_order9_Wh": 278.00557748641364
+      },
+      {
+        "index": 7,
+        "towers": [
+          "OSM_269907217",
+          "OSM_269907491",
+          "OSM_269885425",
+          "OSM_269885476"
+        ],
+        "ready": true,
+        "energy_Wh": 284.2478896336816,
+        "previous_order9_Wh": 284.2478896336816
+      },
+      {
+        "index": 8,
+        "towers": [
+          "OSM_6592119762",
+          "OSM_269905909",
+          "OSM_269905920"
+        ],
+        "ready": true,
+        "energy_Wh": 243.00543867681424,
+        "previous_order9_Wh": 243.00382310651509
+      },
+      {
+        "index": 9,
+        "towers": [
+          "OSM_269905917",
+          "OSM_269904887",
+          "OSM_269905906"
+        ],
+        "ready": true,
+        "energy_Wh": 244.69927891810553,
+        "previous_order9_Wh": 244.69969938452812
+      },
+      {
+        "index": 10,
+        "towers": [
+          "OSM_269905913",
+          "OSM_269904882",
+          "OSM_269905902"
+        ],
+        "ready": true,
+        "energy_Wh": 316.6219406019334,
+        "previous_order9_Wh": 316.62015958611295
+      },
+      {
+        "index": 11,
+        "towers": [
+          "OSM_1105781427",
+          "OSM_269894030",
+          "OSM_269904880"
+        ],
+        "ready": true,
+        "energy_Wh": 249.216196492681,
+        "previous_order9_Wh": 249.21626598835408
+      },
+      {
+        "index": 12,
+        "towers": [
+          "OSM_1105781402",
+          "OSM_269894033",
+          "OSM_1105781269",
+          "OSM_1268908033"
+        ],
+        "ready": true,
+        "energy_Wh": 351.9350325318122,
+        "previous_order9_Wh": 351.9355291651715
+      },
+      {
+        "index": 13,
+        "towers": [
+          "OSM_269907211",
+          "OSM_269885528",
+          "OSM_269885439",
+          "OSM_269907485"
+        ],
+        "ready": true,
+        "energy_Wh": 357.76372944681606,
+        "previous_order9_Wh": 357.76322692996
+      },
+      {
+        "index": 14,
+        "towers": [
+          "OSM_269907213",
+          "OSM_269907487",
+          "OSM_269885434",
+          "OSM_269885524"
+        ],
+        "ready": true,
+        "energy_Wh": 373.69333518966033,
+        "previous_order9_Wh": 373.6929500974269
+      },
+      {
+        "index": 15,
+        "towers": [
+          "OSM_1312397611",
+          "OSM_1312397612"
+        ],
+        "ready": true,
+        "energy_Wh": 195.0442884745106,
+        "previous_order9_Wh": 195.04395053163253
+      },
+      {
+        "index": 16,
+        "towers": [
+          "OSM_269905904",
+          "OSM_269904885",
+          "OSM_269905915"
+        ],
+        "ready": true,
+        "energy_Wh": 233.71081702891763,
+        "previous_order9_Wh": 233.71028289417916
+      },
+      {
+        "index": 17,
+        "towers": [
+          "OSM_269905914",
+          "OSM_269904883",
+          "OSM_269905903"
+        ],
+        "ready": true,
+        "energy_Wh": 266.04601508535075,
+        "previous_order9_Wh": 266.04569542124267
+      },
+      {
+        "index": 18,
+        "towers": [
+          "OSM_269904888",
+          "OSM_269905907",
+          "OSM_269905918"
+        ],
+        "ready": true,
+        "energy_Wh": 228.771427832935,
+        "previous_order9_Wh": 228.771427832935
+      },
+      {
+        "index": 19,
+        "towers": [
+          "OSM_8977544067",
+          "OSM_1028902045",
+          "OSM_1028902062"
+        ],
+        "ready": true,
+        "energy_Wh": 308.8346855078204,
+        "previous_order9_Wh": 308.83432856192246
+      },
+      {
+        "index": 20,
+        "towers": [
+          "OSM_269894017",
+          "OSM_269905901",
+          "OSM_269905912",
+          "OSM_269907207"
+        ],
+        "ready": true,
+        "energy_Wh": 308.1958622375635,
+        "previous_order9_Wh": 308.19615604721815
+      },
+      {
+        "index": 21,
+        "towers": [
+          "OSM_269894032",
+          "OSM_1105781414"
+        ],
+        "ready": true,
+        "energy_Wh": 210.00633593130436,
+        "previous_order9_Wh": 210.00614605732952
+      },
+      {
+        "index": 22,
+        "towers": [
+          "OSM_269907492",
+          "OSM_269907218",
+          "OSM_269885422",
+          "OSM_269885463"
+        ],
+        "ready": true,
+        "energy_Wh": 294.22613854496836,
+        "previous_order9_Wh": 294.2259966996582
+      },
+      {
+        "index": 23,
+        "towers": [
+          "OSM_269894019",
+          "OSM_269904867",
+          "OSM_1309641519"
+        ],
+        "ready": true,
+        "energy_Wh": 227.56544650665245,
+        "previous_order9_Wh": 227.56540033080546
+      },
+      {
+        "index": 24,
+        "towers": [
+          "OSM_269907484",
+          "OSM_739139497",
+          "OSM_269885442",
+          "OSM_269885531"
+        ],
+        "ready": true,
+        "energy_Wh": 394.6004602101129,
+        "previous_order9_Wh": 394.60110215028317
+      },
+      {
+        "index": 25,
+        "towers": [
+          "OSM_1028902061",
+          "OSM_269907220",
+          "OSM_269885418",
+          "OSM_269885456"
+        ],
+        "ready": true,
+        "energy_Wh": 347.6393933989806,
+        "previous_order9_Wh": 347.639993982027
+      },
+      {
+        "index": 26,
+        "towers": [
+          "OSM_1309641504",
+          "OSM_269885533",
+          "OSM_269885444",
+          "OSM_269907482"
+        ],
+        "ready": true,
+        "energy_Wh": 419.73988264977316,
+        "previous_order9_Wh": 419.7400323938519
+      },
+      {
+        "index": 27,
+        "towers": [
+          "OSM_8432980759",
+          "OSM_269907212",
+          "OSM_269885526",
+          "OSM_269885437",
+          "OSM_269907486"
+        ],
+        "ready": true,
+        "energy_Wh": 401.73390265379794,
+        "previous_order9_Wh": 401.73384565474475
+      },
+      {
+        "index": 28,
+        "towers": [
+          "OSM_1028902095",
+          "OSM_412450479",
+          "OSM_1028902056",
+          "OSM_1028902084"
+        ],
+        "ready": true,
+        "energy_Wh": 321.4094147519006,
+        "previous_order9_Wh": 321.40937337273465
+      },
+      {
+        "index": 29,
+        "towers": [
+          "OSM_1028902036",
+          "OSM_1028902100",
+          "OSM_8977544066"
+        ],
+        "ready": true,
+        "energy_Wh": 229.59949986372126,
+        "previous_order9_Wh": 229.59949986372126
+      },
+      {
+        "index": 30,
+        "towers": [
+          "OSM_1268908018",
+          "OSM_1268908027",
+          "OSM_1268908019",
+          "OSM_1268908037"
+        ],
+        "ready": true,
+        "energy_Wh": 279.0246628129086,
+        "previous_order9_Wh": 279.0246628129086
+      },
+      {
+        "index": 31,
+        "towers": [
+          "OSM_1105781268",
+          "OSM_1105781211",
+          "OSM_269904896",
+          "OSM_269904927"
+        ],
+        "ready": true,
+        "energy_Wh": 313.7490930296217,
+        "previous_order9_Wh": 313.74916393117905
+      },
+      {
+        "index": 32,
+        "towers": [
+          "OSM_269894021",
+          "OSM_269904868",
+          "OSM_269894022",
+          "OSM_269904870"
+        ],
+        "ready": true,
+        "energy_Wh": 336.46654899959447,
+        "previous_order9_Wh": 336.4666145938466
+      },
+      {
+        "index": 33,
+        "towers": [
+          "OSM_445488408",
+          "OSM_445488411",
+          "OSM_445488413",
+          "OSM_445488415"
+        ],
+        "ready": true,
+        "energy_Wh": 310.97079981464316,
+        "previous_order9_Wh": 310.97079981464316
+      },
+      {
+        "index": 34,
+        "towers": [
+          "OSM_1028902037",
+          "OSM_7856378864",
+          "OSM_1028902055",
+          "OSM_7856378865"
+        ],
+        "ready": true,
+        "energy_Wh": 349.3684853890645,
+        "previous_order9_Wh": 349.3684853890645
+      },
+      {
+        "index": 35,
+        "towers": [
+          "OSM_1105781440",
+          "OSM_269905921",
+          "OSM_269905910",
+          "OSM_269905911"
+        ],
+        "ready": true,
+        "energy_Wh": 406.2055099035348,
+        "previous_order9_Wh": 406.20547138372706
+      },
+      {
+        "index": 36,
+        "towers": [
+          "OSM_1105781262",
+          "OSM_739119618",
+          "OSM_739119616",
+          "OSM_1105781354"
+        ],
+        "ready": true,
+        "energy_Wh": 302.54745686260304,
+        "previous_order9_Wh": 302.54745686260304
+      },
+      {
+        "index": 37,
+        "towers": [
+          "OSM_269904961",
+          "OSM_269905958",
+          "OSM_269904960",
+          "OSM_269905957"
+        ],
+        "ready": true,
+        "energy_Wh": 326.3665033338558,
+        "previous_order9_Wh": 326.3664263658615
+      },
+      {
+        "index": 38,
+        "towers": [
+          "OSM_269907210",
+          "OSM_1309641505",
+          "OSM_1309641531"
+        ],
+        "ready": true,
+        "energy_Wh": 310.14478849476035,
+        "previous_order9_Wh": 310.14427534383253
+      },
+      {
+        "index": 39,
+        "towers": [
+          "OSM_445488424",
+          "OSM_445488426",
+          "OSM_445488432",
+          "OSM_445488434"
+        ],
+        "ready": true,
+        "energy_Wh": 301.10862192315363,
+        "previous_order9_Wh": 301.10862192315363
+      },
+      {
+        "index": 40,
+        "towers": [
+          "OSM_269907209",
+          "OSM_1309641530",
+          "OSM_269907208",
+          "OSM_739139480"
+        ],
+        "ready": true,
+        "energy_Wh": 328.2867280375974,
+        "previous_order9_Wh": 328.2854339579713
+      },
+      {
+        "index": 41,
+        "towers": [
+          "OSM_269894029",
+          "OSM_269904878",
+          "OSM_269894027",
+          "OSM_269904876"
+        ],
+        "ready": true,
+        "energy_Wh": 305.7569306841746,
+        "previous_order9_Wh": 305.7569306841746
+      },
+      {
+        "index": 42,
+        "towers": [
+          "OSM_1028902078",
+          "OSM_1028902092",
+          "OSM_269907219",
+          "OSM_269907493",
+          "OSM_269885420",
+          "OSM_269885458"
+        ],
+        "ready": true,
+        "energy_Wh": 381.5856353129955,
+        "previous_order9_Wh": 381.58562527679953
+      },
+      {
+        "index": 43,
+        "towers": [
+          "OSM_1535786858",
+          "OSM_7856378856",
+          "OSM_1535786834",
+          "OSM_7856378857"
+        ],
+        "ready": true,
+        "energy_Wh": 306.46047873636167,
+        "previous_order9_Wh": 306.46047873636167
+      },
+      {
+        "index": 44,
+        "towers": [
+          "OSM_1535786876",
+          "OSM_7856378852",
+          "OSM_669994882",
+          "OSM_7856378851"
+        ],
+        "ready": true,
+        "energy_Wh": 269.4489332997507,
+        "previous_order9_Wh": 269.4489332997507
+      },
+      {
+        "index": 45,
+        "towers": [
+          "OSM_1028902041",
+          "OSM_1028902098",
+          "OSM_525440396",
+          "OSM_4625637096",
+          "OSM_7856378858"
+        ],
+        "ready": true,
+        "energy_Wh": 385.13701225624555,
+        "previous_order9_Wh": 385.1371382612237
+      },
+      {
+        "index": 46,
+        "towers": [
+          "OSM_269894024",
+          "OSM_269904872",
+          "OSM_269894026",
+          "OSM_269904874"
+        ],
+        "ready": true,
+        "energy_Wh": 332.00503695949124,
+        "previous_order9_Wh": 332.0050040342827
+      },
+      {
+        "index": 47,
+        "towers": [
+          "OSM_727618589",
+          "OSM_7856378862",
+          "OSM_1028902074",
+          "OSM_7856378863"
+        ],
+        "ready": true,
+        "energy_Wh": 304.05290277562085,
+        "previous_order9_Wh": 304.0528628188399
+      },
+      {
+        "index": 48,
+        "towers": [
+          "OSM_445488405",
+          "OSM_445488407",
+          "OSM_445488436",
+          "OSM_445488438"
+        ],
+        "ready": true,
+        "energy_Wh": 329.3336020089209,
+        "previous_order9_Wh": 329.33356708913595
+      },
+      {
+        "index": 49,
+        "towers": [
+          "OSM_459536842",
+          "OSM_459536845",
+          "OSM_445488428",
+          "OSM_445488430"
+        ],
+        "ready": true,
+        "energy_Wh": 289.6953378494493,
+        "previous_order9_Wh": 289.6953378494493
+      },
+      {
+        "index": 50,
+        "towers": [
+          "OSM_1028902065",
+          "OSM_1028902019",
+          "OSM_1028902080",
+          "OSM_1028902026",
+          "OSM_1028902105"
+        ],
+        "ready": true,
+        "energy_Wh": 386.77507858315795,
+        "previous_order9_Wh": 386.77492931314174
+      },
+      {
+        "index": 51,
+        "towers": [
+          "OSM_269907489",
+          "OSM_269885488",
+          "OSM_269885427",
+          "OSM_269907216",
+          "OSM_269907490"
+        ],
+        "ready": true,
+        "energy_Wh": 389.67902054937923,
+        "previous_order9_Wh": 389.6791466006288
+      },
+      {
+        "index": 52,
+        "towers": [
+          "OSM_1312397609",
+          "OSM_1312397610",
+          "OSM_445408367",
+          "OSM_445408371"
+        ],
+        "ready": true,
+        "energy_Wh": 304.437333580377,
+        "previous_order9_Wh": 304.4372911767038
+      },
+      {
+        "index": 53,
+        "towers": [
+          "OSM_1535786864",
+          "OSM_7856378855",
+          "OSM_668990300",
+          "OSM_7856378854"
+        ],
+        "ready": true,
+        "energy_Wh": 300.9380160067736,
+        "previous_order9_Wh": 300.9380160067736
+      },
+      {
+        "index": 54,
+        "towers": [
+          "OSM_1268908024",
+          "OSM_1268908028",
+          "OSM_1268908023",
+          "OSM_1268908055"
+        ],
+        "ready": true,
+        "energy_Wh": 371.6545948392283,
+        "previous_order9_Wh": 371.6540647818808
+      },
+      {
+        "index": 55,
+        "towers": [
+          "OSM_412450475",
+          "OSM_412450477",
+          "OSM_727618436",
+          "OSM_1028902088"
+        ],
+        "ready": true,
+        "energy_Wh": 290.89809785394516,
+        "previous_order9_Wh": 290.89809785394516
+      },
+      {
+        "index": 56,
+        "towers": [
+          "OSM_1535786906",
+          "OSM_7856378848",
+          "OSM_1535786902",
+          "OSM_7856378850"
+        ],
+        "ready": true,
+        "energy_Wh": 275.1839880571431,
+        "previous_order9_Wh": 275.1839880571431
+      },
+      {
+        "index": 57,
+        "towers": [
+          "OSM_1545233247",
+          "OSM_1545233245",
+          "OSM_1545233243",
+          "OSM_1545233246",
+          "OSM_1545233248"
+        ],
+        "ready": true,
+        "energy_Wh": 414.3565072350367,
+        "previous_order9_Wh": 414.3565072350367
+      },
+      {
+        "index": 58,
+        "towers": [
+          "OSM_459536846",
+          "OSM_459536849",
+          "OSM_459536851",
+          "OSM_459536854"
+        ],
+        "ready": true,
+        "energy_Wh": 291.87741559904924,
+        "previous_order9_Wh": 291.87741559904924
+      },
+      {
+        "index": 59,
+        "towers": [
+          "OSM_525440395",
+          "OSM_7856378859",
+          "OSM_395524051",
+          "OSM_7856378860"
+        ],
+        "ready": true,
+        "energy_Wh": 281.82129489167966,
+        "previous_order9_Wh": 281.82129489167966
+      },
+      {
+        "index": 60,
+        "towers": [
+          "OSM_269907215",
+          "OSM_269885516",
+          "OSM_269907214",
+          "OSM_269885432",
+          "OSM_269907488"
+        ],
+        "ready": true,
+        "energy_Wh": 314.84564570715867,
+        "previous_order9_Wh": 314.8456399037136
+      },
+      {
+        "index": 61,
+        "towers": [
+          "OSM_1545233251",
+          "OSM_418089899",
+          "OSM_418089900"
+        ],
+        "ready": true,
+        "energy_Wh": 270.67815478930413,
+        "previous_order9_Wh": 270.67808994232547
+      },
+      {
+        "index": 62,
+        "towers": [
+          "OSM_727618551",
+          "OSM_1028902027",
+          "OSM_727618548",
+          "OSM_1028902021"
+        ],
+        "ready": true,
+        "energy_Wh": 296.0704667014508,
+        "previous_order9_Wh": 296.0704667014508
+      },
+      {
+        "index": 63,
+        "towers": [
+          "OSM_1535786830",
+          "OSM_8977544076",
+          "OSM_1535786825",
+          "OSM_8977544075"
+        ],
+        "ready": true,
+        "energy_Wh": 299.92831095024223,
+        "previous_order9_Wh": 299.9282798585959
+      },
+      {
+        "index": 64,
+        "towers": [
+          "OSM_370409340",
+          "OSM_1028902049",
+          "OSM_1028902067"
+        ],
+        "ready": true,
+        "energy_Wh": 239.10867921416656,
+        "previous_order9_Wh": 239.10867921416656
+      }
+    ]
+  },
+  "day_ahead_protocol": {
+    "task_id": "inspection_day_ahead_pilot",
+    "observed_at": "2026-11-09T02:30:27.434434+00:00",
+    "authorization": "User: 先跑小实例，明确保留哪些联合决策",
+    "scope": "development pilot, one real-geographic tower and nine observations; not full-region completion or algorithm comparison",
+    "scenario": "rommerskirchen",
+    "tower": "OSM_269894017",
+    "start_utc": "2026-07-01T08:00:00+00:00",
+    "horizon_s": 28800,
+    "forecast_initialization_utc": "2026-06-30T00:00Z",
+    "planning_information_cutoff_utc": "2026-06-30T18:00:00Z",
+    "forecast_availability": "Initialization is NOT availability. 18h delay after initialization assumed; exact archived publication timestamp unavailable.",
+    "weather_day_selection": "Fixed calendar day before fetching either weather response; not selected for outcome.",
+    "initial_SOC": 0.2,
+    "initial_SOC_reason": "Explicit development condition exercising charging; not a measured initial condition.",
+    "fly_domain_rule": "Axis-aligned box enclosing source tower and original depots, expanded500m; original DEM triangles intersecting box retained, no retriangulation.",
+    "joint_decisions": [
+      "task participation/order/flight grouping",
+      "aircraft and pack assignments",
+      "launch/capture/recovery times",
+      "degree7 position curves and yaw/gimbal/focal-length curves",
+      "restricted road-tour/stop/time-scale choices",
+      "preemptive charging events and power"
+    ],
+    "limits": [
+      "one tower",
+      "3 vehicle tours for V1 and2 for V2, not all roads",
+      "finite collocation, no global continuous certificate",
+      "reference M300 power and nominal pack state, not calibrated actual hardware",
+      "fixed execution replay, no replanning",
+      "weather reanalysis is a simulation truth proxy, not local field measurement"
+    ],
+    "stopping": {
+      "time_limit_s": null,
+      "node_limit": null,
+      "gap": 0,
+      "priorities": [
+        "incomplete tower",
+        "makespan",
+        "aircraft energy"
+      ]
+    },
+    "outputs": [
+      "SCIP trace and candidates",
+      "fixed-plan weather and physical-pack replay",
+      "objective values and unresolved feasibility",
+      "numerical report"
+    ],
+    "cloud_cost": 0,
+    "checks": [
+      "input_time_separation",
+      "joint_variable_registry",
+      "SCIP_actually_executed",
+      "independent_pack_conservation",
+      "weather_and_capture_failures_retained",
+      "scope_honesty"
+    ]
+  },
+  "forecast_source": {
+    "url": "https://single-runs-api.open-meteo.com/v1/forecast?latitude=51.0050309&longitude=6.6991959&hourly=temperature_2m%2Csurface_pressure%2Cprecipitation%2Cis_day%2Cwind_speed_10m%2Cwind_direction_10m%2Cwind_speed_100m%2Cwind_direction_100m%2Cwind_gusts_10m&wind_speed_unit=ms&timezone=UTC&models=ecmwf_ifs&run=2026-06-30T00%3A00",
+    "observed_at": "2026-11-09T02:30:28.675833+00:00",
+    "sha256": "6c28f48f647388fa84ce862b27d0e48a91c603641887a18a98ae8a0c726fd596",
+    "role": "forecast",
+    "documentation": "https://open-meteo.com/en/docs/single-runs-api"
+  }
+}

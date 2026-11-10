@@ -1,0 +1,5430 @@
+[
+  {
+    "condition": "S01",
+    "scenario_id": "reg_s0_base",
+    "family": "controlled_regular",
+    "axis": "base",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 1911,
+    "selected_count": 37,
+    "total_seconds": 0.0006081,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_base__Streaming.json",
+      "sha256": "8a163057b550f55560cc09b1f677ab437ab52e587dcc385808616de0160a7acf",
+      "bytes": 1552
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_base.json",
+      "sha256": "05e8b0723936cd8e31e4acbaa7b81fb290cebc66c85d7629e53e891ab7ab5aab",
+      "bytes": 25243
+    }
+  },
+  {
+    "condition": "S01",
+    "scenario_id": "reg_s0_base",
+    "family": "controlled_regular",
+    "axis": "base",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 2136,
+    "selected_count": 42,
+    "total_seconds": 0.0015356999938376248,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_base__Greedy.json",
+      "sha256": "e13ead9ad8779a3c3caf18891b2850928bfcd5abf8f4247fd75eb91ea135e4f2",
+      "bytes": 2079
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_base.json",
+      "sha256": "05e8b0723936cd8e31e4acbaa7b81fb290cebc66c85d7629e53e891ab7ab5aab",
+      "bytes": 25243
+    }
+  },
+  {
+    "condition": "S01",
+    "scenario_id": "reg_s0_base",
+    "family": "controlled_regular",
+    "axis": "base",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 2242,
+    "selected_count": 44,
+    "total_seconds": 0.030203100002836436,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_base__ILS1000.json",
+      "sha256": "1d9cc42a693b986e74087f8958a8d6ac9b196b09d67e8918f7160b353012b708",
+      "bytes": 2124
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_base.json",
+      "sha256": "05e8b0723936cd8e31e4acbaa7b81fb290cebc66c85d7629e53e891ab7ab5aab",
+      "bytes": 25243
+    }
+  },
+  {
+    "condition": "S01",
+    "scenario_id": "reg_s0_base",
+    "family": "controlled_regular",
+    "axis": "base",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 2194,
+    "selected_count": 42,
+    "total_seconds": 0.029610499972477555,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_base__SCIP.json",
+      "sha256": "4d872ec2e48fdf92b64a644f9452aa467284ef418c61c2fa2dcd0b6f46a1f5b5",
+      "bytes": 3935
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_base.json",
+      "sha256": "05e8b0723936cd8e31e4acbaa7b81fb290cebc66c85d7629e53e891ab7ab5aab",
+      "bytes": 25243
+    }
+  },
+  {
+    "condition": "S02",
+    "scenario_id": "reg_s0_degree16",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 673,
+    "selected_count": 10,
+    "total_seconds": 0.0004928,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_degree16__Streaming.json",
+      "sha256": "13e96ac8f6672064eb911563bcab75a1cd05120f9eb72c6f09a0404e4773a45e",
+      "bytes": 1222
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_degree16.json",
+      "sha256": "164fdd27f54b6b3f32c1332e5a2abc3b8391cbea9965f4090981046faada67d9",
+      "bytes": 19391
+    }
+  },
+  {
+    "condition": "S02",
+    "scenario_id": "reg_s0_degree16",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 725,
+    "selected_count": 12,
+    "total_seconds": 0.0013874999713152647,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_degree16__Greedy.json",
+      "sha256": "fdd41d717a5fe28adac1efd4366a0ff32bb1b7766c0fdc62782bfcda656cc3f8",
+      "bytes": 1701
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_degree16.json",
+      "sha256": "164fdd27f54b6b3f32c1332e5a2abc3b8391cbea9965f4090981046faada67d9",
+      "bytes": 19391
+    }
+  },
+  {
+    "condition": "S02",
+    "scenario_id": "reg_s0_degree16",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 831,
+    "selected_count": 13,
+    "total_seconds": 0.039852900023106486,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_degree16__ILS1000.json",
+      "sha256": "2ba4f685eed6c3ced3ca25b2e9e670d598c1afdc9b8425b9948a7f7dd0eeed7f",
+      "bytes": 1739
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_degree16.json",
+      "sha256": "164fdd27f54b6b3f32c1332e5a2abc3b8391cbea9965f4090981046faada67d9",
+      "bytes": 19391
+    }
+  },
+  {
+    "condition": "S02",
+    "scenario_id": "reg_s0_degree16",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 863,
+    "selected_count": 13,
+    "total_seconds": 0.272327899991069,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_degree16__SCIP.json",
+      "sha256": "3566870c60d23da33f25826fed5cab0746dde9ff447e61983844cc139ad0fdfa",
+      "bytes": 3649
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_degree16.json",
+      "sha256": "164fdd27f54b6b3f32c1332e5a2abc3b8391cbea9965f4090981046faada67d9",
+      "bytes": 19391
+    }
+  },
+  {
+    "condition": "S03",
+    "scenario_id": "reg_s0_degree32",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 355,
+    "selected_count": 6,
+    "total_seconds": 0.0003896,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_degree32__Streaming.json",
+      "sha256": "a196a5fa50c32ebfcda65ecd07511320a24317b31c98aed60bbe578335d6b09b",
+      "bytes": 1165
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_degree32.json",
+      "sha256": "2d6c0406b35e9ff7e72db6c2f95119ad66438e7ea18648fa8a415f7b6e78c95a",
+      "bytes": 18119
+    }
+  },
+  {
+    "condition": "S03",
+    "scenario_id": "reg_s0_degree32",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 476,
+    "selected_count": 6,
+    "total_seconds": 0.0016365000046789646,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_degree32__Greedy.json",
+      "sha256": "f16928ae16f4be91bcc1503cd20535bddffc66f6cbaf6fc6a8a73a49435c7afa",
+      "bytes": 1622
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_degree32.json",
+      "sha256": "2d6c0406b35e9ff7e72db6c2f95119ad66438e7ea18648fa8a415f7b6e78c95a",
+      "bytes": 18119
+    }
+  },
+  {
+    "condition": "S03",
+    "scenario_id": "reg_s0_degree32",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 510,
+    "selected_count": 7,
+    "total_seconds": 0.04281379998428747,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_degree32__ILS1000.json",
+      "sha256": "83ee3fd99c50b2a0921d412d658bf75f1a8a1003e9e898b54c052fa5c02f330c",
+      "bytes": 1657
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_degree32.json",
+      "sha256": "2d6c0406b35e9ff7e72db6c2f95119ad66438e7ea18648fa8a415f7b6e78c95a",
+      "bytes": 18119
+    }
+  },
+  {
+    "condition": "S03",
+    "scenario_id": "reg_s0_degree32",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 536,
+    "selected_count": 7,
+    "total_seconds": 0.284833499987144,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_degree32__SCIP.json",
+      "sha256": "e1355d96abf6e26cc014acd1c363015e5f1cfea2ce306095cc7b9901d0f450e1",
+      "bytes": 2720
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_degree32.json",
+      "sha256": "2d6c0406b35e9ff7e72db6c2f95119ad66438e7ea18648fa8a415f7b6e78c95a",
+      "bytes": 18119
+    }
+  },
+  {
+    "condition": "S04",
+    "scenario_id": "reg_s0_degree8",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 933,
+    "selected_count": 18,
+    "total_seconds": 0.0004738,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_degree8__Streaming.json",
+      "sha256": "207227ec6c59ba43502822bf0121d7f4925489a0a782256c04b2b4e3cd180981",
+      "bytes": 1312
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_degree8.json",
+      "sha256": "b61b19ff7e3926a4b80fabe28ddead37e84ed86441693cbdf87255016b4cdb3c",
+      "bytes": 21502
+    }
+  },
+  {
+    "condition": "S04",
+    "scenario_id": "reg_s0_degree8",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 1267,
+    "selected_count": 24,
+    "total_seconds": 0.002039999992121011,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_degree8__Greedy.json",
+      "sha256": "b1730a51b345d5e21d3170542331597508f4c2120d122bbddda67c84dbc43e34",
+      "bytes": 1854
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_degree8.json",
+      "sha256": "b61b19ff7e3926a4b80fabe28ddead37e84ed86441693cbdf87255016b4cdb3c",
+      "bytes": 21502
+    }
+  },
+  {
+    "condition": "S04",
+    "scenario_id": "reg_s0_degree8",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 1267,
+    "selected_count": 24,
+    "total_seconds": 0.020313700020778924,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_degree8__ILS1000.json",
+      "sha256": "91ac18f033220fc2d17fabf2f7015d34b68f820818504648bc2ade1f514c9a4f",
+      "bytes": 1873
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_degree8.json",
+      "sha256": "b61b19ff7e3926a4b80fabe28ddead37e84ed86441693cbdf87255016b4cdb3c",
+      "bytes": 21502
+    }
+  },
+  {
+    "condition": "S04",
+    "scenario_id": "reg_s0_degree8",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 1308,
+    "selected_count": 23,
+    "total_seconds": 0.27917570003774017,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_degree8__SCIP.json",
+      "sha256": "3020d7c9254e009c95be4c16e3efdd540af832e91083f8810e12eee363ddc7dd",
+      "bytes": 2942
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_degree8.json",
+      "sha256": "b61b19ff7e3926a4b80fabe28ddead37e84ed86441693cbdf87255016b4cdb3c",
+      "bytes": 21502
+    }
+  },
+  {
+    "condition": "S05",
+    "scenario_id": "reg_s0_rank16",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 886,
+    "selected_count": 17,
+    "total_seconds": 0.0009418,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_rank16__Streaming.json",
+      "sha256": "81a0319dd904e01035759c2dcbd7a29f8162a92f2ab565ca87bcc7d6bb868eca",
+      "bytes": 1298
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_rank16.json",
+      "sha256": "312c8482a7e0d02699e78d508273aa16afba3f50cf8d04a16b7231097be71aad",
+      "bytes": 72645
+    }
+  },
+  {
+    "condition": "S05",
+    "scenario_id": "reg_s0_rank16",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 987,
+    "selected_count": 21,
+    "total_seconds": 0.002740299969445914,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_rank16__Greedy.json",
+      "sha256": "6604ffe0e9d99de1fbe3543f3c38cd3cdfb866cf22fe2f2b45f9235fae631434",
+      "bytes": 1811
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_rank16.json",
+      "sha256": "312c8482a7e0d02699e78d508273aa16afba3f50cf8d04a16b7231097be71aad",
+      "bytes": 72645
+    }
+  },
+  {
+    "condition": "S05",
+    "scenario_id": "reg_s0_rank16",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 1054,
+    "selected_count": 21,
+    "total_seconds": 0.04219290002947673,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_rank16__ILS1000.json",
+      "sha256": "bea3e069f5c30c76796a5f50da9d49c40d2bf87bcb80f1202f2043cd54ba0853",
+      "bytes": 1832
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_rank16.json",
+      "sha256": "312c8482a7e0d02699e78d508273aa16afba3f50cf8d04a16b7231097be71aad",
+      "bytes": 72645
+    }
+  },
+  {
+    "condition": "S05",
+    "scenario_id": "reg_s0_rank16",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 1133,
+    "selected_count": 22,
+    "total_seconds": 10.472456699993927,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_rank16__SCIP.json",
+      "sha256": "ed101527be716b62a6a8c15c7fcaa9b67d2751f3d8a2bc6a1fe21691160c0e91",
+      "bytes": 5151
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_rank16.json",
+      "sha256": "312c8482a7e0d02699e78d508273aa16afba3f50cf8d04a16b7231097be71aad",
+      "bytes": 72645
+    }
+  },
+  {
+    "condition": "S06",
+    "scenario_id": "reg_s0_rank32",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 562,
+    "selected_count": 10,
+    "total_seconds": 0.0015622,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_rank32__Streaming.json",
+      "sha256": "b99e2d98bcaec3f3836e1c4187428839ba93737ca5fd54832abe61d92806e76d",
+      "bytes": 1214
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_rank32.json",
+      "sha256": "884fda6d779606b8a5eff415d956f0f526e969a672a1a9aacde4ab7bc21c84c8",
+      "bytes": 138405
+    }
+  },
+  {
+    "condition": "S06",
+    "scenario_id": "reg_s0_rank32",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 667,
+    "selected_count": 11,
+    "total_seconds": 0.0033795999479480088,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_rank32__Greedy.json",
+      "sha256": "5b2e9b8ad8b4a16b3460d07a1be414c751c44dd0ac692768720cbf31f4bf913c",
+      "bytes": 1689
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_rank32.json",
+      "sha256": "884fda6d779606b8a5eff415d956f0f526e969a672a1a9aacde4ab7bc21c84c8",
+      "bytes": 138405
+    }
+  },
+  {
+    "condition": "S06",
+    "scenario_id": "reg_s0_rank32",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 667,
+    "selected_count": 11,
+    "total_seconds": 0.05987619998631999,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_rank32__ILS1000.json",
+      "sha256": "aecb8b573896a0fd788589feecd78f393396800ff3f155106e12c166190fa6c6",
+      "bytes": 1712
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_rank32.json",
+      "sha256": "884fda6d779606b8a5eff415d956f0f526e969a672a1a9aacde4ab7bc21c84c8",
+      "bytes": 138405
+    }
+  },
+  {
+    "condition": "S06",
+    "scenario_id": "reg_s0_rank32",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 736,
+    "selected_count": 12,
+    "total_seconds": 28.12435749999713,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_rank32__SCIP.json",
+      "sha256": "19d8c795a013a96204f33ef726fb4aff78759275549ee13f0811668de79ed84e",
+      "bytes": 3596
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_rank32.json",
+      "sha256": "884fda6d779606b8a5eff415d956f0f526e969a672a1a9aacde4ab7bc21c84c8",
+      "bytes": 138405
+    }
+  },
+  {
+    "condition": "S07",
+    "scenario_id": "reg_s0_rank8",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 1295,
+    "selected_count": 22,
+    "total_seconds": 0.0009556,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_rank8__Streaming.json",
+      "sha256": "06c54c3c403ab11fb878d56aefbbdca153ec0857ac73a2b35ba7295ae55dbbac",
+      "bytes": 1366
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_rank8.json",
+      "sha256": "45bf6625e4b78db36274868bf757c1d384e7041f1f6fa01ab27f707989bddbf1",
+      "bytes": 40404
+    }
+  },
+  {
+    "condition": "S07",
+    "scenario_id": "reg_s0_rank8",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 1297,
+    "selected_count": 27,
+    "total_seconds": 0.0017676999559625983,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_rank8__Greedy.json",
+      "sha256": "9182d23bf97e80c9b9e8d1b33c9240cbaf7a347c4a80f7eaeba69bd139e18d08",
+      "bytes": 1895
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_rank8.json",
+      "sha256": "45bf6625e4b78db36274868bf757c1d384e7041f1f6fa01ab27f707989bddbf1",
+      "bytes": 40404
+    }
+  },
+  {
+    "condition": "S07",
+    "scenario_id": "reg_s0_rank8",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 1549,
+    "selected_count": 34,
+    "total_seconds": 0.03541479998966679,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_rank8__ILS1000.json",
+      "sha256": "3ffd493ded390afaa1d611e9350eab7a2844d3ca9027d9f28177de757d3d619e",
+      "bytes": 1995
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_rank8.json",
+      "sha256": "45bf6625e4b78db36274868bf757c1d384e7041f1f6fa01ab27f707989bddbf1",
+      "bytes": 40404
+    }
+  },
+  {
+    "condition": "S07",
+    "scenario_id": "reg_s0_rank8",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 1540,
+    "selected_count": 31,
+    "total_seconds": 5.8897694000042975,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_rank8__SCIP.json",
+      "sha256": "b54cb9fafa0895b06012243d389ff0d3a798ceaebeb6c76af956c87780b251ad",
+      "bytes": 5273
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_rank8.json",
+      "sha256": "45bf6625e4b78db36274868bf757c1d384e7041f1f6fa01ab27f707989bddbf1",
+      "bytes": 40404
+    }
+  },
+  {
+    "condition": "S08",
+    "scenario_id": "reg_s0_spread1",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 44,
+    "selected_count": 44,
+    "total_seconds": 0.0004343,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_spread1__Streaming.json",
+      "sha256": "5497a8268a1c596c5df050b7d779b56901afc5fd8a31f7bd6bce2118b7625427",
+      "bytes": 1619
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_spread1.json",
+      "sha256": "326b55ad9c51129448ad4c006f3e0c7bb26836d2e9f2b643d7aeb78a7d3e5793",
+      "bytes": 25114
+    }
+  },
+  {
+    "condition": "S08",
+    "scenario_id": "reg_s0_spread1",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 43,
+    "selected_count": 43,
+    "total_seconds": 0.0018856999813579023,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_spread1__Greedy.json",
+      "sha256": "61e172930370c603a8ed0e0653526084a5f8e46fd49db8de4f35a20897a6bbe4",
+      "bytes": 2091
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_spread1.json",
+      "sha256": "326b55ad9c51129448ad4c006f3e0c7bb26836d2e9f2b643d7aeb78a7d3e5793",
+      "bytes": 25114
+    }
+  },
+  {
+    "condition": "S08",
+    "scenario_id": "reg_s0_spread1",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 55,
+    "selected_count": 55,
+    "total_seconds": 0.04412469995440915,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_spread1__ILS1000.json",
+      "sha256": "b809db64e21331b941af614a09560345ed290b351534497bb4057787ea274fda",
+      "bytes": 2260
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_spread1.json",
+      "sha256": "326b55ad9c51129448ad4c006f3e0c7bb26836d2e9f2b643d7aeb78a7d3e5793",
+      "bytes": 25114
+    }
+  },
+  {
+    "condition": "S08",
+    "scenario_id": "reg_s0_spread1",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 57,
+    "selected_count": 57,
+    "total_seconds": 518.425089300028,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_spread1__SCIP.json",
+      "sha256": "e177be881b0be39f8babfc4cf419ed05351637f702f864fe759242859ab8604e",
+      "bytes": 13856
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_spread1.json",
+      "sha256": "326b55ad9c51129448ad4c006f3e0c7bb26836d2e9f2b643d7aeb78a7d3e5793",
+      "bytes": 25114
+    }
+  },
+  {
+    "condition": "S09",
+    "scenario_id": "reg_s0_spread10",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 245,
+    "selected_count": 38,
+    "total_seconds": 0.0004889,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_spread10__Streaming.json",
+      "sha256": "a286219e13f24d12a28f6316f3d7c27b2d7de99cd8e502a485415dd16df70d21",
+      "bytes": 1561
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_spread10.json",
+      "sha256": "08fe48b900e488c68341850f5a7db83613af5a2010f2b147e5ca41da5b530d5f",
+      "bytes": 25121
+    }
+  },
+  {
+    "condition": "S09",
+    "scenario_id": "reg_s0_spread10",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 283,
+    "selected_count": 42,
+    "total_seconds": 0.0014213999966159463,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_spread10__Greedy.json",
+      "sha256": "7ab732c581426dddaf1fea92d385087e0cf6035e3d990df4fcdad909f909876c",
+      "bytes": 2084
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_spread10.json",
+      "sha256": "08fe48b900e488c68341850f5a7db83613af5a2010f2b147e5ca41da5b530d5f",
+      "bytes": 25121
+    }
+  },
+  {
+    "condition": "S09",
+    "scenario_id": "reg_s0_spread10",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 297,
+    "selected_count": 49,
+    "total_seconds": 0.027980700018815696,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_spread10__ILS1000.json",
+      "sha256": "e82c4600a85015d5714355e18b6127ad9cb913e296d94c2fd056c27b012cc640",
+      "bytes": 2192
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_spread10.json",
+      "sha256": "08fe48b900e488c68341850f5a7db83613af5a2010f2b147e5ca41da5b530d5f",
+      "bytes": 25121
+    }
+  },
+  {
+    "condition": "S09",
+    "scenario_id": "reg_s0_spread10",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 301,
+    "selected_count": 49,
+    "total_seconds": 1.279594299965538,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_spread10__SCIP.json",
+      "sha256": "815d59e94886aa5a21e271f4d54c275fa13aa764cd233c4dcf0398580e804813",
+      "bytes": 3237
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_spread10.json",
+      "sha256": "08fe48b900e488c68341850f5a7db83613af5a2010f2b147e5ca41da5b530d5f",
+      "bytes": 25121
+    }
+  },
+  {
+    "condition": "S10",
+    "scenario_id": "reg_s0_spread1000",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 17057,
+    "selected_count": 38,
+    "total_seconds": 0.000441,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_spread1000__Streaming.json",
+      "sha256": "1701d0aeb23cadbb6722cbbc8b1975e378684542196dd222a687a5491026dece",
+      "bytes": 1570
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_spread1000.json",
+      "sha256": "adf35507c565bd5742e07026b5d91c6544c1c7967f32db1f184324da7cdf052f",
+      "bytes": 25376
+    }
+  },
+  {
+    "condition": "S10",
+    "scenario_id": "reg_s0_spread1000",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 17504,
+    "selected_count": 42,
+    "total_seconds": 0.0014285999932326376,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_spread1000__Greedy.json",
+      "sha256": "e8162a5ff077b805d03810f86ecc256e35b39b8ba2122284728945146e63332e",
+      "bytes": 2094
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_spread1000.json",
+      "sha256": "adf35507c565bd5742e07026b5d91c6544c1c7967f32db1f184324da7cdf052f",
+      "bytes": 25376
+    }
+  },
+  {
+    "condition": "S10",
+    "scenario_id": "reg_s0_spread1000",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 17524,
+    "selected_count": 45,
+    "total_seconds": 0.01916440000059083,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_spread1000__ILS1000.json",
+      "sha256": "e51d15657c27069470b0c1665754471619f22f2ec87c5c1e8d3e4d7a750491d9",
+      "bytes": 2154
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_spread1000.json",
+      "sha256": "adf35507c565bd5742e07026b5d91c6544c1c7967f32db1f184324da7cdf052f",
+      "bytes": 25376
+    }
+  },
+  {
+    "condition": "S10",
+    "scenario_id": "reg_s0_spread1000",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 17447,
+    "selected_count": 44,
+    "total_seconds": 0.02265800000168383,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_spread1000__SCIP.json",
+      "sha256": "7921ca9b2850287dc36988a8cff14c0f662aad11ecea6d60fb2321a8e5f3860c",
+      "bytes": 3428
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_spread1000.json",
+      "sha256": "adf35507c565bd5742e07026b5d91c6544c1c7967f32db1f184324da7cdf052f",
+      "bytes": 25376
+    }
+  },
+  {
+    "condition": "S11",
+    "scenario_id": "reg_s1_base",
+    "family": "controlled_regular",
+    "axis": "base",
+    "seed": 1,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 1900,
+    "selected_count": 36,
+    "total_seconds": 0.0004193,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_base__Streaming.json",
+      "sha256": "f353bbcc2f94f68bcfc7c7da6a8179f2ad5f4db132de2ab7f14d7bc2ecc18657",
+      "bytes": 1535
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_base.json",
+      "sha256": "ed490ddb6c87fcd4c36476c8b17f8d44be3b25fd950cd15461b132e431790604",
+      "bytes": 25243
+    }
+  },
+  {
+    "condition": "S11",
+    "scenario_id": "reg_s1_base",
+    "family": "controlled_regular",
+    "axis": "base",
+    "seed": 1,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 2059,
+    "selected_count": 42,
+    "total_seconds": 0.0014740999904461205,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_base__Greedy.json",
+      "sha256": "67e92233807258c3b02d9b251f2f9ef70b8c2cfc427ca3bb67dc8f58edf6e71d",
+      "bytes": 2076
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_base.json",
+      "sha256": "ed490ddb6c87fcd4c36476c8b17f8d44be3b25fd950cd15461b132e431790604",
+      "bytes": 25243
+    }
+  },
+  {
+    "condition": "S11",
+    "scenario_id": "reg_s1_base",
+    "family": "controlled_regular",
+    "axis": "base",
+    "seed": 1,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 2198,
+    "selected_count": 46,
+    "total_seconds": 0.038256000028923154,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_base__ILS1000.json",
+      "sha256": "d520bc3d8119f243a71b2fa4fba19808643334778b55af9f6a85c88ea0870303",
+      "bytes": 2150
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_base.json",
+      "sha256": "ed490ddb6c87fcd4c36476c8b17f8d44be3b25fd950cd15461b132e431790604",
+      "bytes": 25243
+    }
+  },
+  {
+    "condition": "S11",
+    "scenario_id": "reg_s1_base",
+    "family": "controlled_regular",
+    "axis": "base",
+    "seed": 1,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 2168,
+    "selected_count": 44,
+    "total_seconds": 0.022728200012352318,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_base__SCIP.json",
+      "sha256": "7b76a85443c631fd7df7d50a409aed3c06fb97cf2923d0bab974d986b846a264",
+      "bytes": 3398
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_base.json",
+      "sha256": "ed490ddb6c87fcd4c36476c8b17f8d44be3b25fd950cd15461b132e431790604",
+      "bytes": 25243
+    }
+  },
+  {
+    "condition": "S12",
+    "scenario_id": "reg_s1_degree16",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 1,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 638,
+    "selected_count": 10,
+    "total_seconds": 0.000421,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_degree16__Streaming.json",
+      "sha256": "25513b80e81f478f5872bb9fe1407ae60800fb879387ff474f980e83c0474b04",
+      "bytes": 1211
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_degree16.json",
+      "sha256": "d3c4706bf1236e8b884b9f0a8041dc40446e528027865fdb774ed2cd82c38dda",
+      "bytes": 19391
+    }
+  },
+  {
+    "condition": "S12",
+    "scenario_id": "reg_s1_degree16",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 1,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 803,
+    "selected_count": 11,
+    "total_seconds": 0.00302990002091974,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_degree16__Greedy.json",
+      "sha256": "78127bd3886bda63ec9dab9bf838adbacb7349435370cea8c547c91bbdb6e6da",
+      "bytes": 1692
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_degree16.json",
+      "sha256": "d3c4706bf1236e8b884b9f0a8041dc40446e528027865fdb774ed2cd82c38dda",
+      "bytes": 19391
+    }
+  },
+  {
+    "condition": "S12",
+    "scenario_id": "reg_s1_degree16",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 1,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 833,
+    "selected_count": 12,
+    "total_seconds": 0.030003299994859844,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_degree16__ILS1000.json",
+      "sha256": "25cbbf55707f46f65ca33eb263aa3397593299c7190c55b1f058ff54e7572e83",
+      "bytes": 1721
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_degree16.json",
+      "sha256": "d3c4706bf1236e8b884b9f0a8041dc40446e528027865fdb774ed2cd82c38dda",
+      "bytes": 19391
+    }
+  },
+  {
+    "condition": "S12",
+    "scenario_id": "reg_s1_degree16",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 1,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 833,
+    "selected_count": 12,
+    "total_seconds": 2.2499722999637015,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_degree16__SCIP.json",
+      "sha256": "961a61b4acfc827f859d8750b18265901728ab9ee994584a6c01e8e1927b4739",
+      "bytes": 2476
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_degree16.json",
+      "sha256": "d3c4706bf1236e8b884b9f0a8041dc40446e528027865fdb774ed2cd82c38dda",
+      "bytes": 19391
+    }
+  },
+  {
+    "condition": "S13",
+    "scenario_id": "reg_s1_degree32",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 1,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 385,
+    "selected_count": 5,
+    "total_seconds": 0.0003826,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_degree32__Streaming.json",
+      "sha256": "61b3447b6a0a3dd43f85f84ea9518822b146813274565a4c0bff50bd48d6e949",
+      "bytes": 1153
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_degree32.json",
+      "sha256": "4a00d260169511eb5bec67de36f22eb305218506a2baa659e865f0875b527681",
+      "bytes": 18119
+    }
+  },
+  {
+    "condition": "S13",
+    "scenario_id": "reg_s1_degree32",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 1,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 502,
+    "selected_count": 7,
+    "total_seconds": 0.0013898999895900488,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_degree32__Greedy.json",
+      "sha256": "40970652ac500da4e2413e32941d5514f802f8bfa1f000402d7f9ac57977f749",
+      "bytes": 1640
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_degree32.json",
+      "sha256": "4a00d260169511eb5bec67de36f22eb305218506a2baa659e865f0875b527681",
+      "bytes": 18119
+    }
+  },
+  {
+    "condition": "S13",
+    "scenario_id": "reg_s1_degree32",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 1,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 502,
+    "selected_count": 7,
+    "total_seconds": 0.04198229999747127,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_degree32__ILS1000.json",
+      "sha256": "68bd79ea467f3a8f34dce710738056deffb6655b931ef12252ffa094118fec43",
+      "bytes": 1658
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_degree32.json",
+      "sha256": "4a00d260169511eb5bec67de36f22eb305218506a2baa659e865f0875b527681",
+      "bytes": 18119
+    }
+  },
+  {
+    "condition": "S13",
+    "scenario_id": "reg_s1_degree32",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 1,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 527,
+    "selected_count": 6,
+    "total_seconds": 0.07612179999705404,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_degree32__SCIP.json",
+      "sha256": "175273019f6dfa593c340b36c4cd072b3b2b4a83c30ef470ac94b0546b9d24aa",
+      "bytes": 2403
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_degree32.json",
+      "sha256": "4a00d260169511eb5bec67de36f22eb305218506a2baa659e865f0875b527681",
+      "bytes": 18119
+    }
+  },
+  {
+    "condition": "S14",
+    "scenario_id": "reg_s1_degree8",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 1,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 1234,
+    "selected_count": 17,
+    "total_seconds": 0.0004155,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_degree8__Streaming.json",
+      "sha256": "8c652193aa666dfcc58bd7fd35079670da5033e7391b82691acaeaa541baf5ac",
+      "bytes": 1305
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_degree8.json",
+      "sha256": "c646c956abcb71020aa90dd3b87698ab318a985a561273000c998814e741d255",
+      "bytes": 21502
+    }
+  },
+  {
+    "condition": "S14",
+    "scenario_id": "reg_s1_degree8",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 1,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 1302,
+    "selected_count": 23,
+    "total_seconds": 0.0015478000277653337,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_degree8__Greedy.json",
+      "sha256": "013f726aaa214a22e6d48a7deaa077cd8b86514c4fa42dcc68ffcb9f3e7df4c9",
+      "bytes": 1845
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_degree8.json",
+      "sha256": "c646c956abcb71020aa90dd3b87698ab318a985a561273000c998814e741d255",
+      "bytes": 21502
+    }
+  },
+  {
+    "condition": "S14",
+    "scenario_id": "reg_s1_degree8",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 1,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 1417,
+    "selected_count": 23,
+    "total_seconds": 0.03068259998690337,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_degree8__ILS1000.json",
+      "sha256": "78fd3856983252e7b3c13a023f981cb9e2e4e7737282a15b2b44647c15787a06",
+      "bytes": 1863
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_degree8.json",
+      "sha256": "c646c956abcb71020aa90dd3b87698ab318a985a561273000c998814e741d255",
+      "bytes": 21502
+    }
+  },
+  {
+    "condition": "S14",
+    "scenario_id": "reg_s1_degree8",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 1,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 1412,
+    "selected_count": 23,
+    "total_seconds": 0.1272639999515377,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_degree8__SCIP.json",
+      "sha256": "e433b7216239a357aa5a3a0f56b141de50200d70248c9402fccf3e87f45116ef",
+      "bytes": 3794
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_degree8.json",
+      "sha256": "c646c956abcb71020aa90dd3b87698ab318a985a561273000c998814e741d255",
+      "bytes": 21502
+    }
+  },
+  {
+    "condition": "S15",
+    "scenario_id": "reg_s1_rank16",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 1,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 796,
+    "selected_count": 15,
+    "total_seconds": 0.0010402,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_rank16__Streaming.json",
+      "sha256": "a3bf364a91211fe4ff691c3722de7e8a43259812f5592292546436b24d14774c",
+      "bytes": 1275
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_rank16.json",
+      "sha256": "7197083a6dfcb8dffb9cd40c67058da6fc8a012cdffbb7eb1e452aa9289c9f17",
+      "bytes": 72645
+    }
+  },
+  {
+    "condition": "S15",
+    "scenario_id": "reg_s1_rank16",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 1,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 1031,
+    "selected_count": 19,
+    "total_seconds": 0.0023791000130586326,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_rank16__Greedy.json",
+      "sha256": "81cb346a1cced10e3c743871174eb836d887c6e5e2d7ced3488ef6b04e335e48",
+      "bytes": 1792
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_rank16.json",
+      "sha256": "7197083a6dfcb8dffb9cd40c67058da6fc8a012cdffbb7eb1e452aa9289c9f17",
+      "bytes": 72645
+    }
+  },
+  {
+    "condition": "S15",
+    "scenario_id": "reg_s1_rank16",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 1,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 1104,
+    "selected_count": 23,
+    "total_seconds": 0.04939089994877577,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_rank16__ILS1000.json",
+      "sha256": "d5c876ad78695256e24a1dbb6f16307369ded03e440df1f624757caddf79a181",
+      "bytes": 1862
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_rank16.json",
+      "sha256": "7197083a6dfcb8dffb9cd40c67058da6fc8a012cdffbb7eb1e452aa9289c9f17",
+      "bytes": 72645
+    }
+  },
+  {
+    "condition": "S15",
+    "scenario_id": "reg_s1_rank16",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 1,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 1129,
+    "selected_count": 24,
+    "total_seconds": 11.03212510002777,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_rank16__SCIP.json",
+      "sha256": "1ef5669380c4e97f7711009e58218f65cbc7da14cc3630475b32981d27b4bedc",
+      "bytes": 4334
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_rank16.json",
+      "sha256": "7197083a6dfcb8dffb9cd40c67058da6fc8a012cdffbb7eb1e452aa9289c9f17",
+      "bytes": 72645
+    }
+  },
+  {
+    "condition": "S16",
+    "scenario_id": "reg_s1_rank32",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 1,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 619,
+    "selected_count": 10,
+    "total_seconds": 0.0022851,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_rank32__Streaming.json",
+      "sha256": "66891beb7c66cba9f9a1e35066471dca3302f7c512dcce16b1dbedb50c87b03a",
+      "bytes": 1211
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_rank32.json",
+      "sha256": "e978809cf0935ee27608c4358602e2fcd690594030d7f7d9a381eb1d0d14d8e7",
+      "bytes": 138405
+    }
+  },
+  {
+    "condition": "S16",
+    "scenario_id": "reg_s1_rank32",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 1,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 640,
+    "selected_count": 11,
+    "total_seconds": 0.0036306999973021448,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_rank32__Greedy.json",
+      "sha256": "38669635a1330524b60c5eebd3a6c32fe973bd76dae838ac2ebc1f7aff24479b",
+      "bytes": 1687
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_rank32.json",
+      "sha256": "e978809cf0935ee27608c4358602e2fcd690594030d7f7d9a381eb1d0d14d8e7",
+      "bytes": 138405
+    }
+  },
+  {
+    "condition": "S16",
+    "scenario_id": "reg_s1_rank32",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 1,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 709,
+    "selected_count": 13,
+    "total_seconds": 0.09256269998149946,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_rank32__ILS1000.json",
+      "sha256": "a2d7462c9b7222743e600d929d76df5345db27d88b422a5fb04c604d3e856ccd",
+      "bytes": 1736
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_rank32.json",
+      "sha256": "e978809cf0935ee27608c4358602e2fcd690594030d7f7d9a381eb1d0d14d8e7",
+      "bytes": 138405
+    }
+  },
+  {
+    "condition": "S16",
+    "scenario_id": "reg_s1_rank32",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 1,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 824,
+    "selected_count": 11,
+    "total_seconds": 16.868348499992862,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_rank32__SCIP.json",
+      "sha256": "627bdfa91a6aa01de0714ba81e1546fd42268df6ad0e57f144efe0d90f14f7e4",
+      "bytes": 4789
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_rank32.json",
+      "sha256": "e978809cf0935ee27608c4358602e2fcd690594030d7f7d9a381eb1d0d14d8e7",
+      "bytes": 138405
+    }
+  },
+  {
+    "condition": "S17",
+    "scenario_id": "reg_s1_rank8",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 1,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 1368,
+    "selected_count": 23,
+    "total_seconds": 0.0012424,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_rank8__Streaming.json",
+      "sha256": "19bc30acb0c922c58df3a335b487160f1c1f2c3fbdb77620a0db37aa81ecb232",
+      "bytes": 1380
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_rank8.json",
+      "sha256": "74a56c5dc9c2a9e89f77548a2985faac0259b67b4627ba88a02cb4aabad33c02",
+      "bytes": 40404
+    }
+  },
+  {
+    "condition": "S17",
+    "scenario_id": "reg_s1_rank8",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 1,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 1444,
+    "selected_count": 28,
+    "total_seconds": 0.0017472000326961279,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_rank8__Greedy.json",
+      "sha256": "27c9bdecafc1935d8c4e235358a458ad0cd06f7b8cffd20c8acd1cee2995aa12",
+      "bytes": 1902
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_rank8.json",
+      "sha256": "74a56c5dc9c2a9e89f77548a2985faac0259b67b4627ba88a02cb4aabad33c02",
+      "bytes": 40404
+    }
+  },
+  {
+    "condition": "S17",
+    "scenario_id": "reg_s1_rank8",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 1,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 1608,
+    "selected_count": 30,
+    "total_seconds": 0.05945200001588091,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_rank8__ILS1000.json",
+      "sha256": "a7c0f015cad090e0f40e96b81b5282e7fa58b627bd169a2d04d1821d97bdf8d1",
+      "bytes": 1946
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_rank8.json",
+      "sha256": "74a56c5dc9c2a9e89f77548a2985faac0259b67b4627ba88a02cb4aabad33c02",
+      "bytes": 40404
+    }
+  },
+  {
+    "condition": "S17",
+    "scenario_id": "reg_s1_rank8",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 1,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 1655,
+    "selected_count": 29,
+    "total_seconds": 0.4155608000000939,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_rank8__SCIP.json",
+      "sha256": "cc420a02523f69aa2c8bc6d0eade23c28204fcb3fb971f9d842cb5d9249759bd",
+      "bytes": 3305
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_rank8.json",
+      "sha256": "74a56c5dc9c2a9e89f77548a2985faac0259b67b4627ba88a02cb4aabad33c02",
+      "bytes": 40404
+    }
+  },
+  {
+    "condition": "S18",
+    "scenario_id": "reg_s1_spread1",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 1,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 43,
+    "selected_count": 43,
+    "total_seconds": 0.0004546,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_spread1__Streaming.json",
+      "sha256": "c99b219b1d694c65c30a735012932c1d383e47e75a11aae8696cf854c0b31bd9",
+      "bytes": 1612
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_spread1.json",
+      "sha256": "552a5392bdf7f46df6e51fa42b222bce8a68b7e5faf7a41626f4fffebb2eb05d",
+      "bytes": 25114
+    }
+  },
+  {
+    "condition": "S18",
+    "scenario_id": "reg_s1_spread1",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 1,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 44,
+    "selected_count": 44,
+    "total_seconds": 0.001434899982996285,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_spread1__Greedy.json",
+      "sha256": "07657d717dbc58e00dc69b65971e531e2853a20957d555c6e9273770f185cd0c",
+      "bytes": 2097
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_spread1.json",
+      "sha256": "552a5392bdf7f46df6e51fa42b222bce8a68b7e5faf7a41626f4fffebb2eb05d",
+      "bytes": 25114
+    }
+  },
+  {
+    "condition": "S18",
+    "scenario_id": "reg_s1_spread1",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 1,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 55,
+    "selected_count": 55,
+    "total_seconds": 0.07596500002546236,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_spread1__ILS1000.json",
+      "sha256": "ed486ffaeec332e3fbb4da47f05e4e1dcb121092a91760a75830095eb1895c62",
+      "bytes": 2262
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_spread1.json",
+      "sha256": "552a5392bdf7f46df6e51fa42b222bce8a68b7e5faf7a41626f4fffebb2eb05d",
+      "bytes": 25114
+    }
+  },
+  {
+    "condition": "S18",
+    "scenario_id": "reg_s1_spread1",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 1,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 56,
+    "selected_count": 56,
+    "total_seconds": 3163.606117200048,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_spread1__SCIP.json",
+      "sha256": "4eb3e3f7f88a9226bfddf62204e1f049fb6d1a479892ab4e3feaa9d4ece4d5e6",
+      "bytes": 65358
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_spread1.json",
+      "sha256": "552a5392bdf7f46df6e51fa42b222bce8a68b7e5faf7a41626f4fffebb2eb05d",
+      "bytes": 25114
+    }
+  },
+  {
+    "condition": "S19",
+    "scenario_id": "reg_s1_spread10",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 1,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 246,
+    "selected_count": 42,
+    "total_seconds": 0.0007101,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_spread10__Streaming.json",
+      "sha256": "6c7ecdcf6b6a343d741941b9ee2094a4d97d54eb1afac073eda8f69e667c1fe5",
+      "bytes": 1609
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_spread10.json",
+      "sha256": "2223ab3d7e1f438ff9ecd640193b78b742e1da281879d5ddc7203d0e6315bf97",
+      "bytes": 25121
+    }
+  },
+  {
+    "condition": "S19",
+    "scenario_id": "reg_s1_spread10",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 1,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 257,
+    "selected_count": 39,
+    "total_seconds": 0.0023453999892808497,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_spread10__Greedy.json",
+      "sha256": "b1744e55c9b79cfdd207ec12740317dc6eb806700620d4fe283d552a753d1daa",
+      "bytes": 2043
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_spread10.json",
+      "sha256": "2223ab3d7e1f438ff9ecd640193b78b742e1da281879d5ddc7203d0e6315bf97",
+      "bytes": 25121
+    }
+  },
+  {
+    "condition": "S19",
+    "scenario_id": "reg_s1_spread10",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 1,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 294,
+    "selected_count": 49,
+    "total_seconds": 0.09145250002620742,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_spread10__ILS1000.json",
+      "sha256": "435a6996acc7d92e376e9519abe33cb9a1ae231ec010687020864ffabec57afb",
+      "bytes": 2192
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_spread10.json",
+      "sha256": "2223ab3d7e1f438ff9ecd640193b78b742e1da281879d5ddc7203d0e6315bf97",
+      "bytes": 25121
+    }
+  },
+  {
+    "condition": "S19",
+    "scenario_id": "reg_s1_spread10",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 1,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 290,
+    "selected_count": 47,
+    "total_seconds": 2.825531200040132,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_spread10__SCIP.json",
+      "sha256": "447bd5cb115018f415b5f664bc535265a15da8760298355323e814f43f596163",
+      "bytes": 4321
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_spread10.json",
+      "sha256": "2223ab3d7e1f438ff9ecd640193b78b742e1da281879d5ddc7203d0e6315bf97",
+      "bytes": 25121
+    }
+  },
+  {
+    "condition": "S20",
+    "scenario_id": "reg_s1_spread1000",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 1,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 16094,
+    "selected_count": 32,
+    "total_seconds": 0.0004586,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_spread1000__Streaming.json",
+      "sha256": "b6e743bb17b7a86206b91d816b6fb3eb43946be2727747bfb7d18d063e1af176",
+      "bytes": 1497
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_spread1000.json",
+      "sha256": "34649608ee30c02d9f806e4f0a30dbe945276694e8364f97ee7eb6479f7fd758",
+      "bytes": 25376
+    }
+  },
+  {
+    "condition": "S20",
+    "scenario_id": "reg_s1_spread1000",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 1,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 17062,
+    "selected_count": 42,
+    "total_seconds": 0.001476000004913658,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_spread1000__Greedy.json",
+      "sha256": "37b15b7ccaa71758455405beed255a8d18b986e0975aedb077a9a3b62091b4c8",
+      "bytes": 2089
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_spread1000.json",
+      "sha256": "34649608ee30c02d9f806e4f0a30dbe945276694e8364f97ee7eb6479f7fd758",
+      "bytes": 25376
+    }
+  },
+  {
+    "condition": "S20",
+    "scenario_id": "reg_s1_spread1000",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 1,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 17980,
+    "selected_count": 41,
+    "total_seconds": 0.02903639996657148,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_spread1000__ILS1000.json",
+      "sha256": "598ea04d01b7eadf2405cfa618ffa9d33ba2df84b4370d92ca6f9a9b21bb04f6",
+      "bytes": 2097
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_spread1000.json",
+      "sha256": "34649608ee30c02d9f806e4f0a30dbe945276694e8364f97ee7eb6479f7fd758",
+      "bytes": 25376
+    }
+  },
+  {
+    "condition": "S20",
+    "scenario_id": "reg_s1_spread1000",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 1,
+    "method": "SCIP",
+    "status": "optimal",
+    "feasible": true,
+    "objective": 17980,
+    "selected_count": 41,
+    "total_seconds": 0.019854400015901774,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_spread1000__SCIP.json",
+      "sha256": "36a4ed6a034a8c83373475c2d5af94973c91d95e80932894c2ed2ed2a96b59fc",
+      "bytes": 2534
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_spread1000.json",
+      "sha256": "34649608ee30c02d9f806e4f0a30dbe945276694e8364f97ee7eb6479f7fd758",
+      "bytes": 25376
+    }
+  },
+  {
+    "condition": "S21",
+    "scenario_id": "reg_s2_base",
+    "family": "controlled_regular",
+    "axis": "base",
+    "seed": 2,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 1703,
+    "selected_count": 38,
+    "total_seconds": 0.0004629,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_base__Streaming.json",
+      "sha256": "879af6c30e6db5ac104c3eeb51931603861564484e1cedc2d109202e7f981f2a",
+      "bytes": 1556
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_base.json",
+      "sha256": "a2ef2d7d8a453ab0669ef27cba702069b72b80873790c58460f5b56708699e6c",
+      "bytes": 25243
+    }
+  },
+  {
+    "condition": "S21",
+    "scenario_id": "reg_s2_base",
+    "family": "controlled_regular",
+    "axis": "base",
+    "seed": 2,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 2115,
+    "selected_count": 45,
+    "total_seconds": 0.0017657999997027218,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_base__Greedy.json",
+      "sha256": "e6113a36e847fb692d8b7193f12d063a4870b71ba29ec9a974be53e800b818f2",
+      "bytes": 2116
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_base.json",
+      "sha256": "a2ef2d7d8a453ab0669ef27cba702069b72b80873790c58460f5b56708699e6c",
+      "bytes": 25243
+    }
+  },
+  {
+    "condition": "S21",
+    "scenario_id": "reg_s2_base",
+    "family": "controlled_regular",
+    "axis": "base",
+    "seed": 2,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 2138,
+    "selected_count": 44,
+    "total_seconds": 0.03562820004299283,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_base__ILS1000.json",
+      "sha256": "f0fbc48aaf27f93a6f5adf5893834f6af22054437dc2dac736d8a764559ba145",
+      "bytes": 2121
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_base.json",
+      "sha256": "a2ef2d7d8a453ab0669ef27cba702069b72b80873790c58460f5b56708699e6c",
+      "bytes": 25243
+    }
+  },
+  {
+    "condition": "S21",
+    "scenario_id": "reg_s2_base",
+    "family": "controlled_regular",
+    "axis": "base",
+    "seed": 2,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 2132,
+    "selected_count": 42,
+    "total_seconds": 0.1689788000076078,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_base__SCIP.json",
+      "sha256": "17b6d9a74be2a54ab20124a16cd091a05e4fea2411b9bc32f2ef091353f3dd4e",
+      "bytes": 3468
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_base.json",
+      "sha256": "a2ef2d7d8a453ab0669ef27cba702069b72b80873790c58460f5b56708699e6c",
+      "bytes": 25243
+    }
+  },
+  {
+    "condition": "S22",
+    "scenario_id": "reg_s2_degree16",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 2,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 756,
+    "selected_count": 11,
+    "total_seconds": 0.0007175,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_degree16__Streaming.json",
+      "sha256": "dc6d084bff706449d5e25bb202835b1408f60144bf0fd36f810c9cc6761a9ee9",
+      "bytes": 1226
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_degree16.json",
+      "sha256": "6d89cdd7bf89d1315d48c7e39386d3cc5dcd75bef3e19a47381e4455e2d22177",
+      "bytes": 19391
+    }
+  },
+  {
+    "condition": "S22",
+    "scenario_id": "reg_s2_degree16",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 2,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 799,
+    "selected_count": 12,
+    "total_seconds": 0.0016250999760814011,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_degree16__Greedy.json",
+      "sha256": "3e2e4d19c165baec5b98be1db37cdd0a22d8649e610ded2444c0396eeb8ad678",
+      "bytes": 1701
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_degree16.json",
+      "sha256": "6d89cdd7bf89d1315d48c7e39386d3cc5dcd75bef3e19a47381e4455e2d22177",
+      "bytes": 19391
+    }
+  },
+  {
+    "condition": "S22",
+    "scenario_id": "reg_s2_degree16",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 2,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 880,
+    "selected_count": 13,
+    "total_seconds": 0.030930899956729263,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_degree16__ILS1000.json",
+      "sha256": "89991dcc6b8dcdfadd346e8dab2901ebac43bbac18b2da564581dffbdfdb162f",
+      "bytes": 1740
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_degree16.json",
+      "sha256": "6d89cdd7bf89d1315d48c7e39386d3cc5dcd75bef3e19a47381e4455e2d22177",
+      "bytes": 19391
+    }
+  },
+  {
+    "condition": "S22",
+    "scenario_id": "reg_s2_degree16",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 2,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 883,
+    "selected_count": 13,
+    "total_seconds": 0.31940179999219254,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_degree16__SCIP.json",
+      "sha256": "908d6daa0c784650050992888ae67db3fe37f3eed51aca01a72473adf228604b",
+      "bytes": 2771
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_degree16.json",
+      "sha256": "6d89cdd7bf89d1315d48c7e39386d3cc5dcd75bef3e19a47381e4455e2d22177",
+      "bytes": 19391
+    }
+  },
+  {
+    "condition": "S23",
+    "scenario_id": "reg_s2_degree32",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 2,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 347,
+    "selected_count": 5,
+    "total_seconds": 0.0004098,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_degree32__Streaming.json",
+      "sha256": "6f136157a568bc86f15a20f3d8bf5b741b736013ec93c5106a161edf9606d61f",
+      "bytes": 1152
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_degree32.json",
+      "sha256": "a609759c60339cb0140cf7cbf55ee73bb5cf436e91d715d826f0f753d96cf560",
+      "bytes": 18119
+    }
+  },
+  {
+    "condition": "S23",
+    "scenario_id": "reg_s2_degree32",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 2,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 478,
+    "selected_count": 7,
+    "total_seconds": 0.0017998999683186412,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_degree32__Greedy.json",
+      "sha256": "732c67c50f6e2be26028ff410c4f38043d19e8323ec16e670e886478292ea01a",
+      "bytes": 1636
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_degree32.json",
+      "sha256": "a609759c60339cb0140cf7cbf55ee73bb5cf436e91d715d826f0f753d96cf560",
+      "bytes": 18119
+    }
+  },
+  {
+    "condition": "S23",
+    "scenario_id": "reg_s2_degree32",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 2,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 478,
+    "selected_count": 7,
+    "total_seconds": 0.0446834999602288,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_degree32__ILS1000.json",
+      "sha256": "4320490de4dd850bb26f0e6a02e0cefe251dcfcb92d0c47d2b2d58f2b8d5e23f",
+      "bytes": 1655
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_degree32.json",
+      "sha256": "a609759c60339cb0140cf7cbf55ee73bb5cf436e91d715d826f0f753d96cf560",
+      "bytes": 18119
+    }
+  },
+  {
+    "condition": "S23",
+    "scenario_id": "reg_s2_degree32",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 2,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 520,
+    "selected_count": 7,
+    "total_seconds": 0.2127258999971673,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_degree32__SCIP.json",
+      "sha256": "940dc9481c0296133721bdcacef056c4006e57ec856340f22b9903fa633a3ba6",
+      "bytes": 2965
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_degree32.json",
+      "sha256": "a609759c60339cb0140cf7cbf55ee73bb5cf436e91d715d826f0f753d96cf560",
+      "bytes": 18119
+    }
+  },
+  {
+    "condition": "S24",
+    "scenario_id": "reg_s2_degree8",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 2,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 1030,
+    "selected_count": 19,
+    "total_seconds": 0.0005078,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_degree8__Streaming.json",
+      "sha256": "4cb1b435683d95fd587547bd475e3cd9227fe2203c3781921457cba29a4dad0c",
+      "bytes": 1325
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_degree8.json",
+      "sha256": "9f0146bc4b71c62f09167784bfd4598c5a3cb5638878a0b3abfc2e7d498a9dd1",
+      "bytes": 21502
+    }
+  },
+  {
+    "condition": "S24",
+    "scenario_id": "reg_s2_degree8",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 2,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 1421,
+    "selected_count": 23,
+    "total_seconds": 0.0014581999857909977,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_degree8__Greedy.json",
+      "sha256": "90ef50a77f30f4b4f5ed056a09a4492bd65f20ffea06371768c00f7e1bbc1700",
+      "bytes": 1841
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_degree8.json",
+      "sha256": "9f0146bc4b71c62f09167784bfd4598c5a3cb5638878a0b3abfc2e7d498a9dd1",
+      "bytes": 21502
+    }
+  },
+  {
+    "condition": "S24",
+    "scenario_id": "reg_s2_degree8",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 2,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 1456,
+    "selected_count": 25,
+    "total_seconds": 0.02410859998781234,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_degree8__ILS1000.json",
+      "sha256": "f7db6d53debaca25c70f60b85958365bc544f9c5559c9ce1cbc58b715d601ca8",
+      "bytes": 1892
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_degree8.json",
+      "sha256": "9f0146bc4b71c62f09167784bfd4598c5a3cb5638878a0b3abfc2e7d498a9dd1",
+      "bytes": 21502
+    }
+  },
+  {
+    "condition": "S24",
+    "scenario_id": "reg_s2_degree8",
+    "family": "controlled_regular",
+    "axis": "degree",
+    "seed": 2,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 1474,
+    "selected_count": 24,
+    "total_seconds": 0.06422679999377578,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_degree8__SCIP.json",
+      "sha256": "71996b745f8ec486e38f56d223df4b4966981e422e2db3c1c783d5d1f32209fc",
+      "bytes": 3243
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_degree8.json",
+      "sha256": "9f0146bc4b71c62f09167784bfd4598c5a3cb5638878a0b3abfc2e7d498a9dd1",
+      "bytes": 21502
+    }
+  },
+  {
+    "condition": "S25",
+    "scenario_id": "reg_s2_rank16",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 2,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 901,
+    "selected_count": 16,
+    "total_seconds": 0.0009339,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_rank16__Streaming.json",
+      "sha256": "4e0679d4025df94927ea9e83b4e64638843ab620adc99cf1a2e954032f271e07",
+      "bytes": 1287
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_rank16.json",
+      "sha256": "e6684055ae193534631c5d6aabe0086af2d25581fc77aba10a4d02df8d32553e",
+      "bytes": 72645
+    }
+  },
+  {
+    "condition": "S25",
+    "scenario_id": "reg_s2_rank16",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 2,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 959,
+    "selected_count": 17,
+    "total_seconds": 0.0021719999494962394,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_rank16__Greedy.json",
+      "sha256": "8575857d1a3265c2e6c0615ed324c82277b2e06777ae3c93201401b414039659",
+      "bytes": 1766
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_rank16.json",
+      "sha256": "e6684055ae193534631c5d6aabe0086af2d25581fc77aba10a4d02df8d32553e",
+      "bytes": 72645
+    }
+  },
+  {
+    "condition": "S25",
+    "scenario_id": "reg_s2_rank16",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 2,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 1180,
+    "selected_count": 20,
+    "total_seconds": 0.04614590003620833,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_rank16__ILS1000.json",
+      "sha256": "f4a1eac72e344b52ab4e19f7bf80b4f319832adae26e4c684e1215c112615e7f",
+      "bytes": 1823
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_rank16.json",
+      "sha256": "e6684055ae193534631c5d6aabe0086af2d25581fc77aba10a4d02df8d32553e",
+      "bytes": 72645
+    }
+  },
+  {
+    "condition": "S25",
+    "scenario_id": "reg_s2_rank16",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 2,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 1180,
+    "selected_count": 20,
+    "total_seconds": 10.10920799995074,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_rank16__SCIP.json",
+      "sha256": "050807d07464f1affc52175ec493845576a775af86ae923d933df1029170fb5d",
+      "bytes": 4558
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_rank16.json",
+      "sha256": "e6684055ae193534631c5d6aabe0086af2d25581fc77aba10a4d02df8d32553e",
+      "bytes": 72645
+    }
+  },
+  {
+    "condition": "S26",
+    "scenario_id": "reg_s2_rank32",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 2,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 477,
+    "selected_count": 9,
+    "total_seconds": 0.0017614,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_rank32__Streaming.json",
+      "sha256": "ab99475e012d5cd49e7e02b6555ec4098ded1b546b1babc8db86a89ef4bce3c0",
+      "bytes": 1202
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_rank32.json",
+      "sha256": "4d2dd763245d9cdd40a899e8afcecc3cded37053f1a4aec89fb3307a9f6dd54e",
+      "bytes": 138405
+    }
+  },
+  {
+    "condition": "S26",
+    "scenario_id": "reg_s2_rank32",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 2,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 601,
+    "selected_count": 11,
+    "total_seconds": 0.0035878000198863447,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_rank32__Greedy.json",
+      "sha256": "02e9dd6fa9b4fe626358e112297aabcadec7d6c1558d5e2048272ea626f532b3",
+      "bytes": 1690
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_rank32.json",
+      "sha256": "4d2dd763245d9cdd40a899e8afcecc3cded37053f1a4aec89fb3307a9f6dd54e",
+      "bytes": 138405
+    }
+  },
+  {
+    "condition": "S26",
+    "scenario_id": "reg_s2_rank32",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 2,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 775,
+    "selected_count": 13,
+    "total_seconds": 0.06259880005382001,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_rank32__ILS1000.json",
+      "sha256": "3e86ef08efdaa7c3ea4a616dd8ccfb796c922e8fe81fd21dc2812c22672fcde0",
+      "bytes": 1739
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_rank32.json",
+      "sha256": "4d2dd763245d9cdd40a899e8afcecc3cded37053f1a4aec89fb3307a9f6dd54e",
+      "bytes": 138405
+    }
+  },
+  {
+    "condition": "S26",
+    "scenario_id": "reg_s2_rank32",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 2,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 793,
+    "selected_count": 12,
+    "total_seconds": 17.883726400032174,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_rank32__SCIP.json",
+      "sha256": "32eccc24fa31c8ebf01d10cc0f38554dfc1033726a3959ad52fe7054bd6a5507",
+      "bytes": 3661
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_rank32.json",
+      "sha256": "4d2dd763245d9cdd40a899e8afcecc3cded37053f1a4aec89fb3307a9f6dd54e",
+      "bytes": 138405
+    }
+  },
+  {
+    "condition": "S27",
+    "scenario_id": "reg_s2_rank8",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 2,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 1206,
+    "selected_count": 25,
+    "total_seconds": 0.0006343,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_rank8__Streaming.json",
+      "sha256": "50a7689e931c74235c2b1faf1881cad106829e3885f04aa33cdc2c753e04c534",
+      "bytes": 1397
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_rank8.json",
+      "sha256": "605f12b3bb21e72076eb3f6b5cfb3b4ed891fe4f2d1c0b77365837b629100443",
+      "bytes": 40404
+    }
+  },
+  {
+    "condition": "S27",
+    "scenario_id": "reg_s2_rank8",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 2,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 1613,
+    "selected_count": 29,
+    "total_seconds": 0.0017513000057078898,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_rank8__Greedy.json",
+      "sha256": "709638f15312a19e97ad847a556f05d1543f6194d572b565024a4ff16e23e2ac",
+      "bytes": 1915
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_rank8.json",
+      "sha256": "605f12b3bb21e72076eb3f6b5cfb3b4ed891fe4f2d1c0b77365837b629100443",
+      "bytes": 40404
+    }
+  },
+  {
+    "condition": "S27",
+    "scenario_id": "reg_s2_rank8",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 2,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 1631,
+    "selected_count": 28,
+    "total_seconds": 0.026837399986106902,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_rank8__ILS1000.json",
+      "sha256": "4367d60d3fe69b361981ba1503b022f5f35f5192a1c1938251a053abfb87307d",
+      "bytes": 1922
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_rank8.json",
+      "sha256": "605f12b3bb21e72076eb3f6b5cfb3b4ed891fe4f2d1c0b77365837b629100443",
+      "bytes": 40404
+    }
+  },
+  {
+    "condition": "S27",
+    "scenario_id": "reg_s2_rank8",
+    "family": "controlled_regular",
+    "axis": "rank",
+    "seed": 2,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 1652,
+    "selected_count": 29,
+    "total_seconds": 1.8150720999692567,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_rank8__SCIP.json",
+      "sha256": "5302a17caf2edec1c09e4c74e69590fe791fce9b0ea1cfed7a4f2aca44996e9e",
+      "bytes": 3571
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_rank8.json",
+      "sha256": "605f12b3bb21e72076eb3f6b5cfb3b4ed891fe4f2d1c0b77365837b629100443",
+      "bytes": 40404
+    }
+  },
+  {
+    "condition": "S28",
+    "scenario_id": "reg_s2_spread1",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 2,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 43,
+    "selected_count": 43,
+    "total_seconds": 0.0004597,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_spread1__Streaming.json",
+      "sha256": "95a25d8222919e4fb545a93f5effb02e37055e900b06d567afff71d54ca3cd08",
+      "bytes": 1608
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_spread1.json",
+      "sha256": "35f0203d3f4ba12e8384c0f9619c444dc9da20faf6b994863cc41363bbc00e03",
+      "bytes": 25114
+    }
+  },
+  {
+    "condition": "S28",
+    "scenario_id": "reg_s2_spread1",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 2,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 42,
+    "selected_count": 42,
+    "total_seconds": 0.0013814999838359654,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_spread1__Greedy.json",
+      "sha256": "ce50aaa92ca4bffd339e36312d7f19e8947a9dd321d91bef2fa77fd42b5ef7c7",
+      "bytes": 2072
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_spread1.json",
+      "sha256": "35f0203d3f4ba12e8384c0f9619c444dc9da20faf6b994863cc41363bbc00e03",
+      "bytes": 25114
+    }
+  },
+  {
+    "condition": "S28",
+    "scenario_id": "reg_s2_spread1",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 2,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 55,
+    "selected_count": 55,
+    "total_seconds": 0.0298039999906905,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_spread1__ILS1000.json",
+      "sha256": "fcacc7aaab60d92018c057a352ea81215cac77388d70b56c4be4e32f0cd796fd",
+      "bytes": 2260
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_spread1.json",
+      "sha256": "35f0203d3f4ba12e8384c0f9619c444dc9da20faf6b994863cc41363bbc00e03",
+      "bytes": 25114
+    }
+  },
+  {
+    "condition": "S28",
+    "scenario_id": "reg_s2_spread1",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 2,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 56,
+    "selected_count": 56,
+    "total_seconds": 3108.0120511999703,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_spread1__SCIP.json",
+      "sha256": "12ab657c7bfcdf825521272e746b62cfdb8a77e3e31dc2ab5fa80440d9bb0191",
+      "bytes": 63397
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_spread1.json",
+      "sha256": "35f0203d3f4ba12e8384c0f9619c444dc9da20faf6b994863cc41363bbc00e03",
+      "bytes": 25114
+    }
+  },
+  {
+    "condition": "S29",
+    "scenario_id": "reg_s2_spread10",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 2,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 231,
+    "selected_count": 41,
+    "total_seconds": 0.0004484,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_spread10__Streaming.json",
+      "sha256": "e31a3b931e0c237b09f6edfef50fb6c380d217900d5fd9785795e93f6c578bbb",
+      "bytes": 1603
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_spread10.json",
+      "sha256": "4cfb3f9404d97925df8e516b0333b344c21a73f85e738c9f671e9b40a193f680",
+      "bytes": 25121
+    }
+  },
+  {
+    "condition": "S29",
+    "scenario_id": "reg_s2_spread10",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 2,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 275,
+    "selected_count": 42,
+    "total_seconds": 0.0016280999989248812,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_spread10__Greedy.json",
+      "sha256": "caed2d91bbe3fa250580446df94c0748fb926826336f3fae54843a21055e95bc",
+      "bytes": 2079
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_spread10.json",
+      "sha256": "4cfb3f9404d97925df8e516b0333b344c21a73f85e738c9f671e9b40a193f680",
+      "bytes": 25121
+    }
+  },
+  {
+    "condition": "S29",
+    "scenario_id": "reg_s2_spread10",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 2,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 294,
+    "selected_count": 48,
+    "total_seconds": 0.023783499957062304,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_spread10__ILS1000.json",
+      "sha256": "d894bb92cc5e1880ca428c80655a1b3adbbd49df8fbd93e8c08be021d1e37881",
+      "bytes": 2180
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_spread10.json",
+      "sha256": "4cfb3f9404d97925df8e516b0333b344c21a73f85e738c9f671e9b40a193f680",
+      "bytes": 25121
+    }
+  },
+  {
+    "condition": "S29",
+    "scenario_id": "reg_s2_spread10",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 2,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 293,
+    "selected_count": 49,
+    "total_seconds": 2.2062969999969937,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_spread10__SCIP.json",
+      "sha256": "40e62697141f245655b94512d8541def897d878968ab84ac8af2997181c6e18b",
+      "bytes": 3235
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_spread10.json",
+      "sha256": "4cfb3f9404d97925df8e516b0333b344c21a73f85e738c9f671e9b40a193f680",
+      "bytes": 25121
+    }
+  },
+  {
+    "condition": "S30",
+    "scenario_id": "reg_s2_spread1000",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 2,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 14803,
+    "selected_count": 33,
+    "total_seconds": 0.0006458,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_spread1000__Streaming.json",
+      "sha256": "0df8b04920ca05a374e329e1f14683416f78826fe9b56cdf185eaa712e1390e9",
+      "bytes": 1515
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_spread1000.json",
+      "sha256": "b4c7f33aff504f49952c108fdc896bc741b09b6a57b3a1c17833d96fa8297bd7",
+      "bytes": 25376
+    }
+  },
+  {
+    "condition": "S30",
+    "scenario_id": "reg_s2_spread1000",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 2,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 17314,
+    "selected_count": 45,
+    "total_seconds": 0.0015014000236988068,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_spread1000__Greedy.json",
+      "sha256": "6495c6fb4b71470bab13c10ea0f544e01c28f5d1234ebcedfa841b54d32ddcd7",
+      "bytes": 2129
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_spread1000.json",
+      "sha256": "b4c7f33aff504f49952c108fdc896bc741b09b6a57b3a1c17833d96fa8297bd7",
+      "bytes": 25376
+    }
+  },
+  {
+    "condition": "S30",
+    "scenario_id": "reg_s2_spread1000",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 2,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 17610,
+    "selected_count": 44,
+    "total_seconds": 0.021478500042576343,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_spread1000__ILS1000.json",
+      "sha256": "d7c9f6dce9fa061bd7ad8eb8d93667a714beed74597cf9ab8ee0794df23c91e4",
+      "bytes": 2138
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_spread1000.json",
+      "sha256": "b4c7f33aff504f49952c108fdc896bc741b09b6a57b3a1c17833d96fa8297bd7",
+      "bytes": 25376
+    }
+  },
+  {
+    "condition": "S30",
+    "scenario_id": "reg_s2_spread1000",
+    "family": "controlled_regular",
+    "axis": "spread",
+    "seed": 2,
+    "method": "SCIP",
+    "status": "optimal",
+    "feasible": true,
+    "objective": 17610,
+    "selected_count": 44,
+    "total_seconds": 0.017190499987918884,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_spread1000__SCIP.json",
+      "sha256": "c47d7d622b1d8e8cd08896a8730d3b420f5a0d9def06e2ae25b657859cd0b190",
+      "bytes": 2577
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_spread1000.json",
+      "sha256": "b4c7f33aff504f49952c108fdc896bc741b09b6a57b3a1c17833d96fa8297bd7",
+      "bytes": 25376
+    }
+  },
+  {
+    "condition": "S31",
+    "scenario_id": "reg_s0_n1024",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 7338,
+    "selected_count": 146,
+    "total_seconds": 0.0014492,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_n1024__Streaming.json",
+      "sha256": "516cd7ef4dd51acfb35926932652a957cbcad48c508a40610c45d43b434b2636",
+      "bytes": 2963
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_n1024.json",
+      "sha256": "337cc42de0ed017023ab08a6635860aea0f3cbde7cf991b94e929991e5b27aa9",
+      "bytes": 104045
+    }
+  },
+  {
+    "condition": "S31",
+    "scenario_id": "reg_s0_n1024",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 8208,
+    "selected_count": 168,
+    "total_seconds": 0.003150200005620718,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_n1024__Greedy.json",
+      "sha256": "1bca331e2e6699c1a6df2693163281cba0eb1622690b6cb7de0dda9fae7aca3f",
+      "bytes": 3719
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_n1024.json",
+      "sha256": "337cc42de0ed017023ab08a6635860aea0f3cbde7cf991b94e929991e5b27aa9",
+      "bytes": 104045
+    }
+  },
+  {
+    "condition": "S31",
+    "scenario_id": "reg_s0_n1024",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 8671,
+    "selected_count": 183,
+    "total_seconds": 0.2096105000237003,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_n1024__ILS1000.json",
+      "sha256": "9b5af340128da6824426fb549957fc43ff973ef0582966c378ee257a66a37b55",
+      "bytes": 3936
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_n1024.json",
+      "sha256": "337cc42de0ed017023ab08a6635860aea0f3cbde7cf991b94e929991e5b27aa9",
+      "bytes": 104045
+    }
+  },
+  {
+    "condition": "S31",
+    "scenario_id": "reg_s0_n1024",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 8682,
+    "selected_count": 176,
+    "total_seconds": 0.15843850001692772,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_n1024__SCIP.json",
+      "sha256": "6e8d8e33ecef34f32868dd43e95edb16b3ba163fc4743c47c0bd6f796a7e8858",
+      "bytes": 5506
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_n1024.json",
+      "sha256": "337cc42de0ed017023ab08a6635860aea0f3cbde7cf991b94e929991e5b27aa9",
+      "bytes": 104045
+    }
+  },
+  {
+    "condition": "S32",
+    "scenario_id": "reg_s1_n1024",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 1,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 7602,
+    "selected_count": 152,
+    "total_seconds": 0.0017416,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_n1024__Streaming.json",
+      "sha256": "6665743c997483cf36d26ec2ce76230b0d1731ddf28ce40682e44ee834ba0938",
+      "bytes": 3043
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_n1024.json",
+      "sha256": "c96eaa9fbfdc7e781f48d7e8e0d9d66cc6a9c962c37f66cf915a2322e994da8e",
+      "bytes": 104045
+    }
+  },
+  {
+    "condition": "S32",
+    "scenario_id": "reg_s1_n1024",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 1,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 8163,
+    "selected_count": 173,
+    "total_seconds": 0.004412700014654547,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_n1024__Greedy.json",
+      "sha256": "a85dd571eeb7056a43be24fc061e2bc29a9fe0dcaaac2a38a41ea6aebc2498a6",
+      "bytes": 3794
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_n1024.json",
+      "sha256": "c96eaa9fbfdc7e781f48d7e8e0d9d66cc6a9c962c37f66cf915a2322e994da8e",
+      "bytes": 104045
+    }
+  },
+  {
+    "condition": "S32",
+    "scenario_id": "reg_s1_n1024",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 1,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 8383,
+    "selected_count": 184,
+    "total_seconds": 0.1771201000083238,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_n1024__ILS1000.json",
+      "sha256": "a30925a9b75d7ec98fd2151a27b475f28f30f4d30adbcb4ecd7a9b33f224d69b",
+      "bytes": 3949
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_n1024.json",
+      "sha256": "c96eaa9fbfdc7e781f48d7e8e0d9d66cc6a9c962c37f66cf915a2322e994da8e",
+      "bytes": 104045
+    }
+  },
+  {
+    "condition": "S32",
+    "scenario_id": "reg_s1_n1024",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 1,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 8474,
+    "selected_count": 173,
+    "total_seconds": 1.7942948999698274,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_n1024__SCIP.json",
+      "sha256": "08f440d05914320340768972cdcd7290cff095633406c18741b2fb7a00eab0f2",
+      "bytes": 4829
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_n1024.json",
+      "sha256": "c96eaa9fbfdc7e781f48d7e8e0d9d66cc6a9c962c37f66cf915a2322e994da8e",
+      "bytes": 104045
+    }
+  },
+  {
+    "condition": "S33",
+    "scenario_id": "reg_s2_n1024",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 2,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 7881,
+    "selected_count": 151,
+    "total_seconds": 0.0017136,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_n1024__Streaming.json",
+      "sha256": "fcdd9754164049f2a00b265affee4ffdf1491e513b413b5b09346d7dfe51a33e",
+      "bytes": 3034
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_n1024.json",
+      "sha256": "e9d5681e6e53f3d82de6c96300054befd6df549704d1420eb28db07f3caec221",
+      "bytes": 104045
+    }
+  },
+  {
+    "condition": "S33",
+    "scenario_id": "reg_s2_n1024",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 2,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 8436,
+    "selected_count": 172,
+    "total_seconds": 0.004844699986279011,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_n1024__Greedy.json",
+      "sha256": "18c76fb63c045250459c4f72079d748b61b6d8dfc36bd382f3772d29f29a9f05",
+      "bytes": 3775
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_n1024.json",
+      "sha256": "e9d5681e6e53f3d82de6c96300054befd6df549704d1420eb28db07f3caec221",
+      "bytes": 104045
+    }
+  },
+  {
+    "condition": "S33",
+    "scenario_id": "reg_s2_n1024",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 2,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 8679,
+    "selected_count": 189,
+    "total_seconds": 0.26442259998293594,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_n1024__ILS1000.json",
+      "sha256": "41071eb28dbf413a59258a8ea7ed994eadc318c0a83c919475a81dd6b9b98709",
+      "bytes": 4018
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_n1024.json",
+      "sha256": "e9d5681e6e53f3d82de6c96300054befd6df549704d1420eb28db07f3caec221",
+      "bytes": 104045
+    }
+  },
+  {
+    "condition": "S33",
+    "scenario_id": "reg_s2_n1024",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 2,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 8455,
+    "selected_count": 182,
+    "total_seconds": 0.16586609999649227,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_n1024__SCIP.json",
+      "sha256": "267fd50a563da3be62ec72dbce81a0fface9e82eee9ec61a3ae4ff44aaa8ae4c",
+      "bytes": 4940
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_n1024.json",
+      "sha256": "e9d5681e6e53f3d82de6c96300054befd6df549704d1420eb28db07f3caec221",
+      "bytes": 104045
+    }
+  },
+  {
+    "condition": "S34",
+    "scenario_id": "reg_s0_n4096",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 30188,
+    "selected_count": 576,
+    "total_seconds": 0.0220925,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_n4096__Streaming.json",
+      "sha256": "8253c7841d1cfe1c704fb5a94df8525f3b0f948b5b540df40119192bcf4f4ebb",
+      "bytes": 8921
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_n4096.json",
+      "sha256": "0a17c938ec34b87ce0e29fad19989fdc993d43e7a2e4563c02fbaa6055c1768f",
+      "bytes": 425587
+    }
+  },
+  {
+    "condition": "S34",
+    "scenario_id": "reg_s0_n4096",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 33024,
+    "selected_count": 673,
+    "total_seconds": 0.008841600036248565,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_n4096__Greedy.json",
+      "sha256": "4f28f85a0726d35422e9ba45d53e8ca767fc561b5e432a09ac6269cc12a1f369",
+      "bytes": 10802
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_n4096.json",
+      "sha256": "0a17c938ec34b87ce0e29fad19989fdc993d43e7a2e4563c02fbaa6055c1768f",
+      "bytes": 425587
+    }
+  },
+  {
+    "condition": "S34",
+    "scenario_id": "reg_s0_n4096",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 34182,
+    "selected_count": 729,
+    "total_seconds": 2.7900721000041813,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_n4096__ILS1000.json",
+      "sha256": "09a8da04f0e2ff2c2f61c606d5984b39e4dda38f497d2074358a44d1e8e84635",
+      "bytes": 11597
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_n4096.json",
+      "sha256": "0a17c938ec34b87ce0e29fad19989fdc993d43e7a2e4563c02fbaa6055c1768f",
+      "bytes": 425587
+    }
+  },
+  {
+    "condition": "S34",
+    "scenario_id": "reg_s0_n4096",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 34277,
+    "selected_count": 713,
+    "total_seconds": 10.901432699989527,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_n4096__SCIP.json",
+      "sha256": "81e9f9a67b4b3fd572aaa2f4e6effe87d0160e6feff0cba7ebcc04cb231c7b74",
+      "bytes": 12429
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_n4096.json",
+      "sha256": "0a17c938ec34b87ce0e29fad19989fdc993d43e7a2e4563c02fbaa6055c1768f",
+      "bytes": 425587
+    }
+  },
+  {
+    "condition": "S35",
+    "scenario_id": "sb_LHG_n4096",
+    "family": "public_LHG",
+    "axis": "n",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 5793839,
+    "selected_count": 633,
+    "total_seconds": 0.0051988,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_n4096__Streaming.json",
+      "sha256": "449af71c864b132e365f598ec6aba05fb110cc288d7c26a0e35fb34f159bd7d6",
+      "bytes": 11244
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_n4096.json",
+      "sha256": "879b745597ae8b7219d0f61653552a8223f473d6799c0f7319eee21343de1668",
+      "bytes": 464346
+    }
+  },
+  {
+    "condition": "S35",
+    "scenario_id": "sb_LHG_n4096",
+    "family": "public_LHG",
+    "axis": "n",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 6965836,
+    "selected_count": 761,
+    "total_seconds": 0.008236399968154728,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_n4096__Greedy.json",
+      "sha256": "72b3a97e8ca795bae2a3466acba2681568268a6c0240b4f9ea13ccc558de4442",
+      "bytes": 13744
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_n4096.json",
+      "sha256": "879b745597ae8b7219d0f61653552a8223f473d6799c0f7319eee21343de1668",
+      "bytes": 464346
+    }
+  },
+  {
+    "condition": "S35",
+    "scenario_id": "sb_LHG_n4096",
+    "family": "public_LHG",
+    "axis": "n",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 7011661,
+    "selected_count": 766,
+    "total_seconds": 6.190381000051275,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_n4096__ILS1000.json",
+      "sha256": "94ea1a8498be784af36c66857e972280a2ad262ce93f1566ea97b6276e88445a",
+      "bytes": 13843
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_n4096.json",
+      "sha256": "879b745597ae8b7219d0f61653552a8223f473d6799c0f7319eee21343de1668",
+      "bytes": 464346
+    }
+  },
+  {
+    "condition": "S35",
+    "scenario_id": "sb_LHG_n4096",
+    "family": "public_LHG",
+    "axis": "n",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "optimal",
+    "feasible": true,
+    "objective": 7011670,
+    "selected_count": 766,
+    "total_seconds": 0.0826614000252448,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_n4096__SCIP.json",
+      "sha256": "d1593e5d0b3917b7683651fb3ae97105c69706668763fee6d85397e324856505",
+      "bytes": 14006
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_n4096.json",
+      "sha256": "879b745597ae8b7219d0f61653552a8223f473d6799c0f7319eee21343de1668",
+      "bytes": 464346
+    }
+  },
+  {
+    "condition": "S36",
+    "scenario_id": "sb_random100_n4096",
+    "family": "public_random100",
+    "axis": "n",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 35354,
+    "selected_count": 634,
+    "total_seconds": 0.0051106,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_n4096__Streaming.json",
+      "sha256": "9b3ead447d40b5317d9d4d9e46de5625f641a4092da9b3026b02c609a72d0a7e",
+      "bytes": 11266
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_n4096.json",
+      "sha256": "cd1c3b8b168cdcf974569639e946dafae07e637df1920d2c2090f1367179da16",
+      "bytes": 455845
+    }
+  },
+  {
+    "condition": "S36",
+    "scenario_id": "sb_random100_n4096",
+    "family": "public_random100",
+    "axis": "n",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 43770,
+    "selected_count": 761,
+    "total_seconds": 0.010787400009576231,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_n4096__Greedy.json",
+      "sha256": "382b5c405e30688718a1437ba8593813d89be9f39c95ef22a17a3fe5138a1d92",
+      "bytes": 13751
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_n4096.json",
+      "sha256": "cd1c3b8b168cdcf974569639e946dafae07e637df1920d2c2090f1367179da16",
+      "bytes": 455845
+    }
+  },
+  {
+    "condition": "S36",
+    "scenario_id": "sb_random100_n4096",
+    "family": "public_random100",
+    "axis": "n",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 43957,
+    "selected_count": 765,
+    "total_seconds": 18.94370639999397,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_n4096__ILS1000.json",
+      "sha256": "1e925eab04df32f5d94e238b10bc997aad5ac79ce0108ba936cf40ef9d294bb9",
+      "bytes": 13837
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_n4096.json",
+      "sha256": "cd1c3b8b168cdcf974569639e946dafae07e637df1920d2c2090f1367179da16",
+      "bytes": 455845
+    }
+  },
+  {
+    "condition": "S36",
+    "scenario_id": "sb_random100_n4096",
+    "family": "public_random100",
+    "axis": "n",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "optimal",
+    "feasible": true,
+    "objective": 43979,
+    "selected_count": 764,
+    "total_seconds": 0.0864904000191018,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_n4096__SCIP.json",
+      "sha256": "68a6473e67fd3b13f1ba395a79cf236444730f7842cf1d04e2b3ea10ab0d9e1f",
+      "bytes": 13981
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_n4096.json",
+      "sha256": "cd1c3b8b168cdcf974569639e946dafae07e637df1920d2c2090f1367179da16",
+      "bytes": 455845
+    }
+  },
+  {
+    "condition": "S37",
+    "scenario_id": "reg_s1_n4096",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 1,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 30163,
+    "selected_count": 586,
+    "total_seconds": 0.0064716,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_n4096__Streaming.json",
+      "sha256": "e448e441b5964c656a589a8da2519bb9842975a5843ca71ef20cd280c209ad3a",
+      "bytes": 9043
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_n4096.json",
+      "sha256": "518b6eedf09adf323c0c70beb55a57a338f66fe7f181ced5c8a7d921d4a1f797",
+      "bytes": 425587
+    }
+  },
+  {
+    "condition": "S37",
+    "scenario_id": "reg_s1_n4096",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 1,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 32725,
+    "selected_count": 676,
+    "total_seconds": 0.010430599970277399,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_n4096__Greedy.json",
+      "sha256": "42231d17d0d64ef9e9cc1d40ec79da0e57c8df5f4799b7162c26105ccdd4a849",
+      "bytes": 10849
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_n4096.json",
+      "sha256": "518b6eedf09adf323c0c70beb55a57a338f66fe7f181ced5c8a7d921d4a1f797",
+      "bytes": 425587
+    }
+  },
+  {
+    "condition": "S37",
+    "scenario_id": "reg_s1_n4096",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 1,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 33878,
+    "selected_count": 733,
+    "total_seconds": 1.648216700006742,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_n4096__ILS1000.json",
+      "sha256": "4f80303d98cd03cffb2b2f19f376efcba4dce97ab47d3971c4e5eba66d578ee1",
+      "bytes": 11643
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_n4096.json",
+      "sha256": "518b6eedf09adf323c0c70beb55a57a338f66fe7f181ced5c8a7d921d4a1f797",
+      "bytes": 425587
+    }
+  },
+  {
+    "condition": "S37",
+    "scenario_id": "reg_s1_n4096",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 1,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 33339,
+    "selected_count": 669,
+    "total_seconds": 10.692299599992111,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_n4096__SCIP.json",
+      "sha256": "6c1999d4dfd63077a3a435fc156271095065ba40fe0324424b59a55fcc4612d8",
+      "bytes": 11815
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_n4096.json",
+      "sha256": "518b6eedf09adf323c0c70beb55a57a338f66fe7f181ced5c8a7d921d4a1f797",
+      "bytes": 425587
+    }
+  },
+  {
+    "condition": "S38",
+    "scenario_id": "reg_s2_n4096",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 2,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 30346,
+    "selected_count": 576,
+    "total_seconds": 0.0061193,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_n4096__Streaming.json",
+      "sha256": "d0980df9f31f88206537c0d45289cca6dc2fe4d9a223c199d5faed1d019430bb",
+      "bytes": 8910
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_n4096.json",
+      "sha256": "2cee618b42ed9c71bc7dabb184602ad73ff18dd0f1e7ec6561c2da3058e66edd",
+      "bytes": 425587
+    }
+  },
+  {
+    "condition": "S38",
+    "scenario_id": "reg_s2_n4096",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 2,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 33236,
+    "selected_count": 678,
+    "total_seconds": 0.010713699972257018,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_n4096__Greedy.json",
+      "sha256": "d2683d76a29367a31607ae1981f6f59b048737f9746685a5dc9006205259dc8b",
+      "bytes": 10861
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_n4096.json",
+      "sha256": "2cee618b42ed9c71bc7dabb184602ad73ff18dd0f1e7ec6561c2da3058e66edd",
+      "bytes": 425587
+    }
+  },
+  {
+    "condition": "S38",
+    "scenario_id": "reg_s2_n4096",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 2,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 34357,
+    "selected_count": 736,
+    "total_seconds": 1.9064664000179619,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_n4096__ILS1000.json",
+      "sha256": "4fb2464856d84cb34192905aadb786e206ba7c95a0345f07f2b17046ae8539b8",
+      "bytes": 11674
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_n4096.json",
+      "sha256": "2cee618b42ed9c71bc7dabb184602ad73ff18dd0f1e7ec6561c2da3058e66edd",
+      "bytes": 425587
+    }
+  },
+  {
+    "condition": "S38",
+    "scenario_id": "reg_s2_n4096",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 2,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 34548,
+    "selected_count": 711,
+    "total_seconds": 9.541881999990437,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_n4096__SCIP.json",
+      "sha256": "8fd06fbbf7128cc2045d9987bc3febc5d36d0c84877910260a5db2cca1c7b84d",
+      "bytes": 12656
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_n4096.json",
+      "sha256": "2cee618b42ed9c71bc7dabb184602ad73ff18dd0f1e7ec6561c2da3058e66edd",
+      "bytes": 425587
+    }
+  },
+  {
+    "condition": "S39",
+    "scenario_id": "reg_s0_n16384",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 123114,
+    "selected_count": 2396,
+    "total_seconds": 0.0267278,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_n16384__Streaming.json",
+      "sha256": "275d1e28fb43d87bb37da72e418eb94141808139e164987c3e5190bb114f10f5",
+      "bytes": 34994
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_n16384.json",
+      "sha256": "bfc4e23201537e3707f4c31b6f1ac62569c42ebafdf58ce162a08b4ebe374a49",
+      "bytes": 1777657
+    }
+  },
+  {
+    "condition": "S39",
+    "scenario_id": "reg_s0_n16384",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 132037,
+    "selected_count": 2722,
+    "total_seconds": 0.0464776000007987,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_n16384__Greedy.json",
+      "sha256": "8abce97535abe8a8f3172b18f9e4b78809e188426bb385b9ced113ec3e4c5585",
+      "bytes": 40512
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_n16384.json",
+      "sha256": "bfc4e23201537e3707f4c31b6f1ac62569c42ebafdf58ce162a08b4ebe374a49",
+      "bytes": 1777657
+    }
+  },
+  {
+    "condition": "S39",
+    "scenario_id": "reg_s0_n16384",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 136970,
+    "selected_count": 2952,
+    "total_seconds": 46.309286100033205,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_n16384__ILS1000.json",
+      "sha256": "5fdf07b91458a4f95d6a99dbfbb0deebf9c69d7a4bb1817622dd509b154b0905",
+      "bytes": 43807
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_n16384.json",
+      "sha256": "bfc4e23201537e3707f4c31b6f1ac62569c42ebafdf58ce162a08b4ebe374a49",
+      "bytes": 1777657
+    }
+  },
+  {
+    "condition": "S39",
+    "scenario_id": "reg_s0_n16384",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 139748,
+    "selected_count": 2921,
+    "total_seconds": 386.6858484999975,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s0_n16384__SCIP.json",
+      "sha256": "183e91d4dd54bd8b7ead9740ffaedf64b13c43d5f3eeebd01c9a9ea8d39ef98e",
+      "bytes": 44772
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s0_n16384.json",
+      "sha256": "bfc4e23201537e3707f4c31b6f1ac62569c42ebafdf58ce162a08b4ebe374a49",
+      "bytes": 1777657
+    }
+  },
+  {
+    "condition": "S40",
+    "scenario_id": "sb_LHG_degree_cap128",
+    "family": "public_LHG",
+    "axis": "degree_cap",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 46232681,
+    "selected_count": 5051,
+    "total_seconds": 0.0253901,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_degree_cap128__Streaming.json",
+      "sha256": "dc75aa59a9ad7074cfa1cdf206763b3d2620bb30dfcd7e7893bbb4e3abc71b55",
+      "bytes": 81678
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_degree_cap128.json",
+      "sha256": "1d13e51dd785a228ee5c12bc1a17b440f0cefc23cc55e427f935e8ac0bc266fa",
+      "bytes": 3101213
+    }
+  },
+  {
+    "condition": "S40",
+    "scenario_id": "sb_LHG_degree_cap128",
+    "family": "public_LHG",
+    "axis": "degree_cap",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 56477940,
+    "selected_count": 6170,
+    "total_seconds": 0.049818100000265986,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_degree_cap128__Greedy.json",
+      "sha256": "f977464dcf99ae3df1a54a690c5c9b8cd5bf4c7994cc3b3bd890033e6a1ab050",
+      "bytes": 100088
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_degree_cap128.json",
+      "sha256": "1d13e51dd785a228ee5c12bc1a17b440f0cefc23cc55e427f935e8ac0bc266fa",
+      "bytes": 3101213
+    }
+  },
+  {
+    "condition": "S40",
+    "scenario_id": "sb_LHG_degree_cap128",
+    "family": "public_LHG",
+    "axis": "degree_cap",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 57420603,
+    "selected_count": 6273,
+    "total_seconds": 28.966534599952865,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_degree_cap128__ILS1000.json",
+      "sha256": "9128020fd755c9ffa91eacdd1b2658cb26fe0fae42c811276575423b2878d252",
+      "bytes": 101740
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_degree_cap128.json",
+      "sha256": "1d13e51dd785a228ee5c12bc1a17b440f0cefc23cc55e427f935e8ac0bc266fa",
+      "bytes": 3101213
+    }
+  },
+  {
+    "condition": "S40",
+    "scenario_id": "sb_LHG_degree_cap128",
+    "family": "public_LHG",
+    "axis": "degree_cap",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 55508008,
+    "selected_count": 6064,
+    "total_seconds": 0.9243504000478424,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_degree_cap128__SCIP.json",
+      "sha256": "4521440eb84ba43f1d055b42991fd41d2906d9140f5dd96e38304da40a4f7fe7",
+      "bytes": 99202
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_degree_cap128.json",
+      "sha256": "1d13e51dd785a228ee5c12bc1a17b440f0cefc23cc55e427f935e8ac0bc266fa",
+      "bytes": 3101213
+    }
+  },
+  {
+    "condition": "S41",
+    "scenario_id": "sb_LHG_degree_cap32",
+    "family": "public_LHG",
+    "axis": "degree_cap",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 46690355,
+    "selected_count": 5101,
+    "total_seconds": 0.0280117,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_degree_cap32__Streaming.json",
+      "sha256": "e4deb48102421e617135c8e312aa268693f13322e0e6df45a8b11bf38c41c21b",
+      "bytes": 82474
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_degree_cap32.json",
+      "sha256": "9dcf565abbdcde81df74a042475be4cf511704488c5fee2efcadb10fd4e9e153",
+      "bytes": 3105940
+    }
+  },
+  {
+    "condition": "S41",
+    "scenario_id": "sb_LHG_degree_cap32",
+    "family": "public_LHG",
+    "axis": "degree_cap",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 56972240,
+    "selected_count": 6224,
+    "total_seconds": 0.05458370002452284,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_degree_cap32__Greedy.json",
+      "sha256": "6385defc9295a56bb62f0b79425693991e26065a780f5cb6834aa39218179694",
+      "bytes": 100946
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_degree_cap32.json",
+      "sha256": "9dcf565abbdcde81df74a042475be4cf511704488c5fee2efcadb10fd4e9e153",
+      "bytes": 3105940
+    }
+  },
+  {
+    "condition": "S41",
+    "scenario_id": "sb_LHG_degree_cap32",
+    "family": "public_LHG",
+    "axis": "degree_cap",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 57978993,
+    "selected_count": 6334,
+    "total_seconds": 22.351052000012714,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_degree_cap32__ILS1000.json",
+      "sha256": "1ca71885dce5b5f5bd9d60d6d8a55a445e70b748ad3d70e4d393acf18864cd77",
+      "bytes": 102718
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_degree_cap32.json",
+      "sha256": "9dcf565abbdcde81df74a042475be4cf511704488c5fee2efcadb10fd4e9e153",
+      "bytes": 3105940
+    }
+  },
+  {
+    "condition": "S41",
+    "scenario_id": "sb_LHG_degree_cap32",
+    "family": "public_LHG",
+    "axis": "degree_cap",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 55919917,
+    "selected_count": 6109,
+    "total_seconds": 0.9667042000219226,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_degree_cap32__SCIP.json",
+      "sha256": "bc0c311a1d6f99d23f1b5938bec08d6a1fec45b31f79b8dc76d1486720f347db",
+      "bytes": 99929
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_degree_cap32.json",
+      "sha256": "9dcf565abbdcde81df74a042475be4cf511704488c5fee2efcadb10fd4e9e153",
+      "bytes": 3105940
+    }
+  },
+  {
+    "condition": "S42",
+    "scenario_id": "sb_LHG_n16384",
+    "family": "public_LHG",
+    "axis": "n",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 46067920,
+    "selected_count": 5033,
+    "total_seconds": 0.0271369,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_n16384__Streaming.json",
+      "sha256": "8602bad34ce9ab5459d46edf9bee1ea115db193d157eeb2de68a272a7bd3eedd",
+      "bytes": 81375
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_n16384.json",
+      "sha256": "6b40f3d1e40c19c5df55df53f4d5b07aea1c93472374eca6a5988708a9f48f08",
+      "bytes": 2327863
+    }
+  },
+  {
+    "condition": "S42",
+    "scenario_id": "sb_LHG_n16384",
+    "family": "public_LHG",
+    "axis": "n",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 56276562,
+    "selected_count": 6148,
+    "total_seconds": 0.05003220000071451,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_n16384__Greedy.json",
+      "sha256": "a9e08005188278100284e35871a0e7466b3e8e6be07a7a62443956704100ca1c",
+      "bytes": 99721
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_n16384.json",
+      "sha256": "6b40f3d1e40c19c5df55df53f4d5b07aea1c93472374eca6a5988708a9f48f08",
+      "bytes": 2327863
+    }
+  },
+  {
+    "condition": "S42",
+    "scenario_id": "sb_LHG_n16384",
+    "family": "public_LHG",
+    "axis": "n",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 57219187,
+    "selected_count": 6251,
+    "total_seconds": 39.32378310000058,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_n16384__ILS1000.json",
+      "sha256": "aafd9310d4c7c810a2d3358885108ddf444113e5ad156ddcd68f3e9414534f2d",
+      "bytes": 101371
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_n16384.json",
+      "sha256": "6b40f3d1e40c19c5df55df53f4d5b07aea1c93472374eca6a5988708a9f48f08",
+      "bytes": 2327863
+    }
+  },
+  {
+    "condition": "S42",
+    "scenario_id": "sb_LHG_n16384",
+    "family": "public_LHG",
+    "axis": "n",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 56871660,
+    "selected_count": 6213,
+    "total_seconds": 0.5465851000044495,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_n16384__SCIP.json",
+      "sha256": "c86a4b6511087d9607f42828208ffb6796430e0f3c955730bf3f78fbf7d27c35",
+      "bytes": 102083
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_n16384.json",
+      "sha256": "6b40f3d1e40c19c5df55df53f4d5b07aea1c93472374eca6a5988708a9f48f08",
+      "bytes": 2327863
+    }
+  },
+  {
+    "condition": "S43",
+    "scenario_id": "sb_LHG_rank_cap32",
+    "family": "public_LHG",
+    "axis": "rank_cap",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 49161174,
+    "selected_count": 5371,
+    "total_seconds": 0.0250446,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_rank_cap32__Streaming.json",
+      "sha256": "ff756240280d8cafe0547abf8ce6f2f381f252b0d7e7e1d04777d63e2a778abd",
+      "bytes": 86788
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_rank_cap32.json",
+      "sha256": "6345c8bc2d6651f8ab51aa9a325ec02af4156232784f4afe55d65491cb3cf8b1",
+      "bytes": 1848095
+    }
+  },
+  {
+    "condition": "S43",
+    "scenario_id": "sb_LHG_rank_cap32",
+    "family": "public_LHG",
+    "axis": "rank_cap",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 56395426,
+    "selected_count": 6161,
+    "total_seconds": 0.03491390001727268,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_rank_cap32__Greedy.json",
+      "sha256": "862cea36988a09a3a992c9543c2b08c51bd4815b25b6d3d68327196ce608f0b4",
+      "bytes": 99937
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_rank_cap32.json",
+      "sha256": "6345c8bc2d6651f8ab51aa9a325ec02af4156232784f4afe55d65491cb3cf8b1",
+      "bytes": 1848095
+    }
+  },
+  {
+    "condition": "S43",
+    "scenario_id": "sb_LHG_rank_cap32",
+    "family": "public_LHG",
+    "axis": "rank_cap",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 57246583,
+    "selected_count": 6254,
+    "total_seconds": 59.237226199998986,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_rank_cap32__ILS1000.json",
+      "sha256": "a52f8c5caf6e8a73f1afbf8ac104eda755bef2eca498e4e472a33d22b4641047",
+      "bytes": 101431
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_rank_cap32.json",
+      "sha256": "6345c8bc2d6651f8ab51aa9a325ec02af4156232784f4afe55d65491cb3cf8b1",
+      "bytes": 1848095
+    }
+  },
+  {
+    "condition": "S43",
+    "scenario_id": "sb_LHG_rank_cap32",
+    "family": "public_LHG",
+    "axis": "rank_cap",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 56871541,
+    "selected_count": 6213,
+    "total_seconds": 0.47527370002353564,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_rank_cap32__SCIP.json",
+      "sha256": "664fa7b334fb76363581dfc3d5b5c19009a004e04ff17bfdf21a0907538f9d6d",
+      "bytes": 102101
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_rank_cap32.json",
+      "sha256": "6345c8bc2d6651f8ab51aa9a325ec02af4156232784f4afe55d65491cb3cf8b1",
+      "bytes": 1848095
+    }
+  },
+  {
+    "condition": "S44",
+    "scenario_id": "sb_LHG_rank_cap8",
+    "family": "public_LHG",
+    "axis": "rank_cap",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 49201211,
+    "selected_count": 5376,
+    "total_seconds": 0.0213477,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_rank_cap8__Streaming.json",
+      "sha256": "b562347815ab86714e3af0f3c0d4ee5700f6d2765e12cf04ab39d8c62935fecd",
+      "bytes": 86865
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_rank_cap8.json",
+      "sha256": "1159dfd11b1083ce82a73dff5c7d5b8042095b728a1a9f63495598595a232f9a",
+      "bytes": 1817981
+    }
+  },
+  {
+    "condition": "S44",
+    "scenario_id": "sb_LHG_rank_cap8",
+    "family": "public_LHG",
+    "axis": "rank_cap",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 56692296,
+    "selected_count": 6194,
+    "total_seconds": 0.033373699989169836,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_rank_cap8__Greedy.json",
+      "sha256": "a0ad0926f6cd1ce68cf8f6f806a11bfdb879e94aaadeb07edbb73d718ca59e38",
+      "bytes": 100458
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_rank_cap8.json",
+      "sha256": "1159dfd11b1083ce82a73dff5c7d5b8042095b728a1a9f63495598595a232f9a",
+      "bytes": 1817981
+    }
+  },
+  {
+    "condition": "S44",
+    "scenario_id": "sb_LHG_rank_cap8",
+    "family": "public_LHG",
+    "axis": "rank_cap",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 57405861,
+    "selected_count": 6272,
+    "total_seconds": 35.141053700004704,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_rank_cap8__ILS1000.json",
+      "sha256": "9422fdd26ef77c1b86b461615d29ff5daaa59a56375ac8b0fc26f580714b168a",
+      "bytes": 101714
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_rank_cap8.json",
+      "sha256": "1159dfd11b1083ce82a73dff5c7d5b8042095b728a1a9f63495598595a232f9a",
+      "bytes": 1817981
+    }
+  },
+  {
+    "condition": "S44",
+    "scenario_id": "sb_LHG_rank_cap8",
+    "family": "public_LHG",
+    "axis": "rank_cap",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 57113444,
+    "selected_count": 6240,
+    "total_seconds": 0.43787770002381876,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_rank_cap8__SCIP.json",
+      "sha256": "7a3c9130bdeb4a1c37cbd1d1b74adb51602b5e4947c5f9a3d6b8d5af3bc4e990",
+      "bytes": 102524
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_rank_cap8.json",
+      "sha256": "1159dfd11b1083ce82a73dff5c7d5b8042095b728a1a9f63495598595a232f9a",
+      "bytes": 1817981
+    }
+  },
+  {
+    "condition": "S45",
+    "scenario_id": "sb_LHG_scale_control10",
+    "family": "public_LHG",
+    "axis": "scale_control",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 460679200,
+    "selected_count": 5033,
+    "total_seconds": 0.0270872,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_scale_control10__Streaming.json",
+      "sha256": "429303e704b7d7d39e87a5f5b0cf81f99f18cca56ef6adde0b1ea275f4d1a8cc",
+      "bytes": 81394
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_scale_control10.json",
+      "sha256": "61a9ffd8fa78cfc7bd07278f81d442e89546fad7ab006a96809c360c7d123e35",
+      "bytes": 2344268
+    }
+  },
+  {
+    "condition": "S45",
+    "scenario_id": "sb_LHG_scale_control10",
+    "family": "public_LHG",
+    "axis": "scale_control",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 562765620,
+    "selected_count": 6148,
+    "total_seconds": 0.050597499997820705,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_scale_control10__Greedy.json",
+      "sha256": "c6e6c1d10148dbfc1c61a36d4124ab23bbb1def093759768e61b8fb1b9c7ede4",
+      "bytes": 99740
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_scale_control10.json",
+      "sha256": "61a9ffd8fa78cfc7bd07278f81d442e89546fad7ab006a96809c360c7d123e35",
+      "bytes": 2344268
+    }
+  },
+  {
+    "condition": "S45",
+    "scenario_id": "sb_LHG_scale_control10",
+    "family": "public_LHG",
+    "axis": "scale_control",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 572102470,
+    "selected_count": 6250,
+    "total_seconds": 65.09144390001893,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_scale_control10__ILS1000.json",
+      "sha256": "31baa953b23214b53009de264308d632980fbbff15c27d72e1b2560bcc81d943",
+      "bytes": 101382
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_scale_control10.json",
+      "sha256": "61a9ffd8fa78cfc7bd07278f81d442e89546fad7ab006a96809c360c7d123e35",
+      "bytes": 2344268
+    }
+  },
+  {
+    "condition": "S45",
+    "scenario_id": "sb_LHG_scale_control10",
+    "family": "public_LHG",
+    "axis": "scale_control",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 568716600,
+    "selected_count": 6213,
+    "total_seconds": 0.5634374999790452,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_scale_control10__SCIP.json",
+      "sha256": "d5d5ec8e7c41c2404698cd16cf25d3fdf473d03f57cb5f8678cbd17469a7d81c",
+      "bytes": 102114
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_scale_control10.json",
+      "sha256": "61a9ffd8fa78cfc7bd07278f81d442e89546fad7ab006a96809c360c7d123e35",
+      "bytes": 2344268
+    }
+  },
+  {
+    "condition": "S46",
+    "scenario_id": "sb_LHG_weight_spread1",
+    "family": "public_LHG",
+    "axis": "weight_spread",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 4952,
+    "selected_count": 4952,
+    "total_seconds": 0.0307251,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_weight_spread1__Streaming.json",
+      "sha256": "8c77f7560e0c5eb89569a8b057b2b7eb9c2b7c5d31ac1e711c928ba569522bdd",
+      "bytes": 80092
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_weight_spread1.json",
+      "sha256": "a1727185ee2ac1caf157905a8b939fe3fbd5cdfaa571b6c30ff208a417586c5f",
+      "bytes": 2278732
+    }
+  },
+  {
+    "condition": "S46",
+    "scenario_id": "sb_LHG_weight_spread1",
+    "family": "public_LHG",
+    "axis": "weight_spread",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 6122,
+    "selected_count": 6122,
+    "total_seconds": 0.049108499952126294,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_weight_spread1__Greedy.json",
+      "sha256": "75efba79b0872c33f292cf94f93d4c475c1c8bd6e424addcecb7625ce2f10e84",
+      "bytes": 99308
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_weight_spread1.json",
+      "sha256": "a1727185ee2ac1caf157905a8b939fe3fbd5cdfaa571b6c30ff208a417586c5f",
+      "bytes": 2278732
+    }
+  },
+  {
+    "condition": "S46",
+    "scenario_id": "sb_LHG_weight_spread1",
+    "family": "public_LHG",
+    "axis": "weight_spread",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 6234,
+    "selected_count": 6234,
+    "total_seconds": 19.04748530004872,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_weight_spread1__ILS1000.json",
+      "sha256": "59b451d6908ebdaf8b937b3a25dff582c64ca356fa08c8d25a60a9ee728c23d2",
+      "bytes": 101086
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_weight_spread1.json",
+      "sha256": "a1727185ee2ac1caf157905a8b939fe3fbd5cdfaa571b6c30ff208a417586c5f",
+      "bytes": 2278732
+    }
+  },
+  {
+    "condition": "S46",
+    "scenario_id": "sb_LHG_weight_spread1",
+    "family": "public_LHG",
+    "axis": "weight_spread",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 6223,
+    "selected_count": 6223,
+    "total_seconds": 0.5854126999620348,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_weight_spread1__SCIP.json",
+      "sha256": "55e17772ba835d7eb743682bd6d60cfcda79b1bd69e41d853c97edf8ca93c808",
+      "bytes": 102194
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_weight_spread1.json",
+      "sha256": "a1727185ee2ac1caf157905a8b939fe3fbd5cdfaa571b6c30ff208a417586c5f",
+      "bytes": 2278732
+    }
+  },
+  {
+    "condition": "S47",
+    "scenario_id": "sb_LHG_weight_spread1000",
+    "family": "public_LHG",
+    "axis": "weight_spread",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 5757349,
+    "selected_count": 5985,
+    "total_seconds": 0.0283967,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_weight_spread1000__Streaming.json",
+      "sha256": "ffe7892bbbf4b1987c1696f3fc45912c51f9d0e83ae392becdb80365ad7b4ecf",
+      "bytes": 96711
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_weight_spread1000.json",
+      "sha256": "320e61a8be20cb6b633f498a40126ec30dbcab05ef960f7d5d5d92a03b61d6bc",
+      "bytes": 2322172
+    }
+  },
+  {
+    "condition": "S47",
+    "scenario_id": "sb_LHG_weight_spread1000",
+    "family": "public_LHG",
+    "axis": "weight_spread",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 5895216,
+    "selected_count": 6146,
+    "total_seconds": 0.05288019997533411,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_weight_spread1000__Greedy.json",
+      "sha256": "c5313053b0177a0bda6cf62fb24d938ef2102a74d06f519becd2d83ec98b5714",
+      "bytes": 99712
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_weight_spread1000.json",
+      "sha256": "320e61a8be20cb6b633f498a40126ec30dbcab05ef960f7d5d5d92a03b61d6bc",
+      "bytes": 2322172
+    }
+  },
+  {
+    "condition": "S47",
+    "scenario_id": "sb_LHG_weight_spread1000",
+    "family": "public_LHG",
+    "axis": "weight_spread",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 5996265,
+    "selected_count": 6247,
+    "total_seconds": 80.4979002000182,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_weight_spread1000__ILS1000.json",
+      "sha256": "c4f9fc9cc30c52f0f0e430c4176ce283b49757483ae42d737a4f9984e1677eb7",
+      "bytes": 101340
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_weight_spread1000.json",
+      "sha256": "320e61a8be20cb6b633f498a40126ec30dbcab05ef960f7d5d5d92a03b61d6bc",
+      "bytes": 2322172
+    }
+  },
+  {
+    "condition": "S47",
+    "scenario_id": "sb_LHG_weight_spread1000",
+    "family": "public_LHG",
+    "axis": "weight_spread",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 5968139,
+    "selected_count": 6210,
+    "total_seconds": 0.5584530999767594,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_weight_spread1000__SCIP.json",
+      "sha256": "58548c7afe7499a8f159f9ced84aed5626bda767fe43aa8dcf52f3a6d9f47d79",
+      "bytes": 102060
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_weight_spread1000.json",
+      "sha256": "320e61a8be20cb6b633f498a40126ec30dbcab05ef960f7d5d5d92a03b61d6bc",
+      "bytes": 2322172
+    }
+  },
+  {
+    "condition": "S48",
+    "scenario_id": "sb_random100_degree_cap128",
+    "family": "public_random100",
+    "axis": "degree_cap",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 349454,
+    "selected_count": 5279,
+    "total_seconds": 0.031471,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_degree_cap128__Streaming.json",
+      "sha256": "473aa3d7d595db69160df28d487f3a988f960f8429aa56faa354dce9b0ca3d86",
+      "bytes": 85389
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_degree_cap128.json",
+      "sha256": "3999d774de3ffb169ee39edbed92cd4f5db1b018dc033df48181dfb23a1b2a87",
+      "bytes": 3067075
+    }
+  },
+  {
+    "condition": "S48",
+    "scenario_id": "sb_random100_degree_cap128",
+    "family": "public_random100",
+    "axis": "degree_cap",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 371334,
+    "selected_count": 6092,
+    "total_seconds": 0.050975400023162365,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_degree_cap128__Greedy.json",
+      "sha256": "ee5428e8a6df4800587668b74fcf6b822089ed96ab8d7ea2b0c88ad7ce1c4c62",
+      "bytes": 98833
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_degree_cap128.json",
+      "sha256": "3999d774de3ffb169ee39edbed92cd4f5db1b018dc033df48181dfb23a1b2a87",
+      "bytes": 3067075
+    }
+  },
+  {
+    "condition": "S48",
+    "scenario_id": "sb_random100_degree_cap128",
+    "family": "public_random100",
+    "axis": "degree_cap",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 389509,
+    "selected_count": 6123,
+    "total_seconds": 90.2773871999816,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_degree_cap128__ILS1000.json",
+      "sha256": "83188f5b8918bb3a5a02c9f76ad2e21d5cc596a5a64f59577017191fce630273",
+      "bytes": 99355
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_degree_cap128.json",
+      "sha256": "3999d774de3ffb169ee39edbed92cd4f5db1b018dc033df48181dfb23a1b2a87",
+      "bytes": 3067075
+    }
+  },
+  {
+    "condition": "S48",
+    "scenario_id": "sb_random100_degree_cap128",
+    "family": "public_random100",
+    "axis": "degree_cap",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 384976,
+    "selected_count": 6029,
+    "total_seconds": 0.5677423999877647,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_degree_cap128__SCIP.json",
+      "sha256": "4b8bc4032bf4b4180e390a04f4cee063ca8ca8154a80ce0df62b738bd46396a9",
+      "bytes": 98600
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_degree_cap128.json",
+      "sha256": "3999d774de3ffb169ee39edbed92cd4f5db1b018dc033df48181dfb23a1b2a87",
+      "bytes": 3067075
+    }
+  },
+  {
+    "condition": "S49",
+    "scenario_id": "sb_random100_degree_cap32",
+    "family": "public_random100",
+    "axis": "degree_cap",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 354300,
+    "selected_count": 5327,
+    "total_seconds": 0.0329991,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_degree_cap32__Streaming.json",
+      "sha256": "71db043f4c577dd65555aebebe3d6c338f5a5eb9d019b00ed7756218f109d3d5",
+      "bytes": 86157
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_degree_cap32.json",
+      "sha256": "3b9fa336c88666551c5b242104211ec4f27af64718e40f3ca8cf570760078e9c",
+      "bytes": 3071802
+    }
+  },
+  {
+    "condition": "S49",
+    "scenario_id": "sb_random100_degree_cap32",
+    "family": "public_random100",
+    "axis": "degree_cap",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 376559,
+    "selected_count": 6152,
+    "total_seconds": 0.06554739997955039,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_degree_cap32__Greedy.json",
+      "sha256": "185b89b0e6db93b244b0f8c6e8495eb454f5fc790eec9cbe622906ba6d217fcf",
+      "bytes": 99791
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_degree_cap32.json",
+      "sha256": "3b9fa336c88666551c5b242104211ec4f27af64718e40f3ca8cf570760078e9c",
+      "bytes": 3071802
+    }
+  },
+  {
+    "condition": "S49",
+    "scenario_id": "sb_random100_degree_cap32",
+    "family": "public_random100",
+    "axis": "degree_cap",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 394239,
+    "selected_count": 6200,
+    "total_seconds": 50.57929419999709,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_degree_cap32__ILS1000.json",
+      "sha256": "e9cd3d342857aedc14e34518698e7bbd28f4c9d648be5df341ac25786a0af003",
+      "bytes": 100586
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_degree_cap32.json",
+      "sha256": "3b9fa336c88666551c5b242104211ec4f27af64718e40f3ca8cf570760078e9c",
+      "bytes": 3071802
+    }
+  },
+  {
+    "condition": "S49",
+    "scenario_id": "sb_random100_degree_cap32",
+    "family": "public_random100",
+    "axis": "degree_cap",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 379876,
+    "selected_count": 5903,
+    "total_seconds": 0.86176559998421,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_degree_cap32__SCIP.json",
+      "sha256": "41cb015572d75f71d46a07d6408b6ed1c6d22212746e05963aa673c01efdd2d4",
+      "bytes": 96582
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_degree_cap32.json",
+      "sha256": "3b9fa336c88666551c5b242104211ec4f27af64718e40f3ca8cf570760078e9c",
+      "bytes": 3071802
+    }
+  },
+  {
+    "condition": "S50",
+    "scenario_id": "sb_random100_n16384",
+    "family": "public_random100",
+    "axis": "n",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 348012,
+    "selected_count": 5267,
+    "total_seconds": 0.0278771,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_n16384__Streaming.json",
+      "sha256": "a1e179c47baf899558c0e444ea17294a9f2e2705fcf3c682258577bdc1affb40",
+      "bytes": 85185
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_n16384.json",
+      "sha256": "a26c6953040a861633a85a1481a11493979a3de3223ae43e4143a45bab2b7334",
+      "bytes": 2293725
+    }
+  },
+  {
+    "condition": "S50",
+    "scenario_id": "sb_random100_n16384",
+    "family": "public_random100",
+    "axis": "n",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 369231,
+    "selected_count": 6070,
+    "total_seconds": 0.05527900002198294,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_n16384__Greedy.json",
+      "sha256": "e578714fa7fbdc639f803d221ce52658e935bb5f2e2752d72fafab916af94345",
+      "bytes": 98470
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_n16384.json",
+      "sha256": "a26c6953040a861633a85a1481a11493979a3de3223ae43e4143a45bab2b7334",
+      "bytes": 2293725
+    }
+  },
+  {
+    "condition": "S50",
+    "scenario_id": "sb_random100_n16384",
+    "family": "public_random100",
+    "axis": "n",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 387628,
+    "selected_count": 6098,
+    "total_seconds": 117.08107529999688,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_n16384__ILS1000.json",
+      "sha256": "9aa5269de5e55c3f75b34f5d910bbdd7d0f562f276c5a95b63c44d7696e4459d",
+      "bytes": 98946
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_n16384.json",
+      "sha256": "a26c6953040a861633a85a1481a11493979a3de3223ae43e4143a45bab2b7334",
+      "bytes": 2293725
+    }
+  },
+  {
+    "condition": "S50",
+    "scenario_id": "sb_random100_n16384",
+    "family": "public_random100",
+    "axis": "n",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 382905,
+    "selected_count": 6011,
+    "total_seconds": 0.5334559000330046,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_n16384__SCIP.json",
+      "sha256": "5ff115d80c406b40aa74913b9e55fda3c525a60b7265b8405da443e6b9095617",
+      "bytes": 98304
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_n16384.json",
+      "sha256": "a26c6953040a861633a85a1481a11493979a3de3223ae43e4143a45bab2b7334",
+      "bytes": 2293725
+    }
+  },
+  {
+    "condition": "S51",
+    "scenario_id": "sb_random100_rank_cap32",
+    "family": "public_random100",
+    "axis": "rank_cap",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 355847,
+    "selected_count": 5438,
+    "total_seconds": 0.0256912,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_rank_cap32__Streaming.json",
+      "sha256": "096e4f365ddd04973e082d62f9e9a5ba2e5f972ab88872a8dd339346315e7e57",
+      "bytes": 87925
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_rank_cap32.json",
+      "sha256": "bb366ccd47bb6b5dfccd59373b3e83699bffe87f2bd86923014759de9fa71070",
+      "bytes": 1813957
+    }
+  },
+  {
+    "condition": "S51",
+    "scenario_id": "sb_random100_rank_cap32",
+    "family": "public_random100",
+    "axis": "rank_cap",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 370852,
+    "selected_count": 6073,
+    "total_seconds": 0.03583299997262657,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_rank_cap32__Greedy.json",
+      "sha256": "6506cdb5eda34b6ac48acb267ef6afc5eba716ef31ff5f157b542ec5494dc7a8",
+      "bytes": 98515
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_rank_cap32.json",
+      "sha256": "bb366ccd47bb6b5dfccd59373b3e83699bffe87f2bd86923014759de9fa71070",
+      "bytes": 1813957
+    }
+  },
+  {
+    "condition": "S51",
+    "scenario_id": "sb_random100_rank_cap32",
+    "family": "public_random100",
+    "axis": "rank_cap",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 387448,
+    "selected_count": 6111,
+    "total_seconds": 120.61784999998054,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_rank_cap32__ILS1000.json",
+      "sha256": "4fef2fb4af744b4182d6af8667fdd05677c4d9407f841d78ef0bd62a74012a4e",
+      "bytes": 99161
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_rank_cap32.json",
+      "sha256": "bb366ccd47bb6b5dfccd59373b3e83699bffe87f2bd86923014759de9fa71070",
+      "bytes": 1813957
+    }
+  },
+  {
+    "condition": "S51",
+    "scenario_id": "sb_random100_rank_cap32",
+    "family": "public_random100",
+    "axis": "rank_cap",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 383568,
+    "selected_count": 6024,
+    "total_seconds": 0.45514919998822734,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_rank_cap32__SCIP.json",
+      "sha256": "ec47dd80c65556cf46fc7d48332fd77d4ab7254225b556aa20aee6c90e81f7f3",
+      "bytes": 98510
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_rank_cap32.json",
+      "sha256": "bb366ccd47bb6b5dfccd59373b3e83699bffe87f2bd86923014759de9fa71070",
+      "bytes": 1813957
+    }
+  },
+  {
+    "condition": "S52",
+    "scenario_id": "sb_random100_rank_cap8",
+    "family": "public_random100",
+    "axis": "rank_cap",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 361725,
+    "selected_count": 5483,
+    "total_seconds": 0.0264713,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_rank_cap8__Streaming.json",
+      "sha256": "1034a3346ac36ea39455e00795b459279a969d5f7590986e11cdebc814cabb21",
+      "bytes": 88643
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_rank_cap8.json",
+      "sha256": "4391bb7b6d0e33b6493495119ac3c9ad1e29c26edc9def62068228cbda1c5af8",
+      "bytes": 1783843
+    }
+  },
+  {
+    "condition": "S52",
+    "scenario_id": "sb_random100_rank_cap8",
+    "family": "public_random100",
+    "axis": "rank_cap",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 372111,
+    "selected_count": 6103,
+    "total_seconds": 0.034947499982081354,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_rank_cap8__Greedy.json",
+      "sha256": "254c891441c723a890b9a478c18698ff9cc3a1757f49bd17070a830d83e18faa",
+      "bytes": 98990
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_rank_cap8.json",
+      "sha256": "4391bb7b6d0e33b6493495119ac3c9ad1e29c26edc9def62068228cbda1c5af8",
+      "bytes": 1783843
+    }
+  },
+  {
+    "condition": "S52",
+    "scenario_id": "sb_random100_rank_cap8",
+    "family": "public_random100",
+    "axis": "rank_cap",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 388526,
+    "selected_count": 6124,
+    "total_seconds": 124.0869010000024,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_rank_cap8__ILS1000.json",
+      "sha256": "79c73f5f03744dbe4dc010975d6db61a8b2973389e7aaf483467839723fd5fe7",
+      "bytes": 99358
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_rank_cap8.json",
+      "sha256": "4391bb7b6d0e33b6493495119ac3c9ad1e29c26edc9def62068228cbda1c5af8",
+      "bytes": 1783843
+    }
+  },
+  {
+    "condition": "S52",
+    "scenario_id": "sb_random100_rank_cap8",
+    "family": "public_random100",
+    "axis": "rank_cap",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 384310,
+    "selected_count": 6030,
+    "total_seconds": 0.43912990001263097,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_rank_cap8__SCIP.json",
+      "sha256": "8e68de1d9b194cc34a6f8b0c6480d12ba12395a7fef44bc35bd50aa1c90e5f9c",
+      "bytes": 98602
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_rank_cap8.json",
+      "sha256": "4391bb7b6d0e33b6493495119ac3c9ad1e29c26edc9def62068228cbda1c5af8",
+      "bytes": 1783843
+    }
+  },
+  {
+    "condition": "S53",
+    "scenario_id": "sb_random100_scale_control10",
+    "family": "public_random100",
+    "axis": "scale_control",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 3480120,
+    "selected_count": 5267,
+    "total_seconds": 0.0303164,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_scale_control10__Streaming.json",
+      "sha256": "15179016370f4ec687fbadb86e983f620060c69951bc8eba56f62f12a7cb5b8d",
+      "bytes": 85202
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_scale_control10.json",
+      "sha256": "6bd78d040c9b043c42afe5594a87a8672a9ba706b5f19125d048e968d0f3ab24",
+      "bytes": 2310130
+    }
+  },
+  {
+    "condition": "S53",
+    "scenario_id": "sb_random100_scale_control10",
+    "family": "public_random100",
+    "axis": "scale_control",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 3692310,
+    "selected_count": 6070,
+    "total_seconds": 0.24988769995979965,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_scale_control10__Greedy.json",
+      "sha256": "503e2cb244085a3c217ba1bba183ccdf2d368aba3f885e68e7b3ebe33de8a497",
+      "bytes": 98488
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_scale_control10.json",
+      "sha256": "6bd78d040c9b043c42afe5594a87a8672a9ba706b5f19125d048e968d0f3ab24",
+      "bytes": 2310130
+    }
+  },
+  {
+    "condition": "S53",
+    "scenario_id": "sb_random100_scale_control10",
+    "family": "public_random100",
+    "axis": "scale_control",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 3868630,
+    "selected_count": 6103,
+    "total_seconds": 95.91164280002704,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_scale_control10__ILS1000.json",
+      "sha256": "d304d105f925480ba18b7353fc513245bbed815595394343e20c1a8f57e74019",
+      "bytes": 99034
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_scale_control10.json",
+      "sha256": "6bd78d040c9b043c42afe5594a87a8672a9ba706b5f19125d048e968d0f3ab24",
+      "bytes": 2310130
+    }
+  },
+  {
+    "condition": "S53",
+    "scenario_id": "sb_random100_scale_control10",
+    "family": "public_random100",
+    "axis": "scale_control",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 3829050,
+    "selected_count": 6011,
+    "total_seconds": 0.5491120999795385,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_scale_control10__SCIP.json",
+      "sha256": "b36eefa3b4adcd06ed7284273f7c12693dcda0107540c6dee087916fa653816d",
+      "bytes": 98330
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_scale_control10.json",
+      "sha256": "6bd78d040c9b043c42afe5594a87a8672a9ba706b5f19125d048e968d0f3ab24",
+      "bytes": 2310130
+    }
+  },
+  {
+    "condition": "S54",
+    "scenario_id": "sb_random100_weight_spread1",
+    "family": "public_random100",
+    "axis": "weight_spread",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 4952,
+    "selected_count": 4952,
+    "total_seconds": 0.0292619,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_weight_spread1__Streaming.json",
+      "sha256": "65bfa8956341fa0db58ef2019c333e3101f6bc411e7e1fe0ff85408b0d6c66c3",
+      "bytes": 80103
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_weight_spread1.json",
+      "sha256": "38f03b6a0c222a59a6402fe6de0e76bf31d186b9a8f4a50b6a91337e2d49b9ed",
+      "bytes": 2278744
+    }
+  },
+  {
+    "condition": "S54",
+    "scenario_id": "sb_random100_weight_spread1",
+    "family": "public_random100",
+    "axis": "weight_spread",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 6122,
+    "selected_count": 6122,
+    "total_seconds": 0.05477049999171868,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_weight_spread1__Greedy.json",
+      "sha256": "fa3d929ce154150fcaace48fef472238884a4937e8858211eb2fca3a0441c4e1",
+      "bytes": 99314
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_weight_spread1.json",
+      "sha256": "38f03b6a0c222a59a6402fe6de0e76bf31d186b9a8f4a50b6a91337e2d49b9ed",
+      "bytes": 2278744
+    }
+  },
+  {
+    "condition": "S54",
+    "scenario_id": "sb_random100_weight_spread1",
+    "family": "public_random100",
+    "axis": "weight_spread",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 6241,
+    "selected_count": 6241,
+    "total_seconds": 23.790016099985223,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_weight_spread1__ILS1000.json",
+      "sha256": "6f0c3dd758827a5a598442ce80eab2d62fabf2e2400e3026db49f2ad6e004016",
+      "bytes": 101208
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_weight_spread1.json",
+      "sha256": "38f03b6a0c222a59a6402fe6de0e76bf31d186b9a8f4a50b6a91337e2d49b9ed",
+      "bytes": 2278744
+    }
+  },
+  {
+    "condition": "S54",
+    "scenario_id": "sb_random100_weight_spread1",
+    "family": "public_random100",
+    "axis": "weight_spread",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 6223,
+    "selected_count": 6223,
+    "total_seconds": 0.5681508999550715,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_weight_spread1__SCIP.json",
+      "sha256": "bdbd391ad4d81d6c60114919d51193545fed8da99e4f6ce30f78b391e32f2363",
+      "bytes": 102214
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_weight_spread1.json",
+      "sha256": "38f03b6a0c222a59a6402fe6de0e76bf31d186b9a8f4a50b6a91337e2d49b9ed",
+      "bytes": 2278744
+    }
+  },
+  {
+    "condition": "S55",
+    "scenario_id": "sb_random100_weight_spread1000",
+    "family": "public_random100",
+    "axis": "weight_spread",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 1359913,
+    "selected_count": 4869,
+    "total_seconds": 0.0286969,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_weight_spread1000__Streaming.json",
+      "sha256": "48f0d3adc969b3d29df88cc23c1c85bf2d30fb7cc6d3fe7f80c0b4e17d917803",
+      "bytes": 78857
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_weight_spread1000.json",
+      "sha256": "1476632d68fb625167c2ae6e6650abe364ffd36f1fb3181479e79eeb122746fe",
+      "bytes": 2295344
+    }
+  },
+  {
+    "condition": "S55",
+    "scenario_id": "sb_random100_weight_spread1000",
+    "family": "public_random100",
+    "axis": "weight_spread",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 1429225,
+    "selected_count": 5985,
+    "total_seconds": 0.055857400002423674,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_weight_spread1000__Greedy.json",
+      "sha256": "6fc123517f98de3ea693adac965a0ed0cf47fb6e36cf2792de9c23fb340c00ab",
+      "bytes": 97149
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_weight_spread1000.json",
+      "sha256": "1476632d68fb625167c2ae6e6650abe364ffd36f1fb3181479e79eeb122746fe",
+      "bytes": 2295344
+    }
+  },
+  {
+    "condition": "S55",
+    "scenario_id": "sb_random100_weight_spread1000",
+    "family": "public_random100",
+    "axis": "weight_spread",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 1483308,
+    "selected_count": 5860,
+    "total_seconds": 45.78121059999103,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_weight_spread1000__ILS1000.json",
+      "sha256": "cce0e0e35b6311cc2ad7c72e1002692c78bb4603fa2fa53a657a211a4c7adf7b",
+      "bytes": 95180
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_weight_spread1000.json",
+      "sha256": "1476632d68fb625167c2ae6e6650abe364ffd36f1fb3181479e79eeb122746fe",
+      "bytes": 2295344
+    }
+  },
+  {
+    "condition": "S55",
+    "scenario_id": "sb_random100_weight_spread1000",
+    "family": "public_random100",
+    "axis": "weight_spread",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 1458237,
+    "selected_count": 5761,
+    "total_seconds": 0.5726659999927506,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_weight_spread1000__SCIP.json",
+      "sha256": "2e7469217f56ea89f3ccae00329200162275bc424692d817227acdea7bd4e342",
+      "bytes": 94337
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_weight_spread1000.json",
+      "sha256": "1476632d68fb625167c2ae6e6650abe364ffd36f1fb3181479e79eeb122746fe",
+      "bytes": 2295344
+    }
+  },
+  {
+    "condition": "S56",
+    "scenario_id": "reg_s1_n16384",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 1,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 120950,
+    "selected_count": 2354,
+    "total_seconds": 0.0296087,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_n16384__Streaming.json",
+      "sha256": "d16f909a12f3d2de4a72be715cb3f7232ebe79ecec60910f72e9240cdc3b036d",
+      "bytes": 34358
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_n16384.json",
+      "sha256": "824a0881f2b13ca604c6e6471c8c379231991a641fb02060cef6a5e5ed97919e",
+      "bytes": 1777657
+    }
+  },
+  {
+    "condition": "S56",
+    "scenario_id": "reg_s1_n16384",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 1,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 131150,
+    "selected_count": 2751,
+    "total_seconds": 0.1438942999811843,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_n16384__Greedy.json",
+      "sha256": "b9e49170f6af922a574b23a844dc141ac2c5609164a5e697d8bf226970ee9738",
+      "bytes": 40952
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_n16384.json",
+      "sha256": "824a0881f2b13ca604c6e6471c8c379231991a641fb02060cef6a5e5ed97919e",
+      "bytes": 1777657
+    }
+  },
+  {
+    "condition": "S56",
+    "scenario_id": "reg_s1_n16384",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 1,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 134904,
+    "selected_count": 2956,
+    "total_seconds": 65.37135859997943,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_n16384__ILS1000.json",
+      "sha256": "05f3793231927595b846cdc887d40fdf842b867cd275df11ca0a9c0722a6d160",
+      "bytes": 43941
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_n16384.json",
+      "sha256": "824a0881f2b13ca604c6e6471c8c379231991a641fb02060cef6a5e5ed97919e",
+      "bytes": 1777657
+    }
+  },
+  {
+    "condition": "S56",
+    "scenario_id": "reg_s1_n16384",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 1,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 138123,
+    "selected_count": 2898,
+    "total_seconds": 884.4444762999774,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s1_n16384__SCIP.json",
+      "sha256": "3f6989ad245453dda7552c8179f132cc852a25dcd21896fcd5d6f110a540f694",
+      "bytes": 44418
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s1_n16384.json",
+      "sha256": "824a0881f2b13ca604c6e6471c8c379231991a641fb02060cef6a5e5ed97919e",
+      "bytes": 1777657
+    }
+  },
+  {
+    "condition": "S57",
+    "scenario_id": "reg_s2_n16384",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 2,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 122653,
+    "selected_count": 2383,
+    "total_seconds": 0.0327982,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_n16384__Streaming.json",
+      "sha256": "996e02866ee6ac8f2953cc6255226075394bec50cd388b82f7091260cce56d6a",
+      "bytes": 34800
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_n16384.json",
+      "sha256": "a2bb1b8a26af68247508ccb6f3e9adb00b1a5093e0be3eacc05b9c69cff07bc5",
+      "bytes": 1777657
+    }
+  },
+  {
+    "condition": "S57",
+    "scenario_id": "reg_s2_n16384",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 2,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 131811,
+    "selected_count": 2714,
+    "total_seconds": 0.05048710003029555,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_n16384__Greedy.json",
+      "sha256": "5eb4e41adc18bc45265cb2c87b4eec4bf0c60eb199126e08d99489ee4a9c993f",
+      "bytes": 40443
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_n16384.json",
+      "sha256": "a2bb1b8a26af68247508ccb6f3e9adb00b1a5093e0be3eacc05b9c69cff07bc5",
+      "bytes": 1777657
+    }
+  },
+  {
+    "condition": "S57",
+    "scenario_id": "reg_s2_n16384",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 2,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 135935,
+    "selected_count": 2954,
+    "total_seconds": 37.609262500016484,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_n16384__ILS1000.json",
+      "sha256": "2afb45d22416656a767b5a173f51f8f85d5cdfe516fe4c9324dc74c2caee38c9",
+      "bytes": 43906
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_n16384.json",
+      "sha256": "a2bb1b8a26af68247508ccb6f3e9adb00b1a5093e0be3eacc05b9c69cff07bc5",
+      "bytes": 1777657
+    }
+  },
+  {
+    "condition": "S57",
+    "scenario_id": "reg_s2_n16384",
+    "family": "controlled_regular",
+    "axis": "n",
+    "seed": 2,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 139139,
+    "selected_count": 2882,
+    "total_seconds": 573.3781449000235,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\reg_s2_n16384__SCIP.json",
+      "sha256": "faf34c84afdfa4bac9b1236aa9b0d3f0449f8901ad015d6fc64fc13b631a77ed",
+      "bytes": 44184
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\reg_s2_n16384.json",
+      "sha256": "a2bb1b8a26af68247508ccb6f3e9adb00b1a5093e0be3eacc05b9c69cff07bc5",
+      "bytes": 1777657
+    }
+  },
+  {
+    "condition": "S58",
+    "scenario_id": "sb_LHG_n65536",
+    "family": "public_LHG",
+    "axis": "n",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 197554303,
+    "selected_count": 21584,
+    "total_seconds": 0.1535918,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_n65536__Streaming.json",
+      "sha256": "6a7c9307dfec9e42e4ffc6a11604beb4c3cb3ad8eff79fa5dd303bd0a3a27771",
+      "bytes": 336252
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_n65536.json",
+      "sha256": "521ac59e665f9e158a77f00114f295df38606d9898e502a553d472030b2912a8",
+      "bytes": 8245799
+    }
+  },
+  {
+    "condition": "S58",
+    "scenario_id": "sb_LHG_n65536",
+    "family": "public_LHG",
+    "axis": "n",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 241254249,
+    "selected_count": 26356,
+    "total_seconds": 0.275647200003732,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_n65536__Greedy.json",
+      "sha256": "015c1ebf8dbe653f5d6296c722eebafffbfd2b9dbce15edc67f58d30138d0a9c",
+      "bytes": 411843
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_n65536.json",
+      "sha256": "521ac59e665f9e158a77f00114f295df38606d9898e502a553d472030b2912a8",
+      "bytes": 8245799
+    }
+  },
+  {
+    "condition": "S58",
+    "scenario_id": "sb_LHG_n65536",
+    "family": "public_LHG",
+    "axis": "n",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 248887226,
+    "selected_count": 27190,
+    "total_seconds": 565.0332379000029,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_n65536__ILS1000.json",
+      "sha256": "630fad0d2d9bc59e5d1de63565fb7b40d39fdf97144ccfb973e7cac385e41c8b",
+      "bytes": 425177
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_n65536.json",
+      "sha256": "521ac59e665f9e158a77f00114f295df38606d9898e502a553d472030b2912a8",
+      "bytes": 8245799
+    }
+  },
+  {
+    "condition": "S58",
+    "scenario_id": "sb_LHG_n65536",
+    "family": "public_LHG",
+    "axis": "n",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 245172761,
+    "selected_count": 26784,
+    "total_seconds": 6.3843681999715045,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_LHG_n65536__SCIP.json",
+      "sha256": "2d3a011d8cb12553be37de0027bc5ddbdc5c7408e2b0f1e7254b2edc10e4ebce",
+      "bytes": 419612
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_LHG_n65536.json",
+      "sha256": "521ac59e665f9e158a77f00114f295df38606d9898e502a553d472030b2912a8",
+      "bytes": 8245799
+    }
+  },
+  {
+    "condition": "S59",
+    "scenario_id": "sb_random100_n65536",
+    "family": "public_random100",
+    "axis": "n",
+    "seed": 0,
+    "method": "Streaming",
+    "status": "approximate_one_pass_complete",
+    "feasible": true,
+    "objective": 1495366,
+    "selected_count": 22507,
+    "total_seconds": 0.1426517,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_n65536__Streaming.json",
+      "sha256": "9f770622a2a9af707b9b0d1100142cc5715b14edeb9bfe6d6dd19df374f8e376",
+      "bytes": 350988
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_n65536.json",
+      "sha256": "f76aed0455784892bfcb481e23ccde75ea5d94f339824f69acd9ccdb8b3d6eef",
+      "bytes": 8109486
+    }
+  },
+  {
+    "condition": "S59",
+    "scenario_id": "sb_random100_n65536",
+    "family": "public_random100",
+    "axis": "n",
+    "seed": 0,
+    "method": "Greedy",
+    "status": "greedy_complete",
+    "feasible": true,
+    "objective": 1577472,
+    "selected_count": 25916,
+    "total_seconds": 0.2899119000067003,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_n65536__Greedy.json",
+      "sha256": "8be39b853614c418e35646aebe847f563f293d865c638d07ca749dd42fc8417c",
+      "bytes": 405112
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_n65536.json",
+      "sha256": "f76aed0455784892bfcb481e23ccde75ea5d94f339824f69acd9ccdb8b3d6eef",
+      "bytes": 8109486
+    }
+  },
+  {
+    "condition": "S59",
+    "scenario_id": "sb_random100_n65536",
+    "family": "public_random100",
+    "axis": "n",
+    "seed": 0,
+    "method": "ILS1000",
+    "status": "author_stagnation_rule_complete",
+    "feasible": true,
+    "objective": 1652265,
+    "selected_count": 26155,
+    "total_seconds": 1240.4823723000009,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_n65536__ILS1000.json",
+      "sha256": "499ed0f9e3347510040434b3ef5556663f0df0c8821e83e680f3e1aeb06c603e",
+      "bytes": 408936
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_n65536.json",
+      "sha256": "f76aed0455784892bfcb481e23ccde75ea5d94f339824f69acd9ccdb8b3d6eef",
+      "bytes": 8109486
+    }
+  },
+  {
+    "condition": "S59",
+    "scenario_id": "sb_random100_n65536",
+    "family": "public_random100",
+    "axis": "n",
+    "seed": 0,
+    "method": "SCIP",
+    "status": "gaplimit",
+    "feasible": true,
+    "objective": 1616038,
+    "selected_count": 25205,
+    "total_seconds": 5.90095849998761,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\raw\\sb_random100_n65536__SCIP.json",
+      "sha256": "856bc34753ffbfe67aec304e1af8698f953e4e9398e61d5996d4db8b0dbd8389",
+      "bytes": 394634
+    },
+    "input": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\四因素压力测试\\instances\\sb_random100_n65536.json",
+      "sha256": "f76aed0455784892bfcb481e23ccde75ea5d94f339824f69acd9ccdb8b3d6eef",
+      "bytes": 8109486
+    }
+  }
+]

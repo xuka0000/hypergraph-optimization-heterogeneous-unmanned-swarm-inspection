@@ -1,0 +1,24 @@
+\section{观测时序与连续状态连接}
+\begin{align}
+ &x_{i\ell}=1\Rightarrow s_\ell\le t_i,\quad t_i+d_i\le e_\ell,\quad
+ [t_i,t_i+d_i]\subseteq\mathcal W_i,\label{eng:eq:window}\\
+ &x_{i\ell}=1\Rightarrow d_i\ge d_i^{min},\qquad
+ \mathbf p_\ell(t)\in\mathcal V_i(t)
+       \quad(t\in[t_i,t_i+d_i]),\label{eng:eq:viewregion}\\
+ &\mathcal C_i=[t_i+1,\ t_i+1+t^{exp}],\qquad t^{exp}=0.001\ \mathrm s,
+ \quad \mathcal C_i\subseteq[t_i,t_i+d_i].\label{eng:eq:exposure}
+\end{align}
+\noindent $\mathcal W_i$为事前作业窗口与日间条件的交集；天气约束另对整个飞行区间成立。$d_i^{min}$逐项继承源任务的参考服务时长；该时长是模板校准量，不是每个现场点的实测耗时。$\mathcal V_i(t)$由第6节的工作距离、入射角、成像质量以及第8节的机体净距和视线约束共同定义。参考视点仅作数值初值，不限制在参考中心2m球内；目标表面、4.6m机体净距及全部成像要求保持。
+
+\noindent 每个曝光点、转移段和显式等待段均属于同一条$\mathbf p_\ell(t),R_\ell(t),\gamma_\ell(t),f_\ell(t)$。任一内部段界$q$满足
+\begin{align}
+ &\mathbf p(q^-)=\mathbf p(q^+),\quad
+ \mathbf v(q^-)=\mathbf v(q^+),\quad\mathbf a(q^-)=\mathbf a(q^+),\\
+ &R(q^-)=R(q^+),\quad \gamma(q^-)=\gamma(q^+),\quad f(q^-)=f(q^+).
+ \label{eng:eq:statejoins}
+\end{align}
+\noindent 控制有界，不能在相邻照片之间瞬移、跳转云台或瞬时变焦。整段速度、加速度、视线和能量按同一绝对时钟计算。重复观测有不同角色ID；同一张图片不自动满足多个角色。计划$a_i=1$只代表模型预期合格，实际$A_i$须由图像验收记录更新。
+
+\noindent 拍摄前1s为稳定/对焦参考区间；选定曝光期间施加全部图像约束。姿态、轨迹和候选区域约束对整段观测持续时间成立。未来扩展多帧任务时须逐帧增加曝光区间，不能仅增加一个收益权重。
+\clearpage
+

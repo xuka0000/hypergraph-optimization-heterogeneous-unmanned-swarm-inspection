@@ -1,0 +1,907 @@
+[
+  {
+    "scenario_id": "paper2026_ISPD98_ibm01",
+    "seed": 0,
+    "status": "valid",
+    "objective": 257764,
+    "selected_count": 4041,
+    "total_seconds": 0.07446070003788918,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_ISPD98_ibm01_author_s0.json",
+      "sha256": "77c5cbd3813c16e4c02ae609dc300d27e511f36c57afcac980df50591d05987c",
+      "bytes": 302876
+    }
+  },
+  {
+    "scenario_id": "paper2026_ISPD98_ibm01",
+    "seed": 1,
+    "status": "valid",
+    "objective": 258013,
+    "selected_count": 4040,
+    "total_seconds": 0.13785970001481473,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_ISPD98_ibm01_author_s1.json",
+      "sha256": "9f0c0a150b12566547a32399db57e7d349aa76a1ed312879367e227f3db7361e",
+      "bytes": 302865
+    }
+  },
+  {
+    "scenario_id": "paper2026_ISPD98_ibm01",
+    "seed": 2,
+    "status": "valid",
+    "objective": 257858,
+    "selected_count": 4041,
+    "total_seconds": 0.09602040000027046,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_ISPD98_ibm01_author_s2.json",
+      "sha256": "a05ea98c9e69d5b037faa03816bdab57a69aebc36078348daa219ba31affd5b5",
+      "bytes": 302877
+    }
+  },
+  {
+    "scenario_id": "paper2026_ISPD98_ibm01",
+    "seed": 3,
+    "status": "valid",
+    "objective": 257853,
+    "selected_count": 4044,
+    "total_seconds": 0.10782249999465421,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_ISPD98_ibm01_author_s3.json",
+      "sha256": "9c70cf35053bd72f05e109177f630018c233124fb121aecab6369c1eaf15dd95",
+      "bytes": 302918
+    }
+  },
+  {
+    "scenario_id": "paper2026_ISPD98_ibm01",
+    "seed": 4,
+    "status": "valid",
+    "objective": 257949,
+    "selected_count": 4041,
+    "total_seconds": 0.10821350000333041,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_ISPD98_ibm01_author_s4.json",
+      "sha256": "e00e4f6641bc036e16298ed7188452cfeefbf5f8d92fa880fc3ce442a8972122",
+      "bytes": 302880
+    }
+  },
+  {
+    "scenario_id": "paper2026_ISPD98_ibm01",
+    "seed": 5,
+    "status": "valid",
+    "objective": 257734,
+    "selected_count": 4041,
+    "total_seconds": 0.09558490000199527,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_ISPD98_ibm01_author_s5.json",
+      "sha256": "ae0556a7a772f7b7a64226e5b752af766a8eb2b5cac1ca8d940cf6bb8d053b22",
+      "bytes": 302877
+    }
+  },
+  {
+    "scenario_id": "paper2026_ISPD98_ibm01",
+    "seed": 6,
+    "status": "valid",
+    "objective": 257521,
+    "selected_count": 4038,
+    "total_seconds": 0.07079279999015853,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_ISPD98_ibm01_author_s6.json",
+      "sha256": "d09b76781faac177f6717cafa021f210b83049e284729311f3ce96f8273a26bd",
+      "bytes": 302838
+    }
+  },
+  {
+    "scenario_id": "paper2026_ISPD98_ibm01",
+    "seed": 7,
+    "status": "valid",
+    "objective": 257768,
+    "selected_count": 4041,
+    "total_seconds": 0.1017915999982506,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_ISPD98_ibm01_author_s7.json",
+      "sha256": "1605598fff3f36d2f28e7c8d47069a08d5e68f4c1a7a25adb0c7c778f12888a9",
+      "bytes": 302874
+    }
+  },
+  {
+    "scenario_id": "paper2026_ISPD98_ibm01",
+    "seed": 8,
+    "status": "valid",
+    "objective": 257901,
+    "selected_count": 4037,
+    "total_seconds": 0.10357849998399615,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_ISPD98_ibm01_author_s8.json",
+      "sha256": "d8fa9a69b927169d5ecdd1c255efbbf7590a6cf9e7f11dca066cdf1cc43e7c3e",
+      "bytes": 302814
+    }
+  },
+  {
+    "scenario_id": "paper2026_ISPD98_ibm01",
+    "seed": 9,
+    "status": "valid",
+    "objective": 257779,
+    "selected_count": 4036,
+    "total_seconds": 0.09454769996227697,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_ISPD98_ibm01_author_s9.json",
+      "sha256": "a71477f05844255447e027a88f0514b80e3d59858c83fa2288599f440ccf11cd",
+      "bytes": 302804
+    }
+  },
+  {
+    "scenario_id": "paper2026_ISPD98_ibm02",
+    "seed": 7,
+    "status": "failed",
+    "objective": null,
+    "total_seconds": null,
+    "failure": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\failures\\paper2026_ISPD98_ibm02_s7.json",
+      "sha256": "93dd2c92ee066fadf00f1e0c1bc8ddb00aa562c0d2ce15a51c6ff8bae4106b61",
+      "bytes": 152
+    }
+  },
+  {
+    "scenario_id": "paper2026_ISPD98_ibm02",
+    "seed": 0,
+    "status": "valid",
+    "objective": 379987,
+    "selected_count": 6224,
+    "total_seconds": 0.20357039995724335,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_ISPD98_ibm02_author_s0.json",
+      "sha256": "564ef3d84ca83a93cc11fef9cf89f9c2109be524cefc5f457930aa92214c4863",
+      "bytes": 472531
+    }
+  },
+  {
+    "scenario_id": "paper2026_ISPD98_ibm02",
+    "seed": 1,
+    "status": "valid",
+    "objective": 379611,
+    "selected_count": 6227,
+    "total_seconds": 0.20647510001435876,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_ISPD98_ibm02_author_s1.json",
+      "sha256": "6012eff802e3d635d3971dd05dab580acab9e40312de67c726045a8ad42e612a",
+      "bytes": 472569
+    }
+  },
+  {
+    "scenario_id": "paper2026_ISPD98_ibm02",
+    "seed": 2,
+    "status": "valid",
+    "objective": 379789,
+    "selected_count": 6224,
+    "total_seconds": 0.18333229998825118,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_ISPD98_ibm02_author_s2.json",
+      "sha256": "30bf98ec4abb9a83baa8150523187785bbe898a3e9eb4964cd3dd96f201081b9",
+      "bytes": 472530
+    }
+  },
+  {
+    "scenario_id": "paper2026_ISPD98_ibm02",
+    "seed": 3,
+    "status": "valid",
+    "objective": 379701,
+    "selected_count": 6222,
+    "total_seconds": 0.11583549994975328,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_ISPD98_ibm02_author_s3.json",
+      "sha256": "8f62a10c50681a0f42f628a1d60e30325291c54d2d726de4a5502edf628e8366",
+      "bytes": 472502
+    }
+  },
+  {
+    "scenario_id": "paper2026_ISPD98_ibm02",
+    "seed": 4,
+    "status": "valid",
+    "objective": 379666,
+    "selected_count": 6222,
+    "total_seconds": 0.11631519999355078,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_ISPD98_ibm02_author_s4.json",
+      "sha256": "afec56710deeb2fb5b7e7147d4c23f1d51d1406bc70d734e04868e43c68c8d72",
+      "bytes": 472500
+    }
+  },
+  {
+    "scenario_id": "paper2026_ISPD98_ibm02",
+    "seed": 5,
+    "status": "valid",
+    "objective": 379755,
+    "selected_count": 6224,
+    "total_seconds": 0.14410139998653904,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_ISPD98_ibm02_author_s5.json",
+      "sha256": "2938e4f60699f1407c950f55cfe7ef0282daa1c331e7a554c8901c3f9a9cc912",
+      "bytes": 472532
+    }
+  },
+  {
+    "scenario_id": "paper2026_ISPD98_ibm02",
+    "seed": 6,
+    "status": "valid",
+    "objective": 379495,
+    "selected_count": 6222,
+    "total_seconds": 0.10050319996662438,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_ISPD98_ibm02_author_s6.json",
+      "sha256": "26dfb4470be9d6e7ba462ad13a2fd4a991a0663198562fd223a583546cad1ca6",
+      "bytes": 472501
+    }
+  },
+  {
+    "scenario_id": "paper2026_ISPD98_ibm02",
+    "seed": 8,
+    "status": "valid",
+    "objective": 379739,
+    "selected_count": 6222,
+    "total_seconds": 0.1170750999590382,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_ISPD98_ibm02_author_s8.json",
+      "sha256": "67ae5d2e642abe8700e88a6b5af7b8f6457ef5a19c85c0cb7234350d92330e26",
+      "bytes": 472500
+    }
+  },
+  {
+    "scenario_id": "paper2026_ISPD98_ibm02",
+    "seed": 9,
+    "status": "valid",
+    "objective": 379731,
+    "selected_count": 6225,
+    "total_seconds": 0.14547160000074655,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_ISPD98_ibm02_author_s9.json",
+      "sha256": "e875a32278a84299ab5ad413ebc39a0f0304bd4ba35dd532cee0c51f6d7e498e",
+      "bytes": 472545
+    }
+  },
+  {
+    "scenario_id": "paper2026_us04_mtx",
+    "seed": 1,
+    "status": "failed",
+    "objective": null,
+    "total_seconds": null,
+    "failure": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\failures\\paper2026_us04_mtx_s1.json",
+      "sha256": "ef231d5f8834069e597d1af39b8415e8dc010b8a610aaf4723ad5f5aa95d2758",
+      "bytes": 148
+    }
+  },
+  {
+    "scenario_id": "paper2026_us04_mtx",
+    "seed": 3,
+    "status": "failed",
+    "objective": null,
+    "total_seconds": null,
+    "failure": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\failures\\paper2026_us04_mtx_s3.json",
+      "sha256": "8dcf8f408b5e76e0fb5961951005d0b542be7f864974c4a5a0d150d1632149f1",
+      "bytes": 160
+    }
+  },
+  {
+    "scenario_id": "paper2026_us04_mtx",
+    "seed": 7,
+    "status": "failed",
+    "objective": null,
+    "total_seconds": null,
+    "failure": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\failures\\paper2026_us04_mtx_s7.json",
+      "sha256": "faa9c57cfba6bb549d0e8376009de84dc8c0efb0ab744da73d603fe4fcbab121",
+      "bytes": 148
+    }
+  },
+  {
+    "scenario_id": "paper2026_us04_mtx",
+    "seed": 9,
+    "status": "failed",
+    "objective": null,
+    "total_seconds": null,
+    "failure": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\failures\\paper2026_us04_mtx_s9.json",
+      "sha256": "76a799896e0eb16abd3ef3c0ae77fe9e6f7d064d8420b20f68f9b440e7e63725",
+      "bytes": 160
+    }
+  },
+  {
+    "scenario_id": "paper2026_us04_mtx",
+    "seed": 0,
+    "status": "valid",
+    "objective": 957,
+    "selected_count": 15,
+    "total_seconds": 41.89905320003163,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_us04_mtx_author_s0.json",
+      "sha256": "8d78ceee8a709140855f657213ddb24d67b9340a276dbc8d31b41df2eeb10279",
+      "bytes": 550790
+    }
+  },
+  {
+    "scenario_id": "paper2026_us04_mtx",
+    "seed": 2,
+    "status": "valid",
+    "objective": 967,
+    "selected_count": 14,
+    "total_seconds": 0.11884260002989322,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_us04_mtx_author_s2.json",
+      "sha256": "8ad316375fece4b9f8af46fd7438b3f4b00a7390b57d444473355ed2d3ad8147",
+      "bytes": 550782
+    }
+  },
+  {
+    "scenario_id": "paper2026_us04_mtx",
+    "seed": 4,
+    "status": "valid",
+    "objective": 1005,
+    "selected_count": 14,
+    "total_seconds": 21.30237990000751,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_us04_mtx_author_s4.json",
+      "sha256": "c20a39f394ebdb4e8a615545c08279a9715a6c2e522a1c3783ec244e7d065d35",
+      "bytes": 550780
+    }
+  },
+  {
+    "scenario_id": "paper2026_us04_mtx",
+    "seed": 5,
+    "status": "valid",
+    "objective": 933,
+    "selected_count": 15,
+    "total_seconds": 0.10347880003973842,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_us04_mtx_author_s5.json",
+      "sha256": "34dbc0f5ec3cf60cff827420f3e5e6d9cfea8a8be2c97c2fb3e30eed3008c1d9",
+      "bytes": 550792
+    }
+  },
+  {
+    "scenario_id": "paper2026_us04_mtx",
+    "seed": 6,
+    "status": "valid",
+    "objective": 941,
+    "selected_count": 13,
+    "total_seconds": 0.13212229998316616,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_us04_mtx_author_s6.json",
+      "sha256": "6c51735f406043d4151ccb63022155254aa06388d1c14ca70c7e4c093b13ed95",
+      "bytes": 550766
+    }
+  },
+  {
+    "scenario_id": "paper2026_us04_mtx",
+    "seed": 8,
+    "status": "valid",
+    "objective": 1065,
+    "selected_count": 13,
+    "total_seconds": 10.477601599995978,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_us04_mtx_author_s8.json",
+      "sha256": "04ebfc2900a4d9a3b6ac645f5f24fd5ae4060d123982d8e0e61ea6d3103fe734",
+      "bytes": 550766
+    }
+  },
+  {
+    "scenario_id": "paper2026_bibd_49_3_mtx",
+    "seed": 0,
+    "status": "valid",
+    "objective": 2288,
+    "selected_count": 24,
+    "total_seconds": 0.0207809999701567,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_bibd_49_3_mtx_author_s0.json",
+      "sha256": "2bf6c60df9cc799afa799d1a2d4fd04dad3e09a872fc5c4dcaf1bdc49bfc2e1a",
+      "bytes": 359099
+    }
+  },
+  {
+    "scenario_id": "paper2026_bibd_49_3_mtx",
+    "seed": 1,
+    "status": "valid",
+    "objective": 2288,
+    "selected_count": 24,
+    "total_seconds": 0.02029349998338148,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_bibd_49_3_mtx_author_s1.json",
+      "sha256": "fc39ae7eb41bbf43e106dd8b39326502992c6231677f3e0c4a1384d2e6011a33",
+      "bytes": 359101
+    }
+  },
+  {
+    "scenario_id": "paper2026_bibd_49_3_mtx",
+    "seed": 2,
+    "status": "valid",
+    "objective": 2288,
+    "selected_count": 24,
+    "total_seconds": 0.019923699961509556,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_bibd_49_3_mtx_author_s2.json",
+      "sha256": "51628cc677dd8b7aa61bfc98e37880d3d35ebee16c84f3c7f2967685e8d1cae2",
+      "bytes": 359102
+    }
+  },
+  {
+    "scenario_id": "paper2026_bibd_49_3_mtx",
+    "seed": 3,
+    "status": "valid",
+    "objective": 2307,
+    "selected_count": 24,
+    "total_seconds": 0.020953900006134063,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_bibd_49_3_mtx_author_s3.json",
+      "sha256": "83e63641a6254723f62daa3b23b9fdbd84d6e5ba59ead3b1445bab91a0bbd87b",
+      "bytes": 359102
+    }
+  },
+  {
+    "scenario_id": "paper2026_bibd_49_3_mtx",
+    "seed": 4,
+    "status": "valid",
+    "objective": 2288,
+    "selected_count": 24,
+    "total_seconds": 0.024983699957374483,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_bibd_49_3_mtx_author_s4.json",
+      "sha256": "e9a7a1250fa1b49fdd92001a3dff3ef135f7003b638f90a6b7b8d4012cd201b3",
+      "bytes": 359100
+    }
+  },
+  {
+    "scenario_id": "paper2026_bibd_49_3_mtx",
+    "seed": 5,
+    "status": "valid",
+    "objective": 2288,
+    "selected_count": 24,
+    "total_seconds": 0.020818700024392456,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_bibd_49_3_mtx_author_s5.json",
+      "sha256": "86ffb313df7acb1c054438e59efb045860168ac462e84bfaabecbeafd7567cbe",
+      "bytes": 359100
+    }
+  },
+  {
+    "scenario_id": "paper2026_bibd_49_3_mtx",
+    "seed": 6,
+    "status": "valid",
+    "objective": 2288,
+    "selected_count": 24,
+    "total_seconds": 0.02851630002260208,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_bibd_49_3_mtx_author_s6.json",
+      "sha256": "a4c17cc5b2ce4d0a4c1d42151c5a6c362ac5e17e1dc70cb80bbfc8730274c168",
+      "bytes": 359101
+    }
+  },
+  {
+    "scenario_id": "paper2026_bibd_49_3_mtx",
+    "seed": 7,
+    "status": "valid",
+    "objective": 2288,
+    "selected_count": 24,
+    "total_seconds": 0.021032500022556633,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_bibd_49_3_mtx_author_s7.json",
+      "sha256": "5a667d13af4c0f41b468e7e08cc82a06b29046a4e28d4431c233d6900b514e2b",
+      "bytes": 359102
+    }
+  },
+  {
+    "scenario_id": "paper2026_bibd_49_3_mtx",
+    "seed": 8,
+    "status": "valid",
+    "objective": 2288,
+    "selected_count": 24,
+    "total_seconds": 0.02209380001295358,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_bibd_49_3_mtx_author_s8.json",
+      "sha256": "e2657570192b8c1393d8ae67cf10493e2f2302562c03ea15c72b5d0283a1750e",
+      "bytes": 359100
+    }
+  },
+  {
+    "scenario_id": "paper2026_bibd_49_3_mtx",
+    "seed": 9,
+    "status": "valid",
+    "objective": 2288,
+    "selected_count": 24,
+    "total_seconds": 0.022178899962455034,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_bibd_49_3_mtx_author_s9.json",
+      "sha256": "0e87cd297d55236e06d6402f24cb02d504565575df4b456e6e545c1f135409ed",
+      "bytes": 359100
+    }
+  },
+  {
+    "scenario_id": "paper2026_sat14_AProVE07-01_cnf_dual",
+    "seed": 0,
+    "status": "valid",
+    "objective": 132866,
+    "selected_count": 2014,
+    "total_seconds": 0.07571670005563647,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_sat14_AProVE07-01_cnf_dual_author_s0.json",
+      "sha256": "0fde26f77f7c88d4438e67454a8efe059f5d3c1f42096ad5bdca3fde09a2b3f2",
+      "bytes": 593922
+    }
+  },
+  {
+    "scenario_id": "paper2026_sat14_AProVE07-01_cnf_dual",
+    "seed": 1,
+    "status": "valid",
+    "objective": 132843,
+    "selected_count": 2013,
+    "total_seconds": 0.07223210000665858,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_sat14_AProVE07-01_cnf_dual_author_s1.json",
+      "sha256": "1dc5f51c86d15a0fd43237d2e69df0ab916f6d3a94dd95142f980d9bbbd9b27c",
+      "bytes": 593906
+    }
+  },
+  {
+    "scenario_id": "paper2026_sat14_AProVE07-01_cnf_dual",
+    "seed": 2,
+    "status": "valid",
+    "objective": 132881,
+    "selected_count": 2013,
+    "total_seconds": 0.08511789998738095,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_sat14_AProVE07-01_cnf_dual_author_s2.json",
+      "sha256": "ca029fdbe3d947e026f7b8b160ebcf5dc2b929c404c8845a78f6a3569490bee3",
+      "bytes": 593907
+    }
+  },
+  {
+    "scenario_id": "paper2026_sat14_AProVE07-01_cnf_dual",
+    "seed": 3,
+    "status": "valid",
+    "objective": 132932,
+    "selected_count": 2015,
+    "total_seconds": 0.08282240002881736,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_sat14_AProVE07-01_cnf_dual_author_s3.json",
+      "sha256": "118b4e66e8f689562f8e15059dfccdad6f8b089e410de7b7325a772058188ef7",
+      "bytes": 593937
+    }
+  },
+  {
+    "scenario_id": "paper2026_sat14_AProVE07-01_cnf_dual",
+    "seed": 4,
+    "status": "valid",
+    "objective": 132914,
+    "selected_count": 2015,
+    "total_seconds": 0.10655700002098456,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_sat14_AProVE07-01_cnf_dual_author_s4.json",
+      "sha256": "f2ffee8e7843765da3c8e00ea3335c7d3ec33ee0c6641bde56ea1a2ddfb4fc80",
+      "bytes": 593934
+    }
+  },
+  {
+    "scenario_id": "paper2026_sat14_AProVE07-01_cnf_dual",
+    "seed": 5,
+    "status": "valid",
+    "objective": 133005,
+    "selected_count": 2015,
+    "total_seconds": 0.09375459997681901,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_sat14_AProVE07-01_cnf_dual_author_s5.json",
+      "sha256": "26487e160603158523892da02f1411e9926f7915235b64d4c69f2b96db9d3bc7",
+      "bytes": 593935
+    }
+  },
+  {
+    "scenario_id": "paper2026_sat14_AProVE07-01_cnf_dual",
+    "seed": 6,
+    "status": "valid",
+    "objective": 132996,
+    "selected_count": 2014,
+    "total_seconds": 0.09834059997228906,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_sat14_AProVE07-01_cnf_dual_author_s6.json",
+      "sha256": "6a39f371cf057e889bd93f8bcc89ab4ffa4b91e4fa89ceddbb8dca76a4cf3902",
+      "bytes": 593920
+    }
+  },
+  {
+    "scenario_id": "paper2026_sat14_AProVE07-01_cnf_dual",
+    "seed": 7,
+    "status": "valid",
+    "objective": 132915,
+    "selected_count": 2014,
+    "total_seconds": 0.0845423000282608,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_sat14_AProVE07-01_cnf_dual_author_s7.json",
+      "sha256": "56bc85921b6a794eaada274e25059413194e16a2e96b8e6c9bea2cd58d419863",
+      "bytes": 593920
+    }
+  },
+  {
+    "scenario_id": "paper2026_sat14_AProVE07-01_cnf_dual",
+    "seed": 8,
+    "status": "valid",
+    "objective": 132914,
+    "selected_count": 2014,
+    "total_seconds": 0.08502200001385063,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_sat14_AProVE07-01_cnf_dual_author_s8.json",
+      "sha256": "8f89b4a36c0f172ffcfd261fc3da8706c9da9b70df0abc4832cab65bfc32b000",
+      "bytes": 593923
+    }
+  },
+  {
+    "scenario_id": "paper2026_sat14_AProVE07-01_cnf_dual",
+    "seed": 9,
+    "status": "valid",
+    "objective": 132820,
+    "selected_count": 2012,
+    "total_seconds": 0.0802788000437431,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_sat14_AProVE07-01_cnf_dual_author_s9.json",
+      "sha256": "5c623a02a64221d23d6667657e195c9c8b47bcc8dc488043d12670cfd8447bc0",
+      "bytes": 593891
+    }
+  },
+  {
+    "scenario_id": "paper2026_sat14_AProVE07-27_cnf_dual",
+    "seed": 0,
+    "status": "valid",
+    "objective": 154455,
+    "selected_count": 2326,
+    "total_seconds": 0.0888664000085555,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_sat14_AProVE07-27_cnf_dual_author_s0.json",
+      "sha256": "0f06d76d7b7d069ab52eddd5acfaa40ef563aae5266e4d54c8848c699d837e5b",
+      "bytes": 606563
+    }
+  },
+  {
+    "scenario_id": "paper2026_sat14_AProVE07-27_cnf_dual",
+    "seed": 1,
+    "status": "valid",
+    "objective": 154240,
+    "selected_count": 2327,
+    "total_seconds": 0.06725620001088828,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_sat14_AProVE07-27_cnf_dual_author_s1.json",
+      "sha256": "9c5274266816e1e1bc9ce60be22580ef7c6478602f41e7ee10b4694e66ae1881",
+      "bytes": 606582
+    }
+  },
+  {
+    "scenario_id": "paper2026_sat14_AProVE07-27_cnf_dual",
+    "seed": 2,
+    "status": "valid",
+    "objective": 154160,
+    "selected_count": 2327,
+    "total_seconds": 0.06306399998720735,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_sat14_AProVE07-27_cnf_dual_author_s2.json",
+      "sha256": "33821dae7b260c0238cca117175ca9842f8b1aeb724e54a8757f3fd6b2b8eda5",
+      "bytes": 606580
+    }
+  },
+  {
+    "scenario_id": "paper2026_sat14_AProVE07-27_cnf_dual",
+    "seed": 3,
+    "status": "valid",
+    "objective": 154169,
+    "selected_count": 2325,
+    "total_seconds": 0.05646370002068579,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_sat14_AProVE07-27_cnf_dual_author_s3.json",
+      "sha256": "ae1c96d6077bd11528e36370ccfe25ffe58f8172e1a05691373ffce798d10180",
+      "bytes": 606552
+    }
+  },
+  {
+    "scenario_id": "paper2026_sat14_AProVE07-27_cnf_dual",
+    "seed": 4,
+    "status": "valid",
+    "objective": 154355,
+    "selected_count": 2327,
+    "total_seconds": 0.10045439994428307,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_sat14_AProVE07-27_cnf_dual_author_s4.json",
+      "sha256": "17498822a9ba27f253492f67a543a3b7067d7393238c0aad1bc1faab857ff40d",
+      "bytes": 606582
+    }
+  },
+  {
+    "scenario_id": "paper2026_sat14_AProVE07-27_cnf_dual",
+    "seed": 5,
+    "status": "valid",
+    "objective": 154197,
+    "selected_count": 2325,
+    "total_seconds": 0.05585060000885278,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_sat14_AProVE07-27_cnf_dual_author_s5.json",
+      "sha256": "8716504b649e8b46a4d56ed486cd411945a632fc95f7c76d42c6c49542b561c6",
+      "bytes": 606551
+    }
+  },
+  {
+    "scenario_id": "paper2026_sat14_AProVE07-27_cnf_dual",
+    "seed": 6,
+    "status": "valid",
+    "objective": 154212,
+    "selected_count": 2326,
+    "total_seconds": 0.07497129996772856,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_sat14_AProVE07-27_cnf_dual_author_s6.json",
+      "sha256": "bcd0ee6d58e2b7f9e9cb6fc7b2b27dbd7da34d1e71d78e8f720867c27aa7ab21",
+      "bytes": 606568
+    }
+  },
+  {
+    "scenario_id": "paper2026_sat14_AProVE07-27_cnf_dual",
+    "seed": 7,
+    "status": "valid",
+    "objective": 154105,
+    "selected_count": 2324,
+    "total_seconds": 0.05614120000973344,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_sat14_AProVE07-27_cnf_dual_author_s7.json",
+      "sha256": "1d57afeefcac777a8d7a5c70dbbbac5e65b6a4839de7452fb2a1a44f29f5fb74",
+      "bytes": 606539
+    }
+  },
+  {
+    "scenario_id": "paper2026_sat14_AProVE07-27_cnf_dual",
+    "seed": 8,
+    "status": "valid",
+    "objective": 154148,
+    "selected_count": 2325,
+    "total_seconds": 0.09713189996546134,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_sat14_AProVE07-27_cnf_dual_author_s8.json",
+      "sha256": "488a6cd7c9cc35d6913f29a5998ef18322fd18cfbdbc6180a07a3066a1ec7a90",
+      "bytes": 606550
+    }
+  },
+  {
+    "scenario_id": "paper2026_sat14_AProVE07-27_cnf_dual",
+    "seed": 9,
+    "status": "valid",
+    "objective": 154055,
+    "selected_count": 2325,
+    "total_seconds": 0.05649049999192357,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_sat14_AProVE07-27_cnf_dual_author_s9.json",
+      "sha256": "5e9aac965edd8d1b95e623cd38fe36737afb41d01c03b6f4af8f94ddf9cc6390",
+      "bytes": 606554
+    }
+  },
+  {
+    "scenario_id": "paper2026_dac2012_superblue19",
+    "seed": 0,
+    "status": "valid",
+    "objective": 11405345,
+    "selected_count": 178040,
+    "total_seconds": 5.634516799997073,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_dac2012_superblue19_author_s0.json",
+      "sha256": "72b5a1ad17fbbc5d95a12cb82125445a4bd7b62280b9c1f0189d2a13b864d914",
+      "bytes": 13671682
+    }
+  },
+  {
+    "scenario_id": "paper2026_dac2012_superblue19",
+    "seed": 1,
+    "status": "valid",
+    "objective": 11405345,
+    "selected_count": 178038,
+    "total_seconds": 8.502135699964128,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_dac2012_superblue19_author_s1.json",
+      "sha256": "5de8788ab34789495a1793594e37d5dbc0871cdf15d16d72a199736d0a4be3f1",
+      "bytes": 13671652
+    }
+  },
+  {
+    "scenario_id": "paper2026_dac2012_superblue19",
+    "seed": 2,
+    "status": "valid",
+    "objective": 11405242,
+    "selected_count": 178039,
+    "total_seconds": 7.233392999973148,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_dac2012_superblue19_author_s2.json",
+      "sha256": "46b7fb7143e9ca9ec28385812917b01ac59c2fb77ee427563b7241e0126657c7",
+      "bytes": 13671668
+    }
+  },
+  {
+    "scenario_id": "paper2026_dac2012_superblue19",
+    "seed": 3,
+    "status": "valid",
+    "objective": 11405387,
+    "selected_count": 178036,
+    "total_seconds": 7.426927699998487,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_dac2012_superblue19_author_s3.json",
+      "sha256": "a03f63e6ef0822b595209a64a4b7ab1d80cc814c53a6e8406809dadc037c0eb9",
+      "bytes": 13671625
+    }
+  },
+  {
+    "scenario_id": "paper2026_dac2012_superblue19",
+    "seed": 4,
+    "status": "valid",
+    "objective": 11405452,
+    "selected_count": 178043,
+    "total_seconds": 11.912803400016855,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_dac2012_superblue19_author_s4.json",
+      "sha256": "fd82c8a7a37b8e495d48411186e3673e7050437b5ebc60dd47a22c9dccee73e2",
+      "bytes": 13671735
+    }
+  },
+  {
+    "scenario_id": "paper2026_dac2012_superblue19",
+    "seed": 5,
+    "status": "valid",
+    "objective": 11405343,
+    "selected_count": 178044,
+    "total_seconds": 7.260760800039861,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_dac2012_superblue19_author_s5.json",
+      "sha256": "63c5ee72e7faa23783617468cfca4105539e84ea337d868cbf11f86d2fc09086",
+      "bytes": 13671747
+    }
+  },
+  {
+    "scenario_id": "paper2026_dac2012_superblue19",
+    "seed": 6,
+    "status": "valid",
+    "objective": 11405432,
+    "selected_count": 178038,
+    "total_seconds": 11.760277200024575,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_dac2012_superblue19_author_s6.json",
+      "sha256": "918fe611eb881d2ca7a7b723dfd3d4b9cf04b55bac581917f2ead7ada03d4246",
+      "bytes": 13671652
+    }
+  },
+  {
+    "scenario_id": "paper2026_dac2012_superblue19",
+    "seed": 7,
+    "status": "valid",
+    "objective": 11405279,
+    "selected_count": 178036,
+    "total_seconds": 5.312671500025317,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_dac2012_superblue19_author_s7.json",
+      "sha256": "3043f87ad5c07b6a48c857577bb6872bc27c2ae503b31dfd64b7be87e15f15cd",
+      "bytes": 13671624
+    }
+  },
+  {
+    "scenario_id": "paper2026_dac2012_superblue19",
+    "seed": 8,
+    "status": "valid",
+    "objective": 11405309,
+    "selected_count": 178039,
+    "total_seconds": 5.252086299995426,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_dac2012_superblue19_author_s8.json",
+      "sha256": "f656356b1f2551498158c824cc60954e6869dbfa5d9918d68476dea8b6029570",
+      "bytes": 13671670
+    }
+  },
+  {
+    "scenario_id": "paper2026_dac2012_superblue19",
+    "seed": 9,
+    "status": "valid",
+    "objective": 11405475,
+    "selected_count": 178045,
+    "total_seconds": 9.085585099994205,
+    "raw": {
+      "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_dac2012_superblue19_author_s9.json",
+      "sha256": "3ed2d1959f50f58fc612a47c6161e629ca98b52b5b6999397a72f20d39648985",
+      "bytes": 13671764
+    }
+  }
+]

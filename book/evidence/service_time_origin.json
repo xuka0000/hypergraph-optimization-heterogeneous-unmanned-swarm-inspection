@@ -1,0 +1,27 @@
+{
+  "scope": "source and arithmetic only; no experiment",
+  "scene_sha256": "d0c668d7cfeea2e7973e6ab387be38e499aea4e935a6530dfaf8900438b8520d",
+  "source": {
+    "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/Agent/Run/complete_inspection_reference_parameters.py",
+    "sha256": "29ba0726b5214822e83fd70471103037d5dcdeb7e99a8ed9836e1deb81384e92",
+    "bytes": 19992,
+    "lines": 216,
+    "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+  },
+  "source_locator": "leg_seconds, tower_route, timing lines20-58; parameter origin lines98-103",
+  "formula": "(300 - 119.90026666666664)/9",
+  "service_s": 20.011081481481483,
+  "hover_power_formula": "548 Wh/(2580/3600 h)",
+  "hover_power_W": 764.6511627906976,
+  "interpretation": "20.011081481481483s is equal allocation of the nontranslation residual of a 300s reference tower route with 1m/s,3m/s2 rest-to-rest motion; not measured per-photo shutter/hover time. Fixed as service lower bound in joint model; new joint routes are not forced to total300s. Hover proxy uses nominal full548Wh divided by43min reference, not field power calibration.",
+  "hover_reference": {
+    "path": "D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网\\总结\\07_证据与复现索引\\综合报告检索\\场景设置文献\\dji_m300_manual.pdf",
+    "sha256": "d313aefbda4508c7dcc52d41f001a2d3be5de4b0dffd12d396ec05caab3c9a3e",
+    "pages_read": [
+      95,
+      96
+    ],
+    "scope": "Only referenced specification pages read, not full manual",
+    "fact": "M300 manual p95: sea-level max hover43min and forward45min at700g load; book uses derived nominal capacity/time proxy."
+  }
+}

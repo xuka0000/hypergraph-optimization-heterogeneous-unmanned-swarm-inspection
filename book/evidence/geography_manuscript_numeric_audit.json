@@ -1,0 +1,11 @@
+{
+  "observed_at": "2026-11-10T07:50:28.817849+00:00",
+  "draft_sha256": "42985493ef85036ced8ad67496fe27b82b70c2372e8cc6bf52d95d47290921b2",
+  "passed": true,
+  "checks": [
+    "nine numeric target offset rows agree with full-precision evidence at four decimals",
+    "six scene counts match retained input",
+    "truth-table group counts independently recomputed",
+    "derived center/sample coordinates and source-residual distinction match evidence"
+  ]
+}

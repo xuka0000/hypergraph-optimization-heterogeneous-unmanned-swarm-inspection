@@ -1,0 +1,25 @@
+\section{天气场、飞行功率与回收预留}
+\noindent 天气输入$W^\omega(\mathbf p,t)$含三维风、密度、温度、阵风、前一小时降水及昼夜标志，均有源坐标、参考高度、有效时刻、发布/接收时刻和缺失标志。连续风/温度/密度采用有效节点间的时间线性和空间重心插值；高度层30/60/100m之间线性插值，低于30m沿用30m，超过100m不允许飞行。只有一个空间节点时须声明空间均匀参考，不称区域实测场。
+
+\noindent 此连续插值是本版参考适配，替换旧小时阶跃风以避免无穷姿态率；不修改源天气值。累计降水、阵风和昼夜标志保持其来源时间段语义，不按连续风处理。缺失任一必要输入时禁止对应飞行/充电，不能默认晴天。
+\begin{align}
+ &b_\ell=1\Rightarrow \|\mathbf w(\mathbf p_\ell(t),t)\|\le10,\quad
+ G_{10}(\mathbf p_\ell(t),t)\le10,\\
+ &0\le T_a(\mathbf p_\ell(t),t)\le40^\circ\mathrm C,\quad
+ R_{1h}(\mathbf p_\ell(t),t)=0,\quad D(\mathbf p_\ell(t),t)=1,
+ \label{eng:eq:weatherwindow}\\
+ P_\ell(t)&=764.651163\sqrt{1.225/\rho}
+       +\tfrac12(0.25)\rho\|\mathbf v_a\|^3
+       +\frac{7(9.81)\max(v_z,0)}{0.7}+\epsilon_P^\omega(t).
+ \label{eng:eq:power}
+\end{align}
+\noindent 风速单位m/s，功率W。本式是参考物理功率代理，不是M100权重迁移后的M300高精度模型。名义情形$\epsilon_P=0$；增加误差情形前须独立标定并保证$P_\ell\ge0$，不能由优化器自由挑选有利误差。
+\begin{equation}
+ \beta_{p\ell}=1\Rightarrow E_p(t)\ge109.6+
+                   \int_t^{e_\ell}P_\ell(\xi)d\xi/3600,
+ \quad t\in[\max(s_\ell,\tau_k),e_\ell].
+ \label{eng:eq:return}
+\end{equation}
+\noindent 积分对应同一联合解中可行的剩余飞行及停车回收，包含等待，不用直线距离能耗下界。无空中补能时，该约束与落地电量下限通过守恒相联系，不是凭空多出一种独立资源。它保证所建情形中的计划回收，不保证未建模天气/载车故障后的独立应急返航。
+\clearpage
+

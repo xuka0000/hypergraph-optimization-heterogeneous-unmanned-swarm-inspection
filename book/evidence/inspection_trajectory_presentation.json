@@ -1,0 +1,269 @@
+{
+  "sources": [
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_SOC1_sortie0.json",
+      "sha256": "802d912acce29af02241e46fa1ea18741cdde5cef671ee0a50f4896d96d7ef1b"
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_SOC1_sortie1.json",
+      "sha256": "8d3c271c28bfe6f808dc01eb356ce5e14abe2d59c6fcf36c22889b6cf37409b4"
+    }
+  ],
+  "origin_xyz": [
+    338578.98427059065,
+    5652901.735967218,
+    116.21379999999999
+  ],
+  "interpolation": "Exact degree-n Bernstein evaluation of saved controls; at most2s plotted spacing. Display sampling is not a safety proof.",
+  "events": [
+    {
+      "label": "A",
+      "source_slot": 1,
+      "carrier_one_based": 2,
+      "aircraft_one_based": 3,
+      "pair_one_based": 5,
+      "prepare_start_s": 0.0,
+      "launch_s": 120.0,
+      "landing_s": 800.9611563730831,
+      "recovery_end_s": 1040.9611563730832,
+      "flight_s": 680.9611563730831,
+      "independent_energy_Wh": 153.60343250869417,
+      "terminal_no_charge_Wh": 394.39656749130586,
+      "sequence": [
+        "OSM_269894017_P02",
+        "OSM_269894017_P04",
+        "OSM_269894017_P05",
+        "OSM_269894017_P03"
+      ],
+      "captures": [
+        {
+          "task_id": "OSM_269894017_P02",
+          "task_index": 1,
+          "start_s": 287.7467239275775,
+          "end_s": 308.04652593908105,
+          "position_xyz_m": [
+            338567.209714299,
+            5652909.850635604,
+            115.0463381922291
+          ],
+          "moving_capture": true
+        },
+        {
+          "task_id": "OSM_269894017_P04",
+          "task_index": 3,
+          "start_s": 314.27223535980914,
+          "end_s": 334.57203739692875,
+          "position_xyz_m": [
+            338565.7490410586,
+            5652910.6486640265,
+            108.05983717966939
+          ],
+          "moving_capture": true
+        },
+        {
+          "task_id": "OSM_269894017_P05",
+          "task_index": 4,
+          "start_s": 337.77791670071457,
+          "end_s": 358.0777186955445,
+          "position_xyz_m": [
+            338565.74571126717,
+            5652910.388345361,
+            104.29870318194746
+          ],
+          "moving_capture": true
+        },
+        {
+          "task_id": "OSM_269894017_P03",
+          "task_index": 2,
+          "start_s": 365.0041782884409,
+          "end_s": 385.30398030925187,
+          "position_xyz_m": [
+            338565.64992059575,
+            5652910.614154435,
+            112.00177854558228
+          ],
+          "moving_capture": true
+        }
+      ]
+    },
+    {
+      "label": "B",
+      "source_slot": 5,
+      "carrier_one_based": 1,
+      "aircraft_one_based": 1,
+      "pair_one_based": 1,
+      "prepare_start_s": 0.0,
+      "launch_s": 120.0,
+      "landing_s": 805.4278963345997,
+      "recovery_end_s": 1045.4278963345996,
+      "flight_s": 685.4278963345997,
+      "independent_energy_Wh": 154.59827786176496,
+      "terminal_no_charge_Wh": 393.4017221382351,
+      "sequence": [
+        "OSM_269894017_P08",
+        "OSM_269894017_P01",
+        "OSM_269894017_P10",
+        "OSM_269894017_P11",
+        "OSM_269894017_P09"
+      ],
+      "captures": [
+        {
+          "task_id": "OSM_269894017_P08",
+          "task_index": 5,
+          "start_s": 276.85972411334234,
+          "end_s": 297.0384335676603,
+          "position_xyz_m": [
+            338592.3444958341,
+            5652898.282532385,
+            115.2087544683661
+          ],
+          "moving_capture": true
+        },
+        {
+          "task_id": "OSM_269894017_P01",
+          "task_index": 0,
+          "start_s": 302.855629383492,
+          "end_s": 323.0343388089481,
+          "position_xyz_m": [
+            338575.1996860447,
+            5652889.25612231,
+            116.4882551410364
+          ],
+          "moving_capture": true
+        },
+        {
+          "task_id": "OSM_269894017_P10",
+          "task_index": 7,
+          "start_s": 331.46660973637427,
+          "end_s": 351.6453191877035,
+          "position_xyz_m": [
+            338592.57067457814,
+            5652898.044956433,
+            107.91963412680485
+          ],
+          "moving_capture": true
+        },
+        {
+          "task_id": "OSM_269894017_P11",
+          "task_index": 8,
+          "start_s": 354.5999895433032,
+          "end_s": 374.778698972253,
+          "position_xyz_m": [
+            338593.31990626233,
+            5652897.357210371,
+            104.22918928979742
+          ],
+          "moving_capture": true
+        },
+        {
+          "task_id": "OSM_269894017_P09",
+          "task_index": 6,
+          "start_s": 382.929229263493,
+          "end_s": 403.1079387370671,
+          "position_xyz_m": [
+            338592.7754521004,
+            5652898.187984703,
+            112.77566687847508
+          ],
+          "moving_capture": true
+        }
+      ]
+    }
+  ],
+  "resource_validation": {
+    "path": "总结/03_实验数据/工程化联合求解/unified_SOC1_resource_validation.json",
+    "sha256": "6c7a613292ece40fad87a4e3ae28166a01905232940cd91ae1953ea8916591ab",
+    "all_pass": true,
+    "checks": 95,
+    "failures": []
+  },
+  "interval_validation": {
+    "observed_at": "2026-11-08T13:39:20.987741+00:00",
+    "seconds": 10.60648289998062,
+    "evaluator_sha256": "87bfe5adec5162d599becbf7ad48086a38739f3ac9eb5f33032c703e25d204f1",
+    "force_enclosure_sha256": "c31f8aac813ee195992c8eaebe3ccfcbedd8130de97569f4fb1a77f39b9e62c5",
+    "complete": true,
+    "rows": [
+      {
+        "slot": 0,
+        "source_file": "unified_SOC1_sortie0.json",
+        "source_sha256": "802d912acce29af02241e46fa1ea18741cdde5cef671ee0a50f4896d96d7ef1b",
+        "all_pass": true,
+        "failures": [],
+        "stats": {
+          "accepted_intervals": 143,
+          "evaluations": 267,
+          "max_depth": 7
+        },
+        "max_C3_error": 6.781167247428064e-07,
+        "max_pose_C2_error": 4.3775210583775005e-10,
+        "energy_Wh": 153.60343250869417,
+        "NLP_energy_Wh": 153.59954739247277,
+        "energy_difference_Wh": 0.003885116221397311,
+        "optical_passed_tasks": [
+          "OSM_269894017_P02",
+          "OSM_269894017_P03",
+          "OSM_269894017_P04",
+          "OSM_269894017_P05"
+        ],
+        "capture_count": 4,
+        "accepted_bounds": {
+          "airspeed_upper_mps": 8.251914456914735,
+          "thrust_upper_N": 78.79248278494329,
+          "body_rate_component_upper_deg_s": 29.530693524889973,
+          "blur_upper_px": 0.5494938267639496
+        }
+      },
+      {
+        "slot": 1,
+        "source_file": "unified_SOC1_sortie1.json",
+        "source_sha256": "8d3c271c28bfe6f808dc01eb356ce5e14abe2d59c6fcf36c22889b6cf37409b4",
+        "all_pass": true,
+        "failures": [],
+        "stats": {
+          "accepted_intervals": 405,
+          "evaluations": 787,
+          "max_depth": 10
+        },
+        "max_C3_error": 8.279632457732168e-07,
+        "max_pose_C2_error": 9.123159012727652e-08,
+        "energy_Wh": 154.59827786176496,
+        "NLP_energy_Wh": 154.5941898419197,
+        "energy_difference_Wh": 0.0040880198452555305,
+        "optical_passed_tasks": [
+          "OSM_269894017_P01",
+          "OSM_269894017_P08",
+          "OSM_269894017_P09",
+          "OSM_269894017_P10",
+          "OSM_269894017_P11"
+        ],
+        "capture_count": 5,
+        "accepted_bounds": {
+          "airspeed_upper_mps": 8.28499386347213,
+          "thrust_upper_N": 78.11216905671641,
+          "body_rate_component_upper_deg_s": 29.973752247455057,
+          "blur_upper_px": 0.9943768441277815
+        }
+      }
+    ],
+    "all_pass": true,
+    "min_separation_bound_m": 16.85018551720864,
+    "scope": "numerical interval/collision-hull enclosures; source reference physics; not measured image/flight validation"
+  },
+  "visuals": [
+    {
+      "id": "inspection_local_xy",
+      "output": "figures/inspection_local_xy.pdf",
+      "type": "experimental_figure",
+      "scope": "Historical two-sortie nine-task local case; fixed depot vehicles; not the current full-region solution",
+      "qa": "pending"
+    },
+    {
+      "id": "inspection_local_altitude",
+      "output": "figures/inspection_local_altitude.pdf",
+      "type": "experimental_figure",
+      "scope": "Historical two-sortie nine-task local case; fixed depot vehicles; not the current full-region solution",
+      "qa": "pending"
+    }
+  ]
+}

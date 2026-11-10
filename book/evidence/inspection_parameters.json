@@ -1,0 +1,1291 @@
+{
+  "source": {
+    "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/rommerskirchen.json",
+    "sha256": "d0c668d7cfeea2e7973e6ab387be38e499aea4e935a6530dfaf8900438b8520d",
+    "immutable": true
+  },
+  "source_profile": {
+    "profile_id": "regional_joint_reference_1",
+    "role": "complete_declared_reference_simulation_not_field_calibration",
+    "geometry": {
+      "target_patch_width_m": 0.5,
+      "target_patch_height_m": 0.5,
+      "target_surface_samples": 5,
+      "viewpoint_ball_radius_m": 2.0,
+      "tower_cylinder_radius_m": 2.0,
+      "tower_height_m": 35.7378,
+      "conductor_radius_m": 0.05,
+      "conductor_sag_reference_m": 5.0,
+      "conductor_layers_m": [
+        34.2138,
+        31.0134,
+        25.908,
+        20.8026
+      ],
+      "conductor_lateral_offsets_m": [
+        -4.8768,
+        4.8768
+      ],
+      "conductor_curve": "q(t)=(1-t)*endpoint_a+t*endpoint_b-[0,0,4*sag*t*(1-t)]; endpoints at tower/source node DEM plus layer and incident-axis lateral offset",
+      "vegetation_model": "none; not surveyed"
+    },
+    "aircraft": {
+      "reference_family": "M300 geometry/endurance reference; no imported M100 learned model",
+      "mass_kg": 7.0,
+      "body_radius_m": 0.6,
+      "ground_speed_max_mps": 5.0,
+      "air_speed_max_mps": 12.0,
+      "vertical_speed_max_mps": 1.0,
+      "acceleration_max_mps2": 3.0,
+      "jerk_max_mps3": 5.0,
+      "tilt_max_deg": 25.0,
+      "body_rate_max_deg_s": 30.0,
+      "thrust_min_N": 0.0,
+      "thrust_max_N": 137.34,
+      "drag_CdA_m2": 0.25,
+      "tracking_error_m": 0.5,
+      "map_error_m": 0.5,
+      "inter_uav_clearance_m": 3.0,
+      "obstacle_clearance_m": 3.0
+    },
+    "camera": {
+      "image_width_px": 5184,
+      "image_height_px": 3888,
+      "diagonal_fov_deg_at_wide": 66.6,
+      "focal_length_mm_bounds": [
+        6.83,
+        119.94
+      ],
+      "projection": "ideal square-pixel pinhole; fx(f)=hypot(width,height)/(2*tan(66.6deg/2))*f/6.83",
+      "principal_point_px": [
+        2592,
+        1944
+      ],
+      "distortion": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "mount_offset_m": [
+        0,
+        0,
+        0
+      ],
+      "gimbal_pitch_deg": [
+        -120,
+        30
+      ],
+      "gimbal_yaw_deg": [
+        -320,
+        320
+      ],
+      "gimbal_rate_max_deg_s": 30.0,
+      "gimbal_acceleration_max_deg_s2": 30.0,
+      "yaw_rate_max_deg_s": 30.0,
+      "yaw_acceleration_max_deg_s2": 30.0,
+      "focus_min_m": 8.0,
+      "observation_max_m": 25.0,
+      "incidence_angle_max_deg": 30.0,
+      "frame_border_px": 32,
+      "gsd_max_m_per_px": 0.005,
+      "blur_max_px": 1.0,
+      "exposure_bounds_s": [
+        0.001,
+        0.001
+      ],
+      "zoom_rate_max_mm_s": 10.0,
+      "required_frames": 1,
+      "settle_focus_readout_min_s": 1.0,
+      "exposure_role": "fixed declared daylight reference; not calibrated low-light guarantee"
+    },
+    "vehicle": {
+      "type": "reference_Ackermann",
+      "wheelbase_m": 2.5,
+      "length_m": 4.0,
+      "width_m": 1.8,
+      "height_m": 1.8,
+      "speed_max_mps": 2.7777777777777777,
+      "reverse_speed_max_mps": 0.0,
+      "acceleration_max_mps2": 1.0,
+      "steering_max_deg": 35.0,
+      "steering_rate_max_deg_s": 20.0,
+      "lateral_acceleration_max_mps2": 1.5,
+      "road_corridor_width_m": 6.0,
+      "pad_offset_m": [
+        0,
+        0,
+        1.8
+      ],
+      "pad_region_radius_m": 3.0,
+      "moving_landing": false,
+      "charging_on_road": false
+    },
+    "energy": {
+      "pair_capacity_Wh": 548.0,
+      "initial_SOC": 1.0,
+      "minimum_SOC": 0.2,
+      "terminal_SOC": 0.2,
+      "charge_efficiency": 0.9,
+      "charge_tail_minutes": 20.0,
+      "cooling_seconds": 0.0,
+      "supply_max_W_per_vehicle": 1000.0,
+      "idle_power_W": 0.0,
+      "temperature_capacity_model": "constant within declared 0..40C reference domain",
+      "power_model": "reference_hover_plus_drag_and_positive_climb",
+      "hover_power_W": 764.6511627906976,
+      "power_formula": "P=hover_W*sqrt(1.225/rho)+0.5*CdA*rho*norm(v_air)^3+mass*g*max(vz,0)/0.7",
+      "propulsion_efficiency": 0.7,
+      "energy_boundary": "aircraft only; vehicle traction excluded",
+      "hardware_charge_control_verified": false
+    },
+    "recovery": {
+      "candidate_sites": "configured stops reached by assigned carrier before landing",
+      "reserve_rule": "E(t)>=energy_of_collision_free_recovery_trajectory(t,site)+0.2*548Wh",
+      "trajectory_conditions": "same flight, weather, terrain, obstacle and landing constraints as planned motion",
+      "preparation_seconds": 120.0,
+      "recovery_seconds": 240.0,
+      "initial_aircraft_state": "stationary on carrier pad",
+      "terminal_vehicle_state": "stationary at initial depot; all assigned aircraft recovered",
+      "verification": "must provide recovery trajectory witness; distance-only estimate is insufficient"
+    },
+    "weather": {
+      "source": "retained ERA5 replay; not an issued forecast",
+      "time_step_s": 3600,
+      "height_layers_agl_m": [
+        30,
+        60,
+        100
+      ],
+      "temporal_interpolation": "left-hour piecewise constant; split integration at hour boundaries",
+      "vertical_interpolation": "linear between available reference heights; below30 use30, above100 forbidden",
+      "height_reference": "source layers above ERA5 grid terrain; local AGL mapped to these reference layers without terrain downscaling",
+      "missing_density_policy": "no flight in a layer/hour whose density is unresolved; interpolation requires both valid endpoints",
+      "horizontal_interpolation": "nearest retained grid cell",
+      "wind_vertical_ms": 0.0,
+      "wind_vertical_kind": "unresolved -> declared zero reference",
+      "wind_limit_mps": 10.0,
+      "gust10_limit_mps": 10.0,
+      "air_temperature_C": [
+        0.0,
+        40.0
+      ],
+      "charging_temperature_C": [
+        0.0,
+        40.0
+      ],
+      "maximum_previous_hour_precipitation_mm": 0.0,
+      "require_daylight": true,
+      "forecast_error_bound_mps": 0.0,
+      "uncertainty_role": "deterministic hindcast reference, not robust weather guarantee",
+      "ignore_original_M100_pass_flags": true
+    },
+    "numerical": {
+      "position_basis": "degree7_Bernstein",
+      "max_subsegments_per_transfer": 3,
+      "samples_per_segment": 9,
+      "integration": "Gauss-Legendre order9 per subsegment; split at weather/charge state boundaries",
+      "position_tolerance_m": 0.01,
+      "time_tolerance_s": 0.001,
+      "energy_tolerance_Wh": 0.01,
+      "angle_tolerance_rad": 0.001,
+      "full_trajectory_verification": "interval/adaptive checks required before claiming continuous feasibility"
+    },
+    "planning": {
+      "horizon_seconds": 28800.0,
+      "default_start_utc": "2025-01-01T08:00:00Z",
+      "reference_periods": [
+        "2025-01-01/2025-01-07",
+        "2025-07-01/2025-07-07"
+      ],
+      "sortie_slots": "one optional slot per inspection task; not preassigned flights",
+      "fixed_six_tower_limit": false,
+      "successor_domain": "all distinct task pairs plus launch/recovery anchors; lazy symbolic indexing, no fixed catalogue",
+      "maximum_vehicle_visits": "2*number_of_sortie_slots+2",
+      "objective": [
+        "weighted_incomplete_towers",
+        "fleet_return_makespan_s",
+        "aircraft_energy_Wh"
+      ],
+      "complete_tower_rule": "all9 planned image requirements; execution requires image acceptance",
+      "pure_reposition_sorties": false
+    },
+    "provenance": {
+      "default_kind": "declared_project_reference_assumption",
+      "transferred_geometry": "KPLC25; not the local tower as-built geometry",
+      "camera_hardware_bounds": "H20; ideal intrinsics and image thresholds are assumptions",
+      "battery_nominal_capacity": "M300 TB60 274Wh per battery; pair548Wh; usable capacity assumed equal nominal",
+      "charging": "M30020to90percent1800s; other intervals/efficiency/control are reference assumptions",
+      "weather": "existing public ERA5 source records; no M100 acceptance flags reused",
+      "not_a_measured_profile": true
+    }
+  },
+  "current_model_overrides": {
+    "geometry.target_support_offset_m": 0.01,
+    "geometry.target_wire_surface_offset_grid_m": 0.01,
+    "geometry.target_wire_surface_clearance_m": 0.01,
+    "vehicle.inter_vehicle_clearance_m": 0.5,
+    "vehicle.candidate_capacity": 1,
+    "vehicle.mode_transitions": "edge_core -> head_junction; tail_junction -> edge_core; junction <-> own_stop; no others",
+    "aircraft.docking_center_height_above_vehicle_ground_m": 2.4,
+    "aircraft.pad_full_clearance_height_above_vehicle_ground_m": 6.4,
+    "aircraft.simultaneous_center_separation_m": 5.2,
+    "weather.continuous_fields_interpolation": "linear time,height and spatial barycentric; one-cell uniform only when explicitly declared",
+    "weather.discrete_fields": "keep original accumulated precipitation/gust/daylight interval semantics",
+    "planning.maximum_vehicle_visits": null,
+    "planning.charging_event_limit": null,
+    "planning.replanning_review_period_s": 300,
+    "planning.energy_deficit_trigger_Wh": 10.96,
+    "planning.task_weights": 1,
+    "planning.scenario_probabilities": null,
+    "geometry.capture_domain": "physical_optics_visibility_clearance",
+    "geometry.viewpoint_ball_radius_m": null,
+    "geometry.nominal_viewpoint_role": "initialization_only"
+  },
+  "fleet": {
+    "vehicles": [
+      {
+        "id": "V1",
+        "depot_stop": "P001",
+        "uav_ids": [
+          "U1_1",
+          "U1_2"
+        ],
+        "battery_pair_ids": [
+          "B1_1",
+          "B1_2",
+          "B1_3",
+          "B1_4"
+        ],
+        "charger_channels": 1,
+        "handling_positions": 1,
+        "supply_max_W": 1000.0,
+        "initial_xyz_m": [
+          338431.00163273,
+          5653263.218314463,
+          83.39513972489615
+        ],
+        "initial_heading_rad": 1.7597024142137798,
+        "initial_speed_mps": 0.0,
+        "terminal_depot_stop": "P001"
+      },
+      {
+        "id": "V2",
+        "depot_stop": "P002",
+        "uav_ids": [
+          "U2_1",
+          "U2_2"
+        ],
+        "battery_pair_ids": [
+          "B2_1",
+          "B2_2",
+          "B2_3",
+          "B2_4"
+        ],
+        "charger_channels": 1,
+        "handling_positions": 1,
+        "supply_max_W": 1000.0,
+        "initial_xyz_m": [
+          338423.3255343109,
+          5653303.36827501,
+          83.17313108077539
+        ],
+        "initial_heading_rad": 1.7903640723688097,
+        "initial_speed_mps": 0.0,
+        "terminal_depot_stop": "P002"
+      }
+    ],
+    "aircraft": [
+      {
+        "id": "U1_1",
+        "carrier_id": "V1",
+        "profile": "joint_reference_profile.aircraft",
+        "camera": "joint_reference_profile.camera",
+        "launch_anchor_xyz_m": [
+          338431.00163273,
+          5653263.218314463,
+          85.19513972489615
+        ],
+        "initial_velocity_mps": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "initial_yaw_rad": 1.7597024142137798,
+        "initial_gimbal_pitch_yaw_rad": [
+          0.0,
+          0.0
+        ],
+        "initial_focal_length_mm": 6.83,
+        "initial_exposure_s": 0.001,
+        "initial_mode": "stowed; flight-position constraints activate on launch"
+      },
+      {
+        "id": "U1_2",
+        "carrier_id": "V1",
+        "profile": "joint_reference_profile.aircraft",
+        "camera": "joint_reference_profile.camera",
+        "launch_anchor_xyz_m": [
+          338431.00163273,
+          5653263.218314463,
+          85.19513972489615
+        ],
+        "initial_velocity_mps": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "initial_yaw_rad": 1.7597024142137798,
+        "initial_gimbal_pitch_yaw_rad": [
+          0.0,
+          0.0
+        ],
+        "initial_focal_length_mm": 6.83,
+        "initial_exposure_s": 0.001,
+        "initial_mode": "stowed; flight-position constraints activate on launch"
+      },
+      {
+        "id": "U2_1",
+        "carrier_id": "V2",
+        "profile": "joint_reference_profile.aircraft",
+        "camera": "joint_reference_profile.camera",
+        "launch_anchor_xyz_m": [
+          338423.3255343109,
+          5653303.36827501,
+          84.97313108077539
+        ],
+        "initial_velocity_mps": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "initial_yaw_rad": 1.7903640723688097,
+        "initial_gimbal_pitch_yaw_rad": [
+          0.0,
+          0.0
+        ],
+        "initial_focal_length_mm": 6.83,
+        "initial_exposure_s": 0.001,
+        "initial_mode": "stowed; flight-position constraints activate on launch"
+      },
+      {
+        "id": "U2_2",
+        "carrier_id": "V2",
+        "profile": "joint_reference_profile.aircraft",
+        "camera": "joint_reference_profile.camera",
+        "launch_anchor_xyz_m": [
+          338423.3255343109,
+          5653303.36827501,
+          84.97313108077539
+        ],
+        "initial_velocity_mps": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "initial_yaw_rad": 1.7903640723688097,
+        "initial_gimbal_pitch_yaw_rad": [
+          0.0,
+          0.0
+        ],
+        "initial_focal_length_mm": 6.83,
+        "initial_exposure_s": 0.001,
+        "initial_mode": "stowed; flight-position constraints activate on launch"
+      }
+    ],
+    "battery_pairs": [
+      {
+        "id": "B1_1",
+        "carrier_id": "V1",
+        "capacity_Wh": 548.0,
+        "initial_Wh": 548.0,
+        "minimum_Wh": 109.6,
+        "terminal_Wh": 109.6
+      },
+      {
+        "id": "B1_2",
+        "carrier_id": "V1",
+        "capacity_Wh": 548.0,
+        "initial_Wh": 548.0,
+        "minimum_Wh": 109.6,
+        "terminal_Wh": 109.6
+      },
+      {
+        "id": "B1_3",
+        "carrier_id": "V1",
+        "capacity_Wh": 548.0,
+        "initial_Wh": 548.0,
+        "minimum_Wh": 109.6,
+        "terminal_Wh": 109.6
+      },
+      {
+        "id": "B1_4",
+        "carrier_id": "V1",
+        "capacity_Wh": 548.0,
+        "initial_Wh": 548.0,
+        "minimum_Wh": 109.6,
+        "terminal_Wh": 109.6
+      },
+      {
+        "id": "B2_1",
+        "carrier_id": "V2",
+        "capacity_Wh": 548.0,
+        "initial_Wh": 548.0,
+        "minimum_Wh": 109.6,
+        "terminal_Wh": 109.6
+      },
+      {
+        "id": "B2_2",
+        "carrier_id": "V2",
+        "capacity_Wh": 548.0,
+        "initial_Wh": 548.0,
+        "minimum_Wh": 109.6,
+        "terminal_Wh": 109.6
+      },
+      {
+        "id": "B2_3",
+        "carrier_id": "V2",
+        "capacity_Wh": 548.0,
+        "initial_Wh": 548.0,
+        "minimum_Wh": 109.6,
+        "terminal_Wh": 109.6
+      },
+      {
+        "id": "B2_4",
+        "carrier_id": "V2",
+        "capacity_Wh": 548.0,
+        "initial_Wh": 548.0,
+        "minimum_Wh": 109.6,
+        "terminal_Wh": 109.6
+      }
+    ]
+  },
+  "coordinate_reference": {
+    "geographic": "EPSG:4326",
+    "projected": "EPSG:32632",
+    "lon_lat_order": [
+      "longitude",
+      "latitude"
+    ],
+    "longitude_unit": "degree_east",
+    "latitude_unit": "degree_north",
+    "xy_unit": "m",
+    "z_unit": "m",
+    "projected_axis_order": [
+      "easting",
+      "northing"
+    ],
+    "vertical_datum": null,
+    "vertical_datum_status": "not independently verified in retained source metadata"
+  },
+  "first_numeric_tower": "OSM_269894017",
+  "numeric_tasks": [
+    {
+      "id": "OSM_269894017_P01",
+      "tower_id": "OSM_269894017",
+      "paper_point_number": 1,
+      "role": "overview",
+      "longitude": 6.699114502711373,
+      "latitude": 51.004906218369705,
+      "easting_m": 338573.8098641136,
+      "northing_m": 5652890.209096758,
+      "altitude_m": 116.21379999999999,
+      "height_above_tower_ground_m": 34.2138,
+      "target": {
+        "longitude": 6.699195900000001,
+        "latitude": 51.005030899999994,
+        "easting_m": 338579.9528080911,
+        "northing_m": 5652903.893549223,
+        "altitude_m": 116.21379999999999,
+        "surface_id": "OSM_269894017_P01_surface",
+        "normal_world": [
+          -0.40952959850505327,
+          -0.9122968310524211,
+          0.0
+        ],
+        "tangent_basis": [
+          [
+            0.9122968310524211,
+            -0.40952959850505327,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338579.9528080911,
+            5652903.893549223,
+            116.21379999999999
+          ],
+          [
+            338579.72473388334,
+            5652903.9959316235,
+            115.96379999999999
+          ],
+          [
+            338579.72473388334,
+            5652903.9959316235,
+            116.46379999999999
+          ],
+          [
+            338580.1808822989,
+            5652903.791166823,
+            115.96379999999999
+          ],
+          [
+            338580.1808822989,
+            5652903.791166823,
+            116.46379999999999
+          ]
+        ],
+        "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+      },
+      "camera_azimuth_deg": 24.175288341868622,
+      "camera_elevation_deg": 0.0,
+      "modality": "RGB",
+      "effective_service_seconds": 20.011081481481483,
+      "time_evidence_kind": "calibrated_equal_residual",
+      "geometry_evidence_kind": "transferred_engineering_template",
+      "source_ids": [
+        "KPLC25",
+        "LI23",
+        "MODEL_REGIONAL",
+        "MODEL_TIMING",
+        "MODEL_VIEWS",
+        "TERRAIN_rommerskirchen"
+      ],
+      "observation_requirement": {
+        "camera_model": "joint_reference_profile.camera",
+        "nominal_viewpoint_role": "initialization_center_not_fixed_decision",
+        "viewpoint_ball_radius_m": 2.0,
+        "min_dwell_s": 20.011081481481483,
+        "weight": 1.0,
+        "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+        "planned_status": "required_not_completed"
+      }
+    },
+    {
+      "id": "OSM_269894017_P02",
+      "tower_id": "OSM_269894017",
+      "paper_point_number": 2,
+      "role": "left_groundwire",
+      "longitude": 6.698998284619296,
+      "latitude": 51.00508225606564,
+      "easting_m": 338566.26835562533,
+      "northing_m": 5652910.036493201,
+      "altitude_m": 116.21379999999999,
+      "height_above_tower_ground_m": 34.2138,
+      "target": {
+        "longitude": 6.699131651334342,
+        "latitude": 51.00504759692142,
+        "easting_m": 338575.50371890544,
+        "northing_m": 5652905.890743169,
+        "altitude_m": 116.21379999999999,
+        "surface_id": "OSM_269894017_P02_surface",
+        "normal_world": [
+          -0.9122968310442907,
+          0.40952959852316506,
+          0.0
+        ],
+        "tangent_basis": [
+          [
+            -0.40952959852316506,
+            -0.9122968310442907,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338575.50371890544,
+            5652905.890743169,
+            116.21379999999999
+          ],
+          [
+            338575.60610130505,
+            5652906.118817377,
+            115.96379999999999
+          ],
+          [
+            338575.60610130505,
+            5652906.118817377,
+            116.46379999999999
+          ],
+          [
+            338575.40133650583,
+            5652905.662668961,
+            115.96379999999999
+          ],
+          [
+            338575.40133650583,
+            5652905.662668961,
+            116.46379999999999
+          ]
+        ],
+        "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+      },
+      "camera_azimuth_deg": 114.17528834300612,
+      "camera_elevation_deg": 0.0,
+      "modality": "RGB",
+      "effective_service_seconds": 20.011081481481483,
+      "time_evidence_kind": "calibrated_equal_residual",
+      "geometry_evidence_kind": "transferred_engineering_template",
+      "source_ids": [
+        "KPLC25",
+        "LI23",
+        "MODEL_REGIONAL",
+        "MODEL_TIMING",
+        "MODEL_VIEWS",
+        "TERRAIN_rommerskirchen"
+      ],
+      "observation_requirement": {
+        "camera_model": "joint_reference_profile.camera",
+        "nominal_viewpoint_role": "initialization_center_not_fixed_decision",
+        "viewpoint_ball_radius_m": 2.0,
+        "min_dwell_s": 20.011081481481483,
+        "weight": 1.0,
+        "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+        "planned_status": "required_not_completed"
+      }
+    },
+    {
+      "id": "OSM_269894017_P03",
+      "tower_id": "OSM_269894017",
+      "paper_point_number": 3,
+      "role": "left_upper",
+      "longitude": 6.698998284619296,
+      "latitude": 51.00508225606564,
+      "easting_m": 338566.26835562533,
+      "northing_m": 5652910.036493201,
+      "altitude_m": 113.0134,
+      "height_above_tower_ground_m": 31.0134,
+      "target": {
+        "longitude": 6.699131651334342,
+        "latitude": 51.00504759692142,
+        "easting_m": 338575.50371890544,
+        "northing_m": 5652905.890743169,
+        "altitude_m": 113.0134,
+        "surface_id": "OSM_269894017_P03_surface",
+        "normal_world": [
+          -0.9122968310442907,
+          0.40952959852316506,
+          0.0
+        ],
+        "tangent_basis": [
+          [
+            -0.40952959852316506,
+            -0.9122968310442907,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338575.50371890544,
+            5652905.890743169,
+            113.0134
+          ],
+          [
+            338575.60610130505,
+            5652906.118817377,
+            112.7634
+          ],
+          [
+            338575.60610130505,
+            5652906.118817377,
+            113.2634
+          ],
+          [
+            338575.40133650583,
+            5652905.662668961,
+            112.7634
+          ],
+          [
+            338575.40133650583,
+            5652905.662668961,
+            113.2634
+          ]
+        ],
+        "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+      },
+      "camera_azimuth_deg": 114.17528834300612,
+      "camera_elevation_deg": 0.0,
+      "modality": "RGB",
+      "effective_service_seconds": 20.011081481481483,
+      "time_evidence_kind": "calibrated_equal_residual",
+      "geometry_evidence_kind": "transferred_engineering_template",
+      "source_ids": [
+        "KPLC25",
+        "LI23",
+        "MODEL_REGIONAL",
+        "MODEL_TIMING",
+        "MODEL_VIEWS",
+        "TERRAIN_rommerskirchen"
+      ],
+      "observation_requirement": {
+        "camera_model": "joint_reference_profile.camera",
+        "nominal_viewpoint_role": "initialization_center_not_fixed_decision",
+        "viewpoint_ball_radius_m": 2.0,
+        "min_dwell_s": 20.011081481481483,
+        "weight": 1.0,
+        "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+        "planned_status": "required_not_completed"
+      }
+    },
+    {
+      "id": "OSM_269894017_P04",
+      "tower_id": "OSM_269894017",
+      "paper_point_number": 4,
+      "role": "left_middle",
+      "longitude": 6.698998284619296,
+      "latitude": 51.00508225606564,
+      "easting_m": 338566.26835562533,
+      "northing_m": 5652910.036493201,
+      "altitude_m": 107.908,
+      "height_above_tower_ground_m": 25.908,
+      "target": {
+        "longitude": 6.699131651334342,
+        "latitude": 51.00504759692142,
+        "easting_m": 338575.50371890544,
+        "northing_m": 5652905.890743169,
+        "altitude_m": 107.908,
+        "surface_id": "OSM_269894017_P04_surface",
+        "normal_world": [
+          -0.9122968310442907,
+          0.40952959852316506,
+          0.0
+        ],
+        "tangent_basis": [
+          [
+            -0.40952959852316506,
+            -0.9122968310442907,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338575.50371890544,
+            5652905.890743169,
+            107.908
+          ],
+          [
+            338575.60610130505,
+            5652906.118817377,
+            107.658
+          ],
+          [
+            338575.60610130505,
+            5652906.118817377,
+            108.158
+          ],
+          [
+            338575.40133650583,
+            5652905.662668961,
+            107.658
+          ],
+          [
+            338575.40133650583,
+            5652905.662668961,
+            108.158
+          ]
+        ],
+        "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+      },
+      "camera_azimuth_deg": 114.17528834300612,
+      "camera_elevation_deg": 0.0,
+      "modality": "RGB",
+      "effective_service_seconds": 20.011081481481483,
+      "time_evidence_kind": "calibrated_equal_residual",
+      "geometry_evidence_kind": "transferred_engineering_template",
+      "source_ids": [
+        "KPLC25",
+        "LI23",
+        "MODEL_REGIONAL",
+        "MODEL_TIMING",
+        "MODEL_VIEWS",
+        "TERRAIN_rommerskirchen"
+      ],
+      "observation_requirement": {
+        "camera_model": "joint_reference_profile.camera",
+        "nominal_viewpoint_role": "initialization_center_not_fixed_decision",
+        "viewpoint_ball_radius_m": 2.0,
+        "min_dwell_s": 20.011081481481483,
+        "weight": 1.0,
+        "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+        "planned_status": "required_not_completed"
+      }
+    },
+    {
+      "id": "OSM_269894017_P05",
+      "tower_id": "OSM_269894017",
+      "paper_point_number": 5,
+      "role": "left_lower",
+      "longitude": 6.698998284619296,
+      "latitude": 51.00508225606564,
+      "easting_m": 338566.26835562533,
+      "northing_m": 5652910.036493201,
+      "altitude_m": 102.8026,
+      "height_above_tower_ground_m": 20.8026,
+      "target": {
+        "longitude": 6.699131651334342,
+        "latitude": 51.00504759692142,
+        "easting_m": 338575.50371890544,
+        "northing_m": 5652905.890743169,
+        "altitude_m": 102.8026,
+        "surface_id": "OSM_269894017_P05_surface",
+        "normal_world": [
+          -0.9122968310442907,
+          0.40952959852316506,
+          0.0
+        ],
+        "tangent_basis": [
+          [
+            -0.40952959852316506,
+            -0.9122968310442907,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338575.50371890544,
+            5652905.890743169,
+            102.8026
+          ],
+          [
+            338575.60610130505,
+            5652906.118817377,
+            102.5526
+          ],
+          [
+            338575.60610130505,
+            5652906.118817377,
+            103.0526
+          ],
+          [
+            338575.40133650583,
+            5652905.662668961,
+            102.5526
+          ],
+          [
+            338575.40133650583,
+            5652905.662668961,
+            103.0526
+          ]
+        ],
+        "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+      },
+      "camera_azimuth_deg": 114.17528834300612,
+      "camera_elevation_deg": 0.0,
+      "modality": "RGB",
+      "effective_service_seconds": 20.011081481481483,
+      "time_evidence_kind": "calibrated_equal_residual",
+      "geometry_evidence_kind": "transferred_engineering_template",
+      "source_ids": [
+        "KPLC25",
+        "LI23",
+        "MODEL_REGIONAL",
+        "MODEL_TIMING",
+        "MODEL_VIEWS",
+        "TERRAIN_rommerskirchen"
+      ],
+      "observation_requirement": {
+        "camera_model": "joint_reference_profile.camera",
+        "nominal_viewpoint_role": "initialization_center_not_fixed_decision",
+        "viewpoint_ball_radius_m": 2.0,
+        "min_dwell_s": 20.011081481481483,
+        "weight": 1.0,
+        "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+        "planned_status": "required_not_completed"
+      }
+    },
+    {
+      "id": "OSM_269894017_P08",
+      "tower_id": "OSM_269894017",
+      "paper_point_number": 8,
+      "role": "right_groundwire",
+      "longitude": 6.699393514953057,
+      "latitude": 51.00497954359385,
+      "easting_m": 338593.6372605569,
+      "northing_m": 5652897.750605246,
+      "altitude_m": 116.21379999999999,
+      "height_above_tower_ground_m": 34.2138,
+      "target": {
+        "longitude": 6.699260148620455,
+        "latitude": 51.005014203042585,
+        "easting_m": 338584.4018972768,
+        "northing_m": 5652901.896355278,
+        "altitude_m": 116.21379999999999,
+        "surface_id": "OSM_269894017_P08_surface",
+        "normal_world": [
+          0.9122968310442907,
+          -0.40952959852316506,
+          0.0
+        ],
+        "tangent_basis": [
+          [
+            0.40952959852316506,
+            0.9122968310442907,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338584.4018972768,
+            5652901.896355278,
+            116.21379999999999
+          ],
+          [
+            338584.2995148772,
+            5652901.66828107,
+            115.96379999999999
+          ],
+          [
+            338584.2995148772,
+            5652901.66828107,
+            116.46379999999999
+          ],
+          [
+            338584.5042796764,
+            5652902.124429486,
+            115.96379999999999
+          ],
+          [
+            338584.5042796764,
+            5652902.124429486,
+            116.46379999999999
+          ]
+        ],
+        "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+      },
+      "camera_azimuth_deg": 294.1752883430061,
+      "camera_elevation_deg": 0.0,
+      "modality": "RGB",
+      "effective_service_seconds": 20.011081481481483,
+      "time_evidence_kind": "calibrated_equal_residual",
+      "geometry_evidence_kind": "transferred_engineering_template",
+      "source_ids": [
+        "KPLC25",
+        "LI23",
+        "MODEL_REGIONAL",
+        "MODEL_TIMING",
+        "MODEL_VIEWS",
+        "TERRAIN_rommerskirchen"
+      ],
+      "observation_requirement": {
+        "camera_model": "joint_reference_profile.camera",
+        "nominal_viewpoint_role": "initialization_center_not_fixed_decision",
+        "viewpoint_ball_radius_m": 2.0,
+        "min_dwell_s": 20.011081481481483,
+        "weight": 1.0,
+        "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+        "planned_status": "required_not_completed"
+      }
+    },
+    {
+      "id": "OSM_269894017_P09",
+      "tower_id": "OSM_269894017",
+      "paper_point_number": 9,
+      "role": "right_upper",
+      "longitude": 6.699393514953057,
+      "latitude": 51.00497954359385,
+      "easting_m": 338593.6372605569,
+      "northing_m": 5652897.750605246,
+      "altitude_m": 113.0134,
+      "height_above_tower_ground_m": 31.0134,
+      "target": {
+        "longitude": 6.699260148620455,
+        "latitude": 51.005014203042585,
+        "easting_m": 338584.4018972768,
+        "northing_m": 5652901.896355278,
+        "altitude_m": 113.0134,
+        "surface_id": "OSM_269894017_P09_surface",
+        "normal_world": [
+          0.9122968310442907,
+          -0.40952959852316506,
+          0.0
+        ],
+        "tangent_basis": [
+          [
+            0.40952959852316506,
+            0.9122968310442907,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338584.4018972768,
+            5652901.896355278,
+            113.0134
+          ],
+          [
+            338584.2995148772,
+            5652901.66828107,
+            112.7634
+          ],
+          [
+            338584.2995148772,
+            5652901.66828107,
+            113.2634
+          ],
+          [
+            338584.5042796764,
+            5652902.124429486,
+            112.7634
+          ],
+          [
+            338584.5042796764,
+            5652902.124429486,
+            113.2634
+          ]
+        ],
+        "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+      },
+      "camera_azimuth_deg": 294.1752883430061,
+      "camera_elevation_deg": 0.0,
+      "modality": "RGB",
+      "effective_service_seconds": 20.011081481481483,
+      "time_evidence_kind": "calibrated_equal_residual",
+      "geometry_evidence_kind": "transferred_engineering_template",
+      "source_ids": [
+        "KPLC25",
+        "LI23",
+        "MODEL_REGIONAL",
+        "MODEL_TIMING",
+        "MODEL_VIEWS",
+        "TERRAIN_rommerskirchen"
+      ],
+      "observation_requirement": {
+        "camera_model": "joint_reference_profile.camera",
+        "nominal_viewpoint_role": "initialization_center_not_fixed_decision",
+        "viewpoint_ball_radius_m": 2.0,
+        "min_dwell_s": 20.011081481481483,
+        "weight": 1.0,
+        "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+        "planned_status": "required_not_completed"
+      }
+    },
+    {
+      "id": "OSM_269894017_P10",
+      "tower_id": "OSM_269894017",
+      "paper_point_number": 10,
+      "role": "right_middle",
+      "longitude": 6.699393514953057,
+      "latitude": 51.00497954359385,
+      "easting_m": 338593.6372605569,
+      "northing_m": 5652897.750605246,
+      "altitude_m": 107.908,
+      "height_above_tower_ground_m": 25.908,
+      "target": {
+        "longitude": 6.699260148620455,
+        "latitude": 51.005014203042585,
+        "easting_m": 338584.4018972768,
+        "northing_m": 5652901.896355278,
+        "altitude_m": 107.908,
+        "surface_id": "OSM_269894017_P10_surface",
+        "normal_world": [
+          0.9122968310442907,
+          -0.40952959852316506,
+          0.0
+        ],
+        "tangent_basis": [
+          [
+            0.40952959852316506,
+            0.9122968310442907,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338584.4018972768,
+            5652901.896355278,
+            107.908
+          ],
+          [
+            338584.2995148772,
+            5652901.66828107,
+            107.658
+          ],
+          [
+            338584.2995148772,
+            5652901.66828107,
+            108.158
+          ],
+          [
+            338584.5042796764,
+            5652902.124429486,
+            107.658
+          ],
+          [
+            338584.5042796764,
+            5652902.124429486,
+            108.158
+          ]
+        ],
+        "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+      },
+      "camera_azimuth_deg": 294.1752883430061,
+      "camera_elevation_deg": 0.0,
+      "modality": "RGB",
+      "effective_service_seconds": 20.011081481481483,
+      "time_evidence_kind": "calibrated_equal_residual",
+      "geometry_evidence_kind": "transferred_engineering_template",
+      "source_ids": [
+        "KPLC25",
+        "LI23",
+        "MODEL_REGIONAL",
+        "MODEL_TIMING",
+        "MODEL_VIEWS",
+        "TERRAIN_rommerskirchen"
+      ],
+      "observation_requirement": {
+        "camera_model": "joint_reference_profile.camera",
+        "nominal_viewpoint_role": "initialization_center_not_fixed_decision",
+        "viewpoint_ball_radius_m": 2.0,
+        "min_dwell_s": 20.011081481481483,
+        "weight": 1.0,
+        "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+        "planned_status": "required_not_completed"
+      }
+    },
+    {
+      "id": "OSM_269894017_P11",
+      "tower_id": "OSM_269894017",
+      "paper_point_number": 11,
+      "role": "right_lower",
+      "longitude": 6.699393514953057,
+      "latitude": 51.00497954359385,
+      "easting_m": 338593.6372605569,
+      "northing_m": 5652897.750605246,
+      "altitude_m": 102.8026,
+      "height_above_tower_ground_m": 20.8026,
+      "target": {
+        "longitude": 6.699260148620455,
+        "latitude": 51.005014203042585,
+        "easting_m": 338584.4018972768,
+        "northing_m": 5652901.896355278,
+        "altitude_m": 102.8026,
+        "surface_id": "OSM_269894017_P11_surface",
+        "normal_world": [
+          0.9122968310442907,
+          -0.40952959852316506,
+          0.0
+        ],
+        "tangent_basis": [
+          [
+            0.40952959852316506,
+            0.9122968310442907,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338584.4018972768,
+            5652901.896355278,
+            102.8026
+          ],
+          [
+            338584.2995148772,
+            5652901.66828107,
+            102.5526
+          ],
+          [
+            338584.2995148772,
+            5652901.66828107,
+            103.0526
+          ],
+          [
+            338584.5042796764,
+            5652902.124429486,
+            102.5526
+          ],
+          [
+            338584.5042796764,
+            5652902.124429486,
+            103.0526
+          ]
+        ],
+        "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+      },
+      "camera_azimuth_deg": 294.1752883430061,
+      "camera_elevation_deg": 0.0,
+      "modality": "RGB",
+      "effective_service_seconds": 20.011081481481483,
+      "time_evidence_kind": "calibrated_equal_residual",
+      "geometry_evidence_kind": "transferred_engineering_template",
+      "source_ids": [
+        "KPLC25",
+        "LI23",
+        "MODEL_REGIONAL",
+        "MODEL_TIMING",
+        "MODEL_VIEWS",
+        "TERRAIN_rommerskirchen"
+      ],
+      "observation_requirement": {
+        "camera_model": "joint_reference_profile.camera",
+        "nominal_viewpoint_role": "initialization_center_not_fixed_decision",
+        "viewpoint_ball_radius_m": 2.0,
+        "min_dwell_s": 20.011081481481483,
+        "weight": 1.0,
+        "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+        "planned_status": "required_not_completed"
+      }
+    }
+  ],
+  "role": "Source values plus explicit mathematical overrides; old ERA5/step weather/2m-ball/domain-count settings are superseded, not current numerical-run settings",
+  "initial_state": {
+    "source": "source:/fleet",
+    "SOC": 1.0,
+    "pack_total_Wh": 4384.0,
+    "aircraft_mode": "stowed",
+    "gimbal_and_focal_continuity": "physical aircraft over entire shift"
+  },
+  "terminal_state": {
+    "all_vehicles_at_original_depot": true,
+    "all_aircraft_and_pairs_on_own_carrier": true,
+    "each_pair_minimum_Wh": 109.6,
+    "no_activity_or_charge_after_C": true
+  }
+}

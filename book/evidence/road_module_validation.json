@@ -1,0 +1,786 @@
+{
+  "result": {
+    "path": "总结/03_实验数据/工程化联合求解/module_validation/road/results.json",
+    "sha256": "aa9c3e356378262316c86b7aef36b48ada02940407840f79a7ab20dac15ab8ff"
+  },
+  "protocol": {
+    "experiment_id": "inspection-road-primitive-module",
+    "code": {
+      "path": "scripts/validate_inspection_road_module.py",
+      "sha256": "8923644131910e832fe97cde6e7936e3f9794395e3924b6c0d82845ae13d455b"
+    },
+    "production": {
+      "path": "Agent/Publication/engineering_road_motion.py",
+      "sha256": "d811a8bbd25f66c58aa1569fe1d402dccccacd4b42f6cb795b0a3a3967d70594"
+    },
+    "scene": {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/rommerskirchen.json",
+      "sha256": "d0c668d7cfeea2e7973e6ab387be38e499aea4e935a6530dfaf8900438b8520d"
+    },
+    "purpose": "verify actual motion generator against source speeds and continuous kinematic identities",
+    "samples_per_primitive": 501,
+    "finite_difference_normalized_step": 1e-05,
+    "paid_cost": 0,
+    "source_road_tags": {
+      "path": "总结/07_证据与复现索引/综合报告检索/场景设置文献/topology_osm/rommerskirchen_roads.json",
+      "sha256": "197f8d4f91cc6655cc0de98a31b968ce7ed843d26e811ae0809ab04eb7390269"
+    },
+    "solver_time_limit_s": null,
+    "solver_threads": 1,
+    "regional_solve": false,
+    "algorithm_comparison": false,
+    "max_peak_write_GiB": 0.01
+  },
+  "started_at": "2026-11-10T07:56:55.124705+00:00",
+  "completed_at": "2026-11-10T07:56:55.501661+00:00",
+  "pid": 15512,
+  "passed": true,
+  "checks": [
+    {
+      "id": "straight",
+      "passed": true
+    },
+    {
+      "id": "left90",
+      "passed": true
+    },
+    {
+      "id": "right90",
+      "passed": true
+    },
+    {
+      "id": "slow_straight",
+      "passed": true
+    },
+    {
+      "id": "slow_turn",
+      "passed": true
+    },
+    {
+      "id": "collinear_mixed_limits",
+      "passed": true
+    },
+    {
+      "id": "source_low_speed_edge",
+      "passed": true
+    },
+    {
+      "id": "source_speed_provenance",
+      "passed": true
+    },
+    {
+      "id": "fixed_primitive_timing_SCIP",
+      "passed": true
+    },
+    {
+      "id": "retained_source_arc_identity",
+      "passed": true,
+      "arcs": 20455
+    },
+    {
+      "id": "integer_coordinates_accepted",
+      "passed": true
+    },
+    {
+      "id": "u_turn_rejected",
+      "passed": true
+    },
+    {
+      "id": "short_junction_rejected",
+      "passed": true
+    },
+    {
+      "id": "initial_heading_preserved",
+      "passed": true
+    },
+    {
+      "id": "reverse_arc_absent",
+      "passed": true
+    },
+    {
+      "id": "unsupported_parallel_arc_not_silently_lost",
+      "passed": true
+    },
+    {
+      "id": "unsupported_turn_rule_rejected",
+      "passed": true
+    },
+    {
+      "id": "width_sensitivity_nontrivial",
+      "passed": true
+    }
+  ],
+  "cases": [
+    {
+      "length_m": 40.0,
+      "duration_s": 31.5,
+      "segments": 1,
+      "speed_peak_mps": 2.7777777777777777,
+      "speed_limit_mps": 2.7777777777777777,
+      "acceleration_peak_mps2": 0.3028736453290668,
+      "lateral_acceleration_peak_mps2": 0.0,
+      "steering_peak_deg": 0.0,
+      "steering_rate_peak_deg_s": 0.0,
+      "kinematic_residual": 1.7754635817102127e-09,
+      "continuity_residual": 0.0,
+      "passed": true,
+      "id": "straight",
+      "expected_length_m": 40.0,
+      "length_error_m": 0.0,
+      "route": {
+        "source_stop": "S0",
+        "target_stop": "S1",
+        "node_ids": [
+          "0",
+          "1"
+        ],
+        "edge_ids": [
+          "test_0_1"
+        ],
+        "segments": [
+          {
+            "kind": "straight",
+            "length_m": 40.0,
+            "duration_s": 31.5,
+            "effective_speed_limit_mps": 2.7777777777777777,
+            "from_xy_m": [
+              0.0,
+              0.0
+            ],
+            "to_xy_m": [
+              40.0,
+              0.0
+            ],
+            "yaw_rad": 0.0,
+            "steering_rad": 0.0,
+            "start_s": 0.0,
+            "end_s": 31.5
+          }
+        ],
+        "duration_s": 31.5,
+        "length_m": 40.0,
+        "initial_yaw_rad": 0.0,
+        "terminal_yaw_rad": 0.0,
+        "visit_events": []
+      }
+    },
+    {
+      "length_m": 78.4632920373323,
+      "duration_s": 71.50104407256566,
+      "segments": 5,
+      "speed_peak_mps": 2.7777777777777777,
+      "speed_limit_mps": 2.7777777777777777,
+      "acceleration_peak_mps2": 0.9999961347228005,
+      "lateral_acceleration_peak_mps2": 1.0004415509715465,
+      "steering_peak_deg": 34.92474254352974,
+      "steering_rate_peak_deg_s": 20.0,
+      "kinematic_residual": 1.7769298775449638e-09,
+      "continuity_residual": 4.440892098500626e-16,
+      "passed": true,
+      "id": "left90",
+      "expected_length_m": 78.4632920373323,
+      "length_error_m": 0.0,
+      "route": {
+        "source_stop": "S0",
+        "target_stop": "S2",
+        "node_ids": [
+          "0",
+          "1",
+          "2"
+        ],
+        "edge_ids": [
+          "test_0_1",
+          "test_1_2"
+        ],
+        "segments": [
+          {
+            "kind": "straight",
+            "length_m": 36.419629983144716,
+            "duration_s": 28.680458611726465,
+            "effective_speed_limit_mps": 2.7777777777777777,
+            "from_xy_m": [
+              0.0,
+              0.0
+            ],
+            "to_xy_m": [
+              36.419629983144716,
+              0.0
+            ],
+            "yaw_rad": 0.0,
+            "steering_rad": 0.0,
+            "start_s": 0.0,
+            "end_s": 28.680458611726465
+          },
+          {
+            "kind": "steer",
+            "duration_s": 3.8198937156985653,
+            "position_xy_m": [
+              36.419629983144716,
+              0.0
+            ],
+            "yaw_rad": 0.0,
+            "steering_start_rad": 0.0,
+            "steering_end_rad": 0.6095517477959329,
+            "length_m": 0.0,
+            "start_s": 28.680458611726465,
+            "end_s": 32.50035232742503
+          },
+          {
+            "kind": "arc",
+            "length_m": 5.6240320710428655,
+            "duration_s": 6.500339417715616,
+            "effective_speed_limit_mps": 2.317445797701195,
+            "center_xy_m": [
+              36.419629983144716,
+              3.5803700168552863
+            ],
+            "radius_m": 3.5803700168552863,
+            "start_angle_rad": -1.5707963267948966,
+            "sweep_rad": 1.5707963267948966,
+            "yaw_start_rad": 0.0,
+            "steering_rad": 0.6095517477959329,
+            "start_s": 32.50035232742503,
+            "end_s": 39.00069174514064
+          },
+          {
+            "kind": "steer",
+            "duration_s": 3.8198937156985653,
+            "position_xy_m": [
+              40.0,
+              3.580370016855286
+            ],
+            "yaw_rad": 1.5707963267948966,
+            "steering_start_rad": 0.6095517477959329,
+            "steering_end_rad": 0.0,
+            "length_m": 0.0,
+            "start_s": 39.00069174514064,
+            "end_s": 42.820585460839204
+          },
+          {
+            "kind": "straight",
+            "length_m": 36.419629983144716,
+            "duration_s": 28.680458611726465,
+            "effective_speed_limit_mps": 2.7777777777777777,
+            "from_xy_m": [
+              40.0,
+              3.580370016855286
+            ],
+            "to_xy_m": [
+              40.0,
+              40.0
+            ],
+            "yaw_rad": 1.5707963267948966,
+            "steering_rad": 0.0,
+            "start_s": 42.820585460839204,
+            "end_s": 71.50104407256566
+          }
+        ],
+        "duration_s": 71.50104407256566,
+        "length_m": 78.4632920373323,
+        "initial_yaw_rad": 0.0,
+        "terminal_yaw_rad": 1.5707963267948966,
+        "visit_events": []
+      }
+    },
+    {
+      "length_m": 78.4632920373323,
+      "duration_s": 71.50104407256566,
+      "segments": 5,
+      "speed_peak_mps": 2.7777777777777777,
+      "speed_limit_mps": 2.7777777777777777,
+      "acceleration_peak_mps2": 0.9999961347228005,
+      "lateral_acceleration_peak_mps2": 1.0004415509715465,
+      "steering_peak_deg": 34.92474254352974,
+      "steering_rate_peak_deg_s": 20.0,
+      "kinematic_residual": 1.7769298775449638e-09,
+      "continuity_residual": 4.440892098500626e-16,
+      "passed": true,
+      "id": "right90",
+      "expected_length_m": 78.4632920373323,
+      "length_error_m": 0.0,
+      "route": {
+        "source_stop": "S0",
+        "target_stop": "S2",
+        "node_ids": [
+          "0",
+          "1",
+          "2"
+        ],
+        "edge_ids": [
+          "test_0_1",
+          "test_1_2"
+        ],
+        "segments": [
+          {
+            "kind": "straight",
+            "length_m": 36.419629983144716,
+            "duration_s": 28.680458611726465,
+            "effective_speed_limit_mps": 2.7777777777777777,
+            "from_xy_m": [
+              0.0,
+              0.0
+            ],
+            "to_xy_m": [
+              36.419629983144716,
+              0.0
+            ],
+            "yaw_rad": 0.0,
+            "steering_rad": 0.0,
+            "start_s": 0.0,
+            "end_s": 28.680458611726465
+          },
+          {
+            "kind": "steer",
+            "duration_s": 3.8198937156985653,
+            "position_xy_m": [
+              36.419629983144716,
+              0.0
+            ],
+            "yaw_rad": 0.0,
+            "steering_start_rad": 0.0,
+            "steering_end_rad": -0.6095517477959329,
+            "length_m": 0.0,
+            "start_s": 28.680458611726465,
+            "end_s": 32.50035232742503
+          },
+          {
+            "kind": "arc",
+            "length_m": 5.6240320710428655,
+            "duration_s": 6.500339417715616,
+            "effective_speed_limit_mps": 2.317445797701195,
+            "center_xy_m": [
+              36.419629983144716,
+              -3.5803700168552863
+            ],
+            "radius_m": 3.5803700168552863,
+            "start_angle_rad": 1.5707963267948966,
+            "sweep_rad": -1.5707963267948966,
+            "yaw_start_rad": 0.0,
+            "steering_rad": -0.6095517477959329,
+            "start_s": 32.50035232742503,
+            "end_s": 39.00069174514064
+          },
+          {
+            "kind": "steer",
+            "duration_s": 3.8198937156985653,
+            "position_xy_m": [
+              40.0,
+              -3.580370016855286
+            ],
+            "yaw_rad": -1.5707963267948966,
+            "steering_start_rad": -0.6095517477959329,
+            "steering_end_rad": 0.0,
+            "length_m": 0.0,
+            "start_s": 39.00069174514064,
+            "end_s": 42.820585460839204
+          },
+          {
+            "kind": "straight",
+            "length_m": 36.419629983144716,
+            "duration_s": 28.680458611726465,
+            "effective_speed_limit_mps": 2.7777777777777777,
+            "from_xy_m": [
+              40.0,
+              -3.580370016855286
+            ],
+            "to_xy_m": [
+              40.0,
+              -40.0
+            ],
+            "yaw_rad": -1.5707963267948966,
+            "steering_rad": 0.0,
+            "start_s": 42.820585460839204,
+            "end_s": 71.50104407256566
+          }
+        ],
+        "duration_s": 71.50104407256566,
+        "length_m": 78.4632920373323,
+        "initial_yaw_rad": 0.0,
+        "terminal_yaw_rad": -1.5707963267948966,
+        "visit_events": []
+      }
+    },
+    {
+      "length_m": 40.0,
+      "duration_s": 63.0,
+      "segments": 1,
+      "speed_peak_mps": 1.3888888888888888,
+      "speed_limit_mps": 1.3888888888888888,
+      "acceleration_peak_mps2": 0.0757184113322667,
+      "lateral_acceleration_peak_mps2": 0.0,
+      "steering_peak_deg": 0.0,
+      "steering_rate_peak_deg_s": 0.0,
+      "kinematic_residual": 8.877317908551063e-10,
+      "continuity_residual": 0.0,
+      "passed": true,
+      "id": "slow_straight",
+      "expected_length_m": 40.0,
+      "length_error_m": 0.0,
+      "route": {
+        "source_stop": "S0",
+        "target_stop": "S1",
+        "node_ids": [
+          "0",
+          "1"
+        ],
+        "edge_ids": [
+          "test_0_1"
+        ],
+        "segments": [
+          {
+            "kind": "straight",
+            "length_m": 40.0,
+            "duration_s": 63.0,
+            "effective_speed_limit_mps": 1.3888888888888888,
+            "from_xy_m": [
+              0.0,
+              0.0
+            ],
+            "to_xy_m": [
+              40.0,
+              0.0
+            ],
+            "yaw_rad": 0.0,
+            "steering_rad": 0.0,
+            "start_s": 0.0,
+            "end_s": 63.0
+          }
+        ],
+        "duration_s": 63.0,
+        "length_m": 40.0,
+        "initial_yaw_rad": 0.0,
+        "terminal_yaw_rad": 0.0,
+        "visit_events": []
+      }
+    },
+    {
+      "length_m": 78.4632920373323,
+      "duration_s": 131.2194723901955,
+      "segments": 5,
+      "speed_peak_mps": 1.3888888888888888,
+      "speed_limit_mps": 1.3888888888888888,
+      "acceleration_peak_mps2": 0.5385347051779967,
+      "lateral_acceleration_peak_mps2": 0.5387745782133724,
+      "steering_peak_deg": 34.92474254352974,
+      "steering_rate_peak_deg_s": 20.0,
+      "kinematic_residual": 8.884649387724819e-10,
+      "continuity_residual": 4.440892098500626e-16,
+      "passed": true,
+      "id": "slow_turn",
+      "expected_length_m": 78.4632920373323,
+      "length_error_m": 0.0,
+      "route": {
+        "source_stop": "S0",
+        "target_stop": "S2",
+        "node_ids": [
+          "0",
+          "1",
+          "2"
+        ],
+        "edge_ids": [
+          "test_0_1",
+          "test_1_2"
+        ],
+        "segments": [
+          {
+            "kind": "straight",
+            "length_m": 36.419629983144716,
+            "duration_s": 57.36091722345293,
+            "effective_speed_limit_mps": 1.3888888888888888,
+            "from_xy_m": [
+              0.0,
+              0.0
+            ],
+            "to_xy_m": [
+              36.419629983144716,
+              0.0
+            ],
+            "yaw_rad": 0.0,
+            "steering_rad": 0.0,
+            "start_s": 0.0,
+            "end_s": 57.36091722345293
+          },
+          {
+            "kind": "steer",
+            "duration_s": 3.8198937156985653,
+            "position_xy_m": [
+              36.419629983144716,
+              0.0
+            ],
+            "yaw_rad": 0.0,
+            "steering_start_rad": 0.0,
+            "steering_end_rad": 0.6095517477959329,
+            "length_m": 0.0,
+            "start_s": 57.36091722345293,
+            "end_s": 61.18081093915149
+          },
+          {
+            "kind": "arc",
+            "length_m": 5.6240320710428655,
+            "duration_s": 8.857850511892513,
+            "effective_speed_limit_mps": 1.3888888888888888,
+            "center_xy_m": [
+              36.419629983144716,
+              3.5803700168552863
+            ],
+            "radius_m": 3.5803700168552863,
+            "start_angle_rad": -1.5707963267948966,
+            "sweep_rad": 1.5707963267948966,
+            "yaw_start_rad": 0.0,
+            "steering_rad": 0.6095517477959329,
+            "start_s": 61.18081093915149,
+            "end_s": 70.038661451044
+          },
+          {
+            "kind": "steer",
+            "duration_s": 3.8198937156985653,
+            "position_xy_m": [
+              40.0,
+              3.580370016855286
+            ],
+            "yaw_rad": 1.5707963267948966,
+            "steering_start_rad": 0.6095517477959329,
+            "steering_end_rad": 0.0,
+            "length_m": 0.0,
+            "start_s": 70.038661451044,
+            "end_s": 73.85855516674258
+          },
+          {
+            "kind": "straight",
+            "length_m": 36.419629983144716,
+            "duration_s": 57.36091722345293,
+            "effective_speed_limit_mps": 1.3888888888888888,
+            "from_xy_m": [
+              40.0,
+              3.580370016855286
+            ],
+            "to_xy_m": [
+              40.0,
+              40.0
+            ],
+            "yaw_rad": 1.5707963267948966,
+            "steering_rad": 0.0,
+            "start_s": 73.85855516674258,
+            "end_s": 131.2194723901955
+          }
+        ],
+        "duration_s": 131.2194723901955,
+        "length_m": 78.4632920373323,
+        "initial_yaw_rad": 0.0,
+        "terminal_yaw_rad": 1.5707963267948966,
+        "visit_events": []
+      }
+    },
+    {
+      "length_m": 80.0,
+      "duration_s": 126.0,
+      "segments": 1,
+      "speed_peak_mps": 1.3888888888888888,
+      "speed_limit_mps": 1.3888888888888888,
+      "acceleration_peak_mps2": 0.03785920566613335,
+      "lateral_acceleration_peak_mps2": 0.0,
+      "steering_peak_deg": 0.0,
+      "steering_rate_peak_deg_s": 0.0,
+      "kinematic_residual": 8.877317908551063e-10,
+      "continuity_residual": 0.0,
+      "passed": true,
+      "id": "collinear_mixed_limits",
+      "route": {
+        "source_stop": "S0",
+        "target_stop": "S2",
+        "node_ids": [
+          "0",
+          "1",
+          "2"
+        ],
+        "edge_ids": [
+          "test_0_1",
+          "test_1_2"
+        ],
+        "segments": [
+          {
+            "kind": "straight",
+            "length_m": 80.0,
+            "duration_s": 126.0,
+            "effective_speed_limit_mps": 1.3888888888888888,
+            "from_xy_m": [
+              0.0,
+              0.0
+            ],
+            "to_xy_m": [
+              80.0,
+              0.0
+            ],
+            "yaw_rad": 0.0,
+            "steering_rad": 0.0,
+            "start_s": 0.0,
+            "end_s": 126.0
+          }
+        ],
+        "duration_s": 126.0,
+        "length_m": 80.0,
+        "initial_yaw_rad": 0.0,
+        "terminal_yaw_rad": 0.0,
+        "visit_events": []
+      }
+    },
+    {
+      "length_m": 67.066640131656,
+      "duration_s": 105.62995820735821,
+      "segments": 1,
+      "speed_peak_mps": 1.3888888888888888,
+      "speed_limit_mps": 1.3888888888888888,
+      "acceleration_peak_mps2": 0.045160104149321756,
+      "lateral_acceleration_peak_mps2": 0.0,
+      "steering_peak_deg": 0.0,
+      "steering_rate_peak_deg_s": 0.0,
+      "kinematic_residual": 4.0214579505315484e-07,
+      "continuity_residual": 0.0,
+      "passed": true,
+      "id": "source_low_speed_edge",
+      "source_edge": {
+        "tail": "2654108401",
+        "head": "2654108403",
+        "length_m": 67.06664013165599,
+        "seconds": 48.28798089479231,
+        "speed_limit_mps": 1.3888888888888888,
+        "way_id": "259946408",
+        "source_segment_id": "259946408:2",
+        "highway": "service",
+        "access": "yes",
+        "original_oneway": "no",
+        "source_ids": [
+          "OSM_rommerskirchen_roads"
+        ],
+        "id": "RE005570"
+      },
+      "source_xy_m": [
+        [
+          342078.951133312,
+          5654883.863469732
+        ],
+        [
+          342077.1192195488,
+          5654950.90508599
+        ]
+      ],
+      "route": {
+        "source_stop": "S0",
+        "target_stop": "S1",
+        "node_ids": [
+          "0",
+          "1"
+        ],
+        "edge_ids": [
+          "test_0_1"
+        ],
+        "segments": [
+          {
+            "kind": "straight",
+            "length_m": 67.066640131656,
+            "duration_s": 105.62995820735821,
+            "effective_speed_limit_mps": 1.3888888888888888,
+            "from_xy_m": [
+              342078.951133312,
+              5654883.863469732
+            ],
+            "to_xy_m": [
+              342077.1192195488,
+              5654950.90508599
+            ],
+            "yaw_rad": 1.59811455288377,
+            "steering_rad": 0.0,
+            "start_s": 0.0,
+            "end_s": 105.62995820735821
+          }
+        ],
+        "duration_s": 105.62995820735821,
+        "length_m": 67.066640131656,
+        "initial_yaw_rad": 1.59811455288377,
+        "terminal_yaw_rad": 1.59811455288377,
+        "visit_events": []
+      },
+      "retained_osm_tags": {
+        "bicycle": "permissive",
+        "embankment": "yes",
+        "foot": "yes",
+        "highway": "service",
+        "maxspeed": "5",
+        "surface": "gravel"
+      }
+    }
+  ],
+  "timing_optimization": {
+    "status": "optimal",
+    "objective_s": 71.50104407222052,
+    "durations_s": [
+      28.68045861175051,
+      3.8198937156703323,
+      6.500339417378833,
+      3.8198937156703323,
+      28.68045861175051
+    ],
+    "analytic_objective_s": 71.5010440723058,
+    "analytic_durations_s": [
+      28.680458611726465,
+      3.8198937156985653,
+      6.500339417455753,
+      3.8198937156985653,
+      28.680458611726465
+    ],
+    "solver_time_s": 0.0,
+    "scope": "minimum time within a fixed five-piece septic straight/turn family; not optimal route or joint mission"
+  },
+  "width_sensitivity": [
+    {
+      "corridor_width_m": 2.0,
+      "primitive_admitted": false
+    },
+    {
+      "corridor_width_m": 3.0,
+      "primitive_admitted": false
+    },
+    {
+      "corridor_width_m": 4.0,
+      "primitive_admitted": true
+    },
+    {
+      "corridor_width_m": 6.0,
+      "primitive_admitted": true
+    },
+    {
+      "corridor_width_m": 8.0,
+      "primitive_admitted": true
+    }
+  ],
+  "parameters": {
+    "type": "reference_Ackermann",
+    "wheelbase_m": 2.5,
+    "length_m": 4.0,
+    "width_m": 1.8,
+    "height_m": 1.8,
+    "speed_max_mps": 2.7777777777777777,
+    "reverse_speed_max_mps": 0.0,
+    "acceleration_max_mps2": 1.0,
+    "steering_max_deg": 35.0,
+    "steering_rate_max_deg_s": 20.0,
+    "lateral_acceleration_max_mps2": 1.5,
+    "road_corridor_width_m": 6.0,
+    "pad_offset_m": [
+      0,
+      0,
+      1.8
+    ],
+    "pad_region_radius_m": 3.0,
+    "moving_landing": false,
+    "charging_on_road": false
+  },
+  "wall_seconds": 0.37711090000811964,
+  "limits": [
+    "reference planning kinematics, not calibrated real-vehicle dynamics",
+    "analytic path primitives are a subset of continuous trajectories",
+    "no joint task selection, UAV, battery or weather decisions in this module",
+    "derivative/continuity sampling is numeric evidence, not an interval proof",
+    "no multigraph adapter: parallel arcs must be rejected, never silently merged"
+  ]
+}

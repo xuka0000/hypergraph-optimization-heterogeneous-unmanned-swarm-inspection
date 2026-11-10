@@ -1,0 +1,17 @@
+[
+  {
+    "path": "总结/03_实验数据/工程化联合求解/conditional_hypergraph/run_manifest.json",
+    "sha256": "84ef5814622fff6bff9044e33793a1e4c5ad2b4dc8aa62f7ec55abb0ad1d811e",
+    "electronic_path": "reproduction/historical_sources/84ef5814622fff6bff9044e33793a1e4c5ad2b4dc8aa62f7ec55abb0ad1d811e.json"
+  },
+  {
+    "path": "总结/03_实验数据/工程化联合求解/conditional_hypergraph/progress.jsonl",
+    "sha256": "def43cf7dcc38c0ec3b4f520bc09a1bcd6a1a043028a80a2c0bca5bddb91bd0c",
+    "electronic_path": "reproduction/historical_sources/def43cf7dcc38c0ec3b4f520bc09a1bcd6a1a043028a80a2c0bca5bddb91bd0c.jsonl"
+  },
+  {
+    "path": "research_quality/inspection_conditional_hypergraph_validation.json",
+    "sha256": "10235a10b4cfaf356304526c68e9ba3d507a3964cf39a7f4248eed270c059f41",
+    "electronic_path": "reproduction/historical_sources/10235a10b4cfaf356304526c68e9ba3d507a3964cf39a7f4248eed270c059f41.json"
+  }
+]

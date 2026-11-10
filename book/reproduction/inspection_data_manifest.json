@@ -1,0 +1,1639 @@
+{
+  "observed_at": "2026-11-10T02:46:09.461211+00:00",
+  "files": [
+    {
+      "path": "总结/03_实验数据/工程化联合求解/day_ahead_pilot/attempts.json",
+      "sha256": "4b17d5fa4990eb4e8e51bdc9262fe3e3e1d4ace5be6082f1bc01ba194052c049",
+      "bytes": 3397
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/day_ahead_pilot/execution_raw.json",
+      "sha256": "d8efd57f800d8687523e9991de0867027e2c83d07592da7b16f9555e2d7ea04a",
+      "bytes": 4183
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/day_ahead_pilot/execution_source.json",
+      "sha256": "bce7edabae6b9bfc15aac7b084415c56f04fead2c7020f6312a0bf8e5b105eda",
+      "bytes": 587
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/day_ahead_pilot/flight_label_regression.json",
+      "sha256": "b1780aeadc749f029ef607ab4ff6e7b338bd5ba0a74d2ad32aa3c91a3e75d14f",
+      "bytes": 2685
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/day_ahead_pilot/forecast_raw.json",
+      "sha256": "6c28f48f647388fa84ce862b27d0e48a91c603641887a18a98ae8a0c726fd596",
+      "bytes": 24267
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/day_ahead_pilot/forecast_source.json",
+      "sha256": "110dc8fce00de313198067b4c3d203404d55afa74ca2a6d6b844da97d75b74aa",
+      "bytes": 570
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/day_ahead_pilot/prior_completion_self_check.json",
+      "sha256": "d29a068849bf24ac17aeb7c9319f6a400d3d58f6d439ab009e4f83aff16f4553",
+      "bytes": 12776
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/day_ahead_pilot/prior_manual_review.json",
+      "sha256": "49a7501a950869a3f48462cf9f5e9b9cbe6dc02c3bd0b717454029cd67b8690d",
+      "bytes": 18726
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/day_ahead_pilot/protocol.json",
+      "sha256": "fb17a367a6b05fbb3643618ed2c4bf53261452bac3781c8406383ae6ebca7ddc",
+      "bytes": 2445
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/day_ahead_pilot/region_scope_guard_regression.json",
+      "sha256": "24c6fdf3d8d18222eb4d04c186f022eb721de5abc2fe5c92ddef49ca87e18d4d",
+      "bytes": 216
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/day_ahead_pilot/status.json",
+      "sha256": "1091987df958cd2aae42d5b9678d0f1da1df764d60846b9b9eec61dd0ca5962b",
+      "bytes": 953
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/day_ahead_pilot/subdivision_regression.json",
+      "sha256": "fdc491e83f00793ad9bee8cc58f5b2e6d0f44b6ce005021885456c7ce9e1e86e",
+      "bytes": 173
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/day_ahead_pilot/weather_sources.json",
+      "sha256": "7f7e506c233482c3d6362d72c79e0fa9ddc9f0b2f0fc774040e1eeeeb637f2a6",
+      "bytes": 1192
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/degenerate_trajectory_repair_validation.json",
+      "sha256": "dc1d49b02632b07802a82c8ffe9c4487181f4cf1c63c11491b5d03010ca40451",
+      "bytes": 8375
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/energy_stage_status.json",
+      "sha256": "d1a82504937af7916ff95e504f80d7b0d156e97a5ca8398bf96cadfb76a60b3c",
+      "bytes": 459
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/final_capture_geography.json",
+      "sha256": "4153adfacb0563325cc6ff4643f630a6d3b0398c3927eec700d5210f855bea6f",
+      "bytes": 2832
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/fleet_energy_SOC0.2.json",
+      "sha256": "e19a6d9c108c8da0845e7fb3441c0cc24a2018f7033919f001656ff7970c0cdf",
+      "bytes": 2072
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/fleet_energy_SOC1.0.json",
+      "sha256": "f6a12c9aa40fd894ec0e80f1ef2955bf0bea5cb6fea432750734a6f0d8b1d4d5",
+      "bytes": 1984
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/fleet_independent_validation.json",
+      "sha256": "b80bcaca1cc6e2ce4907562c457672bd5328786bd970e1c0a68fcc8575d6b777",
+      "bytes": 2496
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/fleet_kernel_first_attempt_close.json",
+      "sha256": "68eb356781fb8344b61ca266c5ade790cf2c3c1e097c446e7bb28e87773aec93",
+      "bytes": 635
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/fleet_kernel_input.json",
+      "sha256": "7042e8bbd186894514fc429412d740070c9b636ad3a61035d920bf06c05eddc1",
+      "bytes": 68581
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/fleet_kernel_results.json",
+      "sha256": "ed0be62e5304df1c0682b41746b1ffc45a7b63241244924ada60a39ee8bca3cb",
+      "bytes": 4153
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/fleet_kernel_status.json",
+      "sha256": "a7933d9fb23b7abfda3927f3689d0c29b7ee3a9e87bf3c057b3153aa1683b3be",
+      "bytes": 403
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/fleet_lower_bound_independent_validation.json",
+      "sha256": "1f93008f94f97008f14f5c17bbf9f5df3fac4d99bf044a49d4f7bedf6118d27f",
+      "bytes": 771
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/fleet_SOC0.2.json",
+      "sha256": "afb2ec53df0e44e9ace09bf0cfcea8e1b4fb75f3ac11450cbda96a78c940b575",
+      "bytes": 1856
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/fleet_SOC1.0.json",
+      "sha256": "7959200a59f34a5e2ec1c9e85bb3d0fb0fa1cda91261adcbe1a1c68e22836197",
+      "bytes": 1665
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/fleet_SOC1.0_bound_certificate.json",
+      "sha256": "8d94747b66483fd94872c48747f1daef09daef7c7792914f23d75acf0204ed03",
+      "bytes": 1098
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_joint_subset_certificate.json",
+      "sha256": "54bbc251c8dd52711d9f49619347e81c34062d208aa4a1dcc8fa1a55015f5eaf",
+      "bytes": 978
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_0_1.json",
+      "sha256": "599598a1b9cfda826e1868626f1bfbf9c161db9fb8f862eeb047b9b9531bc59a",
+      "bytes": 5821
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_0_10.json",
+      "sha256": "15caa126d869120ae4c97d9a0799b204cc9efc003bad703159009d233470fd48",
+      "bytes": 1611
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_0_2.json",
+      "sha256": "b578877575590d79430e1a0a48e84fb7843d295380138a3edee0bb5cebb505e1",
+      "bytes": 5824
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_0_3.json",
+      "sha256": "d5a6e07dc2516a03ee5a3f1b25ca8cb1acff03cea69ca3c230494c4bf86b8c2e",
+      "bytes": 5829
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_0_4.json",
+      "sha256": "b884d7f886d1484b8e7c5c01e3c682e8cc33453b03bab895353bae293950ee59",
+      "bytes": 5810
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_0_5.json",
+      "sha256": "bfd9435dc6feda310097b65b6e4f2aa32f201d8761ae138c0ff23eb573ea6ca9",
+      "bytes": 5893
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_0_6.json",
+      "sha256": "872f0395a59eb16d383017c2ac586e12f0ddb9da560fd113457e137c86392f25",
+      "bytes": 5873
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_0_7.json",
+      "sha256": "49c9c6f65daf5987cba3e92f948da6304cb77fca660786d7a957068bdd8c99ea",
+      "bytes": 5893
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_0_8.json",
+      "sha256": "93c6c9cada22a7d4305290b0305f819a0cfe7e87415c717c6401221071910328",
+      "bytes": 5881
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_1_0.json",
+      "sha256": "9e3080f489f116b3638f521b0a825ef30f7b0395da6ada67bebce67a2e3c717a",
+      "bytes": 5817
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_1_10.json",
+      "sha256": "df50af42d4e04e616c4e0cfef296eab7906301789a7cdae71d69c9f571007ea1",
+      "bytes": 5746
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_1_2.json",
+      "sha256": "6fe2d389493509eaa134a70fa8ec50ac0a68d614d4b201d86a859202d19c7ee3",
+      "bytes": 5849
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_1_3.json",
+      "sha256": "b6d5b6e17c621fa584536c95b335b72592dacbe2e1cc8fa2fb9415d8061b1bd3",
+      "bytes": 5864
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_1_4.json",
+      "sha256": "f367661b63867bc9412ce7cd413399cf02a3d8d8962b6e61829fee80343d358f",
+      "bytes": 5872
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_1_5.json",
+      "sha256": "24c0f8f7ddb0d491dbc97cbf59d684711566ed230a520e4739780889258a3f2a",
+      "bytes": 5816
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_1_6.json",
+      "sha256": "8c213a98e2f4b5d18caeac00c2a61e1649b78439ba2e8366b866edab26fdc406",
+      "bytes": 5808
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_1_7.json",
+      "sha256": "4e5814f240b13e5ecd92d8ed418ecb0ef1e4518c6b76d8ee29301e3cb7f23fb3",
+      "bytes": 5824
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_1_8.json",
+      "sha256": "890d3e6fc0558ba20eceb5fdfc7c85e30f14f13495ce856e3952ae5de870964e",
+      "bytes": 5823
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_2_0.json",
+      "sha256": "bdbb3d22e664e55034e5a455574dd825b9ff94800857c8317fd01797d1808b73",
+      "bytes": 5826
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_2_1.json",
+      "sha256": "29a9bed650ddc08c7fd5a90ec14f13952a322bfec5e4fb3e4424ce4911d4660e",
+      "bytes": 5856
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_2_10.json",
+      "sha256": "ece4123dc3c9db80d6aae06da201383eb1cb7d1e00d00ef556bf78727b679416",
+      "bytes": 5734
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_2_3.json",
+      "sha256": "fae714d8fc90c79ef8c85679dd8bc6c0335945e612d7ef24b82f0600ee89fa52",
+      "bytes": 5827
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_2_4.json",
+      "sha256": "5d340fd7cd6e94ee7c6f8a3f54684c70b3264422ef473f69976a2a5bfa280c96",
+      "bytes": 5834
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_2_5.json",
+      "sha256": "f491514679171358b6e73d6febbb8bd6180d1f567595dbb04fd6469cb8314839",
+      "bytes": 5813
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_2_6.json",
+      "sha256": "8a31c685ff87d64e26f0882036ea2cee93d481a56e35ef0a1c904d30efe4f0c7",
+      "bytes": 5801
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_2_7.json",
+      "sha256": "d648ea0cb5957406e3ff29400d393e6dd68fa7fbd71f7bdc3db0d55eb8b33980",
+      "bytes": 5823
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_2_8.json",
+      "sha256": "2db63a56f172df18dcea6b6773b47db66006919b9eb99eed66e96e4df8f329fc",
+      "bytes": 5807
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_3_0.json",
+      "sha256": "416789691b6b914482043092536ae6b865a8fc041f731d2716f6ea8a89f19af8",
+      "bytes": 5827
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_3_1.json",
+      "sha256": "82b77467b61e150b8ab019fdb77137ba014c640c3e2e02bdfc7878b9b575c867",
+      "bytes": 5863
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_3_10.json",
+      "sha256": "b8cbc167cfaba9ccfd3c6f2fcbf41b86502e5a14d26cb46974932ca7e7955a6f",
+      "bytes": 5739
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_3_2.json",
+      "sha256": "5baa10c3f1d614b0e5eb7cbb2fd97e7786bc72b16993c0825ec8ab0e35f0371b",
+      "bytes": 5818
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_3_4.json",
+      "sha256": "5856b5cf7244a8c451e5f6d85278acbfbf66253d9d9383c60e43f7c0266257dd",
+      "bytes": 5827
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_3_5.json",
+      "sha256": "4ecd2eff414d820e34a80b91d5558b205b79d87a0753f4ab0b8a07f34f689feb",
+      "bytes": 5803
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_3_6.json",
+      "sha256": "653b06e1980a9b1302454fe7c33d211a69776241c8b36da074c52a811b805690",
+      "bytes": 5800
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_3_7.json",
+      "sha256": "108f740e761a8b77b59fa35f78aced7e072d460d9b09805d3df0b1433c1c35e7",
+      "bytes": 5814
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_3_8.json",
+      "sha256": "8e28f26f0d6af3aff76a9f99b214a58ff6e8f03218cbf2ddf51db8f50830057b",
+      "bytes": 5812
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_4_0.json",
+      "sha256": "74fb586904f5d4d882a6e90a50c01f37312e22cace0d8e8d08348cdb322f3cbc",
+      "bytes": 5817
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_4_1.json",
+      "sha256": "56e7d24aab1a919cd7302269fb55af815f8b70d8aacfca52645c353ebbc21a85",
+      "bytes": 5875
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_4_10.json",
+      "sha256": "be476b4d06668cf501e4c8bcece270337bd55955e4b4b08ef3c76365bea9cef1",
+      "bytes": 5734
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_4_2.json",
+      "sha256": "30872b9ff068fc8b955467fe2e4955f4d7e1afb65ad424f522e5f8aa587723aa",
+      "bytes": 5825
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_4_3.json",
+      "sha256": "a592b27da28998d2e6da6ac7e77d6878186e05446cb3fdb5d061d5ecc3435315",
+      "bytes": 5819
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_4_5.json",
+      "sha256": "d5c38908e241d24aca29c3b05b3c27aa37c3c7eb5b150ce59d8ebbc38cfe844d",
+      "bytes": 5803
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_4_6.json",
+      "sha256": "29193ea364a6034358aac110f07685d851c6d91eed5cf668fd54f734ed805742",
+      "bytes": 5798
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_4_7.json",
+      "sha256": "b80c2f308148722891734bf0170b7e26776e1dac621cde12602beeca418ae617",
+      "bytes": 5827
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_4_8.json",
+      "sha256": "fdb299154f39c4320f30784d09ecd23c4cdddd9aeaad91bee6d7024fb9af990c",
+      "bytes": 5820
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_5_0.json",
+      "sha256": "9f3dc3b62f0be142ea0fe21ddc4fb0f70fc647d8a1967c50727d93f6a2733735",
+      "bytes": 5890
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_5_1.json",
+      "sha256": "3826406a7a59797b80631d579a077179b6913d756b99ae40d83d062c5ef76fc0",
+      "bytes": 5804
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_5_10.json",
+      "sha256": "ea786947e0e4e79d7d577b0910e16f4cf4083c4391963fb748875883d326c4b1",
+      "bytes": 5753
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_5_2.json",
+      "sha256": "dc17b0c342ca18489bb3b13ab7baeeb98066f29582d7b428d35a6d59c55d3bb9",
+      "bytes": 5806
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_5_3.json",
+      "sha256": "e2aefd5755a3f98713f62f0c521ed59bc0976fd471ca1ed65013ceeb027d9697",
+      "bytes": 5796
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_5_4.json",
+      "sha256": "99f11a0690d9736d54e353dd799cbe1e33ec64040d684c5f4fd34ae476f656f1",
+      "bytes": 5807
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_5_6.json",
+      "sha256": "396be2bff73a476596f66c3c4ecd85b4a74dd38f88ac6e103041b7073ba6662f",
+      "bytes": 5830
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_5_7.json",
+      "sha256": "3684495f1d3a5c5aec63bec47882eff0a8e1845c0990772673eca9ae09a77c00",
+      "bytes": 5826
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_5_8.json",
+      "sha256": "33e856c57583eb48ba4b00aea311ae40116bed3916c20dd43ad3f0dd21de4ae5",
+      "bytes": 5835
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_6_0.json",
+      "sha256": "7bdb30275a18420e3a00e1554c9a11d9c08f31cde0548d277a5e7eea5aec5882",
+      "bytes": 5885
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_6_1.json",
+      "sha256": "5d0180809811bb58b803a5747eedf0481739c26e8da028919a9f88edbcc0f6f0",
+      "bytes": 5811
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_6_10.json",
+      "sha256": "8683d82ae6af93e0ac494a948927fcec753a98d97c0e7496ca803a33a1929f40",
+      "bytes": 5746
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_6_2.json",
+      "sha256": "a5e3f91d9501ef37889260da263c1ba10c914303a86d6f1fba1af8d8455c9708",
+      "bytes": 5810
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_6_3.json",
+      "sha256": "38309e468e3195d22fdbd339f8b0dc7c89b87f135725425d64e8cd4ab85d5a61",
+      "bytes": 5810
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_6_4.json",
+      "sha256": "13c3a30636adff8feaa226f69b37e91f031dfe07487a695613d495ad9bb2d4dc",
+      "bytes": 5808
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_6_5.json",
+      "sha256": "4d9dee5ee3d265d174baa8274896ecb0d373d120ab0668feb3e39cd6c6a2b3ae",
+      "bytes": 5828
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_6_7.json",
+      "sha256": "0145ae38ae30ee708450de36042d8deb4ad7c1e3eee994e7f54f63f9b32209f6",
+      "bytes": 5832
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_6_8.json",
+      "sha256": "e1639c1538662bf87d41cce4c47b91c40dab6be1f7c09d2f87575b07ed7a50ae",
+      "bytes": 5823
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_7_0.json",
+      "sha256": "688d0d10582c10e69a68b95d6caea0142d2b6cfaed531d4010aac3e530a38daf",
+      "bytes": 5894
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_7_1.json",
+      "sha256": "e3fe451ceaa95f47ac1d577dd3ffa72b19a72723b4dae45f5b29a6089f1f85bf",
+      "bytes": 5829
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_7_10.json",
+      "sha256": "460441c796be8b404739cc7e3c44f9c81b5f864ab2f036e7c656c4d83d3c3e3d",
+      "bytes": 5761
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_7_2.json",
+      "sha256": "0c6800549a070d9612c7d9dbe0d29a5f1bd6c2d4195a6c0365226ff5f47078c0",
+      "bytes": 5817
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_7_3.json",
+      "sha256": "eb78e8416b5b104130b63ba872f5dc6b2499d51e6fdc6f4cbca6b575656d707b",
+      "bytes": 5814
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_7_4.json",
+      "sha256": "8fe672ccfc8742b3084797754d0ef3f58c7abf6c3bd7c7392be57e53704636fb",
+      "bytes": 5819
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_7_5.json",
+      "sha256": "388d77a1fbd40fb8b213760d959b1aab1e7c0c492d3ed64058b1345970e67ece",
+      "bytes": 5838
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_7_6.json",
+      "sha256": "cfb6766317ad56c82407732e2cccc982ad68fdeece44892c0aadff2e2cf6afcc",
+      "bytes": 5834
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_7_8.json",
+      "sha256": "1931c3363c4c0d3e99c9e06d7314abdd073c979ab91c11f52379019145678b2d",
+      "bytes": 5833
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_8_0.json",
+      "sha256": "8a2f6be26d92e5eb72d8951692deac529b546cbfccecb3d668089c43a75d81c1",
+      "bytes": 5886
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_8_1.json",
+      "sha256": "5f5d84ae1bcd740a085c2aeb3f70a509b1025442717c0cb240437691cea18e6f",
+      "bytes": 5807
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_8_10.json",
+      "sha256": "7b2431fd4e2e8b8524ddb71b7c47a22894359aee095cef850e8898114842962b",
+      "bytes": 5751
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_8_2.json",
+      "sha256": "52d93f80ac6aba77811edc6ffca736509318eb9917a8008ac9499205b82b05dd",
+      "bytes": 5804
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_8_3.json",
+      "sha256": "c6842718c57ae5e884651033d806f4f1000711f490544c63595c172b482193f0",
+      "bytes": 5815
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_8_4.json",
+      "sha256": "8653d712f6df4dde79aeae2bb9513d52c08868e409263b53259abc7a702abfec",
+      "bytes": 5812
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_8_5.json",
+      "sha256": "1b36e6991387b4c168bf45c2f4bb82817ea6424a680d4f8f26dcab101c8c31b4",
+      "bytes": 5820
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_8_6.json",
+      "sha256": "f24ef8d541ca613fd77afd68a12d9e6f452ae8c52a3900788a3f002ccb8dac7e",
+      "bytes": 5804
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_8_7.json",
+      "sha256": "21571532b08e3e73572583ddd4170cb221138c1a058115b5ae27c7e9727e2716",
+      "bytes": 5834
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_9_0.json",
+      "sha256": "bd03786f5ab96b31f6401ffc3820bcbe7f11e8a3d62e626b29426f2eca27dd3d",
+      "bytes": 1611
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_9_1.json",
+      "sha256": "7c25028a455f09a98388948f228c4e581a4bbadc3012b37347fa8a34f96cd264",
+      "bytes": 5750
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_9_2.json",
+      "sha256": "c39db0c8e6b571f2f6129c9201561a556d8d16f8cd5ac0402fd7c75cade0c9c1",
+      "bytes": 5731
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_9_3.json",
+      "sha256": "a97bb23626bd937aa718b6b398fc3e11e6cc03f037d203912eeb3106ff893e51",
+      "bytes": 5743
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_9_4.json",
+      "sha256": "53b5ec51e846ada7482f4024efbaabee49bb5bab2a231e69814ffc3d55e09a64",
+      "bytes": 5728
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_9_5.json",
+      "sha256": "f6b1f63602643f0ef57b8da871296fa23812a0f059f74db4ec7bb61ab4430928",
+      "bytes": 5754
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_9_6.json",
+      "sha256": "e477ae3ddf438a407a5a6c1c57f2d1e76d282602cea914a2e7e62ec21e277d1f",
+      "bytes": 5750
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_9_7.json",
+      "sha256": "c7f0b39102a3a15965738fd35acd51558b2a3eb7b0e2b83adb182f1f48b74d68",
+      "bytes": 5758
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_0_9_8.json",
+      "sha256": "eeb4ebbe1271289bf957fe44ffec639fd452b3833a3cd2a4b42f32970b587983",
+      "bytes": 5746
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_1_0_10.json",
+      "sha256": "9ebc4655a3b11dd44b87c14afd0ed0349ee0c3b95a300543933187ac023faad2",
+      "bytes": 1614
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_1_1_10.json",
+      "sha256": "d93364b84ab76d885e0d87cf29025cc4b236e5dc9c149c64f3ccedf5f79a11e2",
+      "bytes": 5765
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_1_2_10.json",
+      "sha256": "93779e11c619912e98e711790d87f529021f71c81c47fea5cc3c62c2beee2840",
+      "bytes": 5772
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_1_3_10.json",
+      "sha256": "287efb478b5591983337562b0278919f5d07f85f7cc02ea5ef522c82b8a9dff0",
+      "bytes": 5748
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_1_4_10.json",
+      "sha256": "7652d1408d4ed91a8f5354f2a48f244b36715e23f2be1f9724fe4ac14f701653",
+      "bytes": 5745
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_1_5_10.json",
+      "sha256": "a7670c111c46a8ba89419cff2566b3901fc8760e9a1001269c3fd1a8e9f9d8a5",
+      "bytes": 5757
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_1_6_10.json",
+      "sha256": "bfe9b28c702048b8cb81134dc8780bf248ed5902d76c5ba60ec847009d53cc66",
+      "bytes": 5765
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_1_7_10.json",
+      "sha256": "b5d9252c527da4d8673e849b761def213a1d3bdf21f078c8c8001d73d43e66e0",
+      "bytes": 5777
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_1_8_10.json",
+      "sha256": "7c1d7d7d3dd54d7468a437c815fa238c4e7bb4e0f616be86f3c69b9d20a28dca",
+      "bytes": 5764
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_1_9_0.json",
+      "sha256": "8c7c181201baa345daf85f1c23f4c4431dc11d61503f043231c2be77f3bfba8d",
+      "bytes": 1614
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_1_9_1.json",
+      "sha256": "6af6b7e953f01301aab52e55341c6e8536ad359bc196aeec7860826a3a977de2",
+      "bytes": 5763
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_1_9_2.json",
+      "sha256": "1e5730ab14063f66ec89c2720a81113628468a0bdff4d7d9b5d077443e9e14c3",
+      "bytes": 5762
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_1_9_3.json",
+      "sha256": "c5c500d9c3b647a8b803fbdef55feb0f83e77e507c885a32c3aa0245ab614bcc",
+      "bytes": 5749
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_1_9_4.json",
+      "sha256": "772eb2cc47e6b4b891b59db837227dcb56bd6f223e2a6b1c0174b8157e239c26",
+      "bytes": 5744
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_1_9_5.json",
+      "sha256": "d5e1c53174851107513bdf54a6ece774713ef874e7ed24902309bc815461d50e",
+      "bytes": 5762
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_1_9_6.json",
+      "sha256": "cbe80ddedced6caef951428c01e30cceae27c7b146ccf59ffb804b0f2d96013b",
+      "bytes": 5760
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_1_9_7.json",
+      "sha256": "889d6bf2dc9f0b3cd8903304fa9a9388fab6df8985a9739c87fa3d2dd591fac4",
+      "bytes": 5773
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_1_9_8.json",
+      "sha256": "5d457a836fa86632ce7b58afc1b32c534fcbb2927d5097564e7e568c1e43a734",
+      "bytes": 5762
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_repair_failed_attempts.json",
+      "sha256": "324c6a67afac56b4ced93b7bd936241d543031470dc9b7ed3e2bdb1657138edd",
+      "bytes": 7311
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_repaired_0_0_10.json",
+      "sha256": "f07908007d2ad53454113011175f14d118f9b8b0e923bfbd38669c17c8c4e926",
+      "bytes": 5842
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_repaired_0_9_0.json",
+      "sha256": "6b4dd13e144c8b625492a155b2d4f06e87df00c9e5f0317a203d5fffbb7bfdbc",
+      "bytes": 5840
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_repaired_1_0_10.json",
+      "sha256": "42b464198684f8859c161b4cc8d31b0fa25a31a276751a07f0c9a53c7da2d305",
+      "bytes": 5874
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_leg_repaired_1_9_0.json",
+      "sha256": "a2ad593f8716ad147d1afe3658bcef622ee270515dbe7d1b68bdbc21f380552d",
+      "bytes": 5871
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_trajectory_block_receipts.json",
+      "sha256": "0c24c864ce959a7b1837256f5e37498f6ad069b396269b1f4fd3c7333d000238",
+      "bytes": 301030
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_trajectory_block_status.json",
+      "sha256": "b0ddc66963f4ac995a265383c558419a9504b2473ca280564dd4ce9ddeddf3ef",
+      "bytes": 223
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_trajectory_independent_validation.json",
+      "sha256": "eb2b17623b91361bc80314b5df7429076881d8b96384fa98c58789a4c61d455c",
+      "bytes": 50852
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_trajectory_retimed_validation.json",
+      "sha256": "81e6fae178b4faa3381d24cd9911f6ec4557224dc6e067e1bc3f454d49953cae",
+      "bytes": 192316
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/free_trajectory_validation_failed_global_gradient.json",
+      "sha256": "e451bc72b486b0363323a6b42060f4b4c442af4832a3b7dd47dc66702d8480a3",
+      "bytes": 51110
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_discrete_0.json",
+      "sha256": "4c6c1431a9b6b8aaea7130232a0c1a3aa988d4170483c285d6413f0b7b105898",
+      "bytes": 2251
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_discrete_0_sortie0.json",
+      "sha256": "7a0b0f9b7f7bdb71f709bf7613e129262605c748c959ba5462df6b52439980ab",
+      "bytes": 44856
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_discrete_0_sortie0_protocol.json",
+      "sha256": "932ae585911f96df9e3c59cc418351a55258ec0c24e45757804d72681d822256",
+      "bytes": 288
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_discrete_0_sortie1.json",
+      "sha256": "432bf83c5ede6c116dda20c9a145fd173ff72f0f75cbf482a0e417263d534cf0",
+      "bytes": 48156
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_discrete_0_sortie1_protocol.json",
+      "sha256": "ebcf0914935d59e78fb41e39f91435671c176769521ea38152fc876fd7d4fbbf",
+      "bytes": 288
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_execution_validation.json",
+      "sha256": "44bc89dfebd5213a7d298a001871a854b2c6fa26108e18c990ae7320c72bbde5",
+      "bytes": 624
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_free_input.json",
+      "sha256": "60c64deae156359fbd4851561d7a6d9dce3b73f8cb38337f26a87c487c9e683c",
+      "bytes": 1239295
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_input_0.json",
+      "sha256": "e32354418a563061147499e37e714247f79d71860668bf10b3403133c7bf96ac",
+      "bytes": 160825
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_mutation_probes.json",
+      "sha256": "deba11c051f35eb34394314bbd4a53c6ef2de856b5db5b006b13f4bf2bdc4008",
+      "bytes": 589
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_repaired_input.json",
+      "sha256": "d3206ab37ca0db722ca82a847ccc37fe72f80d4031d5bf08da26ede9ab4c851b",
+      "bytes": 1280358
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_input.json",
+      "sha256": "bec5e245e04a85b730a19d812002143561a7a95a61ad7f49a2c86460f54d675f",
+      "bytes": 1279354
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0.json",
+      "sha256": "fa3daa6a6e6f19fe8f94fd613362b66679fc683f25a361a4a000e5a71eca881f",
+      "bytes": 3381
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_airspace.json",
+      "sha256": "5fd40d838c0f06adcdc232ebedc1792620493b2ca4a7a659ad0dfd8282ed1b34",
+      "bytes": 376
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_energy.json",
+      "sha256": "a5d14c1a54fca4d975949f729625f0416d7cc0501308cebe2da8c616dcb5622e",
+      "bytes": 3593
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_energy_airspace.json",
+      "sha256": "6e70ec944233720f5e3f80b5c24782a5c99d6bc1cfbd7b93ff2c7f3792cee2e6",
+      "bytes": 376
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_energy_execution.json",
+      "sha256": "e05571d393d025a926b1d60657fe2a3b48941e76cb57397c952efe045de461c6",
+      "bytes": 15022
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_energy_force_intervals.json",
+      "sha256": "853d091f26403de6e1069135d0842cc63988609263f15351cb83cda7ff544b28",
+      "bytes": 1857
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_energy_sortie0.json",
+      "sha256": "4b746cc2b8b2f16339bd3f13cfcb12dfd0ded0f953b52bee4bc764db25e3f1b3",
+      "bytes": 60475
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_energy_sortie0_pose_commanded.json",
+      "sha256": "4088dfcbc3fb1a49b456525af8f150e5d0f39379355d1ac56895c9c6fab5fb91",
+      "bytes": 1705974
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_energy_sortie0_protocol.json",
+      "sha256": "666c0ee223a67742a9a9f3a0e236bcaa779143d23061aa82d0feb8697edcb8ce",
+      "bytes": 288
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_energy_sortie0_validation.json",
+      "sha256": "33fecff86a542e08bd5f20ed2ad5d653d8c6e079702861340cf4bd6da8e4d696",
+      "bytes": 3960
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_energy_sortie1.json",
+      "sha256": "b30dbf12e853b5031b1a7db88bf8aa1b39f4de715db245e4de25ea4c6a275463",
+      "bytes": 54249
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_energy_sortie1_pose_commanded.json",
+      "sha256": "2da4b0b04aa7bb59f8de529494f02df506f057a91d5b3ff528dcef7231e53f2f",
+      "bytes": 1691270
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_energy_sortie1_protocol.json",
+      "sha256": "42e513bcc2b3bb0c43964a9cd0665ccaf51bfc696f92ec057070c433465024b6",
+      "bytes": 288
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_energy_sortie1_validation.json",
+      "sha256": "179dc640a61da72a8251066885716abd15afc973e885e94de0bf4dfc1fdba0b0",
+      "bytes": 3432
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_energy_status.json",
+      "sha256": "a7d175c978832f1f6532c2c9a8966f10b3fca14cae3633b8852a2c9a5e3983b1",
+      "bytes": 576
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_force_intervals.json",
+      "sha256": "e090d5b03d33c33d7fac7e1f8788e2da35bc3a984e1d7ea055f28a347a54a7a2",
+      "bytes": 1857
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_SOC0.2.json",
+      "sha256": "2aae1846644f0969823178ad5454065e752324695745a6ffd845acdb64bcefb1",
+      "bytes": 3792
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_SOC0.2_energy.json",
+      "sha256": "591723b1706eac03645db3d012c2911a319f4fe473b4f738b0b1594e12cb7a81",
+      "bytes": 3807
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_SOC0.2_energy_airspace.json",
+      "sha256": "2e807eda6e025fbc8f793675045407bd51523b3970e03a5f94af038f1ff6f1a0",
+      "bytes": 375
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_SOC0.2_energy_execution.json",
+      "sha256": "191a498dd39730b8cc7ad4389c5075b3a1fd039f5fee6a014be26b83ca08cc2d",
+      "bytes": 15864
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_SOC0.2_energy_force_intervals.json",
+      "sha256": "9051016ed31f083584895db6dfb312ca26bad8f738088451b3ff71c61f6929a0",
+      "bytes": 1858
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_SOC0.2_energy_sortie0.json",
+      "sha256": "68d9dec044148c20dfa5294269de67c79c03b4628b7ba2bb262e44aa988126ae",
+      "bytes": 54277
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_SOC0.2_energy_sortie0_pose_commanded.json",
+      "sha256": "0aaf02486028bd01623c8f708af54f4450af1035b144acb7669a9cb3195e9e24",
+      "bytes": 1690921
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_SOC0.2_energy_sortie0_protocol.json",
+      "sha256": "70c9e70b1736f295b585016643a223a4f132023ba6c348185e7173731c345d59",
+      "bytes": 295
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_SOC0.2_energy_sortie0_validation.json",
+      "sha256": "6a4053b7e085499156ecbb5168d68443b638f9446692532d5e06e53759fc4209",
+      "bytes": 3430
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_SOC0.2_energy_sortie1.json",
+      "sha256": "0322f7a37d06e7504661c4830df349e59c41802b13000fca8f084a183fb45248",
+      "bytes": 60557
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_SOC0.2_energy_sortie1_pose_commanded.json",
+      "sha256": "25376c21364f9d00578e29a564832afba827870dfb9fba73153773ecbc83ebaa",
+      "bytes": 1705753
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_SOC0.2_energy_sortie1_protocol.json",
+      "sha256": "ff8159b8577fcadaafde3cf7341fcdc68ff15009f89e2ec0bed71213e9d41cc8",
+      "bytes": 295
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_SOC0.2_energy_sortie1_validation.json",
+      "sha256": "f354ee2fe7217df8802071229d5878f6331bf70bbd64dd591a8fef8663b37b6a",
+      "bytes": 3964
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_SOC0.2_energy_status.json",
+      "sha256": "4a4df501a64a27fe2b9e842aa7335a18d13b123ed41d0b71e9e1fb7562038b8b",
+      "bytes": 590
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_SOC0.2_sortie0.json",
+      "sha256": "651e1d1f0aa36bc13d6b112993e453f297188065af59ceb2aafa053fd26e54f9",
+      "bytes": 54276
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_SOC0.2_sortie0_protocol.json",
+      "sha256": "d1aff2b7cbc5ba067d516ddfba47c0c3d92514840587d96148fe281b1896c76c",
+      "bytes": 295
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_SOC0.2_sortie1.json",
+      "sha256": "83daf8275aaa37fbd7e248da2652559ec7fd49a6ea3f93cae29c8f606598c052",
+      "bytes": 60557
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_SOC0.2_sortie1_protocol.json",
+      "sha256": "c5a1c041561b50f87b1fd338a67d635e5221c0d3a769a6932fcd9cbe52ce97af",
+      "bytes": 295
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_SOC0.2_status.json",
+      "sha256": "8eab2b638cebc55dce40296c30a87877476ce052c559dce95b5684844f421231",
+      "bytes": 575
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_sortie0.json",
+      "sha256": "4b746cc2b8b2f16339bd3f13cfcb12dfd0ded0f953b52bee4bc764db25e3f1b3",
+      "bytes": 60475
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_sortie0_pose.json",
+      "sha256": "749e38317d0578bab6dcb032b188f9404c60cf5631654902cfbc73f583f0410e",
+      "bytes": 1703961
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_sortie0_pose_commanded.json",
+      "sha256": "10b53bbed8d79d2c19ddacebd37746ea9f197ca8e1055412d2ea1208feb0d96d",
+      "bytes": 1705974
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_sortie0_protocol.json",
+      "sha256": "139eb86de729daca064d45329930d3577d05e81c2f1e6c6a1cff3d6e213799c2",
+      "bytes": 288
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_sortie0_validation.json",
+      "sha256": "31e995dd249414c4b9980e66e885476bbea9b7928b843c4e94b90b2e58d493a6",
+      "bytes": 3960
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_sortie1.json",
+      "sha256": "b30dbf12e853b5031b1a7db88bf8aa1b39f4de715db245e4de25ea4c6a275463",
+      "bytes": 54249
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_sortie1_pose.json",
+      "sha256": "4d49835a44471378e4b1d8d29b85e8e5c9866944ada80aa1c5d816e06e10a3be",
+      "bytes": 1690619
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_sortie1_pose_commanded.json",
+      "sha256": "c00734b85cf92453139e38b503d251f808f444314990a9a00348a8e84575183a",
+      "bytes": 1691270
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_sortie1_protocol.json",
+      "sha256": "0147f9e0320b18c84c3413c01c31ff98b842df84a05997a65c639cc4241f544f",
+      "bytes": 288
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_sortie1_validation.json",
+      "sha256": "fc784e3b6be65cf1194219b895858bd6ebda7baa84b71d1ef04fa6187675ca68",
+      "bytes": 3432
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_retimed_schedule_0_status.json",
+      "sha256": "dffd8241cc17f184ffacbb3916cde1325d48bcd62b237fc4e81e06e3e8ac2744",
+      "bytes": 561
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_road_cycle_bounds.json",
+      "sha256": "2ebef5b7c611052992b0fea4cdeb6011abb6f4e0ad84b9e37d7cfe7c201fa8b5",
+      "bytes": 5759
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_road_status.json",
+      "sha256": "953c88f0e04a3392846b3aba34db450e3e6c580d540179b43ed3a80ef170394f",
+      "bytes": 289
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_joint_status.json",
+      "sha256": "3608cd980ab19dbef2bd47ef5e6dc0d9b2ea0903f00c4e5586550dab78bfd2e9",
+      "bytes": 401
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_road_probe.json",
+      "sha256": "450dd0096392322315678b71cf86d02d875eef117bbb103c858710a034d18fe6",
+      "bytes": 1849
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_road_V1_P012.json",
+      "sha256": "861966dab9f4465463a115bf49a0e60f296ddc328fad0a80dfe0c518d015f8af",
+      "bytes": 135285
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/full_road_V2_P012.json",
+      "sha256": "6dcabfd11b1979314c5cff8a46343c0391c9725fd9cc2aa768577e820a8b0b6e",
+      "bytes": 131822
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_bound_SOC0.2_execution.json",
+      "sha256": "060179840ee4cd75d30bda914b0ea10b504a2d72fc600371434da8b40ae59cf3",
+      "bytes": 22898
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_bound_SOC0.2_sortie0.json",
+      "sha256": "2badbc041a61e1fb0c759c265859d63fa978e6d3afb07ded58047157e94aea8b",
+      "bytes": 88463
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_bound_SOC0.2_sortie1.json",
+      "sha256": "b349ebaad3d4e5ed06022ea9f014141f89cdb94a4344f71be8b98d088869f7e6",
+      "bytes": 77998
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_bound_SOC0.2_validation.json",
+      "sha256": "bd4de7fd85514937ab821bef76720cac246caf0d3882160532feedfe5c67dc3f",
+      "bytes": 6577
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_bound_SOC0.2_validation_live.json",
+      "sha256": "6930f2edad4c2a8d6a8c0436c94f019d083e5e09ace5b435abe9131deb5e1294",
+      "bytes": 294
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_bound_SOC1_execution.json",
+      "sha256": "c46cfbddbafdfa25f39ea8bc60c3f10659aa7361f358b5c6abade1e62d6e0929",
+      "bytes": 22205
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_bound_SOC1_sortie0.json",
+      "sha256": "d92d3964b97959f851fd0a10e4819cbed932ff7474387925df2f7b0c1b276870",
+      "bytes": 88451
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_bound_SOC1_sortie1.json",
+      "sha256": "25a602d225aa76d4640d4886f30fb2ca58c2f8fb9ba3b24a35727904ef5fafa9",
+      "bytes": 77987
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_bound_SOC1_validation.json",
+      "sha256": "566ea8e34db8db30dc954a796d745836c1476f5d8cde8404baf752f1d9c1766b",
+      "bytes": 6575
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_bound_SOC1_validation_live.json",
+      "sha256": "5e29ec76fc8a7d823cfc609d0fab313a8082437ea8e87d5978efcde0c5a477df",
+      "bytes": 294
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_checkpoint_binding.json",
+      "sha256": "2b03efb16bdec1cc756e1f710796eb49bfaa6e1638992e3cf7fddc6358915162",
+      "bytes": 728
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_checkpoint_retimed_retiming.json",
+      "sha256": "dd0a2620dea5aff7647254386ef53fbd64770d1511f86075166ec349c116cfd3",
+      "bytes": 4831
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_checkpoint_retimed_sortie0.json",
+      "sha256": "eed1feec974feecfc6fddb50e5166a2fb75e2d476aa8b0ba7ff1d31aefe0c0ad",
+      "bytes": 90416
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_checkpoint_retimed_sortie1.json",
+      "sha256": "75619cb3e3408ba9b7eee17be9630225ae6b2e696850d92f140f29fd786648f9",
+      "bytes": 78454
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_checkpoint_retimed_validation.json",
+      "sha256": "aaa9b836acbba26af0726ca05e2c6812c3f5ea135ce4211f8d7824fec0dad9de",
+      "bytes": 6734
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_checkpoint_sortie0.json",
+      "sha256": "b07c0dc09da69edeb8f84eee0d460fefb38f7f32ce7ec5a6020130f386b4957d",
+      "bytes": 90108
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_checkpoint_sortie1.json",
+      "sha256": "ba7e82252f1b5898a3a50d41694bc9fbe95fcde281a28a980d109d692c0b8992",
+      "bytes": 78148
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_checkpoint_validation.json",
+      "sha256": "1441596f2b3e9714fada21d7b7aa611cbf1ee55efe17e7962a3917a4cb503f38",
+      "bytes": 6727
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_combined_binding.json",
+      "sha256": "ffb50b6dc90673932fe4fa681b5b9e432888471d4c9e23363734777d22f1932e",
+      "bytes": 407
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_combined_sortie0.json",
+      "sha256": "2320cb8bfd5bf51837eb7c495f48c7b74cac9fc291fe8a4397486f8306306174",
+      "bytes": 88448
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_combined_sortie1.json",
+      "sha256": "58e64fc0ecec2cedc011b5f3f3af3117b308b7b91a2b92badab6cef581888ebf",
+      "bytes": 77984
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_enclosure_revision_validation.json",
+      "sha256": "4ba34c6f4af36fb30cb83f2dd4ee90743f2e5842448b9451017754143b0e4a6f",
+      "bytes": 380
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_exact_camera_diagnostic.json",
+      "sha256": "688012b6253b8580ae11a7bec1105f3622001addc78f7ee90d17b82da3d42d28",
+      "bytes": 1413
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_memory_guard.json",
+      "sha256": "5c65ff23e2113d94d9728568385b05edb3706c3adf810399cb98052df0a613ac",
+      "bytes": 555
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_moving_enclosure_diagnostic.json",
+      "sha256": "546c957b73e2330ef2dcfe2b9abc143b21853ec0a22cd76fa162daa2afb44d8c",
+      "bytes": 1573
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_reference_sortie0.json",
+      "sha256": "cb5e96660024c27e7133e3db975734752e277e6cd77fd99d5f1673c183be9e0a",
+      "bytes": 89262
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_reference_sortie1.json",
+      "sha256": "c222c8ba7913f1078ff750e8de3a28f5d17b085f4384e616e7550a6788f02cc1",
+      "bytes": 78161
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_reference_validation.json",
+      "sha256": "e13b26a2189094d752e1022981db74cb0f9b23df8e537bcd71c9417695258791",
+      "bytes": 6593
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_reference_validation_attempts.json",
+      "sha256": "32868da8d9be9eb7c32f0876396dc5c3a327c1ba3b20bc45b01ce5944a9c4448",
+      "bytes": 22147
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_reference_validation_live.json",
+      "sha256": "9df40a14933470282a7e37c0a1f817fbdbe53a54ac29337633bb03349a2a4517",
+      "bytes": 295
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_replay_mutation_probes.json",
+      "sha256": "dd6f172ead46ab7d4cbf706a79456428ef407fb8d0455e249da7a5824a156182",
+      "bytes": 922
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_second_checkpoint_binding.json",
+      "sha256": "71638b2eba29a331fce2ab47f2405177ec9a2768fe55ae553d3e59e4b73e00a2",
+      "bytes": 803
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_second_checkpoint_sortie0.json",
+      "sha256": "a11069f57f080f7303fcb4eb83b46eb7aaf2c3ad54861bac1174028bd11f0911",
+      "bytes": 89249
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_second_checkpoint_sortie1.json",
+      "sha256": "e3eef22648d0babe1239f08cb840bcd21c968e1cd33645a1dcc28e9f85cbe5dd",
+      "bytes": 79189
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_second_retimed_retiming.json",
+      "sha256": "91c824f824409565759e57ac036ce884b40035fc781e37d3f8de807e57152aba",
+      "bytes": 4080
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_second_retimed_sortie0.json",
+      "sha256": "4c73d96c23854e7afb72f364d8c609a23d24650c6d3c389909ddd467c92481f3",
+      "bytes": 89555
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_second_retimed_sortie1.json",
+      "sha256": "091bb6cd28e9919ec199636bbb333518d492bf373f95f2c2aa854be76a116272",
+      "bytes": 79516
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_second_wide_focal_repair.json",
+      "sha256": "caa5f4d89dd10313598d456c43c81cca74ea80d9c4e6a0aad91e9fef04c62ff9",
+      "bytes": 531
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_second_wide_sortie0.json",
+      "sha256": "c92bcca15742bc5145880ad7e66b6ac98a6fcf15ffe7e1d46a09eb7d44d26ab9",
+      "bytes": 87907
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_second_wide_sortie1.json",
+      "sha256": "49e4bf66d516844f9cc16c8ce2b7b10c4848c742d4bb988aa3a3046bcf92b10f",
+      "bytes": 77817
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_SOC1_attempts.json",
+      "sha256": "4880259d6696c4c13b5375ef6bea4ee3e9d8cafa12b7616532e160356bdfecc4",
+      "bytes": 15452
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_SOC1_result.json",
+      "sha256": "aa41462f7621db02894cf3bb85377ab81138848f88e357aa43b6c2dd19434a86",
+      "bytes": 1222
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_SOC1_slot0_attempts.json",
+      "sha256": "166ec23c2a477a205e0359be853397f48b6f1ef637e7abc7ae8610a2e7e74f39",
+      "bytes": 40059
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_SOC1_slot0_iterate.json",
+      "sha256": "654a9b91f528427e3405cb24ca312053dc2323a21d26d97556d56f0ff0131d3e",
+      "bytes": 33757
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_SOC1_slot0_result.json",
+      "sha256": "70b057b1b9abd20d983f7a509efe7ba395f8996ed12ca56c6ca75e00ae616f02",
+      "bytes": 1434
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_SOC1_slot0_sortie0.json",
+      "sha256": "3a98297a75521997af714f4583c24816d37ee959d3586f345340e6fa2f542bf3",
+      "bytes": 89511
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_SOC1_slot0_status.json",
+      "sha256": "03372a51cc4d62861e7efc00fddfb386fffa64bca08c1ba024da82189589db7b",
+      "bytes": 535
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_SOC1_slot1_iterate.json",
+      "sha256": "d30b5149bb023dec9241e53fd5cadbba14d8d035a6a82667e2db8a954dd24df9",
+      "bytes": 28332
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_SOC1_slot1_result.json",
+      "sha256": "d536f38f158d13bb93bc998e5793f1152cd12699328f725d0e18e5e16712c322",
+      "bytes": 1461
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_SOC1_slot1_sortie1.json",
+      "sha256": "8517849189a5563e619341628b341f87545284fbd5410738bff758ea7f47c2b4",
+      "bytes": 78507
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_SOC1_slot1_status.json",
+      "sha256": "5cca01092cc1a8d04671768952143af575e0e0515b2005283ee12dd6116e7a6c",
+      "bytes": 694
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_SOC1_status.json",
+      "sha256": "6343e60cd61903a2705f4c8006c623643c946c5e18f38ee8af903490fd3f3f84",
+      "bytes": 829
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_wide_checker_efficiency_repair.json",
+      "sha256": "895f278b74f11a99fa0085ac8a8fa4a7972c66c2218824f92dc0c6b4deb51d16",
+      "bytes": 361
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_wide_enclosure_diagnostic.json",
+      "sha256": "2ca6baa66376774111e2107f64d57e879804b4dba059e62c5a235ac1f3e15dee",
+      "bytes": 1923
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_wide_focal_repair.json",
+      "sha256": "d5552ed75b99ebfc528bb350b0809f05e030015ac6cad3809c6995f753ffabcc",
+      "bytes": 531
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_wide_sortie0.json",
+      "sha256": "4e95d612ef19b73e2b3233f69890c962996ecd1334ce2398a28e8d59d1c1d3a5",
+      "bytes": 88288
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_wide_sortie1.json",
+      "sha256": "6f04bc2c590c320fa911036918f23a980aa735f5418c4da104bbeae2cd381108",
+      "bytes": 77166
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_wide_validation.json",
+      "sha256": "35ba12f5a39c6132990cb071a540c3c6b015485c7db698d2b8a68e995434e0bc",
+      "bytes": 6586
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_wide_validation_live.json",
+      "sha256": "9f7549874e2979724e1ee41640c3ef569c1f5131811ffd3b60d20d5a20c8fd1a",
+      "bytes": 295
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_wire_checkpoint_binding.json",
+      "sha256": "d53ec59ffcbf8f4625d176dcf13c5467561870f8fc1dc0075a7f1a14e455f5c8",
+      "bytes": 756
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_wire_checkpoint_sortie0.json",
+      "sha256": "fc29a919e6fd637b268e9bcf104d68a1870604d2d0b6f8a4b513fd2ea772a422",
+      "bytes": 90132
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_wire_checkpoint_sortie1.json",
+      "sha256": "ba7e82252f1b5898a3a50d41694bc9fbe95fcde281a28a980d109d692c0b8992",
+      "bytes": 78148
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_wire_retimed_checker_endpoint_failure.json",
+      "sha256": "9133fdc124e964d407267ca312e31b3caf04ce0d21cc11eaf3b509f16366a867",
+      "bytes": 310
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_wire_retimed_checker_recovery.json",
+      "sha256": "01215d5109ade4770b5388ce70d2f1892b2bf327c816dd34c707ea85b1ebfa3e",
+      "bytes": 557
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_wire_retimed_retiming.json",
+      "sha256": "73a8311163c35baa6ec115c0567995fdea555754faf2d85bc5e0dd6835e154ac",
+      "bytes": 4840
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_wire_retimed_sortie0.json",
+      "sha256": "c0af32d00e6f9030acb54e4fefa39c43a34a22b7e7585fd936788b41e4672470",
+      "bytes": 90424
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/joint_optical_wire_retimed_sortie1.json",
+      "sha256": "75619cb3e3408ba9b7eee17be9630225ae6b2e696850d92f140f29fd786648f9",
+      "bytes": 78454
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/pilot_attempts.json",
+      "sha256": "95416cc8b58ff6654188d14041290dda57faeaff9f1f310b5bf5e84b68bc1c8f",
+      "bytes": 188756
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/pilot_failure.json",
+      "sha256": "0f69cd986398212f284d42c6fccad538d540979edba015b3846e4d75fbcdd12b",
+      "bytes": 6329
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/pilot_independent_validation.json",
+      "sha256": "228ad15d74ac7e63310ef847717cfdf380be682165f8e692152e443c8b133b30",
+      "bytes": 4466
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/pilot_protocol.json",
+      "sha256": "36be1476a614434b2ad4d3a20db4f3250fc6732febe1a8115c78ff5dce2378aa",
+      "bytes": 1775
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/pilot_results.json",
+      "sha256": "db7de0c92c870c1c10bbc4b76e912bb9bda6ea71cc830867f7346a39c3d837d9",
+      "bytes": 79275
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/reference_pose_trajectory.json",
+      "sha256": "d359b1dc5a2162581daaf8d62baf454928c968c8acbd11319d6a158ad7334542",
+      "bytes": 2117211
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/regional_joint/coupled_initializer.json",
+      "sha256": "4b3c863b176dc8f996fc1eeca9b198c967a8daa3063c733522d7b66409b21402",
+      "bytes": 47124986
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/regional_joint/energy_seed_readiness.json",
+      "sha256": "4ac1c8cc8f10185a767896eb92cecbcc710f7bb9e34a951f6b5259f6fb717bfe",
+      "bytes": 2613882
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/regional_joint/full_coverage_initializer.json",
+      "sha256": "265ab6dd344cc2edb6f67ef1531d56a428148d0c8b52b78777055d5a3648e94b",
+      "bytes": 24742748
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/regional_joint/incumbent_e748e91827516b35_61848.json.gz",
+      "sha256": "a7a14d44d808402584708d38232ed66b70a606f90790d02bf8368d343e18d742",
+      "bytes": 1926990
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/regional_joint/trajectory_refinement.json",
+      "sha256": "28ed8a50ac3d477375b104baa92f7add24a8dc7250b704f9ec5e3e4adf189c9f",
+      "bytes": 48146282
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/resource_SOC0.2_sortie0.json",
+      "sha256": "fac7cf52a02326de57db093d156a866178e478d79acd43c8caa43c1a93152129",
+      "bytes": 60319
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/resource_SOC0.2_sortie0_pose.json",
+      "sha256": "35de3155550063d9ccdc6d90853f899421e43f9c1de626951f95ead5d69a0123",
+      "bytes": 2119909
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/resource_SOC0.2_sortie0_protocol.json",
+      "sha256": "eaed51f2b4653548a758aed96de636940bfac98fd24fe4c48ea0a1b5dedb305e",
+      "bytes": 2045
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/resource_SOC0.2_sortie0_validation.json",
+      "sha256": "29fd6d6be0b6cbcfa385f262b6b265bee0c6bcea9d81f1563dda1ad0583cd101",
+      "bytes": 6037
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/resource_SOC1.0_sortie0.json",
+      "sha256": "50acbb684471c6299166d20940acf81454b5331203d7bfe64d6b3d90ed01c735",
+      "bytes": 60318
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/resource_SOC1.0_sortie0_pose.json",
+      "sha256": "f20925e654d910068400e0972e47f4c8d70de145a36c4f6c7ef75ec275ee1801",
+      "bytes": 2119909
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/resource_SOC1.0_sortie0_protocol.json",
+      "sha256": "c33fcb1d02df02156dfcb262ecacda5dae6333842a2cb8b6b55c16d12fa850f4",
+      "bytes": 2045
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/resource_SOC1.0_sortie0_validation.json",
+      "sha256": "d72c521917cfba8acddceaaaa376ceacc4add8c2926a9d85f5fbb832b6aa5452",
+      "bytes": 6019
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/resource_trajectory_validation.json",
+      "sha256": "262434e2fed7104fe239a0a24d5fce204c21104f477017e638cd078ee5e9f016",
+      "bytes": 1226
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/target_surface_execution_overlay.json",
+      "sha256": "bd09f4804389b1a67fa5c26afff3fff67b7ba2894057e2235fb54534c952bfdc",
+      "bytes": 3760
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_build_SOC0.2_construction.json",
+      "sha256": "ae0f956378a7390fe7bdf73fcef59e7e8d187af86680f0ab6dbc516275e7cc93",
+      "bytes": 3459
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_build_SOC0.2_initializer_projection.json",
+      "sha256": "920f0878b45f2c830da8cc0cd9f30485324f1b79acad47fb72e29d46ae18a89e",
+      "bytes": 967
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_build_SOC0.2_initializer_resource_check.json",
+      "sha256": "2bdb3d0c76d355945e5c90b345b719e1adbea2f4b11064eb6ebd50a2865e9d63",
+      "bytes": 13448
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_build_SOC0.2_status.json",
+      "sha256": "2c1bb276b73150eaf6f9af2625a8ac22360ec72061725715e6e157fb6e11e810",
+      "bytes": 1053
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_build_SOC1_attempts.json",
+      "sha256": "f70dd5519a8b4845059db2070c53c4840284c49ab5d4ebb4b178c137d1b7e217",
+      "bytes": 17432
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_build_SOC1_construction.json",
+      "sha256": "e6dfe85d5c918806eb72191f1c37839bfcdc84098f603a624ac696e607184d68",
+      "bytes": 2761
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_build_SOC1_initializer_projection.json",
+      "sha256": "920f0878b45f2c830da8cc0cd9f30485324f1b79acad47fb72e29d46ae18a89e",
+      "bytes": 967
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_build_SOC1_initializer_resource_check.json",
+      "sha256": "5cb976b3488443a837bac6c82524261c06e674f95ccf14377a1bff7120a7023e",
+      "bytes": 12457
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_build_SOC1_status.json",
+      "sha256": "ded5c4a46a8559734bd906d3e92d4b2bab8c36ccd8384a81603c3de86640cf9f",
+      "bytes": 1124
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_implementation_code.json",
+      "sha256": "0fffdde6245776755f0410c4ff18ce5057388130c9f58bf2aabdc85a4281e99b",
+      "bytes": 26335766
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_model_closure_validation.json",
+      "sha256": "b831cf468e4b02f54d97ac03afddbb3b1eabcaf6dfa86f8474a6f27133fbab70",
+      "bytes": 8965
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_model_closure_validation_live.json",
+      "sha256": "652893ed93bb95aa3c3b61af732c7f15aa7611668ec5770f293e6dc626709ddf",
+      "bytes": 295
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_road_options.json",
+      "sha256": "ecb430dcb80181f3dab1f6395ed5d475bf768e5856576b1fc6af90cbccfb8bb8",
+      "bytes": 561191
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_SOC1_acceptance.json",
+      "sha256": "79416a6d8895165a1a1b5f9c648fa5a2c75a29da77a254e6caa6a66297608513",
+      "bytes": 317
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_SOC1_attempts.json",
+      "sha256": "2e984217de7255d4c9a1fe9508eb95d9eb82dec01cf43a2a52949de9217dd13c",
+      "bytes": 4405354
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_SOC1_construction.json",
+      "sha256": "3bf7efd0508de69d22b59a435239d28dec2beb4057cb695cc0cd5d80c6dc851a",
+      "bytes": 2804
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_SOC1_initializer_projection.json",
+      "sha256": "920f0878b45f2c830da8cc0cd9f30485324f1b79acad47fb72e29d46ae18a89e",
+      "bytes": 967
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_SOC1_resource_validation.json",
+      "sha256": "6c7a613292ece40fad87a4e3ae28166a01905232940cd91ae1953ea8916591ab",
+      "bytes": 10196
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_SOC1_result.json",
+      "sha256": "0c1ce2cbd1409e3219c0b749b014cabd1ffb95f6c85b7dce03a7c94bcb701e90",
+      "bytes": 1129
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_SOC1_solution_values.json",
+      "sha256": "0c085fd9966adfcb6f17b550deee684bcf3e1de8a6b849c7228b573303d7b68d",
+      "bytes": 1999908
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_SOC1_sortie0.json",
+      "sha256": "802d912acce29af02241e46fa1ea18741cdde5cef671ee0a50f4896d96d7ef1b",
+      "bytes": 74296
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_SOC1_sortie1.json",
+      "sha256": "8d3c271c28bfe6f808dc01eb356ce5e14abe2d59c6fcf36c22889b6cf37409b4",
+      "bytes": 84470
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_SOC1_status.json",
+      "sha256": "04d80ab5f8a766129de0fc1f8bf7fd14f416774b5941f041b136df4e9edfd63d",
+      "bytes": 1243
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_SOC1_validation.json",
+      "sha256": "f7aced7f8570b313a65093f6963a8542b36ae72fb0ff4789a518be926ab70f32",
+      "bytes": 8889
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_SOC1_validation_attempts.json",
+      "sha256": "fff89942cd550510cbeb4fad84ca333ec6da3059bb37e774902053d31460e0b5",
+      "bytes": 16958
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_SOC1_validation_live.json",
+      "sha256": "5e60fe7e57538178eb4b2fab7dd2ad387ccca2d17d4ccaa7501b41e6b3e9ae07",
+      "bytes": 295
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/unified_SOC1_warm_values.json",
+      "sha256": "509e65a9e8db31c372fd87be14448f3fdd49a24cb7afca1eca43661e44370c3d",
+      "bytes": 2872767
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/rommerskirchen.json",
+      "sha256": "d0c668d7cfeea2e7973e6ab387be38e499aea4e935a6530dfaf8900438b8520d",
+      "bytes": 23320049
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/terrain.json",
+      "sha256": "f554800062a73a7a522f25f1b8609389a18e19f77d46a131212e2ccc0e2901f8",
+      "bytes": 262569
+    }
+  ],
+  "archive_sha256": "7e0cc85b50af6931013245bcd112e85f10f92663957c13061c1f2b6ff5e5960d",
+  "archive_bytes": 17005191,
+  "scope": "Bound geography; retained pilot forecast; original DEM; saved component results and negative cases; selected regional witnesses/initializers; historical source archive. Not a new run or independent physics validation.",
+  "excluded": "Expanded incidence dumps are omitted; generated from model/implementation as needed. Live progress logs not duplicated."
+}

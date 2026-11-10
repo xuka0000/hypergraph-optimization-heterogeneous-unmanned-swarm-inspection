@@ -1,0 +1,28 @@
+\section{重规划触发、计算延迟与执行评价}
+\noindent 本参考执行配置每300s复核一次；收到新预报、拍摄失败、道路关闭、资源状态变化或安全门变化时立即触发。实际电量相对当前预测不足$0.02\times548=10.96$Wh也触发。300s与2\%是可更改的仿真配置，不是实测最优阈值。
+\begin{align}
+ \tau_{k+1}&=\min\{\tau_k+300,\ \text{下一已发生触发事件时刻}\},\\
+ \sigma_k&=\tau_k+d_k^{solve}+d_k^{comm},\label{eng:eq:takeover}\\
+ s_{new}(\sigma_k)&=\widehat s(\sigma_k),\qquad
+ \operatorname{IDs}_{new}(\sigma_k)=\operatorname{IDs}_{actual}(\sigma_k),\\
+ \widehat s(t+\Delta t)&=\Phi(\widehat s(t),U^{issued},W^{real},P^{real},\Delta t),
+ \label{eng:eq:execution}\\
+ A_i(t^+)&=1\quad\text{仅当要求$i$的图像验收证据已返回且通过}.
+ \label{eng:eq:taskhistory}
+\end{align}
+\noindent 同一事件ID只处理一次；求解中有新信息时记录并更新待接管问题，不重复启动同一作业。$\Phi$为独立仿真或实际执行器，不使用优化器自行声明的$a_i$代替图像验收。
+
+\noindent 计算期间环境时钟、电量和车辆运动继续。接管时须核对当前位置、速度、姿态、电量、资源身份和已执行记录；不衔接的解重算，不下发过期轨迹。没有及时新解时，只允许继续经复核有效的旧计划尾段或可验证的恢复动作；没有免费悬停或冻结时间。
+\begin{center}\small
+\begin{tabular}{p{.28\linewidth}p{.62\linewidth}}\toprule
+评价量 & 精确定义\\\midrule
+实际完整塔数 & 结束时全部9项有通过验收记录的塔数\\
+任务数与失败 & 2133分母固定；计划、执行、验收分列，未完成原因留存\\
+返库时间 & 从$t_0$到全部资源实际回收返库；未返库为未完成，不伪填0\\
+能量 & 实际机载Wh、电网输入Wh、8对电池终态与守恒残差\\
+安全与质量 & 最大违反量、发生时间/资源、区间检查未决项\\
+求解过程 & 各优先级上下界、可行值、节点数、内存与真实累计秒数\\
+重规划代价 & 次数、计算/通信延迟、废弃旧解与接管成功率\\\bottomrule
+\end{tabular}\end{center}
+\clearpage
+

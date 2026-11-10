@@ -1,0 +1,269 @@
+{
+  "observed_at": "2026-11-10T15:37:57.069571+08:00",
+  "task": "inspection_integrated_model_refinement",
+  "scope": "source identity, formula mapping and analytic interface checks only; no runtime integration/full physics validation",
+  "checks": [
+    {
+      "id": "all_constraint_labels_bound",
+      "passed": true,
+      "detail": {
+        "missing": [],
+        "families": 37,
+        "labels": 84
+      }
+    },
+    {
+      "id": "no_duplicate_equation_labels",
+      "passed": true,
+      "detail": 84
+    },
+    {
+      "id": "variable_block_dependencies_resolve",
+      "passed": false,
+      "detail": {
+        "undefined": {
+          "battery_conservation": [
+            "pack_energy"
+          ],
+          "planned_recovery_reserve": [
+            "pack_energy"
+          ],
+          "initial_and_terminal": [
+            "pack_energy"
+          ],
+          "execution_takeover": [
+            "pack_energy"
+          ]
+        },
+        "missing": [
+          "rigid_body_rotation",
+          "tracking_execution",
+          "electrothermal_battery",
+          "weather_joint_scenarios",
+          "temporal_energy",
+          "state_handover",
+          "platform_model_binding"
+        ],
+        "scope": "block dependency registration, not scalar hypergraph completeness"
+      }
+    },
+    {
+      "id": "unique_variable_block_ids",
+      "passed": true,
+      "detail": 44
+    },
+    {
+      "id": "mathematical_source_identity",
+      "passed": true,
+      "detail": "8"
+    },
+    {
+      "id": "source_cmu_power",
+      "passed": true,
+      "detail": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/input_audit.json"
+    },
+    {
+      "id": "source_cmu_power_results",
+      "passed": true,
+      "detail": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/results.json"
+    },
+    {
+      "id": "source_m100_calibrated_power",
+      "passed": true,
+      "detail": "总结/03_实验数据/电池能耗公开机型验证/measured_calibration/power_profile.json"
+    },
+    {
+      "id": "source_m100_calibration_validation",
+      "passed": true,
+      "detail": "总结/03_实验数据/电池能耗公开机型验证/measured_calibration/independent_validation.json"
+    },
+    {
+      "id": "source_weather_conversion",
+      "passed": true,
+      "detail": "Agent/Publication/weather_factors.py"
+    },
+    {
+      "id": "source_weather_execution",
+      "passed": true,
+      "detail": "Agent/Publication/weather_mission_adapter.py"
+    },
+    {
+      "id": "source_weather_energy_coupling",
+      "passed": true,
+      "detail": "总结/03_实验数据/天气因素建模/航段能耗联算/protocol.json"
+    },
+    {
+      "id": "source_weather_energy_results",
+      "passed": true,
+      "detail": "总结/03_实验数据/天气因素建模/航段能耗联算/results.json"
+    },
+    {
+      "id": "source_replanning_interface",
+      "passed": true,
+      "detail": "Agent/Publication/engineering_replanning.py"
+    },
+    {
+      "id": "original_author_code_and_weights_unchanged",
+      "passed": true,
+      "detail": {
+        "assets": 18,
+        "mismatches": []
+      }
+    },
+    {
+      "id": "source_scenes_preserved",
+      "passed": true,
+      "detail": [
+        {
+          "scene": "ubeda_osm_060",
+          "unchanged": true
+        },
+        {
+          "scene": "ubeda_osm_100",
+          "unchanged": true
+        },
+        {
+          "scene": "ubeda_osm_150",
+          "unchanged": true
+        },
+        {
+          "scene": "rommerskirchen",
+          "unchanged": true
+        },
+        {
+          "scene": "brauweiler",
+          "unchanged": true
+        },
+        {
+          "scene": "villevaude",
+          "unchanged": true
+        }
+      ]
+    },
+    {
+      "id": "full_geographic_scope_preserved",
+      "passed": true,
+      "detail": {
+        "tasks": 2133,
+        "tower_count": 237,
+        "stops": 104
+      }
+    },
+    {
+      "id": "ENU_NWU_is_proper_rotation",
+      "passed": true,
+      "detail": [
+        [
+          0.0,
+          1.0,
+          0.0
+        ],
+        [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          1.0
+        ]
+      ]
+    },
+    {
+      "id": "heading_features_frame_invariant",
+      "passed": true,
+      "detail": {
+        "max_error": 4.440892098500626e-16
+      }
+    },
+    {
+      "id": "battery_terminal_power_identity",
+      "passed": true,
+      "detail": {
+        "current_A": 21.103711419489706,
+        "voltage_V": 22.744814429025517,
+        "power_W": 480.00000000000006
+      }
+    },
+    {
+      "id": "SOC_coulomb_units",
+      "passed": true,
+      "detail": {
+        "delta_SOC": -0.03517285236581618
+      }
+    },
+    {
+      "id": "polarization_rest_cooling_not_free_reset",
+      "passed": true,
+      "detail": {
+        "heat_W": 0.4000000000000001,
+        "dpolarization_V_per_s": -0.02
+      }
+    },
+    {
+      "id": "charging_efficiency_once",
+      "passed": true,
+      "detail": {
+        "grid_Wh": 16.666666666666668,
+        "terminal_in_Wh": 15.0
+      }
+    },
+    {
+      "id": "rigid_body_hover_equilibrium",
+      "passed": true,
+      "detail": {
+        "total_thrust_N": 36.3951,
+        "rotor_count": 4
+      }
+    },
+    {
+      "id": "20_sample_causal_boundary",
+      "passed": true,
+      "detail": {
+        "history_shape": [
+          20,
+          5
+        ],
+        "future_samples_read": 0
+      }
+    },
+    {
+      "id": "no_cross_platform_calibration",
+      "passed": true,
+      "detail": "M100 cannot become calibrated M300"
+    },
+    {
+      "id": "actual_old_executor_rejects_complete_label",
+      "passed": true,
+      "detail": {
+        "exit_code": 2,
+        "stdout": "{\"status\": \"integrated_definition_not_yet_executable\", \"scope\": {\"allowed\": false, \"scope\": \"current_integrated_model\", \"revision\": \"8\", \"complete_integrated_model\": false, \"closed_loop_verified\": false, \"missing\": [\"complete_numeric_instance_bound\", \"runtime_parity_verified\"], \"missing_parameter_groups\": [\"target_platform_power_and_startup_domain\", \"rotor_inertia_allocation_lag_limits\", \"controller_and_tracking_calibration\", \"battery_electrical_thermal_and_charger_maps\", \"forecast_issue_receipt_and_residual_blocks\", \"near_ground_vertical_wind\", \"visibility_and_real_image_acceptance\"], \"reason\": \"The retained regional executor is the earlier deterministic development model; do not label it as the refined integrated model.\"}}",
+        "stderr": ""
+      }
+    },
+    {
+      "id": "guard_did_not_replace_actual_run_record",
+      "passed": true,
+      "detail": "a8d66898f123a47d66936b2daa7c6c5e7023db30069ea17fe4cd2a04266c725d"
+    },
+    {
+      "id": "explicit_old_diagnostic_identity",
+      "passed": true,
+      "detail": "checked identity only; did not launch old diagnostic"
+    },
+    {
+      "id": "edited_python_syntax",
+      "passed": true,
+      "detail": "AST parsing; no bytecode or solver build"
+    }
+  ],
+  "passed": 29,
+  "total": 30,
+  "all_passed": false,
+  "definition_sha256": "95842487613a3bd8596b2c022d7310cccd97a9428d129d8813ec3f226077f440",
+  "new_optimization_runs": 0,
+  "complete_numeric_instance_bound": false,
+  "full_joint_solver_verified": false,
+  "closed_loop_verified": false
+}

@@ -1,0 +1,27 @@
+\section{统一目标、信息集与不确定性}
+\noindent $T=t_0+28800$为固定班次终点。$\Omega_k$只含在$\tau_k$已得到的数据和已验证误差情形；$X^\omega$包含上表全部决策。没有可信误差模型时采用一个预报情形，不自行生成概率或M300误差分布。
+\begin{align}
+ \operatorname{lexmin}_{\{X^\omega\},Z_1,Z_2,Z_3}\quad &(Z_1,Z_2,Z_3),\label{eng:eq:objective}\\
+ J_1^\omega&=\sum_{g\in\mathcal G}w_g(1-z_g^\omega),\quad w_g=1,\\
+ J_2^\omega&=C^\omega-t_0,\\
+ J_3^\omega&=\sum_{\ell:b_\ell=1}\int_{\max(s_\ell,\tau_k)}^{e_\ell}
+                       P_\ell^\omega(t)\,dt/3600,\\
+ Z_j&\ge J_j^\omega\quad(\omega\in\Omega_k,\ j=1,2,3),\\
+ X^\omega&\in\mathcal F_k^\omega(\widehat s_k,\mathcal I_k,\mathcal A_k).
+ \label{eng:eq:rollingjoint}
+\end{align}
+\noindent $\mathcal F_k^\omega$是本稿全部约束的交集，不分解为先选车辆再定航迹。$J_3$只计机载用电；另报充电电网输入，不含车辆牵引能耗。已发生Wh是常数，不重复优化。三个词典序计算轮次均保留同一组联合变量；不等于三个物理子问题。
+
+\noindent 设$\mathcal Y_t^\omega$为截至$t$已接收的状态、预报和验收历史，$U^\omega(t)$包含运动/充电控制以及在$t$作出的启用、分配和事件决定。要求
+\begin{align}
+ \mathcal Y_t^\omega=\mathcal Y_t^{\omega'}&\Rightarrow
+ U^\omega(t)=U^{\omega'}(t),\label{eng:eq:nonanticipativity}\\
+ t^{issue}(r),t^{receive}(r)&\le\tau_k,\qquad
+ [\tau_k,T]\subseteq\operatorname{validity}(r).
+ \label{eng:eq:forecastcausality}
+\end{align}
+\noindent 第一式不要求不同扰动下的状态相同。若使用场景树，分支时刻须有相应可观测信息；不能将未知未来风速作为当前分配依据。ERA5仅用于事后执行回放；预报初始化时间不自动等于实际发布时间。[R7,R8]
+
+\noindent 安全、图像质量、能源下限和会合都是硬约束。若只能完成部分塔，$z_g$如实反映；不设用户未授权的胜出目标或完成率门槛。
+\clearpage
+

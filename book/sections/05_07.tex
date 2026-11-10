@@ -1,0 +1,271 @@
+\section{初态、终态和执行中状态接续}
+\label{sec:05_07}
+
+联合模型中的一条可行轨迹，必须从同一个真实执行状态出发，并在规定班次内完成资源回收。当前位置、电量和正在占用的设备不能在重新求解时恢复为首次出发状态；已经落地的飞机也不能因为不再属于未来飞行集合而丢失剩余处理时间。本节将这些条件写成规划区间两端的约束，并说明当前事件模型能够接续哪些执行状态。
+
+沿用班次起点$t_0$、固定终点$T$和第$k$次规划边界$\tau_k$，其中$k\in\mathbb Z_{\ge0}$为规划次数索引，所有时刻均以$\mathrm s$计量，且
+\begin{equation}
+ t_0\le\tau_k\le T,\qquad \tau_0=t_0.
+ \label{s0507:planning_clock}
+\end{equation}
+在第\ref{sec:04_03}节采用的共同时间坐标中，$t_0=0$。重新规划只改变待决策区间的左端，不改变班次起点和终点。以下约束针对一个给定的环境情形书写；采用多个情形时，各情形均须继承同一份当前可得执行记录，不能以不同的初始资源身份解释同一段已经发生的过程。
+
+\subsection{当前状态的组成与固定方式}
+
+以$s^{\mathrm{state}}(t)$表示连续状态、离散模式及执行记录共同组成的状态对象，上标用于区别航次起飞时刻$s_\ell$。它不是一个各分量具有相同单位的实向量，而是若干物理状态空间和记录空间的乘积。令$\widehat s_k$为截至$\tau_k$已经获得并与该时刻对应的状态输入，则规划边界条件为
+\begin{equation}
+ s^{\mathrm{state}}(\tau_k)=\widehat s_k.
+ \label{s0507:state_boundary}
+\end{equation}
+该等式表示逐对象、逐分量相等，不允许用车队平均位置、平均电量或可用设备总数替代具有身份的状态。记录时间早于$\tau_k$的测量不能未经状态传播就直接充当$\widehat s_k$；也不能使用后来取得的信息回填当时尚不可得的状态。
+
+车辆$v\in\mathcal V$的连续边界状态包括水平参考位置$\mathbf q_v\in\mathbb R^2$、连续展开航向$\theta_v\in\mathbb R$、速度$V_v\in\mathbb R_{\ge0}$和转向角$\delta_v\in\mathbb R$，单位依次为$\mathrm m$、$\mathrm{rad}$、$\mathrm{m/s}$和$\mathrm{rad}$。这些量满足
+\begin{equation}
+ \begin{aligned}
+ \mathbf q_v(\tau_k)&=\widehat{\mathbf q}_{vk},&
+ \theta_v(\tau_k)&=\widehat\theta_{vk},\\
+ V_v(\tau_k)&=\widehat V_{vk},&
+ \delta_v(\tau_k)&=\widehat\delta_{vk},
+ \qquad v\in\mathcal V.
+ \end{aligned}
+ \label{s0507:vehicle_boundary}
+\end{equation}
+带帽量是同单位的给定输入。道路或停车模式$\mu_v(\tau_k)$也取实际记录值，并保留所在道路、路口或停靠点的身份。若车辆位于道路中部，其道路进度须与当前位置一致；不能只固定二维位置，却把道路模式切换为另一条方向不兼容的道路。各连续状态的取值还须满足第\ref{sec:04_07}节的运动与模式边界。
+
+对于空中航次$\ell\in\mathcal L_k^{\mathrm{air}}$，执行飞机和电池已经确定，飞行状态必须从当前值开始：
+\begin{equation}
+ \begin{aligned}
+ \mathbf p_\ell(\tau_k)&=\widehat{\mathbf p}_{\ell k},&
+ \mathbf v_\ell(\tau_k)&=\widehat{\mathbf v}_{\ell k},\\
+ \mathbf a_\ell(\tau_k)&=\widehat{\mathbf a}_{\ell k},&
+ R_\ell(\tau_k)&=\widehat R_{\ell k},\\
+ \gamma_\ell(\tau_k)&=\widehat\gamma_{\ell k},&
+ f_\ell(\tau_k)&=\widehat f_{\ell k},
+ \qquad\ell\in\mathcal L_k^{\mathrm{air}}.
+ \end{aligned}
+ \label{s0507:airborne_boundary}
+\end{equation}
+其中$\mathbf p_\ell,\mathbf v_\ell,\mathbf a_\ell\in\mathbb R^3$的单位分别为$\mathrm m$、$\mathrm{m/s}$和$\mathrm{m/s^2}$；$R_\ell\in\mathrm{SO}(3)$为无量纲旋转矩阵；$\gamma_\ell\in\mathbb R^2$为云台角，单位为$\mathrm{rad}$；$f_\ell>0$为焦距，单位为$\mathrm{mm}$。带帽量具有相同的域和单位。角速度与旋翼推力还须满足$\boldsymbol\omega_\ell(\tau_k)=\widehat{\boldsymbol\omega}_{\ell k}$、$\mathbf f_\ell^{rot}(\tau_k)=\widehat{\mathbf f}_{\ell k}^{rot}$；二者分别以rad/s和N计量。加速度条件适用于飞行内部的接续，防止通过重新求解绕过加加速度限制。若边界恰为起落接触事件，则依第\ref{sec:05_04}节区分接触两侧的受力模式，不将加速度跨接触强制相等。
+
+云台和镜头的状态还覆盖未飞行飞机。沿用第\ref{sec:05_04}节的全时段函数$\Gamma_u(t)$与$F_u(t)$，要求
+\begin{equation}
+ \begin{aligned}
+ \Gamma_u(\tau_k)&=\widehat\Gamma_{uk},\qquad
+ \dot\Gamma_u(\tau_k)=\widehat{\dot\Gamma}_{uk},\\
+ F_u(\tau_k)&=\widehat F_{uk},
+ \qquad u\in\mathcal U.
+ \end{aligned}
+ \label{s0507:camera_boundary}
+\end{equation}
+$\Gamma_u\in\mathbb R^2$、$\dot\Gamma_u\in\mathbb R^2$和$F_u\in\mathbb R_{>0}$的单位分别为$\mathrm{rad}$、$\mathrm{rad/s}$和$\mathrm{mm}$。保留云台角速度是因为其变化受角加速度界约束；只保留角度会允许在规划边界无时间代价地改变角速度。其他在前述动力学中作为连续状态处理的量，也逐项纳入式\eqref{s0507:state_boundary}，不能仅因未出现在简写元组中而重置。对空中飞机，式\eqref{s0504:sortie_camera_restriction}继续保证航次相机状态与对应飞机的全时段状态相同。
+
+每对电池$p\in\mathcal B$保留SOC、极化电压、温度、累计能量、高温保护位$H_p$、承载位置及占用模式。为简写其模式，按第\ref{sec:05_05}节定义无量纲元组
+\begin{equation}
+ \mathbf m_p(t)=
+ \bigl(B_p^{\mathrm{idle}}(t),c_p(t),
+ B_p^{\mathrm{pre}}(t),B_p^{\mathrm{air}}(t),
+ B_p^{\mathrm{post}}(t),B_p^{\mathrm{cool}}(t)\bigr).
+ \label{s0507:battery_mode_tuple}
+\end{equation}
+在满足式\eqref{s0505:unique_mode}的状态中，该元组属于$\{0,1\}^6$且分量和为一。边界条件为
+\begin{equation}
+ \begin{aligned}
+ \mathbf x_p^b(\tau_k)&=\widehat{\mathbf x}_{pk}^b,\\
+ \operatorname{loc}_p(\tau_k)&=\widehat{\operatorname{loc}}_{pk},\qquad
+ \mathbf m_p(\tau_k)=\widehat{\mathbf m}_{pk},
+ \qquad p\in\mathcal B.
+ \end{aligned}
+ \label{s0507:battery_boundary}
+\end{equation}
+物理状态分量的单位依次为无量纲、V和℃；累计能量以Wh计量。位置记录采用式\eqref{s0505:location}的带承载对象标记的形式。飞行中的电池必须关联当前飞机和航次，车载电池必须关联其固定所属车辆。模式边界按同一事件处理约定取值；恰在$\tau_k$结束的占用依半开区间释放，不能一处按事件前状态计数、另一处按事件后状态分配。若输入记录本身出现重复占用或身份不相容，应保留并处理该冲突，而非更换电池编号或删除记录使等式成立。
+
+首次规划是上述接续定义的一个特例。车辆采用源记录中的车库位置和航向，速度、转向角为零；飞机与电池均由各自所属车辆承载；相机采用源初值；尚无本班次已验收任务，也没有准备、回收或冷却的历史剩余操作。参考初态采用满电库存，即
+\begin{equation}
+ \widehat{\mathbf x}_{p0}^b=(1,0,25)^T,\qquad p\in\mathcal B.
+ \label{s0507:first_energy}
+\end{equation}
+初态依次为SOC 1、极化电压0 V和温度25℃；这是固定参考初态。执行中的最低SOC为0.2，不能用最低比例替代本次库存。滚动接续使用式\eqref{s0507:battery_boundary}中的当前物理状态，不再施加首次满电条件。
+
+\subsection{验收历史与观测服务的接续边界}
+
+规划中的任务选择不等于执行后的图像验收。对于任务$i\in\mathcal I$，以$A_i(\tau_k)\in\{0,1\}$表示在当前信息边界已经确认的验收状态。令$\mathcal Q_i^{\mathrm{acc}}$为任务$i$的验收记录集合，记录索引$r$无量纲；$\zeta_r\in\{0,1\}$表示是否通过，$t_r^{\mathrm{acc}}$和$t_r^{\mathrm{recv}}$分别为验收事件时刻与结果接收时刻，单位均为$\mathrm s$。只有记录对应的图像证据可追溯时，才可用于定义
+\begin{equation}
+ A_i(\tau_k)=
+ \mathbb I\!\left\{
+ \exists r\in\mathcal Q_i^{\mathrm{acc}}:
+ \zeta_r=1,\quad
+ t_r^{\mathrm{acc}}\le\tau_k,\quad
+ t_r^{\mathrm{recv}}\le\tau_k
+ \right\},\qquad i\in\mathcal I.
+ \label{s0507:accepted_history}
+\end{equation}
+$\mathbb I\{\cdot\}$为命题成立时取一、否则取零的无量纲指标。与第\ref{sec:05_01}节的记号对应，$A_i^k:=A_i(\tau_k)$。已验收任务通过第\ref{sec:05_01}节的完成状态进入整塔判断，并从需要再次安排的要求中移除。原计划选择了任务、飞机到达了目标附近或曝光已经发生，均不能单独令$A_i=1$。
+
+这种区分还揭示了事件式服务模型的作用域。第\ref{sec:05_02}节对每个本次计划完成的任务要求服务开始时刻不早于$\tau_k$，并安排完整的最低服务时长。因此，它直接适用于首次规划、当前没有正在执行的观测服务且没有需保留的待验收拍摄记录的接续，或明确决定重新执行完整观测的情况。若$\tau_k$切入一次已经承诺的观测服务，该任务的真实开始时刻位于过去，不能继续把它当成从$\tau_k$以后开始的新完整服务。
+
+为说明需要保存的信息，设$\mathcal I_k^{\mathrm{serv}}$为当前正在执行观测服务的任务集合。对其中每个$i$，至少需要保留原服务开始时刻$\widehat t_i^{\mathrm{beg}}$、原承诺结束时刻$\widehat t_i^{\mathrm{end}}$、原曝光时间集合$\widehat{\mathcal E}_i$以及执行飞机、航次和电池身份。这些时刻和集合中的时间坐标均以$\mathrm s$计量，并满足
+\begin{equation}
+ \widehat t_i^{\mathrm{beg}}\le\tau_k
+ <\widehat t_i^{\mathrm{end}},\qquad
+ \widehat{\mathcal E}_i\subseteq
+ [\widehat t_i^{\mathrm{beg}},\widehat t_i^{\mathrm{end}}],
+ \qquad i\in\mathcal I_k^{\mathrm{serv}}.
+ \label{s0507:ongoing_service_record}
+\end{equation}
+服务的已执行前缀和待执行后缀分别为
+\begin{align}
+ \mathcal T_{ik}^{\mathrm{past}}
+ &=[\widehat t_i^{\mathrm{beg}},\tau_k),
+ \label{s0507:service_prefix}\\
+ \mathcal T_{ik}^{\mathrm{rem}}
+ &=[\tau_k,\widehat t_i^{\mathrm{end}}),
+ \qquad i\in\mathcal I_k^{\mathrm{serv}}.
+ \label{s0507:service_remainder}
+\end{align}
+这两个集合只是原服务在当前边界两侧的限制，不是两次新的观测。原曝光集合也必须按同一边界分割；若曝光横跨边界，曝光前缀所对应的轨迹、相机状态和图像记录不能由新优化变量改写。剩余服务时长虽可写为$\widehat t_i^{\mathrm{end}}-\tau_k$，但仅用这个差值替换完整服务时长，并不足以保证原稳定阶段、曝光区间和图像质量条件仍得到满足。
+
+另令$\mathcal I_k^{\mathrm{pend}}$表示拍摄服务已经结束、但有效验收结论尚未返回的任务集合。其必要状态条件为
+\begin{equation}
+ A_i(\tau_k)=0,\qquad
+ \widehat t_i^{\mathrm{end}}\le\tau_k,
+ \qquad i\in\mathcal I_k^{\mathrm{pend}}.
+ \label{s0507:pending_acceptance}
+\end{equation}
+该集合由已发生拍摄记录确定，不由优化器通过选择任务变量生成。它应保留图像身份、曝光记录、执行资源身份及待返回结果的关联。结果后来通过时才能更新$A_i$；结果失败时应保留失败记录，并在需要补拍时安排新的完整服务。不能为省去等待状态而提前验收，也不能不加说明地删除原拍摄记录、把同一任务替换为一次新的完整观测。
+
+上述记录进入联合模型时，采用如下确定的接续规则。将尚未验收任务分为正在服务集合$\mathcal I_k^{serv}$与可新安排集合$\mathcal I_k^{new}$，二者不交。待验收记录保留图像身份，但在结果收到之前不提供确定完成信用；如安排补拍，必须使用不同的拍摄尝试编号。该策略可能产生重复拍摄，代价由完成时间和能耗记录，不以提前读取验收结果消除它。
+
+对$i\in\mathcal I_k^{serv}$，不再施加新服务的$t_i\ge\tau_k$，而施加
+\begin{align}
+ t_i&=\widehat t_i^{beg},\quad d_i=\widehat t_i^{end}-\widehat t_i^{beg},\\
+ x_{i\widehat\ell_i}&=1,\quad y_{\widehat u_i\widehat\ell_i}=1,
+ \quad\beta_{\widehat p_i\widehat\ell_i}=1,\\
+ d_{ik}^{rem}&=\widehat t_i^{end}-\tau_k,\qquad
+ \mathcal C_{ik}^{rem}=\widehat{\mathcal E}_i\cap[\tau_k,\widehat t_i^{end}].
+ \label{s0507:service_carryover}
+\end{align}
+这里$\widehat\ell_i,\widehat u_i,\widehat p_i$分别是已执行航次、飞机和电池身份。服务几何施加于剩余区间，曝光条件施加于剩余曝光；跨边界曝光则把已记录轨迹前缀与新后缀连接后，对整个原曝光区间检查。历史前缀不可重新优化。
+
+在当前航次的访问流中，以$L_\ell$表示真实当前状态的虚拟源点。若该航次正在执行服务$i$，固定
+\begin{equation}
+ h_{L_\ell i\ell}=1,\quad
+ h_{ji\ell}=0\ (j\ne L_\ell),\quad
+ \sum_j h_{ij\ell}=1.
+ \label{s0507:ongoing_flow}
+\end{equation}
+该弧按式\eqref{s0502:remaining_event_clock}有$T_{L_\ell i\ell}=0$。源点到$i$表示接续当前服务，不增加新的空间转移或最低服务时长；其后继转移必须在$\widehat t_i^{end}$以后开始。已经飞完的访问前缀从待优化访问图中移除，但仍留在执行记录中。对新服务继续使用第\ref{sec:05_02}节的完整时长及访问约束。每个任务在本次未来访问图中至多一个服务节点。
+
+一张图像只有在验收事件及接收事件均发生后才更新$A_i$。在待验收期间，即使实际仿真已生成未来判定，也不把该判定放入规划输入。失败尝试保留原编号；补拍产生新编号并重新满足全部服务及成像条件。
+
+\textbf{数值算例。} 取服务$[10,30)$ s，曝光$[11,11.001]$ s，验收事件30 s、接收35 s。重规划切入11.0005 s时，已执行曝光为$[11,11.0005]$，剩余曝光为$[11.0005,11.001]$，剩余服务18.9995 s。30 s时资源退出服务而任务仍待验收；35 s收到通过记录后才计入完成。若收到失败记录，该任务重新进入新服务集合。18项事件算例检验上述切分、身份保持、错误重置、同机服务重叠和结果延迟；它们验证接续数据与访问流边界，物理后缀仍须由联合轨迹验收。
+
+\subsection{准备、回收与冷却的剩余时间}
+
+资源服务的接续必须沿用第\ref{sec:05_04}节和第\ref{sec:05_05}节已经区分的对象。准备中航次属于$\mathcal L_k^{\mathrm{pre}}\subseteq\mathcal L_k^{\mathrm{new}}$，空中航次属于$\mathcal L_k^{\mathrm{air}}$，已经落地的剩余处理和冷却分别属于$\mathcal R_k^{\mathrm{post}}$与$\mathcal R_k^{\mathrm{cool}}$。后两者构成历史电池记录集合$\mathcal R_k^{\mathrm{bat}}$，并与$\mathcal L_k$不交。
+
+对准备中航次，实际准备起点$\widehat a_\ell^{\mathrm{pre}}$已知。由式\eqref{s0504:prepared_slot_binding}，其剩余准备时间为
+\begin{equation}
+ h_{\ell k}^{\mathrm{pre,rem}}
+ =s_\ell-\tau_k
+ =\widehat a_\ell^{\mathrm{pre}}+h^{\mathrm{pre}}-\tau_k>0,
+ \qquad\ell\in\mathcal L_k^{\mathrm{pre}}.
+ \label{s0507:remaining_preparation}
+\end{equation}
+各项单位均为$\mathrm s$。同一次准备仍绑定原有新槽、飞机、电池和停靠点，不重新创建航次，也不重新获得完整的$h^{\mathrm{pre}}$。完整时间链式\eqref{s0504:complete_time_order}只施加于尚未开始准备的新槽；否则其中准备开始时刻不早于$\tau_k$的条件会与已经开始准备的事实冲突。
+
+历史记录$\rho\in\mathcal R_k^{\mathrm{bat}}$沿用实际落地时刻$\widehat e_\rho$、处理结束时刻$\widehat d_\rho$和冷却结束时刻$f_\rho$。其中
+\begin{align}
+ h_{\rho k}^{\mathrm{post,rem}}
+ &=\widehat d_\rho-\tau_k>0,
+ &&\rho\in\mathcal R_k^{\mathrm{post}},
+ \label{s0507:remaining_processing}\\
+ h_{\rho k}^{\mathrm{cool,rem}}
+ &=f_\rho-\tau_k>0,
+ &&\rho\in\mathcal R_k^{\mathrm{cool}}.
+ \label{s0507:remaining_cooling}
+\end{align}
+这两个量以$\mathrm s$计量；剩余处理时间由已发生时刻确定，未来冷却释放$f_\rho$由当前温度及后续天气积分确定。对于仍在处理的历史电池，处理结束后还须按原记录继续冷却，不能在$\widehat d_\rho$处提前释放。相关剩余占用已由式\eqref{s0505:historical_post_count}和式\eqref{s0505:historical_cool_count}保留；飞机、平台、人员及实际回收载车的驻留继续满足第\ref{sec:05_04}节的历史处理条件。
+
+上述历史操作不再产生新的飞行变量，也不重复扣减过去飞行电量。反之，准备中和仍在空中的航次已经进入本次航次占用求和，不能再加入历史处理函数。资源容量左侧必须由互不重复的实际剩余占用与未来安排构成，才既不漏计也不重复计数。
+
+\subsection{已发承诺与安全事件下的恢复}
+
+当前状态固定只规定边界瞬间；已经下发且仍有效的动作还可能约束边界以后一段时间。令$U(t)$表示运动控制、充电控制以及启用、分配和事件决定的集合，其各分量采用相应物理量的域与单位。令$\mathcal J_k^{\mathrm{commit}}$为已承诺分量的索引集合，对$j\in\mathcal J_k^{\mathrm{commit}}$，以$\mathcal T_{jk}^{\mathrm{commit}}\subseteq[\tau_k,T]$表示该分量仍有效的承诺时间集合，并以$\widehat U_{jk}^{\mathrm{commit}}(t)$表示已发内容。正常接续要求
+\begin{equation}
+ U_j(t)=\widehat U_{jk}^{\mathrm{commit}}(t),
+ \qquad j\in\mathcal J_k^{\mathrm{commit}},\quad
+ t\in\mathcal T_{jk}^{\mathrm{commit}}.
+ \label{s0507:committed_controls}
+\end{equation}
+$j$是无量纲控制或决定分量索引，等式两侧逐分量具有相同单位；$\mathcal T_{jk}^{\mathrm{commit}}$中的时刻以$\mathrm s$计量。该式只固定已承诺的对象和有效区间，不将整个旧计划一律冻结，也不允许把已承诺的飞机或电池替换成另一身份。
+
+如果新安全信息使承诺动作与硬安全条件相冲突，则保持全部旧承诺的正常接续问题可能无可行解。此时需要区分两件事：已经发生的轨迹、耗电和资源占用仍是不可改写的历史；尚未执行且已失效的命令，则必须通过实际允许的撤销、替换或恢复过程处理。恢复问题仍从真实状态出发，并满足恢复动作适用的动力学、资源和安全条件，不能同时保留一个违反新安全要求的硬承诺，又声称新旧要求共同满足。
+
+当前记录没有给出可验证恢复动作时，应记录恢复失败或尚未取得可验证恢复方案，不能将其报告为成功接续；求解失败本身也不证明所有物理恢复动作均不存在。飞机在等待新指令期间仍会运动和耗电，车辆仍受道路条件限制，不能用冻结时钟或零耗能悬停代替这段实际执行过程。计算与通信期间如何更新接管状态，在第\ref{sec:05_09}节继续讨论。
+
+\subsection{全队完成时刻与班次终态}
+
+令$C\in\mathbb R$为本次联合方案的全队完成时刻，单位为$\mathrm s$。它既要晚于所有待完成航次的处理与冷却，也要晚于当前已落地历史操作的释放时间。要求
+\begin{align}
+ \tau_k\le C&\le T,
+ \label{s0507:completion_domain}\\
+ t_{p\ell}^{ready}
+ &\le C,
+ &&\ell\in\mathcal L_k^{\mathrm{act}},\ p:\beta_{p\ell}=1,
+ \label{s0507:future_completion}\\
+ \widehat d_\rho&\le C,
+ &&\rho\in\mathcal R_k^{\mathrm{post}},
+ \label{s0507:historical_processing_completion}\\
+ f_\rho&\le C,
+ &&\rho\in\mathcal R_k^{\mathrm{bat}}.
+ \label{s0507:historical_cooling_completion}
+\end{align}
+所有不等式两侧均以$\mathrm s$计量。由于$f_\rho\ge\widehat d_\rho$，式\eqref{s0507:historical_cooling_completion}已经蕴含历史处理的完成要求；单独列出式\eqref{s0507:historical_processing_completion}是为了明确飞机、平台和人员处理结束这一物理条件。即使$\mathcal L_k^{\mathrm{act}}$为空，只要历史处理或冷却仍未完成，$C$就不能提前到$\tau_k$。若某条历史记录的释放时刻超过$T$，则本班次终态要求无法满足，不能截断记录后宣称完成。
+
+令$\mathbf q_v^{\mathrm{depot}}\in\mathbb R^2$为车辆$v$指定车库的水平参考位置，单位为$\mathrm m$。完成之后，所有车辆均应留在指定车库并停止行驶：
+\begin{equation}
+ \mathbf q_v(t)=\mathbf q_v^{\mathrm{depot}},\qquad
+ V_v(t)=0,
+ \qquad v\in\mathcal V,\quad t\in[C,T].
+ \label{s0507:terminal_vehicles}
+\end{equation}
+车库状态仍须满足第\ref{sec:04_07}节的合法道路或停车模式，以及第\ref{sec:05_06}节的车间几何约束。这里不额外指定终态航向或转向角；若实际车库要求特定停放姿态，应将其作为明确输入，而不能从首次出发航向自行推定。
+
+对飞机$u\in\mathcal U$，以$\operatorname{loc}_u(t)$表示带承载模式标记的位置记录：飞行时记录飞机所在航次及三维位置，车载时记录$(\mathrm{car},c(u),\mathbf q_{c(u)}(t))$。其身份分量无量纲、位置分量以$\mathrm m$计量。电池位置继续采用式\eqref{s0505:location}。终态要求为
+\begin{align}
+ \operatorname{loc}_u(C)
+ &=(\mathrm{car},c(u),\mathbf q_{c(u)}(C)),
+ &&u\in\mathcal U,
+ \label{s0507:terminal_aircraft}\\
+ \operatorname{loc}_p(C)
+ &=(\mathrm{car},c(p),\mathbf q_{c(p)}(C)),
+ &&p\in\mathcal B,
+ \label{s0507:terminal_batteries}\\
+ \zeta_p(t)&\ge0.2,
+ &&p\in\mathcal B,\quad t\in[C,T],
+ \label{s0507:terminal_energy}\\
+ P_p^{\mathrm{in}}(t)&=0,
+ &&p\in\mathcal B,\quad t\in(C,T].
+ \label{s0507:no_after_completion_charge}
+\end{align}
+0.2为无量纲最低SOC；$P_p^{\mathrm{in}}$是充电输入功率，单位为$\mathrm W$。飞机和电池必须回到各自固定所属车辆，仅要求全队回收数量相等不足以满足这些条件。式\eqref{s0507:future_completion}已经排除$C$以后仍执行本次航次，历史释放条件则排除尚未结束的处理和冷却。
+
+式\eqref{s0507:terminal_energy}是全时段电量下界在终态区间上的明确重述，不要求所有电池重新充满。需要达到终态下界的充电必须在$C$之前完成，不能通过班后补电降低所报告的完成时间。完成后电池断开全部外部负载，且充电输入为零，故$I_p=0$。由式\eqref{s0505:energy_dynamics}得到
+\begin{equation}
+ \zeta_p(t)=\zeta_p(C),\qquad
+ p\in\mathcal B,\quad t\in[C,T].
+ \label{s0507:constant_terminal_energy}
+\end{equation}
+SOC保持不变时，极化仍可衰减，温度仍随散热变化；因此不能把整个电池状态冻结。该断电口径不表示实际存放期间必然没有辅助耗电。单个时点$C$上的功率取值不产生有限能量增量，不能以该点未被式\eqref{s0507:no_after_completion_charge}排除为由实施瞬时充电。
+
+若首次规划没有安排任务，全部资源初态已经在库，电量满足要求，且没有任何剩余操作或未来承诺阻止立即结束，则允许$C=t_0$。滚动规划中，即使决定不再增加任务，也只能在完成已有飞行、处理、冷却、必要充电和返库后结束，并始终满足$C\ge\tau_k$；不能把完成时刻倒回$t_0$。
+
+最后，时间和能量均须保留班次历史。以$\widehat E_{\mathrm{air},k}^{\mathrm{past}}\ge0$表示$[t_0,\tau_k)$内已经发生的机载耗能，以$E_{\mathrm{air}}^k$表示式\eqref{s0505:air_energy_total}定义的剩余机载耗能，两者单位均为$\mathrm{Wh}$。整班次记账满足
+\begin{align}
+ C-t_0&=(\tau_k-t_0)+(C-\tau_k),
+ \label{s0507:elapsed_time_account}\\
+ E_{\mathrm{air}}^{\mathrm{shift}}
+ &=\widehat E_{\mathrm{air},k}^{\mathrm{past}}+E_{\mathrm{air}}^k.
+ \label{s0507:shift_energy_account}
+\end{align}
+第一式各项以$\mathrm s$计量，第二式各项以$\mathrm{Wh}$计量。对固定的当前边界，过去耗时和过去耗能都是常数，不能通过重新求解减小，也不能再次从$\widehat{\mathbf x}_{pk}^b$中扣除。由此，初始条件、剩余资源占用和全队终态共同限定了第\ref{sec:05_08}节目标函数可以比较的方案范围；观测中途与待验收状态使用式\eqref{s0507:service_carryover}及式\eqref{s0507:ongoing_flow}接续。

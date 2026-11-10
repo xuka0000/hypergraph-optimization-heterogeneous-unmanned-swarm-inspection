@@ -1,0 +1,133 @@
+{
+  "observed_at": "2026-11-10T10:31:52.468580+00:00",
+  "sources": [
+    {
+      "path": "Agent/Publication/engineering_inspection_contract.json",
+      "sha256": "4a8a117f57d9c1d188dfcce46fc51b0192896571cd045b3193bac711c9be6558"
+    },
+    {
+      "path": "Agent/Publication/engineering_inspection_model.tex",
+      "sha256": "6d0b69bda203ff9ef3062540e99bf24ab65f471de1ebd94558dbf514a05a7c61"
+    },
+    {
+      "path": "Agent/Publication/engineering_model_dependencies.py",
+      "sha256": "4c44fa1f35ddb77261b1fdf433491cc07f10e012e8ec4ccb946f41d5df21cba7"
+    },
+    {
+      "path": "Agent/Publication/engineering_road_motion.py",
+      "sha256": "d811a8bbd25f66c58aa1569fe1d402dccccacd4b42f6cb795b0a3a3967d70594"
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_structure.py",
+      "sha256": "c02420c07684c0d1bf9dcada69227bd1c29ebbdf251de1507ed104e3f6aa70b9"
+    },
+    {
+      "path": "scripts/validate_inspection_geography_module.py",
+      "sha256": "aa9a41b157c5852cfce56d0b24228639dbbff22249f263c519f4748f8f079555"
+    },
+    {
+      "path": "scripts/validate_inspection_road_module.py",
+      "sha256": "8923644131910e832fe97cde6e7936e3f9794395e3924b6c0d82845ae13d455b"
+    },
+    {
+      "path": "scripts/verify_inspection_integrated_definition.py",
+      "sha256": "35881760097ff94c74fe16d5d25c18b8a126b18bb80c8c0559125bd54e0b3e72"
+    },
+    {
+      "path": "scripts/build_inspection_parameter_ledger.py",
+      "sha256": "0e1bceba7a792236deaa99136a73544be435a44f51b3333ad592caace1b91216"
+    },
+    {
+      "path": "Agent/Publication/engineering_battery_electrothermal.py",
+      "sha256": "559f6eacfa4a40062049b59d2b6f693b0302e12442bfcd85d61981bd45af0a3b"
+    },
+    {
+      "path": "Agent/Publication/engineering_reference_flight.py",
+      "sha256": "18d08acf4503ca5741c5d26dc9a754bb87f3317bcf37c4ce776540cbcf29e5db"
+    },
+    {
+      "path": "Agent/Publication/engineering_reference_weather.py",
+      "sha256": "80c64fbcc8a0897f24b25827704e8c6907b8b7b8db98ec615261d647bf6d3732"
+    },
+    {
+      "path": "Agent/Publication/engineering_image_acceptance.py",
+      "sha256": "04fd082a67319a06a4b02cb56b45ad2aadadb9975bf646a03a9aea41289e366b"
+    },
+    {
+      "path": "Agent/Publication/engineering_replanning.py",
+      "sha256": "b594c872d938f218006e5e593a6a3c5446bb307ff31609a4b17c4e7c01f15c55"
+    },
+    {
+      "path": "Agent/Publication/engineering_service_boundary.py",
+      "sha256": "3bf456fe0f000aea7874a8639352132b3a2e8a75c2352ea69dd2cd8c58096360"
+    },
+    {
+      "path": "Agent/Publication/engineering_joint_transcription.py",
+      "sha256": "c88087ad46078c6320c528f45b9336df2f11c56105562cf1fe60b88f5ce0e554"
+    },
+    {
+      "path": "Agent/Publication/engineering_platform_contact.py",
+      "sha256": "a63eabc79ea0704b895cb3e1ff477e3438ab35ce9d061ba462a9b34ca9b4a046"
+    },
+    {
+      "path": "Agent/Publication/engineering_joint_charging.py",
+      "sha256": "3b78d16880a8f5182ba163bc663a9e4b126e89ac7f6992e92342d145afd9b778"
+    },
+    {
+      "path": "scripts/validate_inspection_battery_module.py",
+      "sha256": "4fff6f46ec8dae71b3acf802588dfca50d913e576bcd752f11136a4cfad7728d"
+    },
+    {
+      "path": "scripts/validate_inspection_flight_module.py",
+      "sha256": "3964855e0547447ae4b1ad5e2eb9a14c2507fe9ca2bcd9ce391cc484035c899b"
+    },
+    {
+      "path": "scripts/validate_inspection_weather_module.py",
+      "sha256": "ee906bf12ed583f4e60a8324f976661ac494295294024274a3a0181506aec04a"
+    },
+    {
+      "path": "scripts/validate_inspection_capture_replanning.py",
+      "sha256": "2260e0c6b3cd48bce3e8e5bd484f71590a8dc336d01f958144ec729d216161ff"
+    },
+    {
+      "path": "scripts/validate_inspection_service_boundary.py",
+      "sha256": "18b2640eba4b0c378c8e1d4329c4be86ea5adabfb2cfb0adaff806f51e13c422"
+    },
+    {
+      "path": "scripts/validate_inspection_joint_transcription.py",
+      "sha256": "a780b7026e7528108eb3f78904e5b883420e7aa5ebb0aaed7cad58e2708c159d"
+    },
+    {
+      "path": "scripts/validate_inspection_platform_contact.py",
+      "sha256": "267f9b3baef3d5831865cb57bbd5f527e16fbc5ad2bd95d68a9793a2dc6f96f6"
+    },
+    {
+      "path": "scripts/validate_inspection_takeoff_landing.py",
+      "sha256": "80b4dcdede343ecf4a2451dd1ec1fb1a20079f9984acee8318eac5c718d24ce5"
+    },
+    {
+      "path": "scripts/validate_inspection_joint_charging.py",
+      "sha256": "42b6ede291d43c17ad1e24787538bd91dd149e39855fc749ab575f44981a128e"
+    },
+    {
+      "path": "Agent/Publication/inspection_reference_battery_profile.json",
+      "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+    },
+    {
+      "path": "Agent/Publication/inspection_reference_flight_profile.json",
+      "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+    },
+    {
+      "path": "Agent/Publication/inspection_reference_weather_profile.json",
+      "sha256": "7a62160e1f9b4341e8a7a0accb6c155ea62b0af1074c09c4dbcf686dd844c1b6"
+    },
+    {
+      "path": "Agent/Publication/inspection_reference_image_profile.json",
+      "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+    }
+  ],
+  "workspace": "D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网",
+  "frozen_reproduction_project": "historical source snapshot retained; do not silently relabel as current",
+  "source_pdf_generated": false,
+  "artifact_role": "current source pointers and hashes; existing historical electronic snapshot remains unchanged"
+}

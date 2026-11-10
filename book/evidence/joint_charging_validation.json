@@ -1,0 +1,2497 @@
+{
+  "observed_at": "2026-11-10T10:21:58.315108+00:00",
+  "experiment_id": "inspection_joint_charge_ECM_component",
+  "checks": [
+    {
+      "name": "current_ceiling_0.5_1000.0",
+      "passed": true,
+      "status": "optimal"
+    },
+    {
+      "name": "energy_account_0.5_1000.0",
+      "passed": true
+    },
+    {
+      "name": "current_ceiling_0.99_1000.0",
+      "passed": true,
+      "status": "optimal"
+    },
+    {
+      "name": "energy_account_0.99_1000.0",
+      "passed": true
+    },
+    {
+      "name": "current_ceiling_0.5_250.0",
+      "passed": true,
+      "status": "optimal"
+    },
+    {
+      "name": "energy_account_0.5_250.0",
+      "passed": true
+    },
+    {
+      "name": "hot_memory_cannot_be_overridden_by_connection",
+      "passed": true
+    },
+    {
+      "name": "one_charger_allocated_to_higher_weight",
+      "passed": true
+    },
+    {
+      "name": "unconnected_battery_does_not_receive_energy",
+      "passed": true
+    },
+    {
+      "name": "active_battery_keeps_electrothermal_state",
+      "passed": true
+    },
+    {
+      "name": "loaded_sources_unchanged_during_run",
+      "passed": true
+    }
+  ],
+  "all_checks_passed": true,
+  "source_sha256": {
+    "Agent\\Publication\\engineering_joint_transcription.py": "c88087ad46078c6320c528f45b9336df2f11c56105562cf1fe60b88f5ce0e554",
+    "Agent\\Publication\\engineering_joint_charging.py": "3b78d16880a8f5182ba163bc663a9e4b126e89ac7f6992e92342d145afd9b778",
+    "Agent\\Publication\\engineering_battery_electrothermal.py": "559f6eacfa4a40062049b59d2b6f693b0302e12442bfcd85d61981bd45af0a3b",
+    "scripts\\validate_inspection_joint_charging.py": "42b6ede291d43c17ad1e24787538bd91dd149e39855fc749ab575f44981a128e"
+  },
+  "runs": [
+    {
+      "initial_SOC": 0.5,
+      "input_cap_W": 1000.0,
+      "hot_blocked": 0,
+      "status": "optimal",
+      "wall_s": 0.0021699999924749136,
+      "current_A": 17.8,
+      "oracle_current_A": 17.8,
+      "grid_W": 954.9022500867509,
+      "battery_end": [
+        0.5041654965833567,
+        -0.0678065238811941,
+        25.092866060285214,
+        2.652506250240975,
+        0.0,
+        0.07042342904962184
+      ],
+      "hypergraph": {
+        "n": 16,
+        "m": 20,
+        "N_I": 84,
+        "r": 9,
+        "d_max": 12,
+        "n_fixed": 8,
+        "n_free": 8,
+        "free_variable_incidence": 42,
+        "maximum_free_variables_per_row": 5,
+        "bound_convention": "original explicit scalar rows; variable bounds are separate unary domains; before presolve",
+        "structural_incidence_not_effective_rank": true,
+        "variables": [
+          "battery_start0",
+          "battery_start1",
+          "battery_start2",
+          "battery_start3",
+          "battery_start4",
+          "battery_start5",
+          "battery_end0",
+          "battery_end1",
+          "battery_end2",
+          "battery_end3",
+          "battery_end4",
+          "battery_end5",
+          "battery_connected",
+          "battery_hot",
+          "battery_charge_A",
+          "battery_input_W"
+        ],
+        "edges": [
+          {
+            "name": "battery_CC",
+            "family": "charge_current_ceiling",
+            "sense": "le",
+            "variables": [
+              "battery_charge_A",
+              "battery_connected"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_thermal_lock",
+            "family": "thermal_memory",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_hot"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_supply",
+            "family": "charger_input_ceiling",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_input_W"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_terminal_power",
+            "family": "charger_ECM_coupling",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end0",
+              "battery_end1",
+              "battery_end2",
+              "battery_input_W",
+              "battery_start0",
+              "battery_start1",
+              "battery_start2"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_CV",
+            "family": "charge_voltage_ceiling",
+            "sense": "le",
+            "variables": [
+              "battery_charge_A",
+              "battery_connected",
+              "battery_end0",
+              "battery_end1",
+              "battery_end2",
+              "battery_start0",
+              "battery_start1",
+              "battery_start2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_voltage_positive",
+            "family": "charge_voltage_ceiling",
+            "sense": "le",
+            "variables": [
+              "battery_charge_A",
+              "battery_connected",
+              "battery_end0",
+              "battery_end1",
+              "battery_end2",
+              "battery_start0",
+              "battery_start1",
+              "battery_start2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_temperature_low_0",
+            "family": "charge_temperature",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_start2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_temperature_high_0",
+            "family": "charge_temperature",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_start2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_temperature_low_1",
+            "family": "charge_temperature",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_end2",
+              "battery_start2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_temperature_high_1",
+            "family": "charge_temperature",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_end2",
+              "battery_start2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_temperature_low_2",
+            "family": "charge_temperature",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_end2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_temperature_high_2",
+            "family": "charge_temperature",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_end2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_state_0",
+            "family": "charge_rest_ECM_midpoint",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end0",
+              "battery_start0"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_state_1",
+            "family": "charge_rest_ECM_midpoint",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end1",
+              "battery_end2",
+              "battery_start1",
+              "battery_start2"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_state_2",
+            "family": "charge_rest_ECM_midpoint",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end1",
+              "battery_end2",
+              "battery_start1",
+              "battery_start2"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_state_3",
+            "family": "charge_rest_ECM_midpoint",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end0",
+              "battery_end1",
+              "battery_end2",
+              "battery_end3",
+              "battery_start0",
+              "battery_start1",
+              "battery_start2",
+              "battery_start3"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_state_4",
+            "family": "charge_rest_ECM_midpoint",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end0",
+              "battery_end1",
+              "battery_end2",
+              "battery_end4",
+              "battery_start0",
+              "battery_start1",
+              "battery_start2",
+              "battery_start4"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_state_5",
+            "family": "charge_rest_ECM_midpoint",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end1",
+              "battery_end2",
+              "battery_end5",
+              "battery_start1",
+              "battery_start2",
+              "battery_start5"
+            ],
+            "activation": null
+          },
+          {
+            "name": "vehicle_channels",
+            "family": "shared_charger_capacity",
+            "sense": "le",
+            "variables": [
+              "battery_connected"
+            ],
+            "activation": null
+          },
+          {
+            "name": "vehicle_power",
+            "family": "shared_vehicle_power",
+            "sense": "le",
+            "variables": [
+              "battery_input_W"
+            ],
+            "activation": null
+          }
+        ],
+        "variable_edges": {
+          "battery_start0": [
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_state_0",
+            "battery_state_3",
+            "battery_state_4"
+          ],
+          "battery_start1": [
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_state_1",
+            "battery_state_2",
+            "battery_state_3",
+            "battery_state_4",
+            "battery_state_5"
+          ],
+          "battery_start2": [
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_temperature_low_0",
+            "battery_temperature_high_0",
+            "battery_temperature_low_1",
+            "battery_temperature_high_1",
+            "battery_state_1",
+            "battery_state_2",
+            "battery_state_3",
+            "battery_state_4",
+            "battery_state_5"
+          ],
+          "battery_start3": [
+            "battery_state_3"
+          ],
+          "battery_start4": [
+            "battery_state_4"
+          ],
+          "battery_start5": [
+            "battery_state_5"
+          ],
+          "battery_end0": [
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_state_0",
+            "battery_state_3",
+            "battery_state_4"
+          ],
+          "battery_end1": [
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_state_1",
+            "battery_state_2",
+            "battery_state_3",
+            "battery_state_4",
+            "battery_state_5"
+          ],
+          "battery_end2": [
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_temperature_low_1",
+            "battery_temperature_high_1",
+            "battery_temperature_low_2",
+            "battery_temperature_high_2",
+            "battery_state_1",
+            "battery_state_2",
+            "battery_state_3",
+            "battery_state_4",
+            "battery_state_5"
+          ],
+          "battery_end3": [
+            "battery_state_3"
+          ],
+          "battery_end4": [
+            "battery_state_4"
+          ],
+          "battery_end5": [
+            "battery_state_5"
+          ],
+          "battery_connected": [
+            "battery_CC",
+            "battery_thermal_lock",
+            "battery_supply",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_temperature_low_0",
+            "battery_temperature_high_0",
+            "battery_temperature_low_1",
+            "battery_temperature_high_1",
+            "battery_temperature_low_2",
+            "battery_temperature_high_2",
+            "vehicle_channels"
+          ],
+          "battery_hot": [
+            "battery_thermal_lock"
+          ],
+          "battery_charge_A": [
+            "battery_CC",
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_state_0",
+            "battery_state_1",
+            "battery_state_2",
+            "battery_state_3",
+            "battery_state_4",
+            "battery_state_5"
+          ],
+          "battery_input_W": [
+            "battery_supply",
+            "battery_terminal_power",
+            "vehicle_power"
+          ]
+        }
+      }
+    },
+    {
+      "initial_SOC": 0.99,
+      "input_cap_W": 1000.0,
+      "hot_blocked": 0,
+      "status": "optimal",
+      "wall_s": 0.004330400028266013,
+      "current_A": 1.4404314201429158,
+      "oracle_current_A": 1.440431420142957,
+      "grid_W": 84.50530998172016,
+      "battery_end": [
+        0.9903370849527621,
+        -0.005487356200471352,
+        25.00060869816526,
+        0.2347369721714449,
+        0.0,
+        0.000461596108653167
+      ],
+      "hypergraph": {
+        "n": 16,
+        "m": 20,
+        "N_I": 84,
+        "r": 9,
+        "d_max": 12,
+        "n_fixed": 8,
+        "n_free": 8,
+        "free_variable_incidence": 42,
+        "maximum_free_variables_per_row": 5,
+        "bound_convention": "original explicit scalar rows; variable bounds are separate unary domains; before presolve",
+        "structural_incidence_not_effective_rank": true,
+        "variables": [
+          "battery_start0",
+          "battery_start1",
+          "battery_start2",
+          "battery_start3",
+          "battery_start4",
+          "battery_start5",
+          "battery_end0",
+          "battery_end1",
+          "battery_end2",
+          "battery_end3",
+          "battery_end4",
+          "battery_end5",
+          "battery_connected",
+          "battery_hot",
+          "battery_charge_A",
+          "battery_input_W"
+        ],
+        "edges": [
+          {
+            "name": "battery_CC",
+            "family": "charge_current_ceiling",
+            "sense": "le",
+            "variables": [
+              "battery_charge_A",
+              "battery_connected"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_thermal_lock",
+            "family": "thermal_memory",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_hot"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_supply",
+            "family": "charger_input_ceiling",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_input_W"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_terminal_power",
+            "family": "charger_ECM_coupling",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end0",
+              "battery_end1",
+              "battery_end2",
+              "battery_input_W",
+              "battery_start0",
+              "battery_start1",
+              "battery_start2"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_CV",
+            "family": "charge_voltage_ceiling",
+            "sense": "le",
+            "variables": [
+              "battery_charge_A",
+              "battery_connected",
+              "battery_end0",
+              "battery_end1",
+              "battery_end2",
+              "battery_start0",
+              "battery_start1",
+              "battery_start2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_voltage_positive",
+            "family": "charge_voltage_ceiling",
+            "sense": "le",
+            "variables": [
+              "battery_charge_A",
+              "battery_connected",
+              "battery_end0",
+              "battery_end1",
+              "battery_end2",
+              "battery_start0",
+              "battery_start1",
+              "battery_start2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_temperature_low_0",
+            "family": "charge_temperature",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_start2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_temperature_high_0",
+            "family": "charge_temperature",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_start2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_temperature_low_1",
+            "family": "charge_temperature",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_end2",
+              "battery_start2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_temperature_high_1",
+            "family": "charge_temperature",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_end2",
+              "battery_start2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_temperature_low_2",
+            "family": "charge_temperature",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_end2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_temperature_high_2",
+            "family": "charge_temperature",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_end2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_state_0",
+            "family": "charge_rest_ECM_midpoint",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end0",
+              "battery_start0"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_state_1",
+            "family": "charge_rest_ECM_midpoint",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end1",
+              "battery_end2",
+              "battery_start1",
+              "battery_start2"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_state_2",
+            "family": "charge_rest_ECM_midpoint",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end1",
+              "battery_end2",
+              "battery_start1",
+              "battery_start2"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_state_3",
+            "family": "charge_rest_ECM_midpoint",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end0",
+              "battery_end1",
+              "battery_end2",
+              "battery_end3",
+              "battery_start0",
+              "battery_start1",
+              "battery_start2",
+              "battery_start3"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_state_4",
+            "family": "charge_rest_ECM_midpoint",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end0",
+              "battery_end1",
+              "battery_end2",
+              "battery_end4",
+              "battery_start0",
+              "battery_start1",
+              "battery_start2",
+              "battery_start4"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_state_5",
+            "family": "charge_rest_ECM_midpoint",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end1",
+              "battery_end2",
+              "battery_end5",
+              "battery_start1",
+              "battery_start2",
+              "battery_start5"
+            ],
+            "activation": null
+          },
+          {
+            "name": "vehicle_channels",
+            "family": "shared_charger_capacity",
+            "sense": "le",
+            "variables": [
+              "battery_connected"
+            ],
+            "activation": null
+          },
+          {
+            "name": "vehicle_power",
+            "family": "shared_vehicle_power",
+            "sense": "le",
+            "variables": [
+              "battery_input_W"
+            ],
+            "activation": null
+          }
+        ],
+        "variable_edges": {
+          "battery_start0": [
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_state_0",
+            "battery_state_3",
+            "battery_state_4"
+          ],
+          "battery_start1": [
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_state_1",
+            "battery_state_2",
+            "battery_state_3",
+            "battery_state_4",
+            "battery_state_5"
+          ],
+          "battery_start2": [
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_temperature_low_0",
+            "battery_temperature_high_0",
+            "battery_temperature_low_1",
+            "battery_temperature_high_1",
+            "battery_state_1",
+            "battery_state_2",
+            "battery_state_3",
+            "battery_state_4",
+            "battery_state_5"
+          ],
+          "battery_start3": [
+            "battery_state_3"
+          ],
+          "battery_start4": [
+            "battery_state_4"
+          ],
+          "battery_start5": [
+            "battery_state_5"
+          ],
+          "battery_end0": [
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_state_0",
+            "battery_state_3",
+            "battery_state_4"
+          ],
+          "battery_end1": [
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_state_1",
+            "battery_state_2",
+            "battery_state_3",
+            "battery_state_4",
+            "battery_state_5"
+          ],
+          "battery_end2": [
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_temperature_low_1",
+            "battery_temperature_high_1",
+            "battery_temperature_low_2",
+            "battery_temperature_high_2",
+            "battery_state_1",
+            "battery_state_2",
+            "battery_state_3",
+            "battery_state_4",
+            "battery_state_5"
+          ],
+          "battery_end3": [
+            "battery_state_3"
+          ],
+          "battery_end4": [
+            "battery_state_4"
+          ],
+          "battery_end5": [
+            "battery_state_5"
+          ],
+          "battery_connected": [
+            "battery_CC",
+            "battery_thermal_lock",
+            "battery_supply",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_temperature_low_0",
+            "battery_temperature_high_0",
+            "battery_temperature_low_1",
+            "battery_temperature_high_1",
+            "battery_temperature_low_2",
+            "battery_temperature_high_2",
+            "vehicle_channels"
+          ],
+          "battery_hot": [
+            "battery_thermal_lock"
+          ],
+          "battery_charge_A": [
+            "battery_CC",
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_state_0",
+            "battery_state_1",
+            "battery_state_2",
+            "battery_state_3",
+            "battery_state_4",
+            "battery_state_5"
+          ],
+          "battery_input_W": [
+            "battery_supply",
+            "battery_terminal_power",
+            "vehicle_power"
+          ]
+        }
+      }
+    },
+    {
+      "initial_SOC": 0.5,
+      "input_cap_W": 250.0,
+      "hot_blocked": 0,
+      "status": "optimal",
+      "wall_s": 0.0033782999962568283,
+      "current_A": 4.7672392449476115,
+      "oracle_current_A": 4.767239244947578,
+      "grid_W": 249.99999999999997,
+      "battery_end": [
+        0.5011156134149929,
+        -0.0181608537518109,
+        25.00666690800007,
+        0.6944444444444443,
+        0.0,
+        0.005055738566719421
+      ],
+      "hypergraph": {
+        "n": 16,
+        "m": 20,
+        "N_I": 84,
+        "r": 9,
+        "d_max": 12,
+        "n_fixed": 8,
+        "n_free": 8,
+        "free_variable_incidence": 42,
+        "maximum_free_variables_per_row": 5,
+        "bound_convention": "original explicit scalar rows; variable bounds are separate unary domains; before presolve",
+        "structural_incidence_not_effective_rank": true,
+        "variables": [
+          "battery_start0",
+          "battery_start1",
+          "battery_start2",
+          "battery_start3",
+          "battery_start4",
+          "battery_start5",
+          "battery_end0",
+          "battery_end1",
+          "battery_end2",
+          "battery_end3",
+          "battery_end4",
+          "battery_end5",
+          "battery_connected",
+          "battery_hot",
+          "battery_charge_A",
+          "battery_input_W"
+        ],
+        "edges": [
+          {
+            "name": "battery_CC",
+            "family": "charge_current_ceiling",
+            "sense": "le",
+            "variables": [
+              "battery_charge_A",
+              "battery_connected"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_thermal_lock",
+            "family": "thermal_memory",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_hot"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_supply",
+            "family": "charger_input_ceiling",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_input_W"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_terminal_power",
+            "family": "charger_ECM_coupling",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end0",
+              "battery_end1",
+              "battery_end2",
+              "battery_input_W",
+              "battery_start0",
+              "battery_start1",
+              "battery_start2"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_CV",
+            "family": "charge_voltage_ceiling",
+            "sense": "le",
+            "variables": [
+              "battery_charge_A",
+              "battery_connected",
+              "battery_end0",
+              "battery_end1",
+              "battery_end2",
+              "battery_start0",
+              "battery_start1",
+              "battery_start2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_voltage_positive",
+            "family": "charge_voltage_ceiling",
+            "sense": "le",
+            "variables": [
+              "battery_charge_A",
+              "battery_connected",
+              "battery_end0",
+              "battery_end1",
+              "battery_end2",
+              "battery_start0",
+              "battery_start1",
+              "battery_start2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_temperature_low_0",
+            "family": "charge_temperature",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_start2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_temperature_high_0",
+            "family": "charge_temperature",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_start2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_temperature_low_1",
+            "family": "charge_temperature",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_end2",
+              "battery_start2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_temperature_high_1",
+            "family": "charge_temperature",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_end2",
+              "battery_start2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_temperature_low_2",
+            "family": "charge_temperature",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_end2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_temperature_high_2",
+            "family": "charge_temperature",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_end2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_state_0",
+            "family": "charge_rest_ECM_midpoint",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end0",
+              "battery_start0"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_state_1",
+            "family": "charge_rest_ECM_midpoint",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end1",
+              "battery_end2",
+              "battery_start1",
+              "battery_start2"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_state_2",
+            "family": "charge_rest_ECM_midpoint",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end1",
+              "battery_end2",
+              "battery_start1",
+              "battery_start2"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_state_3",
+            "family": "charge_rest_ECM_midpoint",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end0",
+              "battery_end1",
+              "battery_end2",
+              "battery_end3",
+              "battery_start0",
+              "battery_start1",
+              "battery_start2",
+              "battery_start3"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_state_4",
+            "family": "charge_rest_ECM_midpoint",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end0",
+              "battery_end1",
+              "battery_end2",
+              "battery_end4",
+              "battery_start0",
+              "battery_start1",
+              "battery_start2",
+              "battery_start4"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_state_5",
+            "family": "charge_rest_ECM_midpoint",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end1",
+              "battery_end2",
+              "battery_end5",
+              "battery_start1",
+              "battery_start2",
+              "battery_start5"
+            ],
+            "activation": null
+          },
+          {
+            "name": "vehicle_channels",
+            "family": "shared_charger_capacity",
+            "sense": "le",
+            "variables": [
+              "battery_connected"
+            ],
+            "activation": null
+          },
+          {
+            "name": "vehicle_power",
+            "family": "shared_vehicle_power",
+            "sense": "le",
+            "variables": [
+              "battery_input_W"
+            ],
+            "activation": null
+          }
+        ],
+        "variable_edges": {
+          "battery_start0": [
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_state_0",
+            "battery_state_3",
+            "battery_state_4"
+          ],
+          "battery_start1": [
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_state_1",
+            "battery_state_2",
+            "battery_state_3",
+            "battery_state_4",
+            "battery_state_5"
+          ],
+          "battery_start2": [
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_temperature_low_0",
+            "battery_temperature_high_0",
+            "battery_temperature_low_1",
+            "battery_temperature_high_1",
+            "battery_state_1",
+            "battery_state_2",
+            "battery_state_3",
+            "battery_state_4",
+            "battery_state_5"
+          ],
+          "battery_start3": [
+            "battery_state_3"
+          ],
+          "battery_start4": [
+            "battery_state_4"
+          ],
+          "battery_start5": [
+            "battery_state_5"
+          ],
+          "battery_end0": [
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_state_0",
+            "battery_state_3",
+            "battery_state_4"
+          ],
+          "battery_end1": [
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_state_1",
+            "battery_state_2",
+            "battery_state_3",
+            "battery_state_4",
+            "battery_state_5"
+          ],
+          "battery_end2": [
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_temperature_low_1",
+            "battery_temperature_high_1",
+            "battery_temperature_low_2",
+            "battery_temperature_high_2",
+            "battery_state_1",
+            "battery_state_2",
+            "battery_state_3",
+            "battery_state_4",
+            "battery_state_5"
+          ],
+          "battery_end3": [
+            "battery_state_3"
+          ],
+          "battery_end4": [
+            "battery_state_4"
+          ],
+          "battery_end5": [
+            "battery_state_5"
+          ],
+          "battery_connected": [
+            "battery_CC",
+            "battery_thermal_lock",
+            "battery_supply",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_temperature_low_0",
+            "battery_temperature_high_0",
+            "battery_temperature_low_1",
+            "battery_temperature_high_1",
+            "battery_temperature_low_2",
+            "battery_temperature_high_2",
+            "vehicle_channels"
+          ],
+          "battery_hot": [
+            "battery_thermal_lock"
+          ],
+          "battery_charge_A": [
+            "battery_CC",
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_state_0",
+            "battery_state_1",
+            "battery_state_2",
+            "battery_state_3",
+            "battery_state_4",
+            "battery_state_5"
+          ],
+          "battery_input_W": [
+            "battery_supply",
+            "battery_terminal_power",
+            "vehicle_power"
+          ]
+        }
+      }
+    },
+    {
+      "initial_SOC": 0.5,
+      "input_cap_W": 1000.0,
+      "hot_blocked": 1,
+      "status": "infeasible",
+      "wall_s": 0.0006585000082850456,
+      "current_A": null,
+      "oracle_current_A": null,
+      "grid_W": null,
+      "battery_end": null,
+      "hypergraph": {
+        "n": 16,
+        "m": 20,
+        "N_I": 84,
+        "r": 9,
+        "d_max": 12,
+        "n_fixed": 8,
+        "n_free": 8,
+        "free_variable_incidence": 42,
+        "maximum_free_variables_per_row": 5,
+        "bound_convention": "original explicit scalar rows; variable bounds are separate unary domains; before presolve",
+        "structural_incidence_not_effective_rank": true,
+        "variables": [
+          "battery_start0",
+          "battery_start1",
+          "battery_start2",
+          "battery_start3",
+          "battery_start4",
+          "battery_start5",
+          "battery_end0",
+          "battery_end1",
+          "battery_end2",
+          "battery_end3",
+          "battery_end4",
+          "battery_end5",
+          "battery_connected",
+          "battery_hot",
+          "battery_charge_A",
+          "battery_input_W"
+        ],
+        "edges": [
+          {
+            "name": "battery_CC",
+            "family": "charge_current_ceiling",
+            "sense": "le",
+            "variables": [
+              "battery_charge_A",
+              "battery_connected"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_thermal_lock",
+            "family": "thermal_memory",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_hot"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_supply",
+            "family": "charger_input_ceiling",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_input_W"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_terminal_power",
+            "family": "charger_ECM_coupling",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end0",
+              "battery_end1",
+              "battery_end2",
+              "battery_input_W",
+              "battery_start0",
+              "battery_start1",
+              "battery_start2"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_CV",
+            "family": "charge_voltage_ceiling",
+            "sense": "le",
+            "variables": [
+              "battery_charge_A",
+              "battery_connected",
+              "battery_end0",
+              "battery_end1",
+              "battery_end2",
+              "battery_start0",
+              "battery_start1",
+              "battery_start2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_voltage_positive",
+            "family": "charge_voltage_ceiling",
+            "sense": "le",
+            "variables": [
+              "battery_charge_A",
+              "battery_connected",
+              "battery_end0",
+              "battery_end1",
+              "battery_end2",
+              "battery_start0",
+              "battery_start1",
+              "battery_start2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_temperature_low_0",
+            "family": "charge_temperature",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_start2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_temperature_high_0",
+            "family": "charge_temperature",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_start2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_temperature_low_1",
+            "family": "charge_temperature",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_end2",
+              "battery_start2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_temperature_high_1",
+            "family": "charge_temperature",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_end2",
+              "battery_start2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_temperature_low_2",
+            "family": "charge_temperature",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_end2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_temperature_high_2",
+            "family": "charge_temperature",
+            "sense": "le",
+            "variables": [
+              "battery_connected",
+              "battery_end2"
+            ],
+            "activation": "battery_connected"
+          },
+          {
+            "name": "battery_state_0",
+            "family": "charge_rest_ECM_midpoint",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end0",
+              "battery_start0"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_state_1",
+            "family": "charge_rest_ECM_midpoint",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end1",
+              "battery_end2",
+              "battery_start1",
+              "battery_start2"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_state_2",
+            "family": "charge_rest_ECM_midpoint",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end1",
+              "battery_end2",
+              "battery_start1",
+              "battery_start2"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_state_3",
+            "family": "charge_rest_ECM_midpoint",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end0",
+              "battery_end1",
+              "battery_end2",
+              "battery_end3",
+              "battery_start0",
+              "battery_start1",
+              "battery_start2",
+              "battery_start3"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_state_4",
+            "family": "charge_rest_ECM_midpoint",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end0",
+              "battery_end1",
+              "battery_end2",
+              "battery_end4",
+              "battery_start0",
+              "battery_start1",
+              "battery_start2",
+              "battery_start4"
+            ],
+            "activation": null
+          },
+          {
+            "name": "battery_state_5",
+            "family": "charge_rest_ECM_midpoint",
+            "sense": "eq",
+            "variables": [
+              "battery_charge_A",
+              "battery_end1",
+              "battery_end2",
+              "battery_end5",
+              "battery_start1",
+              "battery_start2",
+              "battery_start5"
+            ],
+            "activation": null
+          },
+          {
+            "name": "vehicle_channels",
+            "family": "shared_charger_capacity",
+            "sense": "le",
+            "variables": [
+              "battery_connected"
+            ],
+            "activation": null
+          },
+          {
+            "name": "vehicle_power",
+            "family": "shared_vehicle_power",
+            "sense": "le",
+            "variables": [
+              "battery_input_W"
+            ],
+            "activation": null
+          }
+        ],
+        "variable_edges": {
+          "battery_start0": [
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_state_0",
+            "battery_state_3",
+            "battery_state_4"
+          ],
+          "battery_start1": [
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_state_1",
+            "battery_state_2",
+            "battery_state_3",
+            "battery_state_4",
+            "battery_state_5"
+          ],
+          "battery_start2": [
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_temperature_low_0",
+            "battery_temperature_high_0",
+            "battery_temperature_low_1",
+            "battery_temperature_high_1",
+            "battery_state_1",
+            "battery_state_2",
+            "battery_state_3",
+            "battery_state_4",
+            "battery_state_5"
+          ],
+          "battery_start3": [
+            "battery_state_3"
+          ],
+          "battery_start4": [
+            "battery_state_4"
+          ],
+          "battery_start5": [
+            "battery_state_5"
+          ],
+          "battery_end0": [
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_state_0",
+            "battery_state_3",
+            "battery_state_4"
+          ],
+          "battery_end1": [
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_state_1",
+            "battery_state_2",
+            "battery_state_3",
+            "battery_state_4",
+            "battery_state_5"
+          ],
+          "battery_end2": [
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_temperature_low_1",
+            "battery_temperature_high_1",
+            "battery_temperature_low_2",
+            "battery_temperature_high_2",
+            "battery_state_1",
+            "battery_state_2",
+            "battery_state_3",
+            "battery_state_4",
+            "battery_state_5"
+          ],
+          "battery_end3": [
+            "battery_state_3"
+          ],
+          "battery_end4": [
+            "battery_state_4"
+          ],
+          "battery_end5": [
+            "battery_state_5"
+          ],
+          "battery_connected": [
+            "battery_CC",
+            "battery_thermal_lock",
+            "battery_supply",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_temperature_low_0",
+            "battery_temperature_high_0",
+            "battery_temperature_low_1",
+            "battery_temperature_high_1",
+            "battery_temperature_low_2",
+            "battery_temperature_high_2",
+            "vehicle_channels"
+          ],
+          "battery_hot": [
+            "battery_thermal_lock"
+          ],
+          "battery_charge_A": [
+            "battery_CC",
+            "battery_terminal_power",
+            "battery_CV",
+            "battery_voltage_positive",
+            "battery_state_0",
+            "battery_state_1",
+            "battery_state_2",
+            "battery_state_3",
+            "battery_state_4",
+            "battery_state_5"
+          ],
+          "battery_input_W": [
+            "battery_supply",
+            "battery_terminal_power",
+            "vehicle_power"
+          ]
+        }
+      }
+    }
+  ],
+  "shared_capacity": {
+    "status": "optimal",
+    "wall_s": 0.0033588000806048512,
+    "objective": 35.600000000000065,
+    "currents_A": [
+      17.800000000000033,
+      0.0
+    ],
+    "connected": [
+      1,
+      0
+    ],
+    "end_states": [
+      [
+        0.5041654965833567,
+        -0.0678065238811941,
+        25.092866060285214,
+        2.652506250240975,
+        0.0,
+        0.07042342904962184
+      ],
+      [
+        0.5,
+        0.0,
+        25.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "hypergraph": {
+      "n": 32,
+      "m": 38,
+      "N_I": 168,
+      "r": 9,
+      "d_max": 12,
+      "n_fixed": 14,
+      "n_free": 18,
+      "free_variable_incidence": 108,
+      "maximum_free_variables_per_row": 5,
+      "bound_convention": "original explicit scalar rows; variable bounds are separate unary domains; before presolve",
+      "structural_incidence_not_effective_rank": true,
+      "variables": [
+        "A_start0",
+        "A_start1",
+        "A_start2",
+        "A_start3",
+        "A_start4",
+        "A_start5",
+        "A_end0",
+        "A_end1",
+        "A_end2",
+        "A_end3",
+        "A_end4",
+        "A_end5",
+        "A_connected",
+        "A_hot",
+        "A_charge_A",
+        "A_input_W",
+        "B_start0",
+        "B_start1",
+        "B_start2",
+        "B_start3",
+        "B_start4",
+        "B_start5",
+        "B_end0",
+        "B_end1",
+        "B_end2",
+        "B_end3",
+        "B_end4",
+        "B_end5",
+        "B_connected",
+        "B_hot",
+        "B_charge_A",
+        "B_input_W"
+      ],
+      "edges": [
+        {
+          "name": "A_CC",
+          "family": "charge_current_ceiling",
+          "sense": "le",
+          "variables": [
+            "A_charge_A",
+            "A_connected"
+          ],
+          "activation": null
+        },
+        {
+          "name": "A_thermal_lock",
+          "family": "thermal_memory",
+          "sense": "le",
+          "variables": [
+            "A_connected",
+            "A_hot"
+          ],
+          "activation": null
+        },
+        {
+          "name": "A_supply",
+          "family": "charger_input_ceiling",
+          "sense": "le",
+          "variables": [
+            "A_connected",
+            "A_input_W"
+          ],
+          "activation": null
+        },
+        {
+          "name": "A_terminal_power",
+          "family": "charger_ECM_coupling",
+          "sense": "eq",
+          "variables": [
+            "A_charge_A",
+            "A_end0",
+            "A_end1",
+            "A_end2",
+            "A_input_W",
+            "A_start0",
+            "A_start1",
+            "A_start2"
+          ],
+          "activation": null
+        },
+        {
+          "name": "A_CV",
+          "family": "charge_voltage_ceiling",
+          "sense": "le",
+          "variables": [
+            "A_charge_A",
+            "A_connected",
+            "A_end0",
+            "A_end1",
+            "A_end2",
+            "A_start0",
+            "A_start1",
+            "A_start2"
+          ],
+          "activation": "A_connected"
+        },
+        {
+          "name": "A_voltage_positive",
+          "family": "charge_voltage_ceiling",
+          "sense": "le",
+          "variables": [
+            "A_charge_A",
+            "A_connected",
+            "A_end0",
+            "A_end1",
+            "A_end2",
+            "A_start0",
+            "A_start1",
+            "A_start2"
+          ],
+          "activation": "A_connected"
+        },
+        {
+          "name": "A_temperature_low_0",
+          "family": "charge_temperature",
+          "sense": "le",
+          "variables": [
+            "A_connected",
+            "A_start2"
+          ],
+          "activation": "A_connected"
+        },
+        {
+          "name": "A_temperature_high_0",
+          "family": "charge_temperature",
+          "sense": "le",
+          "variables": [
+            "A_connected",
+            "A_start2"
+          ],
+          "activation": "A_connected"
+        },
+        {
+          "name": "A_temperature_low_1",
+          "family": "charge_temperature",
+          "sense": "le",
+          "variables": [
+            "A_connected",
+            "A_end2",
+            "A_start2"
+          ],
+          "activation": "A_connected"
+        },
+        {
+          "name": "A_temperature_high_1",
+          "family": "charge_temperature",
+          "sense": "le",
+          "variables": [
+            "A_connected",
+            "A_end2",
+            "A_start2"
+          ],
+          "activation": "A_connected"
+        },
+        {
+          "name": "A_temperature_low_2",
+          "family": "charge_temperature",
+          "sense": "le",
+          "variables": [
+            "A_connected",
+            "A_end2"
+          ],
+          "activation": "A_connected"
+        },
+        {
+          "name": "A_temperature_high_2",
+          "family": "charge_temperature",
+          "sense": "le",
+          "variables": [
+            "A_connected",
+            "A_end2"
+          ],
+          "activation": "A_connected"
+        },
+        {
+          "name": "A_state_0",
+          "family": "charge_rest_ECM_midpoint",
+          "sense": "eq",
+          "variables": [
+            "A_charge_A",
+            "A_end0",
+            "A_start0"
+          ],
+          "activation": null
+        },
+        {
+          "name": "A_state_1",
+          "family": "charge_rest_ECM_midpoint",
+          "sense": "eq",
+          "variables": [
+            "A_charge_A",
+            "A_end1",
+            "A_end2",
+            "A_start1",
+            "A_start2"
+          ],
+          "activation": null
+        },
+        {
+          "name": "A_state_2",
+          "family": "charge_rest_ECM_midpoint",
+          "sense": "eq",
+          "variables": [
+            "A_charge_A",
+            "A_end1",
+            "A_end2",
+            "A_start1",
+            "A_start2"
+          ],
+          "activation": null
+        },
+        {
+          "name": "A_state_3",
+          "family": "charge_rest_ECM_midpoint",
+          "sense": "eq",
+          "variables": [
+            "A_charge_A",
+            "A_end0",
+            "A_end1",
+            "A_end2",
+            "A_end3",
+            "A_start0",
+            "A_start1",
+            "A_start2",
+            "A_start3"
+          ],
+          "activation": null
+        },
+        {
+          "name": "A_state_4",
+          "family": "charge_rest_ECM_midpoint",
+          "sense": "eq",
+          "variables": [
+            "A_charge_A",
+            "A_end0",
+            "A_end1",
+            "A_end2",
+            "A_end4",
+            "A_start0",
+            "A_start1",
+            "A_start2",
+            "A_start4"
+          ],
+          "activation": null
+        },
+        {
+          "name": "A_state_5",
+          "family": "charge_rest_ECM_midpoint",
+          "sense": "eq",
+          "variables": [
+            "A_charge_A",
+            "A_end1",
+            "A_end2",
+            "A_end5",
+            "A_start1",
+            "A_start2",
+            "A_start5"
+          ],
+          "activation": null
+        },
+        {
+          "name": "B_CC",
+          "family": "charge_current_ceiling",
+          "sense": "le",
+          "variables": [
+            "B_charge_A",
+            "B_connected"
+          ],
+          "activation": null
+        },
+        {
+          "name": "B_thermal_lock",
+          "family": "thermal_memory",
+          "sense": "le",
+          "variables": [
+            "B_connected",
+            "B_hot"
+          ],
+          "activation": null
+        },
+        {
+          "name": "B_supply",
+          "family": "charger_input_ceiling",
+          "sense": "le",
+          "variables": [
+            "B_connected",
+            "B_input_W"
+          ],
+          "activation": null
+        },
+        {
+          "name": "B_terminal_power",
+          "family": "charger_ECM_coupling",
+          "sense": "eq",
+          "variables": [
+            "B_charge_A",
+            "B_end0",
+            "B_end1",
+            "B_end2",
+            "B_input_W",
+            "B_start0",
+            "B_start1",
+            "B_start2"
+          ],
+          "activation": null
+        },
+        {
+          "name": "B_CV",
+          "family": "charge_voltage_ceiling",
+          "sense": "le",
+          "variables": [
+            "B_charge_A",
+            "B_connected",
+            "B_end0",
+            "B_end1",
+            "B_end2",
+            "B_start0",
+            "B_start1",
+            "B_start2"
+          ],
+          "activation": "B_connected"
+        },
+        {
+          "name": "B_voltage_positive",
+          "family": "charge_voltage_ceiling",
+          "sense": "le",
+          "variables": [
+            "B_charge_A",
+            "B_connected",
+            "B_end0",
+            "B_end1",
+            "B_end2",
+            "B_start0",
+            "B_start1",
+            "B_start2"
+          ],
+          "activation": "B_connected"
+        },
+        {
+          "name": "B_temperature_low_0",
+          "family": "charge_temperature",
+          "sense": "le",
+          "variables": [
+            "B_connected",
+            "B_start2"
+          ],
+          "activation": "B_connected"
+        },
+        {
+          "name": "B_temperature_high_0",
+          "family": "charge_temperature",
+          "sense": "le",
+          "variables": [
+            "B_connected",
+            "B_start2"
+          ],
+          "activation": "B_connected"
+        },
+        {
+          "name": "B_temperature_low_1",
+          "family": "charge_temperature",
+          "sense": "le",
+          "variables": [
+            "B_connected",
+            "B_end2",
+            "B_start2"
+          ],
+          "activation": "B_connected"
+        },
+        {
+          "name": "B_temperature_high_1",
+          "family": "charge_temperature",
+          "sense": "le",
+          "variables": [
+            "B_connected",
+            "B_end2",
+            "B_start2"
+          ],
+          "activation": "B_connected"
+        },
+        {
+          "name": "B_temperature_low_2",
+          "family": "charge_temperature",
+          "sense": "le",
+          "variables": [
+            "B_connected",
+            "B_end2"
+          ],
+          "activation": "B_connected"
+        },
+        {
+          "name": "B_temperature_high_2",
+          "family": "charge_temperature",
+          "sense": "le",
+          "variables": [
+            "B_connected",
+            "B_end2"
+          ],
+          "activation": "B_connected"
+        },
+        {
+          "name": "B_state_0",
+          "family": "charge_rest_ECM_midpoint",
+          "sense": "eq",
+          "variables": [
+            "B_charge_A",
+            "B_end0",
+            "B_start0"
+          ],
+          "activation": null
+        },
+        {
+          "name": "B_state_1",
+          "family": "charge_rest_ECM_midpoint",
+          "sense": "eq",
+          "variables": [
+            "B_charge_A",
+            "B_end1",
+            "B_end2",
+            "B_start1",
+            "B_start2"
+          ],
+          "activation": null
+        },
+        {
+          "name": "B_state_2",
+          "family": "charge_rest_ECM_midpoint",
+          "sense": "eq",
+          "variables": [
+            "B_charge_A",
+            "B_end1",
+            "B_end2",
+            "B_start1",
+            "B_start2"
+          ],
+          "activation": null
+        },
+        {
+          "name": "B_state_3",
+          "family": "charge_rest_ECM_midpoint",
+          "sense": "eq",
+          "variables": [
+            "B_charge_A",
+            "B_end0",
+            "B_end1",
+            "B_end2",
+            "B_end3",
+            "B_start0",
+            "B_start1",
+            "B_start2",
+            "B_start3"
+          ],
+          "activation": null
+        },
+        {
+          "name": "B_state_4",
+          "family": "charge_rest_ECM_midpoint",
+          "sense": "eq",
+          "variables": [
+            "B_charge_A",
+            "B_end0",
+            "B_end1",
+            "B_end2",
+            "B_end4",
+            "B_start0",
+            "B_start1",
+            "B_start2",
+            "B_start4"
+          ],
+          "activation": null
+        },
+        {
+          "name": "B_state_5",
+          "family": "charge_rest_ECM_midpoint",
+          "sense": "eq",
+          "variables": [
+            "B_charge_A",
+            "B_end1",
+            "B_end2",
+            "B_end5",
+            "B_start1",
+            "B_start2",
+            "B_start5"
+          ],
+          "activation": null
+        },
+        {
+          "name": "vehicle_channels",
+          "family": "shared_charger_capacity",
+          "sense": "le",
+          "variables": [
+            "A_connected",
+            "B_connected"
+          ],
+          "activation": null
+        },
+        {
+          "name": "vehicle_power",
+          "family": "shared_vehicle_power",
+          "sense": "le",
+          "variables": [
+            "A_input_W",
+            "B_input_W"
+          ],
+          "activation": null
+        }
+      ],
+      "variable_edges": {
+        "A_start0": [
+          "A_terminal_power",
+          "A_CV",
+          "A_voltage_positive",
+          "A_state_0",
+          "A_state_3",
+          "A_state_4"
+        ],
+        "A_start1": [
+          "A_terminal_power",
+          "A_CV",
+          "A_voltage_positive",
+          "A_state_1",
+          "A_state_2",
+          "A_state_3",
+          "A_state_4",
+          "A_state_5"
+        ],
+        "A_start2": [
+          "A_terminal_power",
+          "A_CV",
+          "A_voltage_positive",
+          "A_temperature_low_0",
+          "A_temperature_high_0",
+          "A_temperature_low_1",
+          "A_temperature_high_1",
+          "A_state_1",
+          "A_state_2",
+          "A_state_3",
+          "A_state_4",
+          "A_state_5"
+        ],
+        "A_start3": [
+          "A_state_3"
+        ],
+        "A_start4": [
+          "A_state_4"
+        ],
+        "A_start5": [
+          "A_state_5"
+        ],
+        "A_end0": [
+          "A_terminal_power",
+          "A_CV",
+          "A_voltage_positive",
+          "A_state_0",
+          "A_state_3",
+          "A_state_4"
+        ],
+        "A_end1": [
+          "A_terminal_power",
+          "A_CV",
+          "A_voltage_positive",
+          "A_state_1",
+          "A_state_2",
+          "A_state_3",
+          "A_state_4",
+          "A_state_5"
+        ],
+        "A_end2": [
+          "A_terminal_power",
+          "A_CV",
+          "A_voltage_positive",
+          "A_temperature_low_1",
+          "A_temperature_high_1",
+          "A_temperature_low_2",
+          "A_temperature_high_2",
+          "A_state_1",
+          "A_state_2",
+          "A_state_3",
+          "A_state_4",
+          "A_state_5"
+        ],
+        "A_end3": [
+          "A_state_3"
+        ],
+        "A_end4": [
+          "A_state_4"
+        ],
+        "A_end5": [
+          "A_state_5"
+        ],
+        "A_connected": [
+          "A_CC",
+          "A_thermal_lock",
+          "A_supply",
+          "A_CV",
+          "A_voltage_positive",
+          "A_temperature_low_0",
+          "A_temperature_high_0",
+          "A_temperature_low_1",
+          "A_temperature_high_1",
+          "A_temperature_low_2",
+          "A_temperature_high_2",
+          "vehicle_channels"
+        ],
+        "A_hot": [
+          "A_thermal_lock"
+        ],
+        "A_charge_A": [
+          "A_CC",
+          "A_terminal_power",
+          "A_CV",
+          "A_voltage_positive",
+          "A_state_0",
+          "A_state_1",
+          "A_state_2",
+          "A_state_3",
+          "A_state_4",
+          "A_state_5"
+        ],
+        "A_input_W": [
+          "A_supply",
+          "A_terminal_power",
+          "vehicle_power"
+        ],
+        "B_start0": [
+          "B_terminal_power",
+          "B_CV",
+          "B_voltage_positive",
+          "B_state_0",
+          "B_state_3",
+          "B_state_4"
+        ],
+        "B_start1": [
+          "B_terminal_power",
+          "B_CV",
+          "B_voltage_positive",
+          "B_state_1",
+          "B_state_2",
+          "B_state_3",
+          "B_state_4",
+          "B_state_5"
+        ],
+        "B_start2": [
+          "B_terminal_power",
+          "B_CV",
+          "B_voltage_positive",
+          "B_temperature_low_0",
+          "B_temperature_high_0",
+          "B_temperature_low_1",
+          "B_temperature_high_1",
+          "B_state_1",
+          "B_state_2",
+          "B_state_3",
+          "B_state_4",
+          "B_state_5"
+        ],
+        "B_start3": [
+          "B_state_3"
+        ],
+        "B_start4": [
+          "B_state_4"
+        ],
+        "B_start5": [
+          "B_state_5"
+        ],
+        "B_end0": [
+          "B_terminal_power",
+          "B_CV",
+          "B_voltage_positive",
+          "B_state_0",
+          "B_state_3",
+          "B_state_4"
+        ],
+        "B_end1": [
+          "B_terminal_power",
+          "B_CV",
+          "B_voltage_positive",
+          "B_state_1",
+          "B_state_2",
+          "B_state_3",
+          "B_state_4",
+          "B_state_5"
+        ],
+        "B_end2": [
+          "B_terminal_power",
+          "B_CV",
+          "B_voltage_positive",
+          "B_temperature_low_1",
+          "B_temperature_high_1",
+          "B_temperature_low_2",
+          "B_temperature_high_2",
+          "B_state_1",
+          "B_state_2",
+          "B_state_3",
+          "B_state_4",
+          "B_state_5"
+        ],
+        "B_end3": [
+          "B_state_3"
+        ],
+        "B_end4": [
+          "B_state_4"
+        ],
+        "B_end5": [
+          "B_state_5"
+        ],
+        "B_connected": [
+          "B_CC",
+          "B_thermal_lock",
+          "B_supply",
+          "B_CV",
+          "B_voltage_positive",
+          "B_temperature_low_0",
+          "B_temperature_high_0",
+          "B_temperature_low_1",
+          "B_temperature_high_1",
+          "B_temperature_low_2",
+          "B_temperature_high_2",
+          "vehicle_channels"
+        ],
+        "B_hot": [
+          "B_thermal_lock"
+        ],
+        "B_charge_A": [
+          "B_CC",
+          "B_terminal_power",
+          "B_CV",
+          "B_voltage_positive",
+          "B_state_0",
+          "B_state_1",
+          "B_state_2",
+          "B_state_3",
+          "B_state_4",
+          "B_state_5"
+        ],
+        "B_input_W": [
+          "B_supply",
+          "B_terminal_power",
+          "vehicle_power"
+        ]
+      }
+    }
+  },
+  "scope": "10-second event-aligned component optimization; maximum instantaneous current objective",
+  "full_mission_charging_schedule": false,
+  "continuous_thermal_guard_verified": false,
+  "regional_optimization_runs": 0
+}

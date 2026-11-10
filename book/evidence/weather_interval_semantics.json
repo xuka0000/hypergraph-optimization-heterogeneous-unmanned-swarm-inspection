@@ -1,0 +1,112 @@
+{
+  "observed_at": "2026-11-10T06:06:51.941752+00:00",
+  "scope": "read-only source and stored-input semantics audit; no solver or owner edit",
+  "official_source": {
+    "url": "https://open-meteo.com/en/docs",
+    "section": "Hourly Parameter Definition",
+    "accessed": "2026-11-10",
+    "precipitation_valid_time": "Preceding hour sum",
+    "gust_valid_time": "Preceding hour max",
+    "is_day": "instant"
+  },
+  "code": {
+    "path": "reproduction/project/Agent/Publication/engineering_regional_weather.py",
+    "sha256": "037143f84af7ac48baa924084180db9b7a58c86e43d3ebecafe59453e92ed4e2",
+    "locator": "retained_regional_forecast, intervals.append; uses hourly[i] for [k*3600,(k+1)*3600]"
+  },
+  "raw": {
+    "archive": "reproduction/inspection_existing_data.zip",
+    "member": "总结/03_实验数据/工程化联合求解/day_ahead_pilot/forecast_raw.json",
+    "sha256": "6c28f48f647388fa84ce862b27d0e48a91c603641887a18a98ae8a0c726fd596"
+  },
+  "rows": [
+    {
+      "time": "2026-07-01T08:00",
+      "rain_mm": 0.0,
+      "gust_mps": 5.8,
+      "is_day": 1
+    },
+    {
+      "time": "2026-07-01T09:00",
+      "rain_mm": 0.0,
+      "gust_mps": 6.4,
+      "is_day": 1
+    },
+    {
+      "time": "2026-07-01T10:00",
+      "rain_mm": 0.0,
+      "gust_mps": 7.2,
+      "is_day": 1
+    },
+    {
+      "time": "2026-07-01T11:00",
+      "rain_mm": 0.1,
+      "gust_mps": 8.0,
+      "is_day": 1
+    },
+    {
+      "time": "2026-07-01T12:00",
+      "rain_mm": 0.1,
+      "gust_mps": 8.3,
+      "is_day": 1
+    },
+    {
+      "time": "2026-07-01T13:00",
+      "rain_mm": 0.0,
+      "gust_mps": 8.1,
+      "is_day": 1
+    },
+    {
+      "time": "2026-07-01T14:00",
+      "rain_mm": 0.0,
+      "gust_mps": 8.6,
+      "is_day": 1
+    },
+    {
+      "time": "2026-07-01T15:00",
+      "rain_mm": 0.0,
+      "gust_mps": 8.9,
+      "is_day": 1
+    },
+    {
+      "time": "2026-07-01T16:00",
+      "rain_mm": 0.0,
+      "gust_mps": 8.9,
+      "is_day": 1
+    }
+  ],
+  "finding": "Current interval gate applies rain/gust at timestamp t to [t,t+1h), although the API attributes those accumulated/extreme values to the preceding hour. This is a one-hour forward shift of the source aggregate time support. Instant daylight also uses a declared left-end hold.",
+  "implemented_rain_forbidden_UTC": [
+    "2026-07-01T11:00/13:00"
+  ],
+  "source_rain_aggregate_UTC": [
+    "2026-07-01T10:00/12:00"
+  ],
+  "implemented_allowed_s": [
+    [
+      0,
+      10800
+    ],
+    [
+      18000,
+      28800
+    ]
+  ],
+  "source_aligned_allowed_s": [
+    [
+      0,
+      7200
+    ],
+    [
+      14400,
+      28800
+    ]
+  ],
+  "allowed_duration_hours_both": 6,
+  "limits": [
+    "The 24 aircraft-hour necessary bound for the fixed 65 candidates is unchanged in this dataset because total allowed duration is still 6h; feasible placement and candidate validity can change.",
+    "Do not relabel prior numeric acceptance as checked against corrected source time support.",
+    "No existing candidate was re-evaluated with corrected intervals; original records and sources remain unchanged.",
+    "Not a new claim of physical infeasibility or a new run; describe the implemented model and the time-support gap separately."
+  ]
+}

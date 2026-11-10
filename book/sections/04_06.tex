@@ -1,0 +1,324 @@
+\section{障碍物、地形和安全距离}
+\label{sec:04_06}
+
+飞行轨迹的几何可行性取决于机体与周围实体之间的距离，而观测可行性还取决于相机到目标的视线是否被这些实体遮挡。两类约束使用同一套地形、塔柱和导线几何，但采用不同的距离要求：第\ref{sec:04_05}节的视线允许与实体边界相切，本节的常规飞行则为机体尺寸及参考误差保留正裕度。为使这两类检查有确定含义，首先必须说明实体占据哪些空间、地形在哪些位置有定义，以及模板目标与实体之间是否存在几何矛盾。
+
+\subsection{地形样点、有效三角形与插值定义域}
+
+所有位置均采用第\ref{sec:04_03}节规定的同一坐标系，位置、高程和距离的单位均为$\mathrm m$。以下以$h$表示该坐标系下的地形高度；若采用数值局部坐标，则$h$对应经过水平与竖直原点平移后的局部地形，不能将源高程直接代入局部飞行位置。
+
+设$\mathcal A^{\mathrm{dem}}$为有限的DEM样点索引集合。样点$a\in\mathcal A^{\mathrm{dem}}$的水平位置为$\mathbf d_a=(x_a,y_a)^{\mathsf T}\in\mathbb R^2$，高程为$z_a\in\mathbb R$。设$\mathcal T^{\mathrm{dem}}$为当前版本保留的有效三角形索引集合。每个$\tau\in\mathcal T^{\mathrm{dem}}$关联三个样点索引$a_{\tau1},a_{\tau2},a_{\tau3}$，并满足水平投影非退化条件
+\begin{equation}
+ \det\begin{pmatrix}
+ x_{a_{\tau2}}-x_{a_{\tau1}}&x_{a_{\tau3}}-x_{a_{\tau1}}\\
+ y_{a_{\tau2}}-y_{a_{\tau1}}&y_{a_{\tau3}}-y_{a_{\tau1}}
+ \end{pmatrix}\ne0.
+ \label{s0406:triangle_nondegeneracy}
+\end{equation}
+行列式的单位为$\mathrm{m^2}$。该条件保证一个水平位置在给定三角形内具有唯一的重心坐标；三点共线时，不能继续使用二维三角形插值公式。
+
+三角形的闭水平区域及地形的候选定义域为
+\begin{equation}
+ D_\tau=\operatorname{conv}\{\mathbf d_{a_{\tau1}},
+ \mathbf d_{a_{\tau2}},\mathbf d_{a_{\tau3}}\},
+ \qquad
+ D^{\mathrm{dem}}=\bigcup_{\tau\in\mathcal T^{\mathrm{dem}}}D_\tau.
+ \label{s0406:terrain_domain}
+\end{equation}
+其中$\operatorname{conv}$表示凸包，$D_\tau$包含三条边及三个顶点。对任意$\mathbf d\in D_\tau$，重心坐标$\lambda_{\tau j}(\mathbf d)$是满足下式的无量纲实数：
+\begin{equation}
+ \mathbf d=\sum_{j=1}^{3}\lambda_{\tau j}(\mathbf d)
+                 \mathbf d_{a_{\tau j}},
+ \qquad
+ \sum_{j=1}^{3}\lambda_{\tau j}(\mathbf d)=1,
+ \qquad
+ \lambda_{\tau j}(\mathbf d)\ge0\quad(j=1,2,3).
+ \label{s0406:barycentric_coordinates}
+\end{equation}
+相应的三角形内高度为
+\begin{equation}
+ h_\tau(\mathbf d)=\sum_{j=1}^{3}
+             \lambda_{\tau j}(\mathbf d)z_{a_{\tau j}},
+ \qquad \mathbf d\in D_\tau,
+ \quad \tau\in\mathcal T^{\mathrm{dem}}.
+ \label{s0406:triangle_height}
+\end{equation}
+这里的重心插值适用于三角形内的每个位置，并非只在三角形重心计算一个高度。三个非负权重之和为一，因此插值高度处于该三角形三个顶点高程的最小值与最大值之间。
+
+将各片插值写成单值函数$h:D^{\mathrm{dem}}\to\mathbb R$，还需要相交区域上的相容条件：
+\begin{equation}
+ h_\tau(\mathbf d)=h_{\tau'}(\mathbf d),
+ \quad \mathbf d\in D_\tau\cap D_{\tau'},
+ \quad \tau,\tau'\in\mathcal T^{\mathrm{dem}}.
+ \label{s0406:terrain_compatibility}
+\end{equation}
+在满足该条件的地形输入上，定义
+\begin{equation}
+ h(\mathbf d)=h_\tau(\mathbf d),
+ \qquad \mathbf d\in D_\tau,
+ \quad \tau\in\mathcal T^{\mathrm{dem}}.
+ \label{s0406:terrain_height}
+\end{equation}
+若两个三角形仅共享同一条由相同样点构成的边，则两侧插值在该边上都等于同一组端点高程的线性插值，因而相容。但仅凭三角形个数或样点凸包，不能排除重叠区域、缺口或连接异常，也不能据此认定式\eqref{s0406:terrain_compatibility}在全部相交区域成立。若同一查询位置得到互不相容的高度，则该位置的单值地形查询尚未确定，不能任选一个高度后将检查记为满足。
+
+地形实体表示地表及其下方的空间，定义为
+\begin{equation}
+ \mathcal O^{\mathrm{ter}}
+ =\bigcup_{\tau\in\mathcal T^{\mathrm{dem}}}
+ \left\{(\mathbf d^{\mathsf T},z)^{\mathsf T}\in\mathbb R^3:
+        \mathbf d\in D_\tau,\ z\le h_\tau(\mathbf d)\right\}.
+ \label{s0406:terrain_solid}
+\end{equation}
+每个三角形上的仿射高度函数连续，$D_\tau$为闭集，故对应的下方实体为闭集；有限个这样的实体之并仍为闭集。在式\eqref{s0406:terrain_compatibility}成立时，式\eqref{s0406:terrain_solid}就是$D^{\mathrm{dem}}$上单值地形$h$的下方实体。若相容性尚未确认，该实体并集本身有集合意义，但不能借此宣称单值地形已得到验证，也不能悄悄把冲突插值改成新的地形高度规则。
+
+由于每个有效三角形都由DEM样点构成，有
+\begin{equation}
+ D^{\mathrm{dem}}
+ \subseteq\operatorname{conv}
+       \{\mathbf d_a:a\in\mathcal A^{\mathrm{dem}}\}.
+ \label{s0406:domain_hull_relation}
+\end{equation}
+因此，采样凸包外不进行外推；位于采样凸包内也不充分保证地形有定义。实际查询仍须落入有效三角形并集，并具有相容的插值值。飞行位置以及需要判定地形遮挡的视线位置都受这一覆盖范围限制，未覆盖位置不能按无障碍空间处理。
+
+源地形拓扑包含3886个三角形。当前绑定的地形版本保留1953个样点，恢复其中1716个规则格点的水平坐标，237个塔点不变，高程均未改变；保留源连接并去除144个精确退化三角形后，得到3742个有效三角形。该处理不是重新进行Delaunay三角剖分，也不意味着新旧地形曲面等价。水平坐标恢复的幅度、连接关系及验收边界须随输入版本绑定；上述数量本身不构成全域覆盖或无缝相容的证明。对本次冻结的输入，另行枚举相交三角形并检查交集上的仿射高度；该数值检查未发现正面积重叠，高度差处于所设容差内。数值相容性检查不能替代精确算术证明。
+
+\subsection{闭塔柱、导线中心曲线与管状实体}
+
+沿用杆塔集合$\mathcal G$及二维地图位置$\mathbf r_g\in\mathbb R^2$。设$\mathbf r_g\in D^{\mathrm{dem}}$且该位置的地形高度已确定，令$h_g=h(\mathbf r_g)$。塔$g$的参考柱半径为$R_g>0$，参考柱高为$H_g>0$，二者均以$\mathrm m$计。采用竖直实心圆柱表示其占据空间：
+\begin{equation}
+ \mathcal O_g^{\mathrm{tower}}
+ =\left\{(\mathbf d^{\mathsf T},z)^{\mathsf T}\in\mathbb R^3:
+ \|\mathbf d-\mathbf r_g\|\le R_g,\quad
+ h_g\le z\le h_g+H_g\right\},
+ \qquad g\in\mathcal G.
+ \label{s0406:tower_solid}
+\end{equation}
+等价地，以柱坐标表示柱内位置为
+\begin{equation}
+ \mathbf x=
+ \begin{pmatrix}
+ \mathbf r_g+\rho(\cos\theta,\sin\theta)^{\mathsf T}\\
+ h_g+\zeta
+ \end{pmatrix},
+ \qquad
+ 0\le\rho\le R_g,\quad
+ 0\le\theta\le2\pi,\quad
+ 0\le\zeta\le H_g.
+ \label{s0406:tower_cylindrical_coordinates}
+\end{equation}
+径向距离$\rho$和相对底面的高度$\zeta$以$\mathrm m$计，方位角$\theta$以$\mathrm{rad}$计。边界包含柱侧面、上下底面及其交线；柱轴处的角坐标不唯一，不影响实体集合的定义。该圆柱是给定的实体近似，不把塔内晶格空隙视为可穿越空间。
+
+参考柱高的几何依据来自KPLC招标文件所附塔图\cite{KPLC2025}。该文件第73页附录1 A-1为132\,kV悬垂塔图，图签日期为2006年9月13日；图示高度117\,ft\,3\,in换算为35.7378\,m。这里迁移的是几何模板，柱半径及实心圆柱近似仍属于本模型的参考构造，不能据此将研究区域的237座地图杆塔识别为该塔型或该电压等级。
+
+沿用导线索引集合$\mathcal E^{\mathrm{wire}}$。对每根$e\in\mathcal E^{\mathrm{wire}}$，给定两个三维悬挂端点$\mathbf a_e,\mathbf b_e\in\mathbb R^3$，最大相对弦线下垂量为$s_e^{\mathrm{sag,max}}\ge0$，导线管半径为$r_e^{\mathrm{wire}}>0$，长度单位均为$\mathrm m$。令$\mathbf e_3=(0,0,1)^{\mathsf T}$为竖直向上单位向量，定义中心曲线
+\begin{equation}
+ \mathbf w_e(\xi)
+ =(1-\xi)\mathbf a_e+\xi\mathbf b_e
+ -4s_e^{\mathrm{sag,max}}\xi(1-\xi)\mathbf e_3,
+ \qquad \xi\in[0,1].
+ \label{s0406:wire_curve}
+\end{equation}
+这里$\xi$仅为无量纲的导线曲线参数，不表示天气情形。端点处下垂项为零，参数中点$\xi=1/2$处相对连接两端点的直线下垂$s_e^{\mathrm{sag,max}}$。端点高程不同时，该参数中点不必是整条曲线的最低点。源表达式中的系数$20\,\mathrm m$对应$4s_e^{\mathrm{sag,max}}$，即最大相对弦线下垂量为$5\,\mathrm m$，不能把系数20解释成最大弧垂。这是二次垂弧模板，不是现场垂弧测量，也未建立温度、张力和风偏共同决定的导线力学模型。
+
+定义中心曲线的点集及其闭管状实体：
+\begin{equation}
+ \begin{split}
+ \mathcal W_e&=\{\mathbf w_e(\xi):\xi\in[0,1]\},\\
+ \mathcal O_e^{\mathrm{wire}}
+ &=\left\{\mathbf x\in\mathbb R^3:
+    \min_{\xi\in[0,1]}\|\mathbf x-\mathbf w_e(\xi)\|
+       \le r_e^{\mathrm{wire}}\right\}.
+ \end{split}
+ \label{s0406:wire_tube}
+\end{equation}
+连续曲线在闭有界参数区间上的像为紧集，故最小距离能够取得；管状实体包括曲线周围的全部闭球及端点球形包络。其半径表示参考导线实体厚度，与无人机所需的飞行净空分别定义。
+
+\subsection{模板内点矛盾与沿法向的显式修正}
+
+实体几何与目标模板必须共同检查。若目标样点位于实心塔柱内部，从柱外相机到该样点的线段必然在接近终点的一段进入柱内部；仅将目标端点从视线检查中排除，不能消除这一矛盾。源参考构造中，237项全景目标位于实心塔柱内部，其余1896项模板目标的中心位于源导线管内。这些是目标模板与实体近似之间的冲突，不能通过删除目标所属塔或忽略相关导线来处理。
+
+为区分输入记录与派生几何，以$\mathcal S_i^{\mathrm{src}}$、$\mathbf c_i^{\mathrm{src}}$和$\mathbf q_{ir}^{\mathrm{src}}$分别表示任务$i\in\mathcal I$的源目标面、源参考点和源样点，其中$r\in\mathcal J_i$。源目标面及样点采用第\ref{sec:04_05}节的同一单位法向$\mathbf n_i$与切平面基$B_i$；$g(i)\in\mathcal G$表示目标所属塔。以下修正保持法向、切平面基、任务身份和塔的地图位置不变，只构造一个明确的参考目标层。
+
+首先求塔柱在目标外向法向上的最远投影。对无量纲方向向量$\mathbf n=(\mathbf n_{xy}^{\mathsf T},n_z)^{\mathsf T}\in\mathbb R^3$，塔柱的支持函数为
+\begin{equation}
+ \sigma_g(\mathbf n)
+ =\max_{\mathbf x\in\mathcal O_g^{\mathrm{tower}}}
+       \mathbf n^{\mathsf T}\mathbf x.
+ \label{s0406:tower_support_definition}
+\end{equation}
+其单位为$\mathrm m$。将柱坐标代入内积，水平圆盘和竖直区间可以分别求最大值：
+\begin{align}
+ \sigma_g(\mathbf n)
+ ={}&\mathbf n_{xy}^{\mathsf T}\mathbf r_g
+ +\max_{\|\mathbf v\|\le R_g}\mathbf n_{xy}^{\mathsf T}\mathbf v
+ +\max_{z\in[h_g,h_g+H_g]}n_z z\notag\\
+ ={}&\mathbf n_{xy}^{\mathsf T}\mathbf r_g
+ +R_g\|\mathbf n_{xy}\|
+ +\max\{n_z h_g,n_z(h_g+H_g)\}.
+ \label{s0406:tower_support_formula}
+\end{align}
+其中$\mathbf v\in\mathbb R^2$是相对柱轴的水平位移，单位为$\mathrm m$。水平项由柯西--施瓦茨不等式达到上界；当$\mathbf n_{xy}=\mathbf0$时该项为零。竖直项在$n_z\ge0$时取上底面，在$n_z<0$时取下底面，因此该表达同时适用于倾斜法向和竖直法向。
+
+设$\varepsilon^{\mathrm{surf}}>0$为模板表面修正的外侧余量，单位为$\mathrm m$。定义沿法向离开所属塔柱支持平面的位移
+\begin{equation}
+ \Delta_i=\max\left\{0,
+ \sigma_{g(i)}(\mathbf n_i)+\varepsilon^{\mathrm{surf}}
+ -\min_{r\in\mathcal J_i}
+       \mathbf n_i^{\mathsf T}\mathbf q_{ir}^{\mathrm{src}}
+ \right\},
+ \qquad i\in\mathcal I.
+ \label{s0406:tower_shift}
+\end{equation}
+$\Delta_i\ge0$以$\mathrm m$计，是由固定几何计算的派生量，不是联合规划中的自由位移变量。因为$\|\mathbf n_i\|=1$，平移后的样点满足
+\begin{equation}
+ \mathbf n_i^{\mathsf T}
+  (\mathbf q_{ir}^{\mathrm{src}}+\Delta_i\mathbf n_i)
+ \ge\sigma_{g(i)}(\mathbf n_i)+\varepsilon^{\mathrm{surf}},
+ \qquad r\in\mathcal J_i.
+ \label{s0406:shifted_support_separation}
+\end{equation}
+对任意$\mathbf x\in\mathcal O_{g(i)}^{\mathrm{tower}}$，再由单位法向的投影不超过欧氏长度得到
+\begin{align}
+ \|\mathbf q_{ir}^{\mathrm{src}}+\Delta_i\mathbf n_i-\mathbf x\|
+ &\ge\mathbf n_i^{\mathsf T}
+       (\mathbf q_{ir}^{\mathrm{src}}+\Delta_i\mathbf n_i-\mathbf x)
+ \notag\\
+ &\ge\varepsilon^{\mathrm{surf}}.
+ \label{s0406:support_distance_bound}
+\end{align}
+因此，该构造使样点与所属塔柱具有至少$\varepsilon^{\mathrm{surf}}$的欧氏距离。它给出沿指定法向的支持平面分离构造，不声称是在所有方向中使位移最小的修正。由于源目标为法向$\mathbf n_i$的平面区域，其面上各点的法向投影相同，所属塔柱的这一分离关系也适用于同步平移后的整个平面目标；这一结论不能直接推广为目标面与所有导线之间的距离保证。
+
+为进一步离开导线实体，定义点到非空集合$\mathcal A\subseteq\mathbb R^3$的欧氏距离
+\begin{equation}
+ \operatorname{dist}(\mathbf x,\mathcal A)
+ =\inf_{\mathbf y\in\mathcal A}\|\mathbf x-\mathbf y\|.
+ \label{s0406:set_distance}
+\end{equation}
+设$d^{\mathrm{grid}}>0$为表面修正的长度网格步长，单位为$\mathrm m$。在完成$\Delta_i$平移之后，取满足全部样点与全部导线管距离条件的最小非负网格位移：
+\begin{equation}
+ \delta_i=\min\left\{k d^{\mathrm{grid}}:
+ \begin{array}{l}
+ k\in\mathbb Z_{\ge0},\\
+ \operatorname{dist}\bigl(
+ \mathbf q_{ir}^{\mathrm{src}}
+ +(\Delta_i+k d^{\mathrm{grid}})\mathbf n_i,
+ \mathcal O_e^{\mathrm{wire}}\bigr)
+ \ge\varepsilon^{\mathrm{surf}},\\
+ \hfill r\in\mathcal J_i,\ e\in\mathcal E^{\mathrm{wire}}
+ \end{array}\right\}.
+ \label{s0406:wire_grid_shift}
+\end{equation}
+$\delta_i$以$\mathrm m$计。这里遍历整个导线集合，包括与该目标有关的原导线；不能只检查最近的一根，也不能因目标原本位于某导线内部而跳过该导线。参考构造采用厘米网格，即$d^{\mathrm{grid}}=0.01\,\mathrm m$。最小性仅指该离散网格上的最小可行位移，并不表示连续位移空间的最优修正。
+
+有限根导线管的并集是有界的，样点数也是有限的，而单位法向上的射线随位移增大离开任意有界集合。因此，在不另加位移上界的上述几何构造中，总能找到满足式\eqref{s0406:wire_grid_shift}的网格点。这个存在性只涉及离开导线管，不保证平移后的观测区域仍有满足道路、飞行动力学、能量和成像条件的联合方案。实际模板构造程序另设有限搜索上界；若界内未找到满足条件的位移，应记录构造失败，不能据无界存在性结论直接当作构造成功，也不能删除相关障碍。该上界与本次实际位移在第6章说明。额外的$\delta_i\ge0$沿同一外向法向施加，也不会破坏式\eqref{s0406:shifted_support_separation}对所属塔柱的分离。
+
+令总位移向量$\mathbf a_i^{\mathrm{shift}}=(\Delta_i+\delta_i)\mathbf n_i\in\mathbb R^3$，单位为$\mathrm m$。最终用于规划的派生目标定义为
+\begin{equation}
+ \begin{split}
+ \mathcal S_i&=\mathcal S_i^{\mathrm{src}}+\mathbf a_i^{\mathrm{shift}},\qquad
+ \mathbf c_i=\mathbf c_i^{\mathrm{src}}+\mathbf a_i^{\mathrm{shift}},\\
+ \mathbf q_{ir}&=\mathbf q_{ir}^{\mathrm{src}}+\mathbf a_i^{\mathrm{shift}},
+ \qquad r\in\mathcal J_i,
+ \end{split}
+ \label{s0406:derived_target_geometry}
+\end{equation}
+其中集合平移$\mathcal A+\mathbf a$表示$\{\mathbf x+\mathbf a:\mathbf x\in\mathcal A\}$。若源模板还给出了参考观测点$\mathbf p_i^{\mathrm{src}}$及参考观测区域$\mathcal V_i^{\mathrm{ref,src}}\subseteq\mathbb R^3$，则同步定义
+\begin{equation}
+ \mathbf p_i^{\mathrm{ref}}
+ =\mathbf p_i^{\mathrm{src}}+\mathbf a_i^{\mathrm{shift}},
+ \qquad
+ \mathcal V_i^{\mathrm{ref}}
+ =\mathcal V_i^{\mathrm{ref,src}}+\mathbf a_i^{\mathrm{shift}}.
+ \label{s0406:reference_region_shift}
+\end{equation}
+这些参考点和区域是模板参数，不是已经求得的飞行状态。对于仅由工作距离和入射角定义的几何观测区域，同步平移保持相对向量：
+\begin{equation}
+ (\mathbf x+\mathbf a_i^{\mathrm{shift}})
+ -(\mathbf q_{ir}^{\mathrm{src}}+\mathbf a_i^{\mathrm{shift}})
+ =\mathbf x-\mathbf q_{ir}^{\mathrm{src}}.
+ \label{s0406:relative_geometry_preserved}
+\end{equation}
+所以，第\ref{sec:04_05}节的距离与入射角区域随目标作同一平移。障碍物本身没有随之移动，故包含视线或机体避障要求的可行观测集合不能仅靠这一平移关系取得，仍须针对全部原实体重新检查。
+
+参考构造的几何核验记录中，237项全景目标的塔柱外移量为$2.01\,\mathrm m$，其导线追加位移$\delta_i$为零；1896项导线模板目标的$\delta_i$介于$0.06$至$0.59\,\mathrm m$，其中1792项为$0.06$或$0.07\,\mathrm m$。该构造保留全部2568根导线和原塔位置，10665个派生表面样点通过了实体外侧检查。这些数量说明所声明的参考模板修正已进行样点级几何核验，不是飞行轨迹可行性或区域巡检完成的证据。厘米网格与表面余量是构造选择，不代表地图或实测目标具有厘米精度。
+
+源坐标、源字段与派生坐标分别保留，移动的是参考目标及对应参考观测区域，OSM塔位不移动。由此形成的派生目标用于消除当前实体近似下的模板矛盾，不能称为实际部件位置的测量修正。
+
+\subsection{常规飞行的机体裕度与连续避障约束}
+
+设$r^{\mathrm{body}}>0$为机体的球形包络半径，$r^{\mathrm{track}}\ge0$为参考跟踪误差裕度，$r^{\mathrm{map}}\ge0$为参考地图误差裕度，$r^{\mathrm{clear}}>0$为额外净空，四者均以$\mathrm m$计。定义常规飞行中心相对障碍实体的总裕度
+\begin{equation}
+ r_f=r^{\mathrm{body}}+r^{\mathrm{track}}
+       +r^{\mathrm{map}}+r^{\mathrm{clear}}.
+ \label{s0406:flight_margin}
+\end{equation}
+这是将机体尺度和参考误差按长度相加的几何保护包络。若跟踪和地图两项确实是对应位置误差的欧氏范数上界，则三角不等式给出这种相加方式的保守依据；当它们只是参考设定时，式\eqref{s0406:flight_margin}仍是明确的规划裕度，但不能被解释为已经标定的实际误差保证。表面修正余量$\varepsilon^{\mathrm{surf}}$用于构造目标，$r_f$用于保护飞行器，二者承担不同功能。
+
+设$\mathcal L^{\mathrm{act}}$为实际选用的航次索引集合，航次$\ell\in\mathcal L^{\mathrm{act}}$的活动时间区间为$[s_\ell,e_\ell]$，端点单位为$\mathrm s$。令$\mathcal D_\ell^{\mathrm{reg}}\subseteq[s_\ell,e_\ell]$为扣除规定起飞、降落接触阶段后的常规飞行时间集合。机体参考位置沿用$\mathbf p_\ell(t)=(p_{\ell,x}(t),p_{\ell,y}(t),p_{\ell,z}(t))^{\mathsf T}$，并记水平投影为$\mathbf p_{\ell,xy}(t)$。常规飞行要求
+\begin{subequations}
+\label{s0406:regular_collision_constraints}
+\begin{align}
+ \operatorname{dist}\bigl(\mathbf p_\ell(t),
+             \mathcal O_g^{\mathrm{tower}}\bigr)
+ &\ge r_f,
+ &&g\in\mathcal G,
+ \label{s0406:tower_clearance}\\
+ \|\mathbf p_\ell(t)-\mathbf w_e(\xi)\|
+ &\ge r_f+r_e^{\mathrm{wire}},
+ &&e\in\mathcal E^{\mathrm{wire}},\quad\xi\in[0,1],
+ \label{s0406:wire_clearance}\\
+ \mathbf p_{\ell,xy}(t)&\in D^{\mathrm{dem}},
+ \label{s0406:terrain_query_domain}\\
+ p_{\ell,z}(t)-h\bigl(\mathbf p_{\ell,xy}(t)\bigr)
+ &\ge r_f.
+ \label{s0406:vertical_terrain_clearance}
+\end{align}
+\end{subequations}
+上述各式对所有$\ell\in\mathcal L^{\mathrm{act}}$和$t\in\mathcal D_\ell^{\mathrm{reg}}$成立，地形高度还须满足前述单值查询条件。各项使用机体参考位置，而不是将有安装偏移的相机光心直接当作机体中心。时间量词遍历整段飞行；导线约束还遍历整条连续曲线，不能仅检查若干航迹时刻或导线端点。
+
+塔柱距离可以直接展开。对任意$\mathbf p=(\mathbf d^{\mathsf T},z)^{\mathsf T}\in\mathbb R^3$，定义水平和竖直方向超出柱体的距离
+\begin{equation}
+ d_g^{\mathrm{hor}}(\mathbf p)
+ =\max\{\|\mathbf d-\mathbf r_g\|-R_g,0\},
+ \qquad
+ d_g^{\mathrm{ver}}(\mathbf p)
+ =\max\{h_g-z,0,z-(h_g+H_g)\}.
+ \label{s0406:cylinder_distance_components}
+\end{equation}
+两者以$\mathrm m$计。由于圆柱是水平闭圆盘与竖直闭区间的笛卡尔积，最近点问题的距离平方可以分离，得到
+\begin{equation}
+ \operatorname{dist}(\mathbf p,\mathcal O_g^{\mathrm{tower}})
+ =\sqrt{\bigl(d_g^{\mathrm{hor}}(\mathbf p)\bigr)^2
+       +\bigl(d_g^{\mathrm{ver}}(\mathbf p)\bigr)^2}.
+ \label{s0406:cylinder_euclidean_distance}
+\end{equation}
+当飞行器与柱体处于同一高度范围时，只剩水平外侧距离；位于柱顶上方且水平投影也在柱外时，距离同时包含水平和竖直分量。因此，柱体欧氏避障不能简单替换为全高度范围内都要求水平绕开柱轴$R_g+r_f$，也不能只检查飞行高度是否高于塔顶。
+
+对于导线，令$d_e(\mathbf p)=\min_{\xi\in[0,1]}\|\mathbf p-\mathbf w_e(\xi)\|$，则$d_e$以$\mathrm m$计，且
+\begin{equation}
+ \operatorname{dist}(\mathbf p,\mathcal O_e^{\mathrm{wire}})
+ =\max\{d_e(\mathbf p)-r_e^{\mathrm{wire}},0\}.
+ \label{s0406:wire_tube_distance}
+\end{equation}
+由于$r_f>0$，到导线管实体的距离不小于$r_f$，等价于到中心曲线的距离不小于$r_f+r_e^{\mathrm{wire}}$，也就等价于式\eqref{s0406:wire_clearance}对全部$\xi$成立。该表达清楚地区分导线自身的管半径和飞行安全裕度，避免漏加或重复加入导线半径。
+
+\subsection{地形垂直净空的含义与起落例外边界}
+
+式\eqref{s0406:vertical_terrain_clearance}控制的是同一水平位置处的竖直净高，不是到地形实体的欧氏距离。两者在水平地面上可以一致，但在坡面上通常不同。为说明差异，考虑局部仿射坡面
+\begin{equation}
+ h(x,y)=a x+b y+c,
+ \label{s0406:planar_slope}
+\end{equation}
+其中$a,b$为无量纲坡度，$c$以$\mathrm m$计。对坡面上方的点$\mathbf p$，其到该无限平面的垂直于平面方向的距离为
+\begin{equation}
+ d_{\perp}(\mathbf p)
+ =\frac{p_z-h(p_x,p_y)}{\sqrt{1+a^2+b^2}}.
+ \label{s0406:slope_normal_distance}
+\end{equation}
+若正交投影落在所考虑的三角形内部，这也给出到该地形面的最近距离。存在坡度时，同样的竖直净高对应更小的法向距离。因此，本模型的地形条件应准确称为垂直净空条件，不能将其宣称为与塔柱及导线相同的欧氏球形净空保证，也不能以相同的符号$r_f$掩盖这一差别。
+
+常规飞行始终使用式\eqref{s0406:regular_collision_constraints}。起飞和降落则涉及机体与本车平台的接触，若在接触点仍强制机体中心到本车实体保持完整$r_f$，会与规定的停放位置矛盾。第\ref{sec:05_06}节据此定义限定的起落保护区、指定的起飞与降落时间区间，以及随离台高度变化的接触裕度。在这些区间内，本车须保持静止，飞行器须受平台周围水平范围、最低接触中心高度和保护区出入口高度的共同限制；只有到本车实体的距离条件和地形垂直净空条件使用相应接触裕度。
+
+该例外不豁免塔柱、导线或其他车辆。特别是式\eqref{s0406:tower_clearance}和式\eqref{s0406:wire_clearance}仍须对起落阶段在内的全部活动时刻成立，其他车辆的实体距离及同时活动飞机之间的分离条件按第\ref{sec:05_06}节执行。不能因某点位于本车保护区内，就将该区域内的其他实体从障碍集合删除。接触阶段的误差裕度收缩属于参考精准对接假设，其适用范围仅限所定义的接触过程。
+
+本节的地形、实心塔柱和二次导线管共同确定静态几何边界，车辆实体则随车辆运动进入同一避障与遮挡检查。现有模型没有补入植被实体，也没有将参考塔柱改写为现场实测塔型。因而，满足这些几何约束表示满足所声明的参考模型；派生目标的外侧检查、连续轨迹避障、曝光视线通达以及真实现场安全分别需要与各自对象相匹配的证据，不能相互替代。

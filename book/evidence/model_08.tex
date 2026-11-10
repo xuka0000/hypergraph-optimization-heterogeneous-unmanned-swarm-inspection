@@ -1,0 +1,37 @@
+\section{全域几何、目标修正与静态避障}
+\noindent 地形$h(x,y)$由全部3886个源三角形内的重心插值定义；超出采样凸包无外推。塔$g$为底高$h_g$、半径2m、高35.7378m的闭圆柱$\mathcal O_g$。每根导线为端点$\mathbf a_e,\mathbf b_e$和半径0.05m的管状集合：
+\begin{equation}
+ \mathbf w_e(\xi)=(1-\xi)\mathbf a_e+\xi\mathbf b_e
+                  -20\xi(1-\xi)\mathbf e_3,\qquad 0\le\xi\le1.
+ \label{eng:eq:wiregeometry}
+\end{equation}
+\noindent 原源场景237项全景目标在实心塔柱内部，无法满足视线约束。保留源坐标，构造显式参考修正层：设$\sigma_g(\mathbf n)=\max_{\mathbf x\in\mathcal O_g}\mathbf n^T\mathbf x$为圆柱支撑函数，
+\begin{align}
+ \sigma_g(\mathbf n)&=\mathbf n_{xy}^T\mathbf c_g+2\|\mathbf n_{xy}\|
+                +\max(n_z h_g,n_z(h_g+35.7378)),\\
+ \Delta_i&=\max\{0,\sigma_{g(i)}(\mathbf n_i)+0.01
+                         -\min_r\mathbf n_i^T\mathbf q_{ir}^{src}\},\\
+ \mathbf q_{ir}&=\mathbf q_{ir}^{src}+\Delta_i\mathbf n_i,\qquad
+ \mathbf p_i^{ref}=\mathbf p_i^{src}+\Delta_i\mathbf n_i.
+ \label{eng:eq:targetrepair}
+\end{align}
+\noindent 塔柱修正使237项全景目标沿法向外移2.01m。其余1896项模板目标的中心位于源导线管内，另设表面修正量
+\begin{equation}
+ \delta_i=\min\{k\times0.01\mathrm{m}:k\in\mathbb Z_{\ge0},\quad
+ \operatorname{dist}(\mathbf q_{ir}^{src}+(\Delta_i+\delta_i)\mathbf n_i,\mathcal O_e)
+ \ge0.01\mathrm{m},\ \forall r,e\}.
+ \label{eng:eq:wiresurfacerepair}
+\end{equation}
+\noindent 最终目标面及对应参考观测区同时平移$(\Delta_i+\delta_i)\mathbf n_i$。1896项导线目标的$\delta_i$为0.06--0.59m，其中1792项为0.06或0.07m；237项全景目标的$\delta_i=0$。1cm网格和表面余量是参考模板构造选择，不是实测精度。全部2568根导线、目标所属塔及原始坐标保留；10665个派生表面样点逐项通过实体外侧检查。该检查不替代飞行中的视线与避障约束。
+\noindent 移动的是派生模板目标和对应观测区域，不移动OSM杆塔。修正前后UTM、经纬度、原始字段和修正理由逐项保存；这不是实测目标替代品，也未改变旧实验记录。
+
+\noindent 常规飞行中心到障碍的裕度为$r_f=0.6+0.5+0.5+3=4.6$m，依次为机体半径、跟踪、地图与净空假设。对所有活动时刻：
+\begin{align}
+ &\operatorname{dist}(\mathbf p_\ell(t),\mathcal O_g)\ge r_f,\quad\forall g,\\
+ &\|\mathbf p_\ell(t)-\mathbf w_e(\xi)\|\ge r_f+0.05,\quad\forall e,\xi,\\
+ &p_z(t)-h(p_x(t),p_y(t))\ge r_f.
+ \label{eng:eq:staticcollision}
+\end{align}
+\noindent 地面起落的明确例外只在下一节的本车保护区内适用；不豁免塔柱、导线或其他车辆。导线模板不是实际垂弧测量；没有植被模型不等于现场没有植被。
+\clearpage
+

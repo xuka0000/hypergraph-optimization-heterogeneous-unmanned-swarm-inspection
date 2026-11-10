@@ -1,0 +1,95 @@
+{
+  "observed_date": "2026-11-10",
+  "scope": "官方书目与设备边界复核；项目阈值和代理模型不冒称原文参数",
+  "references": {
+    "Spasojevic2020": {
+      "authors": "Igor Spasojevic, Varun Murali, Sertac Karaman",
+      "title": "Perception-aware time optimal path parameterization for quadrotors",
+      "year": 2020,
+      "url": "https://arxiv.org/abs/2005.13986",
+      "use": "运动/推力/视野共同约束；原论文给定路径，不转移凸性或求解性能"
+    },
+    "Debus2023": {
+      "authors": "P. Debus, V. Rodehorst",
+      "title": "Potential-guided UAV-flight path planning for the inspection of complex structures",
+      "journal": "ISPRS Archives",
+      "volume": "XLVIII-1/W2-2023",
+      "pages": "291–298",
+      "year": 2023,
+      "doi": "10.5194/isprs-archives-XLVIII-1-W2-2023-291-2023",
+      "use": "覆盖、分辨率和质量条件区分；本项目未复现该算法"
+    },
+    "LiInspection2023": {
+      "authors": "Ziran Li, Yanwen Zhang, Hao Wu, Satoshi Suzuki, Akio Namiki, Wei Wang",
+      "title": "Design and Application of a UAV Autonomous Inspection System for High-Voltage Power Transmission Lines",
+      "journal": "Remote Sensing",
+      "volume": "15(3)",
+      "article": 865,
+      "year": 2023,
+      "doi": "10.3390/rs15030865",
+      "use": "Fig3及3.2.1：1–5、8–11拍摄，6/7转场。只迁移角色，不锁定其路线/控制器/检测器"
+    },
+    "LaValle2006": {
+      "author": "Steven M. LaValle",
+      "title": "Planning Algorithms",
+      "publisher": "Cambridge University Press",
+      "year": 2006,
+      "url": "https://lavalle.pl/planning/ch13.pdf",
+      "use": "13.1.2汽车型非完整运动学；尺寸/速度本项目设定"
+    },
+    "DJIM300": {
+      "author": "DJI",
+      "title": "Matrice 300 RTK: Specifications and Support",
+      "url": "https://www.dji.com/support/product/matrice-300",
+      "use": "官方有电池6.3kg/无电池3.6kg、最大起飞9kg、倾角模式25/30°、抗风12m/s。7kg和5m/s等本项目配置，不能混作全部官方原值"
+    },
+    "DJIH20": {
+      "author": "DJI",
+      "title": "Zenmuse H20 Series: Specifications",
+      "url": "https://enterprise.dji.com/zenmuse-h20-series/specs",
+      "use": "变焦镜头6.83–119.94mm、对角66.6–4°、5184×3888、俯仰[-120,+30]、偏航±320°。模型理想针孔、两轴控制、曝光1ms及速度阈值为项目适配"
+    },
+    "DJITB60": {
+      "author": "DJI",
+      "title": "Matrice 300 RTK: TB60 battery and BS60 battery station support",
+      "url": "https://www.dji.com/uk/support/product/matrice-300",
+      "use": "单块274Wh、成对使用/充放；220V20–90%约30min，整对充满约60min；BS60同时充2块TB60；原厂建议冷却后充电。模型一对548Wh、0.9效率、90–100%20min分段参考、0s额外冷却、1000W载车供电是项目假设；本次官方页未支持90–100%20min专门测值。不能声称完整充电曲线实测"
+    },
+    "Marx2011": {
+      "author": "Dániel Marx",
+      "title": "Tractable hypergraph properties for constraint satisfaction and conjunctive queries",
+      "year": 2011,
+      "url": "https://arxiv.org/abs/0911.0801",
+      "version": "v3",
+      "use": "变量—约束依赖超图定义；不转移离散CSP复杂性定理到连续非线性巡检"
+    },
+    "DoMPC": {
+      "author": "do-mpc developers",
+      "title": "Basics of model predictive control",
+      "version": "5.1.2",
+      "url": "https://www.do-mpc.com/en/latest/theory_mpc.html",
+      "use": "滚动状态反馈与非预见性概念；本项目不用该软件求解"
+    },
+    "OpenMeteoRuns": {
+      "author": "Open-Meteo",
+      "title": "Single Runs API",
+      "url": "https://open-meteo.com/en/docs/single-runs-api",
+      "use": "按初始化时刻取单次预报；初始化时不等于实际发布可得时"
+    },
+    "OpenMeteoHistory": {
+      "author": "Open-Meteo",
+      "title": "Historical Weather API",
+      "url": "https://open-meteo.com/en/docs/historical-weather-api",
+      "use": "ERA5/ERA5-Land等事后再分析，不能当日前已知未来真值"
+    },
+    "KPLC2025": {
+      "author": "Kenya Power and Lighting Company",
+      "title": "Tender Document for Reconstruction of Towers on Collapsed and Compromised Transmission Lines Sections",
+      "year": 2025,
+      "url": "https://kplc.co.ke/storage/01JQXMQ0QWCHBZKRQ1MBHAJADM.pdf",
+      "local_sha256": "02ce896bda369022b33f2fdf10db0b568ea4e3818a50a8e838bb3ca7c6f9891f",
+      "read": "cover, contents, PDF pages73-74; p73 drawing visually inspected",
+      "use": "p73 Appendix1A-1 132kV suspension tower, drawing13Sep2006; 117ft3in=35.7378m. Foreign geometry template only, not German field dimensions or voltage identification. No whole-document reading claim."
+    }
+  }
+}

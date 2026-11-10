@@ -1,0 +1,29 @@
+\section{起降会合、驻留与操作资源}
+\noindent 若$y_{u\ell}=1$，记$v=c(u)$，起飞准备和落地处理时长为$h^{pre}=120$s、$h^{post}=240$s。起落区间必须包含在本车某个停车驻留内：
+\begin{align}
+ &[s_\ell-h^{pre},s_\ell^+]\subseteq\{t:\eta_{vj_L}(t)=1\},\\
+ &[e_\ell^-,e_\ell+h^{post}]\subseteq\{t:\eta_{vj_R}(t)=1\},\\
+ &\mathbf p_\ell(s_\ell)=\mathbf p_v^{dock}(s_\ell),\qquad
+ \mathbf p_\ell(e_\ell)=\mathbf p_v^{dock}(e_\ell),\\
+ &\mathbf v_\ell(s_\ell)=\mathbf v_\ell(e_\ell)=0,\quad
+ s_\ell\le s_\ell^+\le e_\ell^-\le e_\ell.
+ \label{eng:eq:rendezvous}
+\end{align}
+\noindent $j_L,j_R$由优化选择，可以不同。进行中航次删除已过去的起飞条件；回收中航次保留剩余处理时间。对每架飞机另定义贯穿飞行与车载状态的连续云台$\Gamma_u(t)$和焦距$F_u(t)$，全时段满足第6节的对应边界与导数限制：
+\begin{align}
+ y_{u\ell}=1&\Rightarrow \gamma_\ell(t)=\Gamma_u(t),\quad f_\ell(t)=F_u(t),\quad t\in[s_\ell,e_\ell],\\
+ R_\ell(s_\ell)&=R_z(\theta_v(s_\ell)),\qquad R_\ell(e_\ell)=R_z(\theta_v(e_\ell)).
+ \label{eng:eq:aircraftcontinuity}
+\end{align}
+\noindent $R_z$是绕竖直轴的旋转矩阵。车载机体与车辆航向一致，地面调整不重置云台或焦距；初值为源记录。姿态在接触端连续，接触力允许切换时加速度单侧变化；飞行内部仍受加加速度限制。
+
+\noindent 定义半开占用区间$D_\ell=[s_\ell-h^{pre},e_\ell+h^{post})$；起降位占用为$H_\ell=[s_\ell-h^{pre},s_\ell^+)\cup[e_\ell^-,e_\ell+h^{post})$。
+\begin{align}
+ &\sum_{\ell}y_{u\ell}\mathbf1_{D_\ell}(t)\le1\quad(\forall u,t),\\
+ &\sum_{u:c(u)=v}\sum_{\ell}y_{u\ell}\mathbf1_{H_\ell}(t)\le1
+                         \quad(\forall v,t).
+ \label{eng:eq:pad}
+\end{align}
+\noindent 包括离开/进入保护区的时间，避免上一架仍在平台上方时下一架已经占用同一平台。没有激活的航次不创建这些区间。不同航次的飞机状态在车载期间由载车位置决定；机体运输与云台地面调整的时间连续保留。当前参考假设一名操作员与一个起降位绑定，不另外虚构无限操作人力。
+\clearpage
+

@@ -1,0 +1,291 @@
+\section{坐标系、单位、时钟与符号}
+\label{sec:04_03}
+
+车辆与无人机的会合、相机与目标之间的几何关系，以及飞行消耗与电池充电之间的能量接续，都要求参与计算的量具有一致的空间基准、时间基准和单位。两条位置记录即使数值接近，若分别来自不同坐标系，也不能直接用于判断会合；两个动作即使具有相同的持续时间，若起算时刻不同，也不能直接判断资源是否重叠。本节统一第4--7章的记号与计量约定，具体运动、成像和资源约束在这些约定下建立。
+
+\subsection{源投影世界坐标与数值局部坐标}
+
+原始地理位置采用EPSG:4326经纬度，水平计算采用EPSG:32632投影。记$\lambda$和$\varphi$分别为经度与纬度，输入单位为度；记$\Pi_{32}$为所采用的上述投影转换，其输出为UTM东坐标$E$与北坐标$N$：
+\begin{equation}
+ \begin{pmatrix}E\\N\end{pmatrix}
+ =\Pi_{32}(\lambda,\varphi).
+ \label{s0403:map_coordinates}
+\end{equation}
+$E,N$均以$\mathrm m$计。该转换用于所选投影适用区域内的地理位置，输入顺序按式\eqref{s0403:map_coordinates}明确指定，不能仅凭数组第一、第二列推断经纬度顺序。
+
+本章物理公式默认采用源投影世界坐标系$\mathsf W$。其第一、第二轴分别对应投影东、北方向，第三轴向上；点的位置由$(E,N,z_{\mathrm{src}})^{\mathsf T}$表达，其中$z_{\mathrm{src}}$沿用源DEM的高程基准，三个分量均以$\mathrm m$计。源DEM的垂直基准尚未独立核验，因此这里的第三分量不能直接称为已核验的正高或椭球高。选择共同源基准是一项模型内部的一致性约定，不构成对外部定位设备高程基准的标定。
+
+为减小数值计算中的坐标量级，另定义与$\mathsf W$轴向相同的数值局部坐标系$\mathsf W_0$。固定原点记为
+\begin{equation}
+ \mathbf o=(E_0,N_0,Z_0)^{\mathsf T}\in\mathbb R^3,
+ \qquad
+ \mathbf o_h=(E_0,N_0)^{\mathsf T}\in\mathbb R^2,
+ \label{s0403:fixed_origin}
+\end{equation}
+二者的分量均以$\mathrm m$计。现有数值坐标转换以场景中第一辆车V1的初始三维位置作为$\mathbf o$，因此不仅减去水平原点，也减去源高程$Z_0$。原点具有源记录；本节保留一般符号，三个具体数值在第\ref{sec:06_01}节代入。
+
+对于任意一个空间点，记其在两个坐标系中的位置分别为$\mathbf a^{\mathsf W}$和$\mathbf a^{\mathsf W_0}$，则
+\begin{align}
+ \mathbf a^{\mathsf W}
+ &=\begin{pmatrix}E\\N\\z_{\mathrm{src}}\end{pmatrix},
+ &\mathbf a^{\mathsf W_0}
+ &=\mathbf a^{\mathsf W}-\mathbf o
+ =\begin{pmatrix}E-E_0\\N-N_0\\z_{\mathrm{src}}-Z_0\end{pmatrix},
+ \label{s0403:local_coordinates}\\
+ \mathbf a^{\mathsf W}
+ &=\mathbf a^{\mathsf W_0}+\mathbf o.
+ \label{s0403:world_recovery}
+\end{align}
+局部坐标的三个分量可简记为$(x,y,z_0)^{\mathsf T}$。$z_0$只是平移后的第三坐标，不等于该点的离地高度；$Z_0$的数值已知，也不意味着源DEM的垂直大地基准已经核验。
+
+固定平移不改变相对几何。对于任意两点$\mathbf a,\mathbf b$，有
+\begin{equation}
+ \mathbf a^{\mathsf W_0}-\mathbf b^{\mathsf W_0}
+ =\mathbf a^{\mathsf W}-\mathbf b^{\mathsf W},
+ \qquad
+ \|\mathbf a^{\mathsf W_0}-\mathbf b^{\mathsf W_0}\|
+ =\|\mathbf a^{\mathsf W}-\mathbf b^{\mathsf W}\|.
+ \label{s0403:translation_difference}
+\end{equation}
+由于$\mathbf o$不随时间变化，位置对时间的导数也不受该平移影响。两个坐标系轴向相同，故自由向量的分量和旋转矩阵均无需因减原点而改变。上述性质只涉及同一投影内的坐标平移，不表示地图投影没有尺度误差。原点在整个班次及其重规划中保持固定，不能随车辆移动而更新。
+
+地形函数也必须随坐标系一致转换。记$\Omega_h\subset\mathbb R^2$为源投影平面内DEM支持的区域，$h_{\mathrm{abs}}:\Omega_h\to\mathbb R$为源DEM按所采用插值得到的高程函数。其输入为$(E,N)$，输出为源高程，均以$\mathrm m$计。下标$\mathrm{abs}$用于区别未平移高程与局部高程，不表示其垂直基准已获外部确认。定义
+\begin{align}
+ \Omega_{h,0}
+ &=\{\mathbf q-\mathbf o_h:\mathbf q\in\Omega_h\},
+ \label{s0403:local_terrain_domain}\\
+ h_0(x,y)
+ &=h_{\mathrm{abs}}(E_0+x,N_0+y)-Z_0,
+ \qquad (x,y)\in\Omega_{h,0}.
+ \label{s0403:local_terrain}
+\end{align}
+$h_0:\Omega_{h,0}\to\mathbb R$是数值局部坐标下的地形函数。后文物理公式若简写$h$，默认指$\mathsf W$下的$h_{\mathrm{abs}}$；采用局部计算时则必须连同位置一起替换为$h_0$。
+
+车辆$v\in\mathcal V$的道路运动首先用二维参考点$\mathbf q_v(t)=(q_{v,1}(t),q_{v,2}(t))^{\mathsf T}\in\Omega_h$描述。其地形抬升位置定义为
+\begin{equation}
+ \widetilde{\mathbf q}_v(t)
+ =\begin{pmatrix}
+ q_{v,1}(t)\\q_{v,2}(t)\\h_{\mathrm{abs}}\bigl(\mathbf q_v(t)\bigr)
+ \end{pmatrix}\in\mathbb R^3,
+ \qquad v\in\mathcal V.
+ \label{s0403:vehicle_lift}
+\end{equation}
+这两个位置均以$\mathrm m$计，并默认属于源投影世界坐标约定。若数值计算改用$\mathbf q_v^0=\mathbf q_v-\mathbf o_h$，则相应抬升点为
+\begin{equation}
+ \widetilde{\mathbf q}_v^0(t)
+ =\begin{pmatrix}
+ q_{v,1}^0(t)\\q_{v,2}^0(t)\\h_0\bigl(\mathbf q_v^0(t)\bigr)
+ \end{pmatrix}
+ =\widetilde{\mathbf q}_v(t)-\mathbf o.
+ \label{s0403:vehicle_local_lift}
+\end{equation}
+式\eqref{s0403:vehicle_lift}只给出道路参考点的高程，没有加入车身或起降平台安装高度；这些位置需要由车辆几何另行给出偏移。
+
+第\ref{sec:04_01}节的目标区域$\mathcal S_i\subset\mathbb R^3$及其样点$\mathbf q_{ir}$已经是三维对象。其中$i\in\mathcal I$为观测任务，$r\in\mathcal J_i=\{1,\ldots,M_i\}$为该任务的样点索引，$M_i$为正整数。$\mathbf q_{ir}$与车辆位置$\mathbf q_v$通过索引和维数区分，不能对目标样点再次作车辆式地形抬升。$\mathcal S_i$始终表示目标面区域，不表示样点索引集合。在局部计算中应使用
+\begin{equation}
+ \mathbf q_{ir}^0=\mathbf q_{ir}-\mathbf o,
+ \qquad
+ \mathcal S_i^0=\{\mathbf q-\mathbf o:\mathbf q\in\mathcal S_i\},
+ \quad i\in\mathcal I,\ r\in\mathcal J_i.
+ \label{s0403:local_targets}
+\end{equation}
+无人机、相机、目标、车辆与DEM必须全部处于同一坐标系后，才能进行距离、遮挡、会合或成像计算。天气场的查询位置同样须与其空间坐标约定一致。
+
+对于世界位置$(E,N,z_{\mathrm{src}})$及其局部位置$(x,y,z_0)$，离地高度满足
+\begin{equation}
+ z_{\mathrm{src}}-h_{\mathrm{abs}}(E,N)
+ =z_0-h_0(x,y).
+ \label{s0403:height_translation}
+\end{equation}
+该差值以$\mathrm m$计，其成立依赖于点与DEM采用共同源基准及一致的三维平移。它保证模型内部高度差的表达一致，但不能自动证明外部高度测量或天气参考高度已经与源DEM对齐。
+
+\subsection{机体、相机及向量的表达方向}
+
+无人机机体坐标系与相机坐标系分别记为$\mathsf B$和$\mathsf C$，均采用右手正交坐标。除非明确注明，位置使用世界坐标系$\mathsf W$，速度、加速度和风速使用该坐标系的轴向分量。记
+\begin{equation}
+ \mathbf e_3=(0,0,1)^{\mathsf T}.
+ \label{s0403:vertical_axis}
+\end{equation}
+$\mathbf e_3$是无量纲标准基向量，在世界坐标中表示向上方向。在机体坐标中使用同一列向量时，它表示机体第三轴；该轴在世界坐标中的方向为$R_\ell\mathbf e_3$，两者只有在相应轴对齐时才相同。
+
+对启用航次$\ell$，$\mathbf p_\ell(t)\in\mathbb R^3$为机体参考点的世界位置，单位为$\mathrm m$；$R_\ell(t)\in SO(3)$将机体坐标分量转换为世界坐标分量。若同一自由向量在机体与世界坐标中的分量分别为$\mathbf a^{\mathsf B}$和$\mathbf a^{\mathsf W}$，则
+\begin{equation}
+ \mathbf a^{\mathsf W}=R_\ell(t)\mathbf a^{\mathsf B},
+ \qquad
+ \mathbf a^{\mathsf B}=R_\ell(t)^{\mathsf T}\mathbf a^{\mathsf W}.
+ \label{s0403:rotation_direction}
+\end{equation}
+两组分量具有相同单位；旋转矩阵无量纲，$SO(3)$沿用式\eqref{s0402:rotation_domain}的定义。自由向量只作旋转，空间点还涉及参考点的平移，不能混用两种变换。
+
+$R_{BC}(\boldsymbol\gamma_\ell)$表示相机坐标到机体坐标的旋转，其中$\boldsymbol\gamma_\ell=(\gamma_{p,\ell},\gamma_{y,\ell})^{\mathsf T}$为云台俯仰、偏航角，单位为$\mathrm{rad}$；这里下标$p$表示俯仰，不是电池身份。$\mathbf d_{BC}\in\mathbb R^3$表示从机体参考点指向相机光心的偏移，使用机体坐标分量，单位为$\mathrm m$。因此，相机到世界的姿态与光心位置满足
+\begin{align}
+ R_{C,\ell}(t)
+ &=R_\ell(t)R_{BC}\bigl(\boldsymbol\gamma_\ell(t)\bigr),
+ \label{s0403:camera_rotation}\\
+ \mathbf p_{C,\ell}(t)
+ &=\mathbf p_\ell(t)+R_\ell(t)\mathbf d_{BC}.
+ \label{s0403:camera_translation}
+\end{align}
+这两式适用于启用航次的有效状态区间。矩阵乘积从右向左作用：先把相机分量转换为机体分量，再转换为世界分量。偏移$\mathbf d_{BC}$也必须先旋转后才能与世界位置相加。参考模型取$\mathbf d_{BC}=\mathbf0$，其几何近似含义已在第\ref{sec:04_02}节说明。若改用局部坐标，则$\mathbf p_{C,\ell}^0=\mathbf p_{C,\ell}-\mathbf o$、$\mathbf p_\ell^0=\mathbf p_\ell-\mathbf o$，而$R_\ell$、$R_{BC}$和$R_{C,\ell}$保持不变。
+
+目标样点相对于光心的相机坐标为
+\begin{equation}
+ \begin{pmatrix}X_{ir\ell}(t)\\Y_{ir\ell}(t)\\Z_{ir\ell}(t)\end{pmatrix}
+ =R_{C,\ell}(t)^{\mathsf T}
+ \bigl(\mathbf q_{ir}-\mathbf p_{C,\ell}(t)\bigr),
+ \qquad i\in\mathcal I,\ r\in\mathcal J_i.
+ \label{s0403:target_camera_coordinates}
+\end{equation}
+式中$\ell$为启用航次，$t$属于其有效状态区间；$X_{ir\ell},Y_{ir\ell},Z_{ir\ell}$均以$\mathrm m$计。相机第三轴沿光轴正向，故$Z_{ir\ell}>0$表示样点位于光心前方，但不保证进入视场或无遮挡。由于位置差在三维平移下不变，用$\mathbf q_{ir}^0-\mathbf p_{C,\ell}^0$替换括号中的差，所得相机坐标完全相同。具体成像判据在第\ref{sec:04_05}节建立，机体与两轴云台旋转的展开式在第\ref{sec:04_04}节给出。
+
+本节及后续公式中，$\|\cdot\|$作用于向量时表示欧氏范数，$^{\mathsf T}$表示转置，上方圆点表示对共同时间$t$求导。无人机速度$\mathbf v_\ell$是三维向量，车辆索引$v\in\mathcal V$是无量纲标识，车辆标量速度采用$V_v$，三者依靠字体、上下标和定义域区分。
+
+\subsection{共同时间轴与信息可得时刻}
+
+选定固定的UTC班次起点$\mathsf t_0^{\mathrm{UTC}}$。任一UTC时刻$\mathsf t^{\mathrm{UTC}}$在模型中的时间坐标，是它相对该起点经过的秒数：
+\begin{equation}
+ t=\mathsf t^{\mathrm{UTC}}-\mathsf t_0^{\mathrm{UTC}},
+ \qquad t_0=0,
+ \qquad
+ T=\mathsf t_{\mathrm{end}}^{\mathrm{UTC}}-\mathsf t_0^{\mathrm{UTC}}>0.
+ \label{s0403:common_clock}
+\end{equation}
+时间差统一以$\mathrm s$表示，$\mathsf t_{\mathrm{end}}^{\mathrm{UTC}}$为固定班次终点。$T$虽以相对起点的秒数存储，却对应一个固定的UTC截止时刻。车辆、无人机、相机、电池和天气均使用同一时间轴。本地日期与时区可以用于显示，但事件先后必须在转换为共同UTC基准后比较。
+
+第$k$次信息更新的时刻记为$\tau_k$，其中$k\in\mathbb Z_{\ge0}$为更新序号，$\tau_k\in[0,T]$，初次规划取$\tau_0=0$。更新后剩余班次区间为$[\tau_k,T]$，其长度为$T-\tau_k$，不能重新赋予一个完整班次长度。航次起飞、落地时刻$s_\ell,e_\ell$以及任务观测开始时刻$t_i$均为共同时间轴上的坐标；观测持续时间$d_i\ge0$则是时间长度，单位同为$\mathrm s$，含义不同。
+
+记$C\in[\tau_k,T]$为本次计划中全部规定返库与回收条件完成的时刻。整班次返库经过时间为$C-t_0=C$，在第$k$次信息更新时刻看来，尚需时间为$C-\tau_k$。重规划不能通过改变起点或后移$T$来减少已经发生的时间开销。$C$之后的设备位置、速度、充电与能量条件由第\ref{sec:05_07}节统一给出。
+
+信息时刻不等于新计划接管时刻。若$d_k^{\mathrm{solve}},d_k^{\mathrm{comm}}\in\mathbb R_{\ge0}$分别表示求解与通信延迟，单位为$\mathrm s$，则接管时刻为
+\begin{equation}
+ \sigma_k=\tau_k+d_k^{\mathrm{solve}}+d_k^{\mathrm{comm}}.
+ \label{s0403:takeover_clock}
+\end{equation}
+延迟期间环境时间与设备状态继续演化。以$\tau_k$为初态生成的计划，在$\sigma_k$下发前还需要与当时实际状态接续；若延迟使接管越过固定班次终点，也不能据此延长$T$。这些时间记号不隐含冻结车辆运动、电池消耗或天气变化。
+
+天气记录至少包含不同的有效时间与可得时间。对一条天气记录$\nu$，记$t_\nu^{\mathrm{valid}}$为其描述的有效时刻，$t_\nu^{\mathrm{pub}}$和$t_\nu^{\mathrm{recv}}$分别为发布与接收时刻。三者均换算为相对共同UTC起点的秒数，可以早于班次起点，故取值不统一限制在$[0,T]$内。在$\tau_k$构造已知信息时，记录可用的必要时间条件为
+\begin{equation}
+ t_\nu^{\mathrm{pub}}\le\tau_k,
+ \qquad t_\nu^{\mathrm{recv}}\le\tau_k.
+ \label{s0403:weather_availability}
+\end{equation}
+有效时刻可以晚于$\tau_k$，对应当时已经收到的未来预报；也可以早于$\tau_k$，对应已收到的历史信息。预报初始化时刻不能自动替代实际发布或接收时刻，事后再分析也不能因有效时刻落在班次内就被当作规划时已知的信息。累计降水等区间量须保留其有效时间区间与统计含义，不能误作单个时刻的瞬时值。这些记号明确时间语义，不假定缺失的发布时间已经获得验证。
+
+\subsection{单位、角度与能量换算}
+
+空间运动采用$\mathrm m$和$\mathrm s$，速度、加速度及加加速度分别使用$\mathrm{m/s}$、$\mathrm{m/s^2}$和$\mathrm{m/s^3}$。力与质量分别使用$\mathrm N$和$\mathrm{kg}$，功率使用$\mathrm W$，电池能量使用$\mathrm{Wh}$。目标计数、集合基数、二元分配和旋转矩阵均无量纲，不能把计数、时间与能量直接相加而省略目标层次或系数含义。
+
+所有内部角度计算采用$\mathrm{rad}$。对于同一角度，若$a_{\mathrm{deg}}$和$a_{\mathrm{rad}}$分别是以度和弧度表达的数值，则
+\begin{equation}
+ a_{\mathrm{rad}}=\frac{\pi}{180}a_{\mathrm{deg}}.
+ \label{s0403:angle_conversion}
+\end{equation}
+角速度与角加速度分别以$\mathrm{rad/s}$和$\mathrm{rad/s^2}$表示。源资料的度数边界在第\ref{sec:06_01}节代入时按式\eqref{s0403:angle_conversion}转换，不能将度数直接放入采用弧度输入的三角函数。
+
+航向角与云台角的变化率应针对连续展开的角度函数计算。以机体航向为例，在投影方向非零、航向坐标有定义的姿态区间内，取
+\begin{equation}
+ \psi_\ell(t)=\operatorname{unwrap}
+ \left(\operatorname{atan2}\bigl(R_{\ell,21}(t),R_{\ell,11}(t)\bigr)\right).
+ \label{s0403:heading_unwrap}
+\end{equation}
+$R_{\ell,ab}$为$R_\ell$第$a$行、第$b$列元素；$\operatorname{atan2}$给出平面方向角，$\operatorname{unwrap}$表示依据初始角分支作连续展开，$\psi_\ell$以$\mathrm{rad}$计。主值角跨越分支边界时的$2\pi$数值跳变不代表实体瞬时转动，也不能用于绕过角速度限制。云台角仍须服从自身允许区间，连续展开不意味着允许无限圈旋转。具体姿态范围与角速率条件在第\ref{sec:04_04}节规定。
+
+焦距$f_\ell(t)$保留设备资料常用的$\mathrm{mm}$单位。针孔投影中，物理焦距必须与参与其比例换算的传感器长度采用相同单位。例如，设$a_x,a_y>0$分别为横、纵方向的像元节距，单位为$\mathrm{mm/px}$，则以像素表示的等效焦距为
+\begin{equation}
+ f_{x,\ell}^{\mathrm{px}}(t)=\frac{f_\ell(t)}{a_x},
+ \qquad
+ f_{y,\ell}^{\mathrm{px}}(t)=\frac{f_\ell(t)}{a_y}.
+ \label{s0403:pixel_focal_length}
+\end{equation}
+两者的单位均为$\mathrm{px}$。对式\eqref{s0403:target_camera_coordinates}中满足$Z_{ir\ell}>0$的样点，其相对主点的理想像素偏移为
+\begin{equation}
+ \Delta\xi_{ir\ell}
+ =f_{x,\ell}^{\mathrm{px}}\frac{X_{ir\ell}}{Z_{ir\ell}},
+ \qquad
+ \Delta\zeta_{ir\ell}
+ =f_{y,\ell}^{\mathrm{px}}\frac{Y_{ir\ell}}{Z_{ir\ell}}.
+ \label{s0403:projection_units}
+\end{equation}
+$\Delta\xi_{ir\ell},\Delta\zeta_{ir\ell}$均以$\mathrm{px}$计，同一时刻的参数在式中省略了$t$。空间坐标之比无量纲，因此这里允许空间坐标使用$\mathrm m$，而焦距与像元节距同时使用$\mathrm{mm}$。若焦距直接参与其他长度比或长度加减，则须先统一相应长度单位。式\eqref{s0403:pixel_focal_length}只说明换算关系，不赋予$a_x,a_y$未经提供的标定数值，也不以理想投影代替完整成像质量条件。
+
+能量计算必须同时检查功率端口与时间单位。若$P_\ell(t)\ge0$为航次$\ell$从机载电池取得的功率，单位为$\mathrm W$，则对启用航次有效飞行区间内任意$t_a\le t_b$，相应消耗能量为
+\begin{equation}
+ \Delta E_\ell^{\mathrm{fly}}(t_a,t_b)
+ =\frac{1}{3600}\int_{t_a}^{t_b}P_\ell(t)\,\mathrm dt,
+ \qquad [t_a,t_b]\subseteq[s_\ell,e_\ell].
+ \label{s0403:flight_energy_units}
+\end{equation}
+$\Delta E_\ell^{\mathrm{fly}}$以$\mathrm{Wh}$计，因为$1\,\mathrm{Wh}=3600\,\mathrm W\cdot\mathrm s$。使用充电器输入功率时，须按式\eqref{s0402:charging_energy_interface}计入充电效率后再计算储能增加，不能把电网输入、储能增加与机载消耗视为同一端口的能量。
+
+\subsection{活动区间与状态接续}
+
+连续轨迹并非为所有候选航次在整个班次上无条件建立。沿用第\ref{sec:04_02}节的候选航次集合$\mathcal L$与启用变量$b_\ell$，定义第$k$次规划时仍涉及未来飞行区间的活动集合
+\begin{equation}
+ \mathcal L_k^{\mathrm{act}}
+ =\{\ell\in\mathcal L:b_\ell=1,\ e_\ell\ge\tau_k\},
+ \qquad
+ \mathcal D_{\ell k}
+ =[\max\{s_\ell,\tau_k\},e_\ell],
+ \quad \ell\in\mathcal L_k^{\mathrm{act}}.
+ \label{s0403:active_domains}
+\end{equation}
+启用航次满足$s_\ell\le e_\ell$。新航次从$s_\ell\ge\tau_k$开始；已在空中的航次允许$s_\ell<\tau_k$，其未来状态从$\tau_k$接续。$\mathcal D_{\ell k}$是以秒为坐标的闭时间区间，不是离散样点集合。未启用航次不因此获得物理轨迹，也不产生飞行占用。
+
+例如，若$\overline v>0$为以$\mathrm{m/s}$计的允许速度上限，完整量词形式为
+\begin{equation}
+ \|\mathbf v_\ell(t)\|\le\overline v,
+ \qquad
+ \forall\ell\in\mathcal L_k^{\mathrm{act}},\quad
+ \forall t\in\mathcal D_{\ell k}.
+ \label{s0403:continuous_quantifier}
+\end{equation}
+车辆与实体电池的未来状态通常定义在$[\tau_k,T]$，拍摄质量条件仅施加在相应任务的活动曝光区间。每组约束均须标明自己的活动域；任务未启用时，不能用其未定义的拍摄状态反过来约束已启用动作。
+
+连续状态采用与各模式方程相容的分段光滑函数，离散模式采用分段常值函数，并在有限班次内只允许有限次切换。这里的光滑性要求按物理过程区分：飞行内部的轨迹分段，与起飞离地或降落接触引起的模式切换，不是同一种连接事件。
+
+在同一飞行过程内部，位置$\mathbf p_\ell$、速度$\mathbf v_\ell$和加速度$\mathbf a_\ell$在轨迹分段连接处保持连续。加加速度记为$\mathbf j_\ell=\dot{\mathbf a}_\ell$，单位为$\mathrm{m/s^3}$，在各光滑段内满足规定界限。若$t_b$是飞行内部的一个分段连接时刻，$t_b^-$与$t_b^+$分别表示其左右极限，则
+\begin{align}
+ \mathbf p_\ell(t_b^-)&=\mathbf p_\ell(t_b^+),
+ &\mathbf v_\ell(t_b^-)&=\mathbf v_\ell(t_b^+),
+ &\mathbf a_\ell(t_b^-)&=\mathbf a_\ell(t_b^+).
+ \label{s0403:flight_segment_continuity}
+\end{align}
+加加速度可以在允许范围内改变，但不能借助飞行内部的分段连接使加速度跳变。姿态、云台角与焦距等状态也须按其运动方程和变化率约束接续。
+
+起落接触事件需要另行处理。飞机由平台支承转为飞行，或由飞行转为平台支承时，接触力的启用与撤除会改变适用的受力方程。模型允许此类事件处的加速度具有不同的两侧极限，因此式\eqref{s0403:flight_segment_continuity}中的加速度连续条件不延伸到所有接触事件。位置、速度与姿态仍按起降事件条件连接，相机状态与物理电池能量也须沿相应实体接续；不能因接触模式改变而使位置瞬移、速度任意重置或电量跳回满值。接触前后的加速度分别服从对应模式的条件，飞行内部的加加速度界也不能被误用为要求接触力切换时加速度必然连续。
+
+这种模式区分还意味着，不能要求受平台支承的状态与空中状态在接触事件两侧同时满足同一套无接触飞行力平衡，更不能一概要求两侧满足悬停平衡。飞行受力与正则性在第\ref{sec:04_04}节展开，平台运动、起落接触及会合条件在第\ref{sec:05_04}节给出。模式切换改变的是适用方程与资源占用，不会消除实体身份和事件接续条件。换用另一对电池意味着选择另一个$p\in\mathcal B$，不能重置原电池的$E_p$。
+
+微分关系在各光滑段内部成立，段间和模式间通过相应连续条件及事件条件连接。物理不等式则须在各自模式的全部活动时间内成立；接触等边界事件应检查对应模式的一侧状态及事件条件。速度、安全距离、天气窗口、能量下界和曝光质量等条件都不因有限转录而自动缩减为仅在若干节点上成立。只检查离散节点，不能直接证明节点之间满足连续模型。有限转录须明确节点间的误差界和区间验证条件。
+
+\subsection{跨模块核心符号}
+
+表\ref{s0403:core_symbols}列出跨模块反复使用的核心符号，具体模型新增的参数与变量在首次出现处定义。组合模型中的普通字母$V$仍表示$H=(V,E)$的资源顶点集；巡检模型中的花体$\mathcal V$专指车辆集合。前者可以包含抽象容量对象，后者的元素是具有身份和运动状态的实体车辆，两者不能因字形接近而被视为同一集合。
+
+\begin{table}[htbp]
+ \centering
+ \small
+ \caption{巡检模型的核心符号、定义域与单位}
+ \label{s0403:core_symbols}
+ \begin{tabularx}{\linewidth}{@{}p{0.27\linewidth}p{0.25\linewidth}X@{}}
+  \toprule
+  符号 & 定义域与单位 & 含义及索引约定\\
+  \midrule
+  $\mathsf W,\mathsf W_0,\mathbf o$ & 坐标系；$\mathbf o\in\mathbb R^3$，$\mathrm m$ & 源投影世界系、固定三维平移后的局部系及平移原点。\\
+  $h_{\mathrm{abs}},h_0$ & 各自水平域上的实值函数；$\mathrm m$ & 源高程与局部高程；输入位置须匹配各自坐标系。\\
+  $\mathcal G,\mathcal I_g,\mathcal I$ & 有限集合；无量纲标识 & 杆塔、塔内观测任务和区域任务；$g\in\mathcal G$，$i\in\mathcal I$。\\
+  $\mathcal V,\mathcal U,\mathcal B$ & 有限集合；无量纲标识 & 车辆、无人机和物理电池对；索引依次为$v,u,p$。\\
+  $\mathcal L,b_\ell$ & 有限集合，$\{0,1\}$ & 候选航次及其启用状态；$\ell\in\mathcal L$。\\
+  $\mathcal S_i,\mathcal J_i$ & 三维区域；有限索引集 & 目标区域及样点索引；$\mathbf q_{ir}\in\mathcal S_i$，$r\in\mathcal J_i$，位置以$\mathrm m$计。\\
+  $\mathbf q_v,\widetilde{\mathbf q}_v$ & $\mathbb R^2,\mathbb R^3$；$\mathrm m$ & 车辆平面道路参考位置及DEM抬升位置。\\
+  $\mathbf p_\ell,\mathbf v_\ell,\mathbf a_\ell$ & $\mathbb R^3$ & 无人机位置、速度、加速度；单位依次为$\mathrm m$、$\mathrm{m/s}$、$\mathrm{m/s^2}$。\\
+  $R_\ell,R_{BC},R_{C,\ell}$ & $SO(3)$；无量纲 & 机体到世界、相机到机体、相机到世界的旋转。\\
+  $\boldsymbol\gamma_\ell,\psi_\ell,f_\ell$ & $\Gamma\subset\mathbb R^2$，$\mathbb R$，$\mathbb R_{>0}$ & 允许角集合内的云台角、展开航向角及焦距；单位为$\mathrm{rad}$、$\mathrm{rad}$、$\mathrm{mm}$。\\
+  $E_p,P_\ell,P_p^{\mathrm{in}}$ & 非负实值函数 & 电池储能、机载消耗功率和充电器输入功率；单位为$\mathrm{Wh}$、$\mathrm W$、$\mathrm W$。\\
+  $t,\tau_k,T,C$ & 班次时间坐标；$\mathrm s$ & 共同时间、信息更新时间、固定截止时刻和返库完成时刻。\\
+  $s_\ell,e_\ell,t_i,d_i$ & 时刻或非负时长；$\mathrm s$ & 起飞、落地、观测开始时刻及观测持续时间；前三者为时间坐标。\\
+  \bottomrule
+ \end{tabularx}
+\end{table}
+
+后续公式省略坐标上标时，默认采用源投影世界坐标$\mathsf W$；数值局部计算必须对全部位置与地形作一致变换。省略重复时间说明时，仍继承共同UTC起点、固定班次终点与对应物理模式的活动区间。

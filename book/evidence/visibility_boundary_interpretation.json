@@ -1,0 +1,15 @@
+{
+  "source_bindings": [
+    {
+      "path": "Agent/Publication/engineering_regional_geometry.py",
+      "sha256": "a51c66c313c54ad6547bfc4e54f6e82cc6acbbacd46aec47fc0a0195aa1865bf",
+      "electronic_path": "reproduction/project/Agent/Publication/engineering_regional_geometry.py"
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_safety.py",
+      "sha256": "43bbadaf2b22fea2e22f84d459ae5f391b0ab7c49fda6386266548c0c85cd0db",
+      "electronic_path": "reproduction/project/Agent/Publication/engineering_regional_safety.py"
+    }
+  ],
+  "finding": "LOS ideal model uses no obstacle interior: tangency is not ruled out by strict positive margin. Numerical interval verifier can return unresolved at touching boundaries. Clarifies formula semantics without changing owner code."
+}

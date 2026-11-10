@@ -1,0 +1,2077 @@
+{
+  "rows": [
+    {
+      "id": "C01",
+      "scenario_id": "bundle_allocation_12",
+      "family": "toy",
+      "paper_id": null,
+      "n": 12,
+      "m": 12,
+      "r": 6,
+      "Delta": 4,
+      "streaming": {
+        "condition": "C01",
+        "scenario_id": "bundle_allocation_12",
+        "role": "streaming",
+        "objective": 39,
+        "reported_floating_objective": 39,
+        "floating_difference": 0,
+        "selected_count": 2,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 5.53e-05,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\results.json",
+          "sha256": "beceac2c8cf42d578d97055b662a09034d30c33826b0f0514388c96b997f5c59",
+          "bytes": 2784
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\instance.json",
+          "sha256": "0604f1ba4047942ea0d0ba0db1e7a3486f9adc5d6fadcc4059cd4344934e78a5",
+          "bytes": 4041
+        }
+      },
+      "scip": {
+        "condition": "C01",
+        "scenario_id": "bundle_allocation_12",
+        "role": "scip_historical",
+        "objective": 42,
+        "reported_floating_objective": 42,
+        "floating_difference": 0,
+        "selected_count": 4,
+        "feasible": true,
+        "status": "optimal",
+        "total_seconds": 0.0037201,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\results.json",
+          "sha256": "beceac2c8cf42d578d97055b662a09034d30c33826b0f0514388c96b997f5c59",
+          "bytes": 2784
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\instance.json",
+          "sha256": "0604f1ba4047942ea0d0ba0db1e7a3486f9adc5d6fadcc4059cd4344934e78a5",
+          "bytes": 4041
+        }
+      },
+      "time_basis": "historical total build+solve+extract",
+      "warm_start": "see original protocol",
+      "gap": 0.0
+    },
+    {
+      "id": "C02",
+      "scenario_id": "n300_r6_seed0",
+      "family": "synthetic",
+      "paper_id": null,
+      "n": 300,
+      "m": 200,
+      "r": 6,
+      "Delta": 20,
+      "streaming": {
+        "condition": "C02",
+        "scenario_id": "n300_r6_seed0",
+        "role": "streaming",
+        "objective": 1254,
+        "reported_floating_objective": 1254,
+        "floating_difference": 0,
+        "selected_count": 17,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.000657,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n300_r6_seed0_HeiHGM_Streaming.json",
+          "sha256": "b2af97f218649b3c2c561a5b351414e484d17b3d743fe9ecfecf39e5e91c910f",
+          "bytes": 4484
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n300_r6_seed0.json",
+          "sha256": "90d03ecff8196ff5b78b86794f6ad0a7e8ca6a07158fc1b5080c59a4f600c975",
+          "bytes": 77266
+        }
+      },
+      "scip": {
+        "condition": "C02",
+        "scenario_id": "n300_r6_seed0",
+        "role": "scip_historical",
+        "objective": 1658,
+        "reported_floating_objective": 1658,
+        "floating_difference": 0,
+        "selected_count": 22,
+        "feasible": true,
+        "status": "timelimit",
+        "total_seconds": 9.9737897,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n300_r6_seed0_SCIP_MILP.json",
+          "sha256": "101114e878839d2e9b1a828e05f77d1524bfca963bcc32d36b494493f8e4d9cf",
+          "bytes": 4664
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n300_r6_seed0.json",
+          "sha256": "90d03ecff8196ff5b78b86794f6ad0a7e8ca6a07158fc1b5080c59a4f600c975",
+          "bytes": 77266
+        }
+      },
+      "time_basis": "historical total build+solve+extract",
+      "warm_start": "see original protocol",
+      "gap": 0.14003317288625405
+    },
+    {
+      "id": "C03",
+      "scenario_id": "n1000_r6_seed0",
+      "family": "synthetic",
+      "paper_id": null,
+      "n": 1000,
+      "m": 200,
+      "r": 6,
+      "Delta": 46,
+      "streaming": {
+        "condition": "C03",
+        "scenario_id": "n1000_r6_seed0",
+        "role": "streaming",
+        "objective": 1588,
+        "reported_floating_objective": 1588,
+        "floating_difference": 0,
+        "selected_count": 20,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0018065,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n1000_r6_seed0_HeiHGM_Streaming.json",
+          "sha256": "204991ba8554b036f026a6733d24cdeef30d7c3947896003c7668f68d44016dc",
+          "bytes": 4529
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r6_seed0.json",
+          "sha256": "5f4ea24f39569fa8ba23c33cc32e259c8a5be4d947c76ee6e891f5a4372f30f4",
+          "bytes": 209513
+        }
+      },
+      "scip": {
+        "condition": "C03",
+        "scenario_id": "n1000_r6_seed0",
+        "role": "scip_historical",
+        "objective": 2217,
+        "reported_floating_objective": 2217,
+        "floating_difference": 0,
+        "selected_count": 25,
+        "feasible": true,
+        "status": "timelimit",
+        "total_seconds": 9.9469613,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n1000_r6_seed0_SCIP_MILP.json",
+          "sha256": "21e514696b8776cd19fdf422596c24bad503f6b038ede5a1d4959737eb3167a0",
+          "bytes": 4705
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r6_seed0.json",
+          "sha256": "5f4ea24f39569fa8ba23c33cc32e259c8a5be4d947c76ee6e891f5a4372f30f4",
+          "bytes": 209513
+        }
+      },
+      "time_basis": "historical total build+solve+extract",
+      "warm_start": "see original protocol",
+      "gap": 0.2790302474164751
+    },
+    {
+      "id": "C04",
+      "scenario_id": "n3000_r6_seed0",
+      "family": "synthetic",
+      "paper_id": null,
+      "n": 3000,
+      "m": 200,
+      "r": 6,
+      "Delta": 115,
+      "streaming": {
+        "condition": "C04",
+        "scenario_id": "n3000_r6_seed0",
+        "role": "streaming",
+        "objective": 1702,
+        "reported_floating_objective": 1702,
+        "floating_difference": 0,
+        "selected_count": 22,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.004671,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n3000_r6_seed0_HeiHGM_Streaming.json",
+          "sha256": "1fd30072842aa77d37d898cc3c8a7f3bd402e38156194414969cd718f9c6418b",
+          "bytes": 4558
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n3000_r6_seed0.json",
+          "sha256": "84bfe7640506347bdaf58e6f7481122f71ffc4c4628cc8f84ce338dcb7227698",
+          "bytes": 587357
+        }
+      },
+      "scip": {
+        "condition": "C04",
+        "scenario_id": "n3000_r6_seed0",
+        "role": "scip_historical",
+        "objective": 2364,
+        "reported_floating_objective": 2364,
+        "floating_difference": 0,
+        "selected_count": 25,
+        "feasible": true,
+        "status": "timelimit",
+        "total_seconds": 9.873515,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n3000_r6_seed0_SCIP_MILP.json",
+          "sha256": "eb9413238489a9d8a4e4d860735b693a460f399df6f3868410dde3af9e9fc547",
+          "bytes": 4702
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n3000_r6_seed0.json",
+          "sha256": "84bfe7640506347bdaf58e6f7481122f71ffc4c4628cc8f84ce338dcb7227698",
+          "bytes": 587357
+        }
+      },
+      "time_basis": "historical total build+solve+extract",
+      "warm_start": "see original protocol",
+      "gap": 0.3362849895006188
+    },
+    {
+      "id": "C05",
+      "scenario_id": "n1000_r3_seed0",
+      "family": "synthetic",
+      "paper_id": null,
+      "n": 1000,
+      "m": 200,
+      "r": 3,
+      "Delta": 27,
+      "streaming": {
+        "condition": "C05",
+        "scenario_id": "n1000_r3_seed0",
+        "role": "streaming",
+        "objective": 4025,
+        "reported_floating_objective": 4025,
+        "floating_difference": 0,
+        "selected_count": 52,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0011582,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n1000_r3_seed0_HeiHGM_Streaming.json",
+          "sha256": "1c5d3434cd46edda692d66a72e730741b0abe880a9c2002ad6b2e5a9b421f329",
+          "bytes": 4978
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r3_seed0.json",
+          "sha256": "cb8133cdf100de49e6de8490d484980bcf4682eabd74efc2095329ed29fe6f40",
+          "bytes": 158513
+        }
+      },
+      "scip": {
+        "condition": "C05",
+        "scenario_id": "n1000_r3_seed0",
+        "role": "scip_historical",
+        "objective": 5522,
+        "reported_floating_objective": 5522,
+        "floating_difference": 0,
+        "selected_count": 62,
+        "feasible": true,
+        "status": "timelimit",
+        "total_seconds": 9.9748113,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n1000_r3_seed0_SCIP_MILP.json",
+          "sha256": "9f0b83a1089f1958fe5be77024d1c33f965898bd8dae2f7b4f5c150cfecc2f41",
+          "bytes": 5225
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r3_seed0.json",
+          "sha256": "cb8133cdf100de49e6de8490d484980bcf4682eabd74efc2095329ed29fe6f40",
+          "bytes": 158513
+        }
+      },
+      "time_basis": "historical total build+solve+extract",
+      "warm_start": "see original protocol",
+      "gap": 0.032953876993917476
+    },
+    {
+      "id": "C06",
+      "scenario_id": "n1000_r12_seed0",
+      "family": "synthetic",
+      "paper_id": null,
+      "n": 1000,
+      "m": 200,
+      "r": 12,
+      "Delta": 81,
+      "streaming": {
+        "condition": "C06",
+        "scenario_id": "n1000_r12_seed0",
+        "role": "streaming",
+        "objective": 545,
+        "reported_floating_objective": 545,
+        "floating_difference": 0,
+        "selected_count": 8,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0041223,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n1000_r12_seed0_HeiHGM_Streaming.json",
+          "sha256": "dfdea2b70e308cae81ab441673fef158c0213bce77e29afd3f5765611b47aeea",
+          "bytes": 4362
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r12_seed0.json",
+          "sha256": "2458fb0f47b06595b6fac888d2d4fadd198d814ef6fa429853915ff2a67b5f63",
+          "bytes": 311515
+        }
+      },
+      "scip": {
+        "condition": "C06",
+        "scenario_id": "n1000_r12_seed0",
+        "role": "scip_historical",
+        "objective": 740,
+        "reported_floating_objective": 740,
+        "floating_difference": 0,
+        "selected_count": 8,
+        "feasible": true,
+        "status": "timelimit",
+        "total_seconds": 9.8793459,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n1000_r12_seed0_SCIP_MILP.json",
+          "sha256": "4935e30ea13905dd99291ea3b83b79d53ef861d75672d9cb371dfce688755602",
+          "bytes": 4464
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r12_seed0.json",
+          "sha256": "2458fb0f47b06595b6fac888d2d4fadd198d814ef6fa429853915ff2a67b5f63",
+          "bytes": 311515
+        }
+      },
+      "time_basis": "historical total build+solve+extract",
+      "warm_start": "see original protocol",
+      "gap": 0.9302581679094816
+    },
+    {
+      "id": "C07",
+      "scenario_id": "n1000_r24_seed0",
+      "family": "synthetic",
+      "paper_id": null,
+      "n": 1000,
+      "m": 200,
+      "r": 24,
+      "Delta": 145,
+      "streaming": {
+        "condition": "C07",
+        "scenario_id": "n1000_r24_seed0",
+        "role": "streaming",
+        "objective": 153,
+        "reported_floating_objective": 153,
+        "floating_difference": 0,
+        "selected_count": 2,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0044912,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n1000_r24_seed0_HeiHGM_Streaming.json",
+          "sha256": "2b7540ddafd527801ab7a087bd619a596c92257a5153f82c2ee6f48d1e716c66",
+          "bytes": 4278
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r24_seed0.json",
+          "sha256": "743e5537a38edd69a726c23767d9094a746d12e612d10fc37da9eb5bb09d1039",
+          "bytes": 515515
+        }
+      },
+      "scip": {
+        "condition": "C07",
+        "scenario_id": "n1000_r24_seed0",
+        "role": "scip_historical",
+        "objective": 282,
+        "reported_floating_objective": 282,
+        "floating_difference": 0,
+        "selected_count": 3,
+        "feasible": true,
+        "status": "timelimit",
+        "total_seconds": 9.8767588,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n1000_r24_seed0_SCIP_MILP.json",
+          "sha256": "5e89c0b069a9778d5f951ac0c06c324fa1d7a00626fcd5f2fe2a3b51719ae981",
+          "bytes": 4392
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r24_seed0.json",
+          "sha256": "743e5537a38edd69a726c23767d9094a746d12e612d10fc37da9eb5bb09d1039",
+          "bytes": 515515
+        }
+      },
+      "time_basis": "historical total build+solve+extract",
+      "warm_start": "see original protocol",
+      "gap": 1.123613706922728
+    },
+    {
+      "id": "C08",
+      "scenario_id": "n300_r6_seed1",
+      "family": "synthetic",
+      "paper_id": null,
+      "n": 300,
+      "m": 200,
+      "r": 6,
+      "Delta": 17,
+      "streaming": {
+        "condition": "C08",
+        "scenario_id": "n300_r6_seed1",
+        "role": "streaming",
+        "objective": 1046,
+        "reported_floating_objective": 1046,
+        "floating_difference": 0,
+        "selected_count": 16,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0007078,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n300_r6_seed1_HeiHGM_Streaming.json",
+          "sha256": "f5dd795087a98731783795c73f74f851fc6db2ece7e1c7e53cf98ca3e4c0903c",
+          "bytes": 4469
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n300_r6_seed1.json",
+          "sha256": "7dea9c370d4b854c9f2270972e45d8f76b19246347d5eb7b2a37aeafc5e90728",
+          "bytes": 77259
+        }
+      },
+      "scip": {
+        "condition": "C08",
+        "scenario_id": "n300_r6_seed1",
+        "role": "scip_historical",
+        "objective": 1785,
+        "reported_floating_objective": 1785,
+        "floating_difference": 0,
+        "selected_count": 23,
+        "feasible": true,
+        "status": "timelimit",
+        "total_seconds": 9.8758328,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n300_r6_seed1_SCIP_MILP.json",
+          "sha256": "1d7600894b05df428f90718d071ab0a5d5a0a4f1b44d36af3a8b475cf34a4b99",
+          "bytes": 4674
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n300_r6_seed1.json",
+          "sha256": "7dea9c370d4b854c9f2270972e45d8f76b19246347d5eb7b2a37aeafc5e90728",
+          "bytes": 77259
+        }
+      },
+      "time_basis": "historical total build+solve+extract",
+      "warm_start": "see original protocol",
+      "gap": 0.1357155525524151
+    },
+    {
+      "id": "C09",
+      "scenario_id": "n1000_r6_seed1",
+      "family": "synthetic",
+      "paper_id": null,
+      "n": 1000,
+      "m": 200,
+      "r": 6,
+      "Delta": 44,
+      "streaming": {
+        "condition": "C09",
+        "scenario_id": "n1000_r6_seed1",
+        "role": "streaming",
+        "objective": 1381,
+        "reported_floating_objective": 1381,
+        "floating_difference": 0,
+        "selected_count": 20,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0017477,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n1000_r6_seed1_HeiHGM_Streaming.json",
+          "sha256": "75d89ebf6e38aae6956102f6b4fdd7cb1b6c65f4e33ea19bdfb912011dd12f1e",
+          "bytes": 4530
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r6_seed1.json",
+          "sha256": "422267f7a112b6e06730882887428d3344e72ac89094764ba81649d322622505",
+          "bytes": 209490
+        }
+      },
+      "scip": {
+        "condition": "C09",
+        "scenario_id": "n1000_r6_seed1",
+        "role": "scip_historical",
+        "objective": 2098,
+        "reported_floating_objective": 2098,
+        "floating_difference": 0,
+        "selected_count": 23,
+        "feasible": true,
+        "status": "timelimit",
+        "total_seconds": 9.9455874,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n1000_r6_seed1_SCIP_MILP.json",
+          "sha256": "4536d7dca99a6d0b20903169ecaa15ad4851f8521fcdbf16fe0a75ab61f92dc7",
+          "bytes": 4676
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r6_seed1.json",
+          "sha256": "422267f7a112b6e06730882887428d3344e72ac89094764ba81649d322622505",
+          "bytes": 209490
+        }
+      },
+      "time_basis": "historical total build+solve+extract",
+      "warm_start": "see original protocol",
+      "gap": 0.32768476504562555
+    },
+    {
+      "id": "C10",
+      "scenario_id": "n3000_r6_seed1",
+      "family": "synthetic",
+      "paper_id": null,
+      "n": 3000,
+      "m": 200,
+      "r": 6,
+      "Delta": 116,
+      "streaming": {
+        "condition": "C10",
+        "scenario_id": "n3000_r6_seed1",
+        "role": "streaming",
+        "objective": 1448,
+        "reported_floating_objective": 1448,
+        "floating_difference": 0,
+        "selected_count": 21,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0066964,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n3000_r6_seed1_HeiHGM_Streaming.json",
+          "sha256": "71033f3b0387ad9fe6fdec14e5660ad67ea3466f1899f77cef02407799e29e08",
+          "bytes": 4543
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n3000_r6_seed1.json",
+          "sha256": "dc1c036ea5764507cae768bcbba08892a46bdd15e13f6ac6b77758743868268f",
+          "bytes": 587362
+        }
+      },
+      "scip": {
+        "condition": "C10",
+        "scenario_id": "n3000_r6_seed1",
+        "role": "scip_historical",
+        "objective": 2280,
+        "reported_floating_objective": 2280,
+        "floating_difference": 0,
+        "selected_count": 24,
+        "feasible": true,
+        "status": "timelimit",
+        "total_seconds": 9.9031949,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n3000_r6_seed1_SCIP_MILP.json",
+          "sha256": "2b7b51245091e4072f6f2c4a87d82bf6311acab4f6bcf22e006d3cdedd5d6404",
+          "bytes": 4688
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n3000_r6_seed1.json",
+          "sha256": "dc1c036ea5764507cae768bcbba08892a46bdd15e13f6ac6b77758743868268f",
+          "bytes": 587362
+        }
+      },
+      "time_basis": "historical total build+solve+extract",
+      "warm_start": "see original protocol",
+      "gap": 0.3906243879416511
+    },
+    {
+      "id": "C11",
+      "scenario_id": "n1000_r3_seed1",
+      "family": "synthetic",
+      "paper_id": null,
+      "n": 1000,
+      "m": 200,
+      "r": 3,
+      "Delta": 26,
+      "streaming": {
+        "condition": "C11",
+        "scenario_id": "n1000_r3_seed1",
+        "role": "streaming",
+        "objective": 3970,
+        "reported_floating_objective": 3970,
+        "floating_difference": 0,
+        "selected_count": 52,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0019276,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n1000_r3_seed1_HeiHGM_Streaming.json",
+          "sha256": "d7e07428e524194bcd93f1b090d3afbc2d4e046e908d5981984a351518c0b4a6",
+          "bytes": 4979
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r3_seed1.json",
+          "sha256": "d59aa1f391fcc2aed574d564abbca1c7eb6651e5696ade67055e25f209b143a3",
+          "bytes": 158490
+        }
+      },
+      "scip": {
+        "condition": "C11",
+        "scenario_id": "n1000_r3_seed1",
+        "role": "scip_historical",
+        "objective": 5394,
+        "reported_floating_objective": 5394,
+        "floating_difference": 0,
+        "selected_count": 63,
+        "feasible": true,
+        "status": "timelimit",
+        "total_seconds": 9.9723789,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n1000_r3_seed1_SCIP_MILP.json",
+          "sha256": "a1486a1f90e79751c55e5f56926e371783f5267ac772ac3a18dfa437e0b9614a",
+          "bytes": 5239
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r3_seed1.json",
+          "sha256": "d59aa1f391fcc2aed574d564abbca1c7eb6651e5696ade67055e25f209b143a3",
+          "bytes": 158490
+        }
+      },
+      "time_basis": "historical total build+solve+extract",
+      "warm_start": "see original protocol",
+      "gap": 0.041682997728616854
+    },
+    {
+      "id": "C12",
+      "scenario_id": "n1000_r12_seed1",
+      "family": "synthetic",
+      "paper_id": null,
+      "n": 1000,
+      "m": 200,
+      "r": 12,
+      "Delta": 83,
+      "streaming": {
+        "condition": "C12",
+        "scenario_id": "n1000_r12_seed1",
+        "role": "streaming",
+        "objective": 470,
+        "reported_floating_objective": 470,
+        "floating_difference": 0,
+        "selected_count": 6,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0025319,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n1000_r12_seed1_HeiHGM_Streaming.json",
+          "sha256": "d5a49d6d6b3e741bc0ff84fb9b721601a803809e8bbb84ca07e830a55632c451",
+          "bytes": 4334
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r12_seed1.json",
+          "sha256": "bceafe0ef08fafe22ec0c86faf2f3440ab2ef24968f6a1b962c76d6768840b13",
+          "bytes": 311492
+        }
+      },
+      "scip": {
+        "condition": "C12",
+        "scenario_id": "n1000_r12_seed1",
+        "role": "scip_historical",
+        "objective": 623,
+        "reported_floating_objective": 623,
+        "floating_difference": 0,
+        "selected_count": 8,
+        "feasible": true,
+        "status": "timelimit",
+        "total_seconds": 10.0614249,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n1000_r12_seed1_SCIP_MILP.json",
+          "sha256": "210bc88060507e060ba2b1837c7f3b2d1bfc24e119c867ca65d9741de03fb1fc",
+          "bytes": 4465
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r12_seed1.json",
+          "sha256": "bceafe0ef08fafe22ec0c86faf2f3440ab2ef24968f6a1b962c76d6768840b13",
+          "bytes": 311492
+        }
+      },
+      "time_basis": "historical total build+solve+extract",
+      "warm_start": "see original protocol",
+      "gap": 1.234300411950677
+    },
+    {
+      "id": "C13",
+      "scenario_id": "n1000_r24_seed1",
+      "family": "synthetic",
+      "paper_id": null,
+      "n": 1000,
+      "m": 200,
+      "r": 24,
+      "Delta": 146,
+      "streaming": {
+        "condition": "C13",
+        "scenario_id": "n1000_r24_seed1",
+        "role": "streaming",
+        "objective": 178,
+        "reported_floating_objective": 178,
+        "floating_difference": 0,
+        "selected_count": 3,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0059019,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n1000_r24_seed1_HeiHGM_Streaming.json",
+          "sha256": "850ccf96ffa35af869eac3095c8022a8109cab6899592d86f2b40d7f988bc42c",
+          "bytes": 4292
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r24_seed1.json",
+          "sha256": "73630edb14adf9e99b2476a4c8c1a34b8e7454868fb31459f8febbe04f3ea7d3",
+          "bytes": 515492
+        }
+      },
+      "scip": {
+        "condition": "C13",
+        "scenario_id": "n1000_r24_seed1",
+        "role": "scip_historical",
+        "objective": 199,
+        "reported_floating_objective": 199,
+        "floating_difference": 0,
+        "selected_count": 3,
+        "feasible": true,
+        "status": "timelimit",
+        "total_seconds": 9.6541025,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n1000_r24_seed1_SCIP_MILP.json",
+          "sha256": "5a7e18e266d764bc6404179e529054bef7467e7764c8cb879df82c795da9ac77",
+          "bytes": 4392
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r24_seed1.json",
+          "sha256": "73630edb14adf9e99b2476a4c8c1a34b8e7454868fb31459f8febbe04f3ea7d3",
+          "bytes": 515492
+        }
+      },
+      "time_basis": "historical total build+solve+extract",
+      "warm_start": "see original protocol",
+      "gap": 1.962962487247758
+    },
+    {
+      "id": "C14",
+      "scenario_id": "n300_r6_seed2",
+      "family": "synthetic",
+      "paper_id": null,
+      "n": 300,
+      "m": 200,
+      "r": 6,
+      "Delta": 19,
+      "streaming": {
+        "condition": "C14",
+        "scenario_id": "n300_r6_seed2",
+        "role": "streaming",
+        "objective": 1152,
+        "reported_floating_objective": 1152,
+        "floating_difference": 0,
+        "selected_count": 15,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0006018,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n300_r6_seed2_HeiHGM_Streaming.json",
+          "sha256": "141b2f9aad09a142716cd99791a9365cd830a67fafd830655b470f51dd2641f3",
+          "bytes": 4457
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n300_r6_seed2.json",
+          "sha256": "5dc3a744e9f3e397deb62c1ac44ba3741a33c5b1602bd5296f749bb5b87b6889",
+          "bytes": 77267
+        }
+      },
+      "scip": {
+        "condition": "C14",
+        "scenario_id": "n300_r6_seed2",
+        "role": "scip_historical",
+        "objective": 1832,
+        "reported_floating_objective": 1832,
+        "floating_difference": 0,
+        "selected_count": 24,
+        "feasible": true,
+        "status": "timelimit",
+        "total_seconds": 9.8979374,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n300_r6_seed2_SCIP_MILP.json",
+          "sha256": "918bcc4e833fddb61fa8dcf07a3fa4da2f90b3c49351ad121ad5f7a3b3491275",
+          "bytes": 4692
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n300_r6_seed2.json",
+          "sha256": "5dc3a744e9f3e397deb62c1ac44ba3741a33c5b1602bd5296f749bb5b87b6889",
+          "bytes": 77267
+        }
+      },
+      "time_basis": "historical total build+solve+extract",
+      "warm_start": "see original protocol",
+      "gap": 0.11815841304702696
+    },
+    {
+      "id": "C15",
+      "scenario_id": "n1000_r6_seed2",
+      "family": "synthetic",
+      "paper_id": null,
+      "n": 1000,
+      "m": 200,
+      "r": 6,
+      "Delta": 49,
+      "streaming": {
+        "condition": "C15",
+        "scenario_id": "n1000_r6_seed2",
+        "role": "streaming",
+        "objective": 1367,
+        "reported_floating_objective": 1367,
+        "floating_difference": 0,
+        "selected_count": 16,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0016392,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n1000_r6_seed2_HeiHGM_Streaming.json",
+          "sha256": "1a44acb8c2fa661b4b75136a7078f84d7408b580f4f2607f6aeab7fd97d2bb05",
+          "bytes": 4474
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r6_seed2.json",
+          "sha256": "c4c3649112882986d7ab3b8a4fbd0439ad638111e8e1c9a08403c2fd074c038f",
+          "bytes": 209518
+        }
+      },
+      "scip": {
+        "condition": "C15",
+        "scenario_id": "n1000_r6_seed2",
+        "role": "scip_historical",
+        "objective": 2083,
+        "reported_floating_objective": 2083,
+        "floating_difference": 0,
+        "selected_count": 24,
+        "feasible": true,
+        "status": "timelimit",
+        "total_seconds": 9.9501178,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n1000_r6_seed2_SCIP_MILP.json",
+          "sha256": "4eba5abc3d3b482812f1a9709029ae78d7847186e0ba9abf598107b2abb538e4",
+          "bytes": 4692
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r6_seed2.json",
+          "sha256": "c4c3649112882986d7ab3b8a4fbd0439ad638111e8e1c9a08403c2fd074c038f",
+          "bytes": 209518
+        }
+      },
+      "time_basis": "historical total build+solve+extract",
+      "warm_start": "see original protocol",
+      "gap": 0.3630195414399057
+    },
+    {
+      "id": "C16",
+      "scenario_id": "n3000_r6_seed2",
+      "family": "synthetic",
+      "paper_id": null,
+      "n": 3000,
+      "m": 200,
+      "r": 6,
+      "Delta": 117,
+      "streaming": {
+        "condition": "C16",
+        "scenario_id": "n3000_r6_seed2",
+        "role": "streaming",
+        "objective": 1685,
+        "reported_floating_objective": 1685,
+        "floating_difference": 0,
+        "selected_count": 22,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0047136,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n3000_r6_seed2_HeiHGM_Streaming.json",
+          "sha256": "8902ac0c8120ceae300092563b5e69c9cd47bc6c1211b819e5caa2692f80ae1e",
+          "bytes": 4557
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n3000_r6_seed2.json",
+          "sha256": "7b0652e123e87bf7a2f5eb7600279a2e7b8f482143e552926870d031dba11fe6",
+          "bytes": 587349
+        }
+      },
+      "scip": {
+        "condition": "C16",
+        "scenario_id": "n3000_r6_seed2",
+        "role": "scip_historical",
+        "objective": 2384,
+        "reported_floating_objective": 2384,
+        "floating_difference": 0,
+        "selected_count": 26,
+        "feasible": true,
+        "status": "timelimit",
+        "total_seconds": 9.8932132,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n3000_r6_seed2_SCIP_MILP.json",
+          "sha256": "1099ca09a945c99a9907420ea0b3f2b92cb5f9fa0f5eaf7894bfa386a38358e3",
+          "bytes": 4716
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n3000_r6_seed2.json",
+          "sha256": "7b0652e123e87bf7a2f5eb7600279a2e7b8f482143e552926870d031dba11fe6",
+          "bytes": 587349
+        }
+      },
+      "time_basis": "historical total build+solve+extract",
+      "warm_start": "see original protocol",
+      "gap": 0.33033857138096573
+    },
+    {
+      "id": "C17",
+      "scenario_id": "n1000_r3_seed2",
+      "family": "synthetic",
+      "paper_id": null,
+      "n": 1000,
+      "m": 200,
+      "r": 3,
+      "Delta": 25,
+      "streaming": {
+        "condition": "C17",
+        "scenario_id": "n1000_r3_seed2",
+        "role": "streaming",
+        "objective": 4079,
+        "reported_floating_objective": 4079,
+        "floating_difference": 0,
+        "selected_count": 52,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0011314,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n1000_r3_seed2_HeiHGM_Streaming.json",
+          "sha256": "999bc715f0a1ce53eb96c4a2909a1969960bb7ba821cad89d927400ef4ebce6c",
+          "bytes": 4978
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r3_seed2.json",
+          "sha256": "f942932efa178ed224ebceaf422ac0f448523afff266af9639a351c1e0a771c8",
+          "bytes": 158518
+        }
+      },
+      "scip": {
+        "condition": "C17",
+        "scenario_id": "n1000_r3_seed2",
+        "role": "scip_historical",
+        "objective": 5410,
+        "reported_floating_objective": 5410,
+        "floating_difference": 0,
+        "selected_count": 62,
+        "feasible": true,
+        "status": "timelimit",
+        "total_seconds": 9.977748,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n1000_r3_seed2_SCIP_MILP.json",
+          "sha256": "ed433720d209c00b110e9d06cce08bbd28291ae3950503144b8103efdaf77d09",
+          "bytes": 5223
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r3_seed2.json",
+          "sha256": "f942932efa178ed224ebceaf422ac0f448523afff266af9639a351c1e0a771c8",
+          "bytes": 158518
+        }
+      },
+      "time_basis": "historical total build+solve+extract",
+      "warm_start": "see original protocol",
+      "gap": 0.04591090746260528
+    },
+    {
+      "id": "C18",
+      "scenario_id": "n1000_r12_seed2",
+      "family": "synthetic",
+      "paper_id": null,
+      "n": 1000,
+      "m": 200,
+      "r": 12,
+      "Delta": 80,
+      "streaming": {
+        "condition": "C18",
+        "scenario_id": "n1000_r12_seed2",
+        "role": "streaming",
+        "objective": 450,
+        "reported_floating_objective": 450,
+        "floating_difference": 0,
+        "selected_count": 6,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0026746,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n1000_r12_seed2_HeiHGM_Streaming.json",
+          "sha256": "c2f57b168d148bfbfcb18cec1730080b5e4f79387c7810314b78bed9ee99b333",
+          "bytes": 4331
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r12_seed2.json",
+          "sha256": "cda2bdb3da0d8bd0ea76b015038eb5ca4dc30600a119e7fdaccd2ff40a68c9b4",
+          "bytes": 311520
+        }
+      },
+      "scip": {
+        "condition": "C18",
+        "scenario_id": "n1000_r12_seed2",
+        "role": "scip_historical",
+        "objective": 751,
+        "reported_floating_objective": 751,
+        "floating_difference": 0,
+        "selected_count": 8,
+        "feasible": true,
+        "status": "timelimit",
+        "total_seconds": 9.8555419,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n1000_r12_seed2_SCIP_MILP.json",
+          "sha256": "034cdb58e7503a82fe9f2aedf808e90d6182bb3fcb012b35e258736912e1ea20",
+          "bytes": 4464
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r12_seed2.json",
+          "sha256": "cda2bdb3da0d8bd0ea76b015038eb5ca4dc30600a119e7fdaccd2ff40a68c9b4",
+          "bytes": 311520
+        }
+      },
+      "time_basis": "historical total build+solve+extract",
+      "warm_start": "see original protocol",
+      "gap": 0.9105042428415816
+    },
+    {
+      "id": "C19",
+      "scenario_id": "n1000_r24_seed2",
+      "family": "synthetic",
+      "paper_id": null,
+      "n": 1000,
+      "m": 200,
+      "r": 24,
+      "Delta": 151,
+      "streaming": {
+        "condition": "C19",
+        "scenario_id": "n1000_r24_seed2",
+        "role": "streaming",
+        "objective": 150,
+        "reported_floating_objective": 150,
+        "floating_difference": 0,
+        "selected_count": 2,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0047031,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n1000_r24_seed2_HeiHGM_Streaming.json",
+          "sha256": "b6b82d99f84952d4d070b01ba26ef787eb794720569c04918811356953c9361b",
+          "bytes": 4277
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r24_seed2.json",
+          "sha256": "7a7309f46d1216e8e636faaae24bdfd1995020b4296fa6bb423ec70d1fdaa5e4",
+          "bytes": 515520
+        }
+      },
+      "scip": {
+        "condition": "C19",
+        "scenario_id": "n1000_r24_seed2",
+        "role": "scip_historical",
+        "objective": 291,
+        "reported_floating_objective": 291,
+        "floating_difference": 0,
+        "selected_count": 3,
+        "feasible": true,
+        "status": "timelimit",
+        "total_seconds": 9.9082083,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\raw\\n1000_r24_seed2_SCIP_MILP.json",
+          "sha256": "a7f8f23bfcf4e74aab5a8134b546bac9ad1072dbb3928656f36f88d49dbcd5c0",
+          "bytes": 4418
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r24_seed2.json",
+          "sha256": "7a7309f46d1216e8e636faaae24bdfd1995020b4296fa6bb423ec70d1fdaa5e4",
+          "bytes": 515520
+        }
+      },
+      "time_basis": "historical total build+solve+extract",
+      "warm_start": "see original protocol",
+      "gap": 1.0639145761611806
+    },
+    {
+      "id": "C20",
+      "scenario_id": "hypop2025_mis_n500_d3",
+      "family": "public",
+      "paper_id": "P1",
+      "n": 500,
+      "m": 750,
+      "r": 3,
+      "Delta": 2,
+      "streaming": {
+        "condition": "C20",
+        "scenario_id": "hypop2025_mis_n500_d3",
+        "role": "streaming",
+        "objective": 188,
+        "reported_floating_objective": 188,
+        "floating_difference": 0,
+        "selected_count": 188,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0010643,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\raw\\hypop2025_mis_n500_d3_HeiHGM_Streaming.json",
+          "sha256": "950bf1fd7cb40e40531d800b4c698226aef37b8277a6c469f06ecd564d079206",
+          "bytes": 16403
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\instances\\hypop2025_mis_n500_d3.json",
+          "sha256": "afef40914b87704b91c47640ef0608048a194f401145e5a86f803f58f9e4dccd",
+          "bytes": 111315
+        }
+      },
+      "scip": {
+        "condition": "C20",
+        "scenario_id": "hypop2025_mis_n500_d3",
+        "role": "scip_latest_completed",
+        "objective": 221,
+        "reported_floating_objective": 221.0,
+        "floating_difference": 0.0,
+        "selected_count": 221,
+        "feasible": true,
+        "status": "gaplimit",
+        "total_seconds": 16.580233499989845,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\SCIP_gap5持续求解\\raw\\hypop2025_mis_n500_d3_SCIP.json",
+          "sha256": "ae0eac25b20ef42214de3505ec6cc90a5ad01e43818fd94ae2231ff68a6d764e",
+          "bytes": 18412
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\instances\\hypop2025_mis_n500_d3.json",
+          "sha256": "afef40914b87704b91c47640ef0608048a194f401145e5a86f803f58f9e4dccd",
+          "bytes": 111315
+        }
+      },
+      "time_basis": "later warm-started run total; previous run cost excluded",
+      "warm_start": "previous SCIP incumbent only",
+      "gap": 0.04995385065622116
+    },
+    {
+      "id": "C21",
+      "scenario_id": "hypop2025_mis_n1000_d3",
+      "family": "public",
+      "paper_id": "P1",
+      "n": 1000,
+      "m": 1500,
+      "r": 3,
+      "Delta": 2,
+      "streaming": {
+        "condition": "C21",
+        "scenario_id": "hypop2025_mis_n1000_d3",
+        "role": "streaming",
+        "objective": 379,
+        "reported_floating_objective": 379,
+        "floating_difference": 0,
+        "selected_count": 379,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0014158,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\raw\\hypop2025_mis_n1000_d3_HeiHGM_Streaming.json",
+          "sha256": "dbaa9b3bdc2bbaa98415595e66e224fc90596309fc945b1102a83c84ceafe4b8",
+          "bytes": 32878
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\instances\\hypop2025_mis_n1000_d3.json",
+          "sha256": "f34d0e94d5cdd6818f83fbc3313a4d6e7e10bb84460e8bf2d351ae162f6737f8",
+          "bytes": 223571
+        }
+      },
+      "scip": {
+        "condition": "C21",
+        "scenario_id": "hypop2025_mis_n1000_d3",
+        "role": "scip_latest_completed",
+        "objective": 442,
+        "reported_floating_objective": 442.0,
+        "floating_difference": 0.0,
+        "selected_count": 442,
+        "feasible": true,
+        "status": "gaplimit",
+        "total_seconds": 4720.181160999986,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\SCIP_gap5持续求解\\raw\\hypop2025_mis_n1000_d3_SCIP.json",
+          "sha256": "dec62f05a95a198bc5a75cd9936aa9dd3844869a01f2ddb5170bc2ff91cc5793",
+          "bytes": 111369
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\instances\\hypop2025_mis_n1000_d3.json",
+          "sha256": "f34d0e94d5cdd6818f83fbc3313a4d6e7e10bb84460e8bf2d351ae162f6737f8",
+          "bytes": 223571
+        }
+      },
+      "time_basis": "later warm-started run total; previous run cost excluded",
+      "warm_start": "previous SCIP incumbent only",
+      "gap": 0.04938868226504956
+    },
+    {
+      "id": "C22",
+      "scenario_id": "hypop2025_mis_n2000_d3",
+      "family": "public",
+      "paper_id": "P1",
+      "n": 2000,
+      "m": 3000,
+      "r": 3,
+      "Delta": 2,
+      "streaming": {
+        "condition": "C22",
+        "scenario_id": "hypop2025_mis_n2000_d3",
+        "role": "streaming",
+        "objective": 764,
+        "reported_floating_objective": 764,
+        "floating_difference": 0,
+        "selected_count": 764,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0042562,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\raw\\hypop2025_mis_n2000_d3_HeiHGM_Streaming.json",
+          "sha256": "428e87f02cd221b2f45f3fed90e297c7ec58ad42717a4add40c2dfc9f45fd821",
+          "bytes": 66587
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\instances\\hypop2025_mis_n2000_d3.json",
+          "sha256": "368c8fd7e9d26bcc1d6e0a6f065c722636572177c0e46b48ba22d8f0dddb784a",
+          "bytes": 450571
+        }
+      },
+      "scip": {
+        "condition": "C22",
+        "scenario_id": "hypop2025_mis_n2000_d3",
+        "role": "scip_historical",
+        "objective": 779,
+        "reported_floating_objective": 779,
+        "floating_difference": 0,
+        "selected_count": 779,
+        "feasible": true,
+        "status": "timelimit",
+        "total_seconds": 9.9619005,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\raw\\hypop2025_mis_n2000_d3_SCIP_MILP.json",
+          "sha256": "40f29267aaac997979b6aaf0112b3f689dc1c6bfe9fdee11dbb35748c772e001",
+          "bytes": 67167
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\instances\\hypop2025_mis_n2000_d3.json",
+          "sha256": "368c8fd7e9d26bcc1d6e0a6f065c722636572177c0e46b48ba22d8f0dddb784a",
+          "bytes": 450571
+        }
+      },
+      "time_basis": "historical total build+solve+extract",
+      "warm_start": "see original protocol",
+      "gap": 0.2359494438708765
+    },
+    {
+      "id": "C23",
+      "scenario_id": "hypop2025_mis_n500_d5",
+      "family": "public",
+      "paper_id": "P1",
+      "n": 500,
+      "m": 1250,
+      "r": 5,
+      "Delta": 2,
+      "streaming": {
+        "condition": "C23",
+        "scenario_id": "hypop2025_mis_n500_d5",
+        "role": "streaming",
+        "objective": 149,
+        "reported_floating_objective": 149,
+        "floating_difference": 0,
+        "selected_count": 149,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0028795,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\raw\\hypop2025_mis_n500_d5_HeiHGM_Streaming.json",
+          "sha256": "667a2b85db91510bf92b8f338c1269904baf7f4aba27f26206961bc9cca3b57b",
+          "bytes": 25159
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\instances\\hypop2025_mis_n500_d5.json",
+          "sha256": "56d34d9f55b106c122ce43311e1be791b6932eccee8bf607cce93a43b2e2be72",
+          "bytes": 157565
+        }
+      },
+      "scip": {
+        "condition": "C23",
+        "scenario_id": "hypop2025_mis_n500_d5",
+        "role": "scip_historical",
+        "objective": 159,
+        "reported_floating_objective": 159,
+        "floating_difference": 0,
+        "selected_count": 159,
+        "feasible": true,
+        "status": "timelimit",
+        "total_seconds": 9.94761,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\raw\\hypop2025_mis_n500_d5_SCIP_MILP.json",
+          "sha256": "1908b6520c14f90a6c99a3e4c9322a2bec007f102de4a32757b3b0d1ab2617bf",
+          "bytes": 25448
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\instances\\hypop2025_mis_n500_d5.json",
+          "sha256": "56d34d9f55b106c122ce43311e1be791b6932eccee8bf607cce93a43b2e2be72",
+          "bytes": 157565
+        }
+      },
+      "time_basis": "historical total build+solve+extract",
+      "warm_start": "see original protocol",
+      "gap": 0.37105715497889874
+    },
+    {
+      "id": "C24",
+      "scenario_id": "hypop2025_mis_n1000_d5",
+      "family": "public",
+      "paper_id": "P1",
+      "n": 1000,
+      "m": 2500,
+      "r": 5,
+      "Delta": 2,
+      "streaming": {
+        "condition": "C24",
+        "scenario_id": "hypop2025_mis_n1000_d5",
+        "role": "streaming",
+        "objective": 305,
+        "reported_floating_objective": 305,
+        "floating_difference": 0,
+        "selected_count": 305,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0030563,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\raw\\hypop2025_mis_n1000_d5_HeiHGM_Streaming.json",
+          "sha256": "e039c40df9decd4816e9131abda5e8f96e71b29903d63312572546767a541d4c",
+          "bytes": 50925
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\instances\\hypop2025_mis_n1000_d5.json",
+          "sha256": "8e528cb4552d53406cded168e0ba6a1d0ecefce02a9c61a9a6ae1f3c5b689f61",
+          "bytes": 317571
+        }
+      },
+      "scip": {
+        "condition": "C24",
+        "scenario_id": "hypop2025_mis_n1000_d5",
+        "role": "scip_historical",
+        "objective": 323,
+        "reported_floating_objective": 323,
+        "floating_difference": 0,
+        "selected_count": 323,
+        "feasible": true,
+        "status": "timelimit",
+        "total_seconds": 9.9249165,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\raw\\hypop2025_mis_n1000_d5_SCIP_MILP.json",
+          "sha256": "cec3c9db71d1e2a585023b356f8e3fda9dcaf0f18aa17df0509c95355ef743d1",
+          "bytes": 51340
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\instances\\hypop2025_mis_n1000_d5.json",
+          "sha256": "8e528cb4552d53406cded168e0ba6a1d0ecefce02a9c61a9a6ae1f3c5b689f61",
+          "bytes": 317571
+        }
+      },
+      "time_basis": "historical total build+solve+extract",
+      "warm_start": "see original protocol",
+      "gap": 0.38630928169695083
+    },
+    {
+      "id": "C25",
+      "scenario_id": "hypop2025_mis_n2000_d5",
+      "family": "public",
+      "paper_id": "P1",
+      "n": 2000,
+      "m": 5000,
+      "r": 5,
+      "Delta": 2,
+      "streaming": {
+        "condition": "C25",
+        "scenario_id": "hypop2025_mis_n2000_d5",
+        "role": "streaming",
+        "objective": 607,
+        "reported_floating_objective": 607,
+        "floating_difference": 0,
+        "selected_count": 607,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0069916,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\raw\\hypop2025_mis_n2000_d5_HeiHGM_Streaming.json",
+          "sha256": "20de97e1017cadf07c1f7aaa3b1f7c9dd34e729c0983e8f12c55d6dc686d2346",
+          "bytes": 102483
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\instances\\hypop2025_mis_n2000_d5.json",
+          "sha256": "2834d0cdd5509391ffb5dbd4e3ae3fc785f0a4d8df8a7a6943ddbdb5a828b15a",
+          "bytes": 638571
+        }
+      },
+      "scip": {
+        "condition": "C25",
+        "scenario_id": "hypop2025_mis_n2000_d5",
+        "role": "scip_historical",
+        "objective": 654,
+        "reported_floating_objective": 654,
+        "floating_difference": 0,
+        "selected_count": 654,
+        "feasible": true,
+        "status": "timelimit",
+        "total_seconds": 9.9315201,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\raw\\hypop2025_mis_n2000_d5_SCIP_MILP.json",
+          "sha256": "d4fbb3ae00cafa55292128c6e02501d075638942cdc1d3331c96c52230b48a00",
+          "bytes": 103541
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\instances\\hypop2025_mis_n2000_d5.json",
+          "sha256": "2834d0cdd5509391ffb5dbd4e3ae3fc785f0a4d8df8a7a6943ddbdb5a828b15a",
+          "bytes": 638571
+        }
+      },
+      "time_basis": "historical total build+solve+extract",
+      "warm_start": "see original protocol",
+      "gap": 0.46521406727828746
+    },
+    {
+      "id": "C26",
+      "scenario_id": "paper2026_ISPD98_ibm01",
+      "family": "public",
+      "paper_id": "P2",
+      "n": 14111,
+      "m": 12752,
+      "r": 42,
+      "Delta": 39,
+      "streaming": {
+        "condition": "C26",
+        "scenario_id": "paper2026_ISPD98_ibm01",
+        "role": "streaming",
+        "objective": 219983,
+        "reported_floating_objective": 219983,
+        "floating_difference": 0,
+        "selected_count": 3207,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0186319,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\raw\\paper2026_ISPD98_ibm01_HeiHGM_Streaming.json",
+          "sha256": "b1ff42a61a40ffa4ab5207da2267dd186e33e052c40eaefc533a7c5d2582e26c",
+          "bytes": 290084
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\instances\\paper2026_ISPD98_ibm01.json",
+          "sha256": "e6b122b218458a7e4af44f70c0b4e51c4723a6e5d703ebd10a5a104854a10967",
+          "bytes": 1336698
+        }
+      },
+      "scip": {
+        "condition": "C26",
+        "scenario_id": "paper2026_ISPD98_ibm01",
+        "role": "scip_historical",
+        "objective": 265302,
+        "reported_floating_objective": 265302,
+        "floating_difference": 0,
+        "selected_count": 4013,
+        "feasible": true,
+        "status": "optimal",
+        "total_seconds": 1.8463453,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\raw\\paper2026_ISPD98_ibm01_SCIP_MILP.json",
+          "sha256": "7dc2d805fab205a427f021393c346b40411baafff8ae33aacee90845250c74a3",
+          "bytes": 301853
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\instances\\paper2026_ISPD98_ibm01.json",
+          "sha256": "e6b122b218458a7e4af44f70c0b4e51c4723a6e5d703ebd10a5a104854a10967",
+          "bytes": 1336698
+        }
+      },
+      "time_basis": "complete-pipeline comparison table total; first six reused historical optimum",
+      "warm_start": "empty only on newly run superblue19; first six historical",
+      "gap": 0.0
+    },
+    {
+      "id": "C27",
+      "scenario_id": "paper2026_ISPD98_ibm02",
+      "family": "public",
+      "paper_id": "P2",
+      "n": 19584,
+      "m": 19601,
+      "r": 134,
+      "Delta": 69,
+      "streaming": {
+        "condition": "C27",
+        "scenario_id": "paper2026_ISPD98_ibm02",
+        "role": "streaming",
+        "objective": 315350,
+        "reported_floating_objective": 315350,
+        "floating_difference": 0,
+        "selected_count": 4649,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0324287,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\raw\\paper2026_ISPD98_ibm02_HeiHGM_Streaming.json",
+          "sha256": "654b20de8248aacf75292c834c5d5722b87b7cc7270f5e394c301e6cbc4387f2",
+          "bytes": 448449
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\instances\\paper2026_ISPD98_ibm02.json",
+          "sha256": "eb8e37c9abb344380ee09ba4b79292900c6ba5f0c266e4113472e8c3bd9f06f6",
+          "bytes": 2032905
+        }
+      },
+      "scip": {
+        "condition": "C27",
+        "scenario_id": "paper2026_ISPD98_ibm02",
+        "role": "scip_historical",
+        "objective": 388168,
+        "reported_floating_objective": 388168,
+        "floating_difference": 0,
+        "selected_count": 6147,
+        "feasible": true,
+        "status": "optimal",
+        "total_seconds": 4.0628764,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\raw\\paper2026_ISPD98_ibm02_SCIP_MILP.json",
+          "sha256": "b908621f01abf7ed62bfa445bb4570796425acca8d789021983949cb6225a180",
+          "bytes": 470745
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\instances\\paper2026_ISPD98_ibm02.json",
+          "sha256": "eb8e37c9abb344380ee09ba4b79292900c6ba5f0c266e4113472e8c3bd9f06f6",
+          "bytes": 2032905
+        }
+      },
+      "time_basis": "complete-pipeline comparison table total; first six reused historical optimum",
+      "warm_start": "empty only on newly run superblue19; first six historical",
+      "gap": 0.0
+    },
+    {
+      "id": "C28",
+      "scenario_id": "paper2026_us04_mtx",
+      "family": "public",
+      "paper_id": "P2",
+      "n": 163,
+      "m": 28016,
+      "r": 11625,
+      "Delta": 18,
+      "streaming": {
+        "condition": "C28",
+        "scenario_id": "paper2026_us04_mtx",
+        "role": "streaming",
+        "objective": 803,
+        "reported_floating_objective": 803,
+        "floating_difference": 0,
+        "selected_count": 12,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0566762,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\raw\\paper2026_us04_mtx_HeiHGM_Streaming.json",
+          "sha256": "82198fa21774b8aca26c90313b78a5bf3d8b49a2c49fc32ad091c7a39faf554b",
+          "bytes": 550012
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\instances\\paper2026_us04_mtx.json",
+          "sha256": "4a4ad649e05cf33878266a5ce5073a7078e65e4798fe2dfe35c831a231f248d6",
+          "bytes": 3364495
+        }
+      },
+      "scip": {
+        "condition": "C28",
+        "scenario_id": "paper2026_us04_mtx",
+        "role": "scip_historical",
+        "objective": 1065,
+        "reported_floating_objective": 1065,
+        "floating_difference": 0,
+        "selected_count": 13,
+        "feasible": true,
+        "status": "optimal",
+        "total_seconds": 2.5119174,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\raw\\paper2026_us04_mtx_SCIP_MILP.json",
+          "sha256": "b664b9b59af08ffb270743230c135e77a05be5592dac72aa4a8379c32faf5bfc",
+          "bytes": 550102
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\instances\\paper2026_us04_mtx.json",
+          "sha256": "4a4ad649e05cf33878266a5ce5073a7078e65e4798fe2dfe35c831a231f248d6",
+          "bytes": 3364495
+        }
+      },
+      "time_basis": "complete-pipeline comparison table total; first six reused historical optimum",
+      "warm_start": "empty only on newly run superblue19; first six historical",
+      "gap": 0.0
+    },
+    {
+      "id": "C29",
+      "scenario_id": "paper2026_bibd_49_3_mtx",
+      "family": "public",
+      "paper_id": "P2",
+      "n": 1176,
+      "m": 18424,
+      "r": 47,
+      "Delta": 3,
+      "streaming": {
+        "condition": "C29",
+        "scenario_id": "paper2026_bibd_49_3_mtx",
+        "role": "streaming",
+        "objective": 2116,
+        "reported_floating_objective": 2116,
+        "floating_difference": 0,
+        "selected_count": 24,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0127032,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\raw\\paper2026_bibd_49_3_mtx_HeiHGM_Streaming.json",
+          "sha256": "3c537cdd288856a213c6a0de905af799f56c1da0f44cb19f3bfdd9aff6955ce0",
+          "bytes": 358350
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\instances\\paper2026_bibd_49_3_mtx.json",
+          "sha256": "07ca3abc173756ed746793399739226c590e42f3b21f8f5ba83af2bb5148ab6c",
+          "bytes": 1034100
+        }
+      },
+      "scip": {
+        "condition": "C29",
+        "scenario_id": "paper2026_bibd_49_3_mtx",
+        "role": "scip_historical",
+        "objective": 2361,
+        "reported_floating_objective": 2361,
+        "floating_difference": 0,
+        "selected_count": 24,
+        "feasible": true,
+        "status": "optimal",
+        "total_seconds": 9.2527976,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\raw\\paper2026_bibd_49_3_mtx_SCIP_MILP.json",
+          "sha256": "af9031461dd651b043f5436e08d2ef5c2f3e8bc119043330724c102e85180949",
+          "bytes": 358421
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\instances\\paper2026_bibd_49_3_mtx.json",
+          "sha256": "07ca3abc173756ed746793399739226c590e42f3b21f8f5ba83af2bb5148ab6c",
+          "bytes": 1034100
+        }
+      },
+      "time_basis": "complete-pipeline comparison table total; first six reused historical optimum",
+      "warm_start": "empty only on newly run superblue19; first six historical",
+      "gap": 0.0
+    },
+    {
+      "id": "C30",
+      "scenario_id": "paper2026_sat14_AProVE07-01_cnf_dual",
+      "family": "public",
+      "paper_id": "P2",
+      "n": 7502,
+      "m": 28770,
+      "r": 848,
+      "Delta": 847,
+      "streaming": {
+        "condition": "C30",
+        "scenario_id": "paper2026_sat14_AProVE07-01_cnf_dual",
+        "role": "streaming",
+        "objective": 107752,
+        "reported_floating_objective": 107752,
+        "floating_difference": 0,
+        "selected_count": 1675,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0208399,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\raw\\paper2026_sat14_AProVE07-01_cnf_dual_HeiHGM_Streaming.json",
+          "sha256": "6ec3342fecea152e18ccd9568c09fbb91718fa9df6cce08092cd6deaffad0630",
+          "bytes": 588382
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\instances\\paper2026_sat14_AProVE07-01_cnf_dual.json",
+          "sha256": "bd6fb7adbfdcbd08eaa15ebf7ad6c92850ad4fca807f076f1087260a8eaa34d9",
+          "bytes": 1777635
+        }
+      },
+      "scip": {
+        "condition": "C30",
+        "scenario_id": "paper2026_sat14_AProVE07-01_cnf_dual",
+        "role": "scip_historical",
+        "objective": 137101,
+        "reported_floating_objective": 137101,
+        "floating_difference": 0,
+        "selected_count": 1996,
+        "feasible": true,
+        "status": "optimal",
+        "total_seconds": 2.2523224,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\raw\\paper2026_sat14_AProVE07-01_cnf_dual_SCIP_MILP.json",
+          "sha256": "fc04263d8793247ff3cc42b32ba31242c0416aaffba6efc481c909e6b2ff1335",
+          "bytes": 592977
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\instances\\paper2026_sat14_AProVE07-01_cnf_dual.json",
+          "sha256": "bd6fb7adbfdcbd08eaa15ebf7ad6c92850ad4fca807f076f1087260a8eaa34d9",
+          "bytes": 1777635
+        }
+      },
+      "time_basis": "complete-pipeline comparison table total; first six reused historical optimum",
+      "warm_start": "empty only on newly run superblue19; first six historical",
+      "gap": 0.0
+    },
+    {
+      "id": "C31",
+      "scenario_id": "paper2026_sat14_AProVE07-27_cnf_dual",
+      "family": "public",
+      "paper_id": "P2",
+      "n": 7729,
+      "m": 29194,
+      "r": 3246,
+      "Delta": 201,
+      "streaming": {
+        "condition": "C31",
+        "scenario_id": "paper2026_sat14_AProVE07-27_cnf_dual",
+        "role": "streaming",
+        "objective": 125598,
+        "reported_floating_objective": 125598,
+        "floating_difference": 0,
+        "selected_count": 1906,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.0308791,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\raw\\paper2026_sat14_AProVE07-27_cnf_dual_HeiHGM_Streaming.json",
+          "sha256": "964fed73954793acbd0ca8a72f4080737c34bf85f6bfc1c2277c7b22f0805ac2",
+          "bytes": 599949
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\instances\\paper2026_sat14_AProVE07-27_cnf_dual.json",
+          "sha256": "ed846ecbcf645355a1fecce0095f3ee54fdc43c43acdc883ad3f3c11287b9030",
+          "bytes": 1808256
+        }
+      },
+      "scip": {
+        "condition": "C31",
+        "scenario_id": "paper2026_sat14_AProVE07-27_cnf_dual",
+        "role": "scip_historical",
+        "objective": 159913,
+        "reported_floating_objective": 159913,
+        "floating_difference": 0,
+        "selected_count": 2318,
+        "feasible": true,
+        "status": "optimal",
+        "total_seconds": 2.8537178,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\raw\\paper2026_sat14_AProVE07-27_cnf_dual_SCIP_MILP.json",
+          "sha256": "ba7547b926602544e4f97b10a490255ceda2ed9ff89faeef95df77bb523801ca",
+          "bytes": 605767
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\instances\\paper2026_sat14_AProVE07-27_cnf_dual.json",
+          "sha256": "ed846ecbcf645355a1fecce0095f3ee54fdc43c43acdc883ad3f3c11287b9030",
+          "bytes": 1808256
+        }
+      },
+      "time_basis": "complete-pipeline comparison table total; first six reused historical optimum",
+      "warm_start": "empty only on newly run superblue19; first six historical",
+      "gap": 0.0
+    },
+    {
+      "id": "C32",
+      "scenario_id": "paper2026_dac2012_superblue19",
+      "family": "public",
+      "paper_id": "P2",
+      "n": 511685,
+      "m": 522482,
+      "r": 9155,
+      "Delta": 1507,
+      "streaming": {
+        "condition": "C32",
+        "scenario_id": "paper2026_dac2012_superblue19",
+        "role": "streaming",
+        "objective": 9840731,
+        "reported_floating_objective": 9840731,
+        "floating_difference": 0,
+        "selected_count": 141816,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.9658679,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\raw\\paper2026_dac2012_superblue19_HeiHGM_Streaming.json",
+          "sha256": "ce2b9821e2908d124109bd90ac4962a0723c3f06139c9ce96b3c8707b1bb4574",
+          "bytes": 13097787
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\instances\\paper2026_dac2012_superblue19.json",
+          "sha256": "b6f68da15d98f450176e4d301bdaaa4a88cf8d2c1e418251548851426299fcf4",
+          "bytes": 53741188
+        }
+      },
+      "scip": {
+        "condition": "C32",
+        "scenario_id": "paper2026_dac2012_superblue19",
+        "role": "scip_latest_completed",
+        "objective": 11642395,
+        "reported_floating_objective": 11642394.999999993,
+        "floating_difference": -7.450580596923828e-09,
+        "selected_count": 176593,
+        "feasible": true,
+        "status": "gaplimit",
+        "total_seconds": 2099.025454799994,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文完整流程原始场景对比\\raw\\paper2026_dac2012_superblue19_SCIP_cold_gap05.json",
+          "sha256": "afeff80985fe74e76980aaf4fbac4428f0805e4383ec4e87c5e8cced538c46f4",
+          "bytes": 13650479
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\instances\\paper2026_dac2012_superblue19.json",
+          "sha256": "b6f68da15d98f450176e4d301bdaaa4a88cf8d2c1e418251548851426299fcf4",
+          "bytes": 53741188
+        }
+      },
+      "time_basis": "complete-pipeline comparison table total; first six reused historical optimum",
+      "warm_start": "empty only on newly run superblue19; first six historical",
+      "gap": 0.005662152416876099
+    },
+    {
+      "id": "C33",
+      "scenario_id": "paper2025_dac2012_superblue19",
+      "family": "public",
+      "paper_id": "P3",
+      "n": 511685,
+      "m": 522482,
+      "r": 9155,
+      "Delta": 1507,
+      "streaming": {
+        "condition": "C33",
+        "scenario_id": "paper2025_dac2012_superblue19",
+        "role": "streaming",
+        "objective": 1120374628,
+        "reported_floating_objective": 1120374628,
+        "floating_difference": 0,
+        "selected_count": 122408,
+        "feasible": true,
+        "status": "approximate_one_pass_complete",
+        "total_seconds": 0.9849583,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\raw\\paper2025_dac2012_superblue19_HeiHGM_Streaming.json",
+          "sha256": "e2c2b72b17cd33528898d722339db25e1a9c36c4e53672b9e06512e8f80d4f6c",
+          "bytes": 12787005
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\instances\\paper2025_dac2012_superblue19.json",
+          "sha256": "ddabd20d1ac7c802ddf858425d77e591d01e7e91764db629428fa1bf4491b8ee",
+          "bytes": 54805570
+        }
+      },
+      "scip": {
+        "condition": "C33",
+        "scenario_id": "paper2025_dac2012_superblue19",
+        "role": "scip_historical",
+        "objective": 458889367,
+        "reported_floating_objective": 458889367,
+        "floating_difference": 0,
+        "selected_count": 50131,
+        "feasible": true,
+        "status": "userinterrupt",
+        "total_seconds": 40.01541819999693,
+        "raw": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\SCIP首次有效决策\\raw\\paper2025_dac2012_superblue19_SCIP.json",
+          "sha256": "d9ec16e67b8393412adee8a9ba6ee3ac33a455797b297d88a40a12f03cfa28c5",
+          "bytes": 11655196
+        },
+        "input": {
+          "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\instances\\paper2025_dac2012_superblue19.json",
+          "sha256": "ddabd20d1ac7c802ddf858425d77e591d01e7e91764db629428fa1bf4491b8ee",
+          "bytes": 54805570
+        }
+      },
+      "time_basis": "historical total build+solve+extract",
+      "warm_start": "see original protocol",
+      "gap": 7.459882645308711
+    }
+  ],
+  "conditions": 33,
+  "diagnostic": [
+    {
+      "condition": "C06",
+      "scenario_id": "n1000_r12_seed0",
+      "role": "ILS_diagnostic",
+      "max_tries": -1,
+      "objective": 694,
+      "selected_count": 8,
+      "feasible": true,
+      "status": "greedy_complete",
+      "total_seconds": 0.004329400020651519,
+      "raw": {
+        "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\原作者ILS迭代\\raw\\n1000_r12_seed0_tries-1.json",
+        "sha256": "78c92dd45bdd75ca02a79832c741f5df8e910902bf3caf24dad06e7d48297562",
+        "bytes": 4955
+      },
+      "input": {
+        "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r12_seed0.json",
+        "sha256": "2458fb0f47b06595b6fac888d2d4fadd198d814ef6fa429853915ff2a67b5f63",
+        "bytes": 311515
+      }
+    },
+    {
+      "condition": "C06",
+      "scenario_id": "n1000_r12_seed0",
+      "role": "ILS_diagnostic",
+      "max_tries": 1000,
+      "objective": 770,
+      "selected_count": 9,
+      "feasible": true,
+      "status": "author_stagnation_rule_complete",
+      "total_seconds": 1.3073468000511639,
+      "raw": {
+        "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\原作者ILS迭代\\raw\\n1000_r12_seed0_tries1000.json",
+        "sha256": "c783e97c485dab7ae8c1963c9f19400fffe02d6c1cf5a38793b11c1fdfb4df43",
+        "bytes": 4993
+      },
+      "input": {
+        "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r12_seed0.json",
+        "sha256": "2458fb0f47b06595b6fac888d2d4fadd198d814ef6fa429853915ff2a67b5f63",
+        "bytes": 311515
+      }
+    },
+    {
+      "condition": "C06",
+      "scenario_id": "n1000_r12_seed0",
+      "role": "ILS_diagnostic",
+      "max_tries": 5000,
+      "objective": 770,
+      "selected_count": 9,
+      "feasible": true,
+      "status": "author_stagnation_rule_complete",
+      "total_seconds": 5.957328199991025,
+      "raw": {
+        "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\原作者ILS迭代\\raw\\n1000_r12_seed0_tries5000.json",
+        "sha256": "7e3148f20bed9e00c5e3f2017feeacf2c078989870f97276204ce9d6443c37c1",
+        "bytes": 4991
+      },
+      "input": {
+        "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\复杂度扩展\\instances\\n1000_r12_seed0.json",
+        "sha256": "2458fb0f47b06595b6fac888d2d4fadd198d814ef6fa429853915ff2a67b5f63",
+        "bytes": 311515
+      }
+    },
+    {
+      "condition": "C20",
+      "scenario_id": "hypop2025_mis_n500_d3",
+      "role": "ILS_diagnostic",
+      "max_tries": -1,
+      "objective": 182,
+      "selected_count": 182,
+      "feasible": true,
+      "status": "greedy_complete",
+      "total_seconds": 0.0019908000249415636,
+      "raw": {
+        "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\原作者ILS迭代\\raw\\hypop2025_mis_n500_d3_tries-1.json",
+        "sha256": "b57cf935cdf509dcef1b34aac2e450d465231f3bb8d259dfe8b923c21cc15dc2",
+        "bytes": 16983
+      },
+      "input": {
+        "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\instances\\hypop2025_mis_n500_d3.json",
+        "sha256": "afef40914b87704b91c47640ef0608048a194f401145e5a86f803f58f9e4dccd",
+        "bytes": 111315
+      }
+    },
+    {
+      "condition": "C20",
+      "scenario_id": "hypop2025_mis_n500_d3",
+      "role": "ILS_diagnostic",
+      "max_tries": 1000,
+      "objective": 221,
+      "selected_count": 221,
+      "feasible": true,
+      "status": "author_stagnation_rule_complete",
+      "total_seconds": 0.05934829998295754,
+      "raw": {
+        "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\原作者ILS迭代\\raw\\hypop2025_mis_n500_d3_tries1000.json",
+        "sha256": "7225f151b0bb9e25716d8fc318f53162316260f0aacae15daafb8193387c3512",
+        "bytes": 17518
+      },
+      "input": {
+        "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\instances\\hypop2025_mis_n500_d3.json",
+        "sha256": "afef40914b87704b91c47640ef0608048a194f401145e5a86f803f58f9e4dccd",
+        "bytes": 111315
+      }
+    },
+    {
+      "condition": "C20",
+      "scenario_id": "hypop2025_mis_n500_d3",
+      "role": "ILS_diagnostic",
+      "max_tries": 5000,
+      "objective": 222,
+      "selected_count": 222,
+      "feasible": true,
+      "status": "author_stagnation_rule_complete",
+      "total_seconds": 0.19366699998499826,
+      "raw": {
+        "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\原作者ILS迭代\\raw\\hypop2025_mis_n500_d3_tries5000.json",
+        "sha256": "41430c23533f984ab12348ae455e181494763ff73eeb563f5dfc7fd166a8d90e",
+        "bytes": 17530
+      },
+      "input": {
+        "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_HypOp2025\\instances\\hypop2025_mis_n500_d3.json",
+        "sha256": "afef40914b87704b91c47640ef0608048a194f401145e5a86f803f58f9e4dccd",
+        "bytes": 111315
+      }
+    },
+    {
+      "condition": "C26",
+      "scenario_id": "paper2026_ISPD98_ibm01",
+      "role": "ILS_diagnostic",
+      "max_tries": -1,
+      "objective": 240686,
+      "selected_count": 4017,
+      "feasible": true,
+      "status": "greedy_complete",
+      "total_seconds": 0.030111100000794977,
+      "raw": {
+        "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\原作者ILS迭代\\raw\\paper2026_ISPD98_ibm01_tries-1.json",
+        "sha256": "af796fdf3211858be823740f00e8ebca24b8431c7f756f92e8826ac12aa3fcd0",
+        "bytes": 302377
+      },
+      "input": {
+        "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\instances\\paper2026_ISPD98_ibm01.json",
+        "sha256": "e6b122b218458a7e4af44f70c0b4e51c4723a6e5d703ebd10a5a104854a10967",
+        "bytes": 1336698
+      }
+    },
+    {
+      "condition": "C26",
+      "scenario_id": "paper2026_ISPD98_ibm01",
+      "role": "ILS_diagnostic",
+      "max_tries": 1000,
+      "objective": 263094,
+      "selected_count": 4085,
+      "feasible": true,
+      "status": "author_stagnation_rule_complete",
+      "total_seconds": 33.991995899996255,
+      "raw": {
+        "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\原作者ILS迭代\\raw\\paper2026_ISPD98_ibm01_tries1000.json",
+        "sha256": "84e7df8efa84c4e3b1019d03ec3db4bca07e8e10d2d0d88819cde15dffcf9111",
+        "bytes": 303429
+      },
+      "input": {
+        "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\instances\\paper2026_ISPD98_ibm01.json",
+        "sha256": "e6b122b218458a7e4af44f70c0b4e51c4723a6e5d703ebd10a5a104854a10967",
+        "bytes": 1336698
+      }
+    },
+    {
+      "condition": "C26",
+      "scenario_id": "paper2026_ISPD98_ibm01",
+      "role": "ILS_diagnostic",
+      "max_tries": 5000,
+      "objective": 264387,
+      "selected_count": 4063,
+      "feasible": true,
+      "status": "author_stagnation_rule_complete",
+      "total_seconds": 107.00778929999797,
+      "raw": {
+        "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\原作者ILS迭代\\raw\\paper2026_ISPD98_ibm01_tries5000.json",
+        "sha256": "0027b006a7d66650cff61b137ea429f749aeff47be08eec05324eccf67ec2625",
+        "bytes": 303128
+      },
+      "input": {
+        "path": "总结\\03_实验数据\\超图与SCIP组合任务对比\\论文原始实例_匹配2025_2026\\instances\\paper2026_ISPD98_ibm01.json",
+        "sha256": "e6b122b218458a7e4af44f70c0b4e51c4723a6e5d703ebd10a5a104854a10967",
+        "bytes": 1336698
+      }
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+\section{电池身份、周转与充电资源}
+\label{sec:05_05}
+
+本节把第\ref{sec:04_08}节的电热状态接入车机协同。每对电池跨航次保留身份、SOC、极化和温度；冷却结束由温度轨迹决定，充电还同时占用停车时段、通道和车载供电功率。
+
+\subsection{身份、承载位置与互斥模式}
+
+设$\mathcal B_v$为固定属于车辆$v$的电池对集合。$\beta_{p\ell}=1$表示航次$\ell$使用电池$p$，$y_{u\ell}=1$表示由飞机$u$执行，则
+\begin{align}
+ \sum_{p\in\mathcal B}\beta_{p\ell}&=b_\ell,\qquad \beta_{p\ell}\in\{0,1\},\\
+ y_{u\ell}+\beta_{p\ell}&\le1\quad(c(u)\ne c(p)),\\
+ \beta_{\widehat p_\ell,\ell}&=1\quad(\ell\in\mathcal L_k^{pre}\cup\mathcal L_k^{air}).
+ \label{s0505:committed_identity}
+\end{align}
+最后一行固定已开始准备或已经在飞的电池身份。对同一电池，准备、飞行、处理、冷却、充电和闲置构成互斥模式：
+\begin{equation}
+ B_p^{idle}+c_p+B_p^{pre}+B_p^{air}+B_p^{post}+B_p^{cool}=1.
+ \label{s0505:unique_mode}
+\end{equation}
+所有占用采用半开时间区间。处理时长$h^{post}$和准备时长$h^{pre}$仍是服务参数；冷却时长$h_{p\ell}^{cool}$则是电热状态的派生变量。
+
+令$d_\ell=e_\ell+h^{post}$。冷却首次退出时刻与时长为
+\begin{align}
+ t_{p\ell}^{ready}&=\inf\{t\ge d_\ell:T_p^b(t)\in\mathcal T_p^{use}\cup\mathcal T_p^{ch}\},\\
+ h_{p\ell}^{cool}&=t_{p\ell}^{ready}-d_\ell\ge0\quad(\beta_{p\ell}=1).
+ \label{s0505:thermal_release}
+\end{align}
+首次退出只表示至少可以进入一种后续模式；实际准备与充电仍分别满足各自温区。已处于充电保护状态时，还须达到39℃重启阈值。对于本参考温区$\mathcal T^{use}=[-20,50]$℃和$\mathcal T^{ch}=[5,40]$℃，48℃电池可以满足使用温区，却不能立即充电，二者不能共用一个“已冷却”标志。
+
+当前时刻之前已经落地的记录为
+\begin{equation}
+ \mathcal R_k^{bat}=\mathcal R_k^{post}\mathbin{\dot\cup}\mathcal R_k^{cool},\qquad
+ \mathcal R_k^{bat}\cap\mathcal L_k=\varnothing.
+ \label{s0505:history_partition}
+\end{equation}
+历史落地、处理结束和已观测状态是固定事实，未来冷却释放时刻从该状态重新积分，不作为已经观测到的未来常数。令$\widehat e_\rho,\widehat d_\rho$为已记录落地时刻和固定处理终点，$f_\rho$为余下温度轨迹的首次释放时刻，则
+\begin{align}
+ B_p^{post,hist}(t)&=\sum_{\rho:\widehat p_\rho=p}\mathbb I_{[\widehat e_\rho,\widehat d_\rho)}(t),
+ \label{s0505:historical_post_count}\\
+ B_p^{cool,hist}(t)&=\sum_{\rho:\widehat p_\rho=p}\mathbb I_{[\widehat d_\rho,f_\rho)}(t),
+ \label{s0505:historical_cool_count}\\
+ B_p^{pre}(t)&=\sum_\ell\beta_{p\ell}\mathbb I_{[s_\ell-h^{pre},s_\ell)}(t),
+ \label{s0505:pre_count}\\
+ B_p^{cool}(t)&=B_p^{cool,hist}(t)+\sum_\ell\beta_{p\ell}\mathbb I_{[d_\ell,t_{p\ell}^{ready})}(t).
+ \label{s0505:cool_count}
+\end{align}
+飞行和落地处理计数分别使用$[s_\ell,e_\ell)$与$[e_\ell,d_\ell)$，处理计数还加上历史部分。到班次末未满足释放条件的电池不能被截断为闲置。
+
+电池的承载位置定义为
+\begin{equation}
+ \operatorname{loc}_p(t)=
+ \begin{cases}
+ (\mathrm{air},u,\ell,\mathbf p_\ell(t)),&\beta_{p\ell}y_{u\ell}=1,\ t\in[s_\ell,e_\ell),\\
+ (\mathrm{car},c(p),\mathbf q_{c(p)}(t)),&\text{其他时刻}.
+ \end{cases}
+ \label{s0505:location}
+\end{equation}
+车载电池可随车移动，但本实例只允许停车充电。设$\sigma_v$为停车指示，则
+\begin{align}
+ c_p(t)&\le\sigma_{c(p)}(t),
+ \label{s0505:charge_when_parked}\\
+ \sum_{p\in\mathcal B_v}c_p(t)&\le K_v^{ch},
+ \label{s0505:channel_capacity}\\
+ \sum_{p\in\mathcal B_v}P_p^{in}(t)&\le\overline P_v^{sup},
+ \label{s0505:source_power_capacity}\\
+ 0\le P_p^{in}(t)&\le c_p(t)\overline P^{in}(\zeta_p,V_p^{pol},T_p^b),\quad
+ c_p=1\Rightarrow T_p^b\in[5,40].
+ \label{s0505:input_power_gate}
+\end{align}
+高温保护位$H_p$按第\ref{sec:04_08}节的39/40℃事件规则更新，另有$c_p\le1-H_p$。输入功率同时满足式\eqref{s0408:cccv}。即使温度门允许，也不能突破恒压、电流或供电上限。地面温度与芯内集总温度是不同量。
+
+\subsection{状态接续、回收条件与能量账本}
+
+以$\mathbf x_p^b=(\zeta_p,V_p^{pol},T_p^b)$表示电池物理状态，按式\eqref{s0408:ecm_system}演化：
+\begin{align}
+ \dot{\mathbf x}_p^b&=F_b(\mathbf x_p^b,P_p^{load},P_p^{in},T_a),
+ \label{s0505:energy_dynamics}\\
+ \mathbf x_p^b(\tau_k)&=\widehat{\mathbf x}_{pk}^b,
+ \label{s0505:energy_initial}\\
+ \mathbf x_p^b(t^-)&=\mathbf x_p^b(t^+).
+ \label{s0505:no_energy_reset}
+\end{align}
+电池在飞机之间换装只改变承载身份，不重置温度或极化。飞行等待继续消耗功率，地面启动计入同一对电池。累计输入、输出和发热也从已执行值继续记账。
+
+对于每个使用电池$p$的活动航次，计划回收条件为
+\begin{equation}
+ \beta_{p\ell}=1\Rightarrow
+ \left\{\begin{aligned}
+ \zeta_p(e_\ell)&\ge0.2,\\
+ 36\le U_p(t)&\le52.8,\quad I_p(t)\le50,\\
+ -20\le T_p^b(t)&\le50,\qquad t\in[\max(s_\ell,\tau_k),e_\ell].
+ \end{aligned}\right.
+ \label{s0505:recovery_energy}
+\end{equation}
+电流由同一条剩余轨迹、会合等待和天气情形的功率需求确定。因此，化学储能足够仍不足以排除低电压或温度越界，不能只检查一项直线返航Wh预留。
+
+机载飞行能耗定义不变：
+\begin{equation}
+ E_{air}^k=\frac1{3600}\sum_\ell\int_{[\tau_k,T]\cap[s_\ell,e_\ell)}P_\ell(t)\,dt.
+ \label{s0505:air_energy_total}
+\end{equation}
+它与充电输入能耗分开。全局物理账本为
+\begin{equation}
+ \sum_p\Delta(E_p^{chem}+E_p^{pol})+E_{load}+E_{heat}
+ =\sum_p\eta_p^{ch}E_{grid,p}.
+ \label{s0505:global_ledger}
+\end{equation}
+$E_{load}$包含飞行与已绑定地面负载，$E_{air}^k$仅是其中飞行部分；车辆牵引能耗不混入这一目标。
+
+\subsection{数值算例：一个通道、两对电池}
+
+考虑同一车辆上的电池A、B，均需充至SOC 0.9。初态及优先权重见表\ref{tab:charge_jobs}。为使充电时长不随排队期间的内阻温度变化而变化，本算例明确取$\alpha_R=0$；热状态及温度门仍按相同方程积分。其余值使用表\ref{tab:ecm_parameters}。车辆整个算例均已停车，$K^{ch}=1$、$\bar P^{sup}=1000$\,W，$T_a=25$℃。
+
+\begin{table}[htbp]\centering
+\caption{双电池充电任务参数}\label{tab:charge_jobs}
+\begin{tabular}{lrrrrr}\toprule
+电池 & 初始SOC & 初温/℃ & 权重 & 释放/s & 充电时长/s\\\midrule
+A & 0.65 & 48 & 5 & 223.396599 & 682.512851\\
+B & 0.80 & 25 & 1 & 0.000000 & 300.844048\\
+\bottomrule\end{tabular}\end{table}
+释放时刻由温度积分得到，充电时长由恒流、恒压及供电上限共同得到。电极化和SOC在等待期间保持各自真实演化；在本初态$V^{pol}=0$且$\alpha_R=0$的特定算例中，排队不会改变充电时长。该处理不能推广为一般飞行后电池的固定充电时长。
+
+令$s_A,s_B$为开始充电时刻，$z=1$表示A先充，目标为加权完成时间。完整数值模型为
+\begin{align}
+ \min\quad &5(s_A+682.512851)+(s_B+300.844048),\\
+ s_A&\ge223.396599,\quad s_B\ge0,\\
+ s_B&\ge s_A+682.512851-10000(1-z),\\
+ s_A&\ge s_B+300.844048-10000z,\\
+ z&\in\{0,1\},\qquad0\le s_A,s_B\le9000.
+ \label{s0505:numeric_schedule}
+\end{align}
+时长单位为s，权重无量纲；开始时刻上界9000\,s限定这个教学排程的决策域，10000\,s足以关闭另一顺序的不等式，未用于限制SCIP求解时间。求解目标与两个可行顺序的独立枚举结果一致。
+
+\begin{table}[htbp]\centering
+\caption{温度约束对充电决策的影响}
+\begin{tabular}{lrrrr}\toprule
+模型 & 顺序 & $s_A$/s & $s_B$/s & 目标/加权s\\\midrule
+忽略温度 & A$\to$B & 0.000000 & 682.512851 & 4395.921153\\
+计入温度 & B$\to$A & 300.844048 & 0.000000 & 5217.628543\\
+\bottomrule\end{tabular}\end{table}
+忽略温度得到的A先充方案在0\,s要求48℃电池立即充电，违反40℃上界。计入温度后先充B，A在300.844048\,s开始充电时温度为36.786466℃，两对电池分别在300.844048和983.356899\,s达到目标SOC。这个结果说明温度约束改变了资源顺序；目标变大来自可行域收紧，不是求解器能力下降。SCIP两次均返回最优状态，尚不涉及区域任务选择、道路决策或超图算法比较。

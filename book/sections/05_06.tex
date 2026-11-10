@@ -1,0 +1,265 @@
+\section{同时刻冲突及资源互斥}
+\label{sec:05_06}
+
+单个航次满足运动、观测和能量约束，并不保证多个航次能够共同执行。两架飞机可能在同一时刻接近同一观测位置，车辆可能在路口相遇，同一平台也可能被两个起落动作同时占用。本节将这些限制放到统一的绝对时间轴上：几何约束检查实际位置及实体之间的距离，资源约束检查具有明确身份的设备和操作位置是否被重复使用。两类条件必须同时成立。
+
+\subsection{活动对象与同时刻量词}
+
+沿用当前规划区间$[\tau_k,T]$，其中$\tau_k$为当前边界，$T$为班次终点，单位均为$\mathrm s$。启用航次集合为$\mathcal L_k^{\mathrm{act}}$，$y_{u\ell}\in\{0,1\}$表示飞机$u\in\mathcal U$是否执行航次$\ell$。定义时刻$t$参与飞行几何检查的对象集合
+\begin{equation}
+ \mathcal A_k(t)=
+ \left\{(u,\ell)\in\mathcal U\times\mathcal L_k^{\mathrm{act}}:
+ y_{u\ell}=1,\ s_\ell\le t\le e_\ell\right\},
+ \qquad t\in[\tau_k,T].
+ \label{s0506:active_objects}
+\end{equation}
+这里的活动范围包含起飞、转移、观测、空中等待和降落，并保留起落接触端点。正在执行的航次仅检查当前边界以后的部分，不重新安排已发生的起飞。未启用航次不进入集合，也不产生需要检查的虚拟轨迹。
+
+飞机中心位置$\mathbf p_\ell(t)\in\mathbb R^3$以$\mathrm m$计量，采用第\ref{sec:04_03}节的共同坐标系。车辆$v\in\mathcal V$的水平位置为$\mathbf q_v(t)\in\mathbb R^2$，车体实体为$\mathcal O_v^{\mathrm{car}}(t)\subset\mathbb R^3$，其构造继承第\ref{sec:04_07}节。下文所有距离均在同一坐标系内计算；点到实体、实体到实体的距离均采用式\eqref{s0406:set_distance}的欧氏距离定义。
+
+对于两架不同飞机，需要检查的时刻是两个活动区间的交集。因此，任意涉及$(u,\ell),(u',\ell')\in\mathcal A_k(t)$的约束，都同时带有$t\in[\tau_k,T]$和$u\ne u'$的量词。它既不要求两个航次的全部空间路线互不相交，也不允许只比较相同的局部航次时间。两条路线经过同一空间位置而到达时刻不同，并不自动构成冲突；两条中心路线没有交点，也可能因同时刻间距不足而违反安全距离。
+
+未飞行的飞机由其固定载车$c(u)$承载，不再作为若干重合于平台中心的独立飞行球参与式\eqref{s0506:active_objects}。车载飞机、电池和其他载荷应包含在车辆参考包络内；若实际装载超出该包络，须相应修改车辆实体，不能继续沿用原包络获得几何可行结论。这一处理区分了车载运输和飞行两个模式，并没有删除车载载荷的空间占用。
+
+\subsection{机间、车间和停车位置冲突}
+
+设$r^{\mathrm{body}}>0$为无人机球形机体包络半径，$r^{\mathrm{track}}\ge0$为单机跟踪误差裕度，$r^{\mathrm{clear}}>0$为要求保留的净空，单位均为$\mathrm m$。本节沿用同型飞机的共同半径参数。不同飞机之间的最小中心距离定义为
+\begin{equation}
+ d_{\mathrm{air}}=2(r^{\mathrm{body}}+r^{\mathrm{track}})
+                  +r^{\mathrm{clear}}.
+ \label{s0506:air_separation_parameter}
+\end{equation}
+两个机体分别贡献一个机体半径和一个跟踪裕度，净空只计一次。机间约束为
+\begin{equation}
+ \|\mathbf p_\ell(t)-\mathbf p_{\ell'}(t)\|_2
+ \ge d_{\mathrm{air}},
+ \qquad
+ \substack{t\in[\tau_k,T],\ (u,\ell),(u',\ell')\in\mathcal A_k(t),\\u\ne u'.}
+ \label{s0506:air_separation}
+\end{equation}
+两侧单位均为$\mathrm m$。该条件同样适用于正在观测、等待会合和位于起落保护段内的飞机。起落接触对本车设置的特殊裕度，不会减小这里的机间距离。同一架飞机的两个航次则由第\ref{sec:05_04}节的飞机占用约束排除重叠，不能通过省去同机距离检查而允许同一物理飞机同时执行两条轨迹。
+
+令$d_{\mathrm{ground}}>0$为两辆车体之间的最小净距，单位为$\mathrm m$。以$\mathcal O^{\mathrm{tower}}$和$\mathcal O^{\mathrm{wire}}$分别表示第\ref{sec:04_06}节全部塔柱实体与导线管实体的并集。车辆约束为
+\begin{align}
+ \operatorname{dist}\bigl(\mathcal O_v^{\mathrm{car}}(t),
+                  \mathcal O_{v'}^{\mathrm{car}}(t)\bigr)
+ &\ge d_{\mathrm{ground}},
+ &&\substack{v,v'\in\mathcal V,\ v\ne v',\\t\in[\tau_k,T],}
+ \label{s0506:car_separation}\\
+ \operatorname{int}\mathcal O_v^{\mathrm{car}}(t)
+ \cap\bigl(\mathcal O^{\mathrm{tower}}\cup
+                \mathcal O^{\mathrm{wire}}\bigr)
+ &=\varnothing,
+ &&v\in\mathcal V,\ t\in[\tau_k,T].
+ \label{s0506:car_obstacles}
+\end{align}
+式\eqref{s0506:car_separation}约束三维实体的间距，而非车辆参考点的距离，因此车辆长度、宽度、高度和朝向都会影响判断。式\eqref{s0506:car_obstacles}禁止塔柱或导线侵入车体内部；它保留参考模型的内部不相交口径，没有另行增加车体对固定障碍物的正净距，也不能解释为已经给出实际道路通行的安全标准。
+
+设$\mathcal P$为候选停车位置集合，$\eta_{vj}(t)\in\{0,1\}$表示车辆$v$在时刻$t$是否占用停车位置$j$。除每辆车自身的互斥运动模式外，还要求
+\begin{equation}
+ \sum_{v\in\mathcal V}\eta_{vj}(t)\le1,
+ \qquad j\in\mathcal P,\ t\in[\tau_k,T].
+ \label{s0506:parking_capacity}
+\end{equation}
+左侧是无量纲车辆计数，每个候选停车位置最多容纳一辆车。该约束不能替代车间距离：两个名称不同的停车位置仍可能在几何上过近。反过来，车体距离满足要求也不允许两辆车同时占用一个被定义为单车容量的停车位置。
+
+上述车间距离沿连续时间检查对向相遇、追尾和路口接近，不将整条道路粗略定义为只能容纳一辆车的资源。车辆能否位于某条道路、能否转弯以及何时允许进入，继续由第\ref{sec:04_07}节的道路模式和运动学约束决定。这里仅检查已建模车队内部的冲突；没有外部交通轨迹输入时，不据此推断车辆已避让社会交通。
+
+\subsection{普通空对车距离与本车起落例外}
+
+沿用第\ref{sec:04_06}节的普通飞行裕度$r_f$。其中机体、跟踪、地图和净空各项均以$\mathrm m$计量，本节要求
+\begin{equation}
+ r_f>r^{\mathrm{body}}>0.
+ \label{s0506:contact_parameter_domain}
+\end{equation}
+严格不等式保证后面的接触插值具有正分母。普通飞行时，中心到任何车辆实体的距离不得小于$r_f$。然而，若将这一条件原样施加在本车平台接触点，就会阻止无人机真正落到平台上。因此，例外必须同时指定对象、区间、位置和载车状态，而不能仅以“正在降落”为由取消避障。
+
+对$(u,\ell)$满足$y_{u\ell}=1$的航次，令$v=c(u)$为其固定载车。沿用第\ref{sec:05_04}节的起飞保护结束时刻$s_\ell^+$和降落保护开始时刻$e_\ell^-$，定义
+\begin{equation}
+ \mathcal Q_\ell=
+ \bigl([s_\ell,s_\ell^+]\cup[e_\ell^-,e_\ell]\bigr)
+ \cap[\tau_k,T],
+ \qquad \ell\in\mathcal L_k^{\mathrm{act}}.
+ \label{s0506:protected_times}
+\end{equation}
+$\mathcal Q_\ell$只包含两个保护段在当前规划区间内的部分，不包含中间的转移、观测和等待。已处于空中的航次是否仍在起飞保护段内，由实际接续状态及原有事件时刻确定，不能重新创建一次起飞来扩大例外范围。
+
+令$H_v^{\mathrm{car}}>0$为平台表面相对车辆地形基点的高度，$r^{\mathrm{pad}}>0$为保护区的水平半径，单位均为$\mathrm m$。采用与式\eqref{s0504:dock_position}一致的接触位置及保护高度：
+\begin{align}
+ z_v^{\mathrm{dock}}(t)
+ &=h(\mathbf q_v(t))+H_v^{\mathrm{car}}+r^{\mathrm{body}},
+ \label{s0506:dock_height}\\
+ \mathbf p_v^{\mathrm{dock}}(t)
+ &=\bigl(q_{vx}(t),q_{vy}(t),z_v^{\mathrm{dock}}(t)\bigr)^T,
+ \label{s0506:dock_point}\\
+ z_v^{\mathrm{safe}}(t)
+ &=h(\mathbf q_v(t))+H_v^{\mathrm{car}}+r_f,
+ \qquad v\in\mathcal V,\ t\in[\tau_k,T].
+ \label{s0506:safe_height}
+\end{align}
+$h$是共同坐标系下的地形高度函数，其查询位置必须属于第\ref{sec:04_06}节规定的有效地形域。接触点是球形机体的中心位置，故须在平台表面之上再增加$r^{\mathrm{body}}$，而不能把机体中心直接放在平台表面。
+
+在保护段内，要求
+\begin{align}
+ \|\mathbf p_{\ell,xy}(t)-\mathbf q_v(t)\|_2
+ &\le r^{\mathrm{pad}},
+ \label{s0506:pad_horizontal}\\
+ p_{\ell,z}(t)&\ge z_v^{\mathrm{dock}}(t),
+ \label{s0506:pad_vertical}\\
+ \dot{\mathbf q}_v(t)&=\mathbf0,\qquad
+ \dot\theta_v(t)=0,
+ \qquad
+ \substack{(u,\ell)\in\mathcal A_k(t),\ v=c(u),\\t\in\mathcal Q_\ell.}
+ \label{s0506:stationary_carrier}
+\end{align}
+$\mathbf p_{\ell,xy}$为中心的水平坐标，$p_{\ell,z}$为中心高度，$\theta_v$为车辆航向，单位分别为$\mathrm m$、$\mathrm m$和$\mathrm{rad}$。位置和航向的导数条件在各保护段内部几乎处处成立，并结合连续状态保证本车平台在该段内静止。第\ref{sec:05_04}节的驻留约束还要求准备与处理时段属于指定停车模式；仅令车速瞬时为零不能替代合法停车驻留。
+
+保护段与普通飞行的连接端点满足
+\begin{align}
+ p_{\ell,z}(s_\ell^+)&=z_v^{\mathrm{safe}}(s_\ell^+),
+ &&y_{u\ell}=1,\ v=c(u),
+ \label{s0506:launch_safe_endpoint}\\
+ p_{\ell,z}(e_\ell^-)&=z_v^{\mathrm{safe}}(e_\ell^-),
+ &&y_{u\ell}=1,\ v=c(u).
+ \label{s0506:recovery_safe_endpoint}
+\end{align}
+这些等式只对当前仍需施加的对应端点条件使用；已发生事件继承其历史状态。起飞接触位置、降落接触位置以及接触速度继续满足第\ref{sec:05_04}节的约束。
+
+为明确保护柱的空间含义，定义从接触中心高度到普通飞行连接高度的低空保护柱
+\begin{equation}
+ \mathcal C_v^{\mathrm{pad}}(t)=
+ \left\{\mathbf x\in\mathbb R^3:
+ \begin{array}{l}
+ \|\mathbf x_{xy}-\mathbf q_v(t)\|_2\le r^{\mathrm{pad}},\\
+ z_v^{\mathrm{dock}}(t)\le x_z\le z_v^{\mathrm{safe}}(t)
+ \end{array}\right\}.
+ \label{s0506:pad_column}
+\end{equation}
+该柱体用于保护起落的低空过渡区域，不表示柱内任意中心位置都已满足机体避障。其设置还须满足
+\begin{equation}
+ \begin{aligned}
+ \mathcal C_v^{\mathrm{pad}}(t)\cap
+ \left(\mathcal O^{\mathrm{tower}}\cup\mathcal O^{\mathrm{wire}}
+ \cup\bigcup_{v'\in\mathcal V\setminus\{v\}}
+             \mathcal O_{v'}^{\mathrm{car}}(t)\right)
+ =\varnothing,\qquad
+ \substack{(u,\ell)\in\mathcal A_k(t),\\v=c(u),\ t\in\mathcal Q_\ell.}
+ \end{aligned}
+ \label{s0506:pad_column_exclusion}
+\end{equation}
+保护柱本身不得与塔、线或其他车辆相交，实际飞机还须满足各自的正距离约束。式\eqref{s0506:pad_vertical}没有额外施加中心高度上界；若保护段中的中心高于$z_v^{\mathrm{safe}}$，下面的截断函数已将其裕度恢复为$r_f$，不能继续享受较小的接触裕度。
+
+\subsection{接触裕度及其恢复条件}
+
+对$t\in\mathcal Q_\ell$及$v=c(u)$，定义无量纲高度插值量和接触半径
+\begin{align}
+ \lambda_{\ell v}^{\mathrm{pad}}(t)
+ &=\min\left\{1,\max\left\{0,
+ \frac{p_{\ell,z}(t)-z_v^{\mathrm{dock}}(t)}
+      {r_f-r^{\mathrm{body}}}\right\}\right\},
+ \label{s0506:pad_interpolation}\\
+ r_{\ell v}^{\mathrm{contact}}(t)
+ &=r^{\mathrm{body}}+
+   (r_f-r^{\mathrm{body}})\lambda_{\ell v}^{\mathrm{pad}}(t).
+ \label{s0506:contact_radius}
+\end{align}
+其中$\lambda_{\ell v}^{\mathrm{pad}}(t)\in[0,1]$，$r_{\ell v}^{\mathrm{contact}}(t)\in[r^{\mathrm{body}},r_f]$，后者单位为$\mathrm m$。在本车保护段内，施加
+\begin{align}
+ \operatorname{dist}\bigl(\mathbf p_\ell(t),
+                   \mathcal O_v^{\mathrm{car}}(t)\bigr)
+ &\ge r_{\ell v}^{\mathrm{contact}}(t),
+ \label{s0506:carrier_contact_clearance}\\
+ p_{\ell,z}(t)-h(\mathbf p_{\ell,xy}(t))
+ &\ge r_{\ell v}^{\mathrm{contact}}(t),
+ \qquad
+ \substack{(u,\ell)\in\mathcal A_k(t),\ v=c(u),\\t\in\mathcal Q_\ell.}
+ \label{s0506:terrain_contact_clearance}
+\end{align}
+第二式仍然是竖直地形净距，而不是到地形实体的最短欧氏距离，故继续具有第\ref{sec:04_06}节所述的坡度适用边界。两式均保留机体半径项，接触时允许消失的是附加裕度。对平台施加的是实体净距条件；对地形仍只施加给定的垂直净空条件，不能据此推出球形机体与任意坡面之间的欧氏分离。
+
+由式\eqref{s0506:dock_height}和式\eqref{s0506:safe_height}，有
+\begin{equation}
+ z_v^{\mathrm{safe}}(t)-z_v^{\mathrm{dock}}(t)
+ =r_f-r^{\mathrm{body}}.
+ \label{s0506:transition_height_difference}
+\end{equation}
+因此，接触裕度满足
+\begin{align}
+ p_{\ell,z}(t)=z_v^{\mathrm{dock}}(t)
+ &\ \Longrightarrow\ 
+ \lambda_{\ell v}^{\mathrm{pad}}(t)=0,\quad
+ r_{\ell v}^{\mathrm{contact}}(t)=r^{\mathrm{body}},
+ \label{s0506:contact_limit}\\
+ p_{\ell,z}(t)\ge z_v^{\mathrm{safe}}(t)
+ &\ \Longrightarrow\ 
+ \lambda_{\ell v}^{\mathrm{pad}}(t)=1,\quad
+ r_{\ell v}^{\mathrm{contact}}(t)=r_f.
+ \label{s0506:regular_limit}
+\end{align}
+这说明保护段在与普通飞行连接时恢复完整裕度，避免以较小的接触距离直接进入普通飞行。水平半径和高度条件只限定例外的区域，式\eqref{s0506:carrier_contact_clearance}仍须使用完整车体实体计算；不能仅凭“位于平台附近”就认为车体避碰已经满足。
+
+将例外以外的空对车约束明确写为
+\begin{equation}
+ \operatorname{dist}\bigl(\mathbf p_\ell(t),
+                  \mathcal O_{v'}^{\mathrm{car}}(t)\bigr)\ge r_f,
+ \qquad
+ \substack{t\in[\tau_k,T],\ (u,\ell)\in\mathcal A_k(t),\ v'\in\mathcal V,\\
+ v'\ne c(u)\ \text{或}\ t\notin\mathcal Q_\ell.}
+ \label{s0506:ordinary_air_car}
+\end{equation}
+同时，在$t\notin\mathcal Q_\ell$的活动时刻，地形竖直净距恢复为
+\begin{equation}
+ p_{\ell,z}(t)-h(\mathbf p_{\ell,xy}(t))\ge r_f,
+ \qquad
+ \substack{t\in[\tau_k,T],\ (u,\ell)\in\mathcal A_k(t),\\t\notin\mathcal Q_\ell.}
+ \label{s0506:ordinary_terrain}
+\end{equation}
+塔柱和导线始终遵守式\eqref{s0406:tower_clearance}与式\eqref{s0406:wire_clearance}，包括本车保护段；机间始终遵守式\eqref{s0506:air_separation}。因此，接触例外只替换本车距离和竖直地形净距这两类裕度，不向其他车辆、塔柱、导线或其他飞机扩展。
+
+从$r_{\ell v}^{\mathrm{contact}}-r^{\mathrm{body}}$在接触处趋于零可见，此模型采用精确对接的参考假设。它要求接触阶段的相对定位和跟踪误差能够收敛到允许接触的水平，不能从普通飞行的固定误差界直接推出。上述插值给出了规划模型如何连接接触与飞行，却没有构成实际降落控制误差的验证结果。
+
+\subsection{接触力切换与资源占用的共同作用}
+
+接触还改变了受力模式。以$\mathbf f_\ell^{\mathrm{aero}}(t)\in\mathbb R^3$表示推力与空气阻力的合力，$\mathbf f_\ell^{\mathrm{contact}}(t)\in\mathbb R^3$表示平台施加于飞机的接触力，单位均为$\mathrm N$。沿用第\ref{sec:04_04}节的质量$m_U$、重力加速度$g_0$和竖直单位向量$\mathbf e_3$，接触与飞行的平动受力接口可写为
+\begin{equation}
+ m_U\dot{\mathbf v}_\ell(t)
+ =\mathbf f_\ell^{\mathrm{aero}}(t)
+  -m_Ug_0\mathbf e_3
+  +\mathbf f_\ell^{\mathrm{contact}}(t).
+ \label{s0506:contact_force_interface}
+\end{equation}
+离开平台后的飞行内部取$\mathbf f_\ell^{\mathrm{contact}}=\mathbf0$，于是恢复第\ref{sec:04_04}节的飞行力平衡。静止停放时则由平台接触力与可能存在的气动力共同平衡重量；在停桨且忽略其他外力的静止参考状态下，平台接触力为$m_Ug_0\mathbf e_3$。因此，平台停放不能被当成需要持续产生悬停推力的飞行状态。
+
+式\eqref{s0506:contact_force_interface}说明两种模式的力学接口，不另行建立起落架弹性、冲击和摩擦模型。释放与接触时刻采用单侧力平衡，位置、速度和姿态继承第\ref{sec:05_04}节的接触条件；接触力切换允许加速度的单侧值不同。飞行内部仍须满足加速度和加加速度限制，不能将接触切换误解成允许在普通飞行连接点任意改变加速度。地面功率继续采用第\ref{sec:05_05}节的参考口径，不由飞行悬停公式强行延拓。
+
+几何安全和设备互斥在此处相互补充。对一个尚未发生且完整安排的航次，飞机占用区间与平台占用区间分别为
+\begin{align}
+ D_\ell&=[s_\ell-h^{\mathrm{pre}},\ e_\ell+h^{\mathrm{post}}),
+ \label{s0506:aircraft_occupation}\\
+ H_\ell&=[s_\ell-h^{\mathrm{pre}},\ s_\ell^+)
+       \cup[e_\ell^-,\ e_\ell+h^{\mathrm{post}}).
+ \label{s0506:pad_occupation}
+\end{align}
+服务时长$h^{\mathrm{pre}}>0$和$h^{\mathrm{post}}>0$均以$\mathrm s$计量。$D_\ell$包含准备、全部飞行和落地处理；$H_\ell$包含准备、起飞保护、降落保护和落地处理。飞行中间时段释放平台，但不释放正在执行航次的飞机。式\eqref{s0506:pad_occupation}也说明，平台不能在飞机刚离开表面时立即释放，必须等其结束起飞保护段。
+
+以$\mathbb I_A(t)$为集合$A$的指标函数，其取值为零或一。若当前边界不存在历史剩余处理，且所列航次均按上述完整区间表示，则相应容量条件为
+\begin{align}
+ \sum_{\ell\in\mathcal L_k^{\mathrm{act}}}
+ y_{u\ell}\mathbb I_{D_\ell}(t)&\le1,
+ &&u\in\mathcal U,\ t\in[\tau_k,T],
+ \label{s0506:aircraft_capacity_complete}\\
+ \sum_{u\in\mathcal U_v}
+ \sum_{\ell\in\mathcal L_k^{\mathrm{act}}}
+ y_{u\ell}\mathbb I_{H_\ell}(t)&\le K_v^{\mathrm{pad}},
+ &&v\in\mathcal V,\ t\in[\tau_k,T].
+ \label{s0506:pad_capacity_complete}
+\end{align}
+$K_v^{\mathrm{pad}}\in\mathbb Z_{\ge1}$为车辆$v$的起降位容量，左侧均为无量纲占用计数。存在准备中、空中或历史回收记录时，应直接使用第\ref{sec:05_04}节包含历史剩余占用的式\eqref{s0504:aircraft_capacity}、式\eqref{s0504:pad_capacity}与式\eqref{s0504:operator_capacity}，不能只保留式\eqref{s0506:aircraft_capacity_complete}和式\eqref{s0506:pad_capacity_complete}而漏掉已经发生动作的剩余服务。
+
+操作员也是有限资源。当前参考配置将一名操作员与一个起降位绑定，不能因为平台数被符号化就默认为可获得无限操作人力。若增加起降位，仍须分别满足操作员容量，并给出各实际平台的位置和包络；单纯增加$K_v^{\mathrm{pad}}$不会自动解除式\eqref{s0506:air_separation}。尤其是多个飞机共用同一个接触中心时，即使容量计数允许，同时接触仍会被机间距离排除。
+
+电池与充电资源继续使用式\eqref{s0505:unique_mode}、式\eqref{s0505:channel_capacity}和式\eqref{s0505:source_power_capacity}。前者禁止同一物理电池对同时准备、飞行、处理、冷却或充电；后两者分别限制同时占用的充电通道数和总输入功率。飞机间距足够不能使一对电池同时供给两架飞机，充电通道空闲也不能使正在飞行或处理中的电池提前充电。每一类互斥都对应不同的实体或操作条件，不宜合并成一个没有物理身份的总资源容量。
+
+资源占用采用半开区间，使一次操作在释放时刻可以将资源交给下一次操作；几何轨迹保留闭区间端点，使交接时刻的实际位置仍受检查。两种端点约定承担不同作用，并不矛盾。即使前一操作的占用指标在某时刻已经变为零，后一操作也不能凭借指标交接跳过该时刻的机间、车间和空对车距离。
+
+所有同时刻条件均约束整个连续时间区间。若有限数值模型只在若干时刻检查距离，得到的首先是这些采样时刻上的满足性；还须给出数值转录的误差控制，说明区间内部如何得到保证。空间路线、事件时刻、实体包络和资源身份共同构成这里的可行性条件，任一部分都不能单独充当联合执行的安全证书。

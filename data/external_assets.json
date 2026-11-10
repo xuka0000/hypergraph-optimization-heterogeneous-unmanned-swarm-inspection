@@ -1,0 +1,315 @@
+{
+  "not_redistributed": [
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues2022/airdensity.py",
+      "sha256": "41e9ba7175a09ead767e0af6f51d1db709ca6b692f279e30cbaf25d6979445a4",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues2022/ARE.py",
+      "sha256": "31db36ad786896b11e27908ce3ecccd42c62fdddfa55dffea183c32c6b114570",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues2022/data/sample.csv",
+      "sha256": "a5d3922846cba85047e6ecd31726cc1727bc4941a767975c12a12645415df6ea",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues2022/energy_distance.py",
+      "sha256": "6562d8e39cc2867a8cdd02d838fce87fc270a03603ea9f06bb936314690b24ec",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues2022/energy_model.py",
+      "sha256": "d7c985aa886f53be883829d6d91ad5dd0d4b156a0409f0fbec199d50ef77a949",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues2022/energy_summary.py",
+      "sha256": "e9441bf6fe718ff438c718a46bce1d3852af95cdc2e2c006f4e9cfdbfc1c101b",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues2022/ghg_emission.py",
+      "sha256": "cf256f1c1bb106bcf5eae3ba45889231d1318ead85c216890485a5e02c901fd7",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues2022/ghg_subregions.py",
+      "sha256": "00b693bd6a294be5e8684cc3135406493c618b4f63b0783f6305dcf47eb7f84b",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues2022/inflightcomponents.py",
+      "sha256": "fe000739fcffa01b5101524aa396054ef765e11aa87fbc363c4af49bb35610a0",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues2022/LinearRegression.py",
+      "sha256": "66e4ccfeee05ae2c1a660c04a69492ec7bdc2dca4ee19c3c0f6b4ae170b712aa",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues2022/main.py",
+      "sha256": "ea10a2ea01e919adf041706aae7e6584fdcc93fc5d2e70712ccab45b8f9e9dcd",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues2022/mass_analysis.py",
+      "sha256": "cc843ffaf538689ae3c18891c361ac1dd750924e6ed7644f37965797352bb3b4",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues2022/METAR_KAGC.py",
+      "sha256": "4c87030f941cfe0833c6585475f514c002542a2d41bedd897a0d93cabd4e2264",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues2022/power_speed.py",
+      "sha256": "3bda10a7dd824e1a9d9063e0d65680c11a290f8c6d6a8f9933af20acfc0d1959",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues2022/pre_processing.py",
+      "sha256": "8c39822ebc5dda390b84bfc996a9a3756257ecea0e6bcc758a99b01eb0141bda",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues2022/README.txt",
+      "sha256": "07691fdc79f4942148ae7107797a2c48fbdfcb0e6fa912507fdea633f46ce159",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues2022/regime.py",
+      "sha256": "b4394e275afc14e38f4a0da7522b7ba8c693be279774d8db4ba1456794376fc8",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues2022/vehicle_comparison.py",
+      "sha256": "50bd0b3116d63b6b82bfa320d390ccce90c590894b15edce1b0b5b90db7371de",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/airdensity.py",
+      "sha256": "6fc647092419824c66ea788c9d0b922479dd17e78c41af983dba584de946e7de",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/ancillary_power.py",
+      "sha256": "528101bd6da0c2255ba112d4c87054af1f9eefabcde5a28886497a14c3f39521",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/Boostrap.py",
+      "sha256": "5dea13bd3b8ce32f1862171d251363b700c1af1b5bcbf7560e0921718628bc2e",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/calculate_coefficients.py",
+      "sha256": "56f9aed9ffacb4ccac1af6a881c61e76254d5124dc266eff33e5b05c6152e068",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/calculate_energy.py",
+      "sha256": "79f7a81c889e1c1b38718f3a2eccde6d82de36267860785afaaca6204208871e",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/Comparing Energy and Speed.py",
+      "sha256": "5313c00d7815d5a5706bfe8db7dbe2606f3162dccef50ffdb17e9de706707f61",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/create_energy_summary.py",
+      "sha256": "8c11806096bfc34ec0d3418e771136c41ed82cc87efcc047dc7c7d159439d5e1",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/Emissions_map.py",
+      "sha256": "088037af38ce918c5bfea1fd1fac2d78642aad7ffab05504f07a070da3429ca1",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/energy_consumption/add_regime.py",
+      "sha256": "d0e0aa682db0fc3c724c5a20a9175523f5d32143285d58fcfbd0cc75af78007f",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/energy_consumption/airdensity.py",
+      "sha256": "ce05fd9b5588b6f82abb080eda312dd1b8ef559afd60ed378ad204d1fac27641",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/energy_consumption/EnergyModel2.py",
+      "sha256": "24d0aaf22bda38cdbcd22029f1f6d4e8d0d6a3ced95899d29f77b2522b4b8345",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/energy_consumption/FindingRegimeFilter.py",
+      "sha256": "14e7e13d499b3501f4df13767919d7fd475206da5a0e4802ab5754d078b1650b",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/energy_consumption/inducedVelocity.py",
+      "sha256": "d39537b4962aa8fbaa734280b28af1f37c4c8f8fe7cde6b123263f999e5ae785",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/energy_consumption/inflightcomponents.py",
+      "sha256": "609ce28d97f587a6ad283fd560e976123b0393f787b6eb9f8dabc3d843732dec",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/energy_consumption/LinearRegression.py",
+      "sha256": "658e699d1cbf14578fea04272d7fdeb76a60b7819ab4e15d8d5d3e670db5156b",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/energy_consumption/METAR_KAGC.py",
+      "sha256": "42cf473fe6cf419ead9a252b47f3053e0ff2d976af8ef6c49b4e90bf859d10fa",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/energy_consumption/Method2_bootstrap.py",
+      "sha256": "80ba20e90bcfb2f7ae5adde512e64aa894c3a3a3013cea27a9b1bf460011dfe1",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/energy_consumption/model_one.py",
+      "sha256": "8749d19e0da19662770d0a9a75dd5601cb7e95a198a04fe2aebd58c4957e721a",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/energy_consumption/power_functions.py",
+      "sha256": "0ace22d4e81a15eb2ba647ec879294e1461eec403460422e141a1bafb9ebca0b",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/energy_summary.py",
+      "sha256": "ace46acba17987132fafe8d34a8bb2dc4aa2b3de86ec193913d91541cf7ed8db",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/FindingRegime.py",
+      "sha256": "dfc301bbc5e78a4f7197401ab3dd1391a8c8680246d8a4304ef2cfd981483152",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/FindingRegime2.py",
+      "sha256": "b87f3a7b2bdb5d3f0bc1e76fa6ddde3f364dbf42f9b0cb84f90d9a714b3ce261",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/FindingRegimeFilter.py",
+      "sha256": "edecadf73f61937090b57f5e893a6416fc2348b837f7360f37804a7aa31ecef3",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/inducedVelocity.py",
+      "sha256": "d39537b4962aa8fbaa734280b28af1f37c4c8f8fe7cde6b123263f999e5ae785",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/inflightcomponents.py",
+      "sha256": "1830d74cb8db5dc3a0eb1f05f58ea509b950be9370a2916116519a60df9c8ebc",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/LinearRegression.py",
+      "sha256": "658e699d1cbf14578fea04272d7fdeb76a60b7819ab4e15d8d5d3e670db5156b",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/main.py",
+      "sha256": "2c9f23e3c2d18053da5f4f71168011034d484f2687ccbd8667db497d79952b8b",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/METAR_KAGC.py",
+      "sha256": "9ae63bd82d4668b34ca77a3fe3a93b40bdefa337625a4b1b1421863750ad904b",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/MLModel/data/data_clean_cruise.csv",
+      "sha256": "9e480aa860f701ad2c6769948fc3c1be20ac1c591122ca73afc3ca6b5587a21a",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/MLModel/data/data_clean_landing.csv",
+      "sha256": "e9a21613aecc840f45ba6b63042cdafc7aff7827941bccc3a8361476f5f1df7b",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/MLModel/data/data_clean_takeoff.csv",
+      "sha256": "8197f4bfc6957edb8b28a1fbaebe8e838a85ac3cd7dce9ca39e92ac3839e54f9",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/MLModel/data/flights_validation.csv",
+      "sha256": "e4b6c011b1a02210baa7f3df03a55857c83d2ec7cf92c6200834391d9aa00824",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/MLModel/data/flights_validation_data_clean_cruise.csv",
+      "sha256": "d89fd04d69d6dba14f631357d8cefb397257d60a7a59b5fd9af0af4b31d305a3",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/MLModel/data/flights_validation_data_clean_landing.csv",
+      "sha256": "58373ddafe644c8002337588dc20f76d0bd7bb47d7ccc9f3b4c0e732c2b1119f",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/MLModel/data/flights_validation_data_clean_takeoff.csv",
+      "sha256": "4a69fb0b4f01ea7bf1ba57a0dc39107d9e3b4f2d3da28b0b1681adf985678789",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/MLModel/data/poll.csv",
+      "sha256": "e1e4f7937cc02b494c0392065df306ffa9a42522c2353e513110a6b61271e552",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/model_one.py",
+      "sha256": "6b1e82534fee45623b9623c8bfceb0ba248e74d465afdadae80db1543a093628",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/plot_deliveryDistances.py",
+      "sha256": "5c2422c7050c405f7c0c0af889b63e78ee26c3ac0cdecfa9cf3f2589c8a3603e",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/plot_regression_lines.py",
+      "sha256": "6316341dc5a09695bb87de224f77771c6409818560752b19569538174a64a30e",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/power_functions.py",
+      "sha256": "f396f3a44158d1056de9035a575b7050acd7141a365128f20fb93da06de218e6",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/read_flights.py",
+      "sha256": "fc712bcc7634db7074524e136eaa235367d6300f114f36e703665b7abbc55865",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/readme.txt",
+      "sha256": "8504a584ffd83f8d8d4a5281432b2e72d5a590ece273812892efdb1a0420b541",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/takeoff_energy.py",
+      "sha256": "36db331c96506ec3549ef2f00e504ee1c98d58eae473bf784bae019516b60253",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/rodrigues_data/vehicle_comparison.py",
+      "sha256": "301da3b3850bba60ad3f954a653f266647ae5570b56d09aaf3fc1af5fd053884",
+      "reason": "Redistribution license not established; upstream URLs/commits retained in source_manifest.json."
+    }
+  ],
+  "reference_pdfs": "VPP and third-party article/manual PDFs are not redistributed; see bibliography and original source URLs."
+}

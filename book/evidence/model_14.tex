@@ -1,0 +1,29 @@
+\section{电量守恒与部分充电}
+\begin{align}
+ \dot E_p(t)&=\frac{0.9P_p^{in}(t)-\sum_\ell\beta_{p\ell}
+                   \mathbf1_{[s_\ell,e_\ell)}(t)P_\ell(t)}{3600},\\
+ 109.6&\le E_p(t)\le548\ \mathrm{Wh},\quad E_p(\tau_k)=\widehat E_{pk},\\
+ 0&\le P_p^{in}(t)\le c_p(t)\overline P(E_p(t)),\qquad E_p(T)\ge109.6.
+ \label{eng:eq:battery}
+\end{align}
+\noindent 初次日前规划$\widehat E_{p0}=548$Wh；不能把旧9任务试验20\%初电量移入本场景。所有事件边界$E_p(t^-)=E_p(t^+)$，无免费跳变；地面待机功率为0的参考假设单列。
+\begin{equation}
+ \overline P(E)=\begin{cases}
+ 852.444444\ \mathrm W,&109.6\le E<493.2,\\
+ 182.666667\ \mathrm W,&493.2\le E<548,\\
+ 0,&E=548.
+ \end{cases}
+ \label{eng:eq:chargecurve}
+\end{equation}
+\noindent $P^{in}$是充电器输入，效率0.9只乘一次。20--90\%参考时长1800s，90--100\%1200s；可在任意合法电量停止再用。硬件能否连续调功尚未验证，当前作为参考控制能力。[R3,R4]
+
+\noindent 分段常值转录时，每个充电段不能跨功率拐点；连续模型本身不预设50或118个充电事件的无损上界。
+\begin{align}
+ E_p(b)-E_p(a)&=0.9\int_a^bP_p^{in}(t)\,dt/3600
+              -\sum_\ell\int_{[a,b]\cap[s_\ell,e_\ell)}\beta_{p\ell}P_\ell(t)\,dt/3600,\\
+ \sum_p\big(E_p(T)-E_p(\tau_k)\big)&=0.9E_{grid}-E_{air},\label{eng:eq:energyledger}\\
+ E_{grid}&=\sum_p\int_{\tau_k}^T P_p^{in}(t)dt/3600.
+\end{align}
+\noindent 独立执行器按真实状态和实际输入积分核对最后一式。预测功率、优化目标值和实测能耗分别登记；不以优化器内部平衡替代独立验证。温区内容量暂取548Wh常数，不含电池老化目标，也不宣称已获高精度M300电化学模型。
+\clearpage
+

@@ -1,0 +1,288 @@
+\section{词典序目标与完整可行域}
+\label{sec:05_08}
+
+前七节分别建立了任务完成、航次路径、连续观测、车机会合、物理电池、同时刻冲突和执行状态接续。本节将这些关系放入同一个优化问题。模型首先减少未完成的整塔要求，在这一目标达到最优后缩短全队完成时间，再在前两级目标均保持最优的条件下减少机载飞行耗能。三个目标具有不同的计量口径，其优先关系由词典序规定，不通过把塔数、秒和瓦时直接相加来表达。
+
+这里的完整可行域，是前述参考物理模型在其已说明作用域内的全部约束交集。它适用于首次规划，以及第\ref{sec:05_07}节允许的接续边界；正在观测或已拍待验收的状态按该节的剩余时钟、固定身份与接收事件规则接续。写出联合模型，也不意味着已经取得区域联合最优解。
+
+\subsection{输入边界与联合决策对象}
+
+固定第$k$次规划边界$\tau_k$，其中$k\in\mathbb Z_{\ge0}$。班次起点$t_0$与终点$T$保持不变，满足$t_0\le\tau_k\le T$，时间单位为$\mathrm s$。沿用当前状态$\widehat s_k$、任务集$\mathcal I_k$、历史验收量$A_i^k\in\{0,1\}$以及历史剩余资源记录$\mathcal R_k^{\mathrm{post}}$、$\mathcal R_k^{\mathrm{bat}}$。记
+\begin{equation}
+ \mathbf A^k=(A_i^k)_{i\in\mathcal I},
+ \qquad \mathbf A^k\in\{0,1\}^{|\mathcal I|}.
+ \label{s0508:history_vector}
+\end{equation}
+$\mathbf A^k$是固定的无量纲验收向量，不是优化变量，也不同于第\ref{sec:05_06}节表示活动飞机--航次对的$\mathcal A_k(t)$。历史剩余处理、冷却及已经开始的准备均从同一份执行记录取得，不能在不同情形中选择不同的过去。
+
+以$\Xi_k\ne\varnothing$表示在$\tau_k$已经取得、且其输入含义与适用范围得到核验的环境情形集合，$\xi\in\Xi_k$为无量纲情形索引。情形可以指定风、空气密度、温度和已经获得依据的功率误差等输入，不是由优化器自由挑选的有利参数。若没有可靠的误差情形依据，则采用
+\begin{equation}
+ \Xi_k=\{\widehat\xi_k\},
+ \label{s0508:singleton_scenario}
+\end{equation}
+其中$\widehat\xi_k$表示当前可用的单一预报情形。这时模型给出该输入下的确定性计划，不由单情形结果推导对未知误差的保证。本节不为情形附加未经依据支持的概率。
+
+对每个$\xi\in\Xi_k$，以$X^\xi$表示该情形下的全部联合决策，按对象类型整理为
+\begin{equation}
+ X^\xi=
+ \bigl(X_{\mathrm d}^\xi,X_{\mathrm t}^\xi,
+       X_{\mathrm a}^\xi,X_{\mathrm v}^\xi,
+       X_{\mathrm b}^\xi\bigr).
+ \label{s0508:decision_tuple}
+\end{equation}
+这里的分组只是列明变量，不表示可分别求解的物理子问题。各组包括以下对象及前节定义的相应辅助量。
+
+$X_{\mathrm d}^\xi$包含任务完成量$a_i^\xi$、整塔完成量$z_g^\xi$、任务分配$x_{i\ell}^\xi$、航次启用$b_\ell^\xi$、飞机分配$y_{u\ell}^\xi$、电池分配$\beta_{p\ell}^\xi$及路径弧变量$h_{ij\ell}^\xi$。它们均为无量纲二元量，分别量化于$i\in\mathcal I_k$、$g\in\mathcal G$、$\ell\in\mathcal L_k$、$u\in\mathcal U$、$p\in\mathcal B$及第\ref{sec:05_02}节允许的有向弧。历史已验收任务的变量仍按式\eqref{s0501:accepted_fixed_zero}固定，不因整理变量而重新进入可选任务。
+
+$X_{\mathrm t}^\xi$包含任务开始时刻$t_i^\xi$、服务时长$d_i^\xi$、弧转移与等待时长$T_{ij\ell}^\xi$，以及航次时刻$s_\ell^\xi,(s_\ell^+)^\xi,(e_\ell^-)^\xi,e_\ell^\xi$和全队完成时刻$C^\xi$。这些量为实数，单位均为$\mathrm s$；持续时间非负，选中任务的服务时长具有严格正的给定下界。新航次、空中航次、准备中航次和未启用槽分别沿用第\ref{sec:05_02}节与第\ref{sec:05_04}节的时间域，不能给所有槽统一施加新航次的准备起点条件。
+
+$X_{\mathrm a}^\xi$包含飞机位置$\mathbf p_\ell^\xi\in\mathbb R^3$、速度$\mathbf v_\ell^\xi\in\mathbb R^3$、加速度$\mathbf a_\ell^\xi\in\mathbb R^3$和加加速度$\mathbf j_\ell^\xi\in\mathbb R^3$，单位依次为$\mathrm m$、$\mathrm{m/s}$、$\mathrm{m/s^2}$和$\mathrm{m/s^3}$；还包含姿态$R_\ell^\xi\in\mathrm{SO}(3)$、非负推力、角速度$\boldsymbol\omega_\ell^\xi$、云台角$\gamma_\ell^\xi\in\mathbb R^2$和焦距$f_\ell^\xi>0$，其单位分别为无量纲、$\mathrm N$、$\mathrm{rad/s}$、$\mathrm{rad}$和$\mathrm{mm}$。全时段飞机相机函数$\Gamma_u^\xi$、$F_u^\xi$也属于这一组，其定义域为$[\tau_k,T]$，值域和正则性采用式\eqref{s0504:global_camera_states}至式\eqref{s0504:global_focal_rate}。 旋翼推力$\mathbf f_\ell^\xi\in[0,34.335]^4$N、飞行推力指令、地面角速度与角加速度、模式和四足接触力也属于该组。若以单位四元数表达姿态，则$R=R(q)$，二者不是独立可选的姿态。准备启动与处理停转时刻按式\eqref{s0504:ground_mode_intervals}并入时间组。
+
+$X_{\mathrm v}^\xi$包含每辆车的水平位置$\mathbf q_v^\xi\in\mathbb R^2$、航向$\theta_v^\xi\in\mathbb R$、非负速度$V_v^\xi$、转向角$\delta_v^\xi\in\mathbb R$及相应运动控制，单位分别为$\mathrm m$、$\mathrm{rad}$、$\mathrm{m/s}$、$\mathrm{rad}$及各控制的导数单位。道路模式$\mu_v^\xi$取第\ref{sec:04_07}节给定的道路、路口或停车索引，停车函数$\eta_{vj}^\xi(t)\in\{0,1\}$，起飞与回收停靠索引$(j_\ell^{\mathrm L})^\xi,(j_\ell^{\mathrm R})^\xi\in\mathcal P$均无量纲。道路进度、访问事件及模式切换同属该组，不以停靠端点取代连续道路行驶。
+
+$X_{\mathrm b}^\xi$包含每对电池的SOC、极化电压、集总温度、端电压、电流、输入功率、充电占用及模式，单位分别为无量纲、V、℃、V、A、W和无量纲。物理状态按式\eqref{s0408:ecm_system}连续演化，输入、输出和发热账本保留已执行值。电池释放时刻由温度决定；飞机功率由同一轨迹的旋翼状态按式\eqref{s0408:flight_power}计算。
+
+将满足上述基本值域、函数正则性和前节辅助量定义的对象空间记为$\mathscr X_k^\xi$。它尚不代表物理可行性；分配、运动、成像、资源和边界约束仍须同时施加。令
+\begin{equation}
+ \mathbf X=(X^\xi)_{\xi\in\Xi_k}
+ \in\prod_{\xi\in\Xi_k}\mathscr X_k^\xi
+ \label{s0508:scenario_decisions}
+\end{equation}
+表示整组情形决策。不同情形下的未来响应可以不同，但必须满足下述信息一致性要求。
+
+\subsection{三个目标及其计量口径}
+
+塔$g\in\mathcal G$的完成变量$z_g^\xi\in\{0,1\}$由式\eqref{s0501:tower_upper}和式\eqref{s0501:tower_lower}共同确定。其取一要求该塔的每项必要观测已经验收或在本次方案中满足完整服务要求，不能将拍到一项局部目标计为整塔完成。给定固定权重$w_g\in\mathbb R_{>0}$，第一目标为
+\begin{equation}
+ J_1^\xi(X^\xi)
+ =\sum_{g\in\mathcal G}w_g(1-z_g^\xi),
+ \qquad \xi\in\Xi_k.
+ \label{s0508:first_objective}
+\end{equation}
+权重无量纲，表示不同塔未完成时的相对损失，并非实测故障概率。当前采用$w_g=1$时，$J_1^\xi$就是未完成整塔数；使用不同固定正权重时，它是加权未完成量，不能再直接称为未完成塔数。正权重使完整完成一座塔能够严格减少该项损失，而只完成该塔的一部分要求并不自动取得整塔收益。
+
+第二目标采用全队完成时刻，而非最后一次曝光或最后一架飞机的落地时刻：
+\begin{equation}
+ J_2^\xi(X^\xi)=C^\xi-t_0,
+ \qquad \xi\in\Xi_k.
+ \label{s0508:second_objective}
+\end{equation}
+其单位为$\mathrm s$。$C^\xi$必须满足式\eqref{s0507:completion_domain}至式\eqref{s0507:no_after_completion_charge}，因而包含返库、回收处理、冷却和终态所需充电的时间要求。固定规划边界下，$\tau_k-t_0$是已经发生的耗时常数，减少$C^\xi-t_0$等价于减少$C^\xi-\tau_k$，但整班次报告仍应保留从$t_0$开始的口径。
+
+对$\ell\in\mathcal L_k$，只在$b_\ell^\xi=1$时定义剩余飞行区间
+\begin{equation}
+ \mathcal T_\ell^\xi
+ =\bigl[\max\{s_\ell^\xi,\tau_k\},e_\ell^\xi\bigr],
+ \qquad
+ \mathcal L_k^{\mathrm{act},\xi}
+ =\{\ell\in\mathcal L_k:b_\ell^\xi=1\}.
+ \label{s0508:remaining_flight_domain}
+\end{equation}
+$\mathcal T_\ell^\xi$是以$\mathrm s$计量的时间区间，$\mathcal L_k^{\mathrm{act},\xi}$是启用航次索引集合。第三目标为
+\begin{equation}
+ J_3^\xi(X^\xi)
+ =\frac{1}{3600}
+  \sum_{\ell\in\mathcal L_k^{\mathrm{act},\xi}}
+  \int_{\max\{s_\ell^\xi,\tau_k\}}^{e_\ell^\xi}
+       P_\ell^\xi(t)\,\mathrm dt,
+ \qquad \xi\in\Xi_k.
+ \label{s0508:third_objective}
+\end{equation}
+功率$P_\ell^\xi(t)\ge0$以$\mathrm W$计量，积分时间以$\mathrm s$计量，除以$3600$后得到$\mathrm{Wh}$。该式与式\eqref{s0505:air_energy_total}一致，覆盖剩余飞行期间的转移、观测和空中等待。历史已落地航次不再加入积分；空中航次只积分$\tau_k$以后的部分。
+
+式\eqref{s0507:shift_energy_account}中的历史耗能$\widehat E_{\mathrm{air},k}^{\mathrm{past}}$是各情形共同继承的常数，将它加回可以恢复整班次机载耗能，却不会改变当前方案的排序。它不能再次从当前电池电量扣除。第三目标也不等于充电器输入能量：二者还通过充电损失和初末库存差联系，具体见式\eqref{s0505:global_ledger}。车辆牵引耗能不在这一目标内，故$J_3^\xi$不能称为整个车机系统的总能耗。
+
+为分别控制三个分量的最坏情形值，引入有限实变量$Z_1,Z_2,Z_3$，要求
+\begin{equation}
+ Z_j\ge J_j^\xi(X^\xi),
+ \qquad j\in\{1,2,3\},\quad\xi\in\Xi_k.
+ \label{s0508:robust_epigraph}
+\end{equation}
+$Z_1$为无量纲加权损失，$Z_2$以$\mathrm s$计量，$Z_3$以$\mathrm{Wh}$计量。各下界均非负。对一个给定的$\mathbf X$，相应的紧上界是
+\begin{equation}
+ \overline J_j(\mathbf X)
+ =\sup_{\xi\in\Xi_k}J_j^\xi(X^\xi),
+ \qquad j\in\{1,2,3\}.
+ \label{s0508:componentwise_worst}
+\end{equation}
+若$\Xi_k$有限，式中的上确界就是最大值；若某分量没有有限上界，该决策族不能配以有限的对应$Z_j$进入本节优化问题。
+
+这是逐分量的最坏情形评价。最坏的塔损失、最迟的全队完成和最大的机载耗能可以发生在不同情形中，并不要求存在一个情形同时实现三个最坏值。它也不是先对每个情形分别求最优，再将三个结果拼接起来；所有情形必须属于同一组可实施决策，并满足共同的当前状态与信息约束。
+
+\subsection{完整可行域的逐族组成}
+
+为将约束交集写清楚，令$\mathcal F_{k,r}^\xi\subseteq\mathscr X_k^\xi$表示下列第$r$族约束定义的集合，$r\in\{1,\ldots,11\}$为无量纲族索引。以下每一族都对所有$\xi\in\Xi_k$施加；引用前文公式时，其决策变量和未来环境输入均取对应情形的值，历史输入保持共同不变。
+
+\paragraph{第一族：任务分配与整塔完成。}
+对所有$i\in\mathcal I_k$、$\ell\in\mathcal L_k$及$g\in\mathcal G$，施加式\eqref{s0501:no_recompletion}、\eqref{s0501:unique_assignment}、\eqref{s0501:assignment_activation}和\eqref{s0501:accepted_fixed_zero}；新航次与空中航次分别满足式\eqref{s0501:new_sortie_nonempty}和\eqref{s0501:ongoing_sortie_active}。对所有相关飞机分配施加式\eqref{s0501:modality_constraint}，并对每座塔内的全部要求施加式\eqref{s0501:tower_upper}、\eqref{s0501:tower_lower}。这组无量纲关系确定任务是否完成、由谁执行及何时能够取得整塔收益，不强制所有塔都必须完成。
+
+\paragraph{第二族：航次身份、路径流与事件顺序。}
+对所有$\ell\in\mathcal L_k$、$u\in\mathcal U$和$p\in\mathcal B$，施加式\eqref{s0502:one_aircraft}、\eqref{s0502:one_battery}、\eqref{s0502:carrier_compatibility}及进行中航次的固定身份条件。对第\ref{sec:05_02}节允许的每条弧和任务节点施加式\eqref{s0502:arc_activation}至式\eqref{s0502:end_degree}的路径度约束，并用式\eqref{s0502:time_connection}连接服务与转移时间。路径度为无量纲计数，时间连接以$\mathrm s$计量。正服务时长与同一时间轴上的连接关系共同排除纯任务子环；空中航次的直接回收弧仍按式\eqref{s0502:direct_return}保留。
+
+\paragraph{第三族：观测窗口、曝光与内部连续连接。}
+对每个$x_{i\ell}^\xi=1$的任务--航次对，施加式\eqref{s0503:service_window_constraints}、\eqref{s0503:exposure_containment}和\eqref{s0503:whole_service_geometry}。服务区间和曝光区间均属于该航次的同一绝对时间轴。每个飞行内部段界满足式\eqref{s0503:join_position}至式\eqref{s0503:join_focal}，其等式分别连接位置、速度、加速度、姿态、云台和焦距。正在执行的服务按式\eqref{s0507:service_carryover}与式\eqref{s0507:ongoing_flow}覆盖新服务起点条件；对未选择的任务不创建真实服务过程；接触边界则使用第\ref{sec:05_04}节的单侧受力接口，不将飞行内部加速度连续条件强加于平台接触力切换。
+
+\paragraph{第四族：飞行运动、姿态与相机控制。}
+对每个$\ell\in\mathcal L_k^{\mathrm{act},\xi}$及其剩余飞行区间$\mathcal T_\ell^\xi$，施加式\eqref{s0404:translation}、\eqref{s0404:translation_bounds}、\eqref{s0404:force_balance}、\eqref{s0404:so3}、\eqref{s0404:rotation_kinematics}和\eqref{s0404:attitude_bounds}，空中推力跟踪模式同时施加式\eqref{s0404:rotor_dynamics}的转矩、旋翼分配与电机响应；平台驱动模式改用式\eqref{s0404:ground_drive}，并将式\eqref{s0404:contact_wrench}加入同一刚体方程。保留该节的航向、云台和焦距边界。微分方程按规定的函数正则性几乎处处成立，状态界在其规定的全时段成立。对每架$u\in\mathcal U$，全时段相机函数还须满足式\eqref{s0504:global_gimbal_range}至式\eqref{s0504:global_focal_rate}以及式\eqref{s0504:sortie_camera_restriction}。因而飞行中的相机状态与地面调整属于同一设备过程。
+
+\paragraph{第五族：成像质量与视线。}
+对每个选中任务$i$、每个样点索引$r\in\mathcal J_i$及该任务曝光区间内的全部时刻，施加式\eqref{s0503:exposure_depth}至式\eqref{s0503:exposure_visibility}。其中像面位置与拖影以像素计量，分辨率按第\ref{sec:04_05}节的表面投影尺度计量，工作距离以$\mathrm m$计量，入射角使用无量纲方向关系。视线检查还量化于从相机至样点的全部线段参数$\lambda\in[0,1)$；不能仅检查端点，也不能排除目标所属塔的遮挡。目标面$\mathcal S_i$与样点索引集$\mathcal J_i$保持不同含义。样点约束仅提供所建模板与离散验收要求下的质量条件，不自动成为真实整个部件的检出保证。
+
+\paragraph{第六族：静态障碍、地形域与天气资格。}
+对每个活动航次及全部$t\in\mathcal T_\ell^\xi$，保留第\ref{sec:04_06}节的地形有效域、塔柱距离和导线管距离条件；导线条件还覆盖每根导线的全部曲线参数。常规飞行裕度沿用
+\begin{equation}
+ r_f=r^{\mathrm{body}}+r^{\mathrm{track}}
+          +r^{\mathrm{map}}+r^{\mathrm{clear}},
+ \label{s0508:margin_identity}
+\end{equation}
+各项均为给定长度，单位为$\mathrm m$。地形条件式\eqref{s0406:vertical_terrain_clearance}限制的是$p_z-h(p_x,p_y)$这一竖直高差，不能解释为球形机体到斜坡表面的相同欧氏净距。保护段仅按第\ref{sec:05_06}节的规定替换本车与地形对应裕度，不能免除塔柱、导线和其他车辆约束。天气资格采用式\eqref{s0408:flight_weather_constraints}，功率采用式\eqref{s0408:flight_power}和\eqref{s0408:power_nonnegative}；缺失必要输入的区间不能默认可飞行。天气场、轨迹及功率必须在相同位置和时刻求值。
+
+\paragraph{第七族：车辆道路域与连续行驶。}
+对每辆$v\in\mathcal V$及全部$t\in[\tau_k,T]$，施加第\ref{sec:04_07}节的道路、路口与停车模式约束，包含式\eqref{s0407:road_body_containment}、\eqref{s0407:junction_body_containment}和\eqref{s0407:parking_mode_constraints}。对每次实际模式切换，施加门户条件、式\eqref{s0407:allowed_switches}、\eqref{s0407:switch_continuity}及转向许可条件。运动过程满足式\eqref{s0407:vehicle_kinematics}与式\eqref{s0407:vehicle_control_bounds}，并保留有向进度和时间相关通行限制。这些条件作用于完整车身与连续路线，不能以两个停靠点之间存在一条初始化路径替代。
+
+\paragraph{第八族：驻留、起落会合与操作服务。}
+对每个有效飞机--航次分配，尚未发生的起落事件满足式\eqref{s0504:launch_dwell}、\eqref{s0504:recovery_dwell}及式\eqref{s0504:contact_positions}至式\eqref{s0504:contact_attitudes}，并满足保护区的位置和边界条件。起飞与回收可以选择不同停靠点，但载车必须实际到达并保持相应驻留。准备与处理中的旋翼模式还满足式\eqref{s0504:ground_mode_intervals}和\eqref{s0504:rotor_handoff}；支撑力、接触点及电池状态与同一车辆和航次相连。飞机、平台和人员容量采用式\eqref{s0504:aircraft_capacity}、\eqref{s0504:pad_capacity}、\eqref{s0504:operator_capacity}，对每个资源及全部$t\in[\tau_k,T]$成立。
+
+对于$\ell\in\mathcal L_k^{\mathrm{pre}}$，同时接入式\eqref{s0504:prepared_slot_binding}与式\eqref{s0504:prepared_remaining_dwell}，固定已开始准备的资源身份、起飞时刻和剩余驻留；对于空中航次，接入式\eqref{s0504:airborne_launch_remainder}和式\eqref{s0504:airborne_recovery_remainder}。对每条$\rho\in\mathcal R_k^{\mathrm{post}}$，保留历史飞机、平台、人员占用计数和式\eqref{s0504:historical_recovery_dwell}。历史剩余处理不生成未来飞行变量，也不因新航次选择为零而消失。
+
+\paragraph{第九族：同一时刻的空间冲突与接触例外。}
+对第\ref{sec:05_06}节活动对象集$\mathcal A_k^\xi(t)$中的不同飞机，施加式\eqref{s0506:air_separation}；对不同车辆、车辆与静态实体以及各停车位置，施加式\eqref{s0506:car_separation}、\eqref{s0506:car_obstacles}和\eqref{s0506:parking_capacity}。这些条件对全部共同绝对时刻成立，距离单位为$\mathrm m$。起落保护段使用式\eqref{s0506:carrier_contact_clearance}与式\eqref{s0506:terrain_contact_clearance}，其余飞行部分采用式\eqref{s0506:ordinary_air_car}与式\eqref{s0506:ordinary_terrain}，并保留保护柱排障条件。平台水平范围仍由$r^{\mathrm{pad}}$规定。资源占用区间的半开约定只处理计数交接，不免除交接时刻的空间分离。
+
+\paragraph{第十族：电池身份、充电与电量守恒。}
+对所有$p\in\mathcal B$及$t\in[\tau_k,T]$，施加式\eqref{s0505:unique_mode}、\eqref{s0505:location}及式\eqref{s0505:charge_when_parked}至式\eqref{s0505:input_power_gate}。对每辆车的库存分别施加通道和总输入功率限制，不能跨车汇总成任意调拨的资源池。电量满足式\eqref{s0505:energy_dynamics}至式\eqref{s0505:energy_initial}，并在事件边界保持式\eqref{s0505:no_energy_reset}。
+
+历史占用必须包括式\eqref{s0505:historical_post_count}和式\eqref{s0505:historical_cool_count}，当前航次占用则采用式\eqref{s0505:pre_count}至式\eqref{s0505:cool_count}；两者按式\eqref{s0505:history_partition}互不重复。对已绑定准备或空中航次施加式\eqref{s0505:committed_identity}。对每个实际供电的电池--航次对及剩余飞行的全部时刻，施加式\eqref{s0505:recovery_energy}，其中剩余功率积分必须来自同一会合方案。全局能量账式\eqref{s0505:global_ledger}由逐对守恒得到，不能替代逐对身份、模式和电量条件。
+
+\paragraph{第十一族：共同时间、初态、承诺与终态。}
+全部事件和连续函数采用第\ref{sec:04_03}节的共同坐标与时钟。各类启用和未启用变量的时间域沿用第\ref{sec:05_02}节；已经开始准备的槽使用第八族的固定前缀规则。每个情形均施加式\eqref{s0507:state_boundary}及车辆、空中飞机、全时段相机和电池的分量边界，未来仍有效的承诺满足式\eqref{s0507:committed_controls}。
+
+对每个启用航次与每条历史剩余记录，施加式\eqref{s0507:future_completion}至式\eqref{s0507:historical_cooling_completion}；对全部车辆、飞机、电池及$t\in[C^\xi,T]$，施加式\eqref{s0507:terminal_vehicles}至式\eqref{s0507:no_after_completion_charge}。这些条件确保$C^\xi$以后的方案已经完成返库和资源释放，不靠截断历史处理或班后补电缩短第二目标。若新的安全信息使旧承诺失效，须采用第\ref{sec:05_07}节区分的恢复问题，不能在正常接续域中删除实际历史来制造可行性。
+
+此外，各情形之间还存在非预见性约束。以$\mathcal Y_t^\xi$表示截至$t$已经收到的状态、预报与验收信息历史，以$U^\xi(t)$表示该时刻作出的控制和离散决定，其分量域与单位继承对应决策。要求
+\begin{equation}
+ \mathcal Y_t^\xi=\mathcal Y_t^{\xi'}
+ \quad\Longrightarrow\quad
+ U^\xi(t)=U^{\xi'}(t),
+ \qquad
+ \substack{\xi,\xi'\in\Xi_k,\\t\in[\tau_k,T].}
+ \label{s0508:nonanticipativity}
+\end{equation}
+信息历史相同表示当时尚不能依据已接收数据区分两个情形，所以当时作出的动作必须相同。这不要求不同扰动下的真实连续状态始终相等，也不允许当前任务分配使用尚未观测到的未来风速。将满足式\eqref{s0508:nonanticipativity}的决策族集合记为$\mathcal N_k$；信息发布时间、接收时间和后续分支的正式定义在第\ref{sec:05_09}节展开。
+
+由此，联合物理可行域为
+\begin{equation}
+ \begin{aligned}
+ \mathcal F_k=\bigl\{\mathbf X\in
+   \prod_{\xi\in\Xi_k}\mathscr X_k^\xi:\;&
+   X^\xi\in\bigcap_{r=1}^{11}\mathcal F_{k,r}^\xi
+                  \quad\forall\xi\in\Xi_k,\\
+ &\mathbf X\in\mathcal N_k\bigr\}.
+ \end{aligned}
+ \label{s0508:full_feasible_domain}
+\end{equation}
+其中各族已逐一给出对象、量词和前文约束接口，交集符号不替代任何一族的实际条件。例如，$e_\ell^\xi$同时进入路径终点、车辆驻留、电池处理、冷却释放和全队完成时刻；$\mathbf p_\ell^\xi(t)$同时进入动力学、成像、避障、天气取值和功率积分。若这些位置或时间由不同子模型各自取值，便不再是式\eqref{s0508:full_feasible_domain}中的同一个联合解。
+
+\subsection{词典序问题与逐级最优的含义}
+
+将目标上界加入物理可行域，定义
+\begin{equation}
+ \begin{aligned}
+ \mathcal D_k=\bigl\{(\mathbf X,Z):\;&
+ \mathbf X\in\mathcal F_k,\quad Z\in\mathbb R_{\ge0}^3,\\
+ &Z_j\ge J_j^\xi(X^\xi)
+ \quad\forall j\in\{1,2,3\},\ \forall\xi\in\Xi_k\bigr\},
+ \end{aligned}
+ \label{s0508:epigraph_domain}
+\end{equation}
+其中$Z=(Z_1,Z_2,Z_3)$的三个坐标分别使用前述损失、秒和瓦时口径，$\mathbb R_{\ge0}^3$仅表示三个有限非负实数坐标，不表示它们具有相同物理单位。完整优化问题为
+\begin{equation}
+ \operatorname{lexmin}_{(\mathbf X,Z)\in\mathcal D_k}
+       (Z_1,Z_2,Z_3).
+ \label{s0508:joint_lexicographic_problem}
+\end{equation}
+
+对于两个可行目标向量$Z$和$Z'$，词典序严格优先关系定义为
+\begin{equation}
+ Z\prec_{\mathrm{lex}}Z'
+ \quad\Longleftrightarrow\quad
+ \exists q\in\{1,2,3\}:
+ \left\{
+ \begin{aligned}
+ Z_j&=Z'_j,&&1\le j<q,\\
+ Z_q&<Z'_q.&
+ \end{aligned}
+ \right.
+ \label{s0508:lexicographic_order}
+\end{equation}
+比较只发生于同一坐标，因而不会混合计量单位。第一目标只要更小，就优先于第二、第三目标的任何改善；第一目标相等时，才比较全队完成时间；前两目标均相等时，才比较机载耗能。在单位权重下，减少一座未完成塔的优先级不会被节省的若干秒或若干瓦时抵消。
+
+这一排序也说明为什么不能未经证明就用一个大权重和式替代词典序。任意有限系数都需要足够的目标范围和改进间隔依据才能保证同样的优先关系；连续的完成时间与能量并不天然具有一个已知的正最小改进间隔。本节直接采用分层定义。
+
+先设$\mathcal D_k\ne\varnothing$，第一层值定义为
+\begin{align}
+ Z_1^*&=\inf\{Z_1:(\mathbf X,Z)\in\mathcal D_k\},
+ \label{s0508:first_optimum}\\
+ \mathcal D_k^{(1)}
+ &=\{(\mathbf X,Z)\in\mathcal D_k:Z_1=Z_1^*\}.
+ \label{s0508:first_optimal_domain}
+\end{align}
+上标$*$表示全局最优值，下标表示目标优先级。$\mathcal D_k^{(1)}$仍包含全部车辆、航次、轨迹和电池变量，只将第一目标固定到其真正最优值。
+
+在有限塔集与固定权重下，第一层的下确界确实可以达到。为说明这一点，定义所有可能的加权整塔损失值集合
+\begin{equation}
+ \mathcal W=
+ \left\{\sum_{g\in\mathcal G}w_g\varepsilon_g:
+          (\varepsilon_g)_{g\in\mathcal G}
+                 \in\{0,1\}^{|\mathcal G|}\right\}.
+ \label{s0508:finite_loss_values}
+\end{equation}
+$\mathcal W$是有限的非负实数集合，且$|\mathcal W|\le2^{|\mathcal G|}$。对任意可行$\mathbf X$，每个$J_1^\xi$均属于$\mathcal W$。由于$\Xi_k$非空，$\{J_1^\xi:\xi\in\Xi_k\}$是$\mathcal W$的非空子集，所以即使情形集合不是有限集，也有
+\begin{equation}
+ \overline J_1(\mathbf X)
+ =\max_{\xi\in\Xi_k}J_1^\xi(X^\xi)\in\mathcal W.
+ \label{s0508:finite_robust_loss}
+\end{equation}
+对任何$(\mathbf X,Z)\in\mathcal D_k$，将$Z_1$降低到$\overline J_1(\mathbf X)$不会违反约束。因此，可行决策实际能够取得的紧第一目标值构成$\mathcal W$的非空子集，该子集具有最小元素，并由其中某个可行决策取得。故在这里
+\begin{equation}
+ Z_1^*=
+ \min\{Z_1:(\mathbf X,Z)\in\mathcal D_k\},
+ \qquad \mathcal D_k^{(1)}\ne\varnothing.
+ \label{s0508:first_attainment}
+\end{equation}
+这一结论不要求权重为整数，也不证明如何通过有限计算找到该最优决策。它证明的是在非空可行域上第一层值的可达性，而不是某次求解已经证得第一层最优。
+
+第二层及其最优域定义为
+\begin{align}
+ Z_2^*&=\inf\{Z_2:(\mathbf X,Z)\in\mathcal D_k^{(1)}\},
+ \label{s0508:second_optimum}\\
+ \mathcal D_k^{(2)}
+ &=\{(\mathbf X,Z)\in\mathcal D_k^{(1)}:Z_2=Z_2^*\}.
+ \label{s0508:second_optimal_domain}
+\end{align}
+$Z_2^*$以$\mathrm s$计量。虽然可行完成时刻属于有界区间$[\tau_k,T]$，但这不足以单独保证最小值达到：可行函数族、模式切换以及相关约束的极限是否仍然可行，还需另外证明。若$\mathcal D_k^{(2)}=\varnothing$，则第二层只有未达到的下确界，不能继续把这个数值作为某个真实可行计划的完成时间，也不存在完整词典序最优解。
+
+只有当$\mathcal D_k^{(2)}\ne\varnothing$时，才定义第三层
+\begin{align}
+ Z_3^*&=\inf\{Z_3:(\mathbf X,Z)\in\mathcal D_k^{(2)}\},
+ \label{s0508:third_optimum}\\
+ \mathcal D_k^{(3)}
+ &=\{(\mathbf X,Z)\in\mathcal D_k^{(2)}:Z_3=Z_3^*\}.
+ \label{s0508:third_optimal_domain}
+\end{align}
+$Z_3^*$以$\mathrm{Wh}$计量。若这一层下确界也能达到，则$\mathcal D_k^{(3)}$中的方案才是式\eqref{s0508:joint_lexicographic_problem}的词典序最优解。后两层可达性可以在适当拓扑下通过相应可行域的紧性与目标的下半连续性等条件建立，但本节没有为该无限维混合模型证明这些条件，因而不预先保证完整词典序最优解存在。
+
+在精确最优值已知时，将$Z_1=Z_1^*$写为$Z_1\le Z_1^*$具有相同作用，因为更小值已被第一层最优性排除；第二层亦然。若第一层只获得一个可行值$\widehat Z_1$而没有证优，固定$Z_1=\widehat Z_1$只是在该已知损失水平上继续优化，不能自称已经完成全局词典序优化。若采用非零容差或提前停止，也须保留相应的值、界和停止状态，不能把容差内保留前级目标写成精确等式最优。
+
+三轮计算均须保留式\eqref{s0508:full_feasible_domain}的同一组联合变量。第一轮不是先固定车辆路线，第二轮也不是在独立航迹问题中仅缩短时间；在前级目标值不变的范围内，后续各轮仍可改变任务组合、会合地点、连续轨迹和充电安排。
+
+\subsection{空任务、部分完成与可行性边界}
+
+本模型允许部分塔完成。若继续完成某座塔所需的飞行、质量、回收或电池条件无法满足，则该塔可以保留$z_g^\xi=0$并承担第一目标损失；安全、图像质量、最低电量和会合条件仍为硬约束。没有引入通过支付罚分就允许越过障碍、接受不合格图像或耗尽电池的松弛机制。
+
+但是，允许部分完成并不意味着空任务方案在任何状态下都可行。一个足以支持立即结束的条件组合是：首次规划时全部车辆已在合法且相互安全的指定车库状态，飞机和电池均在所属车辆，电量满足下界，全时段相机状态存在合法延续，没有正在执行的航次、剩余处理或冷却，也没有阻止结束的有效承诺。若这些条件连同终态区间内的其他硬条件均满足，则不启用新航次、不安排新任务、停止充电并取$C=t_0$可以构成可行方案。该判断仍要逐项检查初态与终态条件，不能仅凭任务变量全零得出。
+
+滚动边界下，选择不再增加任务仍可能需要完成空中航次回收、原准备承诺、历史处理、冷却和车辆返库。特别是$\mathcal R_k^{\mathrm{post}}$、$\mathcal R_k^{\mathrm{bat}}$中的已知释放时刻不能被清零，$C^\xi$也不能倒退到$t_0$。若当前状态、有效承诺与剩余时间无法共同满足硬约束，可行域可能为空；某次数值求解未找到解则只是求解结果，不能单独作为原连续联合问题不可行的证明。
+
+还应区分这里的数学集合与其有限数值实现。式\eqref{s0508:full_feasible_domain}对整段时间、全部相关样点和连续视线参数施加各自条件，有限检查点或有限事件转录的求解结果不能直接继承这些全域结论。采用有限转录时必须同时规定转录域、误差条件和解的验收接口。当前区域尚无已验收的新完整覆盖联合方案，也没有可据以报告本节完整模型词典序最优性的结果；保留的候选仍须按其对应版本重新核验。
+
+观测中途切入按第\ref{sec:05_02}节的剩余事件时钟及式\eqref{s0507:service_carryover}保留真实起点和已执行前缀；已拍待验收状态只在收到验收结果后更新完成集合。相应组件已核对跨曝光边界的时间、能量与记录接续，但区域连续转录和实际闭环仍需独立求解及执行验收。非预见性和信息可得性则进一步决定：即使一组情形轨迹分别满足物理约束，它们是否能够由同一套随信息更新的决定过程实施。

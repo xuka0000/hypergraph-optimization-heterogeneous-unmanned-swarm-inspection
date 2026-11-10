@@ -1,0 +1,1423 @@
+{
+  "printed": [
+    {
+      "path": "Agent/Publication/engineering_conditional_hypergraph.py",
+      "sha256": "613b3a9f4cdbd03f8878e45f6d7ea10b099af850518fa983f2c3e8e960e4fae3",
+      "bytes": 14348,
+      "lines": 292
+    },
+    {
+      "path": "Agent/Publication/engineering_energy_enclosure.py",
+      "sha256": "6d3e064aeeac4dea41ddc63f2d718c5589008b2d4e812a09d9e8a46dbd863078",
+      "bytes": 10426,
+      "lines": 176
+    },
+    {
+      "path": "Agent/Publication/engineering_event_charging.py",
+      "sha256": "1e65aad005cb569332eb654629f96317565376ae84d635a5e0d7b80b709cbbc3",
+      "bytes": 7201,
+      "lines": 92
+    },
+    {
+      "path": "Agent/Publication/engineering_fleet_schedule.py",
+      "sha256": "2b9042cebd063cbd79c4a2c3d1e83a8ff73e68d9d8d7f79b63ad00900a5c3353",
+      "bytes": 10178,
+      "lines": 139
+    },
+    {
+      "path": "Agent/Publication/engineering_flight_labels.py",
+      "sha256": "183783f8fe040e710b560ec322068a1259033a7c25345521389e6f72cad38603",
+      "bytes": 1073,
+      "lines": 23
+    },
+    {
+      "path": "Agent/Publication/engineering_free_trajectory.py",
+      "sha256": "cf99c2353281858defe79d74e6551e925bf772749bfa24853772e7c0bd1dac2e",
+      "bytes": 8389,
+      "lines": 145
+    },
+    {
+      "path": "Agent/Publication/engineering_indexed_constraints.py",
+      "sha256": "c1d108fafcfbf99a8df18509e816a3710c03dcfbdab6b34ab0fbb1fc789f5037",
+      "bytes": 9957,
+      "lines": 238
+    },
+    {
+      "path": "Agent/Publication/engineering_indexed_terrain.py",
+      "sha256": "1d91a87ea2bf637d9d919c34303ee2c5707671e89869859e411bba28ec8cd0db",
+      "bytes": 3175,
+      "lines": 59
+    },
+    {
+      "path": "Agent/Publication/engineering_inspection_primitives.py",
+      "sha256": "d67745df4dc64664a1c511b35d26a19eafd45c21098b5da98fef2fad9d59b438",
+      "bytes": 4717,
+      "lines": 103
+    },
+    {
+      "path": "Agent/Publication/engineering_interval_physics.py",
+      "sha256": "c31f8aac813ee195992c8eaebe3ccfcbedd8130de97569f4fb1a77f39b9e62c5",
+      "bytes": 7168,
+      "lines": 101
+    },
+    {
+      "path": "Agent/Publication/engineering_joint_execution.py",
+      "sha256": "b51d9c42c1ddeb870620b562e74f494d6941bb997a743677f9bac49ebc4f60f1",
+      "bytes": 12675,
+      "lines": 254
+    },
+    {
+      "path": "Agent/Publication/engineering_joint_optical_trajectory.py",
+      "sha256": "7a7af6ad60dd064a0248823eec4a0852f51149f83133e354e48388bddd59afd0",
+      "bytes": 20197,
+      "lines": 235
+    },
+    {
+      "path": "Agent/Publication/engineering_joint_optimality.py",
+      "sha256": "b51beaf79c073aba9e13a5416341b79f0563a612914713c2e8bd1ffa98b822e3",
+      "bytes": 6954,
+      "lines": 131
+    },
+    {
+      "path": "Agent/Publication/engineering_joint_safety.py",
+      "sha256": "3eae3dca4a75f92f3e5ba154f070e483ae8ce2218099d7d54dd89ed9d49d60f6",
+      "bytes": 8128,
+      "lines": 153
+    },
+    {
+      "path": "Agent/Publication/engineering_joint_weather.py",
+      "sha256": "0f5a8e0fc4a500cc81a22dae42b27b28336ceaf3ce5961dbbe539484594776f1",
+      "bytes": 2829,
+      "lines": 50
+    },
+    {
+      "path": "Agent/Publication/engineering_multicarrier_schedule.py",
+      "sha256": "53e8d333b48a0131719ee89952787886911ebffdb31972122c7d0734f59c104b",
+      "bytes": 16319,
+      "lines": 203
+    },
+    {
+      "path": "Agent/Publication/engineering_process_budget.py",
+      "sha256": "41bf27ca41ede0749800c86f323024de5ac5224c15a7f48132ee326b51db18ad",
+      "bytes": 1897,
+      "lines": 19
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_acceptance.py",
+      "sha256": "c232bb99b86a4c40301b93fb6cfbc358c526abc5b9e5dcd35da82ce1026bd42c",
+      "bytes": 14380,
+      "lines": 193
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_charging.py",
+      "sha256": "b64690e8ee4cff10c660d9e4698f8daf486439b92ece215dc148f3e0962b5aae",
+      "bytes": 11287,
+      "lines": 176
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_compaction.py",
+      "sha256": "a64818d3e195f5c4d7f89f66227f51596eea46642e43f084d8ada02e9d387d23",
+      "bytes": 12019,
+      "lines": 186
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_curves.py",
+      "sha256": "3f18fce16c824ea73e2e76c9c80f85c84a9e39b80f18ed73f93d466fa7b82788",
+      "bytes": 14480,
+      "lines": 240
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_diagnostics.py",
+      "sha256": "fd721b8da965869370c6331c3944c39b2978614708c805385e2fcd73a20dfdb6",
+      "bytes": 5395,
+      "lines": 118
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_enclosure.py",
+      "sha256": "822a7ac089a5a3487460f101fcb9b72ff4982a7d18847160bb027d9e642bf193",
+      "bytes": 17069,
+      "lines": 243
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_geometry.py",
+      "sha256": "a51c66c313c54ad6547bfc4e54f6e82cc6acbbacd46aec47fc0a0195aa1865bf",
+      "bytes": 21739,
+      "lines": 317
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_memory.py",
+      "sha256": "24c0d5d66a232e5f844d89911593e86a3de4c1b812d5b57ec4d25143f1dbd1d1",
+      "bytes": 1571,
+      "lines": 27
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_physics.py",
+      "sha256": "163d4d0e92acb2b1b0605d42891dc4b331281660f07b3cc5d94ec8ff2541e837",
+      "bytes": 21012,
+      "lines": 318
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_rendezvous.py",
+      "sha256": "67268f1e0f60095ab40243b88259de48e1b970504d001ba66d2a6f8d4b2edf3b",
+      "bytes": 13402,
+      "lines": 212
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_resource_envelope.py",
+      "sha256": "1dc0ba49f0315969e5f56fb387197891d4807ed72c851ea5cea913827cdb99f9",
+      "bytes": 4049,
+      "lines": 66
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_resources.py",
+      "sha256": "9468fe77901eefad09e581e2476229712da6af000360d538e4e2c05c20ebd445",
+      "bytes": 11859,
+      "lines": 198
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_roads.py",
+      "sha256": "4562daba55bb4bd77cad33890bbbee7144c302ac287efd574ce5c4faf83166a0",
+      "bytes": 19924,
+      "lines": 304
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_safety.py",
+      "sha256": "43bbadaf2b22fea2e22f84d459ae5f391b0ab7c49fda6386266548c0c85cd0db",
+      "bytes": 20309,
+      "lines": 300
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_seed.py",
+      "sha256": "57482ce92ef7dbfaaac5d6afb748b845c73daa60b9277386f6c9df2c0334448d",
+      "bytes": 6312,
+      "lines": 106
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_seed_motion.py",
+      "sha256": "1cfcaa7bf26b9d42e1304aa12ee5a4e22b471ce6a87609f8529b47d23c286282",
+      "bytes": 5160,
+      "lines": 110
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_solver.py",
+      "sha256": "159446a10d75f2d8f839752453ee2ed4f5bc8212bf92ac3835e7d678e64a10ee",
+      "bytes": 29746,
+      "lines": 418
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_structure.py",
+      "sha256": "b7e0e1909701b6d0906fdbdd6cf5ac14abdca12c530405698515a64167e4a47c",
+      "bytes": 11726,
+      "lines": 243
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_task_order.py",
+      "sha256": "4f92472e70ad1fd5a025320963a534289c46aa5416abf133a21906c8ed05709c",
+      "bytes": 2292,
+      "lines": 49
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_terrain.py",
+      "sha256": "3895fbd56069d7d840f9de7265d3df39ea8927b65c0bb58717eebcc22e144a82",
+      "bytes": 3471,
+      "lines": 54
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_weather.py",
+      "sha256": "037143f84af7ac48baa924084180db9b7a58c86e43d3ebecafe59453e92ed4e2",
+      "bytes": 8160,
+      "lines": 150
+    },
+    {
+      "path": "Agent/Publication/engineering_replanning.py",
+      "sha256": "f4d0af6d1ba2f29996915d2f714c410898d8d4d8666d067e98fbbfd65ae0eb35",
+      "bytes": 11143,
+      "lines": 165
+    },
+    {
+      "path": "Agent/Publication/engineering_road_certificate.py",
+      "sha256": "c3cadbcbcec22f875c22d91b243ba4e48f4a8d919e5fe76af9e79df70bfee93d",
+      "bytes": 5873,
+      "lines": 86
+    },
+    {
+      "path": "Agent/Publication/engineering_road_motion.py",
+      "sha256": "92cab8f2d580d6a2f1fa55874e847c14fde36c6c56cbb4a2ac30de22b5c36d7c",
+      "bytes": 13481,
+      "lines": 190
+    },
+    {
+      "path": "Agent/Publication/engineering_solve_trace.py",
+      "sha256": "a3bf776a5f7c54d2011181f848b813afc25f8d358cb34394cabf259d22e8c99e",
+      "bytes": 8967,
+      "lines": 162
+    },
+    {
+      "path": "Agent/Publication/engineering_target_surface.py",
+      "sha256": "8201e3bf3476f75cb0ec7faaf7449cb1e49d057c32dda7772d05aa927e6d9e14",
+      "bytes": 2185,
+      "lines": 38
+    },
+    {
+      "path": "Agent/Publication/engineering_unified_inspection.py",
+      "sha256": "464c16e3309eccb88ea0f02545f5e393de5d967fc99541406f80b347a65f9e70",
+      "bytes": 49097,
+      "lines": 595
+    },
+    {
+      "path": "scripts/author_bmatching_ils_adapter.cpp",
+      "sha256": "ad396fb1b691dbd1763758cfc371e20ee7a63bd5811fd2251dfb6146e5184ffe",
+      "bytes": 2616,
+      "lines": 62
+    },
+    {
+      "path": "scripts/author_bmatching_pipeline_adapter.cpp",
+      "sha256": "4097d32ebc7553464d0291ab04daf1007d5582191142ebc67d34875229252dbf",
+      "bytes": 3304,
+      "lines": 75
+    },
+    {
+      "path": "scripts/build_engineering_inspection_contract.py",
+      "sha256": "ddf3b14e08936ef69cf80e68d01c091f470c4041bf1d824810618645dccd66fc",
+      "bytes": 14427,
+      "lines": 186
+    },
+    {
+      "path": "scripts/check_engineering_replanning.py",
+      "sha256": "1caa7481a2c5c459ddec301ea0bcbbbaa96042188c46f7536e097335a374fdef",
+      "bytes": 9525,
+      "lines": 142
+    },
+    {
+      "path": "scripts/check_joint_airspace.py",
+      "sha256": "d8a773d70a8c4bad502fdcbb51dd9bf98e9da5267f2eefac3751694137af4ea7",
+      "bytes": 4256,
+      "lines": 52
+    },
+    {
+      "path": "scripts/check_unified_energy_enclosure.py",
+      "sha256": "9a41e56217463730b836e149ea1e9ba59276ce12e2aba540405a7013fc647411",
+      "bytes": 3165,
+      "lines": 36
+    },
+    {
+      "path": "scripts/check_unified_model_completion.py",
+      "sha256": "cd5353a3c15df5411de089a0e7dcff1fe1a5ac5ee9512bb98a84cd9e75603eb9",
+      "bytes": 6796,
+      "lines": 93
+    },
+    {
+      "path": "scripts/check_unified_refinement.py",
+      "sha256": "97133a42e8edc06a17157069d3756ebccc286b3c5b5a469a03b6c24c831bae16",
+      "bytes": 6672,
+      "lines": 88
+    },
+    {
+      "path": "scripts/check_unified_trace_and_domain.py",
+      "sha256": "28a4d88424013cc46d989204542155a67bbc19726c1e687f629c287b2b80aebe",
+      "bytes": 6151,
+      "lines": 72
+    },
+    {
+      "path": "scripts/compare_all_hypergraph_dimensions.py",
+      "sha256": "8d394dce42da1e38db1c97f2e8ccac87b9a11117c8ed0ddb3ad405ca60ca6ce2",
+      "bytes": 19426,
+      "lines": 290
+    },
+    {
+      "path": "scripts/diagnose_inspection_constraint_layers.py",
+      "sha256": "4152f3cc78cbcdd2e76ccaa8233d825def90425edfc1589cf7bc2584fb05a77a",
+      "bytes": 50460,
+      "lines": 739
+    },
+    {
+      "path": "scripts/hypergraph_stress_common.py",
+      "sha256": "940b6750a2899e0dd6737c827200981301ca1191937cb9e381fa84c253f5e1ff",
+      "bytes": 10377,
+      "lines": 190
+    },
+    {
+      "path": "scripts/prepare_author_bmatching_pipeline.py",
+      "sha256": "0a0749f62ac32d67028eb2617b566d1f7bd22421c2033abe05ae2b2e6b7ad7b7",
+      "bytes": 12566,
+      "lines": 83
+    },
+    {
+      "path": "scripts/prepare_inspection_regional_day_ahead.py",
+      "sha256": "f75805446b3143c00ed8072a5ddb4f8a50548d8e7d86f10e6677f7d8efabecce",
+      "bytes": 7688,
+      "lines": 70
+    },
+    {
+      "path": "scripts/prepare_inspection_regional_seed.py",
+      "sha256": "c3a72b4ac90877221c3468f14c6f4fec42cb73fd005ffa3b5ce4ec0a41e594bc",
+      "bytes": 28230,
+      "lines": 465
+    },
+    {
+      "path": "scripts/repair_inspection_joint_candidate.py",
+      "sha256": "421e04bd23e9615ca2cbf7f97fe53c41230eb88a1e7295df4f1a9a1e78f74112",
+      "bytes": 10097,
+      "lines": 143
+    },
+    {
+      "path": "scripts/review_gate.py",
+      "sha256": "a78dd2c08ca166f93e2aee8a96d3de68951cb2d9a8206a2f97dc156291412721",
+      "bytes": 14040,
+      "lines": 269
+    },
+    {
+      "path": "scripts/run_author_bmatching_ils.py",
+      "sha256": "7ec0bfd3258eb342527b37b2ba331ce915b15a090b5e99b015b83a14ded0f4e8",
+      "bytes": 5798,
+      "lines": 91
+    },
+    {
+      "path": "scripts/run_author_bmatching_pipeline.py",
+      "sha256": "590808eae16c69a5d6175488ab6c035eb5082569103d00e773216241ed28f685",
+      "bytes": 9875,
+      "lines": 132
+    },
+    {
+      "path": "scripts/run_engineering_full_joint.py",
+      "sha256": "aedf3405099ccdf7a6cd1f8d3d2e86b67e6318820bd64ccd8209f5312b9c4059",
+      "bytes": 11630,
+      "lines": 161
+    },
+    {
+      "path": "scripts/run_engineering_joint_pilot.py",
+      "sha256": "bbeb2494a7f18afb9a50943cb66c45d4a28933965225fbf4e3e12f279e747e3a",
+      "bytes": 14832,
+      "lines": 207
+    },
+    {
+      "path": "scripts/run_hypergraph_scip_demo.py",
+      "sha256": "28cb2a84df902acaa07e2201b402cedd4e28c674afee6d7d6be75e77670fa37e",
+      "bytes": 12752,
+      "lines": 190
+    },
+    {
+      "path": "scripts/run_hypergraph_stress.py",
+      "sha256": "782d99a14971bf2492e1a26124b5b4fc51283bbe8cf4292bb269f9ebaa1c001d",
+      "bytes": 14034,
+      "lines": 239
+    },
+    {
+      "path": "scripts/run_inspection_regional.py",
+      "sha256": "4c136f03064898cd469f1b844c628e62473889066cf81a5967a8c7724e90d8d6",
+      "bytes": 13260,
+      "lines": 161
+    },
+    {
+      "path": "scripts/run_scip_gap05.py",
+      "sha256": "f9b640b7518f43b2c78491fab9a5cc9bec997c038050d5b5eb431ba5a19c1d8c",
+      "bytes": 8427,
+      "lines": 155
+    },
+    {
+      "path": "scripts/run_unified_inspection.py",
+      "sha256": "b5609a0b8565c598bd5db2900e3d7950dbba07e7f23aad02260f512c7c1e0bd7",
+      "bytes": 18075,
+      "lines": 214
+    },
+    {
+      "path": "scripts/summarize_author_bmatching_pipeline.py",
+      "sha256": "005c972a47e6bc8985422fbc8e7557bdda6074145879df9e31b2ab686c727963",
+      "bytes": 10443,
+      "lines": 90
+    },
+    {
+      "path": "scripts/summarize_hypergraph_stress.py",
+      "sha256": "1bbb44e48c11bbb59c62e80ef4b5630a48d2d232f6bafdcdb69add1bf3551bbc",
+      "bytes": 14556,
+      "lines": 185
+    },
+    {
+      "path": "scripts/verify_engineering_joint_pilot.py",
+      "sha256": "732a88371820d544455920d972a1e049fac9182f7cc59ba185518b05e8cce22e",
+      "bytes": 12602,
+      "lines": 166
+    },
+    {
+      "path": "scripts/verify_free_trajectory_block.py",
+      "sha256": "61269469251326cfc6c25bdc172835ff67a084769c26a8f7225167f502ed5d89",
+      "bytes": 6259,
+      "lines": 87
+    },
+    {
+      "path": "scripts/verify_hypergraph_stress.py",
+      "sha256": "112be23322d140c6698331451da4637e3ce78a1aa087aef1d1fc3d7ff8f92ba5",
+      "bytes": 4766,
+      "lines": 79
+    },
+    {
+      "path": "scripts/verify_joint_optical_trajectory.py",
+      "sha256": "5203c1b0a6aa471c4790a7eb57fdcef380474117a73bbadedaff37acbfb88b9c",
+      "bytes": 18455,
+      "lines": 208
+    },
+    {
+      "path": "scripts/verify_unified_inspection.py",
+      "sha256": "e8522b32a1a2b2655e569f000d811c55b950f4f0b4710a8c6815ef83310b719f",
+      "bytes": 16514,
+      "lines": 178
+    },
+    {
+      "path": "scripts/extract_published_hypergraphs.py",
+      "sha256": "be59122aa63e7946e74c39eed43d15a2392d5a44e6675edd0b8773b2d3eb8173",
+      "bytes": 2060,
+      "lines": 31,
+      "added_at": "2026-11-10T03:11:41.090568+00:00",
+      "scope": "missing combinatorial preparation/execution closure"
+    },
+    {
+      "path": "scripts/verify_hypergraph_scip_demo.py",
+      "sha256": "e0182f8059fcd8fc71f1b822c1474640f9d4e147e7234419340d72de0cbb5a0d",
+      "bytes": 9669,
+      "lines": 114,
+      "added_at": "2026-11-10T03:11:41.129956+00:00",
+      "scope": "missing combinatorial preparation/execution closure"
+    },
+    {
+      "path": "scripts/prepare_hypergraph_scip_demo.py",
+      "sha256": "7e1efd041cf2279e8b770aa653c374538255eb8600167f46568c944c4af2092f",
+      "bytes": 7604,
+      "lines": 123,
+      "added_at": "2026-11-10T03:11:41.151013+00:00",
+      "scope": "missing combinatorial preparation/execution closure"
+    },
+    {
+      "path": "scripts/summarize_scip_gap05.py",
+      "sha256": "70124ec96dc9d851d76f44b58efbd2aae7470bb4422b0b95d5ae6ae8d2788839",
+      "bytes": 6833,
+      "lines": 79,
+      "added_at": "2026-11-10T03:11:41.169558+00:00",
+      "scope": "missing combinatorial preparation/execution closure"
+    },
+    {
+      "path": "scripts/run_scip_first_decision.py",
+      "sha256": "ba261674d7cc143a2d8c6bc74b741b7bba4c9d0a9b426077441145165e6e2ad5",
+      "bytes": 9894,
+      "lines": 175,
+      "added_at": "2026-11-10T03:11:41.204171+00:00",
+      "scope": "missing combinatorial preparation/execution closure"
+    },
+    {
+      "path": "scripts/run_hypergraph_comparison_batch.py",
+      "sha256": "912d30146e3982ead04b90cc4b6cd2ce1b75257c8ea582f0e56e52accebc4578",
+      "bytes": 8230,
+      "lines": 94,
+      "added_at": "2026-11-10T03:11:41.234388+00:00",
+      "scope": "missing combinatorial preparation/execution closure"
+    },
+    {
+      "path": "scripts/prepare_author_hgr_comparison.py",
+      "sha256": "12c776057ed5621642d854d615b8f9ede4b3ffdbe79544af6138de34bc376602",
+      "bytes": 6742,
+      "lines": 65,
+      "added_at": "2026-11-10T03:11:41.255542+00:00",
+      "scope": "missing combinatorial preparation/execution closure"
+    },
+    {
+      "path": "scripts/prepare_hypop_mis_comparison.py",
+      "sha256": "0c7d35ae0708bcb8996b415f8ad647ccb83673b8fee6d9c7b9f86d9044017a71",
+      "bytes": 4796,
+      "lines": 44,
+      "added_at": "2026-11-10T03:11:41.264555+00:00",
+      "scope": "missing combinatorial preparation/execution closure"
+    },
+    {
+      "path": "scripts/prepare_hypergraph_scip_scaling.py",
+      "sha256": "b5b2a766d69bcaf8f574fc828e334535d7f79b9cc8234718394b9e1bf69b6226",
+      "bytes": 8747,
+      "lines": 79,
+      "added_at": "2026-11-10T03:11:41.280099+00:00",
+      "scope": "missing combinatorial preparation/execution closure"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/author_streaming_adapter.cpp",
+      "sha256": "8efc02208f46bf3d9adbc2d3331e80147acbf7cf43b079b3c3640dd3f9c4aedc",
+      "bytes": 2308,
+      "lines": 59
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/algorithms/algorithm_impl.cc",
+      "sha256": "39229f060096694075152a24dc4214d0de29a7e1c7e3d2c538e12a404b396a36",
+      "bytes": 5668,
+      "lines": 149
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/algorithms/algorithm_impl.h",
+      "sha256": "9512519c205220d8e8c508e69d23287d15e8b72531f4f19d8224950a3c8721f9",
+      "bytes": 5619,
+      "lines": 143
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/algorithms/bsuitor.cc",
+      "sha256": "873867b0519bf87a0c05f987c7ff98564e2a0ab7fcc8739790c047336dd65b15",
+      "bytes": 108,
+      "lines": 4
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/algorithms/bsuitor.h",
+      "sha256": "28e42a03f48558ca1f7420c2299646c4eaab524de5ded6aa9ae96e00b8cbcb79",
+      "bytes": 3606,
+      "lines": 112
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/algorithms/greedy.cc",
+      "sha256": "740bc71bcfd802e7e6285b18780d504aa949838b397c558ea9f3c758ee29c7e0",
+      "bytes": 149,
+      "lines": 5
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/algorithms/greedy.h",
+      "sha256": "2010636e0f08290fee7eec58902e3eed4338d886da806005710d703a433a77f9",
+      "bytes": 9168,
+      "lines": 221
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/algorithms/ilp.cc",
+      "sha256": "76cc0c23f894bfa2333091f95c69d7e7ea9c3ab1e32010f37b3af2cb500815fc",
+      "bytes": 153,
+      "lines": 6
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/algorithms/ilp.h",
+      "sha256": "012e961a98ddce132b932d2863f13a511313e69b1c0ba9dc64bdaf65e960b1be",
+      "bytes": 2397,
+      "lines": 58
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/algorithms/ilp_exact.cc",
+      "sha256": "a04627f348817b86a174b065b735f8998686b413eef0b9ad7d0d6aedb3caf8d5",
+      "bytes": 155,
+      "lines": 6
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/algorithms/ilp_exact.h",
+      "sha256": "6e007c782e6f2d213e9aa1a461f85e89b103c36ed5a379e91452a5ff0804bb4d",
+      "bytes": 1175,
+      "lines": 32
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/algorithms/ils.cc",
+      "sha256": "204df9f7f99cd8b6eda31633e39788ff23a02c5c394f1822a18f2bb489718931",
+      "bytes": 144,
+      "lines": 6
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/algorithms/ils.h",
+      "sha256": "7dfda48e62570ee8cd69419013fc9436e28f8c9d5cd7db750c6d7d8276180bb2",
+      "bytes": 1452,
+      "lines": 40
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/algorithms/kss.cc",
+      "sha256": "1b87ec7d0a29ed6e1797749212218a589f6c5f36cc9cb9cdfa2d35826bb53174",
+      "bytes": 144,
+      "lines": 6
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/algorithms/kss.h",
+      "sha256": "dd376c98ada90bef64f8a330cc6ebc351bdc9ee2a1c2490d1be89d2de24c0678",
+      "bytes": 9073,
+      "lines": 260
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/algorithms/presolved_ilp.cc",
+      "sha256": "cafb3752da50b7ebfa4d2bd6977c32b65dd0d43e18afb92310fb25b2e1b9add0",
+      "bytes": 163,
+      "lines": 6
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/algorithms/presolved_ilp.h",
+      "sha256": "d86fe8e1fe5ed382834823f195a4e65b4f1a6cff2d0e21edb920ca1dc5f81079",
+      "bytes": 1201,
+      "lines": 32
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/algorithms/reductions.cc",
+      "sha256": "cb4a22c3492d6adfab01f4b42b9717c4762faac50b2033946c58db6077fbd1a4",
+      "bytes": 158,
+      "lines": 6
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/algorithms/reductions.h",
+      "sha256": "65048cd64508a91455d9404992c5ceffc567d0bb15e6d07607d32eb1f6c16bb8",
+      "bytes": 2244,
+      "lines": 60
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/algorithms/scip.cc",
+      "sha256": "5983d776dc98b5663f5e234ba9b118eb73425c85b9d3a16272f8dd5c07148c8b",
+      "bytes": 146,
+      "lines": 6
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/algorithms/scip.h",
+      "sha256": "f5daa9c7cf22676a7c26321c0d369e654a3d93f3473142d226f43350d7cd3907",
+      "bytes": 1171,
+      "lines": 33
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/algorithms/unfold.cc",
+      "sha256": "ec5a013cf817f9a5e70d021ec4e96421164b89984a8ce5cdbfa31c73dc96ce77",
+      "bytes": 150,
+      "lines": 6
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/algorithms/unfold.h",
+      "sha256": "72355bdf5ae1d8a3800eff557ea60766cbb41901537e660144a91c31e7ac5934",
+      "bytes": 977,
+      "lines": 30
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/app.cc",
+      "sha256": "de7cda1d6e6ce26733f30d18ec76141e2dceafb32b7de18b73ba58f2874695d5",
+      "bytes": 1717,
+      "lines": 57
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/app_io.proto",
+      "sha256": "1a30f0cb0df65a0d30ed37855890baf533949b2c66cc77c07f68ca06f092a7b1",
+      "bytes": 5612,
+      "lines": 180
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/app/cli.cc",
+      "sha256": "90d8fb495ee9210ca9c71dc50c4414c002e070bf33f02a4846212256b91ffc74",
+      "bytes": 9663,
+      "lines": 265
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/bmatching/greedy/ordered.h",
+      "sha256": "4c27fc5e0d0d40141a201c72ae2e1a1476f4d19e215f95d8844e29639ccde9f3",
+      "bytes": 4025,
+      "lines": 125
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/bmatching/ilp/ilp_ball.h",
+      "sha256": "ab89aa9eac06c2713d60a4d56c51e97535aa0a8454946e35feb26ceb11fcf161",
+      "bytes": 9508,
+      "lines": 279
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/bmatching/ilp/ilp_exact.h",
+      "sha256": "75c03519f4a9e274c574c8eaa1a7acfd5324678799060d808fd2c858da595724",
+      "bytes": 2566,
+      "lines": 88
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/bmatching/ils/ils.h",
+      "sha256": "5561b75def7fa8ca1c8095e3d651e7fedcc36e8a208ef930b581a587b8fcd7ee",
+      "bytes": 13124,
+      "lines": 455
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/bmatching/reductions_sorted/driver.h",
+      "sha256": "12eee380a16bcbca1debd6139a790ecd03718122a119b39eeca415b55de3b13d",
+      "bytes": 3958,
+      "lines": 91
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/bmatching/reductions_sorted/foldings.h",
+      "sha256": "bec345934f864cc795336743d923bab74548a3b0e67001919eded3fcc25d65bd",
+      "bytes": 14016,
+      "lines": 364
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/bmatching/reductions_sorted/prune.h",
+      "sha256": "45d31cf311e2e066a7164b83e9df229ecb137775da22088e11e291349d9335d1",
+      "bytes": 940,
+      "lines": 36
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/bmatching/reductions_sorted/removals.h",
+      "sha256": "8cd8d7f02ba6a0a402bf3693b5041334516b9e98e12492425cb8cbf75cc8f16c",
+      "bytes": 13554,
+      "lines": 399
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/bmatching/scip/solver.h",
+      "sha256": "94b3b93a2d19a9393b9c3e9af4502f2688e3fb74a0d0ac2e20f0553d81fe903b",
+      "bytes": 11254,
+      "lines": 329
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/ds/bipartite_impl.h",
+      "sha256": "ce086007a937ae2101a87408d4f02038f0d0ec14c389b0f69514be9a276b7118",
+      "bytes": 9236,
+      "lines": 279
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/ds/bmatching.cc",
+      "sha256": "097654d4ff8307371670589bde7f194c12b2660605a0813798a9767ddd6b6ad9",
+      "bytes": 25,
+      "lines": 1
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/ds/bmatching.h",
+      "sha256": "753c08befe9ad88f66a59a86ec2fe9bcc5404170edac3b2d0e28b3b2972eb3a4",
+      "bytes": 33890,
+      "lines": 955
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/ds/flat_bipartite_impl.h",
+      "sha256": "3294424596765c65f369941a47bfd4998c1dddf1e8e098da181867377df1acc6",
+      "bytes": 12581,
+      "lines": 357
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/ds/indexed_priority_queue.h",
+      "sha256": "86ff38282d2e83f5f11c95f02162b2c35d465adb672dc9dda009f3deb4f2c001",
+      "bytes": 3788,
+      "lines": 148
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/ds/modifiable_hypergraph.cc",
+      "sha256": "ff4d61393265801df3dd7ff453eb6d11ab2e91c8938139f34433a17d4238a310",
+      "bytes": 37,
+      "lines": 1
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/ds/modifiable_hypergraph.h",
+      "sha256": "178d00879c02b74d60bc65d22a3cbf4c3a0cf49ab9261fd424828c6ada5bb522",
+      "bytes": 7117,
+      "lines": 229
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/ds/modifiable_hypergraph_test.cc",
+      "sha256": "a408b95bc930aad0b12ba1097ade56b291ef67177530b69a1bc32b6a029ff4e2",
+      "bytes": 4122,
+      "lines": 111
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/ds/replay_buffer.h",
+      "sha256": "cfa421e4e347b7fd02d9d50d064a48c9679ac849589688d3515853c4a904ec60",
+      "bytes": 1022,
+      "lines": 38
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/ds/weight_sorted_bipartite_impl.h",
+      "sha256": "7f3bd4dc0b6855af8920ef6a8d836df75aac4aa2c5545f4c9b688e4e8e0c90fb",
+      "bytes": 8299,
+      "lines": 269
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/img/generate-social-preview.py",
+      "sha256": "c1f23a320c6d039a86a2f2e0d1ec1eb71a209156798e7ba0b4b91cc649905941",
+      "bytes": 499,
+      "lines": 14
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/io/graph_reader.h",
+      "sha256": "f02d4ad2d2d4559e01910b996cf5bf1aa62e83cd6b27b64f9e79d2efc2c3f265",
+      "bytes": 2470,
+      "lines": 86
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/io/hgr_reader.h",
+      "sha256": "73063fe6b6c0d32fbff24ba3baf489e4e2ee19e74aff809bfc7295040c4038ff",
+      "bytes": 3372,
+      "lines": 113
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/io/hgr_reader_test.cc",
+      "sha256": "2d02d81643d11b4cd7b6364f1481bddce57263d293fe676035654977325f8c97",
+      "bytes": 5806,
+      "lines": 171
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/io/hgr_validator.cc",
+      "sha256": "1114c563ae588d4b6baaabd70fdc28bb0c35f9e2140e0b2ecb5a740f23fb78bf",
+      "bytes": 2299,
+      "lines": 65
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/io/hgr_without_weights_to_weighted_and_mtx.cc",
+      "sha256": "d365184bf34d4127d242033cd914cde3e0f9733b7faf017f91d8dd9bb24eb49c",
+      "bytes": 2798,
+      "lines": 81
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/io/hgr_writer.h",
+      "sha256": "0167ee7e0ffa1fd04ba11ef68871d0bb1cc71b1ec6281f1fce655fdacf75161b",
+      "bytes": 1651,
+      "lines": 52
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/io/import.cc",
+      "sha256": "2274860bb644d470a0e03ad61bc4d5193870f93cb212034a54a83046ad4a60e4",
+      "bytes": 3859,
+      "lines": 109
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/io/mtx_reader.h",
+      "sha256": "693ed1a9e7039d8c05f1018a0748e548dca19644f19d9668f04f0133d7b90076",
+      "bytes": 3668,
+      "lines": 130
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/io/mtx_to_unihypergraph.cc",
+      "sha256": "ce6c6ce1c45d1642f836b6a561d294fcaab46ad794ee402bb6f30b069e4a2eba",
+      "bytes": 754,
+      "lines": 25
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/io/write_mtx.cc",
+      "sha256": "cefba1ad2b7224aa823e74e058496f923842d9ba5375fe75e1f9eb505c09924b",
+      "bytes": 676,
+      "lines": 23
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/others/absl/status/statusor.h",
+      "sha256": "abb7da05f5af5dc0ac646d13f690e1292347b21b12463141505f59ee8f6efba8",
+      "bytes": 1438,
+      "lines": 46
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/others/absl/strings/ascii.h",
+      "sha256": "396d76ff5104b2a6658c7926f084ef05863af771d73b5f23f62a81d407be94c6",
+      "bytes": 332,
+      "lines": 12
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/others/easylogging++.h",
+      "sha256": "09f6113305f8d820bad29897f3c675302f5607a4b6bc9d5aa3b0e74ff4b61e3d",
+      "bytes": 962,
+      "lines": 32
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/runner/fork_runner.cc",
+      "sha256": "9423193d5aa325c18ba354bb53a3cb2ae7d2f46ab926cdaf4db022bd8b23925e",
+      "bytes": 20280,
+      "lines": 573
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/runner/generate_experiment_config.cc",
+      "sha256": "c729b8283e40b6f8efd5a6bcf02103e25cb7a99e03fe8bb2b96b829a0d400376",
+      "bytes": 6269,
+      "lines": 134
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/runner/hypergraph_storage_system.cc",
+      "sha256": "1baa8a9b05a522eeb1dd75ac42c3b081357d17594c3f74aae514c98986e53066",
+      "bytes": 3038,
+      "lines": 92
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/runner/hypergraph_storage_system.h",
+      "sha256": "80a734267203ddc65452b8e2ed6be749622a18130d90bccbfa932f4758c1823f",
+      "bytes": 980,
+      "lines": 30
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/runner/runner.cc",
+      "sha256": "1f08890535da686288347c4f9d782d8c6ce097d47fee7f9775849b0b3245f8f8",
+      "bytes": 13406,
+      "lines": 324
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/spack_packages/packages/soplex/package.py",
+      "sha256": "ad9bbcd17ae0c13bb9530a12401d5c2712f8aa8d242e8d0483618db2c909defc",
+      "bytes": 856,
+      "lines": 29
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/third_party/bsuitor.cc",
+      "sha256": "4bedd68f33965282ffa619fb72d839fdd6a88431aa9de0a35362599e3851ca16",
+      "bytes": 5804,
+      "lines": 172
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/third_party/bsuitor.h",
+      "sha256": "c9c26461bb8a9acabe88dad9033a28dcca91ccad2f04b1234b50610d9e60f3ab",
+      "bytes": 324,
+      "lines": 12
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/third_party/external_graph_bmatching.h",
+      "sha256": "adf9a90655c66ed87b3be1ea0ac25a960b11f077fd43ca123f32da5cd1249092",
+      "bytes": 1445,
+      "lines": 44
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/third_party/karp_sipser.cc",
+      "sha256": "feb27b43898d6b7da8716be46c77c4c0173219f55534e03c2760c091921780bc",
+      "bytes": 8594,
+      "lines": 259
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/third_party/karp_sipser.h",
+      "sha256": "fb851c20d8b95371a74abe2dcd1241e4720faeb8960601682b82019291ba2775",
+      "bytes": 581,
+      "lines": 16
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/tools/binary_to_textproto.cc",
+      "sha256": "c9d2769cda4c6adb490209de3d516fddbe601f7c23f12e98ce9f913fa71c1cb0",
+      "bytes": 1057,
+      "lines": 35
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/tools/plot/dataloader.py",
+      "sha256": "6af7fe8ffe7e94a800128ce61f09c6098f16d460a8b9bb46c60c0109ebce40ea",
+      "bytes": 3246,
+      "lines": 93
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/tools/plot/extract_exact.py",
+      "sha256": "eb41d376539344d66c5c6c1e871795669c69b5291ca94a99e6a43f2e2870009a",
+      "bytes": 1869,
+      "lines": 56
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/tools/plot/optperfprofpy.py",
+      "sha256": "82e81c71cc67bfcaa4f8c7ddfa231eb84719f2266739d1715cf78ec910443541",
+      "bytes": 9129,
+      "lines": 272
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/tools/plot/plot.py",
+      "sha256": "184fa82bd7b8ea6382257b64beb14d6355e6e27a9e0f175da0d36ecb36c88699",
+      "bytes": 38830,
+      "lines": 1045
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/tools/plot/stats.py",
+      "sha256": "91e868ed7602a2676baea9e7720ebf459254af73e5de6fb62f00645d8f27d527",
+      "bytes": 4418,
+      "lines": 133
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/tools/plot/weight.py",
+      "sha256": "bd5d735e7b6b65d157f543496739bdac7f68404be6aee56ff6cbc0ca5dbaaf94",
+      "bytes": 1317,
+      "lines": 44
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/utils/random.h",
+      "sha256": "a7c76305b0f0bd33e80c22369d913fb8736ae38c043b69ae7be715dc9830e78e",
+      "bytes": 3521,
+      "lines": 104
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/utils/range.h",
+      "sha256": "6db1458555d9c99c5a0c308c833452eb7be971d4be9cb72c9fdead388eb1ca77",
+      "bytes": 406,
+      "lines": 12
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/utils/systeminfo.cc",
+      "sha256": "d2e944b7e06d98de85ba62a7cd4a6e0f2b2207ac8e0b5365e6e8c53c0a504891",
+      "bytes": 3227,
+      "lines": 120
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Bmatching_author/utils/systeminfo.h",
+      "sha256": "0249caa833ab9e769b66c78ad4b88c96abe3ceec8885203490067534077d5d9e",
+      "bytes": 299,
+      "lines": 15
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Streaming_author/app/algorithms/streaming/matching/greedy.cc",
+      "sha256": "7d0259549ad15109a845d77b823f4e9ddff4033b9416addfb53ae4b3008686e6",
+      "bytes": 44453,
+      "lines": 989
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Streaming_author/ds/streaming/matching.h",
+      "sha256": "4603bcdc660146e81bac947a1d00289e4bef331522dece793c089cae9c251f04",
+      "bytes": 2310,
+      "lines": 77
+    },
+    {
+      "path": "总结/07_证据与复现索引/超图建模与原生求解/Streaming_author/runner/make_uniform_negative.cc",
+      "sha256": "78fc2c200fdfc7b0475c86922ab81460c783b0bcfacf8f6f8532237bd97a298f",
+      "bytes": 1892,
+      "lines": 50
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/author_matching_with_output_accessor.h",
+      "sha256": "51e4554431e8c0ddc02e74e39b25738dc166348c1a55eab200bea88579c7503c",
+      "bytes": 2450,
+      "lines": 78,
+      "added_at": "2026-11-10T03:11:41.296794+00:00",
+      "scope": "missing combinatorial preparation/execution closure"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/Agent/Publication/geographic_inspection_scene.py",
+      "sha256": "9acafc695793f22691445fb627e8f204ee5c04d363a4b3d7dead4fef87511cf7",
+      "bytes": 22072,
+      "lines": 384,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/Agent/Publication/inspection_charging.py",
+      "sha256": "00c3a2b60e599818b740d8dc5ce4fb9ef2c22ed2975b465cc379e021d1e89322",
+      "bytes": 5578,
+      "lines": 111,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/Agent/Run/build_nine_view_reference.py",
+      "sha256": "6590cda91fbafc299c05fe6d65ce1db7212953834b072dd271c6cc480ab782ca",
+      "bytes": 13695,
+      "lines": 192,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/Agent/Run/build_operational_inspection_dataset.py",
+      "sha256": "3e0d0ab131df8ddad68e40170027b03a1e958e5dcf0c7b45a42e240375503b24",
+      "bytes": 17789,
+      "lines": 214,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/Agent/Run/build_ubeda_100_scene.py",
+      "sha256": "65b6a655c93e565c92e070bb0ee4f435d1cd49080cf6fd314afdaad3fa50c0ea",
+      "bytes": 17859,
+      "lines": 275,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/Agent/Run/complete_inspection_reference_parameters.py",
+      "sha256": "29ba0726b5214822e83fd70471103037d5dcdeb7e99a8ed9836e1deb81384e92",
+      "bytes": 19992,
+      "lines": 216,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/Agent/Run/prepare_expanded_inspection_geography.py",
+      "sha256": "7f0f090ff60a2ecf9693688c3ce6c92609ea540a2693fad408ac6b307c6506f6",
+      "bytes": 6268,
+      "lines": 82,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/apply_regional_inspection_models.py",
+      "sha256": "f68149556f6e8f82fc6f74295ca1510147ff9ba831a684afa42edb31653d8ee8",
+      "bytes": 35176,
+      "lines": 376,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/build_geographic_scene_report.py",
+      "sha256": "77b57ee5ce10fcc7b2a8f89dd5f42ca4d8249765603c82a5e7130bfdeeac70c1",
+      "bytes": 21774,
+      "lines": 203,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/export_geographic_scene_pack.py",
+      "sha256": "09e76128c22417ecdae2e2e973c1d7f3566ed5b1f625fce906108330f81936c7",
+      "bytes": 46655,
+      "lines": 612,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/prepare_regional_terrain.py",
+      "sha256": "34b31f2ea075c5eda6484b252b95a5ebc3edc0dd1d7a7f87efc8b51cbd4c9a76",
+      "bytes": 14837,
+      "lines": 186,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/scripts/export_geographic_scene_pack.py",
+      "sha256": "7bf7cda6ff70f75a1ba62d88b47042a6ff70a38c87a475cf2addf526162dd73b",
+      "bytes": 46489,
+      "lines": 610,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/validate_regional_inspection_models.py",
+      "sha256": "8e45dcc8b2db345912779b5c3604e95c74d9bd9aa2b52037912dc9b44bbcfb12",
+      "bytes": 9198,
+      "lines": 118,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "reproduction/historical_sources/a8f23bd5ec106d29e2ed61bbcf23becb552d3aec72c6da6a4abbad9073cd3966.py",
+      "original_module": "Agent/Publication/engineering_regional_physics.py",
+      "sha256": "a8f23bd5ec106d29e2ed61bbcf23becb552d3aec72c6da6a4abbad9073cd3966",
+      "lines": 299,
+      "binding": "historical_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/d82fb256f6fe4835c193ae0541ac5df8ba4c90bf6bbc71963ab9ccfa8ee7752a.py",
+      "original_module": "Agent/Publication/engineering_regional_seed_motion.py",
+      "sha256": "d82fb256f6fe4835c193ae0541ac5df8ba4c90bf6bbc71963ab9ccfa8ee7752a",
+      "lines": 76,
+      "binding": "historical_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/85953271651d5ac13fc4db13c8b78f7bd83fcb8b761395cc40d10802937d6b54.py",
+      "original_module": "Agent/Publication/engineering_regional_solver.py",
+      "sha256": "85953271651d5ac13fc4db13c8b78f7bd83fcb8b761395cc40d10802937d6b54",
+      "lines": 431,
+      "binding": "historical_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/b9d614132f3eecf0156a0afb853c816a911740a078193e3ed6b4e390852e9903.py",
+      "original_module": "scripts/run_inspection_regional.py",
+      "sha256": "b9d614132f3eecf0156a0afb853c816a911740a078193e3ed6b4e390852e9903",
+      "lines": 151,
+      "binding": "historical_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/011589d16cc4315518e70b6c21b7a0c2b4118e51fde46e60951a2739ddf80cdd.py",
+      "original_module": "scripts/run_inspection_hypergraph.py",
+      "sha256": "011589d16cc4315518e70b6c21b7a0c2b4118e51fde46e60951a2739ddf80cdd",
+      "lines": 139,
+      "binding": "conditional_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/4df7939db502621acea1cce09c242c7a475679cdff031118010500a5ce1a1fb3.py",
+      "original_module": "Agent/Publication/engineering_indexed_constraints.py",
+      "sha256": "4df7939db502621acea1cce09c242c7a475679cdff031118010500a5ce1a1fb3",
+      "lines": 221,
+      "binding": "conditional_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/1093c0402ed4e5726856220029f053d4ed21138dbd2c23cb885e7f174e75a73f.py",
+      "original_module": "Agent/Publication/engineering_regional_acceptance.py",
+      "sha256": "1093c0402ed4e5726856220029f053d4ed21138dbd2c23cb885e7f174e75a73f",
+      "lines": 155,
+      "binding": "conditional_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/ee55cb6a73d7436783260dac420ddb289b0f9d6f945de9f035d8d54145b1775b.py",
+      "original_module": "Agent/Publication/engineering_regional_curves.py",
+      "sha256": "ee55cb6a73d7436783260dac420ddb289b0f9d6f945de9f035d8d54145b1775b",
+      "lines": 165,
+      "binding": "conditional_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/f079a6642a2deddc97885690210015a38e2cc3cc0e866885d8efe004aec91294.py",
+      "original_module": "Agent/Publication/engineering_regional_enclosure.py",
+      "sha256": "f079a6642a2deddc97885690210015a38e2cc3cc0e866885d8efe004aec91294",
+      "lines": 155,
+      "binding": "conditional_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/9df448c99b57c549742dec055d65c4829f9a2f6fab0d2c6e9933cf10be63e9a4.py",
+      "original_module": "Agent/Publication/engineering_regional_geometry.py",
+      "sha256": "9df448c99b57c549742dec055d65c4829f9a2f6fab0d2c6e9933cf10be63e9a4",
+      "lines": 308,
+      "binding": "conditional_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/053e8bfeb57d517f40b05d783937488e7b5d652a1908d4022da6a900bbe282e0.py",
+      "original_module": "Agent/Publication/engineering_regional_physics.py",
+      "sha256": "053e8bfeb57d517f40b05d783937488e7b5d652a1908d4022da6a900bbe282e0",
+      "lines": 256,
+      "binding": "conditional_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/75f3f30e4ae01ead1e49c28d06863b2c7f727e577551592eff332ab41bc12248.py",
+      "original_module": "Agent/Publication/engineering_regional_rendezvous.py",
+      "sha256": "75f3f30e4ae01ead1e49c28d06863b2c7f727e577551592eff332ab41bc12248",
+      "lines": 198,
+      "binding": "conditional_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/165141cc1b1a53510f1c23f6294dc02375313398f6b486ef96cfd300a37bdbfe.py",
+      "original_module": "Agent/Publication/engineering_regional_resources.py",
+      "sha256": "165141cc1b1a53510f1c23f6294dc02375313398f6b486ef96cfd300a37bdbfe",
+      "lines": 185,
+      "binding": "conditional_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/5642c6b6fd296100101547205c2f44314ee9ef13fd7d6acb405e68f5d20ec93f.py",
+      "original_module": "Agent/Publication/engineering_regional_roads.py",
+      "sha256": "5642c6b6fd296100101547205c2f44314ee9ef13fd7d6acb405e68f5d20ec93f",
+      "lines": 234,
+      "binding": "conditional_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/ae09866ed6f0542c42cfea143460c265ef3fd606611fddf4fde6e60f6556bf8e.py",
+      "original_module": "Agent/Publication/engineering_regional_safety.py",
+      "sha256": "ae09866ed6f0542c42cfea143460c265ef3fd606611fddf4fde6e60f6556bf8e",
+      "lines": 293,
+      "binding": "conditional_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/582fefb5cd5d0ae3cab0e99769fa7e49eea1c7830bb9ceef35c5a6a41adeacdd.py",
+      "original_module": "Agent/Publication/engineering_regional_solver.py",
+      "sha256": "582fefb5cd5d0ae3cab0e99769fa7e49eea1c7830bb9ceef35c5a6a41adeacdd",
+      "lines": 269,
+      "binding": "conditional_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/73e3bd7037d2e59ef10e92ae599a247b0e9ce5b3522a4b3dba828955f744ba5f.py",
+      "original_module": "Agent/Publication/engineering_regional_structure.py",
+      "sha256": "73e3bd7037d2e59ef10e92ae599a247b0e9ce5b3522a4b3dba828955f744ba5f",
+      "lines": 234,
+      "binding": "conditional_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/cbc6f70233e1aecf417037fc2419bfece16f76ab0a8c4cc166163c58dec08fff.py",
+      "original_module": "Agent/Publication/engineering_indexed_terrain.py",
+      "sha256": "cbc6f70233e1aecf417037fc2419bfece16f76ab0a8c4cc166163c58dec08fff",
+      "lines": 80,
+      "binding": "regional_resource_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/767167e0b989d83342e0e2f3a76f99ac4a4a98074544e2efeebfa1bfa576c11c.py",
+      "original_module": "Agent/Publication/engineering_regional_compaction.py",
+      "sha256": "767167e0b989d83342e0e2f3a76f99ac4a4a98074544e2efeebfa1bfa576c11c",
+      "lines": 188,
+      "binding": "regional_resource_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/4b886bfd3579d9cdbe541ef2100f3885550b2d0a2ada6e2131c69876124311e5.py",
+      "original_module": "Agent/Publication/engineering_regional_physics.py",
+      "sha256": "4b886bfd3579d9cdbe541ef2100f3885550b2d0a2ada6e2131c69876124311e5",
+      "lines": 324,
+      "binding": "regional_resource_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/675772395f0ac67cc5295b6331e3c36d894c513f10f853f6a976755e9cf1b2e8.py",
+      "original_module": "Agent/Publication/engineering_regional_physics_bounds.py",
+      "sha256": "675772395f0ac67cc5295b6331e3c36d894c513f10f853f6a976755e9cf1b2e8",
+      "lines": 48,
+      "binding": "regional_resource_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/24987fea791c7af599b1ee6d80dd265811ecbf1b363c119d5f8ebbe5db91ba75.py",
+      "original_module": "Agent/Publication/engineering_regional_solver.py",
+      "sha256": "24987fea791c7af599b1ee6d80dd265811ecbf1b363c119d5f8ebbe5db91ba75",
+      "lines": 417,
+      "binding": "regional_resource_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/0986a7e447fd55188147586e7da47dc7824a6bb31f7607c78ebef25ce1d3c7d2.py",
+      "original_module": "Agent/Publication/engineering_regional_terrain.py",
+      "sha256": "0986a7e447fd55188147586e7da47dc7824a6bb31f7607c78ebef25ce1d3c7d2",
+      "lines": 95,
+      "binding": "regional_resource_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/b38dbe4d9f4c2b1896e0d3b9d552db61503c34f91379ca3daeb34091b501174d.py",
+      "original_module": "scripts/run_inspection_regional.py",
+      "sha256": "b38dbe4d9f4c2b1896e0d3b9d552db61503c34f91379ca3daeb34091b501174d",
+      "lines": 166,
+      "binding": "regional_resource_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/d249496696a229a1c4010e77017e4291cffce6c33061715a7ab1ee93cafc4a83.py",
+      "original_module": "Agent/Publication/engineering_regional_memory.py",
+      "sha256": "d249496696a229a1c4010e77017e4291cffce6c33061715a7ab1ee93cafc4a83",
+      "lines": 44,
+      "binding": "latest_regional_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/525e743cf248a67767a92c416685e34dae2990b1c2aed98c0b3cc40882a27b6d.py",
+      "original_module": "Agent/Publication/engineering_regional_solver.py",
+      "sha256": "525e743cf248a67767a92c416685e34dae2990b1c2aed98c0b3cc40882a27b6d",
+      "lines": 416,
+      "binding": "latest_regional_source_bindings.json"
+    },
+    {
+      "path": "reproduction/historical_sources/6454e407be93afc97b017fc30fb965c3889a80c40d3e1415e5431ecc7149c658.py",
+      "original_module": "scripts/run_inspection_regional.py",
+      "sha256": "6454e407be93afc97b017fc30fb965c3889a80c40d3e1415e5431ecc7149c658",
+      "lines": 173,
+      "binding": "latest_regional_source_bindings.json"
+    },
+    {
+      "path": "reproduction/export_constraints.py",
+      "sha256": "0de6729e49eadfb1b257e302e85d17870e1f6d8f86802b715ce83428500d812c",
+      "lines": 35,
+      "origin": "book verification/export tool"
+    },
+    {
+      "path": "reproduction/package_tools.py",
+      "sha256": "8e5914af3bbc71551a8b795ee1db49fa101f472cd97c7b43a4edea0bf6914e0a",
+      "lines": 145,
+      "origin": "book verification/export tool"
+    },
+    {
+      "path": "scripts/verify_evidence.py",
+      "sha256": "48acc9bdee6f9331f8b82e5cc591b24acf68832ae85005d7bdbe6fee78219a8c",
+      "lines": 46,
+      "origin": "book verification/export tool"
+    },
+    {
+      "path": "scripts/verify_initial_witnesses.py",
+      "sha256": "3d587d0eaac7e6de0e6e3014020eac87900014444b82beb2b6637cb5a886fd39",
+      "lines": 52,
+      "origin": "book verification/export tool"
+    },
+    {
+      "path": "scripts/verify_author_witnesses.py",
+      "sha256": "139fda42786e8ed628b17887249b7e9fa2f77b0d15bf9c01240ee23de3fbe23e",
+      "lines": 41,
+      "origin": "book verification/export tool"
+    },
+    {
+      "path": "scripts/check_greedy_priority_arithmetic.py",
+      "sha256": "e7d23268808b0b9acc0ea26639581323774e8ca508cbcf94f173b85b3c00ced2",
+      "lines": 19,
+      "origin": "book verification/export tool"
+    },
+    {
+      "path": "scripts/prepare_book_results.py",
+      "sha256": "c145d714cbaddc32910635ceff2ca31f9111c84aa055750c7c95f4fb84e227d3",
+      "lines": 59,
+      "origin": "book verification/export tool"
+    },
+    {
+      "path": "scripts/prepare_condition_map.py",
+      "sha256": "b62cae0eac2379b646c5c20ea0839ea3393f56a409945b49ab338c53eff5e5b3",
+      "lines": 21,
+      "origin": "book verification/export tool"
+    },
+    {
+      "path": "scripts/prepare_inspection_book_evidence.py",
+      "sha256": "f94b49536062f966aaaaee614821293212e69ab9201c5f0906cd5502e3716fdd",
+      "lines": 80,
+      "origin": "book verification/export tool"
+    },
+    {
+      "path": "scripts/prepare_numeric_target_view.py",
+      "sha256": "9aaa228a4b3bbcf1c7766a307cebe6d0a222d7623e68f4c37338bf978d5a9c7e",
+      "lines": 50,
+      "origin": "book verification/export tool"
+    },
+    {
+      "path": "scripts/check_terrain_piece_compatibility.py",
+      "sha256": "4302ef28d89af5d03ff2d93a72c807996d603cebaaa7576c97c8b9671b2a50dd",
+      "lines": 71,
+      "origin": "book verification/export tool"
+    },
+    {
+      "path": "scripts/plot_combinatorial_results.py",
+      "sha256": "feefcf8b9f0f9535467df819724ae6b20d2e5bb4490493b592f091aeb8422f59",
+      "lines": 34,
+      "origin": "book verification/export tool"
+    },
+    {
+      "path": "scripts/plot_inspection_results.py",
+      "sha256": "2b2919e9a727cefd4f9ea698b179fd9289b1348ecc7512db38af1460dea29223",
+      "lines": 56,
+      "origin": "book verification/export tool"
+    },
+    {
+      "path": "scripts/capture_regional_readback.py",
+      "sha256": "201f57956be07ea0eae8c3a2f231ca355e4e713af1d8a2afdc4caf3d5467cc98",
+      "lines": 34,
+      "origin": "book verification/export tool"
+    },
+    {
+      "path": "scripts/export_regional_numeric_inputs.py",
+      "sha256": "510513c5773e2bffc8e43737008d1de7ebe75d263fc7e5966863796640ee5b9e",
+      "lines": 47,
+      "origin": "book verification/export tool"
+    }
+  ],
+  "external_common_dependency_files": 775,
+  "printed_lines": 36277,
+  "basis": "same frozen bytes; common dependencies included electronically, not printed"
+}

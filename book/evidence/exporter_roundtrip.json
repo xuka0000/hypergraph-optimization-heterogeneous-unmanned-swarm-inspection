@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "scope": "SCIP parser roundtrip only; no optimize call",
+  "variables": 12,
+  "rows": 12,
+  "all_coefficients_and_rhs_matched": true,
+  "lp_sha256": "a79cbdb92c240b283ed159254b28b43f51d1d6541fcf392e599d40210e32879b",
+  "native_io_note": "Native reader rejects Unicode absolute path (PySCIPOpt resolves even basename to absolute). Byte-identical bounded temporary ASCII path used and removed after parser check."
+}

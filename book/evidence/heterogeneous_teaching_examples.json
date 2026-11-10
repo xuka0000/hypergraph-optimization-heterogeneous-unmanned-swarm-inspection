@@ -1,0 +1,341 @@
+{
+  "identity": "illustrative_synthetic_teaching_examples",
+  "source": "author-defined parameters, exhaustive enumeration and arithmetic; no physical measurements, no public algorithm reproduction",
+  "observed_at": "2026-11-10T11:08:30.972475+00:00",
+  "script_sha256": "7b5b6bea029f7a433407cc7641c88f04881db51d9fe32df522964c816e4738f6",
+  "A": {
+    "robots": [
+      "U1 visible camera",
+      "U2 visible+thermal camera",
+      "V1 ground support"
+    ],
+    "tasks": [
+      "visible inspection",
+      "thermal inspection",
+      "ground support"
+    ],
+    "eligibility": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        1,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "permutations_checked": 6,
+    "feasible_assignments": [
+      [
+        1,
+        2,
+        3
+      ]
+    ],
+    "meaning": "one task per robot for this illustrative assignment only; not a model of the full shift"
+  },
+  "B": {
+    "unit": "min",
+    "launch_pad_capacity": 1,
+    "launch_service": 3,
+    "flight_duration": {
+      "U1_J1": 10,
+      "U2_J1": 12,
+      "U2_J2": 8
+    },
+    "release": 0,
+    "objective": "minimum last inspection completion time",
+    "assumptions": "return, battery and route omitted in this analytic example; same-U2 two jobs start next launch only after previous completion",
+    "plans": [
+      {
+        "assignment": [
+          1,
+          2
+        ],
+        "launch_order": [
+          1,
+          2
+        ],
+        "schedule": [
+          {
+            "job": 1,
+            "robot": 1,
+            "pad_start_min": 0,
+            "pad_end_min": 3,
+            "finish_min": 13
+          },
+          {
+            "job": 2,
+            "robot": 2,
+            "pad_start_min": 3,
+            "pad_end_min": 6,
+            "finish_min": 14
+          }
+        ],
+        "makespan_min": 14
+      },
+      {
+        "assignment": [
+          1,
+          2
+        ],
+        "launch_order": [
+          2,
+          1
+        ],
+        "schedule": [
+          {
+            "job": 2,
+            "robot": 2,
+            "pad_start_min": 0,
+            "pad_end_min": 3,
+            "finish_min": 11
+          },
+          {
+            "job": 1,
+            "robot": 1,
+            "pad_start_min": 3,
+            "pad_end_min": 6,
+            "finish_min": 16
+          }
+        ],
+        "makespan_min": 16
+      },
+      {
+        "assignment": [
+          2,
+          2
+        ],
+        "launch_order": [
+          1,
+          2
+        ],
+        "schedule": [
+          {
+            "job": 1,
+            "robot": 2,
+            "pad_start_min": 0,
+            "pad_end_min": 3,
+            "finish_min": 15
+          },
+          {
+            "job": 2,
+            "robot": 2,
+            "pad_start_min": 15,
+            "pad_end_min": 18,
+            "finish_min": 26
+          }
+        ],
+        "makespan_min": 26
+      },
+      {
+        "assignment": [
+          2,
+          2
+        ],
+        "launch_order": [
+          2,
+          1
+        ],
+        "schedule": [
+          {
+            "job": 2,
+            "robot": 2,
+            "pad_start_min": 0,
+            "pad_end_min": 3,
+            "finish_min": 11
+          },
+          {
+            "job": 1,
+            "robot": 2,
+            "pad_start_min": 11,
+            "pad_end_min": 14,
+            "finish_min": 26
+          }
+        ],
+        "makespan_min": 26
+      }
+    ],
+    "optimum": 14
+  },
+  "C": {
+    "failure_physical_time_min": 4,
+    "failure_received_time_min": 6,
+    "initial_thermal_capable": [
+      "U2"
+    ],
+    "after_received_thermal_capable": [],
+    "unreceived_interval": "[4,6)",
+    "uncompleted_jobs_after_failure": [
+      "J2"
+    ],
+    "checked_information_boundaries": [
+      {
+        "time_min": 0,
+        "actual": [
+          "U2"
+        ],
+        "known": [
+          "U2"
+        ]
+      },
+      {
+        "time_min": 3.999,
+        "actual": [
+          "U2"
+        ],
+        "known": [
+          "U2"
+        ]
+      },
+      {
+        "time_min": 4,
+        "actual": [],
+        "known": [
+          "U2"
+        ]
+      },
+      {
+        "time_min": 5.999,
+        "actual": [],
+        "known": [
+          "U2"
+        ]
+      },
+      {
+        "time_min": 6,
+        "actual": [],
+        "known": []
+      },
+      {
+        "time_min": 7,
+        "actual": [],
+        "known": []
+      }
+    ],
+    "rule": "prior decisions cannot condition on later information; after received, U1 cannot replace thermal sensing, so J2 remains unmet unless new certified capability is supplied"
+  },
+  "D": {
+    "variables": [
+      "a",
+      "b",
+      "c",
+      "s",
+      "t",
+      "e",
+      "q",
+      "z"
+    ],
+    "domains": "a,b,c,s binary; t,e,q,z in [0,1], all dimensionless abstract demonstration variables; not geographic engineering units",
+    "constraints": {
+      "R1": "s=a+b",
+      "R2": "a+c<=1",
+      "R3": "b+c<=1",
+      "R4": "s*(e-q+t)=0",
+      "R5": "s*(t-z)<=0",
+      "R6": "e+q-z=0",
+      "R7": "t+z+q<=1"
+    },
+    "scopes": {
+      "R1": [
+        "a",
+        "b",
+        "s"
+      ],
+      "R2": [
+        "a",
+        "c"
+      ],
+      "R3": [
+        "b",
+        "c"
+      ],
+      "R4": [
+        "s",
+        "t",
+        "e",
+        "q"
+      ],
+      "R5": [
+        "s",
+        "t",
+        "z"
+      ],
+      "R6": [
+        "e",
+        "q",
+        "z"
+      ],
+      "R7": [
+        "t",
+        "z",
+        "q"
+      ]
+    },
+    "structural": {
+      "incident_variables": 8,
+      "constraints": 7,
+      "incidences": 20,
+      "rank": 4,
+      "max_degree": 3
+    },
+    "condition": "fix s=0 and propagate R1, so a=b=0; R2/R3 reduce to c<=1 already in domain; R4/R5 vanish",
+    "remaining_free_variables": [
+      "c",
+      "t",
+      "e",
+      "q",
+      "z"
+    ],
+    "isolated_free_variables": [
+      "c"
+    ],
+    "remaining_nontrivial_constraints": [
+      "R6",
+      "R7"
+    ],
+    "conditioned": {
+      "incident_variables": 4,
+      "constraints": 2,
+      "incidences": 6,
+      "rank": 3,
+      "max_degree": 2
+    }
+  },
+  "E": {
+    "identity": "illustrative bookkeeping, not three experimental runs",
+    "records": [
+      {
+        "success": true,
+        "completed": 2,
+        "total": 2,
+        "cost_min": 14
+      },
+      {
+        "success": true,
+        "completed": 2,
+        "total": 2,
+        "cost_min": 16
+      },
+      {
+        "success": false,
+        "completed": 1,
+        "total": 2,
+        "cost_min": null
+      }
+    ],
+    "success_rate": 0.6666666666666666,
+    "task_coverage": 0.8333333333333334,
+    "success_only_mean_min": 15.0,
+    "total_trials": 3,
+    "successful_trials": 2,
+    "unreported_failure_cost": null
+  }
+}

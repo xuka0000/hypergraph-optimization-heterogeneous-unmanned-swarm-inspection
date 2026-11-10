@@ -1,0 +1,1334 @@
+{
+  "files": [
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/instance.json",
+      "sha256": "0604f1ba4047942ea0d0ba0db1e7a3486f9adc5d6fadcc4059cd4344934e78a5"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/instances/n300_r6_seed0.json",
+      "sha256": "90d03ecff8196ff5b78b86794f6ad0a7e8ca6a07158fc1b5080c59a4f600c975"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/instances/n1000_r6_seed0.json",
+      "sha256": "5f4ea24f39569fa8ba23c33cc32e259c8a5be4d947c76ee6e891f5a4372f30f4"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/instances/n3000_r6_seed0.json",
+      "sha256": "84bfe7640506347bdaf58e6f7481122f71ffc4c4628cc8f84ce338dcb7227698"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/instances/n1000_r3_seed0.json",
+      "sha256": "cb8133cdf100de49e6de8490d484980bcf4682eabd74efc2095329ed29fe6f40"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/instances/n1000_r12_seed0.json",
+      "sha256": "2458fb0f47b06595b6fac888d2d4fadd198d814ef6fa429853915ff2a67b5f63"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/instances/n1000_r24_seed0.json",
+      "sha256": "743e5537a38edd69a726c23767d9094a746d12e612d10fc37da9eb5bb09d1039"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/instances/n300_r6_seed1.json",
+      "sha256": "7dea9c370d4b854c9f2270972e45d8f76b19246347d5eb7b2a37aeafc5e90728"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/instances/n1000_r6_seed1.json",
+      "sha256": "422267f7a112b6e06730882887428d3344e72ac89094764ba81649d322622505"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/instances/n3000_r6_seed1.json",
+      "sha256": "dc1c036ea5764507cae768bcbba08892a46bdd15e13f6ac6b77758743868268f"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/instances/n1000_r3_seed1.json",
+      "sha256": "d59aa1f391fcc2aed574d564abbca1c7eb6651e5696ade67055e25f209b143a3"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/instances/n1000_r12_seed1.json",
+      "sha256": "bceafe0ef08fafe22ec0c86faf2f3440ab2ef24968f6a1b962c76d6768840b13"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/instances/n1000_r24_seed1.json",
+      "sha256": "73630edb14adf9e99b2476a4c8c1a34b8e7454868fb31459f8febbe04f3ea7d3"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/instances/n300_r6_seed2.json",
+      "sha256": "5dc3a744e9f3e397deb62c1ac44ba3741a33c5b1602bd5296f749bb5b87b6889"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/instances/n1000_r6_seed2.json",
+      "sha256": "c4c3649112882986d7ab3b8a4fbd0439ad638111e8e1c9a08403c2fd074c038f"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/instances/n3000_r6_seed2.json",
+      "sha256": "7b0652e123e87bf7a2f5eb7600279a2e7b8f482143e552926870d031dba11fe6"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/instances/n1000_r3_seed2.json",
+      "sha256": "f942932efa178ed224ebceaf422ac0f448523afff266af9639a351c1e0a771c8"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/instances/n1000_r12_seed2.json",
+      "sha256": "cda2bdb3da0d8bd0ea76b015038eb5ca4dc30600a119e7fdaccd2ff40a68c9b4"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/instances/n1000_r24_seed2.json",
+      "sha256": "7a7309f46d1216e8e636faaae24bdfd1995020b4296fa6bb423ec70d1fdaa5e4"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_HypOp2025/instances/hypop2025_mis_n500_d3.json",
+      "sha256": "afef40914b87704b91c47640ef0608048a194f401145e5a86f803f58f9e4dccd"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_HypOp2025/instances/hypop2025_mis_n1000_d3.json",
+      "sha256": "f34d0e94d5cdd6818f83fbc3313a4d6e7e10bb84460e8bf2d351ae162f6737f8"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_HypOp2025/instances/hypop2025_mis_n2000_d3.json",
+      "sha256": "368c8fd7e9d26bcc1d6e0a6f065c722636572177c0e46b48ba22d8f0dddb784a"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_HypOp2025/instances/hypop2025_mis_n500_d5.json",
+      "sha256": "56d34d9f55b106c122ce43311e1be791b6932eccee8bf607cce93a43b2e2be72"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_HypOp2025/instances/hypop2025_mis_n1000_d5.json",
+      "sha256": "8e528cb4552d53406cded168e0ba6a1d0ecefce02a9c61a9a6ae1f3c5b689f61"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_HypOp2025/instances/hypop2025_mis_n2000_d5.json",
+      "sha256": "2834d0cdd5509391ffb5dbd4e3ae3fc785f0a4d8df8a7a6943ddbdb5a828b15a"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_匹配2025_2026/instances/paper2026_ISPD98_ibm01.json",
+      "sha256": "e6b122b218458a7e4af44f70c0b4e51c4723a6e5d703ebd10a5a104854a10967"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_匹配2025_2026/instances/paper2026_ISPD98_ibm02.json",
+      "sha256": "eb8e37c9abb344380ee09ba4b79292900c6ba5f0c266e4113472e8c3bd9f06f6"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_匹配2025_2026/instances/paper2026_us04_mtx.json",
+      "sha256": "4a4ad649e05cf33878266a5ce5073a7078e65e4798fe2dfe35c831a231f248d6"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_匹配2025_2026/instances/paper2026_bibd_49_3_mtx.json",
+      "sha256": "07ca3abc173756ed746793399739226c590e42f3b21f8f5ba83af2bb5148ab6c"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_匹配2025_2026/instances/paper2026_sat14_AProVE07-01_cnf_dual.json",
+      "sha256": "bd6fb7adbfdcbd08eaa15ebf7ad6c92850ad4fca807f076f1087260a8eaa34d9"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_匹配2025_2026/instances/paper2026_sat14_AProVE07-27_cnf_dual.json",
+      "sha256": "ed846ecbcf645355a1fecce0095f3ee54fdc43c43acdc883ad3f3c11287b9030"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_匹配2025_2026/instances/paper2026_dac2012_superblue19.json",
+      "sha256": "b6f68da15d98f450176e4d301bdaaa4a88cf8d2c1e418251548851426299fcf4"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_匹配2025_2026/instances/paper2025_dac2012_superblue19.json",
+      "sha256": "ddabd20d1ac7c802ddf858425d77e591d01e7e91764db629428fa1bf4491b8ee"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s0_base.json",
+      "sha256": "05e8b0723936cd8e31e4acbaa7b81fb290cebc66c85d7629e53e891ab7ab5aab"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s0_degree16.json",
+      "sha256": "164fdd27f54b6b3f32c1332e5a2abc3b8391cbea9965f4090981046faada67d9"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s0_degree32.json",
+      "sha256": "2d6c0406b35e9ff7e72db6c2f95119ad66438e7ea18648fa8a415f7b6e78c95a"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s0_degree8.json",
+      "sha256": "b61b19ff7e3926a4b80fabe28ddead37e84ed86441693cbdf87255016b4cdb3c"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s0_rank16.json",
+      "sha256": "312c8482a7e0d02699e78d508273aa16afba3f50cf8d04a16b7231097be71aad"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s0_rank32.json",
+      "sha256": "884fda6d779606b8a5eff415d956f0f526e969a672a1a9aacde4ab7bc21c84c8"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s0_rank8.json",
+      "sha256": "45bf6625e4b78db36274868bf757c1d384e7041f1f6fa01ab27f707989bddbf1"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s0_spread1.json",
+      "sha256": "326b55ad9c51129448ad4c006f3e0c7bb26836d2e9f2b643d7aeb78a7d3e5793"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s0_spread10.json",
+      "sha256": "08fe48b900e488c68341850f5a7db83613af5a2010f2b147e5ca41da5b530d5f"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s0_spread1000.json",
+      "sha256": "adf35507c565bd5742e07026b5d91c6544c1c7967f32db1f184324da7cdf052f"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s1_base.json",
+      "sha256": "ed490ddb6c87fcd4c36476c8b17f8d44be3b25fd950cd15461b132e431790604"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s1_degree16.json",
+      "sha256": "d3c4706bf1236e8b884b9f0a8041dc40446e528027865fdb774ed2cd82c38dda"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s1_degree32.json",
+      "sha256": "4a00d260169511eb5bec67de36f22eb305218506a2baa659e865f0875b527681"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s1_degree8.json",
+      "sha256": "c646c956abcb71020aa90dd3b87698ab318a985a561273000c998814e741d255"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s1_rank16.json",
+      "sha256": "7197083a6dfcb8dffb9cd40c67058da6fc8a012cdffbb7eb1e452aa9289c9f17"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s1_rank32.json",
+      "sha256": "e978809cf0935ee27608c4358602e2fcd690594030d7f7d9a381eb1d0d14d8e7"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s1_rank8.json",
+      "sha256": "74a56c5dc9c2a9e89f77548a2985faac0259b67b4627ba88a02cb4aabad33c02"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s1_spread1.json",
+      "sha256": "552a5392bdf7f46df6e51fa42b222bce8a68b7e5faf7a41626f4fffebb2eb05d"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s1_spread10.json",
+      "sha256": "2223ab3d7e1f438ff9ecd640193b78b742e1da281879d5ddc7203d0e6315bf97"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s1_spread1000.json",
+      "sha256": "34649608ee30c02d9f806e4f0a30dbe945276694e8364f97ee7eb6479f7fd758"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s2_base.json",
+      "sha256": "a2ef2d7d8a453ab0669ef27cba702069b72b80873790c58460f5b56708699e6c"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s2_degree16.json",
+      "sha256": "6d89cdd7bf89d1315d48c7e39386d3cc5dcd75bef3e19a47381e4455e2d22177"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s2_degree32.json",
+      "sha256": "a609759c60339cb0140cf7cbf55ee73bb5cf436e91d715d826f0f753d96cf560"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s2_degree8.json",
+      "sha256": "9f0146bc4b71c62f09167784bfd4598c5a3cb5638878a0b3abfc2e7d498a9dd1"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s2_rank16.json",
+      "sha256": "e6684055ae193534631c5d6aabe0086af2d25581fc77aba10a4d02df8d32553e"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s2_rank32.json",
+      "sha256": "4d2dd763245d9cdd40a899e8afcecc3cded37053f1a4aec89fb3307a9f6dd54e"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s2_rank8.json",
+      "sha256": "605f12b3bb21e72076eb3f6b5cfb3b4ed891fe4f2d1c0b77365837b629100443"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s2_spread1.json",
+      "sha256": "35f0203d3f4ba12e8384c0f9619c444dc9da20faf6b994863cc41363bbc00e03"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s2_spread10.json",
+      "sha256": "4cfb3f9404d97925df8e516b0333b344c21a73f85e738c9f671e9b40a193f680"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s2_spread1000.json",
+      "sha256": "b4c7f33aff504f49952c108fdc896bc741b09b6a57b3a1c17833d96fa8297bd7"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s0_n1024.json",
+      "sha256": "337cc42de0ed017023ab08a6635860aea0f3cbde7cf991b94e929991e5b27aa9"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s1_n1024.json",
+      "sha256": "c96eaa9fbfdc7e781f48d7e8e0d9d66cc6a9c962c37f66cf915a2322e994da8e"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s2_n1024.json",
+      "sha256": "e9d5681e6e53f3d82de6c96300054befd6df549704d1420eb28db07f3caec221"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s0_n4096.json",
+      "sha256": "0a17c938ec34b87ce0e29fad19989fdc993d43e7a2e4563c02fbaa6055c1768f"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/sb_LHG_n4096.json",
+      "sha256": "879b745597ae8b7219d0f61653552a8223f473d6799c0f7319eee21343de1668"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/sb_random100_n4096.json",
+      "sha256": "cd1c3b8b168cdcf974569639e946dafae07e637df1920d2c2090f1367179da16"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s1_n4096.json",
+      "sha256": "518b6eedf09adf323c0c70beb55a57a338f66fe7f181ced5c8a7d921d4a1f797"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s2_n4096.json",
+      "sha256": "2cee618b42ed9c71bc7dabb184602ad73ff18dd0f1e7ec6561c2da3058e66edd"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s0_n16384.json",
+      "sha256": "bfc4e23201537e3707f4c31b6f1ac62569c42ebafdf58ce162a08b4ebe374a49"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/sb_LHG_degree_cap128.json",
+      "sha256": "1d13e51dd785a228ee5c12bc1a17b440f0cefc23cc55e427f935e8ac0bc266fa"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/sb_LHG_degree_cap32.json",
+      "sha256": "9dcf565abbdcde81df74a042475be4cf511704488c5fee2efcadb10fd4e9e153"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/sb_LHG_n16384.json",
+      "sha256": "6b40f3d1e40c19c5df55df53f4d5b07aea1c93472374eca6a5988708a9f48f08"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/sb_LHG_rank_cap32.json",
+      "sha256": "6345c8bc2d6651f8ab51aa9a325ec02af4156232784f4afe55d65491cb3cf8b1"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/sb_LHG_rank_cap8.json",
+      "sha256": "1159dfd11b1083ce82a73dff5c7d5b8042095b728a1a9f63495598595a232f9a"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/sb_LHG_scale_control10.json",
+      "sha256": "61a9ffd8fa78cfc7bd07278f81d442e89546fad7ab006a96809c360c7d123e35"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/sb_LHG_weight_spread1.json",
+      "sha256": "a1727185ee2ac1caf157905a8b939fe3fbd5cdfaa571b6c30ff208a417586c5f"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/sb_LHG_weight_spread1000.json",
+      "sha256": "320e61a8be20cb6b633f498a40126ec30dbcab05ef960f7d5d5d92a03b61d6bc"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/sb_random100_degree_cap128.json",
+      "sha256": "3999d774de3ffb169ee39edbed92cd4f5db1b018dc033df48181dfb23a1b2a87"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/sb_random100_degree_cap32.json",
+      "sha256": "3b9fa336c88666551c5b242104211ec4f27af64718e40f3ca8cf570760078e9c"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/sb_random100_n16384.json",
+      "sha256": "a26c6953040a861633a85a1481a11493979a3de3223ae43e4143a45bab2b7334"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/sb_random100_rank_cap32.json",
+      "sha256": "bb366ccd47bb6b5dfccd59373b3e83699bffe87f2bd86923014759de9fa71070"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/sb_random100_rank_cap8.json",
+      "sha256": "4391bb7b6d0e33b6493495119ac3c9ad1e29c26edc9def62068228cbda1c5af8"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/sb_random100_scale_control10.json",
+      "sha256": "6bd78d040c9b043c42afe5594a87a8672a9ba706b5f19125d048e968d0f3ab24"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/sb_random100_weight_spread1.json",
+      "sha256": "38f03b6a0c222a59a6402fe6de0e76bf31d186b9a8f4a50b6a91337e2d49b9ed"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/sb_random100_weight_spread1000.json",
+      "sha256": "1476632d68fb625167c2ae6e6650abe364ffd36f1fb3181479e79eeb122746fe"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s1_n16384.json",
+      "sha256": "824a0881f2b13ca604c6e6471c8c379231991a641fb02060cef6a5e5ed97919e"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/reg_s2_n16384.json",
+      "sha256": "a2bb1b8a26af68247508ccb6f3e9adb00b1a5093e0be3eacc05b9c69cff07bc5"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/sb_LHG_n65536.json",
+      "sha256": "521ac59e665f9e158a77f00114f295df38606d9898e502a553d472030b2912a8"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/instances/sb_random100_n65536.json",
+      "sha256": "f76aed0455784892bfcb481e23ccde75ea5d94f339824f69acd9ccdb8b3d6eef"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_base__Streaming.json",
+      "sha256": "8a163057b550f55560cc09b1f677ab437ab52e587dcc385808616de0160a7acf"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_base__Greedy.json",
+      "sha256": "e13ead9ad8779a3c3caf18891b2850928bfcd5abf8f4247fd75eb91ea135e4f2"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_base__ILS1000.json",
+      "sha256": "1d9cc42a693b986e74087f8958a8d6ac9b196b09d67e8918f7160b353012b708"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_base__SCIP.json",
+      "sha256": "4d872ec2e48fdf92b64a644f9452aa467284ef418c61c2fa2dcd0b6f46a1f5b5"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_degree16__Streaming.json",
+      "sha256": "13e96ac8f6672064eb911563bcab75a1cd05120f9eb72c6f09a0404e4773a45e"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_degree16__Greedy.json",
+      "sha256": "fdd41d717a5fe28adac1efd4366a0ff32bb1b7766c0fdc62782bfcda656cc3f8"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_degree16__ILS1000.json",
+      "sha256": "2ba4f685eed6c3ced3ca25b2e9e670d598c1afdc9b8425b9948a7f7dd0eeed7f"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_degree16__SCIP.json",
+      "sha256": "3566870c60d23da33f25826fed5cab0746dde9ff447e61983844cc139ad0fdfa"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_degree32__Streaming.json",
+      "sha256": "a196a5fa50c32ebfcda65ecd07511320a24317b31c98aed60bbe578335d6b09b"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_degree32__Greedy.json",
+      "sha256": "f16928ae16f4be91bcc1503cd20535bddffc66f6cbaf6fc6a8a73a49435c7afa"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_degree32__ILS1000.json",
+      "sha256": "83ee3fd99c50b2a0921d412d658bf75f1a8a1003e9e898b54c052fa5c02f330c"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_degree32__SCIP.json",
+      "sha256": "e1355d96abf6e26cc014acd1c363015e5f1cfea2ce306095cc7b9901d0f450e1"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_degree8__Streaming.json",
+      "sha256": "207227ec6c59ba43502822bf0121d7f4925489a0a782256c04b2b4e3cd180981"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_degree8__Greedy.json",
+      "sha256": "b1730a51b345d5e21d3170542331597508f4c2120d122bbddda67c84dbc43e34"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_degree8__ILS1000.json",
+      "sha256": "91ac18f033220fc2d17fabf2f7015d34b68f820818504648bc2ade1f514c9a4f"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_degree8__SCIP.json",
+      "sha256": "3020d7c9254e009c95be4c16e3efdd540af832e91083f8810e12eee363ddc7dd"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_rank16__Streaming.json",
+      "sha256": "81a0319dd904e01035759c2dcbd7a29f8162a92f2ab565ca87bcc7d6bb868eca"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_rank16__Greedy.json",
+      "sha256": "6604ffe0e9d99de1fbe3543f3c38cd3cdfb866cf22fe2f2b45f9235fae631434"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_rank16__ILS1000.json",
+      "sha256": "bea3e069f5c30c76796a5f50da9d49c40d2bf87bcb80f1202f2043cd54ba0853"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_rank16__SCIP.json",
+      "sha256": "ed101527be716b62a6a8c15c7fcaa9b67d2751f3d8a2bc6a1fe21691160c0e91"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_rank32__Streaming.json",
+      "sha256": "b99e2d98bcaec3f3836e1c4187428839ba93737ca5fd54832abe61d92806e76d"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_rank32__Greedy.json",
+      "sha256": "5b2e9b8ad8b4a16b3460d07a1be414c751c44dd0ac692768720cbf31f4bf913c"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_rank32__ILS1000.json",
+      "sha256": "aecb8b573896a0fd788589feecd78f393396800ff3f155106e12c166190fa6c6"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_rank32__SCIP.json",
+      "sha256": "19d8c795a013a96204f33ef726fb4aff78759275549ee13f0811668de79ed84e"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_rank8__Streaming.json",
+      "sha256": "06c54c3c403ab11fb878d56aefbbdca153ec0857ac73a2b35ba7295ae55dbbac"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_rank8__Greedy.json",
+      "sha256": "9182d23bf97e80c9b9e8d1b33c9240cbaf7a347c4a80f7eaeba69bd139e18d08"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_rank8__ILS1000.json",
+      "sha256": "3ffd493ded390afaa1d611e9350eab7a2844d3ca9027d9f28177de757d3d619e"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_rank8__SCIP.json",
+      "sha256": "b54cb9fafa0895b06012243d389ff0d3a798ceaebeb6c76af956c87780b251ad"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_spread1__Streaming.json",
+      "sha256": "5497a8268a1c596c5df050b7d779b56901afc5fd8a31f7bd6bce2118b7625427"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_spread1__Greedy.json",
+      "sha256": "61e172930370c603a8ed0e0653526084a5f8e46fd49db8de4f35a20897a6bbe4"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_spread1__ILS1000.json",
+      "sha256": "b809db64e21331b941af614a09560345ed290b351534497bb4057787ea274fda"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_spread1__SCIP.json",
+      "sha256": "e177be881b0be39f8babfc4cf419ed05351637f702f864fe759242859ab8604e"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_spread10__Streaming.json",
+      "sha256": "a286219e13f24d12a28f6316f3d7c27b2d7de99cd8e502a485415dd16df70d21"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_spread10__Greedy.json",
+      "sha256": "7ab732c581426dddaf1fea92d385087e0cf6035e3d990df4fcdad909f909876c"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_spread10__ILS1000.json",
+      "sha256": "e82c4600a85015d5714355e18b6127ad9cb913e296d94c2fd056c27b012cc640"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_spread10__SCIP.json",
+      "sha256": "815d59e94886aa5a21e271f4d54c275fa13aa764cd233c4dcf0398580e804813"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_spread1000__Streaming.json",
+      "sha256": "1701d0aeb23cadbb6722cbbc8b1975e378684542196dd222a687a5491026dece"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_spread1000__Greedy.json",
+      "sha256": "e8162a5ff077b805d03810f86ecc256e35b39b8ba2122284728945146e63332e"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_spread1000__ILS1000.json",
+      "sha256": "e51d15657c27069470b0c1665754471619f22f2ec87c5c1e8d3e4d7a750491d9"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_spread1000__SCIP.json",
+      "sha256": "7921ca9b2850287dc36988a8cff14c0f662aad11ecea6d60fb2321a8e5f3860c"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_base__Streaming.json",
+      "sha256": "f353bbcc2f94f68bcfc7c7da6a8179f2ad5f4db132de2ab7f14d7bc2ecc18657"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_base__Greedy.json",
+      "sha256": "67e92233807258c3b02d9b251f2f9ef70b8c2cfc427ca3bb67dc8f58edf6e71d"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_base__ILS1000.json",
+      "sha256": "d520bc3d8119f243a71b2fa4fba19808643334778b55af9f6a85c88ea0870303"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_base__SCIP.json",
+      "sha256": "7b76a85443c631fd7df7d50a409aed3c06fb97cf2923d0bab974d986b846a264"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_degree16__Streaming.json",
+      "sha256": "25513b80e81f478f5872bb9fe1407ae60800fb879387ff474f980e83c0474b04"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_degree16__Greedy.json",
+      "sha256": "78127bd3886bda63ec9dab9bf838adbacb7349435370cea8c547c91bbdb6e6da"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_degree16__ILS1000.json",
+      "sha256": "25cbbf55707f46f65ca33eb263aa3397593299c7190c55b1f058ff54e7572e83"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_degree16__SCIP.json",
+      "sha256": "961a61b4acfc827f859d8750b18265901728ab9ee994584a6c01e8e1927b4739"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_degree32__Streaming.json",
+      "sha256": "61b3447b6a0a3dd43f85f84ea9518822b146813274565a4c0bff50bd48d6e949"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_degree32__Greedy.json",
+      "sha256": "40970652ac500da4e2413e32941d5514f802f8bfa1f000402d7f9ac57977f749"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_degree32__ILS1000.json",
+      "sha256": "68bd79ea467f3a8f34dce710738056deffb6655b931ef12252ffa094118fec43"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_degree32__SCIP.json",
+      "sha256": "175273019f6dfa593c340b36c4cd072b3b2b4a83c30ef470ac94b0546b9d24aa"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_degree8__Streaming.json",
+      "sha256": "8c652193aa666dfcc58bd7fd35079670da5033e7391b82691acaeaa541baf5ac"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_degree8__Greedy.json",
+      "sha256": "013f726aaa214a22e6d48a7deaa077cd8b86514c4fa42dcc68ffcb9f3e7df4c9"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_degree8__ILS1000.json",
+      "sha256": "78fd3856983252e7b3c13a023f981cb9e2e4e7737282a15b2b44647c15787a06"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_degree8__SCIP.json",
+      "sha256": "e433b7216239a357aa5a3a0f56b141de50200d70248c9402fccf3e87f45116ef"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_rank16__Streaming.json",
+      "sha256": "a3bf364a91211fe4ff691c3722de7e8a43259812f5592292546436b24d14774c"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_rank16__Greedy.json",
+      "sha256": "81cb346a1cced10e3c743871174eb836d887c6e5e2d7ced3488ef6b04e335e48"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_rank16__ILS1000.json",
+      "sha256": "d5c876ad78695256e24a1dbb6f16307369ded03e440df1f624757caddf79a181"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_rank16__SCIP.json",
+      "sha256": "1ef5669380c4e97f7711009e58218f65cbc7da14cc3630475b32981d27b4bedc"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_rank32__Streaming.json",
+      "sha256": "66891beb7c66cba9f9a1e35066471dca3302f7c512dcce16b1dbedb50c87b03a"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_rank32__Greedy.json",
+      "sha256": "38669635a1330524b60c5eebd3a6c32fe973bd76dae838ac2ebc1f7aff24479b"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_rank32__ILS1000.json",
+      "sha256": "a2d7462c9b7222743e600d929d76df5345db27d88b422a5fb04c604d3e856ccd"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_rank32__SCIP.json",
+      "sha256": "627bdfa91a6aa01de0714ba81e1546fd42268df6ad0e57f144efe0d90f14f7e4"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_rank8__Streaming.json",
+      "sha256": "19bc30acb0c922c58df3a335b487160f1c1f2c3fbdb77620a0db37aa81ecb232"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_rank8__Greedy.json",
+      "sha256": "27c9bdecafc1935d8c4e235358a458ad0cd06f7b8cffd20c8acd1cee2995aa12"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_rank8__ILS1000.json",
+      "sha256": "a7c0f015cad090e0f40e96b81b5282e7fa58b627bd169a2d04d1821d97bdf8d1"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_rank8__SCIP.json",
+      "sha256": "cc420a02523f69aa2c8bc6d0eade23c28204fcb3fb971f9d842cb5d9249759bd"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_spread1__Streaming.json",
+      "sha256": "c99b219b1d694c65c30a735012932c1d383e47e75a11aae8696cf854c0b31bd9"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_spread1__Greedy.json",
+      "sha256": "07657d717dbc58e00dc69b65971e531e2853a20957d555c6e9273770f185cd0c"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_spread1__ILS1000.json",
+      "sha256": "ed486ffaeec332e3fbb4da47f05e4e1dcb121092a91760a75830095eb1895c62"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_spread1__SCIP.json",
+      "sha256": "4eb3e3f7f88a9226bfddf62204e1f049fb6d1a479892ab4e3feaa9d4ece4d5e6"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_spread10__Streaming.json",
+      "sha256": "6c7ecdcf6b6a343d741941b9ee2094a4d97d54eb1afac073eda8f69e667c1fe5"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_spread10__Greedy.json",
+      "sha256": "b1744e55c9b79cfdd207ec12740317dc6eb806700620d4fe283d552a753d1daa"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_spread10__ILS1000.json",
+      "sha256": "435a6996acc7d92e376e9519abe33cb9a1ae231ec010687020864ffabec57afb"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_spread10__SCIP.json",
+      "sha256": "447bd5cb115018f415b5f664bc535265a15da8760298355323e814f43f596163"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_spread1000__Streaming.json",
+      "sha256": "b6e743bb17b7a86206b91d816b6fb3eb43946be2727747bfb7d18d063e1af176"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_spread1000__Greedy.json",
+      "sha256": "37b15b7ccaa71758455405beed255a8d18b986e0975aedb077a9a3b62091b4c8"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_spread1000__ILS1000.json",
+      "sha256": "598ea04d01b7eadf2405cfa618ffa9d33ba2df84b4370d92ca6f9a9b21bb04f6"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_spread1000__SCIP.json",
+      "sha256": "36a4ed6a034a8c83373475c2d5af94973c91d95e80932894c2ed2ed2a96b59fc"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_base__Streaming.json",
+      "sha256": "879af6c30e6db5ac104c3eeb51931603861564484e1cedc2d109202e7f981f2a"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_base__Greedy.json",
+      "sha256": "e6113a36e847fb692d8b7193f12d063a4870b71ba29ec9a974be53e800b818f2"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_base__ILS1000.json",
+      "sha256": "f0fbc48aaf27f93a6f5adf5893834f6af22054437dc2dac736d8a764559ba145"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_base__SCIP.json",
+      "sha256": "17b6d9a74be2a54ab20124a16cd091a05e4fea2411b9bc32f2ef091353f3dd4e"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_degree16__Streaming.json",
+      "sha256": "dc6d084bff706449d5e25bb202835b1408f60144bf0fd36f810c9cc6761a9ee9"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_degree16__Greedy.json",
+      "sha256": "3e2e4d19c165baec5b98be1db37cdd0a22d8649e610ded2444c0396eeb8ad678"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_degree16__ILS1000.json",
+      "sha256": "89991dcc6b8dcdfadd346e8dab2901ebac43bbac18b2da564581dffbdfdb162f"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_degree16__SCIP.json",
+      "sha256": "908d6daa0c784650050992888ae67db3fe37f3eed51aca01a72473adf228604b"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_degree32__Streaming.json",
+      "sha256": "6f136157a568bc86f15a20f3d8bf5b741b736013ec93c5106a161edf9606d61f"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_degree32__Greedy.json",
+      "sha256": "732c67c50f6e2be26028ff410c4f38043d19e8323ec16e670e886478292ea01a"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_degree32__ILS1000.json",
+      "sha256": "4320490de4dd850bb26f0e6a02e0cefe251dcfcb92d0c47d2b2d58f2b8d5e23f"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_degree32__SCIP.json",
+      "sha256": "940dc9481c0296133721bdcacef056c4006e57ec856340f22b9903fa633a3ba6"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_degree8__Streaming.json",
+      "sha256": "4cb1b435683d95fd587547bd475e3cd9227fe2203c3781921457cba29a4dad0c"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_degree8__Greedy.json",
+      "sha256": "90ef50a77f30f4b4f5ed056a09a4492bd65f20ffea06371768c00f7e1bbc1700"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_degree8__ILS1000.json",
+      "sha256": "f7db6d53debaca25c70f60b85958365bc544f9c5559c9ce1cbc58b715d601ca8"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_degree8__SCIP.json",
+      "sha256": "71996b745f8ec486e38f56d223df4b4966981e422e2db3c1c783d5d1f32209fc"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_rank16__Streaming.json",
+      "sha256": "4e0679d4025df94927ea9e83b4e64638843ab620adc99cf1a2e954032f271e07"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_rank16__Greedy.json",
+      "sha256": "8575857d1a3265c2e6c0615ed324c82277b2e06777ae3c93201401b414039659"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_rank16__ILS1000.json",
+      "sha256": "f4a1eac72e344b52ab4e19f7bf80b4f319832adae26e4c684e1215c112615e7f"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_rank16__SCIP.json",
+      "sha256": "050807d07464f1affc52175ec493845576a775af86ae923d933df1029170fb5d"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_rank32__Streaming.json",
+      "sha256": "ab99475e012d5cd49e7e02b6555ec4098ded1b546b1babc8db86a89ef4bce3c0"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_rank32__Greedy.json",
+      "sha256": "02e9dd6fa9b4fe626358e112297aabcadec7d6c1558d5e2048272ea626f532b3"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_rank32__ILS1000.json",
+      "sha256": "3e86ef08efdaa7c3ea4a616dd8ccfb796c922e8fe81fd21dc2812c22672fcde0"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_rank32__SCIP.json",
+      "sha256": "32eccc24fa31c8ebf01d10cc0f38554dfc1033726a3959ad52fe7054bd6a5507"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_rank8__Streaming.json",
+      "sha256": "50a7689e931c74235c2b1faf1881cad106829e3885f04aa33cdc2c753e04c534"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_rank8__Greedy.json",
+      "sha256": "709638f15312a19e97ad847a556f05d1543f6194d572b565024a4ff16e23e2ac"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_rank8__ILS1000.json",
+      "sha256": "4367d60d3fe69b361981ba1503b022f5f35f5192a1c1938251a053abfb87307d"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_rank8__SCIP.json",
+      "sha256": "5302a17caf2edec1c09e4c74e69590fe791fce9b0ea1cfed7a4f2aca44996e9e"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_spread1__Streaming.json",
+      "sha256": "95a25d8222919e4fb545a93f5effb02e37055e900b06d567afff71d54ca3cd08"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_spread1__Greedy.json",
+      "sha256": "ce50aaa92ca4bffd339e36312d7f19e8947a9dd321d91bef2fa77fd42b5ef7c7"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_spread1__ILS1000.json",
+      "sha256": "fcacc7aaab60d92018c057a352ea81215cac77388d70b56c4be4e32f0cd796fd"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_spread1__SCIP.json",
+      "sha256": "12ab657c7bfcdf825521272e746b62cfdb8a77e3e31dc2ab5fa80440d9bb0191"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_spread10__Streaming.json",
+      "sha256": "e31a3b931e0c237b09f6edfef50fb6c380d217900d5fd9785795e93f6c578bbb"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_spread10__Greedy.json",
+      "sha256": "caed2d91bbe3fa250580446df94c0748fb926826336f3fae54843a21055e95bc"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_spread10__ILS1000.json",
+      "sha256": "d894bb92cc5e1880ca428c80655a1b3adbbd49df8fbd93e8c08be021d1e37881"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_spread10__SCIP.json",
+      "sha256": "40e62697141f245655b94512d8541def897d878968ab84ac8af2997181c6e18b"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_spread1000__Streaming.json",
+      "sha256": "0df8b04920ca05a374e329e1f14683416f78826fe9b56cdf185eaa712e1390e9"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_spread1000__Greedy.json",
+      "sha256": "6495c6fb4b71470bab13c10ea0f544e01c28f5d1234ebcedfa841b54d32ddcd7"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_spread1000__ILS1000.json",
+      "sha256": "d7c9f6dce9fa061bd7ad8eb8d93667a714beed74597cf9ab8ee0794df23c91e4"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_spread1000__SCIP.json",
+      "sha256": "c47d7d622b1d8e8cd08896a8730d3b420f5a0d9def06e2ae25b657859cd0b190"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_n1024__Streaming.json",
+      "sha256": "516cd7ef4dd51acfb35926932652a957cbcad48c508a40610c45d43b434b2636"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_n1024__Greedy.json",
+      "sha256": "1bca331e2e6699c1a6df2693163281cba0eb1622690b6cb7de0dda9fae7aca3f"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_n1024__ILS1000.json",
+      "sha256": "9b5af340128da6824426fb549957fc43ff973ef0582966c378ee257a66a37b55"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_n1024__SCIP.json",
+      "sha256": "6e8d8e33ecef34f32868dd43e95edb16b3ba163fc4743c47c0bd6f796a7e8858"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_n1024__Streaming.json",
+      "sha256": "6665743c997483cf36d26ec2ce76230b0d1731ddf28ce40682e44ee834ba0938"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_n1024__Greedy.json",
+      "sha256": "a85dd571eeb7056a43be24fc061e2bc29a9fe0dcaaac2a38a41ea6aebc2498a6"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_n1024__ILS1000.json",
+      "sha256": "a30925a9b75d7ec98fd2151a27b475f28f30f4d30adbcb4ecd7a9b33f224d69b"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_n1024__SCIP.json",
+      "sha256": "08f440d05914320340768972cdcd7290cff095633406c18741b2fb7a00eab0f2"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_n1024__Streaming.json",
+      "sha256": "fcdd9754164049f2a00b265affee4ffdf1491e513b413b5b09346d7dfe51a33e"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_n1024__Greedy.json",
+      "sha256": "18c76fb63c045250459c4f72079d748b61b6d8dfc36bd382f3772d29f29a9f05"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_n1024__ILS1000.json",
+      "sha256": "41071eb28dbf413a59258a8ea7ed994eadc318c0a83c919475a81dd6b9b98709"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_n1024__SCIP.json",
+      "sha256": "267fd50a563da3be62ec72dbce81a0fface9e82eee9ec61a3ae4ff44aaa8ae4c"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_n4096__Streaming.json",
+      "sha256": "8253c7841d1cfe1c704fb5a94df8525f3b0f948b5b540df40119192bcf4f4ebb"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_n4096__Greedy.json",
+      "sha256": "4f28f85a0726d35422e9ba45d53e8ca767fc561b5e432a09ac6269cc12a1f369"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_n4096__ILS1000.json",
+      "sha256": "09a8da04f0e2ff2c2f61c606d5984b39e4dda38f497d2074358a44d1e8e84635"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_n4096__SCIP.json",
+      "sha256": "81e9f9a67b4b3fd572aaa2f4e6effe87d0160e6feff0cba7ebcc04cb231c7b74"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_n4096__Streaming.json",
+      "sha256": "449af71c864b132e365f598ec6aba05fb110cc288d7c26a0e35fb34f159bd7d6"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_n4096__Greedy.json",
+      "sha256": "72b3a97e8ca795bae2a3466acba2681568268a6c0240b4f9ea13ccc558de4442"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_n4096__ILS1000.json",
+      "sha256": "94ea1a8498be784af36c66857e972280a2ad262ce93f1566ea97b6276e88445a"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_n4096__SCIP.json",
+      "sha256": "d1593e5d0b3917b7683651fb3ae97105c69706668763fee6d85397e324856505"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_n4096__Streaming.json",
+      "sha256": "9b3ead447d40b5317d9d4d9e46de5625f641a4092da9b3026b02c609a72d0a7e"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_n4096__Greedy.json",
+      "sha256": "382b5c405e30688718a1437ba8593813d89be9f39c95ef22a17a3fe5138a1d92"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_n4096__ILS1000.json",
+      "sha256": "1e925eab04df32f5d94e238b10bc997aad5ac79ce0108ba936cf40ef9d294bb9"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_n4096__SCIP.json",
+      "sha256": "68a6473e67fd3b13f1ba395a79cf236444730f7842cf1d04e2b3ea10ab0d9e1f"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_n4096__Streaming.json",
+      "sha256": "e448e441b5964c656a589a8da2519bb9842975a5843ca71ef20cd280c209ad3a"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_n4096__Greedy.json",
+      "sha256": "42231d17d0d64ef9e9cc1d40ec79da0e57c8df5f4799b7162c26105ccdd4a849"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_n4096__ILS1000.json",
+      "sha256": "4f80303d98cd03cffb2b2f19f376efcba4dce97ab47d3971c4e5eba66d578ee1"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_n4096__SCIP.json",
+      "sha256": "6c1999d4dfd63077a3a435fc156271095065ba40fe0324424b59a55fcc4612d8"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_n4096__Streaming.json",
+      "sha256": "d0980df9f31f88206537c0d45289cca6dc2fe4d9a223c199d5faed1d019430bb"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_n4096__Greedy.json",
+      "sha256": "d2683d76a29367a31607ae1981f6f59b048737f9746685a5dc9006205259dc8b"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_n4096__ILS1000.json",
+      "sha256": "4fb2464856d84cb34192905aadb786e206ba7c95a0345f07f2b17046ae8539b8"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_n4096__SCIP.json",
+      "sha256": "8fd06fbbf7128cc2045d9987bc3febc5d36d0c84877910260a5db2cca1c7b84d"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_n16384__Streaming.json",
+      "sha256": "275d1e28fb43d87bb37da72e418eb94141808139e164987c3e5190bb114f10f5"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_n16384__Greedy.json",
+      "sha256": "8abce97535abe8a8f3172b18f9e4b78809e188426bb385b9ced113ec3e4c5585"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_n16384__ILS1000.json",
+      "sha256": "5fdf07b91458a4f95d6a99dbfbb0deebf9c69d7a4bb1817622dd509b154b0905"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s0_n16384__SCIP.json",
+      "sha256": "183e91d4dd54bd8b7ead9740ffaedf64b13c43d5f3eeebd01c9a9ea8d39ef98e"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_degree_cap128__Streaming.json",
+      "sha256": "dc75aa59a9ad7074cfa1cdf206763b3d2620bb30dfcd7e7893bbb4e3abc71b55"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_degree_cap128__Greedy.json",
+      "sha256": "f977464dcf99ae3df1a54a690c5c9b8cd5bf4c7994cc3b3bd890033e6a1ab050"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_degree_cap128__ILS1000.json",
+      "sha256": "9128020fd755c9ffa91eacdd1b2658cb26fe0fae42c811276575423b2878d252"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_degree_cap128__SCIP.json",
+      "sha256": "4521440eb84ba43f1d055b42991fd41d2906d9140f5dd96e38304da40a4f7fe7"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_degree_cap32__Streaming.json",
+      "sha256": "e4deb48102421e617135c8e312aa268693f13322e0e6df45a8b11bf38c41c21b"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_degree_cap32__Greedy.json",
+      "sha256": "6385defc9295a56bb62f0b79425693991e26065a780f5cb6834aa39218179694"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_degree_cap32__ILS1000.json",
+      "sha256": "1ca71885dce5b5f5bd9d60d6d8a55a445e70b748ad3d70e4d393acf18864cd77"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_degree_cap32__SCIP.json",
+      "sha256": "bc0c311a1d6f99d23f1b5938bec08d6a1fec45b31f79b8dc76d1486720f347db"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_n16384__Streaming.json",
+      "sha256": "8602bad34ce9ab5459d46edf9bee1ea115db193d157eeb2de68a272a7bd3eedd"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_n16384__Greedy.json",
+      "sha256": "a9e08005188278100284e35871a0e7466b3e8e6be07a7a62443956704100ca1c"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_n16384__ILS1000.json",
+      "sha256": "aafd9310d4c7c810a2d3358885108ddf444113e5ad156ddcd68f3e9414534f2d"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_n16384__SCIP.json",
+      "sha256": "c86a4b6511087d9607f42828208ffb6796430e0f3c955730bf3f78fbf7d27c35"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_rank_cap32__Streaming.json",
+      "sha256": "ff756240280d8cafe0547abf8ce6f2f381f252b0d7e7e1d04777d63e2a778abd"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_rank_cap32__Greedy.json",
+      "sha256": "862cea36988a09a3a992c9543c2b08c51bd4815b25b6d3d68327196ce608f0b4"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_rank_cap32__ILS1000.json",
+      "sha256": "a52f8c5caf6e8a73f1afbf8ac104eda755bef2eca498e4e472a33d22b4641047"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_rank_cap32__SCIP.json",
+      "sha256": "664fa7b334fb76363581dfc3d5b5c19009a004e04ff17bfdf21a0907538f9d6d"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_rank_cap8__Streaming.json",
+      "sha256": "b562347815ab86714e3af0f3c0d4ee5700f6d2765e12cf04ab39d8c62935fecd"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_rank_cap8__Greedy.json",
+      "sha256": "a0ad0926f6cd1ce68cf8f6f806a11bfdb879e94aaadeb07edbb73d718ca59e38"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_rank_cap8__ILS1000.json",
+      "sha256": "9422fdd26ef77c1b86b461615d29ff5daaa59a56375ac8b0fc26f580714b168a"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_rank_cap8__SCIP.json",
+      "sha256": "7a3c9130bdeb4a1c37cbd1d1b74adb51602b5e4947c5f9a3d6b8d5af3bc4e990"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_scale_control10__Streaming.json",
+      "sha256": "429303e704b7d7d39e87a5f5b0cf81f99f18cca56ef6adde0b1ea275f4d1a8cc"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_scale_control10__Greedy.json",
+      "sha256": "c6e6c1d10148dbfc1c61a36d4124ab23bbb1def093759768e61b8fb1b9c7ede4"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_scale_control10__ILS1000.json",
+      "sha256": "31baa953b23214b53009de264308d632980fbbff15c27d72e1b2560bcc81d943"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_scale_control10__SCIP.json",
+      "sha256": "d5d5ec8e7c41c2404698cd16cf25d3fdf473d03f57cb5f8678cbd17469a7d81c"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_weight_spread1__Streaming.json",
+      "sha256": "8c77f7560e0c5eb89569a8b057b2b7eb9c2b7c5d31ac1e711c928ba569522bdd"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_weight_spread1__Greedy.json",
+      "sha256": "75efba79b0872c33f292cf94f93d4c475c1c8bd6e424addcecb7625ce2f10e84"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_weight_spread1__ILS1000.json",
+      "sha256": "59b451d6908ebdaf8b937b3a25dff582c64ca356fa08c8d25a60a9ee728c23d2"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_weight_spread1__SCIP.json",
+      "sha256": "55e17772ba835d7eb743682bd6d60cfcda79b1bd69e41d853c97edf8ca93c808"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_weight_spread1000__Streaming.json",
+      "sha256": "ffe7892bbbf4b1987c1696f3fc45912c51f9d0e83ae392becdb80365ad7b4ecf"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_weight_spread1000__Greedy.json",
+      "sha256": "c5313053b0177a0bda6cf62fb24d938ef2102a74d06f519becd2d83ec98b5714"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_weight_spread1000__ILS1000.json",
+      "sha256": "c4f9fc9cc30c52f0f0e430c4176ce283b49757483ae42d737a4f9984e1677eb7"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_weight_spread1000__SCIP.json",
+      "sha256": "58548c7afe7499a8f159f9ced84aed5626bda767fe43aa8dcf52f3a6d9f47d79"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_degree_cap128__Streaming.json",
+      "sha256": "473aa3d7d595db69160df28d487f3a988f960f8429aa56faa354dce9b0ca3d86"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_degree_cap128__Greedy.json",
+      "sha256": "ee5428e8a6df4800587668b74fcf6b822089ed96ab8d7ea2b0c88ad7ce1c4c62"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_degree_cap128__ILS1000.json",
+      "sha256": "83188f5b8918bb3a5a02c9f76ad2e21d5cc596a5a64f59577017191fce630273"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_degree_cap128__SCIP.json",
+      "sha256": "4b8bc4032bf4b4180e390a04f4cee063ca8ca8154a80ce0df62b738bd46396a9"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_degree_cap32__Streaming.json",
+      "sha256": "71db043f4c577dd65555aebebe3d6c338f5a5eb9d019b00ed7756218f109d3d5"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_degree_cap32__Greedy.json",
+      "sha256": "185b89b0e6db93b244b0f8c6e8495eb454f5fc790eec9cbe622906ba6d217fcf"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_degree_cap32__ILS1000.json",
+      "sha256": "e9cd3d342857aedc14e34518698e7bbd28f4c9d648be5df341ac25786a0af003"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_degree_cap32__SCIP.json",
+      "sha256": "41cb015572d75f71d46a07d6408b6ed1c6d22212746e05963aa673c01efdd2d4"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_n16384__Streaming.json",
+      "sha256": "a1e179c47baf899558c0e444ea17294a9f2e2705fcf3c682258577bdc1affb40"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_n16384__Greedy.json",
+      "sha256": "e578714fa7fbdc639f803d221ce52658e935bb5f2e2752d72fafab916af94345"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_n16384__ILS1000.json",
+      "sha256": "9aa5269de5e55c3f75b34f5d910bbdd7d0f562f276c5a95b63c44d7696e4459d"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_n16384__SCIP.json",
+      "sha256": "5ff115d80c406b40aa74913b9e55fda3c525a60b7265b8405da443e6b9095617"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_rank_cap32__Streaming.json",
+      "sha256": "096e4f365ddd04973e082d62f9e9a5ba2e5f972ab88872a8dd339346315e7e57"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_rank_cap32__Greedy.json",
+      "sha256": "6506cdb5eda34b6ac48acb267ef6afc5eba716ef31ff5f157b542ec5494dc7a8"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_rank_cap32__ILS1000.json",
+      "sha256": "4fef2fb4af744b4182d6af8667fdd05677c4d9407f841d78ef0bd62a74012a4e"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_rank_cap32__SCIP.json",
+      "sha256": "ec47dd80c65556cf46fc7d48332fd77d4ab7254225b556aa20aee6c90e81f7f3"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_rank_cap8__Streaming.json",
+      "sha256": "1034a3346ac36ea39455e00795b459279a969d5f7590986e11cdebc814cabb21"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_rank_cap8__Greedy.json",
+      "sha256": "254c891441c723a890b9a478c18698ff9cc3a1757f49bd17070a830d83e18faa"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_rank_cap8__ILS1000.json",
+      "sha256": "79c73f5f03744dbe4dc010975d6db61a8b2973389e7aaf483467839723fd5fe7"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_rank_cap8__SCIP.json",
+      "sha256": "8e68de1d9b194cc34a6f8b0c6480d12ba12395a7fef44bc35bd50aa1c90e5f9c"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_scale_control10__Streaming.json",
+      "sha256": "15179016370f4ec687fbadb86e983f620060c69951bc8eba56f62f12a7cb5b8d"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_scale_control10__Greedy.json",
+      "sha256": "503e2cb244085a3c217ba1bba183ccdf2d368aba3f885e68e7b3ebe33de8a497"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_scale_control10__ILS1000.json",
+      "sha256": "d304d105f925480ba18b7353fc513245bbed815595394343e20c1a8f57e74019"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_scale_control10__SCIP.json",
+      "sha256": "b36eefa3b4adcd06ed7284273f7c12693dcda0107540c6dee087916fa653816d"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_weight_spread1__Streaming.json",
+      "sha256": "65bfa8956341fa0db58ef2019c333e3101f6bc411e7e1fe0ff85408b0d6c66c3"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_weight_spread1__Greedy.json",
+      "sha256": "fa3d929ce154150fcaace48fef472238884a4937e8858211eb2fca3a0441c4e1"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_weight_spread1__ILS1000.json",
+      "sha256": "6f0c3dd758827a5a598442ce80eab2d62fabf2e2400e3026db49f2ad6e004016"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_weight_spread1__SCIP.json",
+      "sha256": "bdbd391ad4d81d6c60114919d51193545fed8da99e4f6ce30f78b391e32f2363"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_weight_spread1000__Streaming.json",
+      "sha256": "48f0d3adc969b3d29df88cc23c1c85bf2d30fb7cc6d3fe7f80c0b4e17d917803"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_weight_spread1000__Greedy.json",
+      "sha256": "6fc123517f98de3ea693adac965a0ed0cf47fb6e36cf2792de9c23fb340c00ab"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_weight_spread1000__ILS1000.json",
+      "sha256": "cce0e0e35b6311cc2ad7c72e1002692c78bb4603fa2fa53a657a211a4c7adf7b"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_weight_spread1000__SCIP.json",
+      "sha256": "2e7469217f56ea89f3ccae00329200162275bc424692d817227acdea7bd4e342"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_n16384__Streaming.json",
+      "sha256": "d16f909a12f3d2de4a72be715cb3f7232ebe79ecec60910f72e9240cdc3b036d"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_n16384__Greedy.json",
+      "sha256": "b9e49170f6af922a574b23a844dc141ac2c5609164a5e697d8bf226970ee9738"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_n16384__ILS1000.json",
+      "sha256": "05f3793231927595b846cdc887d40fdf842b867cd275df11ca0a9c0722a6d160"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s1_n16384__SCIP.json",
+      "sha256": "3f6989ad245453dda7552c8179f132cc852a25dcd21896fcd5d6f110a540f694"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_n16384__Streaming.json",
+      "sha256": "996e02866ee6ac8f2953cc6255226075394bec50cd388b82f7091260cce56d6a"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_n16384__Greedy.json",
+      "sha256": "5eb4e41adc18bc45265cb2c87b4eec4bf0c60eb199126e08d99489ee4a9c993f"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_n16384__ILS1000.json",
+      "sha256": "2afb45d22416656a767b5a173f51f8f85d5cdfe516fe4c9324dc74c2caee38c9"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/reg_s2_n16384__SCIP.json",
+      "sha256": "faf34c84afdfa4bac9b1236aa9b0d3f0449f8901ad015d6fc64fc13b631a77ed"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_n65536__Streaming.json",
+      "sha256": "6a7c9307dfec9e42e4ffc6a11604beb4c3cb3ad8eff79fa5dd303bd0a3a27771"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_n65536__Greedy.json",
+      "sha256": "015c1ebf8dbe653f5d6296c722eebafffbfd2b9dbce15edc67f58d30138d0a9c"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_n65536__ILS1000.json",
+      "sha256": "630fad0d2d9bc59e5d1de63565fb7b40d39fdf97144ccfb973e7cac385e41c8b"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_LHG_n65536__SCIP.json",
+      "sha256": "2d3a011d8cb12553be37de0027bc5ddbdc5c7408e2b0f1e7254b2edc10e4ebce"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_n65536__Streaming.json",
+      "sha256": "9f770622a2a9af707b9b0d1100142cc5715b14edeb9bfe6d6dd19df374f8e376"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_n65536__Greedy.json",
+      "sha256": "8be39b853614c418e35646aebe847f563f293d865c638d07ca749dd42fc8417c"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_n65536__ILS1000.json",
+      "sha256": "499ed0f9e3347510040434b3ef5556663f0df0c8821e83e680f3e1aeb06c603e"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/raw/sb_random100_n65536__SCIP.json",
+      "sha256": "856bc34753ffbfe67aec304e1af8698f953e4e9398e61d5996d4db8b0dbd8389"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/protocol.json",
+      "sha256": "b91fcee3345e23ff23cba806786c8a02dda2b78c93540379448d37ce925ada7b"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/input_manifest.json",
+      "sha256": "f473ce731e132c85627f60dcb38a81740512001e5658b8e15de0fa0908efdae3"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/results.json",
+      "sha256": "daa5d86a3b0a23bbfae0c01efce30141142b668a991acccd7c0e9121279a1806"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/results.json",
+      "sha256": "beceac2c8cf42d578d97055b662a09034d30c33826b0f0514388c96b997f5c59"
+    }
+  ],
+  "archive_sha256": "a0f2d4ee15451abc4de86d9995f13389b55b1a049c26b5f79c4679588515f756",
+  "scope": "Existing 92 combination inputs and 236 stress witnesses; inspection data and full-author witnesses pending separately"
+}

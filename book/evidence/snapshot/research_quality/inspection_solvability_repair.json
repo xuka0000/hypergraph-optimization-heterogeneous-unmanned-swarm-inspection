@@ -1,0 +1,3596 @@
+{
+  "task_id": "inspection_solvability_repair",
+  "observed_at": "2026-11-10T05:02:35.861432+08:00",
+  "status": "full_region_search_running",
+  "authorization": "开始实施！",
+  "scientific_rounds": 0,
+  "scope": {
+    "towers": 237,
+    "photos": 2133,
+    "same_mathematical_model": false,
+    "same_mathematical_contract": true,
+    "finite_grid_revision": true
+  },
+  "checks": [
+    "shared_return_mapping",
+    "source_and_all_joint_constraints_preserved",
+    "honest_coverage_acceptance",
+    "safe_presolve_and_bounds",
+    "actual_regional_solve_and_trace"
+  ],
+  "cloud_status": "prior cloud_services import failure; no new repair evidence; no retry",
+  "cloud_counts": {
+    "in_use": null,
+    "idle": null,
+    "retained": null,
+    "unknown": null,
+    "pending_release": null
+  },
+  "next_action": "Preserve matching healthy runs and inspect actual native returns. The completed65-flight reference partition violates regional energy/time totals; next primal work must jointly select/reorganize tasks, routes and charging under the original maximum-coverage objective. Do not fix all65 proposals or relax physical capacities to claim success.",
+  "implementation_complete": false,
+  "regional_task_complete": false,
+  "run_id": "e748e91827516b35_61848",
+  "pid": 61848,
+  "process_create_time": 1794255589.1327455,
+  "live": true,
+  "build": {
+    "wall_s": 82.11780160001945,
+    "tasks": 2133,
+    "towers": 237,
+    "optional_flights": 156,
+    "variables": 698272,
+    "explicit_rows": 205597,
+    "indexed_relations": 42290,
+    "physical_integrals_materialized": 0,
+    "physical_families_guarded_by_candidate_handler": true,
+    "full_scalar_incidence_available": false,
+    "rss_GiB": 1.5830268859863281,
+    "available_RAM_GiB": 11.538379669189453
+  },
+  "latest_trace": {
+    "observed_at": "2026-11-09T20:22:25.004069+00:00",
+    "run_id": "e748e91827516b35_61848",
+    "elapsed_s": 152.60900000005495,
+    "phase": 1,
+    "materialization_round": 0,
+    "reason": "memory_readmission",
+    "SCIP_status": "memlimit",
+    "accepted_objective_vector": [
+      233.0,
+      6555.305426080421,
+      1129.3229644471123
+    ],
+    "finite_transcription_dual": 0.0,
+    "full_continuous_domain_dual": null,
+    "original_continuous_optimality_proved": false,
+    "nodes": 1,
+    "variables": 688153,
+    "rows": 192335,
+    "accepted_checks": 2,
+    "rejected_checks": 0,
+    "rss_GiB": 3.4112281799316406,
+    "available_RAM_GiB": 10.155479431152344,
+    "numerical_grids": {
+      "road_phases": [
+        631,
+        627
+      ],
+      "charging_events": [
+        156,
+        156
+      ],
+      "transfer_pieces": 3,
+      "position_degree": 7
+    },
+    "source_sha256": "d0c668d7cfeea2e7973e6ab387be38e499aea4e935a6530dfaf8900438b8520d",
+    "model_sha256": "88b7e54dcb4e6a67a844b023b7af8b3c59695e4fd458f7f42e1ddeef69633285",
+    "extra": {
+      "host": {
+        "physical_available_GiB": 10.155479431152344,
+        "process_private_GiB": 3.538848876953125,
+        "commit_limit_GiB": 58.10093688964844,
+        "commit_available_GiB": 7.508602142333984
+      },
+      "previous_limit_MiB": 3311.835609436035,
+      "next_limit_MiB": 5374.673533630371,
+      "host_floor_GiB": 2.0,
+      "same_solver_resume": true
+    },
+    "SCIP_memory_limit_MiB": 3311.835609436035,
+    "SCIP_allocator_MiB": 2204.944209098816,
+    "SCIP_allocated_total_MiB": 2668.4442167282104,
+    "SCIP_external_estimate_MiB": 731.9463090896606,
+    "NLP_relaxation_disabled": true,
+    "compact_memory_profile": true,
+    "primal_heuristics_disabled": false,
+    "materialized_energy_orders": {}
+  },
+  "mapping": {
+    "source_run": "1794231440_25904",
+    "witness": "总结\\03_实验数据\\工程化联合求解\\constraint_layers\\1794231440_25904_layer11_witness.json.gz",
+    "witness_sha256": "62c2343dd7ae04ec371a03ef854c2e25afe347fb7802962799bf5c420a2368fa",
+    "copied_variables": 603848,
+    "inactive_return_defaults": 19760,
+    "active_return_segments": 12,
+    "maximum_forward_inverse_state_clock_error": 9.094947017729282e-13,
+    "fixed_original_decisions": 0,
+    "coverage_preserved": true,
+    "proof": "selected last-task return is relabeled to its flight; inactive task return states have no active physical constraints"
+  },
+  "candidate_audit": {
+    "native_feasible": true,
+    "indexed_rows_checked": 21454,
+    "indexed_max_error": 1.2931877790833823e-12,
+    "indexed_bad_count": 0,
+    "indexed_bad": [],
+    "bounds_bad_count": 0,
+    "bounds_bad": [],
+    "completed_towers": 4,
+    "active_photos": 36,
+    "coverage_complete": false,
+    "coverage_required": 237,
+    "active_flights": 4,
+    "uncompleted_towers": 233,
+    "makespan_s": 6555.305426080421,
+    "missing_active_physical_integrals": 0,
+    "continuous_acceptance": {
+      "passed": true,
+      "requests": [],
+      "unresolved": [],
+      "active_segments": 156,
+      "vehicle_phases": 512,
+      "energy_intervals": [
+        {
+          "pack": "B1_1",
+          "lower_terminal_Wh": 277.06994339306095,
+          "upper_terminal_Wh": 277.07117034626543
+        },
+        {
+          "pack": "B1_2",
+          "lower_terminal_Wh": 273.4646556751674,
+          "upper_terminal_Wh": 273.46592406141656
+        },
+        {
+          "pack": "B1_3",
+          "lower_terminal_Wh": 548.0,
+          "upper_terminal_Wh": 548.0
+        },
+        {
+          "pack": "B1_4",
+          "lower_terminal_Wh": 548.0,
+          "upper_terminal_Wh": 548.0
+        },
+        {
+          "pack": "B2_1",
+          "lower_terminal_Wh": 260.91414431252235,
+          "upper_terminal_Wh": 260.9155431355296
+        },
+        {
+          "pack": "B2_2",
+          "lower_terminal_Wh": 251.22564927188824,
+          "upper_terminal_Wh": 251.22704090992482
+        },
+        {
+          "pack": "B2_3",
+          "lower_terminal_Wh": 548.0,
+          "upper_terminal_Wh": 548.0
+        },
+        {
+          "pack": "B2_4",
+          "lower_terminal_Wh": 548.0,
+          "upper_terminal_Wh": 548.0
+        }
+      ],
+      "original_road_points_checked": 4096,
+      "energy_tolerance_per_segment_Wh": 0.0001,
+      "formal_directed_rounding_certificate": false,
+      "geometric_tolerance_m": 1e-06,
+      "ackermann_residual_tolerance_SI": 0.0001
+    },
+    "physical_oracle": null,
+    "passed": true
+  },
+  "indexed_presolve_regression": {
+    "observed_at": "2026-11-09T14:20:35.880004+00:00",
+    "passed": true,
+    "code_sha256": "c1d108fafcfbf99a8df18509e816a3710c03dcfbdab6b34ab0fbb1fc789f5037",
+    "oracle": "explicit enumeration of four categories and scalar interval optimum; no lazy-handler reuse",
+    "cases": [
+      {
+        "case": 0,
+        "phase": 1,
+        "status": "optimal",
+        "value": 6.0,
+        "expected": 6.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 0,
+        "phase": 2,
+        "value": 2.0,
+        "expected": 2,
+        "transform_resets": 1
+      },
+      {
+        "case": 1,
+        "phase": 1,
+        "status": "optimal",
+        "value": 7.999999999999999,
+        "expected": 8.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 1,
+        "phase": 2,
+        "value": 3.0,
+        "expected": 3,
+        "transform_resets": 1
+      },
+      {
+        "case": 2,
+        "phase": 1,
+        "status": "optimal",
+        "value": -1.0,
+        "expected": -1.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 2,
+        "phase": 2,
+        "value": 0.0,
+        "expected": 0,
+        "transform_resets": 1
+      },
+      {
+        "case": 3,
+        "phase": 1,
+        "status": "optimal",
+        "value": 6.0,
+        "expected": 6.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 3,
+        "phase": 2,
+        "value": 0.0,
+        "expected": 0,
+        "transform_resets": 1
+      },
+      {
+        "case": 4,
+        "phase": 1,
+        "status": "optimal",
+        "value": -2.0,
+        "expected": -2.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 4,
+        "phase": 2,
+        "value": 2.0,
+        "expected": 2,
+        "transform_resets": 1
+      },
+      {
+        "case": 5,
+        "phase": 1,
+        "status": "optimal",
+        "value": -0.9999999999999996,
+        "expected": -1.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 5,
+        "phase": 2,
+        "value": 2.0,
+        "expected": 2,
+        "transform_resets": 1
+      },
+      {
+        "case": 6,
+        "phase": 1,
+        "status": "optimal",
+        "value": -1.0,
+        "expected": -1.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 6,
+        "phase": 2,
+        "value": 3.0,
+        "expected": 3,
+        "transform_resets": 1
+      },
+      {
+        "case": 7,
+        "phase": 1,
+        "status": "optimal",
+        "value": -1.0,
+        "expected": -1.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 7,
+        "phase": 2,
+        "value": 0.0,
+        "expected": 0,
+        "transform_resets": 1
+      },
+      {
+        "case": 8,
+        "phase": 1,
+        "status": "optimal",
+        "value": 2.0,
+        "expected": 2.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 8,
+        "phase": 2,
+        "value": 3.0,
+        "expected": 3,
+        "transform_resets": 1
+      },
+      {
+        "case": 9,
+        "phase": 1,
+        "status": "optimal",
+        "value": 3.0,
+        "expected": 3.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 9,
+        "phase": 2,
+        "value": 2.0,
+        "expected": 2,
+        "transform_resets": 1
+      },
+      {
+        "case": 10,
+        "phase": 1,
+        "status": "optimal",
+        "value": 8.0,
+        "expected": 8.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 10,
+        "phase": 2,
+        "value": 0.0,
+        "expected": 0,
+        "transform_resets": 1
+      },
+      {
+        "case": 11,
+        "phase": 1,
+        "status": "optimal",
+        "value": 1.0,
+        "expected": 1.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 11,
+        "phase": 2,
+        "value": 2.0,
+        "expected": 2,
+        "transform_resets": 1
+      },
+      {
+        "case": 12,
+        "phase": 1,
+        "status": "optimal",
+        "value": -1.0,
+        "expected": -1.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 12,
+        "phase": 2,
+        "value": 0.0,
+        "expected": 0,
+        "transform_resets": 1
+      },
+      {
+        "case": 13,
+        "phase": 1,
+        "status": "optimal",
+        "value": -3.0,
+        "expected": -3.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 13,
+        "phase": 2,
+        "value": 1.0,
+        "expected": 1,
+        "transform_resets": 1
+      },
+      {
+        "case": 14,
+        "phase": 1,
+        "status": "optimal",
+        "value": 5.0,
+        "expected": 5.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 14,
+        "phase": 2,
+        "value": 3.0,
+        "expected": 3,
+        "transform_resets": 1
+      },
+      {
+        "case": 15,
+        "phase": 1,
+        "status": "optimal",
+        "value": 1.0,
+        "expected": 1.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 15,
+        "phase": 2,
+        "value": 0.0,
+        "expected": 0,
+        "transform_resets": 1
+      },
+      {
+        "case": 16,
+        "phase": 1,
+        "status": "optimal",
+        "value": -3.0,
+        "expected": -3.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 16,
+        "phase": 2,
+        "value": 0.0,
+        "expected": 0,
+        "transform_resets": 1
+      },
+      {
+        "case": 17,
+        "phase": 1,
+        "status": "optimal",
+        "value": 5.0,
+        "expected": 5.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 17,
+        "phase": 2,
+        "value": 1.0,
+        "expected": 1,
+        "transform_resets": 1
+      },
+      {
+        "case": 18,
+        "phase": 1,
+        "status": "optimal",
+        "value": 7.0,
+        "expected": 7.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 18,
+        "phase": 2,
+        "value": 3.0,
+        "expected": 3,
+        "transform_resets": 1
+      },
+      {
+        "case": 19,
+        "phase": 1,
+        "status": "optimal",
+        "value": -0.9999999999999998,
+        "expected": -1.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 19,
+        "phase": 2,
+        "value": 0.0,
+        "expected": 0,
+        "transform_resets": 1
+      },
+      {
+        "case": 20,
+        "phase": 1,
+        "status": "optimal",
+        "value": -2.0,
+        "expected": -2.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 20,
+        "phase": 2,
+        "value": 0.0,
+        "expected": 0,
+        "transform_resets": 1
+      },
+      {
+        "case": 21,
+        "phase": 1,
+        "status": "optimal",
+        "value": -4.0,
+        "expected": -4.0,
+        "generated_rows": 0
+      },
+      {
+        "case": 21,
+        "phase": 2,
+        "value": 0.0,
+        "expected": 0,
+        "transform_resets": 1
+      },
+      {
+        "case": 22,
+        "phase": 1,
+        "status": "optimal",
+        "value": 1.0,
+        "expected": 1.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 22,
+        "phase": 2,
+        "value": 1.0,
+        "expected": 1,
+        "transform_resets": 1
+      },
+      {
+        "case": 23,
+        "phase": 1,
+        "status": "optimal",
+        "value": 4.0,
+        "expected": 4.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 23,
+        "phase": 2,
+        "value": 3.0,
+        "expected": 3,
+        "transform_resets": 1
+      },
+      {
+        "case": 24,
+        "phase": 1,
+        "status": "optimal",
+        "value": 6.0,
+        "expected": 6.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 24,
+        "phase": 2,
+        "value": 1.0,
+        "expected": 1,
+        "transform_resets": 1
+      },
+      {
+        "case": 25,
+        "phase": 1,
+        "status": "optimal",
+        "value": 5.000000000000001,
+        "expected": 5.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 25,
+        "phase": 2,
+        "value": 3.0,
+        "expected": 3,
+        "transform_resets": 1
+      },
+      {
+        "case": 26,
+        "phase": 1,
+        "status": "optimal",
+        "value": 2.0,
+        "expected": 2.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 26,
+        "phase": 2,
+        "value": 2.0,
+        "expected": 2,
+        "transform_resets": 1
+      },
+      {
+        "case": 27,
+        "phase": 1,
+        "status": "optimal",
+        "value": 5.0,
+        "expected": 5.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 27,
+        "phase": 2,
+        "value": 3.0,
+        "expected": 3,
+        "transform_resets": 1
+      },
+      {
+        "case": 28,
+        "phase": 1,
+        "status": "optimal",
+        "value": 1.0,
+        "expected": 1.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 28,
+        "phase": 2,
+        "value": 2.0,
+        "expected": 2,
+        "transform_resets": 1
+      },
+      {
+        "case": 29,
+        "phase": 1,
+        "status": "optimal",
+        "value": 4.0,
+        "expected": 4.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 29,
+        "phase": 2,
+        "value": 1.0,
+        "expected": 1,
+        "transform_resets": 1
+      },
+      {
+        "case": 30,
+        "phase": 1,
+        "status": "optimal",
+        "value": 6.0,
+        "expected": 6.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 30,
+        "phase": 2,
+        "value": 3.0,
+        "expected": 3,
+        "transform_resets": 1
+      },
+      {
+        "case": 31,
+        "phase": 1,
+        "status": "optimal",
+        "value": -2.0,
+        "expected": -2.0,
+        "generated_rows": 16
+      },
+      {
+        "case": 31,
+        "phase": 2,
+        "value": 3.0,
+        "expected": 3,
+        "transform_resets": 1
+      }
+    ],
+    "limitation": "Finite handler regression, not proof that regional MINLP is tractable"
+  },
+  "deferred_vehicle_regression": {
+    "observed_at": "2026-11-09T14:37:12.404240+00:00",
+    "passed": true,
+    "initial_native_feasible": true,
+    "initial_points_checked": 32,
+    "mutations": [
+      {
+        "perturbed_coordinate": 0,
+        "native_rejected": true,
+        "deferred_rejected": true,
+        "points": 32
+      },
+      {
+        "perturbed_coordinate": 1,
+        "native_rejected": true,
+        "deferred_rejected": true,
+        "points": 32
+      },
+      {
+        "perturbed_coordinate": 2,
+        "native_rejected": true,
+        "deferred_rejected": true,
+        "points": 32
+      },
+      {
+        "perturbed_coordinate": 3,
+        "native_rejected": true,
+        "deferred_rejected": true,
+        "points": 32
+      },
+      {
+        "perturbed_coordinate": 4,
+        "native_rejected": true,
+        "deferred_rejected": true,
+        "points": 32
+      }
+    ],
+    "variables_before_materialization": 327,
+    "variables_after_materialization": 647,
+    "scope": "original finite point bounds and dynamics; whole-curve/obstacle checks separately retained",
+    "test_design_correction": "A1rad single steering control perturbation stayed inside the physical curve bounds; replaced by5rad to exercise rejection. This was not a model failure."
+  },
+  "necessary_bounds": {
+    "observed_at": "2026-11-09T14:30:12.187879+00:00",
+    "kind": "necessary_bounds_only_not_a_solved_plan",
+    "source_sha256": "d0c668d7cfeea2e7973e6ab387be38e499aea4e935a6530dfaf8900438b8520d",
+    "vehicles": [
+      {
+        "vehicle": "V1",
+        "stop_count": 104,
+        "phase_count": 256,
+        "minimum_mode_phase_count": {
+          "P001": 1,
+          "P002": 9,
+          "P003": 257,
+          "P004": 265,
+          "P005": 213,
+          "P006": 213,
+          "P007": 213,
+          "P008": 197,
+          "P009": 173,
+          "P010": 177,
+          "P011": 121,
+          "P012": 97,
+          "P013": 117,
+          "P014": 129,
+          "P015": 129,
+          "P016": 305,
+          "P017": 321,
+          "P018": 303,
+          "P019": 391,
+          "P020": 383,
+          "P021": 437,
+          "P022": 137,
+          "P023": 133,
+          "P024": 177,
+          "P025": 523,
+          "P026": 559,
+          "P027": 313,
+          "P028": 141,
+          "P029": 141,
+          "P030": 197,
+          "P031": 307,
+          "P032": 153,
+          "P033": 201,
+          "P034": 209,
+          "P035": 241,
+          "P036": 245,
+          "P037": 627,
+          "P038": 209,
+          "P039": 273,
+          "P040": 419,
+          "P041": 607,
+          "P042": 607,
+          "P043": 523,
+          "P044": 487,
+          "P045": 483,
+          "P046": 439,
+          "P047": 383,
+          "P048": 391,
+          "P049": 387,
+          "P050": 491,
+          "P051": 269,
+          "P052": 269,
+          "P053": 257,
+          "P054": 213,
+          "P055": 221,
+          "P056": 557,
+          "P057": 493,
+          "P058": 145,
+          "P059": 333,
+          "P060": 385,
+          "P061": 173,
+          "P062": 229,
+          "P063": 495,
+          "P064": 439,
+          "P065": 113,
+          "P066": 293,
+          "P067": 121,
+          "P068": 249,
+          "P069": 165,
+          "P070": 241,
+          "P071": 631,
+          "P072": 129,
+          "P073": 185,
+          "P074": 297,
+          "P075": 85,
+          "P076": 217,
+          "P077": 117,
+          "P078": 117,
+          "P079": 531,
+          "P080": 443,
+          "P081": 407,
+          "P082": 571,
+          "P083": 459,
+          "P084": 487,
+          "P085": 567,
+          "P086": 571,
+          "P087": 545,
+          "P088": 253,
+          "P089": 325,
+          "P090": 341,
+          "P091": 345,
+          "P092": 361,
+          "P093": 517,
+          "P094": 501,
+          "P095": 497,
+          "P096": 597,
+          "P097": 469,
+          "P098": 437,
+          "P099": 465,
+          "P100": 417,
+          "P101": 509,
+          "P102": 421,
+          "P103": 537,
+          "P104": 353
+        },
+        "within_phase_budget": 42
+      },
+      {
+        "vehicle": "V2",
+        "stop_count": 104,
+        "phase_count": 256,
+        "minimum_mode_phase_count": {
+          "P001": 9,
+          "P002": 1,
+          "P003": 253,
+          "P004": 261,
+          "P005": 209,
+          "P006": 209,
+          "P007": 209,
+          "P008": 193,
+          "P009": 169,
+          "P010": 173,
+          "P011": 117,
+          "P012": 93,
+          "P013": 113,
+          "P014": 125,
+          "P015": 125,
+          "P016": 301,
+          "P017": 317,
+          "P018": 299,
+          "P019": 387,
+          "P020": 379,
+          "P021": 433,
+          "P022": 133,
+          "P023": 129,
+          "P024": 173,
+          "P025": 519,
+          "P026": 555,
+          "P027": 309,
+          "P028": 137,
+          "P029": 137,
+          "P030": 193,
+          "P031": 303,
+          "P032": 149,
+          "P033": 197,
+          "P034": 205,
+          "P035": 237,
+          "P036": 241,
+          "P037": 623,
+          "P038": 205,
+          "P039": 269,
+          "P040": 415,
+          "P041": 603,
+          "P042": 603,
+          "P043": 519,
+          "P044": 483,
+          "P045": 479,
+          "P046": 435,
+          "P047": 379,
+          "P048": 387,
+          "P049": 383,
+          "P050": 487,
+          "P051": 265,
+          "P052": 265,
+          "P053": 253,
+          "P054": 209,
+          "P055": 217,
+          "P056": 553,
+          "P057": 489,
+          "P058": 141,
+          "P059": 329,
+          "P060": 381,
+          "P061": 169,
+          "P062": 225,
+          "P063": 491,
+          "P064": 435,
+          "P065": 109,
+          "P066": 289,
+          "P067": 117,
+          "P068": 245,
+          "P069": 161,
+          "P070": 237,
+          "P071": 627,
+          "P072": 125,
+          "P073": 181,
+          "P074": 293,
+          "P075": 81,
+          "P076": 213,
+          "P077": 113,
+          "P078": 113,
+          "P079": 527,
+          "P080": 439,
+          "P081": 403,
+          "P082": 567,
+          "P083": 455,
+          "P084": 483,
+          "P085": 563,
+          "P086": 567,
+          "P087": 541,
+          "P088": 249,
+          "P089": 321,
+          "P090": 337,
+          "P091": 341,
+          "P092": 357,
+          "P093": 513,
+          "P094": 497,
+          "P095": 493,
+          "P096": 593,
+          "P097": 465,
+          "P098": 433,
+          "P099": 461,
+          "P100": 413,
+          "P101": 505,
+          "P102": 417,
+          "P103": 533,
+          "P104": 349
+        },
+        "within_phase_budget": 44
+      }
+    ],
+    "available_stop_union": 44,
+    "capture_time_lower_s": 42683.63679999965,
+    "capture_energy_lower_Wh": 9181.70734694643,
+    "weather_windows_s": [
+      [
+        0,
+        10800
+      ],
+      [
+        18000,
+        28800
+      ]
+    ],
+    "maximum_single_task_energy_lower_Wh": 386.4607940225453,
+    "single_task_energy_impossibility_count": 0,
+    "all237_feasibility": "unknown",
+    "next_action": "full coverage candidate must respect finite road-phase domain; phase refinement is explicit numerical-model revision, not a physical stop prohibition"
+  },
+  "steps": {
+    "shared_return": "implemented_full_candidate_rechecked",
+    "coverage_gate": "implemented_partial_candidates_no_longer_advance",
+    "primal_presolve": "implemented_independent64_checks_and_real_presolve",
+    "necessary_bounds": "implemented_energy_time_pack_and_weather",
+    "all237_initial_plan": "not_obtained",
+    "full_coverage_diagnostic": "resource_admission_pending",
+    "joint_solve": "not_running",
+    "closed_loop_decomposition": "not_implemented",
+    "exposure_contract": "implemented_regressed",
+    "yaw_contract": "implemented_regressed",
+    "road_grid": "road_block_verified_joint_expansion_pending"
+  },
+  "peak_memory_limit_is_not_host_hard_isolation": true,
+  "attempts": [
+    {
+      "run_id": "b126af12f8b66ebd_45044",
+      "status": "build_complete_not_solved",
+      "elapsed_s": 105.21757139998954,
+      "build": {
+        "wall_s": 105.21581530000549,
+        "tasks": 2133,
+        "towers": 237,
+        "optional_flights": 156,
+        "variables": 665836,
+        "explicit_rows": 366824,
+        "indexed_relations": 40798,
+        "physical_integrals_materialized": 0,
+        "physical_families_guarded_by_candidate_handler": true,
+        "full_scalar_incidence_available": false,
+        "rss_GiB": 2.0322914123535156,
+        "available_RAM_GiB": 5.7087249755859375
+      }
+    },
+    {
+      "run_id": "c4a5a8fd3067ab82_66376",
+      "status": "memlimit",
+      "elapsed_s": 184.40664589998778,
+      "build": {
+        "wall_s": 87.82254600001033,
+        "tasks": 2133,
+        "towers": 237,
+        "optional_flights": 156,
+        "variables": 665836,
+        "explicit_rows": 366824,
+        "indexed_relations": 40798,
+        "physical_integrals_materialized": 0,
+        "physical_families_guarded_by_candidate_handler": true,
+        "full_scalar_incidence_available": false,
+        "rss_GiB": 2.0345916748046875,
+        "available_RAM_GiB": 6.958148956298828
+      }
+    },
+    {
+      "run_id": "372682a53d0fcba4_28676",
+      "status": "memlimit",
+      "elapsed_s": 410.47328230005223,
+      "build": {
+        "wall_s": 127.28300120006315,
+        "tasks": 2133,
+        "towers": 237,
+        "optional_flights": 156,
+        "variables": 665836,
+        "explicit_rows": 366824,
+        "indexed_relations": 40798,
+        "physical_integrals_materialized": 0,
+        "physical_families_guarded_by_candidate_handler": true,
+        "full_scalar_incidence_available": false,
+        "rss_GiB": 2.0317001342773438,
+        "available_RAM_GiB": 7.50640869140625
+      }
+    },
+    {
+      "run_id": "b9db137851785394_22540",
+      "status": "engineering_error",
+      "elapsed_s": 1068.802122599911,
+      "build": {
+        "wall_s": 131.870146799949,
+        "tasks": 2133,
+        "towers": 237,
+        "optional_flights": 156,
+        "variables": 624876,
+        "explicit_rows": 219368,
+        "indexed_relations": 40798,
+        "physical_integrals_materialized": 0,
+        "physical_families_guarded_by_candidate_handler": true,
+        "full_scalar_incidence_available": false,
+        "rss_GiB": 1.6390838623046875,
+        "available_RAM_GiB": 4.096370697021484
+      }
+    }
+  ],
+  "current_run_role": "original_maximum_coverage_joint_solve",
+  "current_run_incumbent": {
+    "last_known_vector": [
+      233.0,
+      6555.305426080421,
+      1129.3229644471123
+    ],
+    "native_observed_at": "2026-11-09T20:22:25.004069+00:00",
+    "coverage_complete": false
+  },
+  "prior_partial_witness_is_current_run_solution": false,
+  "latest_process_observation": {
+    "pid": 61848,
+    "process_create_time": 1794255589.1327455,
+    "status": "solving",
+    "run_id": "e748e91827516b35_61848",
+    "identity_matches": true,
+    "process_live": true,
+    "cpu_seconds": 2520.78125,
+    "private_GiB": 3.956195831298828,
+    "observed_at": "2026-11-10T05:02:35.861432+08:00"
+  },
+  "forensic_diagnosis": {
+    "path": "research_quality/inspection_model_forensics.json",
+    "sha256": "ff6a61140e73d6bd6a29c88044ea8c736e8a7a6012fefdc12cba5af3b2b9dc3b"
+  },
+  "latest_result": null,
+  "latest_elapsed_s": 80.37332179991063,
+  "current_repair": {
+    "observed_at": "2026-11-10T02:04:09.182104+08:00",
+    "authorization": "开始修复！",
+    "status": "repairs_verified_whole_region_pending_resources",
+    "previous_run_id": "329a7f263e3525a1_6948",
+    "previous_process_live": false,
+    "plan": [
+      "exposure_and_yaw_contract",
+      "safe_denominator_and_numerics",
+      "early_bounds_and_symmetry",
+      "actual_regional_resume"
+    ],
+    "cloud": {
+      "status": "access_failed",
+      "reason": "ModuleNotFoundError: cloud_services",
+      "list_called": false,
+      "in_use": null,
+      "idle": null,
+      "retained": null,
+      "unknown": null,
+      "pending_release": null,
+      "next_action": "repair shared dependency before revalidation; continue local repair"
+    },
+    "region_complete": false
+  },
+  "contract_repair": {
+    "observed_at": "2026-11-10T02:04:09.182104+08:00",
+    "status": "repairs_verified_whole_region_pending_resources",
+    "authorization": "开始修复！",
+    "mathematical_contract_preserved": true,
+    "finite_implementation_changed": true,
+    "reasons": [
+      "exposure/yaw implementation corrected to mathematical contract",
+      "default road grid refined256/256 to631/627"
+    ],
+    "regressions": {
+      "contract": {
+        "path": "research_quality/inspection_contract_repair_regression.json",
+        "sha256": "cd135f6bfdb24d2dbb09d64eae3d9cd2361250f06ea38d66a3d4743b23c5cbf8",
+        "locator": "whole artifact"
+      },
+      "road": {
+        "path": "research_quality/inspection_road_domain_repair_regression.json",
+        "sha256": "f263f123ff512d2850cd16ef87046fcb1c2b55b1c7921eabb0f902c716cc6683",
+        "locator": "whole artifact"
+      }
+    },
+    "historical_run": {
+      "task_id": "inspection_regional_day_ahead",
+      "run_id": "329a7f263e3525a1_6948",
+      "observed_at": "2026-11-09T15:11:12.419419+00:00",
+      "pid": 6948,
+      "process_create_time": 1794236407.194714,
+      "user_authorization": "完成就开始求解！ / 开始完整接入 / 继续任务",
+      "scope": "all237 towers2133tasks; all source roads and DEM; unified finite transcription with continuous candidate acceptance",
+      "status": "engineering_error",
+      "solve_requested": true,
+      "wall_time_limit_s": null,
+      "node_limit": null,
+      "gap_target": 0,
+      "solver_configuration": {
+        "nlp/disable": true,
+        "verified_repair_warm_start": false,
+        "shared_recovery": true,
+        "require_all_towers_diagnostic": true,
+        "lp/scaling": 2,
+        "compact_memory": true,
+        "primal_heuristics_disabled": false,
+        "compact_parameters": {
+          "memory/arraygrowfac": 1.05,
+          "memory/savefac": 0.5,
+          "misc/usevartable": false,
+          "misc/useconstable": false
+        },
+        "source": "https://scipopt.org/doc/html/PARAMETERS.php",
+        "reason": "Explicit memory diagnostic; changes internal relaxation algorithm, not mathematical feasible decisions"
+      },
+      "numerical_grid": {
+        "road_phases_per_carrier": 256,
+        "charging_events_per_carrier": 156,
+        "trajectory_degree": 7,
+        "transfer_pieces": 3,
+        "minimum_positive_piece_s": 0.001
+      },
+      "grids_are_not_lossless_physical_limits": true,
+      "full_continuous_domain_optimality_claim": false,
+      "peak_output_reservation_GiB": 0.25,
+      "storage_floors_GiB": {
+        "C": 10,
+        "D": 30
+      },
+      "files": [
+        {
+          "path": "Agent/Publication/engineering_conditional_hypergraph.py",
+          "sha256": "613b3a9f4cdbd03f8878e45f6d7ea10b099af850518fa983f2c3e8e960e4fae3"
+        },
+        {
+          "path": "Agent/Publication/engineering_energy_enclosure.py",
+          "sha256": "6d3e064aeeac4dea41ddc63f2d718c5589008b2d4e812a09d9e8a46dbd863078"
+        },
+        {
+          "path": "Agent/Publication/engineering_event_charging.py",
+          "sha256": "1e65aad005cb569332eb654629f96317565376ae84d635a5e0d7b80b709cbbc3"
+        },
+        {
+          "path": "Agent/Publication/engineering_fleet_schedule.py",
+          "sha256": "2b9042cebd063cbd79c4a2c3d1e83a8ff73e68d9d8d7f79b63ad00900a5c3353"
+        },
+        {
+          "path": "Agent/Publication/engineering_flight_labels.py",
+          "sha256": "183783f8fe040e710b560ec322068a1259033a7c25345521389e6f72cad38603"
+        },
+        {
+          "path": "Agent/Publication/engineering_free_trajectory.py",
+          "sha256": "cf99c2353281858defe79d74e6551e925bf772749bfa24853772e7c0bd1dac2e"
+        },
+        {
+          "path": "Agent/Publication/engineering_indexed_constraints.py",
+          "sha256": "c1d108fafcfbf99a8df18509e816a3710c03dcfbdab6b34ab0fbb1fc789f5037"
+        },
+        {
+          "path": "Agent/Publication/engineering_indexed_terrain.py",
+          "sha256": "1d91a87ea2bf637d9d919c34303ee2c5707671e89869859e411bba28ec8cd0db"
+        },
+        {
+          "path": "Agent/Publication/engineering_inspection_primitives.py",
+          "sha256": "d67745df4dc64664a1c511b35d26a19eafd45c21098b5da98fef2fad9d59b438"
+        },
+        {
+          "path": "Agent/Publication/engineering_interval_physics.py",
+          "sha256": "c31f8aac813ee195992c8eaebe3ccfcbedd8130de97569f4fb1a77f39b9e62c5"
+        },
+        {
+          "path": "Agent/Publication/engineering_joint_execution.py",
+          "sha256": "b51d9c42c1ddeb870620b562e74f494d6941bb997a743677f9bac49ebc4f60f1"
+        },
+        {
+          "path": "Agent/Publication/engineering_joint_optical_trajectory.py",
+          "sha256": "7a7af6ad60dd064a0248823eec4a0852f51149f83133e354e48388bddd59afd0"
+        },
+        {
+          "path": "Agent/Publication/engineering_joint_optimality.py",
+          "sha256": "b51beaf79c073aba9e13a5416341b79f0563a612914713c2e8bd1ffa98b822e3"
+        },
+        {
+          "path": "Agent/Publication/engineering_joint_safety.py",
+          "sha256": "3eae3dca4a75f92f3e5ba154f070e483ae8ce2218099d7d54dd89ed9d49d60f6"
+        },
+        {
+          "path": "Agent/Publication/engineering_joint_weather.py",
+          "sha256": "0f5a8e0fc4a500cc81a22dae42b27b28336ceaf3ce5961dbbe539484594776f1"
+        },
+        {
+          "path": "Agent/Publication/engineering_multicarrier_schedule.py",
+          "sha256": "53e8d333b48a0131719ee89952787886911ebffdb31972122c7d0734f59c104b"
+        },
+        {
+          "path": "Agent/Publication/engineering_process_budget.py",
+          "sha256": "41bf27ca41ede0749800c86f323024de5ac5224c15a7f48132ee326b51db18ad"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_acceptance.py",
+          "sha256": "d50011695da2f0a827e0a55402b802d865976848f6f67187c9fc4b183ab0f3bf"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_charging.py",
+          "sha256": "b64690e8ee4cff10c660d9e4698f8daf486439b92ece215dc148f3e0962b5aae"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_compaction.py",
+          "sha256": "1641586009bdc98c2ba4d88e2e676d463fc5fa8d4c0505e56f8bb21c1002fcf3"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_curves.py",
+          "sha256": "a36cf8faeeb88006b0aa826c8a09dd659448970cc07de2d9193f7c2f0e2bb9b8"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_enclosure.py",
+          "sha256": "7c7ee9b6c578263f733a2df2a99bf1248fcc0bc8697c5a4ff87e51ec91e377b6"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_geometry.py",
+          "sha256": "a51c66c313c54ad6547bfc4e54f6e82cc6acbbacd46aec47fc0a0195aa1865bf"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_memory.py",
+          "sha256": "24c0d5d66a232e5f844d89911593e86a3de4c1b812d5b57ec4d25143f1dbd1d1"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_physics.py",
+          "sha256": "313097e91348769fe02bae48753a72a5de3a99f926d3a4fb8bb06288aeab852f"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_rendezvous.py",
+          "sha256": "4796ef6ae55d7a75220e6285cac896edbde5736eac0f5353ea915bf9f9e6843e"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_resources.py",
+          "sha256": "9468fe77901eefad09e581e2476229712da6af000360d538e4e2c05c20ebd445"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_roads.py",
+          "sha256": "a41cbefa3dc023d2cbb9be013cdf0b7712afb3eed897ee7fa0dafb10968714a5"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_safety.py",
+          "sha256": "82ce7ca58ca5ec212feeeb1c38cdfb7a04c50db7bfa6299baa5feb00175dca99"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_seed.py",
+          "sha256": "983da8769e68caee318fdf61bf1c7b6a75c6668410bf29dcf73278e3502c65b4"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_solver.py",
+          "sha256": "5f9dfc64f2f80c816d9faaafa979b6ba85bae9c4af6e6b046754fbebfcfa7b54"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_structure.py",
+          "sha256": "b7e0e1909701b6d0906fdbdd6cf5ac14abdca12c530405698515a64167e4a47c"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_weather.py",
+          "sha256": "037143f84af7ac48baa924084180db9b7a58c86e43d3ebecafe59453e92ed4e2"
+        },
+        {
+          "path": "Agent/Publication/engineering_replanning.py",
+          "sha256": "f4d0af6d1ba2f29996915d2f714c410898d8d4d8666d067e98fbbfd65ae0eb35"
+        },
+        {
+          "path": "Agent/Publication/engineering_road_certificate.py",
+          "sha256": "c3cadbcbcec22f875c22d91b243ba4e48f4a8d919e5fe76af9e79df70bfee93d"
+        },
+        {
+          "path": "Agent/Publication/engineering_road_motion.py",
+          "sha256": "92cab8f2d580d6a2f1fa55874e847c14fde36c6c56cbb4a2ac30de22b5c36d7c"
+        },
+        {
+          "path": "Agent/Publication/engineering_solve_trace.py",
+          "sha256": "a3bf776a5f7c54d2011181f848b813afc25f8d358cb34394cabf259d22e8c99e"
+        },
+        {
+          "path": "Agent/Publication/engineering_target_surface.py",
+          "sha256": "8201e3bf3476f75cb0ec7faaf7449cb1e49d057c32dda7772d05aa927e6d9e14"
+        },
+        {
+          "path": "Agent/Publication/engineering_unified_inspection.py",
+          "sha256": "464c16e3309eccb88ea0f02545f5e393de5d967fc99541406f80b347a65f9e70"
+        },
+        {
+          "path": "scripts/run_inspection_regional.py",
+          "sha256": "8b2a751e6c8431ff96ae9ecd8394082e912b427317162dc59cf43e55016cc928"
+        },
+        {
+          "path": "scripts/diagnose_inspection_constraint_layers.py",
+          "sha256": "4152f3cc78cbcdd2e76ccaa8233d825def90425edfc1589cf7bc2584fb05a77a"
+        },
+        {
+          "path": "Agent/Publication/engineering_inspection_model.tex",
+          "sha256": "88b7e54dcb4e6a67a844b023b7af8b3c59695e4fd458f7f42e1ddeef69633285"
+        },
+        {
+          "path": "research_quality/inspection_regional_model_data.json",
+          "sha256": "ee30612135a2b3057192d1bcf6c0eb53a28b76e94efe16a828b87dd168e1929c"
+        }
+      ],
+      "fee_authorization_used": false,
+      "live_background_supervisor": false,
+      "SCIP_log": "scip_329a7f263e3525a1_6948.log",
+      "warm_start": {
+        "mapping": {
+          "source_run": "1794231440_25904",
+          "witness": "总结\\03_实验数据\\工程化联合求解\\constraint_layers\\1794231440_25904_layer11_witness.json.gz",
+          "witness_sha256": "62c2343dd7ae04ec371a03ef854c2e25afe347fb7802962799bf5c420a2368fa",
+          "copied_variables": 603848,
+          "inactive_return_defaults": 19760,
+          "active_return_segments": 12,
+          "maximum_forward_inverse_state_clock_error": 9.094947017729282e-13,
+          "fixed_original_decisions": 0,
+          "coverage_preserved": true,
+          "proof": "selected last-task return is relabeled to its flight; inactive task return states have no active physical constraints"
+        },
+        "audit": {
+          "native_feasible": true,
+          "indexed_rows_checked": 21454,
+          "indexed_max_error": 1.2931877790833823e-12,
+          "indexed_bad_count": 0,
+          "indexed_bad": [],
+          "bounds_bad_count": 0,
+          "bounds_bad": [],
+          "completed_towers": 4,
+          "active_photos": 36,
+          "coverage_complete": false,
+          "coverage_required": 237,
+          "active_flights": 4,
+          "uncompleted_towers": 233,
+          "makespan_s": 6555.305426080421,
+          "missing_active_physical_integrals": 0,
+          "continuous_acceptance": {
+            "passed": true,
+            "requests": [],
+            "unresolved": [],
+            "active_segments": 156,
+            "vehicle_phases": 512,
+            "energy_intervals": [
+              {
+                "pack": "B1_1",
+                "lower_terminal_Wh": 277.06994339306095,
+                "upper_terminal_Wh": 277.07117034626543
+              },
+              {
+                "pack": "B1_2",
+                "lower_terminal_Wh": 273.4646556751674,
+                "upper_terminal_Wh": 273.46592406141656
+              },
+              {
+                "pack": "B1_3",
+                "lower_terminal_Wh": 548.0,
+                "upper_terminal_Wh": 548.0
+              },
+              {
+                "pack": "B1_4",
+                "lower_terminal_Wh": 548.0,
+                "upper_terminal_Wh": 548.0
+              },
+              {
+                "pack": "B2_1",
+                "lower_terminal_Wh": 260.91414431252235,
+                "upper_terminal_Wh": 260.9155431355296
+              },
+              {
+                "pack": "B2_2",
+                "lower_terminal_Wh": 251.22564927188824,
+                "upper_terminal_Wh": 251.22704090992482
+              },
+              {
+                "pack": "B2_3",
+                "lower_terminal_Wh": 548.0,
+                "upper_terminal_Wh": 548.0
+              },
+              {
+                "pack": "B2_4",
+                "lower_terminal_Wh": 548.0,
+                "upper_terminal_Wh": 548.0
+              }
+            ],
+            "original_road_points_checked": 4096,
+            "energy_tolerance_per_segment_Wh": 0.0001,
+            "formal_directed_rounding_certificate": false,
+            "geometric_tolerance_m": 1e-06,
+            "ackermann_residual_tolerance_SI": 0.0001
+          },
+          "physical_oracle": null,
+          "passed": true
+        },
+        "original_decisions_fixed": 0,
+        "regional_task_complete": false,
+        "coverage_complete": false,
+        "deferred_vehicle_rows": true,
+        "required_road_points": 4096,
+        "necessary_bounds": {
+          "power_floor_W": 774.3985500553088,
+          "rho_max": 1.1943558276976665,
+          "windows": [
+            [
+              0,
+              10800
+            ],
+            [
+              18000,
+              28800
+            ]
+          ],
+          "maximum_airborne_s": 2038.0203448047257,
+          "ground_camera_acc_bounds": [
+            0.3141592653589793,
+            0.3141592653589793,
+            0.8784773060029283
+          ],
+          "ground_camera_variables_tightened": 1872,
+          "global_rows": 3,
+          "proof": "nonnegative drag/climb, nonoverlapping task intervals within each flight, telescoping physical-pack ledger"
+        },
+        "added": false,
+        "role": "regression_witness_only_not_valid_for_all237_requirement",
+        "primal_presolve_enabled": true,
+        "dual_reductions_enabled": false
+      },
+      "row_hooks": {
+        "mode": "all_families_checked_by_full_continuous_guard",
+        "auxiliary_points_added_on_violation": true,
+        "prior_materialization_tests": "row_hook_progress.json",
+        "no_physical_family_omitted": true
+      },
+      "build": {
+        "wall_s": 95.60662570002023,
+        "tasks": 2133,
+        "towers": 237,
+        "optional_flights": 156,
+        "variables": 624876,
+        "explicit_rows": 222206,
+        "indexed_relations": 40798,
+        "physical_integrals_materialized": 0,
+        "physical_families_guarded_by_candidate_handler": true,
+        "full_scalar_incidence_available": false,
+        "rss_GiB": 1.6417083740234375,
+        "available_RAM_GiB": 6.585716247558594
+      },
+      "result": {
+        "status": "engineering_error",
+        "error": {
+          "type": "Exception",
+          "message": "SCIP: error in LP solver!"
+        },
+        "LP_coefficients": {
+          "available": true,
+          "rows": 241728,
+          "nnz": 1336038,
+          "minimum_nonzero": 9.91280668327654e-08,
+          "maximum": 270108749.89387435
+        },
+        "complete": false,
+        "incumbent": null
+      },
+      "elapsed_s": 663.1115152999992
+    },
+    "actual_attempts": [
+      {
+        "task_id": "inspection_regional_day_ahead",
+        "run_id": "55e303a58be6b97c_1360",
+        "observed_at": "2026-11-09T17:51:58.228224+00:00",
+        "pid": 1360,
+        "process_create_time": 1794246631.9433467,
+        "user_authorization": "完成就开始求解！ / 开始完整接入 / 继续任务",
+        "scope": "all237 towers2133tasks; all source roads and DEM; unified finite transcription with continuous candidate acceptance",
+        "status": "memlimit",
+        "solve_requested": true,
+        "wall_time_limit_s": null,
+        "node_limit": null,
+        "gap_target": 0,
+        "solver_configuration": {
+          "nlp/disable": true,
+          "verified_repair_warm_start": false,
+          "shared_recovery": true,
+          "require_all_towers_diagnostic": true,
+          "lp/scaling": 2,
+          "compact_memory": true,
+          "primal_heuristics_disabled": false,
+          "compact_parameters": {
+            "memory/arraygrowfac": 1.05,
+            "memory/savefac": 0.5,
+            "misc/usevartable": false,
+            "misc/useconstable": false
+          },
+          "source": "https://scipopt.org/doc/html/PARAMETERS.php",
+          "reason": "Explicit memory diagnostic; changes internal relaxation algorithm, not mathematical feasible decisions"
+        },
+        "numerical_grid": {
+          "road_phases_per_carrier": 256,
+          "charging_events_per_carrier": 156,
+          "trajectory_degree": 7,
+          "transfer_pieces": 3,
+          "minimum_positive_piece_s": 0.001
+        },
+        "grids_are_not_lossless_physical_limits": true,
+        "full_continuous_domain_optimality_claim": false,
+        "peak_output_reservation_GiB": 0.25,
+        "storage_floors_GiB": {
+          "C": 10,
+          "D": 30
+        },
+        "files": [
+          {
+            "path": "Agent/Publication/engineering_conditional_hypergraph.py",
+            "sha256": "613b3a9f4cdbd03f8878e45f6d7ea10b099af850518fa983f2c3e8e960e4fae3"
+          },
+          {
+            "path": "Agent/Publication/engineering_energy_enclosure.py",
+            "sha256": "6d3e064aeeac4dea41ddc63f2d718c5589008b2d4e812a09d9e8a46dbd863078"
+          },
+          {
+            "path": "Agent/Publication/engineering_event_charging.py",
+            "sha256": "1e65aad005cb569332eb654629f96317565376ae84d635a5e0d7b80b709cbbc3"
+          },
+          {
+            "path": "Agent/Publication/engineering_fleet_schedule.py",
+            "sha256": "2b9042cebd063cbd79c4a2c3d1e83a8ff73e68d9d8d7f79b63ad00900a5c3353"
+          },
+          {
+            "path": "Agent/Publication/engineering_flight_labels.py",
+            "sha256": "183783f8fe040e710b560ec322068a1259033a7c25345521389e6f72cad38603"
+          },
+          {
+            "path": "Agent/Publication/engineering_free_trajectory.py",
+            "sha256": "cf99c2353281858defe79d74e6551e925bf772749bfa24853772e7c0bd1dac2e"
+          },
+          {
+            "path": "Agent/Publication/engineering_indexed_constraints.py",
+            "sha256": "c1d108fafcfbf99a8df18509e816a3710c03dcfbdab6b34ab0fbb1fc789f5037"
+          },
+          {
+            "path": "Agent/Publication/engineering_indexed_terrain.py",
+            "sha256": "1d91a87ea2bf637d9d919c34303ee2c5707671e89869859e411bba28ec8cd0db"
+          },
+          {
+            "path": "Agent/Publication/engineering_inspection_primitives.py",
+            "sha256": "d67745df4dc64664a1c511b35d26a19eafd45c21098b5da98fef2fad9d59b438"
+          },
+          {
+            "path": "Agent/Publication/engineering_interval_physics.py",
+            "sha256": "c31f8aac813ee195992c8eaebe3ccfcbedd8130de97569f4fb1a77f39b9e62c5"
+          },
+          {
+            "path": "Agent/Publication/engineering_joint_execution.py",
+            "sha256": "b51d9c42c1ddeb870620b562e74f494d6941bb997a743677f9bac49ebc4f60f1"
+          },
+          {
+            "path": "Agent/Publication/engineering_joint_optical_trajectory.py",
+            "sha256": "7a7af6ad60dd064a0248823eec4a0852f51149f83133e354e48388bddd59afd0"
+          },
+          {
+            "path": "Agent/Publication/engineering_joint_optimality.py",
+            "sha256": "b51beaf79c073aba9e13a5416341b79f0563a612914713c2e8bd1ffa98b822e3"
+          },
+          {
+            "path": "Agent/Publication/engineering_joint_safety.py",
+            "sha256": "3eae3dca4a75f92f3e5ba154f070e483ae8ce2218099d7d54dd89ed9d49d60f6"
+          },
+          {
+            "path": "Agent/Publication/engineering_joint_weather.py",
+            "sha256": "0f5a8e0fc4a500cc81a22dae42b27b28336ceaf3ce5961dbbe539484594776f1"
+          },
+          {
+            "path": "Agent/Publication/engineering_multicarrier_schedule.py",
+            "sha256": "53e8d333b48a0131719ee89952787886911ebffdb31972122c7d0734f59c104b"
+          },
+          {
+            "path": "Agent/Publication/engineering_process_budget.py",
+            "sha256": "41bf27ca41ede0749800c86f323024de5ac5224c15a7f48132ee326b51db18ad"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_acceptance.py",
+            "sha256": "f151d3f29b6ed55188a1747da91c312ab74ffafe8a0a8b3ee15828c8b47c4303"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_charging.py",
+            "sha256": "b64690e8ee4cff10c660d9e4698f8daf486439b92ece215dc148f3e0962b5aae"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_compaction.py",
+            "sha256": "089e7e57ef3656be0319399627e9b84776177ede45106927010172fa0f37ae6a"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_curves.py",
+            "sha256": "0a85f0734d127556a9722f928cb1fcb51dddb52c3a6be805aa954f2902112a5f"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_enclosure.py",
+            "sha256": "822a7ac089a5a3487460f101fcb9b72ff4982a7d18847160bb027d9e642bf193"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_geometry.py",
+            "sha256": "a51c66c313c54ad6547bfc4e54f6e82cc6acbbacd46aec47fc0a0195aa1865bf"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_memory.py",
+            "sha256": "24c0d5d66a232e5f844d89911593e86a3de4c1b812d5b57ec4d25143f1dbd1d1"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_physics.py",
+            "sha256": "a8f23bd5ec106d29e2ed61bbcf23becb552d3aec72c6da6a4abbad9073cd3966"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_rendezvous.py",
+            "sha256": "4796ef6ae55d7a75220e6285cac896edbde5736eac0f5353ea915bf9f9e6843e"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_resources.py",
+            "sha256": "9468fe77901eefad09e581e2476229712da6af000360d538e4e2c05c20ebd445"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_roads.py",
+            "sha256": "a41cbefa3dc023d2cbb9be013cdf0b7712afb3eed897ee7fa0dafb10968714a5"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_safety.py",
+            "sha256": "30049988490b4e6ea8a97c1bba28c251cef988696235d8bb8fdee02fe26ac925"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_seed.py",
+            "sha256": "983da8769e68caee318fdf61bf1c7b6a75c6668410bf29dcf73278e3502c65b4"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_solver.py",
+            "sha256": "a84d82adb3ff45c77945d81b405582544af7525d9a9d27abe186a484c8585079"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_structure.py",
+            "sha256": "b7e0e1909701b6d0906fdbdd6cf5ac14abdca12c530405698515a64167e4a47c"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_weather.py",
+            "sha256": "037143f84af7ac48baa924084180db9b7a58c86e43d3ebecafe59453e92ed4e2"
+          },
+          {
+            "path": "Agent/Publication/engineering_replanning.py",
+            "sha256": "f4d0af6d1ba2f29996915d2f714c410898d8d4d8666d067e98fbbfd65ae0eb35"
+          },
+          {
+            "path": "Agent/Publication/engineering_road_certificate.py",
+            "sha256": "c3cadbcbcec22f875c22d91b243ba4e48f4a8d919e5fe76af9e79df70bfee93d"
+          },
+          {
+            "path": "Agent/Publication/engineering_road_motion.py",
+            "sha256": "92cab8f2d580d6a2f1fa55874e847c14fde36c6c56cbb4a2ac30de22b5c36d7c"
+          },
+          {
+            "path": "Agent/Publication/engineering_solve_trace.py",
+            "sha256": "a3bf776a5f7c54d2011181f848b813afc25f8d358cb34394cabf259d22e8c99e"
+          },
+          {
+            "path": "Agent/Publication/engineering_target_surface.py",
+            "sha256": "8201e3bf3476f75cb0ec7faaf7449cb1e49d057c32dda7772d05aa927e6d9e14"
+          },
+          {
+            "path": "Agent/Publication/engineering_unified_inspection.py",
+            "sha256": "464c16e3309eccb88ea0f02545f5e393de5d967fc99541406f80b347a65f9e70"
+          },
+          {
+            "path": "scripts/run_inspection_regional.py",
+            "sha256": "8b2a751e6c8431ff96ae9ecd8394082e912b427317162dc59cf43e55016cc928"
+          },
+          {
+            "path": "scripts/diagnose_inspection_constraint_layers.py",
+            "sha256": "4152f3cc78cbcdd2e76ccaa8233d825def90425edfc1589cf7bc2584fb05a77a"
+          },
+          {
+            "path": "Agent/Publication/engineering_inspection_model.tex",
+            "sha256": "88b7e54dcb4e6a67a844b023b7af8b3c59695e4fd458f7f42e1ddeef69633285"
+          },
+          {
+            "path": "research_quality/inspection_regional_model_data.json",
+            "sha256": "ee30612135a2b3057192d1bcf6c0eb53a28b76e94efe16a828b87dd168e1929c"
+          }
+        ],
+        "fee_authorization_used": false,
+        "live_background_supervisor": false,
+        "SCIP_log": "scip_55e303a58be6b97c_1360.log",
+        "warm_start": {
+          "mapping": {
+            "source_run": "1794231440_25904",
+            "witness": "总结\\03_实验数据\\工程化联合求解\\constraint_layers\\1794231440_25904_layer11_witness.json.gz",
+            "witness_sha256": "62c2343dd7ae04ec371a03ef854c2e25afe347fb7802962799bf5c420a2368fa",
+            "copied_variables": 603848,
+            "inactive_return_defaults": 19760,
+            "active_return_segments": 12,
+            "maximum_forward_inverse_state_clock_error": 9.094947017729282e-13,
+            "fixed_original_decisions": 0,
+            "coverage_preserved": true,
+            "proof": "selected last-task return is relabeled to its flight; inactive task return states have no active physical constraints"
+          },
+          "audit": {
+            "native_feasible": true,
+            "indexed_rows_checked": 21454,
+            "indexed_max_error": 1.2931877790833823e-12,
+            "indexed_bad_count": 0,
+            "indexed_bad": [],
+            "bounds_bad_count": 0,
+            "bounds_bad": [],
+            "completed_towers": 4,
+            "active_photos": 36,
+            "coverage_complete": false,
+            "coverage_required": 237,
+            "active_flights": 4,
+            "uncompleted_towers": 233,
+            "makespan_s": 6555.305426080421,
+            "missing_active_physical_integrals": 0,
+            "continuous_acceptance": {
+              "passed": true,
+              "requests": [],
+              "unresolved": [],
+              "active_segments": 156,
+              "vehicle_phases": 512,
+              "energy_intervals": [
+                {
+                  "pack": "B1_1",
+                  "lower_terminal_Wh": 277.06994403360164,
+                  "upper_terminal_Wh": 277.071169703738
+                },
+                {
+                  "pack": "B1_2",
+                  "lower_terminal_Wh": 273.46465635894816,
+                  "upper_terminal_Wh": 273.4659233755557
+                },
+                {
+                  "pack": "B1_3",
+                  "lower_terminal_Wh": 548.0,
+                  "upper_terminal_Wh": 548.0
+                },
+                {
+                  "pack": "B1_4",
+                  "lower_terminal_Wh": 548.0,
+                  "upper_terminal_Wh": 548.0
+                },
+                {
+                  "pack": "B2_1",
+                  "lower_terminal_Wh": 260.9141450626804,
+                  "upper_terminal_Wh": 260.9155423731754
+                },
+                {
+                  "pack": "B2_2",
+                  "lower_terminal_Wh": 251.22565015872175,
+                  "upper_terminal_Wh": 251.2270400080278
+                },
+                {
+                  "pack": "B2_3",
+                  "lower_terminal_Wh": 548.0,
+                  "upper_terminal_Wh": 548.0
+                },
+                {
+                  "pack": "B2_4",
+                  "lower_terminal_Wh": 548.0,
+                  "upper_terminal_Wh": 548.0
+                }
+              ],
+              "original_road_points_checked": 4096,
+              "energy_tolerance_per_segment_Wh": 0.0001,
+              "formal_directed_rounding_certificate": false,
+              "geometric_tolerance_m": 1e-06,
+              "ackermann_residual_tolerance_SI": 0.0001
+            },
+            "physical_oracle": null,
+            "passed": true
+          },
+          "original_decisions_fixed": 0,
+          "regional_task_complete": false,
+          "coverage_complete": false,
+          "deferred_vehicle_rows": true,
+          "required_road_points": 4096,
+          "necessary_bounds": {
+            "power_floor_W": 774.3985500553088,
+            "rho_max": 1.1943558276976665,
+            "windows": [
+              [
+                0,
+                10800
+              ],
+              [
+                18000,
+                28800
+              ]
+            ],
+            "maximum_airborne_s": 2038.0203448047257,
+            "ground_camera_acc_bounds": [
+              0.3141592653589793,
+              0.3141592653589793,
+              0.8784773060029283
+            ],
+            "ground_camera_variables_tightened": 1872,
+            "global_rows": 3,
+            "proof": "nonnegative drag/climb, nonoverlapping task intervals within each flight, telescoping physical-pack ledger"
+          },
+          "added": false,
+          "role": "regression_witness_only_not_valid_for_all237_requirement",
+          "primal_presolve_enabled": true,
+          "dual_reductions_enabled": false
+        },
+        "row_hooks": {
+          "mode": "all_families_checked_by_full_continuous_guard",
+          "auxiliary_points_added_on_violation": true,
+          "prior_materialization_tests": "row_hook_progress.json",
+          "no_physical_family_omitted": true
+        },
+        "build": {
+          "wall_s": 83.49288389994763,
+          "tasks": 2133,
+          "towers": 237,
+          "optional_flights": 156,
+          "variables": 633876,
+          "explicit_rows": 240516,
+          "indexed_relations": 40798,
+          "physical_integrals_materialized": 0,
+          "physical_families_guarded_by_candidate_handler": true,
+          "full_scalar_incidence_available": false,
+          "rss_GiB": 1.6719398498535156,
+          "available_RAM_GiB": 3.1704978942871094
+        },
+        "result": {
+          "status": "memlimit",
+          "complete": false,
+          "incumbent": null
+        },
+        "elapsed_s": 84.43751009996049
+      },
+      {
+        "task_id": "inspection_regional_day_ahead",
+        "run_id": "f36744d64d8849aa_59580",
+        "observed_at": "2026-11-09T17:57:15.558800+00:00",
+        "pid": 59580,
+        "process_create_time": 1794246953.1931174,
+        "user_authorization": "完成就开始求解！ / 开始完整接入 / 继续任务",
+        "scope": "all237 towers2133tasks; all source roads and DEM; unified finite transcription with continuous candidate acceptance",
+        "status": "resource_protection",
+        "solve_requested": true,
+        "wall_time_limit_s": null,
+        "node_limit": null,
+        "gap_target": 0,
+        "solver_configuration": {
+          "nlp/disable": true,
+          "verified_repair_warm_start": false,
+          "shared_recovery": true,
+          "require_all_towers_diagnostic": true,
+          "lp/scaling": 2,
+          "compact_memory": true,
+          "primal_heuristics_disabled": false,
+          "compact_parameters": {
+            "memory/arraygrowfac": 1.05,
+            "memory/savefac": 0.5,
+            "misc/usevartable": false,
+            "misc/useconstable": false
+          },
+          "source": "https://scipopt.org/doc/html/PARAMETERS.php",
+          "reason": "Explicit memory diagnostic; changes internal relaxation algorithm, not mathematical feasible decisions"
+        },
+        "numerical_grid": {
+          "road_phases_per_carrier": 256,
+          "charging_events_per_carrier": 156,
+          "trajectory_degree": 7,
+          "transfer_pieces": 3,
+          "minimum_positive_piece_s": 0.001
+        },
+        "grids_are_not_lossless_physical_limits": true,
+        "full_continuous_domain_optimality_claim": false,
+        "peak_output_reservation_GiB": 0.25,
+        "storage_floors_GiB": {
+          "C": 10,
+          "D": 30
+        },
+        "files": [
+          {
+            "path": "Agent/Publication/engineering_conditional_hypergraph.py",
+            "sha256": "613b3a9f4cdbd03f8878e45f6d7ea10b099af850518fa983f2c3e8e960e4fae3"
+          },
+          {
+            "path": "Agent/Publication/engineering_energy_enclosure.py",
+            "sha256": "6d3e064aeeac4dea41ddc63f2d718c5589008b2d4e812a09d9e8a46dbd863078"
+          },
+          {
+            "path": "Agent/Publication/engineering_event_charging.py",
+            "sha256": "1e65aad005cb569332eb654629f96317565376ae84d635a5e0d7b80b709cbbc3"
+          },
+          {
+            "path": "Agent/Publication/engineering_fleet_schedule.py",
+            "sha256": "2b9042cebd063cbd79c4a2c3d1e83a8ff73e68d9d8d7f79b63ad00900a5c3353"
+          },
+          {
+            "path": "Agent/Publication/engineering_flight_labels.py",
+            "sha256": "183783f8fe040e710b560ec322068a1259033a7c25345521389e6f72cad38603"
+          },
+          {
+            "path": "Agent/Publication/engineering_free_trajectory.py",
+            "sha256": "cf99c2353281858defe79d74e6551e925bf772749bfa24853772e7c0bd1dac2e"
+          },
+          {
+            "path": "Agent/Publication/engineering_indexed_constraints.py",
+            "sha256": "c1d108fafcfbf99a8df18509e816a3710c03dcfbdab6b34ab0fbb1fc789f5037"
+          },
+          {
+            "path": "Agent/Publication/engineering_indexed_terrain.py",
+            "sha256": "1d91a87ea2bf637d9d919c34303ee2c5707671e89869859e411bba28ec8cd0db"
+          },
+          {
+            "path": "Agent/Publication/engineering_inspection_primitives.py",
+            "sha256": "d67745df4dc64664a1c511b35d26a19eafd45c21098b5da98fef2fad9d59b438"
+          },
+          {
+            "path": "Agent/Publication/engineering_interval_physics.py",
+            "sha256": "c31f8aac813ee195992c8eaebe3ccfcbedd8130de97569f4fb1a77f39b9e62c5"
+          },
+          {
+            "path": "Agent/Publication/engineering_joint_execution.py",
+            "sha256": "b51d9c42c1ddeb870620b562e74f494d6941bb997a743677f9bac49ebc4f60f1"
+          },
+          {
+            "path": "Agent/Publication/engineering_joint_optical_trajectory.py",
+            "sha256": "7a7af6ad60dd064a0248823eec4a0852f51149f83133e354e48388bddd59afd0"
+          },
+          {
+            "path": "Agent/Publication/engineering_joint_optimality.py",
+            "sha256": "b51beaf79c073aba9e13a5416341b79f0563a612914713c2e8bd1ffa98b822e3"
+          },
+          {
+            "path": "Agent/Publication/engineering_joint_safety.py",
+            "sha256": "3eae3dca4a75f92f3e5ba154f070e483ae8ce2218099d7d54dd89ed9d49d60f6"
+          },
+          {
+            "path": "Agent/Publication/engineering_joint_weather.py",
+            "sha256": "0f5a8e0fc4a500cc81a22dae42b27b28336ceaf3ce5961dbbe539484594776f1"
+          },
+          {
+            "path": "Agent/Publication/engineering_multicarrier_schedule.py",
+            "sha256": "53e8d333b48a0131719ee89952787886911ebffdb31972122c7d0734f59c104b"
+          },
+          {
+            "path": "Agent/Publication/engineering_process_budget.py",
+            "sha256": "41bf27ca41ede0749800c86f323024de5ac5224c15a7f48132ee326b51db18ad"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_acceptance.py",
+            "sha256": "f151d3f29b6ed55188a1747da91c312ab74ffafe8a0a8b3ee15828c8b47c4303"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_charging.py",
+            "sha256": "b64690e8ee4cff10c660d9e4698f8daf486439b92ece215dc148f3e0962b5aae"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_compaction.py",
+            "sha256": "089e7e57ef3656be0319399627e9b84776177ede45106927010172fa0f37ae6a"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_curves.py",
+            "sha256": "3f18fce16c824ea73e2e76c9c80f85c84a9e39b80f18ed73f93d466fa7b82788"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_enclosure.py",
+            "sha256": "822a7ac089a5a3487460f101fcb9b72ff4982a7d18847160bb027d9e642bf193"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_geometry.py",
+            "sha256": "a51c66c313c54ad6547bfc4e54f6e82cc6acbbacd46aec47fc0a0195aa1865bf"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_memory.py",
+            "sha256": "24c0d5d66a232e5f844d89911593e86a3de4c1b812d5b57ec4d25143f1dbd1d1"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_physics.py",
+            "sha256": "a8f23bd5ec106d29e2ed61bbcf23becb552d3aec72c6da6a4abbad9073cd3966"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_rendezvous.py",
+            "sha256": "67268f1e0f60095ab40243b88259de48e1b970504d001ba66d2a6f8d4b2edf3b"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_resources.py",
+            "sha256": "9468fe77901eefad09e581e2476229712da6af000360d538e4e2c05c20ebd445"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_roads.py",
+            "sha256": "a41cbefa3dc023d2cbb9be013cdf0b7712afb3eed897ee7fa0dafb10968714a5"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_safety.py",
+            "sha256": "30049988490b4e6ea8a97c1bba28c251cef988696235d8bb8fdee02fe26ac925"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_seed.py",
+            "sha256": "57482ce92ef7dbfaaac5d6afb748b845c73daa60b9277386f6c9df2c0334448d"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_solver.py",
+            "sha256": "e90d62b6068a9692288b642ffc7109a1d6615116374405e8b1d5014e6e0b0e92"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_structure.py",
+            "sha256": "b7e0e1909701b6d0906fdbdd6cf5ac14abdca12c530405698515a64167e4a47c"
+          },
+          {
+            "path": "Agent/Publication/engineering_regional_weather.py",
+            "sha256": "037143f84af7ac48baa924084180db9b7a58c86e43d3ebecafe59453e92ed4e2"
+          },
+          {
+            "path": "Agent/Publication/engineering_replanning.py",
+            "sha256": "f4d0af6d1ba2f29996915d2f714c410898d8d4d8666d067e98fbbfd65ae0eb35"
+          },
+          {
+            "path": "Agent/Publication/engineering_road_certificate.py",
+            "sha256": "c3cadbcbcec22f875c22d91b243ba4e48f4a8d919e5fe76af9e79df70bfee93d"
+          },
+          {
+            "path": "Agent/Publication/engineering_road_motion.py",
+            "sha256": "92cab8f2d580d6a2f1fa55874e847c14fde36c6c56cbb4a2ac30de22b5c36d7c"
+          },
+          {
+            "path": "Agent/Publication/engineering_solve_trace.py",
+            "sha256": "a3bf776a5f7c54d2011181f848b813afc25f8d358cb34394cabf259d22e8c99e"
+          },
+          {
+            "path": "Agent/Publication/engineering_target_surface.py",
+            "sha256": "8201e3bf3476f75cb0ec7faaf7449cb1e49d057c32dda7772d05aa927e6d9e14"
+          },
+          {
+            "path": "Agent/Publication/engineering_unified_inspection.py",
+            "sha256": "464c16e3309eccb88ea0f02545f5e393de5d967fc99541406f80b347a65f9e70"
+          },
+          {
+            "path": "scripts/run_inspection_regional.py",
+            "sha256": "8b2a751e6c8431ff96ae9ecd8394082e912b427317162dc59cf43e55016cc928"
+          },
+          {
+            "path": "scripts/diagnose_inspection_constraint_layers.py",
+            "sha256": "4152f3cc78cbcdd2e76ccaa8233d825def90425edfc1589cf7bc2584fb05a77a"
+          },
+          {
+            "path": "Agent/Publication/engineering_inspection_model.tex",
+            "sha256": "88b7e54dcb4e6a67a844b023b7af8b3c59695e4fd458f7f42e1ddeef69633285"
+          },
+          {
+            "path": "research_quality/inspection_regional_model_data.json",
+            "sha256": "ee30612135a2b3057192d1bcf6c0eb53a28b76e94efe16a828b87dd168e1929c"
+          }
+        ],
+        "fee_authorization_used": false,
+        "live_background_supervisor": false,
+        "SCIP_log": "scip_f36744d64d8849aa_59580.log",
+        "warm_start": {
+          "mapping": {
+            "source_run": "1794231440_25904",
+            "witness": "总结\\03_实验数据\\工程化联合求解\\constraint_layers\\1794231440_25904_layer11_witness.json.gz",
+            "witness_sha256": "62c2343dd7ae04ec371a03ef854c2e25afe347fb7802962799bf5c420a2368fa",
+            "copied_variables": 596360,
+            "inactive_return_defaults": 19760,
+            "active_return_segments": 12,
+            "maximum_forward_inverse_state_clock_error": 9.094947017729282e-13,
+            "fixed_original_decisions": 0,
+            "coverage_preserved": true,
+            "proof": "selected last-task return is relabeled to its flight; inactive task return states have no active physical constraints"
+          },
+          "audit": {
+            "native_feasible": true,
+            "indexed_rows_checked": 21454,
+            "indexed_max_error": 1.2931877790833823e-12,
+            "indexed_bad_count": 0,
+            "indexed_bad": [],
+            "bounds_bad_count": 0,
+            "bounds_bad": [],
+            "completed_towers": 4,
+            "active_photos": 36,
+            "coverage_complete": false,
+            "coverage_required": 237,
+            "active_flights": 4,
+            "uncompleted_towers": 233,
+            "makespan_s": 6555.305426080421,
+            "missing_active_physical_integrals": 0,
+            "continuous_acceptance": {
+              "passed": true,
+              "requests": [],
+              "unresolved": [],
+              "active_segments": 156,
+              "vehicle_phases": 512,
+              "energy_intervals": [
+                {
+                  "pack": "B1_1",
+                  "lower_terminal_Wh": 277.06994403360164,
+                  "upper_terminal_Wh": 277.071169703738
+                },
+                {
+                  "pack": "B1_2",
+                  "lower_terminal_Wh": 273.46465635894816,
+                  "upper_terminal_Wh": 273.4659233755557
+                },
+                {
+                  "pack": "B1_3",
+                  "lower_terminal_Wh": 548.0,
+                  "upper_terminal_Wh": 548.0
+                },
+                {
+                  "pack": "B1_4",
+                  "lower_terminal_Wh": 548.0,
+                  "upper_terminal_Wh": 548.0
+                },
+                {
+                  "pack": "B2_1",
+                  "lower_terminal_Wh": 260.9141450626804,
+                  "upper_terminal_Wh": 260.9155423731754
+                },
+                {
+                  "pack": "B2_2",
+                  "lower_terminal_Wh": 251.22565015872175,
+                  "upper_terminal_Wh": 251.2270400080278
+                },
+                {
+                  "pack": "B2_3",
+                  "lower_terminal_Wh": 548.0,
+                  "upper_terminal_Wh": 548.0
+                },
+                {
+                  "pack": "B2_4",
+                  "lower_terminal_Wh": 548.0,
+                  "upper_terminal_Wh": 548.0
+                }
+              ],
+              "original_road_points_checked": 4096,
+              "energy_tolerance_per_segment_Wh": 0.0001,
+              "formal_directed_rounding_certificate": false,
+              "geometric_tolerance_m": 1e-06,
+              "ackermann_residual_tolerance_SI": 0.0001
+            },
+            "physical_oracle": null,
+            "passed": true
+          },
+          "original_decisions_fixed": 0,
+          "regional_task_complete": false,
+          "coverage_complete": false,
+          "deferred_vehicle_rows": true,
+          "required_road_points": 4096,
+          "necessary_bounds": {
+            "power_floor_W": 774.3985500553088,
+            "rho_max": 1.1943558276976665,
+            "windows": [
+              [
+                0,
+                10800
+              ],
+              [
+                18000,
+                28800
+              ]
+            ],
+            "maximum_airborne_s": 2038.0203448047257,
+            "ground_camera_acc_bounds": [
+              0.3141592653589793,
+              0.3141592653589793,
+              0.8784773060029283
+            ],
+            "ground_camera_variables_tightened": 1872,
+            "global_rows": 3,
+            "proof": "nonnegative drag/climb, nonoverlapping task intervals within each flight, telescoping physical-pack ledger"
+          },
+          "added": false,
+          "role": "regression_witness_only_not_valid_for_all237_requirement",
+          "primal_presolve_enabled": true,
+          "dual_reductions_enabled": false
+        },
+        "row_hooks": {
+          "mode": "all_families_checked_by_full_continuous_guard",
+          "auxiliary_points_added_on_violation": true,
+          "prior_materialization_tests": "row_hook_progress.json",
+          "no_physical_family_omitted": true
+        },
+        "build": {
+          "wall_s": 80.37024379998911,
+          "tasks": 2133,
+          "towers": 237,
+          "optional_flights": 156,
+          "variables": 626388,
+          "explicit_rows": 193092,
+          "indexed_relations": 40798,
+          "physical_integrals_materialized": 0,
+          "physical_families_guarded_by_candidate_handler": true,
+          "full_scalar_incidence_available": false,
+          "rss_GiB": 1.458770751953125,
+          "available_RAM_GiB": 2.099590301513672
+        },
+        "result": {
+          "status": "resource_protection",
+          "complete": false,
+          "resource": {
+            "observed_at": "2026-11-09T17:57:15.558800+00:00",
+            "available_RAM_GiB": 2.0994338989257812,
+            "free_disks_GiB": {
+              "C": 17.175777435302734,
+              "D": 169.0877456665039
+            },
+            "memory": {
+              "physical_available_GiB": 2.0994338989257812,
+              "process_private_GiB": 1.9499130249023438,
+              "commit_limit_GiB": 55.824806213378906,
+              "commit_available_GiB": 1.3501358032226562
+            },
+            "reason": "live RAM/commit/storage and native peak protection; no elapsed-time optimization cutoff"
+          }
+        },
+        "elapsed_s": 80.37332179991063
+      }
+    ],
+    "latest_built": {
+      "task_id": "inspection_regional_day_ahead",
+      "run_id": "f36744d64d8849aa_59580",
+      "observed_at": "2026-11-09T17:57:15.558800+00:00",
+      "pid": 59580,
+      "process_create_time": 1794246953.1931174,
+      "user_authorization": "完成就开始求解！ / 开始完整接入 / 继续任务",
+      "scope": "all237 towers2133tasks; all source roads and DEM; unified finite transcription with continuous candidate acceptance",
+      "status": "resource_protection",
+      "solve_requested": true,
+      "wall_time_limit_s": null,
+      "node_limit": null,
+      "gap_target": 0,
+      "solver_configuration": {
+        "nlp/disable": true,
+        "verified_repair_warm_start": false,
+        "shared_recovery": true,
+        "require_all_towers_diagnostic": true,
+        "lp/scaling": 2,
+        "compact_memory": true,
+        "primal_heuristics_disabled": false,
+        "compact_parameters": {
+          "memory/arraygrowfac": 1.05,
+          "memory/savefac": 0.5,
+          "misc/usevartable": false,
+          "misc/useconstable": false
+        },
+        "source": "https://scipopt.org/doc/html/PARAMETERS.php",
+        "reason": "Explicit memory diagnostic; changes internal relaxation algorithm, not mathematical feasible decisions"
+      },
+      "numerical_grid": {
+        "road_phases_per_carrier": 256,
+        "charging_events_per_carrier": 156,
+        "trajectory_degree": 7,
+        "transfer_pieces": 3,
+        "minimum_positive_piece_s": 0.001
+      },
+      "grids_are_not_lossless_physical_limits": true,
+      "full_continuous_domain_optimality_claim": false,
+      "peak_output_reservation_GiB": 0.25,
+      "storage_floors_GiB": {
+        "C": 10,
+        "D": 30
+      },
+      "files": [
+        {
+          "path": "Agent/Publication/engineering_conditional_hypergraph.py",
+          "sha256": "613b3a9f4cdbd03f8878e45f6d7ea10b099af850518fa983f2c3e8e960e4fae3"
+        },
+        {
+          "path": "Agent/Publication/engineering_energy_enclosure.py",
+          "sha256": "6d3e064aeeac4dea41ddc63f2d718c5589008b2d4e812a09d9e8a46dbd863078"
+        },
+        {
+          "path": "Agent/Publication/engineering_event_charging.py",
+          "sha256": "1e65aad005cb569332eb654629f96317565376ae84d635a5e0d7b80b709cbbc3"
+        },
+        {
+          "path": "Agent/Publication/engineering_fleet_schedule.py",
+          "sha256": "2b9042cebd063cbd79c4a2c3d1e83a8ff73e68d9d8d7f79b63ad00900a5c3353"
+        },
+        {
+          "path": "Agent/Publication/engineering_flight_labels.py",
+          "sha256": "183783f8fe040e710b560ec322068a1259033a7c25345521389e6f72cad38603"
+        },
+        {
+          "path": "Agent/Publication/engineering_free_trajectory.py",
+          "sha256": "cf99c2353281858defe79d74e6551e925bf772749bfa24853772e7c0bd1dac2e"
+        },
+        {
+          "path": "Agent/Publication/engineering_indexed_constraints.py",
+          "sha256": "c1d108fafcfbf99a8df18509e816a3710c03dcfbdab6b34ab0fbb1fc789f5037"
+        },
+        {
+          "path": "Agent/Publication/engineering_indexed_terrain.py",
+          "sha256": "1d91a87ea2bf637d9d919c34303ee2c5707671e89869859e411bba28ec8cd0db"
+        },
+        {
+          "path": "Agent/Publication/engineering_inspection_primitives.py",
+          "sha256": "d67745df4dc64664a1c511b35d26a19eafd45c21098b5da98fef2fad9d59b438"
+        },
+        {
+          "path": "Agent/Publication/engineering_interval_physics.py",
+          "sha256": "c31f8aac813ee195992c8eaebe3ccfcbedd8130de97569f4fb1a77f39b9e62c5"
+        },
+        {
+          "path": "Agent/Publication/engineering_joint_execution.py",
+          "sha256": "b51d9c42c1ddeb870620b562e74f494d6941bb997a743677f9bac49ebc4f60f1"
+        },
+        {
+          "path": "Agent/Publication/engineering_joint_optical_trajectory.py",
+          "sha256": "7a7af6ad60dd064a0248823eec4a0852f51149f83133e354e48388bddd59afd0"
+        },
+        {
+          "path": "Agent/Publication/engineering_joint_optimality.py",
+          "sha256": "b51beaf79c073aba9e13a5416341b79f0563a612914713c2e8bd1ffa98b822e3"
+        },
+        {
+          "path": "Agent/Publication/engineering_joint_safety.py",
+          "sha256": "3eae3dca4a75f92f3e5ba154f070e483ae8ce2218099d7d54dd89ed9d49d60f6"
+        },
+        {
+          "path": "Agent/Publication/engineering_joint_weather.py",
+          "sha256": "0f5a8e0fc4a500cc81a22dae42b27b28336ceaf3ce5961dbbe539484594776f1"
+        },
+        {
+          "path": "Agent/Publication/engineering_multicarrier_schedule.py",
+          "sha256": "53e8d333b48a0131719ee89952787886911ebffdb31972122c7d0734f59c104b"
+        },
+        {
+          "path": "Agent/Publication/engineering_process_budget.py",
+          "sha256": "41bf27ca41ede0749800c86f323024de5ac5224c15a7f48132ee326b51db18ad"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_acceptance.py",
+          "sha256": "f151d3f29b6ed55188a1747da91c312ab74ffafe8a0a8b3ee15828c8b47c4303"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_charging.py",
+          "sha256": "b64690e8ee4cff10c660d9e4698f8daf486439b92ece215dc148f3e0962b5aae"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_compaction.py",
+          "sha256": "089e7e57ef3656be0319399627e9b84776177ede45106927010172fa0f37ae6a"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_curves.py",
+          "sha256": "3f18fce16c824ea73e2e76c9c80f85c84a9e39b80f18ed73f93d466fa7b82788"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_enclosure.py",
+          "sha256": "822a7ac089a5a3487460f101fcb9b72ff4982a7d18847160bb027d9e642bf193"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_geometry.py",
+          "sha256": "a51c66c313c54ad6547bfc4e54f6e82cc6acbbacd46aec47fc0a0195aa1865bf"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_memory.py",
+          "sha256": "24c0d5d66a232e5f844d89911593e86a3de4c1b812d5b57ec4d25143f1dbd1d1"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_physics.py",
+          "sha256": "a8f23bd5ec106d29e2ed61bbcf23becb552d3aec72c6da6a4abbad9073cd3966"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_rendezvous.py",
+          "sha256": "67268f1e0f60095ab40243b88259de48e1b970504d001ba66d2a6f8d4b2edf3b"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_resources.py",
+          "sha256": "9468fe77901eefad09e581e2476229712da6af000360d538e4e2c05c20ebd445"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_roads.py",
+          "sha256": "a41cbefa3dc023d2cbb9be013cdf0b7712afb3eed897ee7fa0dafb10968714a5"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_safety.py",
+          "sha256": "30049988490b4e6ea8a97c1bba28c251cef988696235d8bb8fdee02fe26ac925"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_seed.py",
+          "sha256": "57482ce92ef7dbfaaac5d6afb748b845c73daa60b9277386f6c9df2c0334448d"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_solver.py",
+          "sha256": "e90d62b6068a9692288b642ffc7109a1d6615116374405e8b1d5014e6e0b0e92"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_structure.py",
+          "sha256": "b7e0e1909701b6d0906fdbdd6cf5ac14abdca12c530405698515a64167e4a47c"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_weather.py",
+          "sha256": "037143f84af7ac48baa924084180db9b7a58c86e43d3ebecafe59453e92ed4e2"
+        },
+        {
+          "path": "Agent/Publication/engineering_replanning.py",
+          "sha256": "f4d0af6d1ba2f29996915d2f714c410898d8d4d8666d067e98fbbfd65ae0eb35"
+        },
+        {
+          "path": "Agent/Publication/engineering_road_certificate.py",
+          "sha256": "c3cadbcbcec22f875c22d91b243ba4e48f4a8d919e5fe76af9e79df70bfee93d"
+        },
+        {
+          "path": "Agent/Publication/engineering_road_motion.py",
+          "sha256": "92cab8f2d580d6a2f1fa55874e847c14fde36c6c56cbb4a2ac30de22b5c36d7c"
+        },
+        {
+          "path": "Agent/Publication/engineering_solve_trace.py",
+          "sha256": "a3bf776a5f7c54d2011181f848b813afc25f8d358cb34394cabf259d22e8c99e"
+        },
+        {
+          "path": "Agent/Publication/engineering_target_surface.py",
+          "sha256": "8201e3bf3476f75cb0ec7faaf7449cb1e49d057c32dda7772d05aa927e6d9e14"
+        },
+        {
+          "path": "Agent/Publication/engineering_unified_inspection.py",
+          "sha256": "464c16e3309eccb88ea0f02545f5e393de5d967fc99541406f80b347a65f9e70"
+        },
+        {
+          "path": "scripts/run_inspection_regional.py",
+          "sha256": "8b2a751e6c8431ff96ae9ecd8394082e912b427317162dc59cf43e55016cc928"
+        },
+        {
+          "path": "scripts/diagnose_inspection_constraint_layers.py",
+          "sha256": "4152f3cc78cbcdd2e76ccaa8233d825def90425edfc1589cf7bc2584fb05a77a"
+        },
+        {
+          "path": "Agent/Publication/engineering_inspection_model.tex",
+          "sha256": "88b7e54dcb4e6a67a844b023b7af8b3c59695e4fd458f7f42e1ddeef69633285"
+        },
+        {
+          "path": "research_quality/inspection_regional_model_data.json",
+          "sha256": "ee30612135a2b3057192d1bcf6c0eb53a28b76e94efe16a828b87dd168e1929c"
+        }
+      ],
+      "fee_authorization_used": false,
+      "live_background_supervisor": false,
+      "SCIP_log": "scip_f36744d64d8849aa_59580.log",
+      "warm_start": {
+        "mapping": {
+          "source_run": "1794231440_25904",
+          "witness": "总结\\03_实验数据\\工程化联合求解\\constraint_layers\\1794231440_25904_layer11_witness.json.gz",
+          "witness_sha256": "62c2343dd7ae04ec371a03ef854c2e25afe347fb7802962799bf5c420a2368fa",
+          "copied_variables": 596360,
+          "inactive_return_defaults": 19760,
+          "active_return_segments": 12,
+          "maximum_forward_inverse_state_clock_error": 9.094947017729282e-13,
+          "fixed_original_decisions": 0,
+          "coverage_preserved": true,
+          "proof": "selected last-task return is relabeled to its flight; inactive task return states have no active physical constraints"
+        },
+        "audit": {
+          "native_feasible": true,
+          "indexed_rows_checked": 21454,
+          "indexed_max_error": 1.2931877790833823e-12,
+          "indexed_bad_count": 0,
+          "indexed_bad": [],
+          "bounds_bad_count": 0,
+          "bounds_bad": [],
+          "completed_towers": 4,
+          "active_photos": 36,
+          "coverage_complete": false,
+          "coverage_required": 237,
+          "active_flights": 4,
+          "uncompleted_towers": 233,
+          "makespan_s": 6555.305426080421,
+          "missing_active_physical_integrals": 0,
+          "continuous_acceptance": {
+            "passed": true,
+            "requests": [],
+            "unresolved": [],
+            "active_segments": 156,
+            "vehicle_phases": 512,
+            "energy_intervals": [
+              {
+                "pack": "B1_1",
+                "lower_terminal_Wh": 277.06994403360164,
+                "upper_terminal_Wh": 277.071169703738
+              },
+              {
+                "pack": "B1_2",
+                "lower_terminal_Wh": 273.46465635894816,
+                "upper_terminal_Wh": 273.4659233755557
+              },
+              {
+                "pack": "B1_3",
+                "lower_terminal_Wh": 548.0,
+                "upper_terminal_Wh": 548.0
+              },
+              {
+                "pack": "B1_4",
+                "lower_terminal_Wh": 548.0,
+                "upper_terminal_Wh": 548.0
+              },
+              {
+                "pack": "B2_1",
+                "lower_terminal_Wh": 260.9141450626804,
+                "upper_terminal_Wh": 260.9155423731754
+              },
+              {
+                "pack": "B2_2",
+                "lower_terminal_Wh": 251.22565015872175,
+                "upper_terminal_Wh": 251.2270400080278
+              },
+              {
+                "pack": "B2_3",
+                "lower_terminal_Wh": 548.0,
+                "upper_terminal_Wh": 548.0
+              },
+              {
+                "pack": "B2_4",
+                "lower_terminal_Wh": 548.0,
+                "upper_terminal_Wh": 548.0
+              }
+            ],
+            "original_road_points_checked": 4096,
+            "energy_tolerance_per_segment_Wh": 0.0001,
+            "formal_directed_rounding_certificate": false,
+            "geometric_tolerance_m": 1e-06,
+            "ackermann_residual_tolerance_SI": 0.0001
+          },
+          "physical_oracle": null,
+          "passed": true
+        },
+        "original_decisions_fixed": 0,
+        "regional_task_complete": false,
+        "coverage_complete": false,
+        "deferred_vehicle_rows": true,
+        "required_road_points": 4096,
+        "necessary_bounds": {
+          "power_floor_W": 774.3985500553088,
+          "rho_max": 1.1943558276976665,
+          "windows": [
+            [
+              0,
+              10800
+            ],
+            [
+              18000,
+              28800
+            ]
+          ],
+          "maximum_airborne_s": 2038.0203448047257,
+          "ground_camera_acc_bounds": [
+            0.3141592653589793,
+            0.3141592653589793,
+            0.8784773060029283
+          ],
+          "ground_camera_variables_tightened": 1872,
+          "global_rows": 3,
+          "proof": "nonnegative drag/climb, nonoverlapping task intervals within each flight, telescoping physical-pack ledger"
+        },
+        "added": false,
+        "role": "regression_witness_only_not_valid_for_all237_requirement",
+        "primal_presolve_enabled": true,
+        "dual_reductions_enabled": false
+      },
+      "row_hooks": {
+        "mode": "all_families_checked_by_full_continuous_guard",
+        "auxiliary_points_added_on_violation": true,
+        "prior_materialization_tests": "row_hook_progress.json",
+        "no_physical_family_omitted": true
+      },
+      "build": {
+        "wall_s": 80.37024379998911,
+        "tasks": 2133,
+        "towers": 237,
+        "optional_flights": 156,
+        "variables": 626388,
+        "explicit_rows": 193092,
+        "indexed_relations": 40798,
+        "physical_integrals_materialized": 0,
+        "physical_families_guarded_by_candidate_handler": true,
+        "full_scalar_incidence_available": false,
+        "rss_GiB": 1.458770751953125,
+        "available_RAM_GiB": 2.099590301513672
+      },
+      "result": {
+        "status": "resource_protection",
+        "complete": false,
+        "resource": {
+          "observed_at": "2026-11-09T17:57:15.558800+00:00",
+          "available_RAM_GiB": 2.0994338989257812,
+          "free_disks_GiB": {
+            "C": 17.175777435302734,
+            "D": 169.0877456665039
+          },
+          "memory": {
+            "physical_available_GiB": 2.0994338989257812,
+            "process_private_GiB": 1.9499130249023438,
+            "commit_limit_GiB": 55.824806213378906,
+            "commit_available_GiB": 1.3501358032226562
+          },
+          "reason": "live RAM/commit/storage and native peak protection; no elapsed-time optimization cutoff"
+        }
+      },
+      "elapsed_s": 80.37332179991063
+    },
+    "current_admission": {
+      "task_id": "inspection_regional_day_ahead",
+      "run_id": "359caeee56b7cebe_54920",
+      "observed_at": "2026-11-09T18:02:23.556489+00:00",
+      "pid": 54920,
+      "process_create_time": 1794247341.1452734,
+      "user_authorization": "完成就开始求解！ / 开始完整接入 / 继续任务",
+      "scope": "all237 towers2133tasks; all source roads and DEM; unified finite transcription with continuous candidate acceptance",
+      "status": "resource_admission_pending",
+      "solve_requested": true,
+      "wall_time_limit_s": null,
+      "node_limit": null,
+      "gap_target": 0,
+      "solver_configuration": {
+        "nlp/disable": true,
+        "verified_repair_warm_start": false,
+        "shared_recovery": true,
+        "require_all_towers_diagnostic": true,
+        "lp/scaling": 2,
+        "compact_memory": true,
+        "primal_heuristics_disabled": false,
+        "compact_parameters": {
+          "memory/arraygrowfac": 1.05,
+          "memory/savefac": 0.5,
+          "misc/usevartable": false,
+          "misc/useconstable": false
+        },
+        "source": "https://scipopt.org/doc/html/PARAMETERS.php",
+        "reason": "Explicit memory diagnostic; changes internal relaxation algorithm, not mathematical feasible decisions"
+      },
+      "numerical_grid": {
+        "road_phases_per_carrier": [
+          631,
+          627
+        ],
+        "minimum_all_stop_topology_phases": [
+          631,
+          627
+        ],
+        "charging_events_per_carrier": 156,
+        "trajectory_degree": 7,
+        "transfer_pieces": 3,
+        "minimum_positive_piece_s": 0.001
+      },
+      "grids_are_not_lossless_physical_limits": true,
+      "full_continuous_domain_optimality_claim": false,
+      "peak_output_reservation_GiB": 0.25,
+      "storage_floors_GiB": {
+        "C": 10,
+        "D": 30
+      },
+      "files": [
+        {
+          "path": "Agent/Publication/engineering_conditional_hypergraph.py",
+          "sha256": "613b3a9f4cdbd03f8878e45f6d7ea10b099af850518fa983f2c3e8e960e4fae3"
+        },
+        {
+          "path": "Agent/Publication/engineering_energy_enclosure.py",
+          "sha256": "6d3e064aeeac4dea41ddc63f2d718c5589008b2d4e812a09d9e8a46dbd863078"
+        },
+        {
+          "path": "Agent/Publication/engineering_event_charging.py",
+          "sha256": "1e65aad005cb569332eb654629f96317565376ae84d635a5e0d7b80b709cbbc3"
+        },
+        {
+          "path": "Agent/Publication/engineering_fleet_schedule.py",
+          "sha256": "2b9042cebd063cbd79c4a2c3d1e83a8ff73e68d9d8d7f79b63ad00900a5c3353"
+        },
+        {
+          "path": "Agent/Publication/engineering_flight_labels.py",
+          "sha256": "183783f8fe040e710b560ec322068a1259033a7c25345521389e6f72cad38603"
+        },
+        {
+          "path": "Agent/Publication/engineering_free_trajectory.py",
+          "sha256": "cf99c2353281858defe79d74e6551e925bf772749bfa24853772e7c0bd1dac2e"
+        },
+        {
+          "path": "Agent/Publication/engineering_indexed_constraints.py",
+          "sha256": "c1d108fafcfbf99a8df18509e816a3710c03dcfbdab6b34ab0fbb1fc789f5037"
+        },
+        {
+          "path": "Agent/Publication/engineering_indexed_terrain.py",
+          "sha256": "1d91a87ea2bf637d9d919c34303ee2c5707671e89869859e411bba28ec8cd0db"
+        },
+        {
+          "path": "Agent/Publication/engineering_inspection_primitives.py",
+          "sha256": "d67745df4dc64664a1c511b35d26a19eafd45c21098b5da98fef2fad9d59b438"
+        },
+        {
+          "path": "Agent/Publication/engineering_interval_physics.py",
+          "sha256": "c31f8aac813ee195992c8eaebe3ccfcbedd8130de97569f4fb1a77f39b9e62c5"
+        },
+        {
+          "path": "Agent/Publication/engineering_joint_execution.py",
+          "sha256": "b51d9c42c1ddeb870620b562e74f494d6941bb997a743677f9bac49ebc4f60f1"
+        },
+        {
+          "path": "Agent/Publication/engineering_joint_optical_trajectory.py",
+          "sha256": "7a7af6ad60dd064a0248823eec4a0852f51149f83133e354e48388bddd59afd0"
+        },
+        {
+          "path": "Agent/Publication/engineering_joint_optimality.py",
+          "sha256": "b51beaf79c073aba9e13a5416341b79f0563a612914713c2e8bd1ffa98b822e3"
+        },
+        {
+          "path": "Agent/Publication/engineering_joint_safety.py",
+          "sha256": "3eae3dca4a75f92f3e5ba154f070e483ae8ce2218099d7d54dd89ed9d49d60f6"
+        },
+        {
+          "path": "Agent/Publication/engineering_joint_weather.py",
+          "sha256": "0f5a8e0fc4a500cc81a22dae42b27b28336ceaf3ce5961dbbe539484594776f1"
+        },
+        {
+          "path": "Agent/Publication/engineering_multicarrier_schedule.py",
+          "sha256": "53e8d333b48a0131719ee89952787886911ebffdb31972122c7d0734f59c104b"
+        },
+        {
+          "path": "Agent/Publication/engineering_process_budget.py",
+          "sha256": "41bf27ca41ede0749800c86f323024de5ac5224c15a7f48132ee326b51db18ad"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_acceptance.py",
+          "sha256": "f151d3f29b6ed55188a1747da91c312ab74ffafe8a0a8b3ee15828c8b47c4303"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_charging.py",
+          "sha256": "b64690e8ee4cff10c660d9e4698f8daf486439b92ece215dc148f3e0962b5aae"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_compaction.py",
+          "sha256": "d2b7dff7f5a406c902d894c438627d9f69bed870cd2924219360e42eee67b8dc"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_curves.py",
+          "sha256": "3f18fce16c824ea73e2e76c9c80f85c84a9e39b80f18ed73f93d466fa7b82788"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_enclosure.py",
+          "sha256": "822a7ac089a5a3487460f101fcb9b72ff4982a7d18847160bb027d9e642bf193"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_geometry.py",
+          "sha256": "a51c66c313c54ad6547bfc4e54f6e82cc6acbbacd46aec47fc0a0195aa1865bf"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_memory.py",
+          "sha256": "24c0d5d66a232e5f844d89911593e86a3de4c1b812d5b57ec4d25143f1dbd1d1"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_physics.py",
+          "sha256": "a8f23bd5ec106d29e2ed61bbcf23becb552d3aec72c6da6a4abbad9073cd3966"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_rendezvous.py",
+          "sha256": "67268f1e0f60095ab40243b88259de48e1b970504d001ba66d2a6f8d4b2edf3b"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_resources.py",
+          "sha256": "9468fe77901eefad09e581e2476229712da6af000360d538e4e2c05c20ebd445"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_roads.py",
+          "sha256": "4562daba55bb4bd77cad33890bbbee7144c302ac287efd574ce5c4faf83166a0"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_safety.py",
+          "sha256": "30049988490b4e6ea8a97c1bba28c251cef988696235d8bb8fdee02fe26ac925"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_seed.py",
+          "sha256": "57482ce92ef7dbfaaac5d6afb748b845c73daa60b9277386f6c9df2c0334448d"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_solver.py",
+          "sha256": "e90d62b6068a9692288b642ffc7109a1d6615116374405e8b1d5014e6e0b0e92"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_structure.py",
+          "sha256": "b7e0e1909701b6d0906fdbdd6cf5ac14abdca12c530405698515a64167e4a47c"
+        },
+        {
+          "path": "Agent/Publication/engineering_regional_weather.py",
+          "sha256": "037143f84af7ac48baa924084180db9b7a58c86e43d3ebecafe59453e92ed4e2"
+        },
+        {
+          "path": "Agent/Publication/engineering_replanning.py",
+          "sha256": "f4d0af6d1ba2f29996915d2f714c410898d8d4d8666d067e98fbbfd65ae0eb35"
+        },
+        {
+          "path": "Agent/Publication/engineering_road_certificate.py",
+          "sha256": "c3cadbcbcec22f875c22d91b243ba4e48f4a8d919e5fe76af9e79df70bfee93d"
+        },
+        {
+          "path": "Agent/Publication/engineering_road_motion.py",
+          "sha256": "92cab8f2d580d6a2f1fa55874e847c14fde36c6c56cbb4a2ac30de22b5c36d7c"
+        },
+        {
+          "path": "Agent/Publication/engineering_solve_trace.py",
+          "sha256": "a3bf776a5f7c54d2011181f848b813afc25f8d358cb34394cabf259d22e8c99e"
+        },
+        {
+          "path": "Agent/Publication/engineering_target_surface.py",
+          "sha256": "8201e3bf3476f75cb0ec7faaf7449cb1e49d057c32dda7772d05aa927e6d9e14"
+        },
+        {
+          "path": "Agent/Publication/engineering_unified_inspection.py",
+          "sha256": "464c16e3309eccb88ea0f02545f5e393de5d967fc99541406f80b347a65f9e70"
+        },
+        {
+          "path": "scripts/run_inspection_regional.py",
+          "sha256": "eaf469fe1103874306f081493484acfff74ada98b537c1f603d7c2a3a4349cb4"
+        },
+        {
+          "path": "scripts/diagnose_inspection_constraint_layers.py",
+          "sha256": "4152f3cc78cbcdd2e76ccaa8233d825def90425edfc1589cf7bc2584fb05a77a"
+        },
+        {
+          "path": "Agent/Publication/engineering_inspection_model.tex",
+          "sha256": "88b7e54dcb4e6a67a844b023b7af8b3c59695e4fd458f7f42e1ddeef69633285"
+        },
+        {
+          "path": "research_quality/inspection_regional_model_data.json",
+          "sha256": "ee30612135a2b3057192d1bcf6c0eb53a28b76e94efe16a828b87dd168e1929c"
+        }
+      ],
+      "fee_authorization_used": false,
+      "live_background_supervisor": false,
+      "build_started": false,
+      "result": {
+        "status": "resource_admission_pending",
+        "complete": false,
+        "incumbent": null
+      },
+      "admission": {
+        "observed": {
+          "physical_available_GiB": 4.487926483154297,
+          "process_private_GiB": 0.5594749450683594,
+          "commit_limit_GiB": 55.824806213378906,
+          "commit_available_GiB": 4.027549743652344
+        },
+        "required_free_RAM_GiB": 6.1457366943359375,
+        "required_free_commit_GiB": 5.940525054931641,
+        "estimated_process_peak_RSS_GiB": 4.25,
+        "estimated_process_peak_private_GiB": 4.5,
+        "host_reserve_GiB": 2,
+        "estimate_is_revisable": true,
+        "not_a_time_or_gap_limit": true,
+        "next_action": "resume this bound executor after fresh RAM/commit admission or a verified lower-memory representation"
+      }
+    },
+    "region_feasible_solution_count": 0,
+    "original_task_complete": false,
+    "healthy_solver_live": false,
+    "paid_actions": 0,
+    "new_workers": 0,
+    "fixes": [
+      {
+        "id": "F07",
+        "status": "implemented_regressed",
+        "scope": "exposure clock, optical and visibility checks plus endogenous refinement"
+      },
+      {
+        "id": "F08",
+        "status": "implemented_regressed",
+        "scope": "actual atan2 yaw, analytic attitude derivatives, initialization"
+      },
+      {
+        "id": "F04",
+        "status": "implemented_partial_numeric_verification",
+        "scope": "positive duration variables, exact endpoint states, Markov zoom bounds; LP failure cause still unverified"
+      },
+      {
+        "id": "F05",
+        "status": "partial",
+        "scope": "9000 segment energy lower bounds, root/last conservation; core indexed relations remain delayed"
+      },
+      {
+        "id": "F06",
+        "status": "road_block_regressed_joint_expansion_pending",
+        "scope": "source-derived631/627 phases, every104stop individually reachable, necessary domain pruning"
+      },
+      {
+        "id": "F09",
+        "status": "implemented_partial_witness_regressed",
+        "scope": "active prefix and launch-time ordering; no route/task/resource identity fixed"
+      },
+      {
+        "id": "memory",
+        "status": "implemented_regressed_actual_build_verified",
+        "scope": "deferred ground camera point rows with full polynomial-extremum acceptance"
+      },
+      {
+        "id": "F03",
+        "status": "failure_capture_added_not_triggered",
+        "scope": "actual failed LP gzip and largest coefficient rows; no new LP error reached"
+      }
+    ],
+    "remaining": [
+      "no full237 feasible/infeasible proof",
+      "new631/627 full joint build and solve pending resources",
+      "numeric LP fix not yet validated at root search",
+      "full regional initial plan with driving and charging absent",
+      "M100 energy transfer/weather uncertainty/replanning and same-model faithful hypergraph comparison remain open"
+    ],
+    "next_action": "Fresh RAM/commit admission, then the existing default source-complete-road executor; inspect actual LP if it fails",
+    "no_time_node_or_gap_limit_added": true,
+    "current_code": [
+      {
+        "path": "Agent/Publication/engineering_regional_acceptance.py",
+        "sha256": "f151d3f29b6ed55188a1747da91c312ab74ffafe8a0a8b3ee15828c8b47c4303",
+        "locator": "whole artifact"
+      },
+      {
+        "path": "Agent/Publication/engineering_regional_charging.py",
+        "sha256": "b64690e8ee4cff10c660d9e4698f8daf486439b92ece215dc148f3e0962b5aae",
+        "locator": "whole artifact"
+      },
+      {
+        "path": "Agent/Publication/engineering_regional_compaction.py",
+        "sha256": "d2b7dff7f5a406c902d894c438627d9f69bed870cd2924219360e42eee67b8dc",
+        "locator": "whole artifact"
+      },
+      {
+        "path": "Agent/Publication/engineering_regional_curves.py",
+        "sha256": "3f18fce16c824ea73e2e76c9c80f85c84a9e39b80f18ed73f93d466fa7b82788",
+        "locator": "whole artifact"
+      },
+      {
+        "path": "Agent/Publication/engineering_regional_enclosure.py",
+        "sha256": "822a7ac089a5a3487460f101fcb9b72ff4982a7d18847160bb027d9e642bf193",
+        "locator": "whole artifact"
+      },
+      {
+        "path": "Agent/Publication/engineering_regional_geometry.py",
+        "sha256": "a51c66c313c54ad6547bfc4e54f6e82cc6acbbacd46aec47fc0a0195aa1865bf",
+        "locator": "whole artifact"
+      },
+      {
+        "path": "Agent/Publication/engineering_regional_memory.py",
+        "sha256": "24c0d5d66a232e5f844d89911593e86a3de4c1b812d5b57ec4d25143f1dbd1d1",
+        "locator": "whole artifact"
+      },
+      {
+        "path": "Agent/Publication/engineering_regional_physics.py",
+        "sha256": "a8f23bd5ec106d29e2ed61bbcf23becb552d3aec72c6da6a4abbad9073cd3966",
+        "locator": "whole artifact"
+      },
+      {
+        "path": "Agent/Publication/engineering_regional_rendezvous.py",
+        "sha256": "67268f1e0f60095ab40243b88259de48e1b970504d001ba66d2a6f8d4b2edf3b",
+        "locator": "whole artifact"
+      },
+      {
+        "path": "Agent/Publication/engineering_regional_resources.py",
+        "sha256": "9468fe77901eefad09e581e2476229712da6af000360d538e4e2c05c20ebd445",
+        "locator": "whole artifact"
+      },
+      {
+        "path": "Agent/Publication/engineering_regional_roads.py",
+        "sha256": "4562daba55bb4bd77cad33890bbbee7144c302ac287efd574ce5c4faf83166a0",
+        "locator": "whole artifact"
+      },
+      {
+        "path": "Agent/Publication/engineering_regional_safety.py",
+        "sha256": "43bbadaf2b22fea2e22f84d459ae5f391b0ab7c49fda6386266548c0c85cd0db",
+        "locator": "whole artifact"
+      },
+      {
+        "path": "Agent/Publication/engineering_regional_seed.py",
+        "sha256": "57482ce92ef7dbfaaac5d6afb748b845c73daa60b9277386f6c9df2c0334448d",
+        "locator": "whole artifact"
+      },
+      {
+        "path": "Agent/Publication/engineering_regional_solver.py",
+        "sha256": "e90d62b6068a9692288b642ffc7109a1d6615116374405e8b1d5014e6e0b0e92",
+        "locator": "whole artifact"
+      },
+      {
+        "path": "Agent/Publication/engineering_regional_structure.py",
+        "sha256": "b7e0e1909701b6d0906fdbdd6cf5ac14abdca12c530405698515a64167e4a47c",
+        "locator": "whole artifact"
+      },
+      {
+        "path": "Agent/Publication/engineering_regional_weather.py",
+        "sha256": "037143f84af7ac48baa924084180db9b7a58c86e43d3ebecafe59453e92ed4e2",
+        "locator": "whole artifact"
+      }
+    ],
+    "current_code_includes_additional_collision_safe_denominator_binding": true
+  },
+  "latest_run_id": "e748e91827516b35_61848",
+  "regional_initializer_recovery": {
+    "observed_at": "2026-11-10T02:53:19.950486+08:00",
+    "experiment_id": "inspection_regional_day_ahead",
+    "initializer_pid": 41044,
+    "initializer_live": false,
+    "checked_towers": 237,
+    "body_geometry_paths": 237,
+    "full_joint_feasible_plan_count": 0,
+    "current_full_solver_run": "d82a4f075d4a8d3d_10216",
+    "current_full_solver_status": "resource_admission_pending",
+    "process_observation": {
+      "rss_GiB": 0.2271881103515625,
+      "private_GiB": 0.21706008911132812,
+      "peak_working_set_GiB": 0.2965126037597656,
+      "peak_private_GiB": 0.28655242919921875
+    },
+    "evidence": "总结/03_实验数据/工程化联合求解/regional_joint/full_coverage_initializer.json",
+    "status": "all237_individual_static_paths_verified_joint_plan_missing",
+    "photographic_task_ids_covered": 2133,
+    "regional_task_complete": false,
+    "full_joint_feasibility": null,
+    "initializer": {
+      "path": "总结/03_实验数据/工程化联合求解/regional_joint/full_coverage_initializer.json",
+      "sha256": "265ab6dd344cc2edb6f67ef1531d56a428148d0c8b52b78777055d5a3648e94b",
+      "locator": "whole artifact"
+    },
+    "independent_audit": {
+      "path": "research_quality/inspection_regional_initializer_audit.json",
+      "sha256": "25cf55deaa468ab571965b4a3ee787cc268c69369aff4e81882eded55fc6eef0",
+      "locator": "whole artifact"
+    },
+    "structural_checks": 7,
+    "current_full_solver_manifest": {
+      "path": "总结/03_实验数据/工程化联合求解/regional_joint/run_manifest.json",
+      "sha256": "af6e56b727818d54c3bfd0250cadf7e86936457f73238027bfc9879b33b69d67",
+      "locator": "whole artifact"
+    },
+    "current_resource_observation": {
+      "physical_available_GiB": 3.9521865844726562,
+      "process_private_GiB": 0.049007415771484375,
+      "commit_limit_GiB": 60.86659622192383,
+      "commit_available_GiB": 2.369251251220703
+    },
+    "numerical_thread_repair": {
+      "threads": 1,
+      "entry_private_before_GiB": 0.5594749450683594,
+      "entry_private_after_GiB": 0.0908203125,
+      "effect": "import/admission memory only; regional root-LP peak not remeasured"
+    },
+    "road_scaffold": {
+      "nearest_stop_count": 101,
+      "shared_stop_count": 20,
+      "nearest_phases": [
+        2083,
+        2505
+      ],
+      "shared_phases": [
+        1301,
+        1749
+      ],
+      "joint_default_phases": [
+        631,
+        627
+      ],
+      "grid_changed": false,
+      "continuous_road_acceptance": false
+    },
+    "prototype_budget": {
+      "single_tower_paths": 237,
+      "existing_optional_flight_slots": 156,
+      "airtime_sum_s": 203815.33541487265,
+      "energy_sum_Wh": 44719.97689980221,
+      "combined_mission": false,
+      "not_an_infeasibility_bound": true
+    },
+    "remaining": [
+      "Merge/reoptimize single-tower paths into regional flights; the237 prototypes are not an admissible156-slot plan",
+      "Regional vehicle trajectories, calendar, physical packs and charging, full continuous acceptance",
+      "Fresh full-model memory admission and root-LP repair validation",
+      "Existing energy/weather/replanning and faithful hypergraph closure remain open"
+    ],
+    "next_action": "Use the source-complete local paths to construct a regional merged/scheduled candidate; full SCIP execution requires fresh RAM/commit admission; never treat these237 prototypes as a regional incumbent",
+    "cloud_inspection": {
+      "observed_at": "2026-11-10T02:53:19.950486+08:00",
+      "status": "failed_at_import",
+      "error": "ModuleNotFoundError: cloud_services",
+      "diagnosis": "cross_work_bridge/tools/codex_control_center is a junction to missing D:/博士研究生/CODEX_STADION/tools/codex_control_center",
+      "provider_calls": 0,
+      "mutations": 0,
+      "known_owned_uuids": [],
+      "counts": {
+        "in_use": null,
+        "idle": null,
+        "retained": null,
+        "unknown": null,
+        "pending_release": null
+      },
+      "next_action": "Restore the actual shared tools directory before revalidating access and a complete list; no cloud retry without repair evidence"
+    },
+    "user_correction_review": {
+      "observed_at": "2026-11-10T03:09:51.740885+08:00",
+      "user_correction": "完整修复尚未完成；局部路径通过不等于区域方案可行",
+      "artifact_sha256": "265ab6dd344cc2edb6f67ef1531d56a428148d0c8b52b78777055d5a3648e94b",
+      "source_sha256": "d0c668d7cfeea2e7973e6ab387be38e499aea4e935a6530dfaf8900438b8520d",
+      "model_sha256": "88b7e54dcb4e6a67a844b023b7af8b3c59695e4fd458f7f42e1ddeef69633285",
+      "scope": "fixed individual-flight prototypes only; no impossibility claim for free joint optimization",
+      "prototype_flights": 237,
+      "optional_model_slots": 156,
+      "prototype_airtime_s": 203815.33541487265,
+      "all_aircraft_available_weather_time_s": 86400,
+      "prototype_reference_quadrature_Wh": 44719.97689980221,
+      "prototype_fixed_duration_energy_lower_Wh": 43842.8611734205,
+      "fleet_initial_usable_Wh": 3507.2000000000003,
+      "optimistic_all_day_stored_charge_W": 1534.3999999999999,
+      "optimistic_fleet_energy_upper_Wh": 15782.399999999998,
+      "capacity_bound_assumptions": "both vehicles stationary and chargers continuously supplied for8h; ignore taper, pack absence and charge temperature restrictions, so this is an optimistic upper bound",
+      "checks": {
+        "flight_slot_capacity": false,
+        "weather_aircraft_time_capacity": false,
+        "optimistic_energy_capacity": false
+      },
+      "unchanged_prototypes_can_form_regional_plan": false,
+      "full_joint_solution_count": 0,
+      "full_model_infeasible": null,
+      "original_task_complete": false,
+      "next_required": "Reorganize joint routes/flights/timings and physical pack charging; full continuous acceptance and actual integrated solver search remain required"
+    }
+  },
+  "original_task_complete": false,
+  "coupled_plan_recovery": {
+    "observed_at": "2026-11-10T05:02:35.861432+08:00",
+    "status": "full_region_search_running",
+    "owner_thread_id": "01a1b45e-78cb-7362-a8c7-13f897a636c7",
+    "task_id": "inspection_regional_coupled_plan_repair",
+    "plan": [
+      "Construct merged physical flight candidates over all2133tasks, preserving all physical limits",
+      "Jointly schedule vehicles, flights, weather and physical battery charging; validate regional candidates",
+      "Inject only independently accepted candidates into unrestricted regional model; actual solve and trace"
+    ],
+    "full_model_solution_count": 0,
+    "original_task_complete": false,
+    "cloud_check": {
+      "status": "failed_before_provider_list",
+      "reason": "cloud_services unavailable; shared codex_control_center junction targets absent CODEX_STADION",
+      "observed_at": "2026-11-10T03:31:08.758952+08:00",
+      "in_use": null,
+      "idle": null,
+      "retained": null,
+      "unknown": null,
+      "pending_release": null,
+      "next_action": "revalidate only after dependency repair evidence"
+    },
+    "scientific_problem_changed": false,
+    "native_attempt": {
+      "run_id": "5cc55ec20eab98ee_62280",
+      "pid": 62280,
+      "process_live": false,
+      "status": "resource_protection",
+      "build": {
+        "wall_s": 81.6728297000518,
+        "tasks": 2133,
+        "towers": 237,
+        "optional_flights": 156,
+        "variables": 698272,
+        "explicit_rows": 205597,
+        "indexed_relations": 42290,
+        "physical_integrals_materialized": 0,
+        "physical_families_guarded_by_candidate_handler": true,
+        "full_scalar_incidence_available": false,
+        "rss_GiB": 1.5807342529296875,
+        "available_RAM_GiB": 6.570701599121094
+      },
+      "result": {
+        "status": "resource_protection",
+        "error": {
+          "type": "MemoryError",
+          "message": "{'observed_at': '2026-11-09T20:08:54.910925+00:00', 'available_RAM_GiB': 4.864437103271484, 'free_disks_GiB': {'C': 17.18838119506836, 'D': 160.8810920715332}, 'memory': {'physical_available_GiB': 4.864437103271484, 'process_private_GiB': 2.5492019653320312, 'commit_limit_GiB': 61.88593673706055, 'commit_available_GiB': 1.1844749450683594}, 'reason': 'live RAM/commit/storage and native peak protection; no elapsed-time optimization cutoff'}"
+        },
+        "resource": {
+          "observed_at": "2026-11-09T20:08:54.915425+00:00",
+          "available_RAM_GiB": 4.8644561767578125,
+          "free_disks_GiB": {
+            "C": 17.18838119506836,
+            "D": 160.8810920715332
+          },
+          "memory": {
+            "physical_available_GiB": 4.8644561767578125,
+            "process_private_GiB": 2.5492019653320312,
+            "commit_limit_GiB": 61.88593673706055,
+            "commit_available_GiB": 1.1858367919921875
+          },
+          "reason": "live RAM/commit/storage and native peak protection; no elapsed-time optimization cutoff"
+        },
+        "complete": false,
+        "incumbent": {
+          "observed_at": "2026-11-09T20:08:54.915425+00:00",
+          "native_algebra_passed": null,
+          "acceptance": {
+            "passed": null,
+            "reason": "resource reserve; vector retained for later independent revalidation"
+          },
+          "full_candidate_feasible": null,
+          "completed_towers": 4,
+          "selected_tasks": 36,
+          "active_flights": 4,
+          "uncompleted_towers": 233.0,
+          "makespan_s": 6555.305426080421,
+          "energy_Wh": 1129.3229644471123,
+          "original_continuous_optimality_proved": false,
+          "coverage_complete": false,
+          "regional_task_complete": false,
+          "witness": "incumbent_5cc55ec20eab98ee_62280.json.gz",
+          "witness_sha256": "73c3cbba34d9b3f8d7a033692cc49060f5bddff3ccac309b746f27dad67620d5",
+          "witness_revalidation_required": true
+        }
+      }
+    },
+    "completed_repairs": [
+      "charge/aircraft/parking aggregate necessary bounds",
+      "same-candidate vehicle geometry reuse",
+      "resource-aware acceptance and streamed vector preservation",
+      "C3 cruise proposals with unchanged physical constraints",
+      "all65 reference-clock energy values inside independent enclosures;76 segments refined"
+    ],
+    "validation": "Native full build and real search; aggregate resource native regression; old/new vehicle acceptance equivalence; physical flight enclosures.",
+    "accepted_full_region_solution_count": 0,
+    "negative_trial": "Cross-tower ordering probe330.15Wh vs retained314.18Wh; kept negative trial and original better path",
+    "purpose": "Repair the original full237 unified model and obtain genuinely accepted regional decisions.",
+    "count_basis": "237 towers /2133 tasks; initializer flights are proposals, not independent experiment repetitions.",
+    "build": {
+      "wall_s": 82.11780160001945,
+      "tasks": 2133,
+      "towers": 237,
+      "optional_flights": 156,
+      "variables": 698272,
+      "explicit_rows": 205597,
+      "indexed_relations": 42290,
+      "physical_integrals_materialized": 0,
+      "physical_families_guarded_by_candidate_handler": true,
+      "full_scalar_incidence_available": false,
+      "rss_GiB": 1.5830268859863281,
+      "available_RAM_GiB": 11.538379669189453
+    },
+    "build_run_id": "e748e91827516b35_61848",
+    "numerical_grid": {
+      "road_phases_per_carrier": [
+        631,
+        627
+      ],
+      "minimum_all_stop_topology_phases": [
+        631,
+        627
+      ],
+      "charging_events_per_carrier": 156,
+      "trajectory_degree": 7,
+      "transfer_pieces": 3,
+      "minimum_positive_piece_s": 0.001
+    },
+    "live_processes": {
+      "native": {
+        "pid": 61848,
+        "process_create_time": 1794255589.1327455,
+        "status": "solving",
+        "run_id": "e748e91827516b35_61848",
+        "identity_matches": true,
+        "process_live": true,
+        "cpu_seconds": 2520.78125,
+        "private_GiB": 3.956195831298828,
+        "observed_at": "2026-11-10T05:02:35.861432+08:00"
+      },
+      "merger": {
+        "pid": 45120,
+        "process_create_time": 1794254549.130803,
+        "status": "merged_proposals_resource_rejected",
+        "run_id": null,
+        "identity_matches": false,
+        "process_live": false,
+        "observed_at": "2026-11-10T05:02:35.861432+08:00"
+      },
+      "refinement": {
+        "pid": 24008,
+        "process_create_time": 1794256256.0610309,
+        "status": "individual_physics_complete_region_resource_rejected",
+        "run_id": null,
+        "identity_matches": false,
+        "process_live": false,
+        "observed_at": "2026-11-10T05:02:35.861432+08:00"
+      }
+    },
+    "latest_native_trace": {
+      "observed_at": "2026-11-09T20:22:25.004069+00:00",
+      "run_id": "e748e91827516b35_61848",
+      "elapsed_s": 152.60900000005495,
+      "phase": 1,
+      "materialization_round": 0,
+      "reason": "memory_readmission",
+      "SCIP_status": "memlimit",
+      "accepted_objective_vector": [
+        233.0,
+        6555.305426080421,
+        1129.3229644471123
+      ],
+      "finite_transcription_dual": 0.0,
+      "full_continuous_domain_dual": null,
+      "original_continuous_optimality_proved": false,
+      "nodes": 1,
+      "variables": 688153,
+      "rows": 192335,
+      "accepted_checks": 2,
+      "rejected_checks": 0,
+      "rss_GiB": 3.4112281799316406,
+      "available_RAM_GiB": 10.155479431152344,
+      "numerical_grids": {
+        "road_phases": [
+          631,
+          627
+        ],
+        "charging_events": [
+          156,
+          156
+        ],
+        "transfer_pieces": 3,
+        "position_degree": 7
+      },
+      "source_sha256": "d0c668d7cfeea2e7973e6ab387be38e499aea4e935a6530dfaf8900438b8520d",
+      "model_sha256": "88b7e54dcb4e6a67a844b023b7af8b3c59695e4fd458f7f42e1ddeef69633285",
+      "extra": {
+        "host": {
+          "physical_available_GiB": 10.155479431152344,
+          "process_private_GiB": 3.538848876953125,
+          "commit_limit_GiB": 58.10093688964844,
+          "commit_available_GiB": 7.508602142333984
+        },
+        "previous_limit_MiB": 3311.835609436035,
+        "next_limit_MiB": 5374.673533630371,
+        "host_floor_GiB": 2.0,
+        "same_solver_resume": true
+      },
+      "SCIP_memory_limit_MiB": 3311.835609436035,
+      "SCIP_allocator_MiB": 2204.944209098816,
+      "SCIP_allocated_total_MiB": 2668.4442167282104,
+      "SCIP_external_estimate_MiB": 731.9463090896606,
+      "NLP_relaxation_disabled": true,
+      "compact_memory_profile": true,
+      "primal_heuristics_disabled": false,
+      "materialized_energy_orders": {}
+    },
+    "current_native_result": null,
+    "merger": {
+      "observed_at": "2026-11-09T20:54:36.397553+00:00",
+      "flights": 65,
+      "successful_merges": 172,
+      "failed_pairs": 424,
+      "resource_audit": {
+        "flights": 65,
+        "optional_slots": 156,
+        "tasks": 2133,
+        "airtime_s": 94622.70533700305,
+        "airtime_upper_s": 86400,
+        "fixed_duration_energy_lower_Wh": 20354.357170912746,
+        "reference_quadrature_Wh": 20682.96775807488,
+        "optimistic_fleet_Wh_upper": 15782.399999999998,
+        "necessary_checks": {
+          "slot_capacity": true,
+          "weather_airtime": false,
+          "fixed_duration_energy": false
+        },
+        "passing_necessary_checks_is_not_feasibility": true,
+        "no_infeasibility_claim_for_free_joint_problem": true
+      },
+      "running": false,
+      "status": "merged_proposals_resource_rejected",
+      "elapsed_s": 3123.9455116000026
+    },
+    "refinement": {
+      "observed_at": "2026-11-10T04:45:25.626141+08:00",
+      "partition_flights": 65,
+      "checked_flights": 65,
+      "checked_towers": 237,
+      "checked_tasks": 2133,
+      "physics_passed_flights": 65,
+      "improved_flights": 65,
+      "status": "individual_physics_complete_region_resource_rejected",
+      "resource_audit": {
+        "flights": 65,
+        "optional_slots": 156,
+        "tasks": 2133,
+        "airtime_s": 89102.84232033901,
+        "airtime_upper_s": 86400,
+        "fixed_duration_energy_lower_Wh": 19166.97552741037,
+        "reference_quadrature_Wh": 19492.584272658045,
+        "optimistic_fleet_Wh_upper": 15782.399999999998,
+        "necessary_checks": {
+          "slot_capacity": true,
+          "weather_airtime": false,
+          "fixed_duration_energy": false
+        },
+        "passing_necessary_checks_is_not_feasibility": true,
+        "no_infeasibility_claim_for_free_joint_problem": true
+      },
+      "all237_individual_flights_checked": true
+    },
+    "scientific_rounds_added": 0,
+    "new_cloud_spend": 0,
+    "cloud": {
+      "observed_at": "2026-11-10T05:02:35.861432+08:00",
+      "status": "cloud_services import failed; missing shared target confirmed",
+      "list_coverage_verified": false,
+      "in_use": null,
+      "idle": null,
+      "retained": null,
+      "unknown": null,
+      "pending_release": null
+    },
+    "evidence": [
+      {
+        "path": "research_quality/inspection_resource_envelope_regression.json",
+        "sha256": "96988a883943384a26cf02a45d2d0b6d75d5982406d7226162ce4928fab0aadd",
+        "locator": "whole artifact"
+      },
+      {
+        "path": "research_quality/inspection_acceptance_cache_regression.json",
+        "sha256": "58a4e0f58d543678b0c680752042bfb70ab3112eb3f911b48baf7f2f0aa1c342",
+        "locator": "whole artifact"
+      },
+      {
+        "path": "research_quality/inspection_resource_exit_regression.json",
+        "sha256": "f9b3f935815cded0f3511ecb09e3537d95bdfbf9f9f95ce825be78c87a56b949",
+        "locator": "whole artifact"
+      },
+      {
+        "path": "research_quality/inspection_coupled_initializer_audit.json",
+        "sha256": "67569154fb65ad47547f2880adee41713aa99eee9b9b8eaacde9e1eb461b72bc",
+        "locator": "whole artifact"
+      },
+      {
+        "path": "research_quality/inspection_straight_cruise_probe.json",
+        "sha256": "d75569c648a4bb069ba5a8ab75622aee2090d3cd1bc2e19b483d9b81b88a6786",
+        "locator": "whole artifact"
+      },
+      {
+        "path": "research_quality/inspection_cross_tower_order_probe.json",
+        "sha256": "e7024f83a729f6d822de9ed46a87da2cc7a17ee437b6d6152b5e5b513fe2d92b",
+        "locator": "whole artifact"
+      },
+      {
+        "path": "research_quality/inspection_refined_trajectories_audit.json",
+        "sha256": "bf2e54362bd7f95f4d9d9f67841aea6d92bde78ae015547c27fba7517b2df8e9",
+        "locator": "whole artifact"
+      },
+      {
+        "path": "research_quality/inspection_energy_values_regression.json",
+        "sha256": "83e788cc9440c6a8b157dc315d84d034a04ca7c1010e34dbc0e337d91d05767c",
+        "locator": "whole artifact"
+      }
+    ],
+    "remaining": [
+      "No accepted complete237-tower regional plan or quality optimum.",
+      "Individual flight certificates use reference times; regional roads, weather calendar, physical pack/charger chains and collisions remain to be accepted.",
+      "631/627 road phases are finite grids; individual source-stop reachability is not full-itinerary completeness.",
+      "Continuous checks are floating-point engineering enclosures, not formally directed-rounded certificates.",
+      "Weather uncertainty execution, solver-driven replanning and M300 field calibration remain open."
+    ],
+    "next_action": "Preserve matching healthy runs and inspect actual native returns. The completed65-flight reference partition violates regional energy/time totals; next primal work must jointly select/reorganize tasks, routes and charging under the original maximum-coverage objective. Do not fix all65 proposals or relax physical capacities to claim success.",
+    "reference_energy_preparation": {
+      "status": "reference_energy_values_ready",
+      "all_ready": true,
+      "flights": 65,
+      "towers": 237,
+      "tasks": 2133,
+      "changed_segments": 76,
+      "total_reference_Wh": 19492.592707517182,
+      "independent_checks_passed": true,
+      "independent_adaptive_warning_count": 2,
+      "native_incumbent_changed": false,
+      "scheduled_weather_checked": false
+    }
+  },
+  "superseded_runtime_summaries": [
+    {
+      "observed_at": "2026-11-10T04:15:50.830003+08:00",
+      "run_id": "329a7f263e3525a1_6948",
+      "pid": 6948,
+      "process_create_time": 1794236407.194714,
+      "live": false,
+      "build": {
+        "wall_s": 95.60662570002023,
+        "tasks": 2133,
+        "towers": 237,
+        "optional_flights": 156,
+        "variables": 624876,
+        "explicit_rows": 222206,
+        "indexed_relations": 40798,
+        "physical_integrals_materialized": 0,
+        "physical_families_guarded_by_candidate_handler": true,
+        "full_scalar_incidence_available": false,
+        "rss_GiB": 1.6417083740234375,
+        "available_RAM_GiB": 6.585716247558594
+      },
+      "latest_trace": {
+        "observed_at": "2026-11-09T15:02:09.785706+00:00",
+        "run_id": "329a7f263e3525a1_6948",
+        "elapsed_s": 120.5,
+        "phase": 1,
+        "materialization_round": 0,
+        "reason": "memory_readmission",
+        "SCIP_status": "memlimit",
+        "accepted_objective_vector": null,
+        "finite_transcription_dual": 0.0,
+        "full_continuous_domain_dual": null,
+        "original_continuous_optimality_proved": false,
+        "nodes": 1,
+        "variables": 665653,
+        "rows": 175618,
+        "accepted_checks": 0,
+        "rejected_checks": 0,
+        "rss_GiB": 3.7939682006835938,
+        "available_RAM_GiB": 4.152111053466797,
+        "numerical_grids": {
+          "road_phases": [
+            256,
+            256
+          ],
+          "charging_events": [
+            156,
+            156
+          ],
+          "transfer_pieces": 3,
+          "position_degree": 7
+        },
+        "source_sha256": "d0c668d7cfeea2e7973e6ab387be38e499aea4e935a6530dfaf8900438b8520d",
+        "model_sha256": "88b7e54dcb4e6a67a844b023b7af8b3c59695e4fd458f7f42e1ddeef69633285",
+        "extra": {
+          "host": {
+            "physical_available_GiB": 4.152111053466797,
+            "process_private_GiB": 3.9083938598632812,
+            "commit_limit_GiB": 54.8233528137207,
+            "commit_available_GiB": 3.6025733947753906
+          },
+          "previous_limit_MiB": 3718.6889957427975,
+          "next_limit_MiB": 4350.203949928284,
+          "host_floor_GiB": 2.0,
+          "same_solver_resume": true
+        },
+        "SCIP_memory_limit_MiB": 3718.6889957427975,
+        "SCIP_allocator_MiB": 2332.951407432556,
+        "SCIP_allocated_total_MiB": 3077.4483404159546,
+        "SCIP_external_estimate_MiB": 698.3933048248291,
+        "NLP_relaxation_disabled": true,
+        "compact_memory_profile": true,
+        "primal_heuristics_disabled": false,
+        "materialized_energy_orders": {}
+      },
+      "current_run_role": "all237_diagnostic",
+      "current_run_incumbent": null
+    }
+  ]
+}

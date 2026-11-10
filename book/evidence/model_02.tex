@@ -1,0 +1,24 @@
+\section{集合、参数与决策变量}
+\noindent $\mathcal G$为237座塔，$\mathcal I_g$为塔$g$的9项观测；$\mathcal I=\bigcup_g\mathcal I_g$。9角色取自[R9]的1--5、8--11号拍摄点，6、7号为转场点。$\mathcal V,\mathcal U,\mathcal B$为车辆、无人机和电池对；$c(u),c(p)$为固定载车。$\mathcal N,\mathcal A,\mathcal P$为源道路节点、唯一有向弧和停车候选。平行弧保留，反向弧单列。
+
+\noindent 在信息时刻$\tau_k$，$A_i^k\in\{0,1\}$为已验收状态，$\mathcal I_k=\{i:A_i^k=0\}$。新航次槽$\mathcal L_k^{new}$可取$|\mathcal I_k|$个；每个启用槽至少服务一个任务，不绑定路线。$\mathcal L_k^{air}$为进行中航次，最多4个；其飞机、电池和已执行前缀固定，允许不再拍摄而直接回收。本版不含独立纯转场航次。
+\begin{center}\small
+\begin{tabular}{p{.24\linewidth}p{.25\linewidth}p{.41\linewidth}}\toprule
+符号 & 定义域 & 含义及索引\\\midrule
+$a_i,z_g$ & $\{0,1\}$ & 本次计划完成要求$i$；班次完整塔$g$\\
+$x_{i\ell},b_\ell$ & $\{0,1\}$ & 任务--航次分配；航次启用\\
+$y_{u\ell},\beta_{p\ell}$ & $\{0,1\}$ & 航次的飞机与电池对\\
+$h_{ij\ell}$ & $\{0,1\}$ & 航次中相邻事件的先后弧\\
+$s_\ell,e_\ell,t_i,d_i$ & $[\tau_k,T]$或非负s & 起飞、落地、观测开始、持续时间\\
+$s_\ell^+,e_\ell^-$ & $[s_\ell,e_\ell]$ & 离开起飞保护区、进入降落保护区\\
+$\mathbf p_\ell,\mathbf v_\ell,\mathbf a_\ell$ & 连续三维状态 & 位置、速度、加速度；$\mathbf j=\dot{\mathbf a}$\\
+$R_\ell,\boldsymbol\omega_\ell$ & $SO(3),\mathbb R^3$ & 机体姿态与角速度\\
+$\gamma_\ell,f_\ell$ & 连续、有界 & 云台俯仰/偏航；焦距mm\\
+$\mathbf q_v,\theta_v,V_v,\delta_v$ & 连续、有界 & 车辆平面位置、航向、速度、转角\\
+$\mu_v,\eta_{vj}$ & 离散模式、$\{0,1\}$ & 道路/路口/停车模式；候选$j$停车占用\\
+$E_p,c_p,P_p^{in}$ & Wh、$\{0,1\}$、W & 电量、充电通道占用、输入功率\\
+$C,Z_1,Z_2,Z_3$ & 连续非负 & 共同返库完成时刻；最坏情形目标界\\\bottomrule
+\end{tabular}\end{center}
+\noindent 轨迹为分段光滑且状态连续的函数；模式分段常值、有限次切换。不存在的任务/航次不创建物理轨迹或资源占用。零激活变量规范化为0；不可用其自由值缩减目标。后文省略情形上标$\omega$，每个情形均须满足全部物理约束。
+\clearpage
+

@@ -1,0 +1,579 @@
+{
+  "result": {
+    "path": "总结/03_实验数据/工程化联合求解/module_validation/geography/results.json",
+    "sha256": "262af238c13db499a389edaa48475ca1e243c136b29c548f579c9c45cffa5a86"
+  },
+  "truth_table": {
+    "path": "总结/03_实验数据/工程化联合求解/module_validation/geography/truth_table.json",
+    "sha256": "4492b78d4604d4da37f163574e9751d8d0e67301111788007a99414b2287f92c"
+  },
+  "script": {
+    "path": "scripts/validate_inspection_geography_module.py",
+    "sha256": "aa9a41b157c5852cfce56d0b24228639dbbff22249f263c519f4748f8f079555"
+  },
+  "started_at": "2026-11-10T07:40:51.603014+00:00",
+  "completed_at": "2026-11-10T07:40:59.340612+00:00",
+  "pid": 30628,
+  "status": "passed",
+  "checks": [
+    {
+      "id": "ubeda_osm_060_identity_and_coordinates",
+      "passed": true,
+      "scene_id": "ubeda_osm_060",
+      "towers": 60,
+      "tasks": 540,
+      "unique_task_ids": 540,
+      "projection_max_error_m": 0.0,
+      "inverse_max_error_degree": 1.4210854715202004e-14,
+      "roles_exact": true,
+      "geographic_crs": "EPSG:4326",
+      "projected_crs": "EPSG:32630"
+    },
+    {
+      "id": "ubeda_osm_100_identity_and_coordinates",
+      "passed": true,
+      "scene_id": "ubeda_osm_100",
+      "towers": 100,
+      "tasks": 900,
+      "unique_task_ids": 900,
+      "projection_max_error_m": 0.0,
+      "inverse_max_error_degree": 1.4210854715202004e-14,
+      "roles_exact": true,
+      "geographic_crs": "EPSG:4326",
+      "projected_crs": "EPSG:32630"
+    },
+    {
+      "id": "ubeda_osm_150_identity_and_coordinates",
+      "passed": true,
+      "scene_id": "ubeda_osm_150",
+      "towers": 150,
+      "tasks": 1350,
+      "unique_task_ids": 1350,
+      "projection_max_error_m": 0.0,
+      "inverse_max_error_degree": 2.1316282072803006e-14,
+      "roles_exact": true,
+      "geographic_crs": "EPSG:4326",
+      "projected_crs": "EPSG:32630"
+    },
+    {
+      "id": "rommerskirchen_identity_and_coordinates",
+      "passed": true,
+      "scene_id": "rommerskirchen",
+      "towers": 237,
+      "tasks": 2133,
+      "unique_task_ids": 2133,
+      "projection_max_error_m": 0.0,
+      "inverse_max_error_degree": 2.1316282072803006e-14,
+      "roles_exact": true,
+      "geographic_crs": "EPSG:4326",
+      "projected_crs": "EPSG:32632"
+    },
+    {
+      "id": "brauweiler_identity_and_coordinates",
+      "passed": true,
+      "scene_id": "brauweiler",
+      "towers": 185,
+      "tasks": 1665,
+      "unique_task_ids": 1665,
+      "projection_max_error_m": 0.0,
+      "inverse_max_error_degree": 2.1316282072803006e-14,
+      "roles_exact": true,
+      "geographic_crs": "EPSG:4326",
+      "projected_crs": "EPSG:32632"
+    },
+    {
+      "id": "villevaude_identity_and_coordinates",
+      "passed": true,
+      "scene_id": "villevaude",
+      "towers": 343,
+      "tasks": 3087,
+      "unique_task_ids": 3087,
+      "projection_max_error_m": 0.0,
+      "inverse_max_error_degree": 1.4210854715202004e-14,
+      "roles_exact": true,
+      "geographic_crs": "EPSG:4326",
+      "projected_crs": "EPSG:32631"
+    },
+    {
+      "id": "published_UTM_control",
+      "passed": true,
+      "actual": [
+        687071.4391094431,
+        6210141.326748009
+      ],
+      "expected": [
+        687071.44,
+        6210141.33
+      ],
+      "error_m": 0.0032519912347197533,
+      "source": "https://proj.org/en/stable/operations/projections/utm.html"
+    },
+    {
+      "id": "source_LI23",
+      "passed": true,
+      "source_id": "LI23",
+      "path": "D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网\\总结\\07_证据与复现索引\\综合报告检索\\场景设置文献\\li2023_pdf.pdf"
+    },
+    {
+      "id": "source_KPLC25",
+      "passed": true,
+      "source_id": "KPLC25",
+      "path": "D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网\\总结\\07_证据与复现索引\\综合报告检索\\场景设置文献\\kplc_2025_tower_specification.pdf"
+    },
+    {
+      "id": "source_OSM_rommerskirchen_power",
+      "passed": true,
+      "source_id": "OSM_rommerskirchen_power",
+      "path": "D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网\\总结\\07_证据与复现索引\\综合报告检索\\场景设置文献\\topology_osm\\rommerskirchen_power.json"
+    },
+    {
+      "id": "source_OSM_rommerskirchen_roads",
+      "passed": true,
+      "source_id": "OSM_rommerskirchen_roads",
+      "path": "D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网\\总结\\07_证据与复现索引\\综合报告检索\\场景设置文献\\topology_osm\\rommerskirchen_roads.json"
+    },
+    {
+      "id": "source_TERRAIN_rommerskirchen",
+      "passed": true,
+      "source_id": "TERRAIN_rommerskirchen",
+      "path": "D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网\\总结\\03_实验数据\\真实地理巡检场景共享\\sources\\regional_dem\\rommerskirchen\\terrain.json"
+    },
+    {
+      "id": "raw_OSM_tower_coordinates",
+      "passed": true,
+      "checked": 237,
+      "mismatches": []
+    },
+    {
+      "id": "target_patch_geometry",
+      "passed": true,
+      "samples": 10665,
+      "max_plane_residual_m": 4.612508257284542e-10,
+      "max_unit_normal_squared_residual": 3.3306690738754696e-16
+    },
+    {
+      "id": "current_derived_geometry_translation",
+      "passed": true,
+      "corrected_tasks": 2133,
+      "maximum_residual_m": 4.646760753956869e-10,
+      "source": {
+        "path": "research_quality/inspection_regional_model_data.json",
+        "sha256": "ee30612135a2b3057192d1bcf6c0eb53a28b76e94efe16a828b87dd168e1929c"
+      },
+      "scope": "translation consistency only; clearance is validated in the safety module"
+    },
+    {
+      "id": "missing_one_role",
+      "passed": true,
+      "expected": "rejected"
+    },
+    {
+      "id": "duplicate_role",
+      "passed": true,
+      "expected": "rejected"
+    },
+    {
+      "id": "transfer_point_as_photo",
+      "passed": true,
+      "expected": "rejected"
+    },
+    {
+      "id": "foreign_tower_substitution",
+      "passed": true,
+      "expected": "rejected"
+    },
+    {
+      "id": "axis_swap_counterexample",
+      "passed": true,
+      "error_m": 7025553.01385704
+    },
+    {
+      "id": "complete_tower_truth_table",
+      "passed": true,
+      "states": 512,
+      "solver_runs": 1024,
+      "mismatches": 0,
+      "wall_seconds": 3.6409305999986827
+    },
+    {
+      "id": "directed_depot_to_stop_reachability",
+      "passed": true,
+      "bases": [
+        {
+          "base": "B001",
+          "reachable_stops": 104,
+          "total_stops": 104
+        },
+        {
+          "base": "B002",
+          "reachable_stops": 104,
+          "total_stops": 104
+        }
+      ],
+      "turn_restrictions": 0,
+      "scope": "graph reachability only, not vehicle-body or permission validation"
+    }
+  ],
+  "scenes": [
+    {
+      "scene_id": "ubeda_osm_060",
+      "towers": 60,
+      "tasks": 540,
+      "unique_task_ids": 540,
+      "projection_max_error_m": 0.0,
+      "inverse_max_error_degree": 1.4210854715202004e-14,
+      "roles_exact": true,
+      "geographic_crs": "EPSG:4326",
+      "projected_crs": "EPSG:32630"
+    },
+    {
+      "scene_id": "ubeda_osm_100",
+      "towers": 100,
+      "tasks": 900,
+      "unique_task_ids": 900,
+      "projection_max_error_m": 0.0,
+      "inverse_max_error_degree": 1.4210854715202004e-14,
+      "roles_exact": true,
+      "geographic_crs": "EPSG:4326",
+      "projected_crs": "EPSG:32630"
+    },
+    {
+      "scene_id": "ubeda_osm_150",
+      "towers": 150,
+      "tasks": 1350,
+      "unique_task_ids": 1350,
+      "projection_max_error_m": 0.0,
+      "inverse_max_error_degree": 2.1316282072803006e-14,
+      "roles_exact": true,
+      "geographic_crs": "EPSG:4326",
+      "projected_crs": "EPSG:32630"
+    },
+    {
+      "scene_id": "rommerskirchen",
+      "towers": 237,
+      "tasks": 2133,
+      "unique_task_ids": 2133,
+      "projection_max_error_m": 0.0,
+      "inverse_max_error_degree": 2.1316282072803006e-14,
+      "roles_exact": true,
+      "geographic_crs": "EPSG:4326",
+      "projected_crs": "EPSG:32632"
+    },
+    {
+      "scene_id": "brauweiler",
+      "towers": 185,
+      "tasks": 1665,
+      "unique_task_ids": 1665,
+      "projection_max_error_m": 0.0,
+      "inverse_max_error_degree": 2.1316282072803006e-14,
+      "roles_exact": true,
+      "geographic_crs": "EPSG:4326",
+      "projected_crs": "EPSG:32632"
+    },
+    {
+      "scene_id": "villevaude",
+      "towers": 343,
+      "tasks": 3087,
+      "unique_task_ids": 3087,
+      "projection_max_error_m": 0.0,
+      "inverse_max_error_degree": 1.4210854715202004e-14,
+      "roles_exact": true,
+      "geographic_crs": "EPSG:4326",
+      "projected_crs": "EPSG:32631"
+    }
+  ],
+  "numeric_example": {
+    "tower_id": "OSM_269885418",
+    "longitude": 6.7597896,
+    "latitude": 51.0062853,
+    "easting_m": 342834.87654015474,
+    "northing_m": 5652912.38085985,
+    "surface_reference_elevation_m": 68.0,
+    "roles": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      8,
+      9,
+      10,
+      11
+    ],
+    "target_patch_side_m": 0.5,
+    "normal": [
+      -0.9954427505703618,
+      -0.09536105251575454,
+      0.0
+    ],
+    "target": {
+      "task_id": "OSM_269885418_P01",
+      "tower_id": "OSM_269885418",
+      "role": "overview",
+      "source_index": 0,
+      "source_ids": [
+        "KPLC25",
+        "LI23",
+        "MODEL_REGIONAL",
+        "MODEL_TIMING",
+        "MODEL_VIEWS",
+        "TERRAIN_rommerskirchen"
+      ],
+      "normal_world": [
+        -0.9954427505703618,
+        -0.09536105251575454,
+        0.0
+      ],
+      "min_dwell_s": 20.011081481481483,
+      "source_target_xyz_m": [
+        342834.87654015474,
+        5652912.38085985,
+        102.21379999999999
+      ],
+      "target_xyz_m": [
+        342832.8757002261,
+        5652912.189184135,
+        102.21379999999999
+      ],
+      "target_longitude": 6.759761186624191,
+      "target_latitude": 51.006283031048376,
+      "source_viewpoint_xyz_m": [
+        342819.9448988962,
+        5652910.950444062,
+        102.21379999999999
+      ],
+      "viewpoint_center_xyz_m": [
+        342817.9440589676,
+        5652910.758768347,
+        102.21379999999999
+      ],
+      "viewpoint_longitude": 6.759549146600595,
+      "viewpoint_latitude": 51.00626609835627,
+      "source_surface_samples_utm_m": [
+        [
+          342834.87654015474,
+          5652912.38085985,
+          102.21379999999999
+        ],
+        [
+          342834.8526998916,
+          5652912.629720538,
+          101.96379999999999
+        ],
+        [
+          342834.8526998916,
+          5652912.629720538,
+          102.46379999999999
+        ],
+        [
+          342834.9003804179,
+          5652912.131999162,
+          101.96379999999999
+        ],
+        [
+          342834.9003804179,
+          5652912.131999162,
+          102.46379999999999
+        ]
+      ],
+      "surface_samples_utm_m": [
+        [
+          342832.8757002261,
+          5652912.189184135,
+          102.21379999999999
+        ],
+        [
+          342832.851859963,
+          5652912.438044823,
+          101.96379999999999
+        ],
+        [
+          342832.851859963,
+          5652912.438044823,
+          102.46379999999999
+        ],
+        [
+          342832.89954048925,
+          5652911.940323447,
+          101.96379999999999
+        ],
+        [
+          342832.89954048925,
+          5652911.940323447,
+          102.46379999999999
+        ]
+      ],
+      "correction_distance_m": 2.0100000000093132,
+      "host_cylinder_correction_m": 2.0100000000093132,
+      "wire_surface_correction_m": 0.0,
+      "wire_surface_receipt": {
+        "initial_conflicts": [],
+        "grid_steps": 0,
+        "final_clearance_margin_m": 0.01
+      },
+      "correction_kind": "source_host_and_wire_surface_reference",
+      "target_is_template": true,
+      "field_surveyed": false
+    },
+    "min_dwell_s": 20.011081481481483,
+    "role_rows": [
+      {
+        "k": 1,
+        "role": "overview",
+        "target_offset_m": [
+          -2.0008399286307395,
+          -0.19167571514844894,
+          34.21379999999999
+        ]
+      },
+      {
+        "k": 2,
+        "role": "left_groundwire",
+        "target_offset_m": [
+          -0.4707784441416152,
+          4.914301770739257,
+          34.21379999999999
+        ]
+      },
+      {
+        "k": 3,
+        "role": "left_upper",
+        "target_offset_m": [
+          -0.4707784441416152,
+          4.914301770739257,
+          31.013400000000004
+        ]
+      },
+      {
+        "k": 4,
+        "role": "left_middle",
+        "target_offset_m": [
+          -0.4707784441416152,
+          4.914301770739257,
+          25.908
+        ]
+      },
+      {
+        "k": 5,
+        "role": "left_lower",
+        "target_offset_m": [
+          -0.4707784441416152,
+          4.914301770739257,
+          20.802599999999998
+        ]
+      },
+      {
+        "k": 8,
+        "role": "right_groundwire",
+        "target_offset_m": [
+          0.4707784441416152,
+          -4.914301770739257,
+          34.21379999999999
+        ]
+      },
+      {
+        "k": 9,
+        "role": "right_upper",
+        "target_offset_m": [
+          0.4707784441416152,
+          -4.914301770739257,
+          31.013400000000004
+        ]
+      },
+      {
+        "k": 10,
+        "role": "right_middle",
+        "target_offset_m": [
+          0.4707784441416152,
+          -4.914301770739257,
+          25.908
+        ]
+      },
+      {
+        "k": 11,
+        "role": "right_lower",
+        "target_offset_m": [
+          0.4707784441416152,
+          -4.914301770739257,
+          20.802599999999998
+        ]
+      }
+    ],
+    "geometry_basis": "current translated reference patches; OSM tower coordinates unchanged",
+    "geometry_binding": {
+      "path": "research_quality/inspection_regional_model_data.json",
+      "sha256": "ee30612135a2b3057192d1bcf6c0eb53a28b76e94efe16a828b87dd168e1929c"
+    }
+  },
+  "truth_table_by_count": [
+    {
+      "photos": 0,
+      "patterns": 1,
+      "complete_tower": 0,
+      "mismatches": 0
+    },
+    {
+      "photos": 1,
+      "patterns": 9,
+      "complete_tower": 0,
+      "mismatches": 0
+    },
+    {
+      "photos": 2,
+      "patterns": 36,
+      "complete_tower": 0,
+      "mismatches": 0
+    },
+    {
+      "photos": 3,
+      "patterns": 84,
+      "complete_tower": 0,
+      "mismatches": 0
+    },
+    {
+      "photos": 4,
+      "patterns": 126,
+      "complete_tower": 0,
+      "mismatches": 0
+    },
+    {
+      "photos": 5,
+      "patterns": 126,
+      "complete_tower": 0,
+      "mismatches": 0
+    },
+    {
+      "photos": 6,
+      "patterns": 84,
+      "complete_tower": 0,
+      "mismatches": 0
+    },
+    {
+      "photos": 7,
+      "patterns": 36,
+      "complete_tower": 0,
+      "mismatches": 0
+    },
+    {
+      "photos": 8,
+      "patterns": 9,
+      "complete_tower": 0,
+      "mismatches": 0
+    },
+    {
+      "photos": 9,
+      "patterns": 1,
+      "complete_tower": 1,
+      "mismatches": 0
+    }
+  ],
+  "wall_seconds": 7.738146500079893,
+  "limits": [
+    "source geometry audit, not proof of survey precision",
+    "reference target geometry, not as-built tower measurements",
+    "SCIP truth table validates tower-completion logic only",
+    "Copernicus GLO90 is a DSM; numeric ground field is an elevation proxy",
+    "target corrections belong to a separately bound derived model, not original map"
+  ],
+  "full_regional_solver_run": false
+}

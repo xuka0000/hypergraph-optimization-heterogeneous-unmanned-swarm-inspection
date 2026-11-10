@@ -1,0 +1,25 @@
+\section{有限转录、SCIP与最优性定义}
+\noindent 完整连续模型不预定道路访问或充电切换数。实际SCIP需记录有限事件数、分段数和误差；其最优性只对应已转录的域。七次Bernstein位置表达为
+\begin{align}
+ \mathbf p_\ell(t)&=\sum_{r=0}^7\mathbf c_{\ell qr}B_r^7(\xi),\quad
+ \xi=(t-t_{\ell q})/\Delta_{\ell q},\quad \Delta_{\ell q}>0,\label{eng:eq:polynomial}\\
+ \frac{d\mathbf p}{dt}&=\frac7\Delta\sum_{r=0}^6
+                  (\mathbf c_{r+1}-\mathbf c_r)B_r^6(\xi).
+\end{align}
+\noindent 控制点和段时长均可变；连接处满足状态连续及所需导数连续。车辆、姿态和充电也须绑定同一时钟；不能把少数预制道路原语作为整个连续道路域。每转移3段、9检查点仅是原初始数值配置，不是全时段可行性证明。
+\begin{equation}
+ F_j(X,t)\le0\quad\forall t,\qquad
+ F_{wire}(X,t,\xi)\le0\quad\forall t,\xi,\qquad
+ F_{ray}(X,t,\lambda)\le0\quad\forall t,\lambda.
+ \label{eng:eq:forall}
+\end{equation}
+\noindent 连续检查覆盖道路足迹、机体状态、视线、能量和同时刻分离。有限点必要约束给松弛下界；经过独立连续检查的候选才给原域可行上界。额外充分走廊限制会缩小可行域，其下界不能冒充完整域下界。积分上下界须包住真实积分，普通两阶数值积分差值不能自动称严格误差界。
+\begin{align}
+ Z_1^*&=\inf_{X\in\mathcal F}Z_1,\\
+ Z_2^*&=\inf_{X\in\mathcal F,\ Z_1\le Z_1^*}Z_2,\\
+ Z_3^*&=\inf_{X\in\mathcal F,\ Z_1\le Z_1^*,\ Z_2\le Z_2^*}Z_3.
+ \label{eng:eq:lexpasses}
+\end{align}
+\noindent 取得可达最优值时按上述优先级推进；否则只报告可行值及界，不能把未证优前一级固定成真实最优值。无限维混合模型不预先保证最优值可达。SCIP参照保留不设时间/节点上限、gap为0的用户要求；数值容差、资源不足或用户中止另行记载。未完成求解不写成最优，函数定义完备不等于数值求解器已经实现。
+\clearpage
+

@@ -1,0 +1,197 @@
+{
+  "observed_at": "2026-11-10T10:16:11.489774+00:00",
+  "experiment_id": "inspection_joint_physics_transcription_component",
+  "checks": [
+    {
+      "name": "rigid_rotor_RHS_parity",
+      "passed": true,
+      "maximum_absolute_error": 4.934420927416028e-15,
+      "states": 40
+    },
+    {
+      "name": "actuator_power_parity",
+      "passed": true,
+      "maximum_absolute_error": 3.410605131648481e-13,
+      "states": 40
+    },
+    {
+      "name": "battery_RHS_parity",
+      "passed": true,
+      "maximum_absolute_error": 6.938893903907228e-18,
+      "states": 40
+    },
+    {
+      "name": "terminal_voltage_parity",
+      "passed": true,
+      "maximum_absolute_error": 0.0,
+      "states": 40
+    },
+    {
+      "name": "conditional_row_contains_gate_and_scalar",
+      "passed": true
+    },
+    {
+      "name": "inactive_constraint_does_not_force_equality",
+      "passed": true
+    },
+    {
+      "name": "active_constraint_is_enforced",
+      "passed": true
+    },
+    {
+      "name": "SCIP_coupled_midpoint_2.0",
+      "passed": true,
+      "status": "optimal"
+    },
+    {
+      "name": "SCIP_coupled_midpoint_1.0",
+      "passed": true,
+      "status": "optimal"
+    },
+    {
+      "name": "SCIP_coupled_midpoint_0.5",
+      "passed": true,
+      "status": "optimal"
+    },
+    {
+      "name": "mesh_refinement_second_order",
+      "passed": true,
+      "temperature_errors_C": [
+        4.2538867006669534e-07,
+        1.0634138192244791e-07,
+        2.6585002643741973e-08
+      ]
+    },
+    {
+      "name": "coupled_energy_matches_rotor_demand",
+      "passed": true
+    },
+    {
+      "name": "incidence_is_actual_scalar_not_block_count",
+      "passed": true
+    },
+    {
+      "name": "loaded_sources_unchanged_during_run",
+      "passed": true
+    }
+  ],
+  "all_checks_passed": true,
+  "loaded_source_sha256": {
+    "Agent\\Publication\\engineering_joint_transcription.py": "c88087ad46078c6320c528f45b9336df2f11c56105562cf1fe60b88f5ce0e554",
+    "Agent\\Publication\\engineering_reference_flight.py": "18d08acf4503ca5741c5d26dc9a754bb87f3317bcf37c4ce776540cbcf29e5db",
+    "Agent\\Publication\\engineering_battery_electrothermal.py": "559f6eacfa4a40062049b59d2b6f693b0302e12442bfcd85d61981bd45af0a3b",
+    "scripts\\validate_inspection_joint_transcription.py": "a780b7026e7528108eb3f78904e5b883420e7aa5ebb0aaed7cad58e2708c159d"
+  },
+  "source_sha256": "c88087ad46078c6320c528f45b9336df2f11c56105562cf1fe60b88f5ce0e554",
+  "validator_sha256": "a780b7026e7528108eb3f78904e5b883420e7aa5ebb0aaed7cad58e2708c159d",
+  "runs": [
+    {
+      "dt": 2.0,
+      "status": "optimal",
+      "wall_s": 0.03679879999253899,
+      "initialization_s": 0.0005940998671576381,
+      "initialization": "independent nonlinear midpoint root; submitted as candidate, not fixed variables",
+      "solution": [
+        0.7985978537972415,
+        0.02349426201026735,
+        25.026474136588813,
+        0.0,
+        0.8185555555555555,
+        0.01994392659428067
+      ],
+      "reference_solution": [
+        0.7985978532389852,
+        0.02349350914215583,
+        25.026474561977484,
+        0.0,
+        0.8185555555555594,
+        0.019944272741742593
+      ],
+      "max_state_error": 7.528681115198665e-07,
+      "temperature_error_C": 4.2538867006669534e-07,
+      "SOC_error": 5.58256219029829e-10,
+      "energy_Wh": 0.8185555555555555,
+      "nominal_power_W": 736.6999999999999,
+      "currents_A": [
+        14.976030705758703,
+        14.98222506238086
+      ]
+    },
+    {
+      "dt": 1.0,
+      "status": "optimal",
+      "wall_s": 0.07249179994687438,
+      "initialization_s": 0.0014412000309675932,
+      "initialization": "independent nonlinear midpoint root; submitted as candidate, not fixed variables",
+      "solution": [
+        0.798597853378543,
+        0.02349369735100725,
+        25.0264744556361,
+        0.0,
+        0.8185555555555556,
+        0.01994418620872722
+      ],
+      "reference_solution": [
+        0.7985978532389852,
+        0.02349350914215583,
+        25.026474561977484,
+        0.0,
+        0.8185555555555594,
+        0.019944272741742593
+      ],
+      "max_state_error": 1.8820885141698773e-07,
+      "temperature_error_C": 1.0634138192244791e-07,
+      "SOC_error": 1.3955780975294374e-10,
+      "energy_Wh": 0.8185555555555556,
+      "nominal_power_W": 736.6999999999999,
+      "currents_A": [
+        14.9744785496755,
+        14.977591979430207,
+        14.980689035609439,
+        14.98376986338577
+      ]
+    },
+    {
+      "dt": 0.5,
+      "status": "optimal",
+      "wall_s": 0.14031889999751002,
+      "initialization_s": 0.0029109000461176038,
+      "initialization": "independent nonlinear midpoint root; submitted as candidate, not fixed variables",
+      "solution": [
+        0.7985978532738741,
+        0.0234935561938577,
+        25.02647453539248,
+        0.0,
+        0.8185555555555554,
+        0.019944251108729372
+      ],
+      "reference_solution": [
+        0.7985978532389852,
+        0.02349350914215583,
+        25.026474561977484,
+        0.0,
+        0.8185555555555594,
+        0.019944272741742593
+      ],
+      "max_state_error": 4.705170186802832e-08,
+      "temperature_error_C": 2.6585002643741973e-08,
+      "SOC_error": 3.488886957114801e-11,
+      "energy_Wh": 0.8185555555555554,
+      "nominal_power_W": 736.6999999999999,
+      "currents_A": [
+        14.9736992901235,
+        14.975260110248422,
+        14.976816809680114,
+        14.978369406701052,
+        14.979917919525446,
+        14.981462366299407,
+        14.983002765101068,
+        14.984539133940714
+      ]
+    }
+  ],
+  "scope": "fixed hover with free battery states; exact RHS parity and implicit-midpoint refinement only",
+  "full_joint_solver_implemented": false,
+  "regional_optimization_runs": 0,
+  "algorithm_comparison": false
+}

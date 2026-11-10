@@ -1,0 +1,77 @@
+{
+  "observed_at": "2026-11-10T02:07:24.476250+00:00",
+  "project_root": "D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网",
+  "files": [
+    {
+      "path": "research_quality/hypergraph_cross_scenario_comparison.json",
+      "sha256": "69f84c37fdf39458df89b2cd7aaf767afb155009f72ced5293d868fcfb875452",
+      "bytes": 924645,
+      "snapshot": "evidence\\snapshot\\research_quality\\hypergraph_cross_scenario_comparison.json",
+      "observed_at": "2026-11-10T02:07:24.476250+00:00"
+    },
+    {
+      "path": "research_quality/hypergraph_four_factor_stress_completion_record.json",
+      "sha256": "14492dce28ae7724d8d58e546effd62720b5ae0b98a9839b34a2fb026a68e6ff",
+      "bytes": 2920,
+      "snapshot": "evidence\\snapshot\\research_quality\\hypergraph_four_factor_stress_completion_record.json",
+      "observed_at": "2026-11-10T02:07:24.476250+00:00"
+    },
+    {
+      "path": "Agent/Publication/engineering_inspection_model.tex",
+      "sha256": "88b7e54dcb4e6a67a844b023b7af8b3c59695e4fd458f7f42e1ddeef69633285",
+      "bytes": 45717,
+      "snapshot": "evidence\\snapshot\\Agent\\Publication\\engineering_inspection_model.tex",
+      "observed_at": "2026-11-10T02:07:24.476250+00:00"
+    },
+    {
+      "path": "Agent/Publication/engineering_inspection_contract.json",
+      "sha256": "04d533b2df108f4f5821493dd488168801f0faa207e9649ccac1e70c94fd2b69",
+      "bytes": 47600,
+      "snapshot": "evidence\\snapshot\\Agent\\Publication\\engineering_inspection_contract.json",
+      "observed_at": "2026-11-10T02:07:24.476250+00:00"
+    },
+    {
+      "path": "research_quality/inspection_regional_model_data.json",
+      "sha256": "ee30612135a2b3057192d1bcf6c0eb53a28b76e94efe16a828b87dd168e1929c",
+      "bytes": 7623393,
+      "snapshot": "evidence\\snapshot\\research_quality\\inspection_regional_model_data.json",
+      "observed_at": "2026-11-10T02:07:24.476250+00:00"
+    },
+    {
+      "path": "research_quality/inspection_unified_completion.json",
+      "sha256": "b120951d74928b068eaa42a2a301604fb9df6937ba4db77f73f19bc4361646df",
+      "bytes": 153168,
+      "snapshot": "evidence\\snapshot\\research_quality\\inspection_unified_completion.json",
+      "observed_at": "2026-11-10T02:07:24.476250+00:00"
+    },
+    {
+      "path": "research_quality/inspection_solvability_repair.json",
+      "sha256": "325a5ece412ea995d1994cfd8c1c27afc1757779f7a1eac19e8e2a1be9a76410",
+      "bytes": 134354,
+      "snapshot": "evidence\\snapshot\\research_quality\\inspection_solvability_repair.json",
+      "observed_at": "2026-11-10T02:07:24.476250+00:00"
+    },
+    {
+      "path": "总结/03_实验数据/工程化联合求解/regional_joint/run_manifest.json",
+      "sha256": "1073626b0c2e8f12f3718e449a33e9b173c4dfea611abe67a9c5a91f58b1c144",
+      "bytes": 19328,
+      "snapshot": "evidence\\snapshot\\总结\\03_实验数据\\工程化联合求解\\regional_joint\\run_manifest.json",
+      "observed_at": "2026-11-10T02:07:24.476250+00:00"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/instance.json",
+      "sha256": "0604f1ba4047942ea0d0ba0db1e7a3486f9adc5d6fadcc4059cd4344934e78a5",
+      "bytes": 4041,
+      "snapshot": "evidence\\snapshot\\总结\\03_实验数据\\超图与SCIP组合任务对比\\instance.json",
+      "observed_at": "2026-11-10T02:07:24.476250+00:00"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/results.json",
+      "sha256": "beceac2c8cf42d578d97055b662a09034d30c33826b0f0514388c96b997f5c59",
+      "bytes": 2784,
+      "snapshot": "evidence\\snapshot\\总结\\03_实验数据\\超图与SCIP组合任务对比\\results.json",
+      "observed_at": "2026-11-10T02:07:24.476250+00:00"
+    }
+  ],
+  "note": "Bound necessary evidence snapshots, not a second active research project."
+}

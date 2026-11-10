@@ -1,0 +1,426 @@
+\section{无人机运动和姿态}
+\label{sec:04_04}
+
+无人机完成一次观测，需要同时到达合适的位置、形成可实现的机体姿态，并将相机光轴指向目标。位置轨迹、机体姿态和相机方向因而不能分别任意指定：轨迹加速度与相对空气运动决定所需推力，推力沿机体第三轴作用，云台则在机体姿态给定的基础上调整相机方向。本节依次建立平动、受力、转动及两轴云台模型，明确这些状态之间的联系。运动与感知共同受约束的建模思路可参见文献\cite{Spasojevic2020}；该文研究给定路径的时间参数化，本书中的路径、任务安排和云台状态均参与联合决策，不能据此继承其特定问题的凸性结论。
+
+\subsection{活动飞行区间与平动状态}
+
+沿用第\ref{sec:04_03}节的活动航次集合$\mathcal L_k^{\mathrm{act}}$及时间区间
+\begin{equation}
+ \mathcal D_{\ell k}
+ =\bigl[\max\{s_\ell,\tau_k\},e_\ell\bigr],
+ \qquad \ell\in\mathcal L_k^{\mathrm{act}},
+ \label{s0404:flight_domain}
+\end{equation}
+其中$k$为信息更新序号，$\tau_k$为更新时间，$s_\ell,e_\ell$分别为航次起飞与落地时刻，三者均以$\mathrm s$计。以下飞行方程对每个$\ell\in\mathcal L_k^{\mathrm{act}}$在其飞行模式内施加；微分关系在光滑段内部成立，物理不等式覆盖整个飞行区间，起落端点采用飞行侧极限。平台支承状态不使用无接触飞行的受力方程。
+
+航次$\ell$的位置、地速、加速度和加加速度分别记为$\mathbf p_\ell,\mathbf v_\ell,\mathbf a_\ell,\mathbf j_\ell\in\mathbb R^3$，使用世界坐标轴的分量，单位依次为$\mathrm m$、$\mathrm{m/s}$、$\mathrm{m/s^2}$和$\mathrm{m/s^3}$。这里的地速是相对于固定世界坐标的速度，加加速度描述加速度随时间的变化。记$\mathbf w(\mathbf x,t)\in\mathbb R^3$为位置$\mathbf x\in\mathbb R^3$、时刻$t\in[0,T]$处的给定风速场，单位为$\mathrm{m/s}$；空间位置以$\mathrm m$计，风场仅需在所考察飞行区域内有定义。无人机相对空气的速度记为$\mathbf v_{\mathrm{air},\ell}\in\mathbb R^3$，其单位同样为$\mathrm{m/s}$。
+
+平动状态与风场通过下列关系连接：
+\begin{subequations}
+\label{s0404:translation}
+\begin{align}
+ \dot{\mathbf p}_\ell(t)&=\mathbf v_\ell(t),
+ \label{s0404:position_rate}\\
+ \dot{\mathbf v}_\ell(t)&=\mathbf a_\ell(t),
+ \label{s0404:velocity_rate}\\
+ \dot{\mathbf a}_\ell(t)&=\mathbf j_\ell(t),
+ \label{s0404:acceleration_rate}\\
+ \mathbf v_{\mathrm{air},\ell}(t)
+ &=\mathbf v_\ell(t)-\mathbf w\bigl(\mathbf p_\ell(t),t\bigr).
+ \label{s0404:air_velocity}
+\end{align}
+\end{subequations}
+式\eqref{s0404:air_velocity}中的减法针对向量，而不是速度大小。即使无人机相对地面保持不动，其相对空气速度仍可能非零；同一条地面轨迹在不同风场下也可能具有不同的空气阻力。
+
+设$\overline v_{\mathrm g}>0$、$\overline v_{\mathrm{air}}>0$和$\overline v_z>0$分别为地速大小、空速大小和竖直地速绝对值的上限，单位均为$\mathrm{m/s}$；设$\overline a>0$和$\overline j>0$分别为加速度与加加速度的欧氏范数上限，单位为$\mathrm{m/s^2}$和$\mathrm{m/s^3}$。这些参数定义规划允许的运动范围。对于每个活动航次及其飞行时间，要求
+\begin{subequations}
+\label{s0404:translation_bounds}
+\begin{align}
+ \|\mathbf v_\ell(t)\|&\le\overline v_{\mathrm g},
+ &\|\mathbf v_{\mathrm{air},\ell}(t)\|&\le\overline v_{\mathrm{air}},
+ \label{s0404:speed_bounds}\\
+ \bigl|\mathbf e_3^{\mathsf T}\mathbf v_\ell(t)\bigr|
+ &\le\overline v_z,
+ \label{s0404:vertical_speed}\\
+ \|\mathbf a_\ell(t)\|&\le\overline a,
+ &\|\mathbf j_\ell(t)\|&\le\overline j.
+ \label{s0404:acceleration_jerk_bounds}
+\end{align}
+\end{subequations}
+其中$\mathbf e_3=(0,0,1)^{\mathsf T}$为无量纲标准基向量。地速界限制位置变化速度，空速界限制相对空气运动，竖直速度界进一步限制上升与下降。竖直速度已经包含在地速向量中，但当$\overline v_z$小于地速上限时，单独的竖直界仍具有实际约束作用。加速度界限制速度改变的快慢，加加速度界则限制加速度改变的快慢，二者不能相互替代。
+
+飞行内部各轨迹段之间，$\mathbf p_\ell,\mathbf v_\ell,\mathbf a_\ell$均连续；$\mathbf j_\ell$可在分段连接处改变，并在各光滑段保持有界。因此不能利用分段表示使加速度在空中瞬时跳变。起飞离地和降落接触涉及支承力切换，允许加速度具有不同的两侧极限，其事件接续采用第\ref{sec:05_04}节的条件，不将飞行内部的加速度连续性扩展为跨接触的额外要求。
+
+\subsection{空气阻力、推力与平动平衡}
+
+记$m_{\mathrm U}>0$为所建模无人机的飞行总质量，单位为$\mathrm{kg}$；$g_0>0$为重力加速度大小，单位为$\mathrm{m/s^2}$。记$\rho(\mathbf x,t)>0$为给定空气密度场，单位为$\mathrm{kg/m^3}$；在航次位置处取$\rho_\ell(t)=\rho(\mathbf p_\ell(t),t)$。令$\mathbf c_D=(c_x,c_y,c_z)^T$为机体三个轴的阻力面积系数，单位为m$^2$。机体系相对空气速度为$\mathbf v_a^B=R_\ell^T\mathbf v_{\mathrm{air},\ell}$。本参考模型使用逐轴二次阻力：
+\begin{equation}
+ \mathbf F_{D,\ell}
+ =-\tfrac12\rho_\ell R_\ell\operatorname{diag}(\mathbf c_D)
+       (|\mathbf v_a^B|\odot\mathbf v_a^B).
+ \label{s0404:drag}
+\end{equation}
+绝对值及乘积逐分量计算。该式与机体朝向有关，三个数值系数在后面的完整算例中给出。右端单位为N；零空速时阻力为零。其耗散性由
+\begin{equation}
+ \mathbf v_{\mathrm{air},\ell}^T\mathbf F_{D,\ell}
+ =-\tfrac12\rho_\ell\sum_{h=1}^3c_h|v_{a,h}^B|^3\le0
+\end{equation}
+直接得到。它替换早期各向同性代理；不能将两个阻力表达同时施加于同一状态。
+
+机体姿态$R_\ell(t)\in SO(3)$将机体分量转换为世界分量，故$R_\ell(t)\mathbf e_3$表示机体第三轴在世界坐标中的方向。记$F_\ell(t)\in\mathbb R_{\ge0}$为沿该轴作用的总推力大小，单位为$\mathrm N$。在不含平台接触力的飞行模式内，力平衡为
+\begin{equation}
+ m_{\mathrm U}\mathbf a_\ell(t)
+ =F_\ell(t)R_\ell(t)\mathbf e_3
+ -m_{\mathrm U}g_0\mathbf e_3
+ +\mathbf F_{D,\ell}(t).
+ \label{s0404:force_balance}
+\end{equation}
+等式右端依次为推力、重力和空气阻力。机体第三轴采用推力正方向约定，世界第三轴向上，因而重力项带负号。$\mathbf p_\ell$在此平动模型中作为飞行质量的等效位置参考，未另行建立机体内部质量分布及其平动修正。
+
+为解释轨迹与姿态的关系，定义所需推力向量
+\begin{equation}
+ \mathbf q_{F,\ell}(t)
+ :=m_{\mathrm U}\mathbf a_\ell(t)
+   +m_{\mathrm U}g_0\mathbf e_3
+   -\mathbf F_{D,\ell}(t)\in\mathbb R^3,
+ \qquad
+ F_\ell(t)R_\ell(t)\mathbf e_3=\mathbf q_{F,\ell}(t).
+ \label{s0404:required_thrust}
+\end{equation}
+$\mathbf q_{F,\ell}$以$\mathrm N$计，是由既有受力项定义的辅助量，不是新增的独立控制输入。由于$R_\ell\mathbf e_3$为单位向量且$F_\ell\ge0$，式\eqref{s0404:required_thrust}蕴含$F_\ell=\|\mathbf q_{F,\ell}\|$。当$\mathbf q_{F,\ell}\ne\mathbf0$时，推力轴必须沿该向量方向；当$\mathbf q_{F,\ell}=\mathbf0$时，力平衡要求$F_\ell=0$，但不能单靠该等式确定推力轴。因此，模型始终保留乘积$F_\ell R_\ell\mathbf e_3$，不以除以$F_\ell$的表达替代力平衡，也不为消除除零问题擅自增加严格正推力下界。
+
+式\eqref{s0404:required_thrust}说明，加速度或风场的改变会改变所需推力向量。非零水平加速度通常需要水平推力分量，而风产生的阻力也会改变所需补偿。即使地速为零，存在风时也不能直接把机体竖直、推力等于重力当作悬停状态。给定轨迹和风场后，机体滚转与俯仰不能再作为独立于受力方程的自由朝向。
+
+\subsection{旋转运动、倾角与连续航向}
+
+机体姿态矩阵无量纲，其取值域为三维特殊正交群：
+\begin{equation}
+ SO(3)=\{R\in\mathbb R^{3\times3}:
+ R^{\mathsf T}R=I_3,\ \det R=1\},
+ \label{s0404:so3}
+\end{equation}
+其中$I_3$为三阶单位矩阵。正交条件保证三个机体轴互相垂直且长度为一，行列式条件排除镜像变换，使机体与世界坐标系保持相同的右手性。
+
+记$\boldsymbol\omega_\ell(t)=(\omega_{\ell,1},\omega_{\ell,2},\omega_{\ell,3})^{\mathsf T}\in\mathbb R^3$为用机体坐标分量表示的角速度，单位为$\mathrm{rad/s}$。对任意$\mathbf b=(b_1,b_2,b_3)^{\mathsf T}\in\mathbb R^3$，定义叉乘矩阵
+\begin{equation}
+ [\mathbf b]_\times=
+ \begin{pmatrix}
+ 0&-b_3&b_2\\
+ b_3&0&-b_1\\
+ -b_2&b_1&0
+ \end{pmatrix},
+ \qquad
+ [\mathbf b]_\times\mathbf c=\mathbf b\times\mathbf c
+ \quad\text{对任意 }\mathbf c\in\mathbb R^3.
+ \label{s0404:cross_matrix}
+\end{equation}
+于是，机体姿态运动满足
+\begin{equation}
+ \dot R_\ell(t)=R_\ell(t)[\boldsymbol\omega_\ell(t)]_\times,
+ \qquad R_\ell(t)\in SO(3).
+ \label{s0404:rotation_kinematics}
+\end{equation}
+角速度采用机体分量是右乘叉乘矩阵的原因。$\boldsymbol\omega_\ell$专用于角速度；若需给天气或其他不确定情形增加索引，可采用$\xi\in\Xi$，其中$\Xi$为所考虑情形的索引集合，并将相应状态写为$R_\ell^{\xi}$、$\boldsymbol\omega_\ell^{\xi}$。本节省略该情形上标，每个情形仍须分别满足同一组物理关系，不能将角速度符号同时用作情形标识。
+
+设$\overline F>0$为总推力上限，单位为$\mathrm N$；$\overline\theta\in[0,\pi/2)$为机体第三轴相对世界竖直方向的允许最大倾角，单位为$\mathrm{rad}$；$\overline\omega>0$为各机体轴角速度分量的绝对值上限，单位为$\mathrm{rad/s}$。对于全部活动航次及飞行时间，要求
+\begin{subequations}
+\label{s0404:attitude_bounds}
+\begin{align}
+ 0\le F_\ell(t)&\le\overline F,
+ \label{s0404:thrust_bound}\\
+ \mathbf e_3^{\mathsf T}R_\ell(t)\mathbf e_3
+ &\ge\cos\overline\theta,
+ \label{s0404:tilt_bound}\\
+ |\omega_{\ell,h}(t)|&\le\overline\omega,
+ \qquad h\in\{1,2,3\}.
+ \label{s0404:body_rate_bound}
+\end{align}
+\end{subequations}
+$h$是机体角速度的分量索引。式\eqref{s0404:body_rate_bound}为逐分量界，不应改写成具有相同上限的欧氏范数界，否则会改变原可行域。倾角约束限制的是机体第三轴与世界竖直轴的夹角，而不是分别对滚转角和俯仰角施加相同数值的界。推力上限、倾角界和力平衡共同限制轨迹可以产生的加速度，仅满足式\eqref{s0404:acceleration_jerk_bounds}并不足以保证受力可行。
+
+机体航向使用第一机体轴在世界水平面上的投影定义。沿用连续展开约定，令
+\begin{equation}
+ \psi_\ell(t)=\operatorname{unwrap}
+ \left(\operatorname{atan2}
+ \bigl(R_{\ell,21}(t),R_{\ell,11}(t)\bigr)\right)
+ \in\mathbb R,
+ \label{s0404:continuous_yaw}
+\end{equation}
+其中$R_{\ell,ab}$表示矩阵的第$a$行、第$b$列元素，$a,b\in\{1,2,3\}$；$\psi_\ell$以$\mathrm{rad}$计，初始分支由接续状态确定。它是从$R_\ell$导出的航向坐标，不是与姿态矩阵无关的另一套姿态变量。
+
+倾角上限严格小于$\pi/2$保证该航向坐标有定义。由$R_\ell\in SO(3)$的第一列和第三行均为单位向量，有
+\begin{equation}
+ R_{\ell,11}^2+R_{\ell,21}^2
+ =1-R_{\ell,31}^2
+ =R_{\ell,32}^2+R_{\ell,33}^2
+ \ge\cos^2\overline\theta>0.
+ \label{s0404:yaw_regular}
+\end{equation}
+因此，第一机体轴的水平投影不会退化为零，$\operatorname{atan2}$的两个输入不会同时为零。该结论保证坐标合法，但不会自动保证航向转动足够慢。
+
+设$\overline\nu_\psi>0$和$\overline\alpha_\psi>0$分别为航向角速度与航向角加速度的绝对值上限，单位为$\mathrm{rad/s}$和$\mathrm{rad/s^2}$。另要求
+\begin{equation}
+ |\dot\psi_\ell(t)|\le\overline\nu_\psi,
+ \qquad
+ |\ddot\psi_\ell(t)|\le\overline\alpha_\psi.
+ \label{s0404:yaw_rate_bounds}
+\end{equation}
+这些导数针对连续展开的角度计算。角度主值跨越分支边界时不能通过一次$2\pi$跳变重置航向，以规避变化率限制。一般姿态下，$\dot\psi_\ell$也不能直接等同于机体角速度的第三分量$\omega_{\ell,3}$，因此式\eqref{s0404:yaw_rate_bounds}与机体分量角速度界需要同时保留。航向角速度在飞行内部按有界角加速度接续，不借助分段连接产生未受限制的跳变。
+
+\subsection{两轴云台及焦距变化}
+
+参考相机采用两轴云台。航次$\ell$的云台俯仰角与偏航角分别为$\gamma_{p,\ell}(t)$和$\gamma_{y,\ell}(t)$，两者均为以$\mathrm{rad}$计的实值函数；令$\boldsymbol\gamma_\ell=(\gamma_{p,\ell},\gamma_{y,\ell})^{\mathsf T}$。此处$p$和$y$分别表示俯仰与偏航，不表示电池身份或空间坐标。云台角是相对于机体的角度，区别于机体相对于世界的航向$\psi_\ell$。
+
+设$\underline\gamma_p\le\overline\gamma_p$和$\underline\gamma_y\le\overline\gamma_y$分别为两轴机械角度范围的有限端点，单位为$\mathrm{rad}$。云台允许角集合为
+\begin{equation}
+ \Gamma=
+ [\underline\gamma_p,\overline\gamma_p]
+ \times[\underline\gamma_y,\overline\gamma_y]
+ \subset\mathbb R^2.
+ \label{s0404:gimbal_domain}
+\end{equation}
+设$\overline\nu_\gamma>0$和$\overline\alpha_\gamma>0$分别为两轴共用的角速度与角加速度绝对值上限，单位为$\mathrm{rad/s}$和$\mathrm{rad/s^2}$。对于每个活动航次及其飞行区间，云台满足
+\begin{subequations}
+\label{s0404:gimbal_bounds}
+\begin{align}
+ \underline\gamma_p\le\gamma_{p,\ell}(t)
+ &\le\overline\gamma_p,
+ \label{s0404:pitch_range}\\
+ \underline\gamma_y\le\gamma_{y,\ell}(t)
+ &\le\overline\gamma_y,
+ \label{s0404:gimbal_yaw_range}\\
+ |\dot\gamma_{h,\ell}(t)|&\le\overline\nu_\gamma,
+ \qquad h\in\{p,y\},
+ \label{s0404:gimbal_rates}\\
+ |\ddot\gamma_{h,\ell}(t)|&\le\overline\alpha_\gamma,
+ \qquad h\in\{p,y\}.
+ \label{s0404:gimbal_accelerations}
+\end{align}
+\end{subequations}
+角度范围限制云台可到达的方向，角速度界限制转动所需时间，角加速度界限制转速改变的快慢。云台角与其角速度在飞行内部按这些关系接续。云台角采用具有机械位置意义的连续表示；即使两个角度具有相同的三角函数值，也不能在轨迹中任意相差$2\pi$地替换，从而越过机械范围或规避速率限制。
+
+焦距$f_\ell(t)\in\mathbb R_{>0}$以$\mathrm{mm}$计。设$0<\underline f\le\overline f$为允许焦距区间的端点，单位为$\mathrm{mm}$；$\overline\nu_f>0$为焦距变化率上限，单位为$\mathrm{mm/s}$。其约束为
+\begin{equation}
+ \underline f\le f_\ell(t)\le\overline f,
+ \qquad
+ |\dot f_\ell(t)|\le\overline\nu_f,
+ \qquad \ell\in\mathcal L_k^{\mathrm{act}},\quad t\in\mathcal D_{\ell k}.
+ \label{s0404:focal_bounds}
+\end{equation}
+焦距在各段之间保持连续，不能在两次观测之间瞬时切换到另一焦距。其变化率可在所给界内分段改变，本模型未另行引入焦距二阶导数界。焦距影响投影尺度和视场，具体成像条件在第\ref{sec:04_05}节建立。参考设备的镜头范围及云台角范围来自设备资料\cite{DJIH20}，两轴理想化与运动变化率阈值属于本模型的适配设定，不能将全部参数合称为原厂完整动态指标。
+
+\subsection{相机坐标基与运动姿态耦合}
+
+为唯一确定相机姿态，需要在光轴之外给出图像平面的两个坐标轴。以下向量均以机体坐标分量表示，且无量纲。对任意允许云台角$\boldsymbol\gamma_\ell(t)\in\Gamma$，定义光轴正方向$\mathbf d_\ell$和相机第一轴方向$\mathbf r_\ell$为
+\begin{subequations}
+\label{s0404:camera_basis}
+\begin{align}
+ \mathbf d_\ell(t)
+ &=\begin{pmatrix}
+ \cos\gamma_{p,\ell}(t)\cos\gamma_{y,\ell}(t)\\
+ \cos\gamma_{p,\ell}(t)\sin\gamma_{y,\ell}(t)\\
+ \sin\gamma_{p,\ell}(t)
+ \end{pmatrix},
+ \label{s0404:optical_axis_body}\\
+ \mathbf r_\ell(t)
+ &=\begin{pmatrix}
+ \sin\gamma_{y,\ell}(t)\\
+ -\cos\gamma_{y,\ell}(t)\\
+ 0
+ \end{pmatrix},
+ \label{s0404:image_first_axis}\\
+ \mathbf d_\ell(t)\times\mathbf r_\ell(t)
+ &=\begin{pmatrix}
+ \sin\gamma_{p,\ell}(t)\cos\gamma_{y,\ell}(t)\\
+ \sin\gamma_{p,\ell}(t)\sin\gamma_{y,\ell}(t)\\
+ -\cos\gamma_{p,\ell}(t)
+ \end{pmatrix}.
+ \label{s0404:image_second_axis}
+\end{align}
+\end{subequations}
+相机第二轴采用$\mathbf d_\ell\times\mathbf r_\ell$，相机第三轴采用$\mathbf d_\ell$。这里的$\mathbf r_\ell$是三维单位轴向量，与塔的二维地图位置$\mathbf r_g$通过索引和含义区分。
+
+由上述定义可直接得到
+\begin{equation}
+ \|\mathbf d_\ell\|=\|\mathbf r_\ell\|=1,
+ \qquad \mathbf d_\ell^{\mathsf T}\mathbf r_\ell=0,
+ \qquad
+ \mathbf r_\ell\times(\mathbf d_\ell\times\mathbf r_\ell)
+ =\mathbf d_\ell.
+ \label{s0404:basis_handedness}
+\end{equation}
+最后一个等式由向量三重积恒等式成立，说明第一轴叉乘第二轴得到第三轴。因此，按列排列的矩阵
+\begin{equation}
+ R_{BC}\bigl(\boldsymbol\gamma_\ell(t)\bigr)
+ =\bigl[\,\mathbf r_\ell(t),\
+ \mathbf d_\ell(t)\times\mathbf r_\ell(t),\
+ \mathbf d_\ell(t)\,\bigr]\in SO(3)
+ \label{s0404:camera_to_body}
+\end{equation}
+将相机坐标分量转换为机体坐标分量，并保持右手性。叉乘的次序不能任意交换：若只把第二列替换为$\mathbf r_\ell\times\mathbf d_\ell$而不改变其他列，便会反转该轴并破坏所要求的右手旋转关系。
+
+例如，当$\gamma_{p,\ell}=\gamma_{y,\ell}=0$时，光轴沿机体第一轴正方向，相机第一轴沿机体第二轴负方向，相机第二轴沿机体第三轴负方向。这是式\eqref{s0404:camera_basis}规定的坐标约定。给定机体姿态及两个云台角后，相机三根坐标轴均已确定，不再增加独立的相机滚转自由度。
+
+记$\mathbf d_{BC}\in\mathbb R^3$为从机体参考点指向相机光心的固定安装偏移，使用机体坐标分量，单位为$\mathrm m$。相机到世界的旋转矩阵$R_{C,\ell}(t)\in SO(3)$及光心位置$\mathbf p_{C,\ell}(t)\in\mathbb R^3$为
+\begin{subequations}
+\label{s0404:camera_world_pose}
+\begin{align}
+ R_{C,\ell}(t)
+ &=R_\ell(t)R_{BC}\bigl(\boldsymbol\gamma_\ell(t)\bigr),
+ \label{s0404:camera_world_rotation}\\
+ \mathbf p_{C,\ell}(t)
+ &=\mathbf p_\ell(t)+R_\ell(t)\mathbf d_{BC}.
+ \label{s0404:camera_world_position}
+\end{align}
+\end{subequations}
+$R_{C,\ell}$无量纲，$\mathbf p_{C,\ell}$以$\mathrm m$计。矩阵乘积依次完成相机到机体、机体到世界的转换；安装偏移也须先旋转，再与世界位置相加。参考输入取$\mathbf d_{BC}=\mathbf0$，使相机光心与机体参考点重合。这是所用参考几何的简化，不是上述变换关系普遍成立所必需的条件；在采用非零固定偏移时，式\eqref{s0404:camera_world_position}仍直接适用。
+
+相机光轴在世界坐标中的方向为
+\begin{equation}
+ R_{C,\ell}(t)\mathbf e_3
+ =R_\ell(t)\mathbf d_\ell(t).
+ \label{s0404:optical_axis_world}
+\end{equation}
+该式把观测方向与前述飞行受力连接起来：加速度和风改变所需推力，推力平衡约束机体姿态，而机体姿态又参与光轴到世界坐标的转换。云台可在机械范围和变化率允许的范围内补偿机体转动，却不能保证任意飞行动作下都能保持任意观测方向。因而，在第\ref{sec:04_05}节检查目标是否进入视场时，必须使用由同一条轨迹、同一个机体姿态和同一组云台角共同产生的$R_{C,\ell}$与$\mathbf p_{C,\ell}$。
+
+以上关系确定了运动与相机几何的耦合。以下进一步补入转矩分配、旋翼响应及平台接触，使受力与控制作用于同一物理状态。参考参数在各数值算例中代入；参考模型的数值跟踪与真实平台验证分别记录。
+
+% REFERENCE_RIGID_EXPERIMENT
+\subsection{旋翼转矩、电机响应与完整刚体状态}
+
+力平衡还须满足转动动力学。令$J$为机体系惯量矩阵，$B_f$为推力到力矩的映射，则
+\begin{align}
+ J\dot{\boldsymbol\omega}&=B_f\mathbf f-\boldsymbol\omega\times J\boldsymbol\omega,\\
+ \dot f_r&=(f_r^{cmd}-f_r)/\tau_m,\quad
+ 0\le f_r,f_r^{cmd}\le\bar f,\quad |\dot f_r|\le\bar\nu_f.
+ \label{s0404:rotor_dynamics}
+\end{align}
+命令先投影到$[0,\bar f]\cap[f_r-\tau_m\bar\nu_f,f_r+\tau_m\bar\nu_f]$，因此推力限幅与变化率界同时满足。位置、速度、单位四元数、机体角速度及四个旋翼推力共17个状态分量；单位四元数另满足一个范数等式。几何控制的刚体与姿态构造可参见Lee等\cite{LeeSE3};本节采用向上的世界第三轴和X形旋翼布局。
+
+参考质量7\,kg、臂长$l=0.4475$\,m，设$a=l/\sqrt2$。四个旋翼位置依次为$(a,a)$、$(-a,a)$、$(-a,-a)$、$(a,-a)$。完整数值分配矩阵和惯量为
+\begin{equation}
+ \begin{bmatrix}F\\\tau_x\\\tau_y\\\tau_z\end{bmatrix}
+ =\begin{bmatrix}1&1&1&1\\a&a&-a&-a\\-a&a&a&-a\\0.02&-0.02&0.02&-0.02\end{bmatrix}\mathbf f,
+ \quad J=\operatorname{diag}(0.18,0.18,0.30)\ \mathrm{kg\,m^2}.
+ \label{s0404:numeric_allocation}
+\end{equation}
+取$\tau_m=0.08$\,s、$\bar f=34.335$\,N、$\bar\nu_f=100$\,N/s。质量、惯量、阻力面积$(0.25,0.25,0.35)$\,$\mathrm m^2$及旋翼参数均是参考值；臂长尺度对应公开895\,mm对角轴距的一半\cite{DJIM300Manual}。不包含旋翼陀螺力矩、地面效应和桨叶弹性。
+
+\subsection{固定跟踪器与停稳接触}
+
+给定参考位置、速度、加速度$(\mathbf p_d,\mathbf v_d,\mathbf a_d)$和偏航，令
+\begin{align}
+ \mathbf F_d&=-10(\mathbf p-\mathbf p_d)-10(\mathbf v-\mathbf v_d)
+              +7(\mathbf a_d+9.81\mathbf e_3)-\mathbf F_D,\\
+ \mathbf b_{3d}&=\mathbf F_d/\|\mathbf F_d\|,\quad
+ \mathbf b_{2d}=\frac{\mathbf b_{3d}\times(\cos\psi_d,\sin\psi_d,0)^T}
+ {\|\mathbf b_{3d}\times(\cos\psi_d,\sin\psi_d,0)^T\|},\\
+ R_d&=[\mathbf b_{2d}\times\mathbf b_{3d},\mathbf b_{2d},\mathbf b_{3d}],\quad
+ \mathbf e_R=\tfrac12(R_d^TR-R^TR_d)^\vee,\\
+ F^{cmd}&=\max(0,\mathbf F_d^TR\mathbf e_3),\quad
+ \boldsymbol\tau^{cmd}=-6\mathbf e_R-1.8\boldsymbol\omega+\boldsymbol\omega\times J\boldsymbol\omega.
+ \label{s0404:numeric_feedback}
+\end{align}
+位置、速度、姿态、角速度增益的单位依次为N/m、N\,s/m、N\,m、N\,m\,s。矩阵逆分配后施加推力和速率投影。这是固定的几何PD参考跟踪器，未加入期望角速度的前馈项，不把它称作Lee算法的忠实复现，也不援用原算法在不同执行器假设下的稳定性定理。此算例假定当前风可无噪声观测用于阻力补偿。
+
+停稳接触时车辆驻留，飞机水平且相对速度、角速度为零。平台法向力$N$、切向力$\mathbf F_t$与支承力矩满足
+\begin{equation}
+ N\ge0,\quad g_{pad}\ge0,\quad Ng_{pad}=0,\quad
+ \|\mathbf F_t\|\le0.6N,\quad\|\boldsymbol\tau_c\|\le0.3N.
+ \label{s0404:reference_contact}
+\end{equation}
+无风、旋翼全停时平台承担68.67\,N；推力按电机方程增长，不能从停转瞬时跳至悬停。该静态接触模式要求先以零相对速度完成对接，不用位置截断代替碰撞冲量模型。有横风而法向力已降为零时，平台不能继续提供非零摩擦力。
+
+\subsection{数值算例：连续三维跟踪与电池联算}
+
+初态为$\mathbf p=(0,0,10)$\,m、$\mathbf v=0$、$q=(1,0,0,0)$、$\boldsymbol\omega=0$，每旋翼推力17.1675\,N。它是已经在空中的初态。以
+\begin{equation}
+ H(s)=35s^4-84s^5+70s^6-20s^7,\qquad
+ \mathbf p_d(t)=(0,0,10)^T+(12,4,2)^TH(\min(t/30,1))
+\end{equation}
+生成40\,s轨迹，偏航为0，速度和加速度取上述函数导数。分别采用静风、$(0,3,0)$\,m/s横风和$(2\sin(t/8),3\sin(t/11),0.4\sin(t/7))$\,m/s时变风；前两种密度1.225，第三种1.20\,$\mathrm{kg/m^3}$。控制器所有增益保持不变。
+
+独立积分步长上限0.02\,s，输出的旋翼功率再驱动第\ref{sec:04_08}节电热模型；电池初态SOC 0.9、极化0\,V、温度25℃。结果见表\ref{tab:rigid_battery_results}。
+\begin{table}[!ht]\centering
+\caption{刚体跟踪与电池联算结果}\label{tab:rigid_battery_results}
+\begin{tabular}{lrrrr}\toprule
+风况 & 最大位置误差/m & 耗电/Wh & 终态SOC & 最高电池温度/℃\\\midrule
+静风 & 0.005284 & 8.185978 & 0.886274 & 25.248206\\
+恒定横风 & 0.032456 & 8.184249 & 0.886277 & 25.248098\\
+时变三维风 & 0.006844 & 8.186145 & 0.886274 & 25.248219\\
+\bottomrule\end{tabular}\end{table}
+三种工况均未出现推力命令饱和。0.04\,s与0.02\,s步长的最大状态差为$6.91\times10^{-9}$；该比较检验本算例积分分辨率，不证明任意轨迹的跟踪上界。恒定偏航解析解、电机一阶响应、旋翼功率与停稳支承共13项检查通过。实测空气动力、传感器噪声与起降全过程仍属于后续平台验证范围。
+
+
+\subsection{平台接触力与刚体运动的联合表示}
+静态平台证书只能判断某个静止状态能否受力平衡。起飞和回收还需描述足点载荷、滑动和离地。采用接触互补条件表达非穿透与载荷的关系\cite{PosaContact2014}，不预先给每个足点指定接触顺序；本节限定无冲击的平滑对接，接地前法向速度必须趋于零。
+
+令机体系四个足点为$\mathbf r_j=(\pm a,\pm a,-0.6)^T$，$a=0.3/\sqrt2$ m；按X构型编号。足点位置及速度为
+\begin{equation}
+ \mathbf x_j=\mathbf p+R\mathbf r_j,\qquad
+ \mathbf v_j=\mathbf v+R(\boldsymbol\omega\times\mathbf r_j).
+ \label{s0404:foot_kinematics}
+\end{equation}
+车辆在起降时保持静止，平台面高记为$z_{pad}$，间隙$g_j=x_{j,z}-z_{pad}$。接触力$\boldsymbol\lambda_j=(\lambda_{jx},\lambda_{jy},N_j)^T$以N计，要求
+\begin{subequations}
+\label{s0404:contact_complementarity}
+\begin{align}
+ g_j&\ge0,\quad0\le N_j\le200,\quad N_jg_j=0,\quad N_jv_{j,z}=0,\\
+ \|\boldsymbol\lambda_{j,T}\|&\le0.6N_j,\\
+ \|\mathbf v_{j,T}\|\boldsymbol\lambda_{j,T}
+             +0.6N_j\mathbf v_{j,T}&=\mathbf0.
+\end{align}
+\end{subequations}
+下标$T$为平台切向二维分量。静止时最后一式允许摩擦锥内的反力；滑动时摩擦方向与速度相反且位于锥边界。$N_j=0$时不强迫足点停止切向运动。平台水平尺寸为$4\times1.8$ m；仅足点落在平台支撑范围内时允许$N_j>0$。离开起降保护模式后接触力为零。
+
+接触合力与机体系力矩为
+\begin{equation}
+ \mathbf F_c=\sum_j\boldsymbol\lambda_j,\qquad
+ \boldsymbol\tau_c=\sum_j\mathbf r_j\times(R^T\boldsymbol\lambda_j).
+ \label{s0404:contact_wrench}
+\end{equation}
+将两项分别加入平移和转动方程的右端。支撑力不能只加在竖直平移方程中而省去足点力矩。足点尺寸、摩擦系数和200N载荷界均为本参考模型设定，尚无目标机型起落架辨识数据；200N并非厂家允许载荷。
+
+\paragraph{数值算例：有风平台受力。}
+取水平机体、中心距平台0.6m、风速$(3,0,0)$ m/s、密度1.225kg/m$^3$，四旋翼总推力为重量的90\%。所需法向合力为6.867N，反向摩擦合力为$-1.378125$N。SCIP以足点力为自由变量得到表\ref{s0404:foot_result}的一组平衡解，与独立受力核算一致；可行目标为常数零，此处的optimal状态只表示获得可行平衡。
+\begin{table}[!ht]\centering\small
+\caption{3m/s风下的四足平台平衡解}\label{s0404:foot_result}
+\begin{tabular}{@{}crrr@{}}\toprule
+足点 & $\lambda_x$/N & $\lambda_y$/N & $N$/N\\\midrule
+1 & $-0.34453125$ & 0 & 2.691231533\\
+2 & $-0.34453125$ & 0 & 0.742268467\\
+3 & $-0.34453125$ & 0 & 0.742268467\\
+4 & $-0.34453125$ & 0 & 2.691231533\\\bottomrule
+\end{tabular}\end{table}
+
+\subsection{有限时间启停与平台驱动模式}
+非负指令的一阶推力滞后不能单独描述有限时间停转。若$\dot f=(f^{cmd}-f)/0.08$且$f^{cmd}\ge0$，则$f(t)\ge f(t_0)\exp[-(t-t_0)/0.08]>0$。直接要求在有限终点$f=0$会与该模式冲突。
+
+平台启停改用角速度状态$\Omega_r\ge0$及有符号角加速度$\alpha_r$：
+\begin{subequations}
+\label{s0404:ground_drive}
+\begin{align}
+ \dot\Omega_r&=\alpha_r,\qquad f_r=0.000107296875\Omega_r^2,\\
+ |\alpha_r|&\le2000\ \mathrm{rad/s^2},\qquad
+ |0.0000021459375\Omega_r^2+0.0002\alpha_r|\le0.5\ \mathrm{Nm}.
+\end{align}
+\end{subequations}
+平台驱动至少有一个足点几何接触平台，仍同时满足式\eqref{s0404:contact_complementarity}。飞行段使用前述推力跟踪模式，模式切换继承$\Omega_r$、$f_r$和电池状态。制动中的负机械功率不计为电池回充；轴功率按式\eqref{s0408:flight_power}的同一正部表达式计算。角加速度和转矩边界是参考驱动假设，不代表M300电调参数。
+
+将一秒启停离散为一个角速度中点区间，SCIP同时满足接触、旋翼和电热方程。$0\to400$rad/s与$400\to0$rad/s两例的中点功率分别为215.8375W和55.8375W，对应离散耗能0.059954861Wh与0.015510417Wh。这两个数是单中点近似，不能替代完整启动曲线的积分；停转例终点推力为零，SOC和累计耗能没有重置。
+
+\subsection{数值执行：启动、升降与停转的连续接续}
+取无风、密度1.225kg/m$^3$、环境25℃、初始SOC0.9。平台面高1.8m，机体中心由2.4m升至6.4m再返回。启动和停转各1s，升降各12s，中间悬停2s，总时间28s。启动采用$\Omega=400H(t)$，停转采用$\Omega=400[1-H(t)]$；$H(s)=35s^4-84s^5+70s^6-20s^7$。飞行垂向轨迹同样采用该函数，并根据垂向阻力与加速度反求推力。功率和电池状态在整个过程连续积分。
+\begin{table}[!ht]\centering\small
+\caption{28s无风参考循环的执行结果}\label{s0404:cycle_result}
+\begin{tabular}{@{}lr@{}}\toprule
+量 & 数值\\\midrule
+机载耗能/Wh & 5.490446193\\
+终态SOC & 0.890806112\\
+终态电池温度/℃ & 25.165730643\\
+最大垂向速度/(m/s) & 0.729166667\\
+平台驱动最大转矩/Nm & 0.370436158\\
+电池能量账残差/Wh & $3.61\times10^{-13}$\\\bottomrule
+\end{tabular}\end{table}
+两种积分步长0.02s和0.01s的终态最大分量差为$1.09\times10^{-7}$；该混合单位数只用于数值一致性检查，各物理界分别验收。13项执行检查覆盖状态接续、返回、旋翼与电池边界。首次构造漏算垂向阻力补偿，位置偏差达到0.798m；修正后与该理想执行模型一致。这里验证规定控制下的无风参考循环，尚未验证有风起降、图像任务或区域最优规划。

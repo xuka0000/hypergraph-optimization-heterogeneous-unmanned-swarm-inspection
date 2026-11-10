@@ -1,0 +1,73 @@
+{
+  "observed_at": "2026-11-10T03:35:47.294449+00:00",
+  "archive": "reproduction/inspection_existing_data.zip",
+  "archive_sha256": "7e0cc85b50af6931013245bcd112e85f10f92663957c13061c1f2b6ff5e5960d",
+  "sources": {
+    "总结/03_实验数据/真实地理巡检场景共享/scenes/rommerskirchen.json": {
+      "sha256": "d0c668d7cfeea2e7973e6ab387be38e499aea4e935a6530dfaf8900438b8520d",
+      "bytes": 23320049
+    },
+    "总结/03_实验数据/工程化联合求解/pilot_results.json": {
+      "sha256": "db7de0c92c870c1c10bbc4b76e912bb9bda6ea71cc830867f7346a39c3d837d9",
+      "bytes": 79275
+    },
+    "总结/03_实验数据/工程化联合求解/pilot_independent_validation.json": {
+      "sha256": "228ad15d74ac7e63310ef847717cfdf380be682165f8e692152e443c8b133b30",
+      "bytes": 4466
+    },
+    "总结/03_实验数据/工程化联合求解/unified_SOC1_result.json": {
+      "sha256": "0c1ce2cbd1409e3219c0b749b014cabd1ffb95f6c85b7dce03a7c94bcb701e90",
+      "bytes": 1129
+    },
+    "总结/03_实验数据/工程化联合求解/unified_SOC1_validation.json": {
+      "sha256": "f7aced7f8570b313a65093f6963a8542b36ae72fb0ff4789a518be926ab70f32",
+      "bytes": 8889
+    },
+    "总结/03_实验数据/工程化联合求解/unified_SOC1_sortie0.json": {
+      "sha256": "802d912acce29af02241e46fa1ea18741cdde5cef671ee0a50f4896d96d7ef1b",
+      "bytes": 74296
+    },
+    "总结/03_实验数据/工程化联合求解/unified_SOC1_sortie1.json": {
+      "sha256": "8d3c271c28bfe6f808dc01eb356ce5e14abe2d59c6fcf36c22889b6cf37409b4",
+      "bytes": 84470
+    },
+    "总结/03_实验数据/工程化联合求解/regional_joint/trajectory_refinement.json": {
+      "sha256": "28ed8a50ac3d477375b104baa92f7add24a8dc7250b704f9ec5e3e4adf189c9f",
+      "bytes": 48146282
+    },
+    "总结/03_实验数据/工程化联合求解/regional_joint/energy_seed_readiness.json": {
+      "sha256": "4ac1c8cc8f10185a767896eb92cecbcc710f7bb9e34a951f6b5259f6fb717bfe",
+      "bytes": 2613882
+    },
+    "总结/03_实验数据/工程化联合求解/pilot_protocol.json": {
+      "sha256": "36be1476a614434b2ad4d3a20db4f3250fc6732febe1a8115c78ff5dce2378aa",
+      "bytes": 1775
+    },
+    "总结/03_实验数据/工程化联合求解/day_ahead_pilot/protocol.json": {
+      "sha256": "fb17a367a6b05fbb3643618ed2c4bf53261452bac3781c8406383ae6ebca7ddc",
+      "bytes": 2445
+    },
+    "总结/03_实验数据/工程化联合求解/day_ahead_pilot/forecast_source.json": {
+      "sha256": "110dc8fce00de313198067b4c3d203404d55afa74ca2a6d6b844da97d75b74aa",
+      "bytes": 570
+    },
+    "总结/03_实验数据/工程化联合求解/full_joint_input_0.json": {
+      "sha256": "e32354418a563061147499e37e714247f79d71860668bf10b3403133c7bf96ac",
+      "bytes": 160825
+    }
+  },
+  "passed": [
+    "scene identity",
+    "pilot candidate hash",
+    "two unified trajectory witness hashes",
+    "65-flight energy parent hash",
+    "65 segment sums and enclosure membership",
+    "global optimistic energy arithmetic"
+  ],
+  "limitations": [
+    "No solver rerun",
+    "No independent proof of all physical interval bounds",
+    "Historical data domains differ",
+    "No new full-region accepted solution"
+  ]
+}

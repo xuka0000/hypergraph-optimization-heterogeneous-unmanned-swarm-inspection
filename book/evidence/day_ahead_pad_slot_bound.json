@@ -1,0 +1,40 @@
+{
+  "scope": "Algebraic audit of already bound pad_slot_bound; no experiment or optimizer execution",
+  "source": {
+    "path": "reproduction/project/Agent/Publication/engineering_regional_structure.py",
+    "sha256": "b7e0e1909701b6d0906fdbdd6cf5ac14abdca12c530405698515a64167e4a47c",
+    "locator": "pad_slot_bound, lines 47-72"
+  },
+  "assumptions": [
+    "first day-ahead plan; no ongoing pre/air/post records",
+    "each carrier has one pad; pre/post and both protection traversals occupy it",
+    "carrier stationary during each protection traversal",
+    "vertical center displacement from dock to safe height is 4 m; absolute vertical speed <=1 m/s",
+    "all complete occupancy inside 28800-second shift"
+  ],
+  "parameters": {
+    "horizon_s": 28800,
+    "pre_s": 120,
+    "post_s": 240,
+    "dock_height_above_ground_m": 2.4,
+    "safe_height_above_ground_m": 6.4,
+    "rise_m": 4,
+    "max_abs_vz_mps": 1,
+    "pads_per_carrier": [
+      1,
+      1
+    ]
+  },
+  "minimum_pad_occupancy_s": 368,
+  "upper_flights_per_carrier": [
+    78,
+    78
+  ],
+  "total_optional_flight_slots": 156,
+  "proof": "L_v*(hpre+hpost+2*rise/vzmax) <= Kpad_v*H; floor(28800/368)=78. Slots are optional and unassigned; no arbitrary catalogue is imposed by this bound under the stated day-ahead assumptions.",
+  "limitations": [
+    "Do not apply unchanged to partially executed replans",
+    "This proof does not certify road-phase counts, charging-event counts, polynomial restriction or delayed constraint completeness",
+    "At most 156 possible new flights does not imply any feasible regional plan is found"
+  ]
+}

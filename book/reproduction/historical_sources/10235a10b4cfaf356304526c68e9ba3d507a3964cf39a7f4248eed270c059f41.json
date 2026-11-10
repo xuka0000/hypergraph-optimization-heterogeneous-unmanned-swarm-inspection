@@ -1,0 +1,110 @@
+{
+  "passed": true,
+  "checks": [
+    {
+      "id": "expression_0",
+      "passed": true,
+      "value_error": 0.0,
+      "gradient_error": 4.951061782776378e-11
+    },
+    {
+      "id": "expression_1",
+      "passed": true,
+      "value_error": 0.0,
+      "gradient_error": 9.800737998943987e-11
+    },
+    {
+      "id": "expression_2",
+      "passed": true,
+      "value_error": 0.0,
+      "gradient_error": 9.911627074643548e-11
+    },
+    {
+      "id": "expression_3",
+      "passed": true,
+      "value_error": 0.0,
+      "gradient_error": 4.473177384056726e-11
+    },
+    {
+      "id": "expression_4",
+      "passed": true,
+      "value_error": 0.0,
+      "gradient_error": 6.149747378003667e-11
+    },
+    {
+      "id": "expression_5",
+      "passed": true,
+      "value_error": 0.0,
+      "gradient_error": 4.3010039973978564e-12
+    },
+    {
+      "id": "expression_6",
+      "passed": true,
+      "value_error": 0.0,
+      "gradient_error": 1.497202362088501e-10
+    },
+    {
+      "id": "expression_7",
+      "passed": true,
+      "value_error": 0.0,
+      "gradient_error": 2.475530891388189e-11
+    },
+    {
+      "id": "known_convex_optimum",
+      "passed": true,
+      "actual": [
+        0.0,
+        1.0
+      ],
+      "expected": [
+        0,
+        1
+      ],
+      "metrics": {
+        "explicit_violated_rows": 0,
+        "undefined_expression_rows": 0,
+        "maximum_raw_violation": 0.0,
+        "linearized_scaled_violation_norm": 0.0,
+        "worst_row": null,
+        "candidate_objective_unvalidated": 0.0,
+        "accepted_objective_vector": null,
+        "integrality_max_error": 0.0
+      }
+    },
+    {
+      "id": "nonlinear_known_root",
+      "passed": true,
+      "actual": 2.0000000000000018,
+      "expected": 2
+    },
+    {
+      "id": "conditional_selector_gate_truth_table",
+      "passed": true,
+      "cases": 18
+    },
+    {
+      "id": "known_binary_optimum_seen",
+      "passed": true,
+      "valid_optimal_iterates": 97,
+      "expected_objective": -2
+    },
+    {
+      "id": "postcreation_original_bounds",
+      "passed": true,
+      "actual_lb": [
+        1.0,
+        0.0
+      ],
+      "actual_ub": [
+        1.0,
+        80.0
+      ],
+      "actual": [
+        1.0,
+        80.0
+      ]
+    }
+  ],
+  "scientific_comparison": false,
+  "solver_file_sha256": "613b3a9f4cdbd03f8878e45f6d7ea10b099af850518fa983f2c3e8e960e4fae3"
+}

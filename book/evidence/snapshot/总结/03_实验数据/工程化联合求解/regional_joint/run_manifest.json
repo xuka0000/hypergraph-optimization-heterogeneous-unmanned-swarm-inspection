@@ -1,0 +1,524 @@
+{
+  "task_id": "inspection_regional_day_ahead",
+  "run_id": "e748e91827516b35_61848",
+  "observed_at": "2026-11-10T01:57:17.766951+00:00",
+  "pid": 61848,
+  "process_create_time": 1794255589.1327455,
+  "user_authorization": "完成就开始求解！ / 开始完整接入 / 继续任务",
+  "scope": "all237 towers2133tasks; all source roads and DEM; unified finite transcription with continuous candidate acceptance",
+  "status": "engineering_error",
+  "solve_requested": true,
+  "wall_time_limit_s": null,
+  "node_limit": null,
+  "gap_target": 0,
+  "solver_configuration": {
+    "nlp/disable": true,
+    "numerical_library_threads": 1,
+    "staged_memory_admission": false,
+    "verified_repair_warm_start": false,
+    "shared_recovery": true,
+    "require_all_towers_diagnostic": false,
+    "lp/scaling": 2,
+    "compact_memory": true,
+    "primal_heuristics_disabled": false,
+    "compact_parameters": {
+      "memory/arraygrowfac": 1.05,
+      "memory/savefac": 0.5,
+      "misc/usevartable": false,
+      "misc/useconstable": false
+    },
+    "source": "https://scipopt.org/doc/html/PARAMETERS.php",
+    "reason": "Explicit memory diagnostic; changes internal relaxation algorithm, not mathematical feasible decisions"
+  },
+  "numerical_grid": {
+    "road_phases_per_carrier": [
+      631,
+      627
+    ],
+    "minimum_all_stop_topology_phases": [
+      631,
+      627
+    ],
+    "charging_events_per_carrier": 156,
+    "trajectory_degree": 7,
+    "transfer_pieces": 3,
+    "minimum_positive_piece_s": 0.001
+  },
+  "grids_are_not_lossless_physical_limits": true,
+  "full_continuous_domain_optimality_claim": false,
+  "peak_output_reservation_GiB": 0.25,
+  "storage_floors_GiB": {
+    "C": 10,
+    "D": 30
+  },
+  "files": [
+    {
+      "path": "Agent/Publication/engineering_conditional_hypergraph.py",
+      "sha256": "613b3a9f4cdbd03f8878e45f6d7ea10b099af850518fa983f2c3e8e960e4fae3"
+    },
+    {
+      "path": "Agent/Publication/engineering_energy_enclosure.py",
+      "sha256": "6d3e064aeeac4dea41ddc63f2d718c5589008b2d4e812a09d9e8a46dbd863078"
+    },
+    {
+      "path": "Agent/Publication/engineering_event_charging.py",
+      "sha256": "1e65aad005cb569332eb654629f96317565376ae84d635a5e0d7b80b709cbbc3"
+    },
+    {
+      "path": "Agent/Publication/engineering_fleet_schedule.py",
+      "sha256": "2b9042cebd063cbd79c4a2c3d1e83a8ff73e68d9d8d7f79b63ad00900a5c3353"
+    },
+    {
+      "path": "Agent/Publication/engineering_flight_labels.py",
+      "sha256": "183783f8fe040e710b560ec322068a1259033a7c25345521389e6f72cad38603"
+    },
+    {
+      "path": "Agent/Publication/engineering_free_trajectory.py",
+      "sha256": "cf99c2353281858defe79d74e6551e925bf772749bfa24853772e7c0bd1dac2e"
+    },
+    {
+      "path": "Agent/Publication/engineering_indexed_constraints.py",
+      "sha256": "c1d108fafcfbf99a8df18509e816a3710c03dcfbdab6b34ab0fbb1fc789f5037"
+    },
+    {
+      "path": "Agent/Publication/engineering_indexed_terrain.py",
+      "sha256": "1d91a87ea2bf637d9d919c34303ee2c5707671e89869859e411bba28ec8cd0db"
+    },
+    {
+      "path": "Agent/Publication/engineering_inspection_primitives.py",
+      "sha256": "d67745df4dc64664a1c511b35d26a19eafd45c21098b5da98fef2fad9d59b438"
+    },
+    {
+      "path": "Agent/Publication/engineering_interval_physics.py",
+      "sha256": "c31f8aac813ee195992c8eaebe3ccfcbedd8130de97569f4fb1a77f39b9e62c5"
+    },
+    {
+      "path": "Agent/Publication/engineering_joint_execution.py",
+      "sha256": "b51d9c42c1ddeb870620b562e74f494d6941bb997a743677f9bac49ebc4f60f1"
+    },
+    {
+      "path": "Agent/Publication/engineering_joint_optical_trajectory.py",
+      "sha256": "7a7af6ad60dd064a0248823eec4a0852f51149f83133e354e48388bddd59afd0"
+    },
+    {
+      "path": "Agent/Publication/engineering_joint_optimality.py",
+      "sha256": "b51beaf79c073aba9e13a5416341b79f0563a612914713c2e8bd1ffa98b822e3"
+    },
+    {
+      "path": "Agent/Publication/engineering_joint_safety.py",
+      "sha256": "3eae3dca4a75f92f3e5ba154f070e483ae8ce2218099d7d54dd89ed9d49d60f6"
+    },
+    {
+      "path": "Agent/Publication/engineering_joint_weather.py",
+      "sha256": "0f5a8e0fc4a500cc81a22dae42b27b28336ceaf3ce5961dbbe539484594776f1"
+    },
+    {
+      "path": "Agent/Publication/engineering_multicarrier_schedule.py",
+      "sha256": "53e8d333b48a0131719ee89952787886911ebffdb31972122c7d0734f59c104b"
+    },
+    {
+      "path": "Agent/Publication/engineering_process_budget.py",
+      "sha256": "41bf27ca41ede0749800c86f323024de5ac5224c15a7f48132ee326b51db18ad"
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_acceptance.py",
+      "sha256": "c232bb99b86a4c40301b93fb6cfbc358c526abc5b9e5dcd35da82ce1026bd42c"
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_charging.py",
+      "sha256": "b64690e8ee4cff10c660d9e4698f8daf486439b92ece215dc148f3e0962b5aae"
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_compaction.py",
+      "sha256": "a64818d3e195f5c4d7f89f66227f51596eea46642e43f084d8ada02e9d387d23"
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_curves.py",
+      "sha256": "3f18fce16c824ea73e2e76c9c80f85c84a9e39b80f18ed73f93d466fa7b82788"
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_enclosure.py",
+      "sha256": "822a7ac089a5a3487460f101fcb9b72ff4982a7d18847160bb027d9e642bf193"
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_geometry.py",
+      "sha256": "a51c66c313c54ad6547bfc4e54f6e82cc6acbbacd46aec47fc0a0195aa1865bf"
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_memory.py",
+      "sha256": "24c0d5d66a232e5f844d89911593e86a3de4c1b812d5b57ec4d25143f1dbd1d1"
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_physics.py",
+      "sha256": "a8f23bd5ec106d29e2ed61bbcf23becb552d3aec72c6da6a4abbad9073cd3966"
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_rendezvous.py",
+      "sha256": "67268f1e0f60095ab40243b88259de48e1b970504d001ba66d2a6f8d4b2edf3b"
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_resource_envelope.py",
+      "sha256": "1dc0ba49f0315969e5f56fb387197891d4807ed72c851ea5cea913827cdb99f9"
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_resources.py",
+      "sha256": "9468fe77901eefad09e581e2476229712da6af000360d538e4e2c05c20ebd445"
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_roads.py",
+      "sha256": "4562daba55bb4bd77cad33890bbbee7144c302ac287efd574ce5c4faf83166a0"
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_safety.py",
+      "sha256": "43bbadaf2b22fea2e22f84d459ae5f391b0ab7c49fda6386266548c0c85cd0db"
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_seed.py",
+      "sha256": "57482ce92ef7dbfaaac5d6afb748b845c73daa60b9277386f6c9df2c0334448d"
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_seed_motion.py",
+      "sha256": "d82fb256f6fe4835c193ae0541ac5df8ba4c90bf6bbc71963ab9ccfa8ee7752a"
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_solver.py",
+      "sha256": "85953271651d5ac13fc4db13c8b78f7bd83fcb8b761395cc40d10802937d6b54"
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_structure.py",
+      "sha256": "b7e0e1909701b6d0906fdbdd6cf5ac14abdca12c530405698515a64167e4a47c"
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_task_order.py",
+      "sha256": "4f92472e70ad1fd5a025320963a534289c46aa5416abf133a21906c8ed05709c"
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_weather.py",
+      "sha256": "037143f84af7ac48baa924084180db9b7a58c86e43d3ebecafe59453e92ed4e2"
+    },
+    {
+      "path": "Agent/Publication/engineering_replanning.py",
+      "sha256": "f4d0af6d1ba2f29996915d2f714c410898d8d4d8666d067e98fbbfd65ae0eb35"
+    },
+    {
+      "path": "Agent/Publication/engineering_road_certificate.py",
+      "sha256": "c3cadbcbcec22f875c22d91b243ba4e48f4a8d919e5fe76af9e79df70bfee93d"
+    },
+    {
+      "path": "Agent/Publication/engineering_road_motion.py",
+      "sha256": "92cab8f2d580d6a2f1fa55874e847c14fde36c6c56cbb4a2ac30de22b5c36d7c"
+    },
+    {
+      "path": "Agent/Publication/engineering_solve_trace.py",
+      "sha256": "a3bf776a5f7c54d2011181f848b813afc25f8d358cb34394cabf259d22e8c99e"
+    },
+    {
+      "path": "Agent/Publication/engineering_target_surface.py",
+      "sha256": "8201e3bf3476f75cb0ec7faaf7449cb1e49d057c32dda7772d05aa927e6d9e14"
+    },
+    {
+      "path": "Agent/Publication/engineering_unified_inspection.py",
+      "sha256": "464c16e3309eccb88ea0f02545f5e393de5d967fc99541406f80b347a65f9e70"
+    },
+    {
+      "path": "scripts/run_inspection_regional.py",
+      "sha256": "b9d614132f3eecf0156a0afb853c816a911740a078193e3ed6b4e390852e9903"
+    },
+    {
+      "path": "scripts/diagnose_inspection_constraint_layers.py",
+      "sha256": "4152f3cc78cbcdd2e76ccaa8233d825def90425edfc1589cf7bc2584fb05a77a"
+    },
+    {
+      "path": "Agent/Publication/engineering_inspection_model.tex",
+      "sha256": "88b7e54dcb4e6a67a844b023b7af8b3c59695e4fd458f7f42e1ddeef69633285"
+    },
+    {
+      "path": "research_quality/inspection_regional_model_data.json",
+      "sha256": "ee30612135a2b3057192d1bcf6c0eb53a28b76e94efe16a828b87dd168e1929c"
+    }
+  ],
+  "fee_authorization_used": false,
+  "live_background_supervisor": false,
+  "admission": {
+    "mode": "historical_full_peak",
+    "observed": {
+      "physical_available_GiB": 12.565608978271484,
+      "process_private_GiB": 0.0887603759765625,
+      "commit_limit_GiB": 58.10093688964844,
+      "commit_available_GiB": 9.802742004394531
+    },
+    "required_free_RAM_GiB": 6.146858215332031,
+    "required_free_commit_GiB": 6.4112396240234375,
+    "estimated_admitted_peak_RSS_GiB": 4.25,
+    "estimated_admitted_peak_private_GiB": 4.5,
+    "previous_full_search_peak_estimate_RSS_GiB": 4.25,
+    "previous_full_search_peak_estimate_private_GiB": 4.5,
+    "host_reserve_GiB": 2,
+    "search_admission": "fresh RAM and commit; native memory cap; event checks",
+    "time_node_gap_limits_unchanged": true
+  },
+  "SCIP_log": "scip_e748e91827516b35_61848.log",
+  "warm_start": {
+    "mapping": {
+      "source_run": "1794231440_25904",
+      "witness": "总结\\03_实验数据\\工程化联合求解\\constraint_layers\\1794231440_25904_layer11_witness.json.gz",
+      "witness_sha256": "62c2343dd7ae04ec371a03ef854c2e25afe347fb7802962799bf5c420a2368fa",
+      "copied_variables": 665738,
+      "inactive_return_defaults": 19760,
+      "active_return_segments": 12,
+      "maximum_forward_inverse_state_clock_error": 9.094947017729282e-13,
+      "fixed_original_decisions": 0,
+      "coverage_preserved": true,
+      "proof": "selected last-task return is relabeled to its flight; inactive task return states have no active physical constraints"
+    },
+    "audit": {
+      "native_feasible": true,
+      "indexed_rows_checked": 29660,
+      "indexed_max_error": 1.2931877790833823e-12,
+      "indexed_bad_count": 0,
+      "indexed_bad": [],
+      "bounds_bad_count": 0,
+      "bounds_bad": [],
+      "completed_towers": 4,
+      "active_photos": 36,
+      "coverage_complete": false,
+      "coverage_required": 237,
+      "active_flights": 4,
+      "uncompleted_towers": 233,
+      "makespan_s": 6555.305426080421,
+      "missing_active_physical_integrals": 0,
+      "continuous_acceptance": {
+        "passed": true,
+        "requests": [],
+        "unresolved": [],
+        "active_segments": 156,
+        "vehicle_phases": 1258,
+        "energy_intervals": [
+          {
+            "pack": "B1_1",
+            "lower_terminal_Wh": 277.06994403360164,
+            "upper_terminal_Wh": 277.071169703738
+          },
+          {
+            "pack": "B1_2",
+            "lower_terminal_Wh": 273.46465635894816,
+            "upper_terminal_Wh": 273.4659233755557
+          },
+          {
+            "pack": "B1_3",
+            "lower_terminal_Wh": 548.0,
+            "upper_terminal_Wh": 548.0
+          },
+          {
+            "pack": "B1_4",
+            "lower_terminal_Wh": 548.0,
+            "upper_terminal_Wh": 548.0
+          },
+          {
+            "pack": "B2_1",
+            "lower_terminal_Wh": 260.9141450626804,
+            "upper_terminal_Wh": 260.9155423731754
+          },
+          {
+            "pack": "B2_2",
+            "lower_terminal_Wh": 251.22565015872175,
+            "upper_terminal_Wh": 251.2270400080278
+          },
+          {
+            "pack": "B2_3",
+            "lower_terminal_Wh": 548.0,
+            "upper_terminal_Wh": 548.0
+          },
+          {
+            "pack": "B2_4",
+            "lower_terminal_Wh": 548.0,
+            "upper_terminal_Wh": 548.0
+          }
+        ],
+        "original_road_points_checked": 10064,
+        "vehicle_geometry_unique_evaluations": 4,
+        "vehicle_pair_checks": 395637,
+        "vehicle_pair_unique_evaluations": 4,
+        "energy_tolerance_per_segment_Wh": 0.0001,
+        "formal_directed_rounding_certificate": false,
+        "geometric_tolerance_m": 1e-06,
+        "ackermann_residual_tolerance_SI": 0.0001
+      },
+      "physical_oracle": null,
+      "passed": true
+    },
+    "original_decisions_fixed": 0,
+    "regional_task_complete": false,
+    "coverage_complete": false,
+    "deferred_vehicle_rows": true,
+    "required_road_points": 10064,
+    "necessary_bounds": {
+      "power_floor_W": 774.3985500553088,
+      "rho_max": 1.1943558276976665,
+      "windows": [
+        [
+          0,
+          10800
+        ],
+        [
+          18000,
+          28800
+        ]
+      ],
+      "maximum_airborne_s": 2038.0203448047257,
+      "ground_camera_acc_bounds": [
+        0.3141592653589793,
+        0.3141592653589793,
+        0.8784773060029283
+      ],
+      "ground_camera_variables_tightened": 1872,
+      "global_rows": 3,
+      "resource_envelope": {
+        "carriers": [
+          {
+            "carrier": 0,
+            "aircraft": 2,
+            "initial_usable_Wh": 1753.6,
+            "weather_airtime_upper_s": 43200.0,
+            "stored_fast_power_W": 767.1999999999999,
+            "all_day_optimistic_energy_upper_Wh": 7891.199999999999,
+            "parked_duration_variables": 631
+          },
+          {
+            "carrier": 1,
+            "aircraft": 2,
+            "initial_usable_Wh": 1753.6,
+            "weather_airtime_upper_s": 43200.0,
+            "stored_fast_power_W": 767.1999999999999,
+            "all_day_optimistic_energy_upper_Wh": 7891.199999999999,
+            "parked_duration_variables": 627
+          }
+        ],
+        "weather_windows": [
+          [
+            0.0,
+            10800.0
+          ],
+          [
+            18000.0,
+            28800.0
+          ]
+        ],
+        "original_feasible_decisions_removed": false,
+        "proof": "telescoping unique pack/charge chains; nonoverlap of UAV occupations and charger intervals; charging interval containment in disjoint source-road parking phases",
+        "implication_scope": "current one-channel-per-carrier reference model",
+        "full_joint_feasible": null
+      },
+      "proof": "nonnegative drag/climb, nonoverlapping task intervals within each flight, telescoping physical-pack ledger"
+    },
+    "added": true,
+    "primal_presolve_enabled": true,
+    "dual_reductions_enabled": false
+  },
+  "row_hooks": {
+    "mode": "all_families_checked_by_full_continuous_guard",
+    "auxiliary_points_added_on_violation": true,
+    "prior_materialization_tests": "row_hook_progress.json",
+    "no_physical_family_omitted": true
+  },
+  "build": {
+    "wall_s": 82.11780160001945,
+    "tasks": 2133,
+    "towers": 237,
+    "optional_flights": 156,
+    "variables": 698272,
+    "explicit_rows": 205597,
+    "indexed_relations": 42290,
+    "physical_integrals_materialized": 0,
+    "physical_families_guarded_by_candidate_handler": true,
+    "full_scalar_incidence_available": false,
+    "rss_GiB": 1.5830268859863281,
+    "available_RAM_GiB": 11.538379669189453
+  },
+  "result": {
+    "status": "engineering_error",
+    "error": {
+      "type": "Exception",
+      "message": "SCIP: error in LP solver!"
+    },
+    "LP_coefficients": {
+      "available": false,
+      "error": "[Errno 2] No such file or directory: 'D:\\\\博士研究生\\\\刘老师全包干花费\\\\paper11_paper1延申时间网\\\\总结\\\\03_实验数据\\\\工程化联合求解\\\\regional_joint\\\\failed_LP_e748e91827516b35_61848.lp'"
+    },
+    "complete": false,
+    "incumbent": {
+      "observed_at": "2026-11-10T01:57:12.694331+00:00",
+      "native_algebra_passed": true,
+      "acceptance": {
+        "passed": true,
+        "requests": [],
+        "unresolved": [],
+        "active_segments": 156,
+        "vehicle_phases": 1258,
+        "energy_intervals": [
+          {
+            "pack": "B1_1",
+            "lower_terminal_Wh": 277.06994403360164,
+            "upper_terminal_Wh": 277.071169703738
+          },
+          {
+            "pack": "B1_2",
+            "lower_terminal_Wh": 273.46465635894816,
+            "upper_terminal_Wh": 273.4659233755557
+          },
+          {
+            "pack": "B1_3",
+            "lower_terminal_Wh": 548.0,
+            "upper_terminal_Wh": 548.0
+          },
+          {
+            "pack": "B1_4",
+            "lower_terminal_Wh": 548.0,
+            "upper_terminal_Wh": 548.0
+          },
+          {
+            "pack": "B2_1",
+            "lower_terminal_Wh": 260.9141450626804,
+            "upper_terminal_Wh": 260.9155423731754
+          },
+          {
+            "pack": "B2_2",
+            "lower_terminal_Wh": 251.22565015872175,
+            "upper_terminal_Wh": 251.2270400080278
+          },
+          {
+            "pack": "B2_3",
+            "lower_terminal_Wh": 548.0,
+            "upper_terminal_Wh": 548.0
+          },
+          {
+            "pack": "B2_4",
+            "lower_terminal_Wh": 548.0,
+            "upper_terminal_Wh": 548.0
+          }
+        ],
+        "original_road_points_checked": 10064,
+        "vehicle_geometry_unique_evaluations": 4,
+        "vehicle_pair_checks": 395637,
+        "vehicle_pair_unique_evaluations": 4,
+        "energy_tolerance_per_segment_Wh": 0.0001,
+        "formal_directed_rounding_certificate": false,
+        "geometric_tolerance_m": 1e-06,
+        "ackermann_residual_tolerance_SI": 0.0001
+      },
+      "full_candidate_feasible": true,
+      "completed_towers": 4,
+      "selected_tasks": 36,
+      "active_flights": 4,
+      "uncompleted_towers": 233.0,
+      "makespan_s": 6555.305426080421,
+      "energy_Wh": 1129.3229644471123,
+      "original_continuous_optimality_proved": false,
+      "coverage_complete": false,
+      "regional_task_complete": false,
+      "witness": "incumbent_e748e91827516b35_61848.json.gz",
+      "witness_sha256": "a7a14d44d808402584708d38232ed66b70a606f90790d02bf8368d343e18d742"
+    }
+  },
+  "elapsed_s": 20244.87277549994
+}

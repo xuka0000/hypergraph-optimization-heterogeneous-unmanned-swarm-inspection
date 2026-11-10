@@ -1,0 +1,155 @@
+\section{目标函数与完整约束}
+\label{sec:02_03}
+
+在候选任务及其资源组合固定后，纯组合优化需要回答的问题是：哪些任务可以同时入选，并使入选任务的总收益最大。沿用第\ref{sec:02_02}节的记号，$V$ 为资源集合，$E$ 为保留任务身份的候选索引集合，$R_e\subseteq V$ 为任务 $e$ 必须整体获得的非空资源组合。资源容量 $b_v\in\mathbb Z_{\geq0}$ 按份计，任务收益 $w_e\in\mathbb R_{>0}$ 为无量纲固定参数。每个入选任务对其关联的每种资源占用一份，决策变量 $x_e$ 只表示任务是否完整入选。
+
+\subsection{完整优化模型}
+
+将全部任务选择量组成决策向量 $x=(x_e)_{e\in E}$，带容量的超图边选择模型记为 $\mathrm P$：
+\begin{subequations}
+\label{s0203:primal}
+\begin{align}
+ (\mathrm P)\qquad
+ \max_{x}\quad &\sum_{e\in E}w_e x_e,
+ \label{s0203:objective}\\
+ \text{满足}\quad
+ &\sum_{e\in E:\,v\in R_e}x_e\leq b_v,
+ &&\forall v\in V,
+ \label{s0203:capacity}\\
+ &x_e\in\{0,1\},
+ &&\forall e\in E.
+ \label{s0203:binary}
+\end{align}
+\end{subequations}
+模型的全部优化变量为 $\{x_e:e\in E\}$，共 $n=|E|$ 个；资源组合、容量和收益均为已知输入。式\eqref{s0203:objective}为目标函数，式\eqref{s0203:capacity}逐资源限制占用，式\eqref{s0203:binary}规定每项任务只能完整选择或放弃。三者共同定义问题，不能仅以目标函数和资源关联关系代替完整模型。
+
+目标函数将每个入选任务的收益计入一次。由于 $x_e$ 无量纲，$w_e x_e$ 与总收益均为无量纲量。可加性意味着：在当前模型中，任务 $e$ 的收益不随其他任务是否入选而改变；两个任务一起入选时，收益为各自固定收益之和，不另设协同奖励或重复覆盖扣减。资源竞争通过可行性约束体现，不通过修改 $w_e$ 体现。因此，该目标适用于收益已经按同一尺度确定、且可以逐任务相加的候选选择问题。
+
+正收益说明在可行的前提下增加一个任务会提高目标值，但不意味着所有任务都能入选。全选向量满足 $x_e=1$，$\forall e\in E$；将其代入容量约束可知，全选可行的充要条件为
+\begin{equation}
+ |N(v)|\leq b_v,\qquad \forall v\in V.
+ \label{s0203:all_selected}
+\end{equation}
+这里 $N(v)=\{e\in E:v\in R_e\}$，$|N(v)|$ 是全选时对资源 $v$ 的占用份数。只要某种资源的候选需求数超过其容量，就必须舍弃部分任务，而不能因为所有 $w_e$ 都严格为正就忽略资源限制。
+
+式\eqref{s0203:capacity}将共享同一资源的所有任务连接起来。左端每个 $x_e=1$ 对应占用资源 $v$ 的一份容量，求和得到该资源的总占用份数，右端则是同一资源可提供的份数。不同资源分别核算，不把它们的份数相加构成一个总容量限制。若 $N(v)=\varnothing$，相应求和按零处理，该行成为 $0\leq b_v$；若 $b_v=0$，则任何需要资源 $v$ 的任务都不能入选。后一结论来自左端各项非负：其和不超过零时，各项只能取零。
+
+式\eqref{s0203:binary}保证选择的不可分性，并限制同一个候选最多被选择一次。若只保留非负性而删除上界和整数要求，一个任务可能被重复计入；若改用 $0\leq x_e\leq1$，则允许分数选择。后一种处理可用于构造理论界，但不再直接表达原问题中的完整任务选择。容量约束与二元域分别限制资源占用和任务取值，不能相互替代。
+
+借助关联矩阵 $A\in\{0,1\}^{m\times n}$，模型的可行集合可以写为
+\begin{equation}
+ \mathcal F=
+ \left\{x\in\{0,1\}^{n}:Ax\leq b\right\},
+ \label{s0203:feasible_set}
+\end{equation}
+其中向量不等式按资源逐分量成立。模型在数学表述上包含 $m=|V|$ 条容量不等式和 $n$ 个二元变量域声明。二元域不应再计作 $n$ 条显式线性约束行；求解器对变量类型、变量界以及预处理后的约束行数如何记录，是另一层面的实现信息。
+
+\subsection{可行性、最优解存在性与单位容量含义}
+
+模型允许不选任何任务。记 $\boldsymbol 0$ 为所有分量均为零的 $n$ 维向量，由于 $b_v\geq0$，有
+\begin{equation}
+ A\boldsymbol 0=\boldsymbol 0\leq b,
+ \qquad \boldsymbol 0\in\mathcal F.
+ \label{s0203:zero_feasible}
+\end{equation}
+因此，模型的可行集合非空。又因为 $\mathcal F\subseteq\{0,1\}^{n}$，它至多含有 $2^n$ 个选择向量，而每个向量的目标值都是有限实数，所以至少存在一个最优解。令 $x^\star\in\mathcal F$ 表示任意一个最优选择向量，$z^\star$ 表示其无量纲总收益，则
+\begin{equation}
+ z^\star=\max_{x\in\mathcal F}w^{\mathsf T}x
+ =w^{\mathsf T}x^\star,
+ \qquad
+ 0\leq z^\star\leq\sum_{e\in E}w_e.
+ \label{s0203:existence_bound}
+\end{equation}
+这里的存在性来自有限非空可行集合，并不意味着最优解唯一，也不意味着某次限时求解已经找到或证明了最优解。
+
+现有纯组合实验全部使用单位容量，即 $b_v=1$，$\forall v\in V$。对任意二元选择向量，定义入选任务集合
+\begin{equation}
+ S(x)=\{e\in E:x_e=1\}.
+ \label{s0203:selected_set}
+\end{equation}
+此时，容量可行性等价于入选任务的资源组合两两不相交：
+\begin{equation}
+ x\in\mathcal F
+ \quad\Longleftrightarrow\quad
+ R_e\cap R_f=\varnothing,
+ \quad
+ \forall e,f\in S(x),\ e\ne f,
+ \qquad x\in\{0,1\}^{n}.
+ \label{s0203:disjoint_equivalence}
+\end{equation}
+
+先证明必要性。若两个不同的入选任务 $e$、$f$ 共享某个资源 $v\in R_e\cap R_f$，则资源 $v$ 的占用至少为 $x_e+x_f=2$，超过容量一，因而不可能可行。再证明充分性。若所有入选任务的资源组合两两不相交，则任意资源 $v$ 至多属于一个入选任务，其占用只能为零或一，故每条容量约束均成立。这个结论依据的是单位容量与每项关联需求为一份，不依赖单个任务包含多少种资源。
+
+资源互不重叠并不要求所有资源都被使用。单位容量下，式\eqref{s0203:capacity}允许资源占用为零；若将其中的“$\leq$”改为“$=$”，则会额外要求每种资源恰好被一个入选任务使用。这样的等式约束表达的是必须用满资源的另一类问题。例如，模型允许存在 $N(v)=\varnothing$ 的资源，原约束为 $0\leq1$，改为等式后却成为 $0=1$，直接造成不可行。即使没有孤立资源，任务组合之间的竞争也不保证能够同时用满所有资源。因此，允许闲置是本模型可行域的一部分，不能因收益为正而删除。
+
+正收益还给出一个关于最优解的必要性质：若 $e\notin S(x^\star)$，则必有某种资源 $v\in R_e$ 已达到容量。否则，该任务涉及的每种资源都仍有至少一份剩余容量；由于容量与当前占用均为整数，将 $x_e$ 从零改为一便仍然可行，同时使目标增加 $w_e>0$，与最优性矛盾。不过，“不能再直接加入任务”仅表示当前选择在包含关系下不能扩充，并不证明总收益最大，因为删除部分已选任务后，仍可能换入收益更高的组合。
+
+\subsection{线性规划松弛与弱对偶上界}
+
+为给整数最优值构造上界，将二元域放宽为闭区间，而保持目标函数与容量约束不变，得到线性规划松弛 $\mathrm P_{\mathrm{LP}}$：
+\begin{subequations}
+\label{s0203:lp}
+\begin{align}
+ (\mathrm P_{\mathrm{LP}})\qquad
+ z_{\mathrm{LP}}=\max_x\quad
+ &\sum_{e\in E}w_e x_e,
+ \label{s0203:lp_objective}\\
+ \text{满足}\quad
+ &\sum_{e\in E:\,v\in R_e}x_e\leq b_v,
+ &&\forall v\in V,
+ \label{s0203:lp_capacity}\\
+ &0\leq x_e\leq1,
+ &&\forall e\in E.
+ \label{s0203:lp_domain}
+\end{align}
+\end{subequations}
+其中 $z_{\mathrm{LP}}$ 是松弛问题的最优目标值，为无量纲实数。松弛中的 $x_e$ 仍无量纲，但其分数取值仅用于数学界的计算，不能直接解释为原模型认可的完整任务方案。由于松弛可行域包含 $\mathcal F$，且是非空有界闭集，松弛最优值存在，并满足
+\begin{equation}
+ z^\star\leq z_{\mathrm{LP}}.
+ \label{s0203:relaxation_bound}
+\end{equation}
+松弛最优解若出现分数分量，式\eqref{s0203:relaxation_bound}仍然成立，但该解本身不能作为整数任务选择结果验收。
+
+为明确上界的来源，对每条资源容量约束引入非负对偶变量 $y_v$，对每条任务上界 $x_e\leq1$ 引入非负对偶变量 $q_e$。$y_v$ 表示分配给资源 $v$ 每份容量的收益计价量，单位为无量纲收益每份；$q_e$ 表示分配给任务选择上界的收益计价量，为无量纲量。这些变量用于构造松弛问题的对偶界，不是原问题中的资源购买或任务执行决策。相应对偶模型为
+\begin{subequations}
+\label{s0203:dual}
+\begin{align}
+ (\mathrm D_{\mathrm{LP}})\qquad
+ \min_{y,q}\quad
+ &\sum_{v\in V}b_vy_v+\sum_{e\in E}q_e,
+ \label{s0203:dual_objective}\\
+ \text{满足}\quad
+ &\sum_{v\in R_e}y_v+q_e\geq w_e,
+ &&\forall e\in E,
+ \label{s0203:dual_cover}\\
+ &y_v\geq0,
+ &&\forall v\in V,
+ \label{s0203:dual_y}\\
+ &q_e\geq0,
+ &&\forall e\in E.
+ \label{s0203:dual_q}
+\end{align}
+\end{subequations}
+全部对偶变量为 $y=(y_v)_{v\in V}\in\mathbb R_{\geq0}^{m}$ 和 $q=(q_e)_{e\in E}\in\mathbb R_{\geq0}^{n}$。式\eqref{s0203:dual_cover}中的每项 $y_v$ 均隐含乘以任务对资源 $v$ 的一份需求，因此左端与 $w_e$ 具有相同的收益尺度。对偶目标中的 $b_vy_v$ 是容量份数与每份收益计价量的乘积，$q_e$ 则隐含乘以任务上界一，整个目标仍为无量纲收益。
+
+取任意满足式\eqref{s0203:lp_capacity}--\eqref{s0203:lp_domain}的 $x$，以及任意满足式\eqref{s0203:dual_cover}--\eqref{s0203:dual_q}的 $(y,q)$，可逐步得到
+\begin{align}
+ \sum_{e\in E}w_e x_e
+ &\leq\sum_{e\in E}
+ \left(\sum_{v\in R_e}y_v+q_e\right)x_e
+ \notag\\
+ &=\sum_{v\in V}y_v
+ \sum_{e\in E:\,v\in R_e}x_e
+ +\sum_{e\in E}q_e x_e
+ \notag\\
+ &\leq\sum_{v\in V}b_vy_v+\sum_{e\in E}q_e.
+ \label{s0203:weak_duality}
+\end{align}
+第一步使用对偶约束与 $x_e\geq0$，第二步对有限关联求和交换次序，最后一步使用资源容量约束、任务上界以及 $y_v,q_e$ 的非负性。这一推导直接表明，每个对偶可行点都给出整数模型和松弛模型共同适用的上界。
+
+具体地，令 $\widehat x\in\mathcal F$ 为任意整数可行选择，$(\widehat y,\widehat q)$ 为任意对偶可行点，并定义无量纲下界 $L=w^{\mathsf T}\widehat x$ 与上界 $U=\sum_{v\in V}b_v\widehat y_v+\sum_{e\in E}\widehat q_e$，则
+\begin{equation}
+ L\leq z^\star\leq z_{\mathrm{LP}}\leq U.
+ \label{s0203:bound_chain}
+\end{equation}
+因此，$U-L\geq0$ 可用于限制该可行选择与整数最优值之间的收益差；若经核验得到 $U=L$，则 $\widehat x$ 已达到整数最优值。取 $y_v=0$、$q_e=w_e$ 就能构造一个对偶可行点，并恢复式\eqref{s0203:existence_bound}中的总收益上界。上述关系均为模型层面的理论结论，本节不据此给出未经实际计算和核验的松弛值、对偶值或最优性差距。

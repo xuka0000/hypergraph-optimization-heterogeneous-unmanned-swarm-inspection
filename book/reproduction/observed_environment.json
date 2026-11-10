@@ -1,0 +1,24 @@
+{
+  "observed_at": "2026-11-10T04:28:38.418961+00:00",
+  "python": "3.11.5 | packaged by Anaconda, Inc. | (main, Sep 11 2023, 13:26:23) [MSC v.1916 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "installed_distributions": {
+    "numpy": "1.26.4",
+    "scipy": "1.11.1",
+    "matplotlib": "3.10.9",
+    "pyproj": "3.7.2",
+    "psutil": "5.9.0",
+    "pyscipopt": "6.2.1",
+    "PyMuPDF": "1.27.2.3",
+    "pandas": "2.3.3",
+    "shapely": "2.1.2"
+  },
+  "executables": {
+    "python": "D:\\Appllication\\Anaconda3\\python.EXE",
+    "xelatex": "C:\\Users\\Out\\.codex-tools\\miktex\\miktex\\bin\\x64\\xelatex.EXE",
+    "clang++": null,
+    "g++": null,
+    "cmake": null
+  },
+  "scope": "Current local inspection/build environment only, not a proof that every historical run used these versions or that a clean installation was tested."
+}

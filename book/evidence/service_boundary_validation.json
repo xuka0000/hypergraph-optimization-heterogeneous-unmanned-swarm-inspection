@@ -1,0 +1,272 @@
+{
+  "experiment_id": "inspection_service_boundary_component",
+  "observed_at": "2026-11-10T09:12:18.382302+00:00",
+  "source_sha256": "3bf456fe0f000aea7874a8639352132b3a2e8a75c2352ea69dd2cd8c58096360",
+  "checks": [
+    {
+      "name": "split_exposure_without_restart",
+      "passed": true,
+      "detail": {
+        "attempt_id": "a1",
+        "task_id": "P01",
+        "start_s": 10.0,
+        "end_s": 30.0,
+        "aircraft_id": "U1",
+        "battery_pair_id": "B1",
+        "sortie_id": "L1",
+        "exposure_intervals_s": [
+          [
+            11.0,
+            11.001
+          ]
+        ],
+        "prefix_evidence_id": "trajectory-a1",
+        "remaining_s": 18.999499999999998,
+        "original_start_s": 10.0,
+        "boundary_start_s": 11.0005,
+        "executed_exposure_intervals_s": [
+          [
+            11.0,
+            11.0005
+          ]
+        ],
+        "remaining_exposure_intervals_s": [
+          [
+            11.0005,
+            11.001
+          ]
+        ],
+        "requires_prefix_evidence": true
+      }
+    },
+    {
+      "name": "future_result_not_leaked",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "ongoing_task_not_new_demand",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "source_arc_zero_duration_after_cut",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "remaining_path_time_and_energy_partition",
+      "passed": true,
+      "detail": {
+        "remaining_flight_s": 33.9995,
+        "past_prefix_excluded_s": 1.0005,
+        "constant_1200W_remaining_Wh": 11.333166666666665
+      }
+    },
+    {
+      "name": "valid_continuation",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "reject_reset_remaining_s",
+      "passed": true,
+      "detail": "Restarted service duration"
+    },
+    {
+      "name": "reject_reset_battery_pair_id",
+      "passed": true,
+      "detail": "Changed service prefix or commitment: battery_pair_id"
+    },
+    {
+      "name": "reject_reset_original_start_s",
+      "passed": true,
+      "detail": "Changed service prefix or commitment: original_start_s"
+    },
+    {
+      "name": "reject_reset_executed_exposure_intervals_s",
+      "passed": true,
+      "detail": "Changed service prefix or commitment: executed_exposure_intervals_s"
+    },
+    {
+      "name": "reject_missing_ongoing",
+      "passed": true,
+      "detail": "Ongoing service lost or duplicated"
+    },
+    {
+      "name": "half_open_service_end_is_pending",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "received_acceptance_credits_once",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "failed_image_remains_demand",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "repeat_gets_distinct_identity",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "reject_recycled_attempt_id",
+      "passed": true,
+      "detail": "Repeated attempt or new task identity"
+    },
+    {
+      "name": "reject_no_image_evidence",
+      "passed": true,
+      "detail": "Acceptance needs image evidence and explicit result"
+    },
+    {
+      "name": "reject_same_aircraft_service_overlap",
+      "passed": true,
+      "detail": "Overlapping service on one aircraft"
+    }
+  ],
+  "all_checks_passed": true,
+  "examples": {
+    "input_attempt": {
+      "attempt_id": "a1",
+      "task_id": "P01",
+      "start_s": 10.0,
+      "end_s": 30.0,
+      "aircraft_id": "U1",
+      "battery_pair_id": "B1",
+      "sortie_id": "L1",
+      "exposure_intervals_s": [
+        [
+          11.0,
+          11.001
+        ]
+      ],
+      "prefix_evidence_id": "trajectory-a1",
+      "acceptance_event_at_s": 30.0,
+      "acceptance_received_at_s": 35.0,
+      "quality_passed": true,
+      "image_evidence_id": "image-a1"
+    },
+    "split_boundary": {
+      "time_s": 11.0005,
+      "accepted_task_ids": [],
+      "accepted_evidence": {},
+      "ongoing": {
+        "P01": {
+          "attempt_id": "a1",
+          "task_id": "P01",
+          "start_s": 10.0,
+          "end_s": 30.0,
+          "aircraft_id": "U1",
+          "battery_pair_id": "B1",
+          "sortie_id": "L1",
+          "exposure_intervals_s": [
+            [
+              11.0,
+              11.001
+            ]
+          ],
+          "prefix_evidence_id": "trajectory-a1",
+          "remaining_s": 18.999499999999998,
+          "original_start_s": 10.0,
+          "boundary_start_s": 11.0005,
+          "executed_exposure_intervals_s": [
+            [
+              11.0,
+              11.0005
+            ]
+          ],
+          "remaining_exposure_intervals_s": [
+            [
+              11.0005,
+              11.001
+            ]
+          ],
+          "requires_prefix_evidence": true
+        }
+      },
+      "pending_acceptance": [],
+      "failed_attempts": [],
+      "new_service_eligible_task_ids": [
+        "P02"
+      ],
+      "history": [
+        {
+          "attempt_id": "a1",
+          "task_id": "P01",
+          "start_s": 10.0,
+          "end_s": 30.0,
+          "aircraft_id": "U1",
+          "battery_pair_id": "B1",
+          "sortie_id": "L1",
+          "exposure_intervals_s": [
+            [
+              11.0,
+              11.001
+            ]
+          ],
+          "prefix_evidence_id": "trajectory-a1"
+        }
+      ],
+      "pending_completion_credit": false,
+      "prefix_rule": "preserve fixed start/identities/exposure prefix; constrain remainder only; evaluate full exposure using retained prefix",
+      "full_joint_solver_verified": false
+    },
+    "pending_boundary": {
+      "time_s": 30.0,
+      "accepted_task_ids": [],
+      "accepted_evidence": {},
+      "ongoing": {},
+      "pending_acceptance": [
+        {
+          "attempt_id": "a1",
+          "task_id": "P01",
+          "start_s": 10.0,
+          "end_s": 30.0,
+          "aircraft_id": "U1",
+          "battery_pair_id": "B1",
+          "sortie_id": "L1",
+          "exposure_intervals_s": [
+            [
+              11.0,
+              11.001
+            ]
+          ],
+          "prefix_evidence_id": "trajectory-a1"
+        }
+      ],
+      "failed_attempts": [],
+      "new_service_eligible_task_ids": [
+        "P01",
+        "P02"
+      ],
+      "history": [
+        {
+          "attempt_id": "a1",
+          "task_id": "P01",
+          "start_s": 10.0,
+          "end_s": 30.0,
+          "aircraft_id": "U1",
+          "battery_pair_id": "B1",
+          "sortie_id": "L1",
+          "exposure_intervals_s": [
+            [
+              11.0,
+              11.001
+            ]
+          ],
+          "prefix_evidence_id": "trajectory-a1"
+        }
+      ],
+      "pending_completion_credit": false,
+      "prefix_rule": "preserve fixed start/identities/exposure prefix; constrain remainder only; evaluate full exposure using retained prefix",
+      "full_joint_solver_verified": false
+    }
+  },
+  "wall_s": 0.0006291000172495842,
+  "scope": "event bookkeeping only; no mission optimization, exposure-geometry proof or field validation"
+}

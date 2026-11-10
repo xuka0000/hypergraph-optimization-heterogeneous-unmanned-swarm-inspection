@@ -1,0 +1,26 @@
+{
+  "source_scene_sha256": "d0c668d7cfeea2e7973e6ab387be38e499aea4e935a6530dfaf8900438b8520d",
+  "source_scene_in_archive": "总结/03_实验数据/真实地理巡检场景共享/scenes/rommerskirchen.json",
+  "origin_parameter_source": "fleet.vehicles[0].initial_xyz_m",
+  "numerical_origin_utm_and_source_z_m": [
+    338431.00163273,
+    5653263.218314463,
+    83.39513972489615
+  ],
+  "code_binding": {
+    "path": "Agent/Publication/engineering_regional_curves.py",
+    "sha256": "3f18fce16c824ea73e2e76c9c80f85c84a9e39b80f18ed73f93d466fa7b82788",
+    "electronic_path": "reproduction/project/Agent/Publication/engineering_regional_curves.py"
+  },
+  "code_expression": "self.origin=np.asarray(scene['fleet']['vehicles'][0]['initial_xyz_m'],float)",
+  "coordinate_reference": {
+    "geographic": "EPSG:4326",
+    "projected": "EPSG:32632",
+    "axis_order": [
+      "easting",
+      "northing"
+    ],
+    "vertical_datum": null
+  },
+  "interpretation": "World coordinates may use full projected E,N and source DEM z. Numerical curve coordinates subtract all3components of V1initial position; add same origin to recover physical/world positions. Terrain local h0(x,y)=h(E0+x,N0+y)-Z0. Rotation orientation unchanged. Numeric Z0 is a translation, not verification of vertical geodetic datum."
+}

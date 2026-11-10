@@ -1,0 +1,142 @@
+{
+  "run_id": "2bf320f8bbe886f8_24660",
+  "observed_at": "2026-11-10T03:41:36.219773+00:00",
+  "status": "resource_protection",
+  "elapsed_s": 90.4910049000755,
+  "build": {
+    "wall_s": 58.37603110005148,
+    "tasks": 2133,
+    "towers": 237,
+    "optional_flights": 156,
+    "variables": 698280,
+    "explicit_rows": 205605,
+    "indexed_relations": 42290,
+    "physical_integrals_materialized": 0,
+    "physical_families_guarded_by_candidate_handler": true,
+    "full_scalar_incidence_available": false,
+    "rss_GiB": 1.5996971130371094,
+    "available_RAM_GiB": 5.066097259521484
+  },
+  "result": {
+    "status": "resource_protection",
+    "error": {
+      "type": "MemoryError",
+      "message": "{'observed_at': '2026-11-10T03:41:31.275757+00:00', 'available_RAM_GiB': 3.196453094482422, 'free_disks_GiB': {'C': 14.898433685302734, 'D': 157.46689224243164}, 'memory': {'physical_available_GiB': 3.196453094482422, 'process_private_GiB': 3.552570343017578, 'commit_limit_GiB': 59.106689453125, 'commit_available_GiB': 1.8384208679199219}, 'reason': 'live RAM/commit/storage and native peak protection; no elapsed-time optimization cutoff'}"
+    },
+    "resource": {
+      "observed_at": "2026-11-10T03:41:31.279303+00:00",
+      "available_RAM_GiB": 3.1959571838378906,
+      "free_disks_GiB": {
+        "C": 14.898433685302734,
+        "D": 157.46689224243164
+      },
+      "memory": {
+        "physical_available_GiB": 3.1959571838378906,
+        "process_private_GiB": 3.552570343017578,
+        "commit_limit_GiB": 59.106689453125,
+        "commit_available_GiB": 1.8374099731445312
+      },
+      "reason": "live RAM/commit/storage and native peak protection; no elapsed-time optimization cutoff"
+    },
+    "complete": false,
+    "incumbent": {
+      "observed_at": "2026-11-10T03:41:31.279303+00:00",
+      "native_algebra_passed": null,
+      "acceptance": {
+        "passed": null,
+        "reason": "resource reserve; vector retained for later independent revalidation"
+      },
+      "full_candidate_feasible": null,
+      "completed_towers": 4,
+      "selected_tasks": 36,
+      "active_flights": 4,
+      "uncompleted_towers": 233.0,
+      "makespan_s": 6555.305426080421,
+      "energy_Wh": 1129.3229644471123,
+      "original_continuous_optimality_proved": false,
+      "coverage_complete": false,
+      "regional_task_complete": false,
+      "witness": "incumbent_2bf320f8bbe886f8_24660.json.gz",
+      "witness_sha256": "20e00993692fdb1a4582bc889a03beabb728d1b3e1cb1c122f2886611839e4e1",
+      "witness_revalidation_required": true
+    }
+  },
+  "solver_configuration": {
+    "nlp/disable": true,
+    "numerical_library_threads": 1,
+    "staged_memory_admission": true,
+    "verified_repair_warm_start": false,
+    "shared_recovery": true,
+    "require_all_towers_diagnostic": false,
+    "lp/scaling": 2,
+    "capture_first_lp": false,
+    "stable_lp": true,
+    "restore_dem_grid": true,
+    "native_presolve_disabled": true,
+    "compact_memory": true,
+    "primal_heuristics_disabled": false,
+    "compact_parameters": {
+      "memory/arraygrowfac": 1.05,
+      "memory/savefac": 0.5,
+      "misc/usevartable": false,
+      "misc/useconstable": false
+    },
+    "source": "https://scipopt.org/doc/html/PARAMETERS.php",
+    "reason": "Explicit memory diagnostic; changes internal relaxation algorithm, not mathematical feasible decisions",
+    "presolving/maxrounds": 0,
+    "stable_lp_parameters": {
+      "lp/minmarkowitz": 0.999,
+      "lp/fastmip": 0,
+      "lp/presolving": false,
+      "lp/refactorinterval": 40
+    }
+  },
+  "numerical_grid": {
+    "road_phases_per_carrier": [
+      631,
+      627
+    ],
+    "minimum_all_stop_topology_phases": [
+      631,
+      627
+    ],
+    "charging_events_per_carrier": 156,
+    "trajectory_degree": 7,
+    "transfer_pieces": 3,
+    "minimum_positive_piece_s": 0.001
+  },
+  "derived_terrain": {
+    "restore_grid": true,
+    "samples": 1953,
+    "elevations_changed": 0,
+    "source_samples_removed": 0,
+    "old_surface_equivalence_claim": false,
+    "source": "总结\\03_实验数据\\真实地理巡检场景共享\\sources\\regional_dem\\rommerskirchen\\terrain.json",
+    "source_sha256": "f554800062a73a7a522f25f1b8609389a18e19f77d46a131212e2ccc0e2901f8",
+    "grid_query_count": 1716,
+    "restored_grid_samples": 1716,
+    "unchanged_non_grid_samples": 237,
+    "maximum_coordinate_restoration_m": 6.492359682792416e-05,
+    "method": "exact acquisition-query roundtrip match, no elevation smoothing or sample deletion",
+    "retained_source_triangle_connectivity": true,
+    "exactly_degenerate_grid_triangles_removed": 144,
+    "old_triangle_indices": {
+      "count": 3742
+    },
+    "projected_samples_sha256": "e942fe37bbdd79d6eeb11b306ba3e04d0829a5235851c5ebcf764c8d07f5521a",
+    "triangles": 3742,
+    "triangulation_sha256": "cb355b7659c712465959233e7a1abcff284876d9310a3aee07dcf20c8e430d77"
+  },
+  "observed_now": "2026-11-10T03:56:55.769388+00:00",
+  "record": {
+    "path": "evidence/regional_run_2bf320f8bbe886f8_24660.json",
+    "sha256": "a8d66898f123a47d66936b2daa7c6c5e7023db30069ea17fe4cd2a04266c725d"
+  },
+  "files_bound": 49,
+  "missing": [],
+  "witness": {
+    "path": "reproduction/historical_sources/incumbent_2bf320f8bbe886f8_24660.json.gz",
+    "sha256": "20e00993692fdb1a4582bc889a03beabb728d1b3e1cb1c122f2886611839e4e1"
+  },
+  "scope": "Stopped resource-protection record; no new accepted full-region solution"
+}

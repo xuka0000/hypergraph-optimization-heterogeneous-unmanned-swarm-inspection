@@ -1,0 +1,6 @@
+-r requirements-core.txt
+# Optional historical paths; these are not a frozen full environment.
+networkx
+numba
+casadi
+PyMuPDF

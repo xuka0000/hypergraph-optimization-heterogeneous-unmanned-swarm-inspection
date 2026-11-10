@@ -1,0 +1,145 @@
+\section{集合、参数和变量}
+\label{sec:02_02}
+
+纯超图组合模型的输入包括候选任务、资源关联、资源容量和任务收益，输出则是每个候选任务是否入选。为了使输入数据、数学表达和求解器中的变量一一对应，本节统一集合与索引、参数的取值域以及向量的排列方式。沿用上一节的约定，超图记为 $H=(V,E)$，其中 $V$ 为资源集合，$E$ 为保留任务身份的超边索引族，任务 $e$ 的资源组合由 $R_e$ 指定。
+
+\subsection{集合、索引与结构参数}
+
+资源集合 $V$ 和候选任务集合 $E$ 均为有限非空集合。索引 $v\in V$ 指向一种需要独立核算容量的资源，索引 $e\in E$ 指向一个可以完整选择或放弃的候选任务。索引本身只是无量纲标识，不具有大小关系。任务的资源组合及资源的关联任务集合满足
+\begin{align}
+ &\varnothing\ne R_e\subseteq V,
+ &&\forall e\in E,
+ \label{s0202:resource_sets}\\
+ &N(v)=\{e\in E:v\in R_e\}\subseteq E,
+ &&\forall v\in V.
+ \label{s0202:neighbor_sets}
+\end{align}
+每个任务至少需要一种资源，但并不要求每种资源都被候选任务使用。因此，允许存在 $N(v)=\varnothing$ 的资源。这样的资源仍可以保留在输入中，其关联矩阵行全为零。
+
+任务与资源的关联集合为
+\begin{equation}
+ \mathcal I=\{(v,e)\in V\times E:v\in R_e\}.
+ \label{s0202:incidence_pairs}
+\end{equation}
+这里 $\mathcal I$ 是由资源标识与任务标识组成的有序对集合，而不是入选任务集合。即使两个任务使用相同的资源组合，它们在 $\mathcal I$ 中仍通过不同的任务索引区分。给定全部 $R_e$ 后，$N(v)$ 与 $\mathcal I$ 均随之确定，不需要另作优化决策。
+
+表\ref{s0202:structural_symbols} 汇总集合及结构参数。表中“无”表示集合或标识不附带物理单位，“计数”表示无量纲的元素个数。
+
+\begin{table}[htbp]
+ \centering
+ \caption{集合、关联关系与结构参数}
+ \label{s0202:structural_symbols}
+ \small
+ \begin{tabularx}{\linewidth}{@{}l l l X@{}}
+  \toprule
+  符号 & 类型或取值域 & 单位 & 含义 \\
+  \midrule
+  $V$ & 有限非空集合 & 无 & 资源标识集合，元素为 $v$ \\
+  $E$ & 有限非空索引集合 & 无 & 候选任务索引集合，元素为 $e$ \\
+  $R_e$ & $\varnothing\ne R_e\subseteq V$ & 无 & 任务 $e\in E$ 必须整体获得的资源组合 \\
+  $N(v)$ & $N(v)\subseteq E$ & 无 & 需要资源 $v\in V$ 的任务集合，允许为空 \\
+  $\mathcal I$ & $\mathcal I\subseteq V\times E$ & 无 & 全部资源与任务的关联有序对 \\
+  $m$ & $\mathbb Z_{\geq 1}$ & 计数 & 资源数，$m=|V|$ \\
+  $n$ & $\mathbb Z_{\geq 1}$ & 计数 & 候选任务数，$n=|E|$ \\
+  $A$ & $\{0,1\}^{m\times n}$ & 无量纲 & 已知关联矩阵；$A_{ve}=1$ 当且仅当 $v\in R_e$ \\
+  $r$ & $\{1,\ldots,m\}$ & 计数 & 最大任务资源数，$r=\max_{e\in E}|R_e|$ \\
+  $\Delta$ & $\{1,\ldots,n\}$ & 计数 & 最大资源度，$\Delta=\max_{v\in V}|N(v)|$ \\
+  \bottomrule
+ \end{tabularx}
+\end{table}
+
+本章固定使用 $n$ 表示候选任务数、$m$ 表示资源数。因此，关联矩阵有 $m$ 行、$n$ 列，二元选择向量有 $n$ 个分量。比较其他文献或代码中的符号时，应先核对对象含义，再转换记号，不能仅凭字母直接替换。
+
+对任意任务 $e\in E$，列和 $\sum_{v\in V}A_{ve}=|R_e|$ 表示该任务涉及多少种资源；对任意资源 $v\in V$，行和 $\sum_{e\in E}A_{ve}=|N(v)|$ 表示多少个候选任务需要该资源。据此，最大超边大小 $r$ 和最大资源度 $\Delta$ 可以写成
+\begin{align}
+ r&=\max_{e\in E}\sum_{v\in V}A_{ve},
+ \label{s0202:rank}\\
+ \Delta&=\max_{v\in V}\sum_{e\in E}A_{ve}.
+ \label{s0202:max_degree}
+\end{align}
+$r$ 描述单个任务的资源组合规模，$\Delta$ 描述单个资源面对的候选需求数量。由于 $E$ 非空且每个 $R_e$ 非空，至少存在一个关联对，故 $r\geq1$ 且 $\Delta\geq1$。这与允许某些资源的度为零并不矛盾：零度是个别资源的性质，$\Delta$ 则取所有资源度数的最大值。二者都不是时间、能量或资源容量，也不直接给出求解难度或算法性能。
+
+关联记录的总数满足
+\begin{equation}
+ |\mathcal I|
+ =\sum_{e\in E}|R_e|
+ =\sum_{v\in V}|N(v)|
+ =\sum_{v\in V}\sum_{e\in E}A_{ve}.
+ \label{s0202:incidence_count}
+\end{equation}
+式\eqref{s0202:incidence_count} 的各项均为无量纲计数：分别从关联有序对、任务列和资源行三个角度统计同一批记录。这一恒等式也可用于检查两种邻接表与关联矩阵是否一致。具有相同资源组合的不同任务必须分别计入，不能先合并相同矩阵列再计算规模。
+
+\subsection{容量、收益与选择变量}
+
+资源容量 $b_v$ 表示资源 $v$ 在当前核算窗口中可以分配的份数；任务收益 $w_e$ 表示完整选择任务 $e$ 所取得的无量纲收益。两者均在优化开始前确定。为避免正整数记号是否包含零的歧义，全文在允许零容量时明确采用
+\begin{equation}
+ \mathbb Z_{\geq0}=\{0,1,2,\ldots\},
+ \qquad
+ \mathbb R_{>0}=\{a\in\mathbb R:a>0\}.
+ \label{s0202:number_domains}
+\end{equation}
+其中 $a$ 只是定义正实数集合所用的无量纲哑变量。容量允许为零，收益则严格为正。
+
+唯一需要求解的变量是任务选择量 $x_e$：
+\begin{equation}
+ x_e=
+ \begin{cases}
+  1,&\text{完整选择任务 }e,\\
+  0,&\text{不选择任务 }e,
+ \end{cases}
+ \qquad \forall e\in E.
+ \label{s0202:selection_meaning}
+\end{equation}
+$x_e$ 为无量纲二元量，不表示任务完成比例、持续时间或分配给任务的资源份数。表\ref{s0202:data_decision_symbols} 给出三个向量及其分量的对应关系。
+
+\begin{table}[htbp]
+ \centering
+ \caption{容量参数、收益参数与决策变量}
+ \label{s0202:data_decision_symbols}
+ \small
+ \begin{tabularx}{\linewidth}{@{}l l l X@{}}
+  \toprule
+  符号 & 类型或取值域 & 单位 & 含义与索引 \\
+  \midrule
+  $b_v$ & $\mathbb Z_{\geq0}$ & 份 & 已知容量，$v\in V$；按该资源自身的可分配单位核算 \\
+  $b$ & $\mathbb Z_{\geq0}^{m}$ & 分量为份 & 按资源行顺序排列的容量向量 \\
+  $w_e$ & $\mathbb R_{>0}$ & 无量纲 & 已知收益，$e\in E$；在当前实例中固定 \\
+  $w$ & $\mathbb R_{>0}^{n}$ & 无量纲 & 按任务列顺序排列的收益向量 \\
+  $x_e$ & $\{0,1\}$ & 无量纲 & 任务 $e\in E$ 的选择变量 \\
+  $x$ & $\{0,1\}^{n}$ & 无量纲 & 全部任务选择量组成的决策向量 \\
+  \bottomrule
+ \end{tabularx}
+\end{table}
+
+每个被选任务对每种关联资源占用一份，这是把二元关联矩阵用于容量核算的前提。因而 $b_v=0$ 表示该资源没有可分配份额；$b_v=1$ 表示最多允许一个需要它的任务入选。一般模型允许更大的非负整数容量，而现有纯组合实验全部采用 $b_v=1$。一般参数域与已有实验取值应分别理解，不能由一般定义推断已经评价过其他容量设置。
+
+不同资源的“一份”可以对应不同的具体对象，但必须在各自的容量核算中保持一致。例如，一个资源的容量与占用必须按同一种可分配单位比较。模型不把不同资源的份数相加解释为一个统一的物理总量。关联系数 $A_{ve}$ 仅记录有无需求；它不允许任务对同一资源产生两份或更多份需求。若要表达这种需求，必须扩展输入系数，不能只修改对 $A_{ve}$ 的文字解释。
+
+\subsection{向量排列与输入输出边界}
+
+为形成矩阵表达，任意选定资源与任务的排列
+\begin{equation}
+ V=\{v_1,\ldots,v_m\},\qquad
+ E=\{e_1,\ldots,e_n\},
+ \label{s0202:index_order}
+\end{equation}
+其中 $i\in\{1,\ldots,m\}$ 和 $j\in\{1,\ldots,n\}$ 分别是资源与任务的排列位置，均为无量纲整数索引。采用这一排列后，定义
+\begin{align}
+ A&=(A_{v_i e_j})_{i=1,\ldots,m;\,j=1,\ldots,n}
+       \in\{0,1\}^{m\times n},
+ \label{s0202:matrix_dimension}\\
+ b&=(b_{v_1},\ldots,b_{v_m})^{\mathsf T}
+       \in\mathbb Z_{\geq0}^{m},
+ \label{s0202:capacity_dimension}\\
+ w&=(w_{e_1},\ldots,w_{e_n})^{\mathsf T}
+       \in\mathbb R_{>0}^{n},
+ \label{s0202:weight_dimension}\\
+ x&=(x_{e_1},\ldots,x_{e_n})^{\mathsf T}
+       \in\{0,1\}^{n}.
+ \label{s0202:decision_dimension}
+\end{align}
+上标 $\mathsf T$ 表示转置，使上述向量均按列向量使用。排列只决定数据存放位置，不改变资源与任务的含义。若重新排列任务，必须同时重新排列 $A$ 的列以及 $w$、$x$ 的分量；若重新排列资源，必须同时重新排列 $A$ 的行和 $b$ 的分量。
+
+在这一维度约定下，$Ax$ 是含 $m$ 个分量的资源占用向量，第 $i$ 个分量对应资源 $v_i$ 的占用份数；$w^{\mathsf T}x$ 是一个无量纲标量，表示全部入选任务的收益之和。前者与容量向量逐分量对应，后者将同一收益尺度下的任务贡献相加。这两个量均由给定输入和选择向量计算得到，不是新增的独立决策变量。
+
+因此，本层模型的确定性输入可以由 $V$、$E$、全部资源组合 $R_e$、容量向量 $b$ 和收益向量 $w$ 给出。关联矩阵 $A$、邻接集合 $N(v)$、关联集合 $\mathcal I$ 以及规模参数 $m,n,r,\Delta$ 都由这些输入确定；优化只改变 $x$。这里“确定性”表示在一次求解中将输入视为已知固定值，不包含对容量、收益或关联关系的随机调整。资源关联与收益即使在实例生成阶段经过计算，进入当前优化问题后也仍是参数，不能与任务选择量一起作为自由变量。

@@ -1,0 +1,209 @@
+{
+  "scenario_id": "bundle_allocation_12",
+  "provenance": "Manually constructed pedagogical data; not measured inspection data or a published benchmark.",
+  "meaning": "One scheduling window; each resource has one indivisible unit. A job is valuable only if its complete resource bundle is allocated. Maximize sum of accepted job values.",
+  "resources": [
+    {
+      "id": "A",
+      "capacity": 1,
+      "unit": "indivisible resource unit"
+    },
+    {
+      "id": "B",
+      "capacity": 1,
+      "unit": "indivisible resource unit"
+    },
+    {
+      "id": "C",
+      "capacity": 1,
+      "unit": "indivisible resource unit"
+    },
+    {
+      "id": "D",
+      "capacity": 1,
+      "unit": "indivisible resource unit"
+    },
+    {
+      "id": "E",
+      "capacity": 1,
+      "unit": "indivisible resource unit"
+    },
+    {
+      "id": "F",
+      "capacity": 1,
+      "unit": "indivisible resource unit"
+    },
+    {
+      "id": "G",
+      "capacity": 1,
+      "unit": "indivisible resource unit"
+    },
+    {
+      "id": "H",
+      "capacity": 1,
+      "unit": "indivisible resource unit"
+    },
+    {
+      "id": "I",
+      "capacity": 1,
+      "unit": "indivisible resource unit"
+    },
+    {
+      "id": "J",
+      "capacity": 1,
+      "unit": "indivisible resource unit"
+    },
+    {
+      "id": "K",
+      "capacity": 1,
+      "unit": "indivisible resource unit"
+    },
+    {
+      "id": "L",
+      "capacity": 1,
+      "unit": "indivisible resource unit"
+    }
+  ],
+  "jobs": [
+    {
+      "id": "T01",
+      "resources": [
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F"
+      ],
+      "value": 19,
+      "value_unit": "dimensionless illustrative benefit"
+    },
+    {
+      "id": "T02",
+      "resources": [
+        "A",
+        "B",
+        "G"
+      ],
+      "value": 12,
+      "value_unit": "dimensionless illustrative benefit"
+    },
+    {
+      "id": "T03",
+      "resources": [
+        "C",
+        "D",
+        "H"
+      ],
+      "value": 11,
+      "value_unit": "dimensionless illustrative benefit"
+    },
+    {
+      "id": "T04",
+      "resources": [
+        "E",
+        "F",
+        "I"
+      ],
+      "value": 10,
+      "value_unit": "dimensionless illustrative benefit"
+    },
+    {
+      "id": "T05",
+      "resources": [
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L"
+      ],
+      "value": 20,
+      "value_unit": "dimensionless illustrative benefit"
+    },
+    {
+      "id": "T06",
+      "resources": [
+        "A",
+        "J",
+        "K"
+      ],
+      "value": 9,
+      "value_unit": "dimensionless illustrative benefit"
+    },
+    {
+      "id": "T07",
+      "resources": [
+        "B",
+        "H",
+        "L"
+      ],
+      "value": 9,
+      "value_unit": "dimensionless illustrative benefit"
+    },
+    {
+      "id": "T08",
+      "resources": [
+        "C",
+        "G",
+        "I"
+      ],
+      "value": 8,
+      "value_unit": "dimensionless illustrative benefit"
+    },
+    {
+      "id": "T09",
+      "resources": [
+        "D",
+        "J",
+        "K"
+      ],
+      "value": 9,
+      "value_unit": "dimensionless illustrative benefit"
+    },
+    {
+      "id": "T10",
+      "resources": [
+        "E",
+        "H",
+        "L"
+      ],
+      "value": 8,
+      "value_unit": "dimensionless illustrative benefit"
+    },
+    {
+      "id": "T11",
+      "resources": [
+        "F",
+        "G",
+        "I"
+      ],
+      "value": 8,
+      "value_unit": "dimensionless illustrative benefit"
+    },
+    {
+      "id": "T12",
+      "resources": [
+        "J",
+        "K",
+        "L"
+      ],
+      "value": 9,
+      "value_unit": "dimensionless illustrative benefit"
+    }
+  ],
+  "stream_order": [
+    "T01",
+    "T02",
+    "T03",
+    "T04",
+    "T05",
+    "T06",
+    "T07",
+    "T08",
+    "T09",
+    "T10",
+    "T11",
+    "T12"
+  ]
+}

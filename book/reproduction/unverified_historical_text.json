@@ -1,0 +1,10 @@
+{
+  "original_module": "Agent/Publication/engineering_unified_inspection.py",
+  "claimed_historical_sha256": "f064acd300f5b703011a5b47b918c924121dd9fdfdb15d0d87584eee64e87866",
+  "available_text_sha256": "c20b2f75c51623c9ce0cfff6367528fbb57b8621f97c7509ee9ca8df5b81cf45",
+  "electronic_path": "reproduction/historical_sources/UNVERIFIED_TEXT_c20b2f75c51623c9ce0cfff6367528fbb57b8621f97c7509ee9ca8df5b81cf45.py",
+  "byte_identity_verified": false,
+  "source_record_path": "D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网\\总结\\03_实验数据\\工程化联合求解\\unified_implementation_code.json",
+  "source_record_entry": "f064acd300f5b703011a5b47b918c924121dd9fdfdb15d0d87584eee64e87866",
+  "scope": "Recovered text from historical archive entry; LF encoded output hash differs. Not used as an exact source override or numerical reproduction claim."
+}

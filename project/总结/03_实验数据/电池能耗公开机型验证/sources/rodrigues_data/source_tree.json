@@ -1,0 +1,1634 @@
+{
+  "sha": "3058a25a7092633e05a3fe169c6ae3b967636b9d",
+  "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/trees/3058a25a7092633e05a3fe169c6ae3b967636b9d",
+  "tree": [
+    {
+      "path": "Boostrap.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "38bdfbd7a809f79a2964792ab992ea549a5ee996",
+      "size": 4161,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/38bdfbd7a809f79a2964792ab992ea549a5ee996"
+    },
+    {
+      "path": "Comparing Energy and Speed.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "639b0d201ded9b0c50a0e15e8155ea805af9355b",
+      "size": 1075,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/639b0d201ded9b0c50a0e15e8155ea805af9355b"
+    },
+    {
+      "path": "Comparison_bar_graphs.ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b98244cd81ff7b1912ef19fc4795f17adbd8362",
+      "size": 282009,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/2b98244cd81ff7b1912ef19fc4795f17adbd8362"
+    },
+    {
+      "path": "Emissions_map.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7addbf79f795d1bf20de6e024599bed9804fb6ab",
+      "size": 357,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/7addbf79f795d1bf20de6e024599bed9804fb6ab"
+    },
+    {
+      "path": "FindingRegime.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76761515a6b0382e02ba0a1702e7d994fbfee417",
+      "size": 3759,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/76761515a6b0382e02ba0a1702e7d994fbfee417"
+    },
+    {
+      "path": "FindingRegime2.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c807be195246b4a07b2afc025d6a7807698ee469",
+      "size": 5574,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/c807be195246b4a07b2afc025d6a7807698ee469"
+    },
+    {
+      "path": "FindingRegimeFilter.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6d12e8caa40f4f498db810d968fb76592859ff62",
+      "size": 3760,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/6d12e8caa40f4f498db810d968fb76592859ff62"
+    },
+    {
+      "path": "LinearRegression.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "063c9bbe980a4a169a86e817f0eede4a63c35b26",
+      "size": 5639,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/063c9bbe980a4a169a86e817f0eede4a63c35b26"
+    },
+    {
+      "path": "METAR_KAGC.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dd4842671e3ebdbf44a0c496608fac2e751bc265",
+      "size": 5758,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/dd4842671e3ebdbf44a0c496608fac2e751bc265"
+    },
+    {
+      "path": "MLModel",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7e553666388a8a2b95b4eb1f94425b0a21fa348d",
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/trees/7e553666388a8a2b95b4eb1f94425b0a21fa348d"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3f0f3f91ba1b641670a7a42ca068959750fad24e",
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/trees/3f0f3f91ba1b641670a7a42ca068959750fad24e"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/.DS_Store",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d7e40b6ef2a5614998ba918f8eaee1d02cf8d88",
+      "size": 10244,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/2d7e40b6ef2a5614998ba918f8eaee1d02cf8d88"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/helpers.r",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e695162dc900149902cbe5e4a961f13413e10886",
+      "size": 7944,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/e695162dc900149902cbe5e4a961f13413e10886"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/modeling_byregime.r",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49f9333ec0387eb6ed25c2bfd18406562e96bece",
+      "size": 2799,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/49f9333ec0387eb6ed25c2bfd18406562e96bece"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "e5e922c191a47887da68ccaf664505d3e9eaf1e1",
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/trees/e5e922c191a47887da68ccaf664505d3e9eaf1e1"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/.DS_Store",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0660997feb1822e7d8382511501bf8e8f5057c73",
+      "size": 14340,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/0660997feb1822e7d8382511501bf8e8f5057c73"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2b509ea28a4b30cb5bcc9299e9ab23bd218fa3b0",
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/trees/2b509ea28a4b30cb5bcc9299e9ab23bd218fa3b0"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar1.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5118174787e9bbd2af2d593e4a46fe57224facf6",
+      "size": 245110,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/5118174787e9bbd2af2d593e4a46fe57224facf6"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar10.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1791af745ed65467f27d3f00c1b1018af39cd03d",
+      "size": 236148,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/1791af745ed65467f27d3f00c1b1018af39cd03d"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar11.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1c1e9e06c9a4f870062a5128387999293c6fb027",
+      "size": 230424,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/1c1e9e06c9a4f870062a5128387999293c6fb027"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar12.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "192e19f4200798d413a720148cffbc0a1432f09b",
+      "size": 230545,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/192e19f4200798d413a720148cffbc0a1432f09b"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar13.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c053f4ea4247c2a894958ee01d1d044c0f7327bd",
+      "size": 250108,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/c053f4ea4247c2a894958ee01d1d044c0f7327bd"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar14.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fca254a0278aa6d4ec189a04f4372af015a785fc",
+      "size": 237271,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/fca254a0278aa6d4ec189a04f4372af015a785fc"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar15.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f428e443d850d3724d628f98fe2c9eb29494fb28",
+      "size": 227858,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/f428e443d850d3724d628f98fe2c9eb29494fb28"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2fdf5f9b1ecc1e321071b55eefd52fe3024d9ff0",
+      "size": 226173,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/2fdf5f9b1ecc1e321071b55eefd52fe3024d9ff0"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar17.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c08f313ac7c64d2ae89475998f56d686931697a4",
+      "size": 247945,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/c08f313ac7c64d2ae89475998f56d686931697a4"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar18.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d383d0b3c92bb58a2287e4c59ecea58090132b4b",
+      "size": 235719,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/d383d0b3c92bb58a2287e4c59ecea58090132b4b"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar19.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c21f107a14bfb9d1d53181d2bfcb0199bd441efb",
+      "size": 226806,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/c21f107a14bfb9d1d53181d2bfcb0199bd441efb"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "982fc9abdefee7b2d2463591bfddccec4ca5a6cc",
+      "size": 237343,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/982fc9abdefee7b2d2463591bfddccec4ca5a6cc"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar20.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b4eb695abb467a88eb338a7522d81d204a44d647",
+      "size": 227939,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/b4eb695abb467a88eb338a7522d81d204a44d647"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar21.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "317f2ab2d0bfd969ce92e001db5d0d9d33c9e207",
+      "size": 249507,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/317f2ab2d0bfd969ce92e001db5d0d9d33c9e207"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar22.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0a6f56bf740bc3b2e5aec78330c89c4a6953a282",
+      "size": 237499,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/0a6f56bf740bc3b2e5aec78330c89c4a6953a282"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar23.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9f6f921c496c5a529fa7025a18f06200a9a32d9c",
+      "size": 229244,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/9f6f921c496c5a529fa7025a18f06200a9a32d9c"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar24.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "37a89166132de23be832ecfeb51a391293929047",
+      "size": 229633,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/37a89166132de23be832ecfeb51a391293929047"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar25.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a3bcb34bc3a7ef927b0560f33ff488a9f8a1fa12",
+      "size": 254931,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/a3bcb34bc3a7ef927b0560f33ff488a9f8a1fa12"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar26.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "60a160298aca0dd1ff8986b7d95f68c65abd7b38",
+      "size": 243948,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/60a160298aca0dd1ff8986b7d95f68c65abd7b38"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar27.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d6badb7ae3ebe0f20763ff4362f1913b91056ca",
+      "size": 232453,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/2d6badb7ae3ebe0f20763ff4362f1913b91056ca"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar28.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1dd0b38181e0dc16e8c9fd22e50c78265a68a567",
+      "size": 228755,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/1dd0b38181e0dc16e8c9fd22e50c78265a68a567"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar29.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b62b392718531a269badf01b648e09e22d5c6302",
+      "size": 255880,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/b62b392718531a269badf01b648e09e22d5c6302"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a8d72c455333cc64d70c78afc84756cdbb98e86c",
+      "size": 230096,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/a8d72c455333cc64d70c78afc84756cdbb98e86c"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar30.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e74f1eb465a760112a5550705b90991e7172badb",
+      "size": 242739,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/e74f1eb465a760112a5550705b90991e7172badb"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar31.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a3c8c138e971dcc61cd7ef3203a42c65caef085",
+      "size": 232062,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/5a3c8c138e971dcc61cd7ef3203a42c65caef085"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar32.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4ec0d5c449034edb2c2e30c49779212dfffaad8b",
+      "size": 228321,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/4ec0d5c449034edb2c2e30c49779212dfffaad8b"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar33.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1513bfdbd9248f9c5aa14195ffd8b0ef4b2e4e64",
+      "size": 255072,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/1513bfdbd9248f9c5aa14195ffd8b0ef4b2e4e64"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar34.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d69cc07641d6069888852f0267869d6034396a54",
+      "size": 242712,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/d69cc07641d6069888852f0267869d6034396a54"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar35.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3488f8123d313a71353c6d1fba251e968e014147",
+      "size": 231755,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/3488f8123d313a71353c6d1fba251e968e014147"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar36.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ad3bce200e4090a240b57db04045eae87d703669",
+      "size": 230187,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/ad3bce200e4090a240b57db04045eae87d703669"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar37.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc73822e468c93b839f8ca500dd182076e58caa4",
+      "size": 258717,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/bc73822e468c93b839f8ca500dd182076e58caa4"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar38.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c6f7f866faced366560ca34b54f5cab07d4f781a",
+      "size": 244061,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/c6f7f866faced366560ca34b54f5cab07d4f781a"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar4.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "60af73dd6f75c94a189752c8e581cc938a3227c1",
+      "size": 227023,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/60af73dd6f75c94a189752c8e581cc938a3227c1"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar5.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9f53d1bba234cde7bfad3a29b2df94093b5ca414",
+      "size": 243192,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/9f53d1bba234cde7bfad3a29b2df94093b5ca414"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar6.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "128cfd0e2160f5fa23892099a808ef7c836b34a6",
+      "size": 235952,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/128cfd0e2160f5fa23892099a808ef7c836b34a6"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar7.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "605906b34365389dcad6ca6444cd66bfb554e29e",
+      "size": 229817,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/605906b34365389dcad6ca6444cd66bfb554e29e"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar8.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bfe16bfcc03c03c787bc0f9cf6682cf95e2581be",
+      "size": 229936,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/bfe16bfcc03c03c787bc0f9cf6682cf95e2581be"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/all/hyperpar9.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "69fad45d8d2189985178023a0c7aed44aa33e70a",
+      "size": 245874,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/69fad45d8d2189985178023a0c7aed44aa33e70a"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "5ca2a6129107d381e55a0cf462f3511bc9cb4c5d",
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/trees/5ca2a6129107d381e55a0cf462f3511bc9cb4c5d"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar1.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "116fd7030c2840e9e5d06524487de521e2423c76",
+      "size": 192890,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/116fd7030c2840e9e5d06524487de521e2423c76"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar10.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d4cdccf41d2237e2215a9ba56f7e236a9e8e81c8",
+      "size": 193675,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/d4cdccf41d2237e2215a9ba56f7e236a9e8e81c8"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar11.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b14894d146a3dccfc96b32042e102d0b301e5e03",
+      "size": 188884,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/b14894d146a3dccfc96b32042e102d0b301e5e03"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar12.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7485601c3f885524fc93411c64fed42eb0ee0d81",
+      "size": 186003,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/7485601c3f885524fc93411c64fed42eb0ee0d81"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar13.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "12b9525f24c4348605e244c64847cef5c1970a62",
+      "size": 192710,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/12b9525f24c4348605e244c64847cef5c1970a62"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar14.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "71a2cfd4ad52f6bc91586b401f6d0ced21a60347",
+      "size": 188408,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/71a2cfd4ad52f6bc91586b401f6d0ced21a60347"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar15.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c47d0c6a3cf91e2163bcc754012d7961ffebd27a",
+      "size": 185459,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/c47d0c6a3cf91e2163bcc754012d7961ffebd27a"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "563da8284c0c76ee249d43fe83998cf1aec844a0",
+      "size": 194970,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/563da8284c0c76ee249d43fe83998cf1aec844a0"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar17.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0de621f1c3f45d908d37d02dee476cabde6a90da",
+      "size": 188772,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/0de621f1c3f45d908d37d02dee476cabde6a90da"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar18.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f10b8b53d67a51f9568aa8f4a978aa7a564f7a2c",
+      "size": 187039,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/f10b8b53d67a51f9568aa8f4a978aa7a564f7a2c"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar19.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "71c3b1957049b13023c7044040ea63678f4ac48f",
+      "size": 197789,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/71c3b1957049b13023c7044040ea63678f4ac48f"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8f7a719602c0a94157bc7b882c09fdcf039e724e",
+      "size": 185363,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/8f7a719602c0a94157bc7b882c09fdcf039e724e"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar20.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c30f71808f832ecc478fcf954dbef028971dabe2",
+      "size": 190485,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/c30f71808f832ecc478fcf954dbef028971dabe2"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar21.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "23b620e62130a936b7ff0008bd246a4081ba1427",
+      "size": 190928,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/23b620e62130a936b7ff0008bd246a4081ba1427"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar22.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d31fff4889b447711037cddf8f7a9c8861af76ae",
+      "size": 196780,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/d31fff4889b447711037cddf8f7a9c8861af76ae"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar23.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "25c8c32d0fe1b517a96a97d175bd99cbc8cc205a",
+      "size": 190678,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/25c8c32d0fe1b517a96a97d175bd99cbc8cc205a"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar24.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "34bb3b0d747cdf5319336aa01e5f1a69a4d6bba2",
+      "size": 184196,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/34bb3b0d747cdf5319336aa01e5f1a69a4d6bba2"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar25.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "071f0cdf6d33f9e43eafa3073fcd8897b0bc89ae",
+      "size": 198004,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/071f0cdf6d33f9e43eafa3073fcd8897b0bc89ae"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar26.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0bc5d02ad0a7a626edb27de4590c47a6ea505d16",
+      "size": 189487,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/0bc5d02ad0a7a626edb27de4590c47a6ea505d16"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar27.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "73b7c7e9abbebbed29d3fac6a8474787c4a8d949",
+      "size": 191564,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/73b7c7e9abbebbed29d3fac6a8474787c4a8d949"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "03985e5d1ab122b53f3cc69a0643d0b3eda0fdb0",
+      "size": 183469,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/03985e5d1ab122b53f3cc69a0643d0b3eda0fdb0"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar4.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2c7971b0f45d16f752f022c888aa1a13ebe93df0",
+      "size": 192973,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/2c7971b0f45d16f752f022c888aa1a13ebe93df0"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar5.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8e5ad69dbc06825488e7b68c38e5ec12a37f532a",
+      "size": 185789,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/8e5ad69dbc06825488e7b68c38e5ec12a37f532a"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar6.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d0d928c2a5cb558e9a81d05af7e2f931877b0ac9",
+      "size": 182871,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/d0d928c2a5cb558e9a81d05af7e2f931877b0ac9"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar7.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db6ebe8373dd34bdb88508a56c59c0f7576a6f92",
+      "size": 193758,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/db6ebe8373dd34bdb88508a56c59c0f7576a6f92"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar8.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dcc277d6e8e1c808ef19e771da535cae3f3cfed8",
+      "size": 185587,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/dcc277d6e8e1c808ef19e771da535cae3f3cfed8"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/cruise/hyperpar9.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5d381697a1182d092cdb89fd9af011828e45fc60",
+      "size": 184167,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/5d381697a1182d092cdb89fd9af011828e45fc60"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "a716bfc5bc20f3dd9da16ab3127e089fd7d08f92",
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/trees/a716bfc5bc20f3dd9da16ab3127e089fd7d08f92"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar1.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "45686d79ea699487a26a4b86f7352ac791f0cc65",
+      "size": 201383,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/45686d79ea699487a26a4b86f7352ac791f0cc65"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar10.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "81844a1874b30437e90a34d9208ad2ebe9d9c9b8",
+      "size": 205091,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/81844a1874b30437e90a34d9208ad2ebe9d9c9b8"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar11.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae22a34ade5a82946189a59a40ebd7cbce149647",
+      "size": 197362,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/ae22a34ade5a82946189a59a40ebd7cbce149647"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar12.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0ea6a5b7030409c7461204678aff783bbb0a498e",
+      "size": 192952,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/0ea6a5b7030409c7461204678aff783bbb0a498e"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar13.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "43650c18f069caa40a19cdf20da417aab15c182c",
+      "size": 203098,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/43650c18f069caa40a19cdf20da417aab15c182c"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar14.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9266bd08689f5e77825664fa351d1ee18376c5e5",
+      "size": 196433,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/9266bd08689f5e77825664fa351d1ee18376c5e5"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar15.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff65c2ce273442fb00ef84f378865ac0bbc1928e",
+      "size": 190817,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/ff65c2ce273442fb00ef84f378865ac0bbc1928e"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "20756d18c06e5c145706f4057af2c044372110b3",
+      "size": 206417,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/20756d18c06e5c145706f4057af2c044372110b3"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar17.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "19c7c237d64bfe57c9dc8c5c2f7da442544ab459",
+      "size": 195230,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/19c7c237d64bfe57c9dc8c5c2f7da442544ab459"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar18.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cda060ca28f2394a70085681953b5817811a8992",
+      "size": 191053,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/cda060ca28f2394a70085681953b5817811a8992"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar19.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c4c0694df157b10cf1eac8f3d06e688c162624e9",
+      "size": 207325,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/c4c0694df157b10cf1eac8f3d06e688c162624e9"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2cdec8ec0cb13687c96f669f67b740f005732c9b",
+      "size": 196747,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/2cdec8ec0cb13687c96f669f67b740f005732c9b"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar20.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fe204df24e8f10679353f0aa090bb431fbb68096",
+      "size": 201014,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/fe204df24e8f10679353f0aa090bb431fbb68096"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar21.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a7fdecaaa8f30f330711ccc43b7e489aebc859e",
+      "size": 193386,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/5a7fdecaaa8f30f330711ccc43b7e489aebc859e"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar22.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ea9a6935b14a04d60f16a21c2dad4ba01b5a040e",
+      "size": 207414,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/ea9a6935b14a04d60f16a21c2dad4ba01b5a040e"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar23.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cb592cc60878930e4efe4273603518784a756ec2",
+      "size": 204674,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/cb592cc60878930e4efe4273603518784a756ec2"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar24.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "147276f0ab9dede42636e803786104d8cc5c8128",
+      "size": 192829,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/147276f0ab9dede42636e803786104d8cc5c8128"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar25.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2ced81f0a2ccaa65e35ad546403ebc96e1ccf764",
+      "size": 209007,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/2ced81f0a2ccaa65e35ad546403ebc96e1ccf764"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar26.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "75d2e0556231c98ca0e32efae693b463e7f817eb",
+      "size": 196936,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/75d2e0556231c98ca0e32efae693b463e7f817eb"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar27.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "07d512d0d0623152dc60361e25c4b955b3e6caa0",
+      "size": 196794,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/07d512d0d0623152dc60361e25c4b955b3e6caa0"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bfdcb41f4105016eebaee53ef80a428491d4946f",
+      "size": 192493,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/bfdcb41f4105016eebaee53ef80a428491d4946f"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar4.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "753da93f68f19f8c4b8be4974d6a4eb40e51d8ce",
+      "size": 203232,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/753da93f68f19f8c4b8be4974d6a4eb40e51d8ce"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar5.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "40dfbf94f700053639ce9ea27162ccc79f0a1e36",
+      "size": 196846,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/40dfbf94f700053639ce9ea27162ccc79f0a1e36"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar6.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7e4abbc22c5b796bc9dc1791c2c31acd4e70d1ce",
+      "size": 191897,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/7e4abbc22c5b796bc9dc1791c2c31acd4e70d1ce"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar7.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f2a77398206cc5c2e20e6c634ef4270b07966d87",
+      "size": 202341,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/f2a77398206cc5c2e20e6c634ef4270b07966d87"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar8.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9f1433e6b899dbc600fa2ab422a74f93280b699c",
+      "size": 196237,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/9f1433e6b899dbc600fa2ab422a74f93280b699c"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/landing/hyperpar9.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d46e3ba02b6c9b0f4be1b7fb80b5fe444f3f94b5",
+      "size": 192430,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/d46e3ba02b6c9b0f4be1b7fb80b5fe444f3f94b5"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "d81e17a4843e02f807934c89b30eeeb2c1331254",
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/trees/d81e17a4843e02f807934c89b30eeeb2c1331254"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar1.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "379730c979a475251c75c383f797a36ac5eded30",
+      "size": 194283,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/379730c979a475251c75c383f797a36ac5eded30"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar10.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "14d0b4d431a93de3254b3925d17f78fca8d54b9f",
+      "size": 199900,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/14d0b4d431a93de3254b3925d17f78fca8d54b9f"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar11.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "98b67d7185d19437ac8bc39fab54d2d90503c2b6",
+      "size": 188285,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/98b67d7185d19437ac8bc39fab54d2d90503c2b6"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar12.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "789ecd9cbd71ccbf47d0b9316957929fc0735285",
+      "size": 186904,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/789ecd9cbd71ccbf47d0b9316957929fc0735285"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar13.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "07b3a40c8aa985af812faa8a416be0a2a35e30f5",
+      "size": 198160,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/07b3a40c8aa985af812faa8a416be0a2a35e30f5"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar14.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e0f5e9a399ac9e149b82c1d2568753a78005d5f3",
+      "size": 187655,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/e0f5e9a399ac9e149b82c1d2568753a78005d5f3"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar15.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "68ad57a4f16cce4d78141332fac972a893213a79",
+      "size": 184624,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/68ad57a4f16cce4d78141332fac972a893213a79"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar16.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b07f66c8f4a935a3a5a68fd55b2566155577789e",
+      "size": 199330,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/b07f66c8f4a935a3a5a68fd55b2566155577789e"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar17.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "686b46e358338a2d125cc83913cca70eee7d95bd",
+      "size": 189622,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/686b46e358338a2d125cc83913cca70eee7d95bd"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar18.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e3a0e221005a95a9ec97e53750e84842306be3bc",
+      "size": 187681,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/e3a0e221005a95a9ec97e53750e84842306be3bc"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar19.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e102d887f02baf970925d3a485a16bb30f83d627",
+      "size": 206507,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/e102d887f02baf970925d3a485a16bb30f83d627"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar2.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b425e30ea90399760175dc0197b39cedfe6df421",
+      "size": 186786,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/b425e30ea90399760175dc0197b39cedfe6df421"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar20.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "76f12ff847c169aa19f049c34a8a38d95b9df93c",
+      "size": 191798,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/76f12ff847c169aa19f049c34a8a38d95b9df93c"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar21.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d296f896664186305426ec439ed83be0b6aa12d2",
+      "size": 189356,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/d296f896664186305426ec439ed83be0b6aa12d2"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar22.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e5d20356ce7f23fc182068007192744996746b40",
+      "size": 204464,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/e5d20356ce7f23fc182068007192744996746b40"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar23.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9c90f7d2e5bcfead4f41cbf4b311d927a9d83b0e",
+      "size": 194532,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/9c90f7d2e5bcfead4f41cbf4b311d927a9d83b0e"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar24.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "11824ddea4ae3264221de5d8ee833ad08f2852e5",
+      "size": 188763,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/11824ddea4ae3264221de5d8ee833ad08f2852e5"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar25.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "24a3e449f5ea1f16d772e52d5a25ee6ec631b7d2",
+      "size": 200500,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/24a3e449f5ea1f16d772e52d5a25ee6ec631b7d2"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar26.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "569ff1ef0c77f1d64309c1c06c42aa05cbd5d907",
+      "size": 193292,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/569ff1ef0c77f1d64309c1c06c42aa05cbd5d907"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar27.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "68130647299a99d0f5d7a58b14f066fc624c4fb4",
+      "size": 192434,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/68130647299a99d0f5d7a58b14f066fc624c4fb4"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar3.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a86f7ea526abeb51028eefa907725d0d751783a0",
+      "size": 185145,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/a86f7ea526abeb51028eefa907725d0d751783a0"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar4.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9e2d67d8268f32f00cb294c035c893ac02e822fc",
+      "size": 194056,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/9e2d67d8268f32f00cb294c035c893ac02e822fc"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar5.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5b27bfaebd5a1f937da42a9347959a55412bb039",
+      "size": 186944,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/5b27bfaebd5a1f937da42a9347959a55412bb039"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar6.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9975e971907889156e194741ef5d8ebc7de99a8c",
+      "size": 181677,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/9975e971907889156e194741ef5d8ebc7de99a8c"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar7.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0295975d76fcc02a11c0bc23a0b616d4f41f221c",
+      "size": 192770,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/0295975d76fcc02a11c0bc23a0b616d4f41f221c"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar8.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d143c39071323e818d0c76837e794b45a9abc24",
+      "size": 187809,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/8d143c39071323e818d0c76837e794b45a9abc24"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/plotsModels/takeOff/hyperpar9.png",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e3b73390e195ecefd28bd95f17b929b10f2feb4a",
+      "size": 182012,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/e3b73390e195ecefd28bd95f17b929b10f2feb4a"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/predicted-values",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "8842f6cc7cd136da994e5d3c5589d24fe1724325",
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/trees/8842f6cc7cd136da994e5d3c5589d24fe1724325"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/predicted-values/predictions_cruise.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "28349f643dee6eb5f1aacca6486cec5f8910014e",
+      "size": 2193837,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/28349f643dee6eb5f1aacca6486cec5f8910014e"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/predicted-values/predictions_landing.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "86fea80d4cf269216230fd460b2c02134f3f9037",
+      "size": 1217998,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/86fea80d4cf269216230fd460b2c02134f3f9037"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/predicted-values/predictions_takeOff.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e376809dfb4ef6dc2ce033548e11d92fbdb84371",
+      "size": 703175,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/e376809dfb4ef6dc2ce033548e11d92fbdb84371"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/predicted-values/predictions_validation_cruise.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3f6848da31d1b2488c6275859c42e1c6b75a73bb",
+      "size": 409590,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/3f6848da31d1b2488c6275859c42e1c6b75a73bb"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/predicted-values/predictions_validation_landing.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0d4f6bbb9c8cfa36bd8c8a7cad30ed0354854c5a",
+      "size": 134208,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/0d4f6bbb9c8cfa36bd8c8a7cad30ed0354854c5a"
+    },
+    {
+      "path": "MLModel/R-XGBoost-Model3/predicted-values/predictions_validation_takeOff.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ab4bd4729744f21d6a1835b02b117bd91e6bd0da",
+      "size": 60379,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/ab4bd4729744f21d6a1835b02b117bd91e6bd0da"
+    },
+    {
+      "path": "MLModel/data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3d985b519334a3b82157826397707b907f017a65",
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/trees/3d985b519334a3b82157826397707b907f017a65"
+    },
+    {
+      "path": "MLModel/data/.DS_Store",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5008ddfcf53c02e82d7eee2e57c38e5672ef89f6",
+      "size": 6148,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/5008ddfcf53c02e82d7eee2e57c38e5672ef89f6"
+    },
+    {
+      "path": "MLModel/data/data_clean_cruise.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d535ddc84756be12949bea8eb7e755b32d86957d",
+      "size": 33253928,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/d535ddc84756be12949bea8eb7e755b32d86957d"
+    },
+    {
+      "path": "MLModel/data/data_clean_landing.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "48885be640e2397ecaf6cbe6ec55c844e205130d",
+      "size": 18687334,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/48885be640e2397ecaf6cbe6ec55c844e205130d"
+    },
+    {
+      "path": "MLModel/data/data_clean_takeoff.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a04b20f7ebd83205296405c35557b4bde64b7817",
+      "size": 10787605,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/a04b20f7ebd83205296405c35557b4bde64b7817"
+    },
+    {
+      "path": "MLModel/data/flights_validation.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "910dd7e6a3f1f0620fd9a07c79466d1aa920fbbf",
+      "size": 4415480,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/910dd7e6a3f1f0620fd9a07c79466d1aa920fbbf"
+    },
+    {
+      "path": "MLModel/data/flights_validation_data_clean_cruise.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "66aceda405c5904c228f53623d91a51855319c9a",
+      "size": 2247192,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/66aceda405c5904c228f53623d91a51855319c9a"
+    },
+    {
+      "path": "MLModel/data/flights_validation_data_clean_landing.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a1df531b26b29a4e7a0676400d8af1dd919218a",
+      "size": 754428,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/3a1df531b26b29a4e7a0676400d8af1dd919218a"
+    },
+    {
+      "path": "MLModel/data/flights_validation_data_clean_takeoff.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "dbb6b84f7db8039a82504f5c06df9b866caafac0",
+      "size": 339065,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/dbb6b84f7db8039a82504f5c06df9b866caafac0"
+    },
+    {
+      "path": "MLModel/data/poll.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a1cd0862b1ef09ff4c956612e064aed9a15d20ff",
+      "size": 581,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/a1cd0862b1ef09ff4c956612e064aed9a15d20ff"
+    },
+    {
+      "path": "airdensity.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "22dd820e9f53a2e70bea071d464701561872e7b3",
+      "size": 3330,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/22dd820e9f53a2e70bea071d464701561872e7b3"
+    },
+    {
+      "path": "ancillary_power.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7e8101e5db13d62d7866e1f0418411621b42fe0f",
+      "size": 698,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/7e8101e5db13d62d7866e1f0418411621b42fe0f"
+    },
+    {
+      "path": "calculate_coefficients.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d9fd7525827a4a0a05ba2b928bbdc58dd6ae2ef4",
+      "size": 458,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/d9fd7525827a4a0a05ba2b928bbdc58dd6ae2ef4"
+    },
+    {
+      "path": "calculate_energy.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a64fd6ec0c3088f75ea345179e1ba7c07b025bc",
+      "size": 3544,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/8a64fd6ec0c3088f75ea345179e1ba7c07b025bc"
+    },
+    {
+      "path": "create_energy_summary.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0be530953281020372b2c13aa76052a4b9be7ac6",
+      "size": 225,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/0be530953281020372b2c13aa76052a4b9be7ac6"
+    },
+    {
+      "path": "emissions_map_geopandas (1).ipynb",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6e9d049eed7f89f575791b5fe89b37f5580c8750",
+      "size": 225871,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/6e9d049eed7f89f575791b5fe89b37f5580c8750"
+    },
+    {
+      "path": "energy_consumption",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c2762607ba37260b107639c3831b813ee715ed84",
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/trees/c2762607ba37260b107639c3831b813ee715ed84"
+    },
+    {
+      "path": "energy_consumption/.idea",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "73eb743686b1f324677b9c1ed0495a287a907fbc",
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/trees/73eb743686b1f324677b9c1ed0495a287a907fbc"
+    },
+    {
+      "path": "energy_consumption/.idea/.gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c0b30de88b25dfdd293de468232960ffa2ee53f1",
+      "size": 288,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/c0b30de88b25dfdd293de468232960ffa2ee53f1"
+    },
+    {
+      "path": "energy_consumption/.idea/energy_consumption.iml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d0876a78d06ac03b5d78c8dcdb95570281c6f1d6",
+      "size": 284,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/d0876a78d06ac03b5d78c8dcdb95570281c6f1d6"
+    },
+    {
+      "path": "energy_consumption/.idea/inspectionProfiles",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "97824ec9b0149e48c91dce4fee530335b327c686",
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/trees/97824ec9b0149e48c91dce4fee530335b327c686"
+    },
+    {
+      "path": "energy_consumption/.idea/inspectionProfiles/profiles_settings.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "105ce2da2d6447d11dfe32bfb846c3d5b199fc99",
+      "size": 174,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/105ce2da2d6447d11dfe32bfb846c3d5b199fc99"
+    },
+    {
+      "path": "energy_consumption/.idea/misc.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ae2658b4659194426bacd70a85eb0fe3c9801f5b",
+      "size": 206,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/ae2658b4659194426bacd70a85eb0fe3c9801f5b"
+    },
+    {
+      "path": "energy_consumption/.idea/modules.xml",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0e3f429090513860d4a4e254c29a7e0b61326298",
+      "size": 288,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/0e3f429090513860d4a4e254c29a7e0b61326298"
+    },
+    {
+      "path": "energy_consumption/EnergyModel2.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "379402eb9f3178c90ab1557a7ca6b77d0f735278",
+      "size": 7497,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/379402eb9f3178c90ab1557a7ca6b77d0f735278"
+    },
+    {
+      "path": "energy_consumption/FindingRegimeFilter.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f24ed50a5f139c254c362802ec9ac5c3ec829cf8",
+      "size": 6817,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/f24ed50a5f139c254c362802ec9ac5c3ec829cf8"
+    },
+    {
+      "path": "energy_consumption/LinearRegression.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "063c9bbe980a4a169a86e817f0eede4a63c35b26",
+      "size": 5639,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/063c9bbe980a4a169a86e817f0eede4a63c35b26"
+    },
+    {
+      "path": "energy_consumption/METAR_KAGC.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "04ec32b1c6a7eff9cdae87276d8eb0e1490024d3",
+      "size": 3944,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/04ec32b1c6a7eff9cdae87276d8eb0e1490024d3"
+    },
+    {
+      "path": "energy_consumption/Method2_bootstrap.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da7666fb3f279e218d2264767c0bed0cf9cba0fb",
+      "size": 13551,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/da7666fb3f279e218d2264767c0bed0cf9cba0fb"
+    },
+    {
+      "path": "energy_consumption/__pycache__",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "edc8735a49108b3af017d5984b5bf3c067f6ecdb",
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/trees/edc8735a49108b3af017d5984b5bf3c067f6ecdb"
+    },
+    {
+      "path": "energy_consumption/__pycache__/EnergyModel2.cpython-38.pyc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b9568528a263473e8a56453c112bb89e35a95317",
+      "size": 6259,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/b9568528a263473e8a56453c112bb89e35a95317"
+    },
+    {
+      "path": "energy_consumption/__pycache__/FindingRegimeFilter.cpython-38.pyc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4efaa898eec9fb3892443b34ec3305c691b521e2",
+      "size": 5236,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/4efaa898eec9fb3892443b34ec3305c691b521e2"
+    },
+    {
+      "path": "energy_consumption/__pycache__/LinearRegression.cpython-38.pyc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ab328c30dae5e0ff755ed0bc0541d0efce25902a",
+      "size": 4841,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/ab328c30dae5e0ff755ed0bc0541d0efce25902a"
+    },
+    {
+      "path": "energy_consumption/__pycache__/METAR_KAGC.cpython-38.pyc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "14b972b816b40514b08d01931aa6be3f5480e687",
+      "size": 3498,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/14b972b816b40514b08d01931aa6be3f5480e687"
+    },
+    {
+      "path": "energy_consumption/__pycache__/add_regime.cpython-38.pyc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "87e3b59bff9b3a8d56ff4c903103c9de1138dd37",
+      "size": 879,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/87e3b59bff9b3a8d56ff4c903103c9de1138dd37"
+    },
+    {
+      "path": "energy_consumption/__pycache__/airdensity.cpython-38.pyc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4d588e6bc7b6fc06b7314c3836e2ba1e1a81a55d",
+      "size": 3202,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/4d588e6bc7b6fc06b7314c3836e2ba1e1a81a55d"
+    },
+    {
+      "path": "energy_consumption/__pycache__/inducedVelocity.cpython-38.pyc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "69ddbb80bcbce3961c205517b9af9bd8754c085f",
+      "size": 1555,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/69ddbb80bcbce3961c205517b9af9bd8754c085f"
+    },
+    {
+      "path": "energy_consumption/__pycache__/inflightcomponents.cpython-38.pyc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a5162e2c845db6bf8949874a0653c14522721a0",
+      "size": 5777,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/5a5162e2c845db6bf8949874a0653c14522721a0"
+    },
+    {
+      "path": "energy_consumption/__pycache__/power_functions.cpython-38.pyc",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "38797f88f49be038b48b1a10faa99e867b3aa9cc",
+      "size": 6007,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/38797f88f49be038b48b1a10faa99e867b3aa9cc"
+    },
+    {
+      "path": "energy_consumption/add_regime.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1bf5335953ff3f34d283a0874bfe1d8a7896c969",
+      "size": 763,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/1bf5335953ff3f34d283a0874bfe1d8a7896c969"
+    },
+    {
+      "path": "energy_consumption/airdensity.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31ba52e985b6d6240f41a54387f0265c8aa6aeaf",
+      "size": 3156,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/31ba52e985b6d6240f41a54387f0265c8aa6aeaf"
+    },
+    {
+      "path": "energy_consumption/inducedVelocity.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "af8d76f20016a7af84ee634aff35e84e542b74f5",
+      "size": 1379,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/af8d76f20016a7af84ee634aff35e84e542b74f5"
+    },
+    {
+      "path": "energy_consumption/inflightcomponents.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c2524937d1fc29df68858c4fbc2baf56726ea678",
+      "size": 7261,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/c2524937d1fc29df68858c4fbc2baf56726ea678"
+    },
+    {
+      "path": "energy_consumption/model_one.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e5c5994a4dbe99f8d01569d7beaa11d745555a90",
+      "size": 4553,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/e5c5994a4dbe99f8d01569d7beaa11d745555a90"
+    },
+    {
+      "path": "energy_consumption/poll.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "67eb876e8d496cda72c2e4d4dd753de45f0c76bb",
+      "size": 458,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/67eb876e8d496cda72c2e4d4dd753de45f0c76bb"
+    },
+    {
+      "path": "energy_consumption/power_functions.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "14ab8125cc93f8be28ca178451a36ac52bfd8eb6",
+      "size": 7172,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/14ab8125cc93f8be28ca178451a36ac52bfd8eb6"
+    },
+    {
+      "path": "energy_consumption/readmed_energy_model.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59638f52b067a820191746853fbbcbe31574dbb5",
+      "size": 229,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/59638f52b067a820191746853fbbcbe31574dbb5"
+    },
+    {
+      "path": "energy_summary.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "151537a517c9bfec6b0de4a7b955726c68047711",
+      "size": 2826,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/151537a517c9bfec6b0de4a7b955726c68047711"
+    },
+    {
+      "path": "inducedVelocity.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "af8d76f20016a7af84ee634aff35e84e542b74f5",
+      "size": 1379,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/af8d76f20016a7af84ee634aff35e84e542b74f5"
+    },
+    {
+      "path": "inflightcomponents.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c71a5962c0b1adcf8a75fd12114ed2d454300365",
+      "size": 7335,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/c71a5962c0b1adcf8a75fd12114ed2d454300365"
+    },
+    {
+      "path": "main.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4e58128a04290d33a295db72096fb538e1ec6f27",
+      "size": 514,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/4e58128a04290d33a295db72096fb538e1ec6f27"
+    },
+    {
+      "path": "model_one.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a84ff544ed15a0030a4eb7b09e13767f2f7e97d2",
+      "size": 8291,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/a84ff544ed15a0030a4eb7b09e13767f2f7e97d2"
+    },
+    {
+      "path": "plot_deliveryDistances.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e9742b4f0d7657d33d9a1521950dab5c2bf92006",
+      "size": 8956,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/e9742b4f0d7657d33d9a1521950dab5c2bf92006"
+    },
+    {
+      "path": "plot_regression_lines.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "768b798a85b2e1766c98f00e9589f36b183bebbc",
+      "size": 2078,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/768b798a85b2e1766c98f00e9589f36b183bebbc"
+    },
+    {
+      "path": "power_functions.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d8b1d2e84a2de3eaf335a912b3dd2087bbe6c5a5",
+      "size": 6896,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/d8b1d2e84a2de3eaf335a912b3dd2087bbe6c5a5"
+    },
+    {
+      "path": "read_flights.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c2e87cfa5e405b4c2bf969c4c8eca455f3650ebb",
+      "size": 848,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/c2e87cfa5e405b4c2bf969c4c8eca455f3650ebb"
+    },
+    {
+      "path": "readme.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "59c5f9b5bc3e7c944d7ab35fe378ac9bca731d1e",
+      "size": 949,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/59c5f9b5bc3e7c944d7ab35fe378ac9bca731d1e"
+    },
+    {
+      "path": "takeoff_energy.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2002fc176bd73b0155f691164799ec353f70a46e",
+      "size": 1817,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/2002fc176bd73b0155f691164799ec353f70a46e"
+    },
+    {
+      "path": "vehicle_comparison.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d852384e30769d758cd8346590bcb427614352cf",
+      "size": 8413,
+      "url": "https://api.github.com/repos/thiago-a-rod/energy_consumption/git/blobs/d852384e30769d758cd8346590bcb427614352cf"
+    }
+  ],
+  "truncated": false
+}

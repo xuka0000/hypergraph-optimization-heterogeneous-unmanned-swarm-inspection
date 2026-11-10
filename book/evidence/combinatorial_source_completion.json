@@ -1,0 +1,17 @@
+{
+  "added": [
+    "scripts/extract_published_hypergraphs.py",
+    "scripts/verify_hypergraph_scip_demo.py",
+    "scripts/prepare_hypergraph_scip_demo.py",
+    "scripts/summarize_scip_gap05.py",
+    "scripts/run_scip_first_decision.py",
+    "scripts/run_hypergraph_comparison_batch.py",
+    "scripts/prepare_author_hgr_comparison.py",
+    "scripts/prepare_hypop_mis_comparison.py",
+    "scripts/prepare_hypergraph_scip_scaling.py",
+    "总结/03_实验数据/超图与SCIP组合任务对比/author_matching_with_output_accessor.h",
+    "总结/03_实验数据/超图与SCIP组合任务对比/AUTHOR_LICENSE.txt"
+  ],
+  "overwritten": [],
+  "scope": "Existing sources preserved; missing execution/adapter dependencies added, not a claim of full environment reproducibility."
+}

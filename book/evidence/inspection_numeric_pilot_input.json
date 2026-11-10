@@ -1,0 +1,6587 @@
+{
+  "task_id": "inspection_full_joint_execution",
+  "created_at": "2026-11-08T08:10:59.908464+00:00",
+  "scene_sha256": "d0c668d7cfeea2e7973e6ab387be38e499aea4e935a6530dfaf8900438b8520d",
+  "tasks": [
+    {
+      "id": "OSM_269894017_P01",
+      "tower_id": "OSM_269894017",
+      "paper_point_number": 1,
+      "role": "overview",
+      "longitude": 6.699114502711373,
+      "latitude": 51.004906218369705,
+      "easting_m": 338573.8098641136,
+      "northing_m": 5652890.209096758,
+      "altitude_m": 116.21379999999999,
+      "height_above_tower_ground_m": 34.2138,
+      "target": {
+        "longitude": 6.699195900000001,
+        "latitude": 51.005030899999994,
+        "easting_m": 338578.98427059065,
+        "northing_m": 5652901.735967218,
+        "altitude_m": 116.21379999999999,
+        "surface_id": "OSM_269894017_P01_surface",
+        "normal_world": [
+          -0.40952959850505327,
+          -0.9122968310524211,
+          0.0
+        ],
+        "tangent_basis": [
+          [
+            0.9122968310524211,
+            -0.40952959850505327,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338578.98427059065,
+            5652901.735967218,
+            116.21379999999999
+          ],
+          [
+            338578.75619638286,
+            5652901.838349618,
+            115.96379999999999
+          ],
+          [
+            338578.75619638286,
+            5652901.838349618,
+            116.46379999999999
+          ],
+          [
+            338579.21234479843,
+            5652901.633584818,
+            115.96379999999999
+          ],
+          [
+            338579.21234479843,
+            5652901.633584818,
+            116.46379999999999
+          ]
+        ],
+        "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+      },
+      "camera_azimuth_deg": 24.175288341868622,
+      "camera_elevation_deg": 0.0,
+      "modality": "RGB",
+      "effective_service_seconds": 20.011081481481483,
+      "time_evidence_kind": "calibrated_equal_residual",
+      "geometry_evidence_kind": "transferred_engineering_template",
+      "source_ids": [
+        "KPLC25",
+        "LI23",
+        "MODEL_REGIONAL",
+        "MODEL_TIMING",
+        "MODEL_VIEWS",
+        "TERRAIN_rommerskirchen"
+      ],
+      "observation_requirement": {
+        "camera_model": "joint_reference_profile.camera",
+        "nominal_viewpoint_role": "initialization_center_not_fixed_decision",
+        "viewpoint_ball_radius_m": 2.0,
+        "min_dwell_s": 20.011081481481483,
+        "weight": 1.0,
+        "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+        "planned_status": "required_not_completed"
+      }
+    },
+    {
+      "id": "OSM_269894017_P02",
+      "tower_id": "OSM_269894017",
+      "paper_point_number": 2,
+      "role": "left_groundwire",
+      "longitude": 6.698998284619296,
+      "latitude": 51.00508225606564,
+      "easting_m": 338566.26835562533,
+      "northing_m": 5652910.036493201,
+      "altitude_m": 116.21379999999999,
+      "height_above_tower_ground_m": 34.2138,
+      "target": {
+        "longitude": 6.699131651334342,
+        "latitude": 51.00504759692142,
+        "easting_m": 338575.0703779107,
+        "northing_m": 5652906.085269729,
+        "altitude_m": 116.21379999999999,
+        "surface_id": "OSM_269894017_P02_surface",
+        "normal_world": [
+          -0.9122968310442907,
+          0.40952959852316506,
+          0.0
+        ],
+        "tangent_basis": [
+          [
+            -0.40952959852316506,
+            -0.9122968310442907,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338575.0703779107,
+            5652906.085269729,
+            116.21379999999999
+          ],
+          [
+            338575.1727603103,
+            5652906.313343937,
+            115.96379999999999
+          ],
+          [
+            338575.1727603103,
+            5652906.313343937,
+            116.46379999999999
+          ],
+          [
+            338574.9679955111,
+            5652905.857195521,
+            115.96379999999999
+          ],
+          [
+            338574.9679955111,
+            5652905.857195521,
+            116.46379999999999
+          ]
+        ],
+        "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+      },
+      "camera_azimuth_deg": 114.17528834300612,
+      "camera_elevation_deg": 0.0,
+      "modality": "RGB",
+      "effective_service_seconds": 20.011081481481483,
+      "time_evidence_kind": "calibrated_equal_residual",
+      "geometry_evidence_kind": "transferred_engineering_template",
+      "source_ids": [
+        "KPLC25",
+        "LI23",
+        "MODEL_REGIONAL",
+        "MODEL_TIMING",
+        "MODEL_VIEWS",
+        "TERRAIN_rommerskirchen"
+      ],
+      "observation_requirement": {
+        "camera_model": "joint_reference_profile.camera",
+        "nominal_viewpoint_role": "initialization_center_not_fixed_decision",
+        "viewpoint_ball_radius_m": 2.0,
+        "min_dwell_s": 20.011081481481483,
+        "weight": 1.0,
+        "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+        "planned_status": "required_not_completed"
+      }
+    },
+    {
+      "id": "OSM_269894017_P03",
+      "tower_id": "OSM_269894017",
+      "paper_point_number": 3,
+      "role": "left_upper",
+      "longitude": 6.698998284619296,
+      "latitude": 51.00508225606564,
+      "easting_m": 338566.26835562533,
+      "northing_m": 5652910.036493201,
+      "altitude_m": 113.0134,
+      "height_above_tower_ground_m": 31.0134,
+      "target": {
+        "longitude": 6.699131651334342,
+        "latitude": 51.00504759692142,
+        "easting_m": 338575.0703779107,
+        "northing_m": 5652906.085269729,
+        "altitude_m": 113.0134,
+        "surface_id": "OSM_269894017_P03_surface",
+        "normal_world": [
+          -0.9122968310442907,
+          0.40952959852316506,
+          0.0
+        ],
+        "tangent_basis": [
+          [
+            -0.40952959852316506,
+            -0.9122968310442907,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338575.0703779107,
+            5652906.085269729,
+            113.0134
+          ],
+          [
+            338575.1727603103,
+            5652906.313343937,
+            112.7634
+          ],
+          [
+            338575.1727603103,
+            5652906.313343937,
+            113.2634
+          ],
+          [
+            338574.9679955111,
+            5652905.857195521,
+            112.7634
+          ],
+          [
+            338574.9679955111,
+            5652905.857195521,
+            113.2634
+          ]
+        ],
+        "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+      },
+      "camera_azimuth_deg": 114.17528834300612,
+      "camera_elevation_deg": 0.0,
+      "modality": "RGB",
+      "effective_service_seconds": 20.011081481481483,
+      "time_evidence_kind": "calibrated_equal_residual",
+      "geometry_evidence_kind": "transferred_engineering_template",
+      "source_ids": [
+        "KPLC25",
+        "LI23",
+        "MODEL_REGIONAL",
+        "MODEL_TIMING",
+        "MODEL_VIEWS",
+        "TERRAIN_rommerskirchen"
+      ],
+      "observation_requirement": {
+        "camera_model": "joint_reference_profile.camera",
+        "nominal_viewpoint_role": "initialization_center_not_fixed_decision",
+        "viewpoint_ball_radius_m": 2.0,
+        "min_dwell_s": 20.011081481481483,
+        "weight": 1.0,
+        "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+        "planned_status": "required_not_completed"
+      }
+    },
+    {
+      "id": "OSM_269894017_P04",
+      "tower_id": "OSM_269894017",
+      "paper_point_number": 4,
+      "role": "left_middle",
+      "longitude": 6.698998284619296,
+      "latitude": 51.00508225606564,
+      "easting_m": 338566.26835562533,
+      "northing_m": 5652910.036493201,
+      "altitude_m": 107.908,
+      "height_above_tower_ground_m": 25.908,
+      "target": {
+        "longitude": 6.699131651334342,
+        "latitude": 51.00504759692142,
+        "easting_m": 338575.0703779107,
+        "northing_m": 5652906.085269729,
+        "altitude_m": 107.908,
+        "surface_id": "OSM_269894017_P04_surface",
+        "normal_world": [
+          -0.9122968310442907,
+          0.40952959852316506,
+          0.0
+        ],
+        "tangent_basis": [
+          [
+            -0.40952959852316506,
+            -0.9122968310442907,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338575.0703779107,
+            5652906.085269729,
+            107.908
+          ],
+          [
+            338575.1727603103,
+            5652906.313343937,
+            107.658
+          ],
+          [
+            338575.1727603103,
+            5652906.313343937,
+            108.158
+          ],
+          [
+            338574.9679955111,
+            5652905.857195521,
+            107.658
+          ],
+          [
+            338574.9679955111,
+            5652905.857195521,
+            108.158
+          ]
+        ],
+        "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+      },
+      "camera_azimuth_deg": 114.17528834300612,
+      "camera_elevation_deg": 0.0,
+      "modality": "RGB",
+      "effective_service_seconds": 20.011081481481483,
+      "time_evidence_kind": "calibrated_equal_residual",
+      "geometry_evidence_kind": "transferred_engineering_template",
+      "source_ids": [
+        "KPLC25",
+        "LI23",
+        "MODEL_REGIONAL",
+        "MODEL_TIMING",
+        "MODEL_VIEWS",
+        "TERRAIN_rommerskirchen"
+      ],
+      "observation_requirement": {
+        "camera_model": "joint_reference_profile.camera",
+        "nominal_viewpoint_role": "initialization_center_not_fixed_decision",
+        "viewpoint_ball_radius_m": 2.0,
+        "min_dwell_s": 20.011081481481483,
+        "weight": 1.0,
+        "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+        "planned_status": "required_not_completed"
+      }
+    },
+    {
+      "id": "OSM_269894017_P05",
+      "tower_id": "OSM_269894017",
+      "paper_point_number": 5,
+      "role": "left_lower",
+      "longitude": 6.698998284619296,
+      "latitude": 51.00508225606564,
+      "easting_m": 338566.26835562533,
+      "northing_m": 5652910.036493201,
+      "altitude_m": 102.8026,
+      "height_above_tower_ground_m": 20.8026,
+      "target": {
+        "longitude": 6.699131651334342,
+        "latitude": 51.00504759692142,
+        "easting_m": 338575.0703779107,
+        "northing_m": 5652906.085269729,
+        "altitude_m": 102.8026,
+        "surface_id": "OSM_269894017_P05_surface",
+        "normal_world": [
+          -0.9122968310442907,
+          0.40952959852316506,
+          0.0
+        ],
+        "tangent_basis": [
+          [
+            -0.40952959852316506,
+            -0.9122968310442907,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338575.0703779107,
+            5652906.085269729,
+            102.8026
+          ],
+          [
+            338575.1727603103,
+            5652906.313343937,
+            102.5526
+          ],
+          [
+            338575.1727603103,
+            5652906.313343937,
+            103.0526
+          ],
+          [
+            338574.9679955111,
+            5652905.857195521,
+            102.5526
+          ],
+          [
+            338574.9679955111,
+            5652905.857195521,
+            103.0526
+          ]
+        ],
+        "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+      },
+      "camera_azimuth_deg": 114.17528834300612,
+      "camera_elevation_deg": 0.0,
+      "modality": "RGB",
+      "effective_service_seconds": 20.011081481481483,
+      "time_evidence_kind": "calibrated_equal_residual",
+      "geometry_evidence_kind": "transferred_engineering_template",
+      "source_ids": [
+        "KPLC25",
+        "LI23",
+        "MODEL_REGIONAL",
+        "MODEL_TIMING",
+        "MODEL_VIEWS",
+        "TERRAIN_rommerskirchen"
+      ],
+      "observation_requirement": {
+        "camera_model": "joint_reference_profile.camera",
+        "nominal_viewpoint_role": "initialization_center_not_fixed_decision",
+        "viewpoint_ball_radius_m": 2.0,
+        "min_dwell_s": 20.011081481481483,
+        "weight": 1.0,
+        "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+        "planned_status": "required_not_completed"
+      }
+    },
+    {
+      "id": "OSM_269894017_P08",
+      "tower_id": "OSM_269894017",
+      "paper_point_number": 8,
+      "role": "right_groundwire",
+      "longitude": 6.699393514953057,
+      "latitude": 51.00497954359385,
+      "easting_m": 338593.6372605569,
+      "northing_m": 5652897.750605246,
+      "altitude_m": 116.21379999999999,
+      "height_above_tower_ground_m": 34.2138,
+      "target": {
+        "longitude": 6.699260148620455,
+        "latitude": 51.005014203042585,
+        "easting_m": 338584.78506194585,
+        "northing_m": 5652901.724352847,
+        "altitude_m": 116.21379999999999,
+        "surface_id": "OSM_269894017_P08_surface",
+        "normal_world": [
+          0.9122968310442907,
+          -0.40952959852316506,
+          0.0
+        ],
+        "tangent_basis": [
+          [
+            0.40952959852316506,
+            0.9122968310442907,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338584.78506194585,
+            5652901.724352847,
+            116.21379999999999
+          ],
+          [
+            338584.68267954624,
+            5652901.496278639,
+            115.96379999999999
+          ],
+          [
+            338584.68267954624,
+            5652901.496278639,
+            116.46379999999999
+          ],
+          [
+            338584.88744434546,
+            5652901.952427055,
+            115.96379999999999
+          ],
+          [
+            338584.88744434546,
+            5652901.952427055,
+            116.46379999999999
+          ]
+        ],
+        "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+      },
+      "camera_azimuth_deg": 294.1752883430061,
+      "camera_elevation_deg": 0.0,
+      "modality": "RGB",
+      "effective_service_seconds": 20.011081481481483,
+      "time_evidence_kind": "calibrated_equal_residual",
+      "geometry_evidence_kind": "transferred_engineering_template",
+      "source_ids": [
+        "KPLC25",
+        "LI23",
+        "MODEL_REGIONAL",
+        "MODEL_TIMING",
+        "MODEL_VIEWS",
+        "TERRAIN_rommerskirchen"
+      ],
+      "observation_requirement": {
+        "camera_model": "joint_reference_profile.camera",
+        "nominal_viewpoint_role": "initialization_center_not_fixed_decision",
+        "viewpoint_ball_radius_m": 2.0,
+        "min_dwell_s": 20.011081481481483,
+        "weight": 1.0,
+        "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+        "planned_status": "required_not_completed"
+      }
+    },
+    {
+      "id": "OSM_269894017_P09",
+      "tower_id": "OSM_269894017",
+      "paper_point_number": 9,
+      "role": "right_upper",
+      "longitude": 6.699393514953057,
+      "latitude": 51.00497954359385,
+      "easting_m": 338593.6372605569,
+      "northing_m": 5652897.750605246,
+      "altitude_m": 113.0134,
+      "height_above_tower_ground_m": 31.0134,
+      "target": {
+        "longitude": 6.699260148620455,
+        "latitude": 51.005014203042585,
+        "easting_m": 338584.78506194585,
+        "northing_m": 5652901.724352847,
+        "altitude_m": 113.0134,
+        "surface_id": "OSM_269894017_P09_surface",
+        "normal_world": [
+          0.9122968310442907,
+          -0.40952959852316506,
+          0.0
+        ],
+        "tangent_basis": [
+          [
+            0.40952959852316506,
+            0.9122968310442907,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338584.78506194585,
+            5652901.724352847,
+            113.0134
+          ],
+          [
+            338584.68267954624,
+            5652901.496278639,
+            112.7634
+          ],
+          [
+            338584.68267954624,
+            5652901.496278639,
+            113.2634
+          ],
+          [
+            338584.88744434546,
+            5652901.952427055,
+            112.7634
+          ],
+          [
+            338584.88744434546,
+            5652901.952427055,
+            113.2634
+          ]
+        ],
+        "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+      },
+      "camera_azimuth_deg": 294.1752883430061,
+      "camera_elevation_deg": 0.0,
+      "modality": "RGB",
+      "effective_service_seconds": 20.011081481481483,
+      "time_evidence_kind": "calibrated_equal_residual",
+      "geometry_evidence_kind": "transferred_engineering_template",
+      "source_ids": [
+        "KPLC25",
+        "LI23",
+        "MODEL_REGIONAL",
+        "MODEL_TIMING",
+        "MODEL_VIEWS",
+        "TERRAIN_rommerskirchen"
+      ],
+      "observation_requirement": {
+        "camera_model": "joint_reference_profile.camera",
+        "nominal_viewpoint_role": "initialization_center_not_fixed_decision",
+        "viewpoint_ball_radius_m": 2.0,
+        "min_dwell_s": 20.011081481481483,
+        "weight": 1.0,
+        "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+        "planned_status": "required_not_completed"
+      }
+    },
+    {
+      "id": "OSM_269894017_P10",
+      "tower_id": "OSM_269894017",
+      "paper_point_number": 10,
+      "role": "right_middle",
+      "longitude": 6.699393514953057,
+      "latitude": 51.00497954359385,
+      "easting_m": 338593.6372605569,
+      "northing_m": 5652897.750605246,
+      "altitude_m": 107.908,
+      "height_above_tower_ground_m": 25.908,
+      "target": {
+        "longitude": 6.699260148620455,
+        "latitude": 51.005014203042585,
+        "easting_m": 338584.78506194585,
+        "northing_m": 5652901.724352847,
+        "altitude_m": 107.908,
+        "surface_id": "OSM_269894017_P10_surface",
+        "normal_world": [
+          0.9122968310442907,
+          -0.40952959852316506,
+          0.0
+        ],
+        "tangent_basis": [
+          [
+            0.40952959852316506,
+            0.9122968310442907,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338584.78506194585,
+            5652901.724352847,
+            107.908
+          ],
+          [
+            338584.68267954624,
+            5652901.496278639,
+            107.658
+          ],
+          [
+            338584.68267954624,
+            5652901.496278639,
+            108.158
+          ],
+          [
+            338584.88744434546,
+            5652901.952427055,
+            107.658
+          ],
+          [
+            338584.88744434546,
+            5652901.952427055,
+            108.158
+          ]
+        ],
+        "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+      },
+      "camera_azimuth_deg": 294.1752883430061,
+      "camera_elevation_deg": 0.0,
+      "modality": "RGB",
+      "effective_service_seconds": 20.011081481481483,
+      "time_evidence_kind": "calibrated_equal_residual",
+      "geometry_evidence_kind": "transferred_engineering_template",
+      "source_ids": [
+        "KPLC25",
+        "LI23",
+        "MODEL_REGIONAL",
+        "MODEL_TIMING",
+        "MODEL_VIEWS",
+        "TERRAIN_rommerskirchen"
+      ],
+      "observation_requirement": {
+        "camera_model": "joint_reference_profile.camera",
+        "nominal_viewpoint_role": "initialization_center_not_fixed_decision",
+        "viewpoint_ball_radius_m": 2.0,
+        "min_dwell_s": 20.011081481481483,
+        "weight": 1.0,
+        "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+        "planned_status": "required_not_completed"
+      }
+    },
+    {
+      "id": "OSM_269894017_P11",
+      "tower_id": "OSM_269894017",
+      "paper_point_number": 11,
+      "role": "right_lower",
+      "longitude": 6.699393514953057,
+      "latitude": 51.00497954359385,
+      "easting_m": 338593.6372605569,
+      "northing_m": 5652897.750605246,
+      "altitude_m": 102.8026,
+      "height_above_tower_ground_m": 20.8026,
+      "target": {
+        "longitude": 6.699260148620455,
+        "latitude": 51.005014203042585,
+        "easting_m": 338584.78506194585,
+        "northing_m": 5652901.724352847,
+        "altitude_m": 102.8026,
+        "surface_id": "OSM_269894017_P11_surface",
+        "normal_world": [
+          0.9122968310442907,
+          -0.40952959852316506,
+          0.0
+        ],
+        "tangent_basis": [
+          [
+            0.40952959852316506,
+            0.9122968310442907,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            1.0
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338584.78506194585,
+            5652901.724352847,
+            102.8026
+          ],
+          [
+            338584.68267954624,
+            5652901.496278639,
+            102.5526
+          ],
+          [
+            338584.68267954624,
+            5652901.496278639,
+            103.0526
+          ],
+          [
+            338584.88744434546,
+            5652901.952427055,
+            102.5526
+          ],
+          [
+            338584.88744434546,
+            5652901.952427055,
+            103.0526
+          ]
+        ],
+        "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+      },
+      "camera_azimuth_deg": 294.1752883430061,
+      "camera_elevation_deg": 0.0,
+      "modality": "RGB",
+      "effective_service_seconds": 20.011081481481483,
+      "time_evidence_kind": "calibrated_equal_residual",
+      "geometry_evidence_kind": "transferred_engineering_template",
+      "source_ids": [
+        "KPLC25",
+        "LI23",
+        "MODEL_REGIONAL",
+        "MODEL_TIMING",
+        "MODEL_VIEWS",
+        "TERRAIN_rommerskirchen"
+      ],
+      "observation_requirement": {
+        "camera_model": "joint_reference_profile.camera",
+        "nominal_viewpoint_role": "initialization_center_not_fixed_decision",
+        "viewpoint_ball_radius_m": 2.0,
+        "min_dwell_s": 20.011081481481483,
+        "weight": 1.0,
+        "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+        "planned_status": "required_not_completed"
+      }
+    }
+  ],
+  "tower_id": "OSM_269894017",
+  "points": [
+    [
+      338575.66214699054,
+      5652889.466327971,
+      116.08210841535646
+    ],
+    [
+      338567.33726222144,
+      5652909.684506759,
+      114.56045664980932
+    ],
+    [
+      338565.3961479184,
+      5652910.886619542,
+      111.42703972545382
+    ],
+    [
+      338565.9817906398,
+      5652910.570516735,
+      108.05478881891885
+    ],
+    [
+      338566.0905189685,
+      5652910.262903093,
+      104.78176969566734
+    ],
+    [
+      338592.4000356378,
+      5652898.408857393,
+      114.78692277651119
+    ],
+    [
+      338592.4585810391,
+      5652898.508177522,
+      112.74409253882189
+    ],
+    [
+      338592.55116708117,
+      5652898.180489073,
+      107.87078970002821
+    ],
+    [
+      338592.6439625818,
+      5652897.737120828,
+      104.53845059931483
+    ]
+  ],
+  "legs": [
+    {
+      "vehicle": 0,
+      "i": 0,
+      "j": 1,
+      "energy_Wh": 24.286012730918905,
+      "points": [
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          137.0
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          137.0
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ]
+      ],
+      "durations_s": [
+        45.75788784140775,
+        12.817016221619431,
+        49.0865010785421
+      ],
+      "duration_s": 107.66140514156928,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 0,
+      "j": 2,
+      "energy_Wh": 25.913691481927227,
+      "points": [
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          137.0
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          137.0
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ]
+      ],
+      "durations_s": [
+        45.75788784140775,
+        13.359007304969623,
+        55.94085060056976
+      ],
+      "duration_s": 115.05774574694713,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 0,
+      "j": 3,
+      "energy_Wh": 27.504827547154516,
+      "points": [
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          137.0
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          137.0
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ]
+      ],
+      "durations_s": [
+        45.75788784140775,
+        13.207745251745783,
+        63.317649458615016
+      ],
+      "duration_s": 122.28328255176855,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 0,
+      "j": 4,
+      "energy_Wh": 29.06108645372609,
+      "points": [
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          137.0
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          137.0
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ]
+      ],
+      "durations_s": [
+        45.75788784140775,
+        13.115006103327959,
+        70.4773787907277
+      ],
+      "duration_s": 129.35027273546342,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 0,
+      "j": 5,
+      "energy_Wh": 2.6401926119244297,
+      "points": [
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ]
+      ],
+      "durations_s": [
+        11.954468090386472
+      ],
+      "duration_s": 11.954468090386472,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 0,
+      "j": 6,
+      "energy_Wh": 2.663874257129421,
+      "points": [
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ]
+      ],
+      "durations_s": [
+        12.062159014122692
+      ],
+      "duration_s": 12.062159014122692,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 0,
+      "j": 7,
+      "energy_Wh": 3.9593215105697546,
+      "points": [
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ]
+      ],
+      "durations_s": [
+        17.962259689780538
+      ],
+      "duration_s": 17.962259689780538,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 0,
+      "j": 8,
+      "energy_Wh": 5.5621640682692295,
+      "points": [
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ]
+      ],
+      "durations_s": [
+        25.251751472591067
+      ],
+      "duration_s": 25.251751472591067,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 1,
+      "j": 0,
+      "energy_Wh": 24.399663415497216,
+      "points": [
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          137.0
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          137.0
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ]
+      ],
+      "durations_s": [
+        49.0865010785421,
+        12.817016221619431,
+        45.75788784140775
+      ],
+      "duration_s": 107.66140514156928,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 1,
+      "j": 2,
+      "energy_Wh": 1.5068068760538196,
+      "points": [
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ]
+      ],
+      "durations_s": [
+        6.8543495220276585
+      ],
+      "duration_s": 6.8543495220276585,
+      "collision_margin_m": 3.424679908338387,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 1,
+      "j": 3,
+      "energy_Wh": 3.130770551497492,
+      "points": [
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ]
+      ],
+      "durations_s": [
+        14.231148380072911
+      ],
+      "duration_s": 14.231148380072911,
+      "collision_margin_m": 3.424679908338387,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 1,
+      "j": 4,
+      "energy_Wh": 4.706922236654332,
+      "points": [
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ]
+      ],
+      "durations_s": [
+        21.3908777121856
+      ],
+      "duration_s": 21.3908777121856,
+      "collision_margin_m": 3.424679908338387,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 1,
+      "j": 5,
+      "energy_Wh": 25.36990888921684,
+      "points": [
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          137.0
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          137.0
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ]
+      ],
+      "durations_s": [
+        49.0865010785421,
+        14.36943029294928,
+        48.59110642638177
+      ],
+      "duration_s": 112.04703779787314,
+      "collision_margin_m": 3.3344894758455075,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 1,
+      "j": 6,
+      "energy_Wh": 26.35417963312268,
+      "points": [
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          137.0
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          137.0
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ]
+      ],
+      "durations_s": [
+        49.0865010785421,
+        14.372797119338246,
+        53.05979757132712
+      ],
+      "duration_s": 116.51909576920747,
+      "collision_margin_m": 3.3344894758455075,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 1,
+      "j": 7,
+      "energy_Wh": 28.715025021602425,
+      "points": [
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          137.0
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          137.0
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ]
+      ],
+      "durations_s": [
+        49.0865010785421,
+        14.42993043982037,
+        63.72014753118829
+      ],
+      "duration_s": 127.23657904955076,
+      "collision_margin_m": 3.3344894758455075,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 1,
+      "j": 8,
+      "energy_Wh": 30.337182946779695,
+      "points": [
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          137.0
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          137.0
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ]
+      ],
+      "durations_s": [
+        49.0865010785421,
+        14.500267952019323,
+        71.00963931399882
+      ],
+      "duration_s": 134.59640834456025,
+      "collision_margin_m": 3.3344894758455075,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 2,
+      "j": 0,
+      "energy_Wh": 26.120339369051514,
+      "points": [
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          137.0
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          137.0
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ]
+      ],
+      "durations_s": [
+        55.94085060056976,
+        13.359007304969623,
+        45.75788784140775
+      ],
+      "duration_s": 115.05774574694713,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 2,
+      "j": 1,
+      "energy_Wh": 1.5967281642681508,
+      "points": [
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ]
+      ],
+      "durations_s": [
+        6.8543495220276585
+      ],
+      "duration_s": 6.8543495220276585,
+      "collision_margin_m": 3.424679908338387,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 2,
+      "j": 3,
+      "energy_Wh": 1.6241771908277132,
+      "points": [
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ]
+      ],
+      "durations_s": [
+        7.376798858045253
+      ],
+      "duration_s": 7.376798858045253,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 2,
+      "j": 4,
+      "energy_Wh": 3.2003131438296935,
+      "points": [
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ]
+      ],
+      "durations_s": [
+        14.536528190157942
+      ],
+      "duration_s": 14.536528190157942,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 2,
+      "j": 5,
+      "energy_Wh": 27.10002421114194,
+      "points": [
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          137.0
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          137.0
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ]
+      ],
+      "durations_s": [
+        55.94085060056976,
+        14.949829536751572,
+        48.59110642638177
+      ],
+      "duration_s": 119.48178656370311,
+      "collision_margin_m": 6.7552216314598486,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 2,
+      "j": 6,
+      "energy_Wh": 28.084197030103464,
+      "points": [
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          137.0
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          137.0
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ]
+      ],
+      "durations_s": [
+        55.94085060056976,
+        14.95277086361796,
+        53.05979757132712
+      ],
+      "duration_s": 123.95341903551483,
+      "collision_margin_m": 6.768532213129047,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 2,
+      "j": 7,
+      "energy_Wh": 30.4447405618694,
+      "points": [
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          137.0
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          137.0
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ]
+      ],
+      "durations_s": [
+        55.94085060056976,
+        15.008346102118486,
+        63.72014753118829
+      ],
+      "duration_s": 134.66934423387653,
+      "collision_margin_m": 6.986352525059321,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 2,
+      "j": 8,
+      "energy_Wh": 32.06653665393274,
+      "points": [
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          137.0
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          137.0
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ]
+      ],
+      "durations_s": [
+        55.94085060056976,
+        15.076802955935113,
+        71.00963931399882
+      ],
+      "duration_s": 142.0272928705037,
+      "collision_margin_m": 7.255862508248521,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 3,
+      "j": 0,
+      "energy_Wh": 27.801213652683018,
+      "points": [
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          137.0
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          137.0
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ]
+      ],
+      "durations_s": [
+        63.317649458615016,
+        13.207745251745783,
+        45.75788784140775
+      ],
+      "duration_s": 122.28328255176855,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 3,
+      "j": 1,
+      "energy_Wh": 3.311275006420854,
+      "points": [
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ]
+      ],
+      "durations_s": [
+        14.231148380072911
+      ],
+      "duration_s": 14.231148380072911,
+      "collision_margin_m": 3.424679908338387,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 3,
+      "j": 2,
+      "energy_Wh": 1.7148245874020218,
+      "points": [
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ]
+      ],
+      "durations_s": [
+        7.376798858045253
+      ],
+      "duration_s": 7.376798858045253,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 3,
+      "j": 4,
+      "energy_Wh": 1.5761416092792788,
+      "points": [
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ]
+      ],
+      "durations_s": [
+        7.15972933211269
+      ],
+      "duration_s": 7.15972933211269,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 3,
+      "j": 5,
+      "energy_Wh": 28.77692618305645,
+      "points": [
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          137.0
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          137.0
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ]
+      ],
+      "durations_s": [
+        63.317649458615016,
+        14.781988600917758,
+        48.59110642638177
+      ],
+      "duration_s": 126.69074448591455,
+      "collision_margin_m": 6.7552216314598486,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 3,
+      "j": 6,
+      "energy_Wh": 29.761116667303686,
+      "points": [
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          137.0
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          137.0
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ]
+      ],
+      "durations_s": [
+        63.317649458615016,
+        14.785005970176108,
+        53.05979757132712
+      ],
+      "duration_s": 131.16245300011823,
+      "collision_margin_m": 6.768532213129047,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 3,
+      "j": 7,
+      "energy_Wh": 32.12176712589639,
+      "points": [
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          137.0
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          137.0
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ]
+      ],
+      "durations_s": [
+        63.317649458615016,
+        14.84111756040333,
+        63.72014753118829
+      ],
+      "duration_s": 141.87891455020662,
+      "collision_margin_m": 6.986352525059321,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 3,
+      "j": 8,
+      "energy_Wh": 33.74369500194513,
+      "points": [
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          137.0
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          137.0
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ]
+      ],
+      "durations_s": [
+        63.317649458615016,
+        14.910236887446755,
+        71.00963931399882
+      ],
+      "duration_s": 149.23752566006058,
+      "collision_margin_m": 7.255862508248521,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 4,
+      "j": 0,
+      "energy_Wh": 29.44534258950496,
+      "points": [
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          137.0
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          137.0
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ]
+      ],
+      "durations_s": [
+        70.4773787907277,
+        13.115006103327959,
+        45.75788784140775
+      ],
+      "duration_s": 129.35027273546342,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 4,
+      "j": 1,
+      "energy_Wh": 4.975844737061289,
+      "points": [
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ]
+      ],
+      "durations_s": [
+        21.3908777121856
+      ],
+      "duration_s": 21.3908777121856,
+      "collision_margin_m": 3.424679908338387,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 4,
+      "j": 2,
+      "energy_Wh": 3.379386081628646,
+      "points": [
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ]
+      ],
+      "durations_s": [
+        14.536528190157942
+      ],
+      "duration_s": 14.536528190157942,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 4,
+      "j": 3,
+      "energy_Wh": 1.6645666962243084,
+      "points": [
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ]
+      ],
+      "durations_s": [
+        7.15972933211269
+      ],
+      "duration_s": 7.15972933211269,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 4,
+      "j": 5,
+      "energy_Wh": 30.42887257977255,
+      "points": [
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          137.0
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          137.0
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ]
+      ],
+      "durations_s": [
+        70.4773787907277,
+        14.724327318069465,
+        48.59110642638177
+      ],
+      "duration_s": 133.79281253517894,
+      "collision_margin_m": 6.7552216314598486,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 4,
+      "j": 6,
+      "energy_Wh": 31.413119901007622,
+      "points": [
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          137.0
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          137.0
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ]
+      ],
+      "durations_s": [
+        70.4773787907277,
+        14.727593962323725,
+        53.05979757132712
+      ],
+      "duration_s": 138.26477032437853,
+      "collision_margin_m": 6.768532213129047,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 4,
+      "j": 7,
+      "energy_Wh": 33.77369281171245,
+      "points": [
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          137.0
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          137.0
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ]
+      ],
+      "durations_s": [
+        70.4773787907277,
+        14.783390877653323,
+        63.72014753118829
+      ],
+      "duration_s": 148.98091719956932,
+      "collision_margin_m": 6.986352525059321,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 4,
+      "j": 8,
+      "energy_Wh": 35.39550927443906,
+      "points": [
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          137.0
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          137.0
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ]
+      ],
+      "durations_s": [
+        70.4773787907277,
+        14.852053716366333,
+        71.00963931399882
+      ],
+      "duration_s": 156.33907182109283,
+      "collision_margin_m": 7.255862508248521,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 5,
+      "j": 0,
+      "energy_Wh": 2.6794188301181823,
+      "points": [
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ]
+      ],
+      "durations_s": [
+        11.954468090386472
+      ],
+      "duration_s": 11.954468090386472,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 5,
+      "j": 1,
+      "energy_Wh": 25.290908961905064,
+      "points": [
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          137.0
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          137.0
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ]
+      ],
+      "durations_s": [
+        48.59110642638177,
+        14.36943029294928,
+        49.0865010785421
+      ],
+      "duration_s": 112.04703779787314,
+      "collision_margin_m": 3.3344894758455066,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 5,
+      "j": 2,
+      "energy_Wh": 26.927406499858872,
+      "points": [
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          137.0
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          137.0
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ]
+      ],
+      "durations_s": [
+        48.59110642638177,
+        14.949829536751572,
+        55.94085060056976
+      ],
+      "duration_s": 119.48178656370311,
+      "collision_margin_m": 6.7552216314598486,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 5,
+      "j": 3,
+      "energy_Wh": 28.514761312329526,
+      "points": [
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          137.0
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          137.0
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ]
+      ],
+      "durations_s": [
+        48.59110642638177,
+        14.781988600917758,
+        63.317649458615016
+      ],
+      "duration_s": 126.69074448591454,
+      "collision_margin_m": 6.7552216314598486,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 5,
+      "j": 4,
+      "energy_Wh": 30.07881430819462,
+      "points": [
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          137.0
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          137.0
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ]
+      ],
+      "durations_s": [
+        48.59110642638177,
+        14.724327318069465,
+        70.4773787907277
+      ],
+      "duration_s": 133.79281253517894,
+      "collision_margin_m": 6.7552216314598486,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 5,
+      "j": 6,
+      "energy_Wh": 0.9835772028540358,
+      "points": [
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ]
+      ],
+      "durations_s": [
+        4.468691144945347
+      ],
+      "duration_s": 4.468691144945347,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 5,
+      "j": 7,
+      "energy_Wh": 3.330288226279902,
+      "points": [
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ]
+      ],
+      "durations_s": [
+        15.129041104806515
+      ],
+      "duration_s": 15.129041104806515,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 5,
+      "j": 8,
+      "energy_Wh": 4.93521353020453,
+      "points": [
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ]
+      ],
+      "durations_s": [
+        22.41853288761704
+      ],
+      "duration_s": 22.41853288761704,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 6,
+      "j": 0,
+      "energy_Wh": 2.7589386961454623,
+      "points": [
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ]
+      ],
+      "durations_s": [
+        12.062159014122692
+      ],
+      "duration_s": 12.062159014122692,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 6,
+      "j": 1,
+      "energy_Wh": 26.33106512449711,
+      "points": [
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          137.0
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          137.0
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ]
+      ],
+      "durations_s": [
+        53.05979757132712,
+        14.372797119338246,
+        49.0865010785421
+      ],
+      "duration_s": 116.51909576920747,
+      "collision_margin_m": 3.3344894758455066,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 6,
+      "j": 2,
+      "energy_Wh": 27.967469094130404,
+      "points": [
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          137.0
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          137.0
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ]
+      ],
+      "durations_s": [
+        53.05979757132712,
+        14.95277086361796,
+        55.94085060056976
+      ],
+      "duration_s": 123.95341903551484,
+      "collision_margin_m": 6.768532213129047,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 6,
+      "j": 3,
+      "energy_Wh": 29.55484034236221,
+      "points": [
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          137.0
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          137.0
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ]
+      ],
+      "durations_s": [
+        53.05979757132712,
+        14.785005970176108,
+        63.317649458615016
+      ],
+      "duration_s": 131.16245300011823,
+      "collision_margin_m": 6.768532213129047,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 6,
+      "j": 4,
+      "energy_Wh": 31.118949483339314,
+      "points": [
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          137.0
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          137.0
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ]
+      ],
+      "durations_s": [
+        53.05979757132712,
+        14.727593962323725,
+        70.4773787907277
+      ],
+      "duration_s": 138.26477032437856,
+      "collision_margin_m": 6.768532213129047,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 6,
+      "j": 5,
+      "energy_Wh": 1.039402109327705,
+      "points": [
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ]
+      ],
+      "durations_s": [
+        4.468691144945347
+      ],
+      "duration_s": 4.468691144945347,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 6,
+      "j": 7,
+      "energy_Wh": 2.346628880186575,
+      "points": [
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ]
+      ],
+      "durations_s": [
+        10.660349959861168
+      ],
+      "duration_s": 10.660349959861168,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 6,
+      "j": 8,
+      "energy_Wh": 3.9514900437811415,
+      "points": [
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ]
+      ],
+      "durations_s": [
+        17.949841742671694
+      ],
+      "duration_s": 17.949841742671694,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 7,
+      "j": 0,
+      "energy_Wh": 4.18575312626276,
+      "points": [
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ]
+      ],
+      "durations_s": [
+        17.962259689780538
+      ],
+      "duration_s": 17.962259689780538,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 7,
+      "j": 1,
+      "energy_Wh": 28.82339520639211,
+      "points": [
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          137.0
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          137.0
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ]
+      ],
+      "durations_s": [
+        63.72014753118829,
+        14.42993043982037,
+        49.0865010785421
+      ],
+      "duration_s": 127.23657904955076,
+      "collision_margin_m": 3.3344894758455066,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 7,
+      "j": 2,
+      "energy_Wh": 30.459463162568166,
+      "points": [
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          137.0
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          137.0
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ]
+      ],
+      "durations_s": [
+        63.72014753118829,
+        15.008346102118486,
+        55.94085060056976
+      ],
+      "duration_s": 134.66934423387653,
+      "collision_margin_m": 6.986352525059321,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 7,
+      "j": 3,
+      "energy_Wh": 32.04695098495778,
+      "points": [
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          137.0
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          137.0
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ]
+      ],
+      "durations_s": [
+        63.72014753118829,
+        14.84111756040333,
+        63.317649458615016
+      ],
+      "duration_s": 141.87891455020664,
+      "collision_margin_m": 6.986352525059321,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 7,
+      "j": 4,
+      "energy_Wh": 33.61098757862714,
+      "points": [
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          137.0
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          137.0
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ]
+      ],
+      "durations_s": [
+        63.72014753118829,
+        14.783390877653323,
+        70.4773787907277
+      ],
+      "duration_s": 148.98091719956932,
+      "collision_margin_m": 6.986352525059321,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 7,
+      "j": 5,
+      "energy_Wh": 3.518114995770623,
+      "points": [
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ]
+      ],
+      "durations_s": [
+        15.129041104806515
+      ],
+      "duration_s": 15.129041104806515,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 7,
+      "j": 6,
+      "energy_Wh": 2.4786341440110573,
+      "points": [
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ]
+      ],
+      "durations_s": [
+        10.660349959861168
+      ],
+      "duration_s": 10.660349959861168,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 7,
+      "j": 8,
+      "energy_Wh": 1.6048459021751582,
+      "points": [
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ]
+      ],
+      "durations_s": [
+        7.289491782810527
+      ],
+      "duration_s": 7.289491782810527,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 8,
+      "j": 0,
+      "energy_Wh": 5.878099760168497,
+      "points": [
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ]
+      ],
+      "durations_s": [
+        25.251751472591067
+      ],
+      "duration_s": 25.251751472591067,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 8,
+      "j": 1,
+      "energy_Wh": 30.5346427149292,
+      "points": [
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          137.0
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          137.0
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ]
+      ],
+      "durations_s": [
+        71.00963931399882,
+        14.500267952019323,
+        49.0865010785421
+      ],
+      "duration_s": 134.59640834456025,
+      "collision_margin_m": 3.3344894758455066,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 8,
+      "j": 2,
+      "energy_Wh": 32.17030484831093,
+      "points": [
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          137.0
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          137.0
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ]
+      ],
+      "durations_s": [
+        71.00963931399882,
+        15.076802955935113,
+        55.94085060056976
+      ],
+      "duration_s": 142.0272928705037,
+      "collision_margin_m": 7.255862508248521,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 8,
+      "j": 3,
+      "energy_Wh": 33.75793686372326,
+      "points": [
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          137.0
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          137.0
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ]
+      ],
+      "durations_s": [
+        71.00963931399882,
+        14.910236887446755,
+        63.317649458615016
+      ],
+      "duration_s": 149.23752566006058,
+      "collision_margin_m": 7.255862508248521,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 8,
+      "j": 4,
+      "energy_Wh": 35.32186856970618,
+      "points": [
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          137.0
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          137.0
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ]
+      ],
+      "durations_s": [
+        71.00963931399882,
+        14.852053716366333,
+        70.4773787907277
+      ],
+      "duration_s": 156.33907182109283,
+      "collision_margin_m": 7.255862508248521,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 8,
+      "j": 5,
+      "energy_Wh": 5.212804843992505,
+      "points": [
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ]
+      ],
+      "durations_s": [
+        22.41853288761704
+      ],
+      "duration_s": 22.41853288761704,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 8,
+      "j": 6,
+      "energy_Wh": 4.173261241563968,
+      "points": [
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ]
+      ],
+      "durations_s": [
+        17.949841742671694
+      ],
+      "duration_s": 17.949841742671694,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 8,
+      "j": 7,
+      "energy_Wh": 1.6946117992039322,
+      "points": [
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ]
+      ],
+      "durations_s": [
+        7.289491782810527
+      ],
+      "duration_s": 7.289491782810527,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 9,
+      "j": 0,
+      "energy_Wh": 76.47542945758887,
+      "points": [
+        [
+          338431.00163273,
+          5653263.218314463,
+          85.19513972489615
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          137.0
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          137.0
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ]
+      ],
+      "durations_s": [
+        113.32313185178967,
+        175.33721280658978,
+        45.75788784140775
+      ],
+      "duration_s": 334.4182324997872,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 9,
+      "j": 1,
+      "energy_Wh": 75.02456236567818,
+      "points": [
+        [
+          338431.00163273,
+          5653263.218314463,
+          85.19513972489615
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          137.0
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          137.0
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ]
+      ],
+      "durations_s": [
+        113.32313185178967,
+        165.77356892991526,
+        49.0865010785421
+      ],
+      "duration_s": 328.18320186024704,
+      "collision_margin_m": 3.3344894758455066,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 9,
+      "j": 2,
+      "energy_Wh": 76.35164215963631,
+      "points": [
+        [
+          338431.00163273,
+          5653263.218314463,
+          85.19513972489615
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          137.0
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          137.0
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ]
+      ],
+      "durations_s": [
+        113.32313185178967,
+        164.97840695581294,
+        55.94085060056976
+      ],
+      "duration_s": 334.24238940817236,
+      "collision_margin_m": 9.303390589260163,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 9,
+      "j": 3,
+      "energy_Wh": 78.0263885699834,
+      "points": [
+        [
+          338431.00163273,
+          5653263.218314463,
+          85.19513972489615
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          137.0
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          137.0
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ]
+      ],
+      "durations_s": [
+        113.32313185178967,
+        165.19904544067828,
+        63.317649458615016
+      ],
+      "duration_s": 341.83982675108297,
+      "collision_margin_m": 8.63502022103274,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 9,
+      "j": 4,
+      "energy_Wh": 79.63557061089881,
+      "points": [
+        [
+          338431.00163273,
+          5653263.218314463,
+          85.19513972489615
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          137.0
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          137.0
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ]
+      ],
+      "durations_s": [
+        113.32313185178967,
+        165.34173832199616,
+        70.4773787907277
+      ],
+      "duration_s": 349.14224896451356,
+      "collision_margin_m": 8.407714923607168,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 9,
+      "j": 5,
+      "energy_Wh": 76.91473841795242,
+      "points": [
+        [
+          338431.00163273,
+          5653263.218314463,
+          85.19513972489615
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          137.0
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          137.0
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ]
+      ],
+      "durations_s": [
+        113.32313185178967,
+        174.52652284357447,
+        48.59110642638177
+      ],
+      "duration_s": 336.44076112174594,
+      "collision_margin_m": 6.7552216314598486,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 9,
+      "j": 6,
+      "energy_Wh": 77.89169916662475,
+      "points": [
+        [
+          338431.00163273,
+          5653263.218314463,
+          85.19513972489615
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          137.0
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          137.0
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ]
+      ],
+      "durations_s": [
+        113.32313185178967,
+        174.49715341873906,
+        53.05979757132712
+      ],
+      "duration_s": 340.8800828418559,
+      "collision_margin_m": 6.768532213129047,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 9,
+      "j": 7,
+      "energy_Wh": 80.2724930447253,
+      "points": [
+        [
+          338431.00163273,
+          5653263.218314463,
+          85.19513972489615
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          137.0
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          137.0
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ]
+      ],
+      "durations_s": [
+        113.32313185178967,
+        174.64464405813337,
+        63.72014753118829
+      ],
+      "duration_s": 351.6879234411113,
+      "collision_margin_m": 6.986352525059321,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 9,
+      "j": 8,
+      "energy_Wh": 81.92192888857748,
+      "points": [
+        [
+          338431.00163273,
+          5653263.218314463,
+          85.19513972489615
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          137.0
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          137.0
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ]
+      ],
+      "durations_s": [
+        113.32313185178967,
+        174.8384582461092,
+        71.00963931399882
+      ],
+      "duration_s": 359.1712294118977,
+      "collision_margin_m": 7.255862508248521,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 0,
+      "j": 10,
+      "energy_Wh": 74.11097734359255,
+      "points": [
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          137.0
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          137.0
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          85.19513972489615
+        ]
+      ],
+      "durations_s": [
+        45.75788784140775,
+        175.33721280658978,
+        113.32313185178967
+      ],
+      "duration_s": 334.4182324997872,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 1,
+      "j": 10,
+      "energy_Wh": 72.785048523005,
+      "points": [
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          137.0
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          137.0
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          85.19513972489615
+        ]
+      ],
+      "durations_s": [
+        49.0865010785421,
+        165.77356892991526,
+        113.32313185178967
+      ],
+      "duration_s": 328.183201860247,
+      "collision_margin_m": 3.3344894758455075,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 2,
+      "j": 10,
+      "energy_Wh": 74.20463542557664,
+      "points": [
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          137.0
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          137.0
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          85.19513972489615
+        ]
+      ],
+      "durations_s": [
+        55.94085060056976,
+        164.97840695581294,
+        113.32313185178967
+      ],
+      "duration_s": 334.24238940817236,
+      "collision_margin_m": 9.303390589260163,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 3,
+      "j": 10,
+      "energy_Wh": 75.96929114839709,
+      "points": [
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          137.0
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          137.0
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          85.19513972489615
+        ]
+      ],
+      "durations_s": [
+        63.317649458615016,
+        165.19904544067828,
+        113.32313185178967
+      ],
+      "duration_s": 341.83982675108297,
+      "collision_margin_m": 8.63502022103274,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 4,
+      "j": 10,
+      "energy_Wh": 77.66641896569256,
+      "points": [
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          137.0
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          137.0
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          85.19513972489615
+        ]
+      ],
+      "durations_s": [
+        70.4773787907277,
+        165.34173832199616,
+        113.32313185178967
+      ],
+      "duration_s": 349.14224896451356,
+      "collision_margin_m": 8.407714923607168,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 5,
+      "j": 10,
+      "energy_Wh": 74.59177410788655,
+      "points": [
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          137.0
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          137.0
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          85.19513972489615
+        ]
+      ],
+      "durations_s": [
+        48.59110642638177,
+        174.52652284357447,
+        113.32313185178967
+      ],
+      "duration_s": 336.44076112174594,
+      "collision_margin_m": 6.7552216314598486,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 6,
+      "j": 10,
+      "energy_Wh": 75.62466167545855,
+      "points": [
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          137.0
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          137.0
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          85.19513972489615
+        ]
+      ],
+      "durations_s": [
+        53.05979757132712,
+        174.49715341873906,
+        113.32313185178967
+      ],
+      "duration_s": 340.8800828418558,
+      "collision_margin_m": 6.768532213129047,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 7,
+      "j": 10,
+      "energy_Wh": 78.1369633817491,
+      "points": [
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          137.0
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          137.0
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          85.19513972489615
+        ]
+      ],
+      "durations_s": [
+        63.72014753118829,
+        174.64464405813337,
+        113.32313185178967
+      ],
+      "duration_s": 351.68792344111137,
+      "collision_margin_m": 6.986352525059321,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 0,
+      "i": 8,
+      "j": 10,
+      "energy_Wh": 79.87550967845658,
+      "points": [
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          137.0
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          137.0
+        ],
+        [
+          338431.00163273,
+          5653263.218314463,
+          85.19513972489615
+        ]
+      ],
+      "durations_s": [
+        71.00963931399882,
+        174.8384582461092,
+        113.32313185178967
+      ],
+      "duration_s": 359.1712294118977,
+      "collision_margin_m": 7.255862508248521,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 0,
+      "j": 1,
+      "energy_Wh": 24.286012730918905,
+      "points": [
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          137.0
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          137.0
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ]
+      ],
+      "durations_s": [
+        45.75788784140775,
+        12.817016221619431,
+        49.0865010785421
+      ],
+      "duration_s": 107.66140514156928,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 0,
+      "j": 2,
+      "energy_Wh": 25.913691481927227,
+      "points": [
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          137.0
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          137.0
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ]
+      ],
+      "durations_s": [
+        45.75788784140775,
+        13.359007304969623,
+        55.94085060056976
+      ],
+      "duration_s": 115.05774574694713,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 0,
+      "j": 3,
+      "energy_Wh": 27.504827547154516,
+      "points": [
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          137.0
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          137.0
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ]
+      ],
+      "durations_s": [
+        45.75788784140775,
+        13.207745251745783,
+        63.317649458615016
+      ],
+      "duration_s": 122.28328255176855,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 0,
+      "j": 4,
+      "energy_Wh": 29.06108645372609,
+      "points": [
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          137.0
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          137.0
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ]
+      ],
+      "durations_s": [
+        45.75788784140775,
+        13.115006103327959,
+        70.4773787907277
+      ],
+      "duration_s": 129.35027273546342,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 0,
+      "j": 5,
+      "energy_Wh": 2.6401926119244297,
+      "points": [
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ]
+      ],
+      "durations_s": [
+        11.954468090386472
+      ],
+      "duration_s": 11.954468090386472,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 0,
+      "j": 6,
+      "energy_Wh": 2.663874257129421,
+      "points": [
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ]
+      ],
+      "durations_s": [
+        12.062159014122692
+      ],
+      "duration_s": 12.062159014122692,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 0,
+      "j": 7,
+      "energy_Wh": 3.9593215105697546,
+      "points": [
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ]
+      ],
+      "durations_s": [
+        17.962259689780538
+      ],
+      "duration_s": 17.962259689780538,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 0,
+      "j": 8,
+      "energy_Wh": 5.5621640682692295,
+      "points": [
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ]
+      ],
+      "durations_s": [
+        25.251751472591067
+      ],
+      "duration_s": 25.251751472591067,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 1,
+      "j": 0,
+      "energy_Wh": 24.399663415497216,
+      "points": [
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          137.0
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          137.0
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ]
+      ],
+      "durations_s": [
+        49.0865010785421,
+        12.817016221619431,
+        45.75788784140775
+      ],
+      "duration_s": 107.66140514156928,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 1,
+      "j": 2,
+      "energy_Wh": 1.5068068760538196,
+      "points": [
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ]
+      ],
+      "durations_s": [
+        6.8543495220276585
+      ],
+      "duration_s": 6.8543495220276585,
+      "collision_margin_m": 3.424679908338387,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 1,
+      "j": 3,
+      "energy_Wh": 3.130770551497492,
+      "points": [
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ]
+      ],
+      "durations_s": [
+        14.231148380072911
+      ],
+      "duration_s": 14.231148380072911,
+      "collision_margin_m": 3.424679908338387,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 1,
+      "j": 4,
+      "energy_Wh": 4.706922236654332,
+      "points": [
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ]
+      ],
+      "durations_s": [
+        21.3908777121856
+      ],
+      "duration_s": 21.3908777121856,
+      "collision_margin_m": 3.424679908338387,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 1,
+      "j": 5,
+      "energy_Wh": 25.36990888921684,
+      "points": [
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          137.0
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          137.0
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ]
+      ],
+      "durations_s": [
+        49.0865010785421,
+        14.36943029294928,
+        48.59110642638177
+      ],
+      "duration_s": 112.04703779787314,
+      "collision_margin_m": 3.3344894758455075,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 1,
+      "j": 6,
+      "energy_Wh": 26.35417963312268,
+      "points": [
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          137.0
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          137.0
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ]
+      ],
+      "durations_s": [
+        49.0865010785421,
+        14.372797119338246,
+        53.05979757132712
+      ],
+      "duration_s": 116.51909576920747,
+      "collision_margin_m": 3.3344894758455075,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 1,
+      "j": 7,
+      "energy_Wh": 28.715025021602425,
+      "points": [
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          137.0
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          137.0
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ]
+      ],
+      "durations_s": [
+        49.0865010785421,
+        14.42993043982037,
+        63.72014753118829
+      ],
+      "duration_s": 127.23657904955076,
+      "collision_margin_m": 3.3344894758455075,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 1,
+      "j": 8,
+      "energy_Wh": 30.337182946779695,
+      "points": [
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          137.0
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          137.0
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ]
+      ],
+      "durations_s": [
+        49.0865010785421,
+        14.500267952019323,
+        71.00963931399882
+      ],
+      "duration_s": 134.59640834456025,
+      "collision_margin_m": 3.3344894758455075,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 2,
+      "j": 0,
+      "energy_Wh": 26.120339369051514,
+      "points": [
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          137.0
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          137.0
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ]
+      ],
+      "durations_s": [
+        55.94085060056976,
+        13.359007304969623,
+        45.75788784140775
+      ],
+      "duration_s": 115.05774574694713,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 2,
+      "j": 1,
+      "energy_Wh": 1.5967281642681508,
+      "points": [
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ]
+      ],
+      "durations_s": [
+        6.8543495220276585
+      ],
+      "duration_s": 6.8543495220276585,
+      "collision_margin_m": 3.424679908338387,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 2,
+      "j": 3,
+      "energy_Wh": 1.6241771908277132,
+      "points": [
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ]
+      ],
+      "durations_s": [
+        7.376798858045253
+      ],
+      "duration_s": 7.376798858045253,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 2,
+      "j": 4,
+      "energy_Wh": 3.2003131438296935,
+      "points": [
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ]
+      ],
+      "durations_s": [
+        14.536528190157942
+      ],
+      "duration_s": 14.536528190157942,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 2,
+      "j": 5,
+      "energy_Wh": 27.10002421114194,
+      "points": [
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          137.0
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          137.0
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ]
+      ],
+      "durations_s": [
+        55.94085060056976,
+        14.949829536751572,
+        48.59110642638177
+      ],
+      "duration_s": 119.48178656370311,
+      "collision_margin_m": 6.7552216314598486,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 2,
+      "j": 6,
+      "energy_Wh": 28.084197030103464,
+      "points": [
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          137.0
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          137.0
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ]
+      ],
+      "durations_s": [
+        55.94085060056976,
+        14.95277086361796,
+        53.05979757132712
+      ],
+      "duration_s": 123.95341903551483,
+      "collision_margin_m": 6.768532213129047,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 2,
+      "j": 7,
+      "energy_Wh": 30.4447405618694,
+      "points": [
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          137.0
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          137.0
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ]
+      ],
+      "durations_s": [
+        55.94085060056976,
+        15.008346102118486,
+        63.72014753118829
+      ],
+      "duration_s": 134.66934423387653,
+      "collision_margin_m": 6.986352525059321,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 2,
+      "j": 8,
+      "energy_Wh": 32.06653665393274,
+      "points": [
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          137.0
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          137.0
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ]
+      ],
+      "durations_s": [
+        55.94085060056976,
+        15.076802955935113,
+        71.00963931399882
+      ],
+      "duration_s": 142.0272928705037,
+      "collision_margin_m": 7.255862508248521,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 3,
+      "j": 0,
+      "energy_Wh": 27.801213652683018,
+      "points": [
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          137.0
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          137.0
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ]
+      ],
+      "durations_s": [
+        63.317649458615016,
+        13.207745251745783,
+        45.75788784140775
+      ],
+      "duration_s": 122.28328255176855,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 3,
+      "j": 1,
+      "energy_Wh": 3.311275006420854,
+      "points": [
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ]
+      ],
+      "durations_s": [
+        14.231148380072911
+      ],
+      "duration_s": 14.231148380072911,
+      "collision_margin_m": 3.424679908338387,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 3,
+      "j": 2,
+      "energy_Wh": 1.7148245874020218,
+      "points": [
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ]
+      ],
+      "durations_s": [
+        7.376798858045253
+      ],
+      "duration_s": 7.376798858045253,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 3,
+      "j": 4,
+      "energy_Wh": 1.5761416092792788,
+      "points": [
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ]
+      ],
+      "durations_s": [
+        7.15972933211269
+      ],
+      "duration_s": 7.15972933211269,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 3,
+      "j": 5,
+      "energy_Wh": 28.77692618305645,
+      "points": [
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          137.0
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          137.0
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ]
+      ],
+      "durations_s": [
+        63.317649458615016,
+        14.781988600917758,
+        48.59110642638177
+      ],
+      "duration_s": 126.69074448591455,
+      "collision_margin_m": 6.7552216314598486,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 3,
+      "j": 6,
+      "energy_Wh": 29.761116667303686,
+      "points": [
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          137.0
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          137.0
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ]
+      ],
+      "durations_s": [
+        63.317649458615016,
+        14.785005970176108,
+        53.05979757132712
+      ],
+      "duration_s": 131.16245300011823,
+      "collision_margin_m": 6.768532213129047,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 3,
+      "j": 7,
+      "energy_Wh": 32.12176712589639,
+      "points": [
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          137.0
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          137.0
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ]
+      ],
+      "durations_s": [
+        63.317649458615016,
+        14.84111756040333,
+        63.72014753118829
+      ],
+      "duration_s": 141.87891455020662,
+      "collision_margin_m": 6.986352525059321,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 3,
+      "j": 8,
+      "energy_Wh": 33.74369500194513,
+      "points": [
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          137.0
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          137.0
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ]
+      ],
+      "durations_s": [
+        63.317649458615016,
+        14.910236887446755,
+        71.00963931399882
+      ],
+      "duration_s": 149.23752566006058,
+      "collision_margin_m": 7.255862508248521,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 4,
+      "j": 0,
+      "energy_Wh": 29.44534258950496,
+      "points": [
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          137.0
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          137.0
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ]
+      ],
+      "durations_s": [
+        70.4773787907277,
+        13.115006103327959,
+        45.75788784140775
+      ],
+      "duration_s": 129.35027273546342,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 4,
+      "j": 1,
+      "energy_Wh": 4.975844737061289,
+      "points": [
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ]
+      ],
+      "durations_s": [
+        21.3908777121856
+      ],
+      "duration_s": 21.3908777121856,
+      "collision_margin_m": 3.424679908338387,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 4,
+      "j": 2,
+      "energy_Wh": 3.379386081628646,
+      "points": [
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ]
+      ],
+      "durations_s": [
+        14.536528190157942
+      ],
+      "duration_s": 14.536528190157942,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 4,
+      "j": 3,
+      "energy_Wh": 1.6645666962243084,
+      "points": [
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ]
+      ],
+      "durations_s": [
+        7.15972933211269
+      ],
+      "duration_s": 7.15972933211269,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 4,
+      "j": 5,
+      "energy_Wh": 30.42887257977255,
+      "points": [
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          137.0
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          137.0
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ]
+      ],
+      "durations_s": [
+        70.4773787907277,
+        14.724327318069465,
+        48.59110642638177
+      ],
+      "duration_s": 133.79281253517894,
+      "collision_margin_m": 6.7552216314598486,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 4,
+      "j": 6,
+      "energy_Wh": 31.413119901007622,
+      "points": [
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          137.0
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          137.0
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ]
+      ],
+      "durations_s": [
+        70.4773787907277,
+        14.727593962323725,
+        53.05979757132712
+      ],
+      "duration_s": 138.26477032437853,
+      "collision_margin_m": 6.768532213129047,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 4,
+      "j": 7,
+      "energy_Wh": 33.77369281171245,
+      "points": [
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          137.0
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          137.0
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ]
+      ],
+      "durations_s": [
+        70.4773787907277,
+        14.783390877653323,
+        63.72014753118829
+      ],
+      "duration_s": 148.98091719956932,
+      "collision_margin_m": 6.986352525059321,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 4,
+      "j": 8,
+      "energy_Wh": 35.39550927443906,
+      "points": [
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          137.0
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          137.0
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ]
+      ],
+      "durations_s": [
+        70.4773787907277,
+        14.852053716366333,
+        71.00963931399882
+      ],
+      "duration_s": 156.33907182109283,
+      "collision_margin_m": 7.255862508248521,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 5,
+      "j": 0,
+      "energy_Wh": 2.6794188301181823,
+      "points": [
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ]
+      ],
+      "durations_s": [
+        11.954468090386472
+      ],
+      "duration_s": 11.954468090386472,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 5,
+      "j": 1,
+      "energy_Wh": 25.290908961905064,
+      "points": [
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          137.0
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          137.0
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ]
+      ],
+      "durations_s": [
+        48.59110642638177,
+        14.36943029294928,
+        49.0865010785421
+      ],
+      "duration_s": 112.04703779787314,
+      "collision_margin_m": 3.3344894758455066,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 5,
+      "j": 2,
+      "energy_Wh": 26.927406499858872,
+      "points": [
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          137.0
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          137.0
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ]
+      ],
+      "durations_s": [
+        48.59110642638177,
+        14.949829536751572,
+        55.94085060056976
+      ],
+      "duration_s": 119.48178656370311,
+      "collision_margin_m": 6.7552216314598486,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 5,
+      "j": 3,
+      "energy_Wh": 28.514761312329526,
+      "points": [
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          137.0
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          137.0
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ]
+      ],
+      "durations_s": [
+        48.59110642638177,
+        14.781988600917758,
+        63.317649458615016
+      ],
+      "duration_s": 126.69074448591454,
+      "collision_margin_m": 6.7552216314598486,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 5,
+      "j": 4,
+      "energy_Wh": 30.07881430819462,
+      "points": [
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          137.0
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          137.0
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ]
+      ],
+      "durations_s": [
+        48.59110642638177,
+        14.724327318069465,
+        70.4773787907277
+      ],
+      "duration_s": 133.79281253517894,
+      "collision_margin_m": 6.7552216314598486,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 5,
+      "j": 6,
+      "energy_Wh": 0.9835772028540358,
+      "points": [
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ]
+      ],
+      "durations_s": [
+        4.468691144945347
+      ],
+      "duration_s": 4.468691144945347,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 5,
+      "j": 7,
+      "energy_Wh": 3.330288226279902,
+      "points": [
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ]
+      ],
+      "durations_s": [
+        15.129041104806515
+      ],
+      "duration_s": 15.129041104806515,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 5,
+      "j": 8,
+      "energy_Wh": 4.93521353020453,
+      "points": [
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ]
+      ],
+      "durations_s": [
+        22.41853288761704
+      ],
+      "duration_s": 22.41853288761704,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 6,
+      "j": 0,
+      "energy_Wh": 2.7589386961454623,
+      "points": [
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ]
+      ],
+      "durations_s": [
+        12.062159014122692
+      ],
+      "duration_s": 12.062159014122692,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 6,
+      "j": 1,
+      "energy_Wh": 26.33106512449711,
+      "points": [
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          137.0
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          137.0
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ]
+      ],
+      "durations_s": [
+        53.05979757132712,
+        14.372797119338246,
+        49.0865010785421
+      ],
+      "duration_s": 116.51909576920747,
+      "collision_margin_m": 3.3344894758455066,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 6,
+      "j": 2,
+      "energy_Wh": 27.967469094130404,
+      "points": [
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          137.0
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          137.0
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ]
+      ],
+      "durations_s": [
+        53.05979757132712,
+        14.95277086361796,
+        55.94085060056976
+      ],
+      "duration_s": 123.95341903551484,
+      "collision_margin_m": 6.768532213129047,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 6,
+      "j": 3,
+      "energy_Wh": 29.55484034236221,
+      "points": [
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          137.0
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          137.0
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ]
+      ],
+      "durations_s": [
+        53.05979757132712,
+        14.785005970176108,
+        63.317649458615016
+      ],
+      "duration_s": 131.16245300011823,
+      "collision_margin_m": 6.768532213129047,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 6,
+      "j": 4,
+      "energy_Wh": 31.118949483339314,
+      "points": [
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          137.0
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          137.0
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ]
+      ],
+      "durations_s": [
+        53.05979757132712,
+        14.727593962323725,
+        70.4773787907277
+      ],
+      "duration_s": 138.26477032437856,
+      "collision_margin_m": 6.768532213129047,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 6,
+      "j": 5,
+      "energy_Wh": 1.039402109327705,
+      "points": [
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ]
+      ],
+      "durations_s": [
+        4.468691144945347
+      ],
+      "duration_s": 4.468691144945347,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 6,
+      "j": 7,
+      "energy_Wh": 2.346628880186575,
+      "points": [
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ]
+      ],
+      "durations_s": [
+        10.660349959861168
+      ],
+      "duration_s": 10.660349959861168,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 6,
+      "j": 8,
+      "energy_Wh": 3.9514900437811415,
+      "points": [
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ]
+      ],
+      "durations_s": [
+        17.949841742671694
+      ],
+      "duration_s": 17.949841742671694,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 7,
+      "j": 0,
+      "energy_Wh": 4.18575312626276,
+      "points": [
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ]
+      ],
+      "durations_s": [
+        17.962259689780538
+      ],
+      "duration_s": 17.962259689780538,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 7,
+      "j": 1,
+      "energy_Wh": 28.82339520639211,
+      "points": [
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          137.0
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          137.0
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ]
+      ],
+      "durations_s": [
+        63.72014753118829,
+        14.42993043982037,
+        49.0865010785421
+      ],
+      "duration_s": 127.23657904955076,
+      "collision_margin_m": 3.3344894758455066,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 7,
+      "j": 2,
+      "energy_Wh": 30.459463162568166,
+      "points": [
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          137.0
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          137.0
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ]
+      ],
+      "durations_s": [
+        63.72014753118829,
+        15.008346102118486,
+        55.94085060056976
+      ],
+      "duration_s": 134.66934423387653,
+      "collision_margin_m": 6.986352525059321,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 7,
+      "j": 3,
+      "energy_Wh": 32.04695098495778,
+      "points": [
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          137.0
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          137.0
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ]
+      ],
+      "durations_s": [
+        63.72014753118829,
+        14.84111756040333,
+        63.317649458615016
+      ],
+      "duration_s": 141.87891455020664,
+      "collision_margin_m": 6.986352525059321,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 7,
+      "j": 4,
+      "energy_Wh": 33.61098757862714,
+      "points": [
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          137.0
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          137.0
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ]
+      ],
+      "durations_s": [
+        63.72014753118829,
+        14.783390877653323,
+        70.4773787907277
+      ],
+      "duration_s": 148.98091719956932,
+      "collision_margin_m": 6.986352525059321,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 7,
+      "j": 5,
+      "energy_Wh": 3.518114995770623,
+      "points": [
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ]
+      ],
+      "durations_s": [
+        15.129041104806515
+      ],
+      "duration_s": 15.129041104806515,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 7,
+      "j": 6,
+      "energy_Wh": 2.4786341440110573,
+      "points": [
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ]
+      ],
+      "durations_s": [
+        10.660349959861168
+      ],
+      "duration_s": 10.660349959861168,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 7,
+      "j": 8,
+      "energy_Wh": 1.6048459021751582,
+      "points": [
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ]
+      ],
+      "durations_s": [
+        7.289491782810527
+      ],
+      "duration_s": 7.289491782810527,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 8,
+      "j": 0,
+      "energy_Wh": 5.878099760168497,
+      "points": [
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ]
+      ],
+      "durations_s": [
+        25.251751472591067
+      ],
+      "duration_s": 25.251751472591067,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 8,
+      "j": 1,
+      "energy_Wh": 30.5346427149292,
+      "points": [
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          137.0
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          137.0
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ]
+      ],
+      "durations_s": [
+        71.00963931399882,
+        14.500267952019323,
+        49.0865010785421
+      ],
+      "duration_s": 134.59640834456025,
+      "collision_margin_m": 3.3344894758455066,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 8,
+      "j": 2,
+      "energy_Wh": 32.17030484831093,
+      "points": [
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          137.0
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          137.0
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ]
+      ],
+      "durations_s": [
+        71.00963931399882,
+        15.076802955935113,
+        55.94085060056976
+      ],
+      "duration_s": 142.0272928705037,
+      "collision_margin_m": 7.255862508248521,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 8,
+      "j": 3,
+      "energy_Wh": 33.75793686372326,
+      "points": [
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          137.0
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          137.0
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ]
+      ],
+      "durations_s": [
+        71.00963931399882,
+        14.910236887446755,
+        63.317649458615016
+      ],
+      "duration_s": 149.23752566006058,
+      "collision_margin_m": 7.255862508248521,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 8,
+      "j": 4,
+      "energy_Wh": 35.32186856970618,
+      "points": [
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          137.0
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          137.0
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ]
+      ],
+      "durations_s": [
+        71.00963931399882,
+        14.852053716366333,
+        70.4773787907277
+      ],
+      "duration_s": 156.33907182109283,
+      "collision_margin_m": 7.255862508248521,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 8,
+      "j": 5,
+      "energy_Wh": 5.212804843992505,
+      "points": [
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ]
+      ],
+      "durations_s": [
+        22.41853288761704
+      ],
+      "duration_s": 22.41853288761704,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 8,
+      "j": 6,
+      "energy_Wh": 4.173261241563968,
+      "points": [
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ]
+      ],
+      "durations_s": [
+        17.949841742671694
+      ],
+      "duration_s": 17.949841742671694,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 8,
+      "j": 7,
+      "energy_Wh": 1.6946117992039322,
+      "points": [
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ]
+      ],
+      "durations_s": [
+        7.289491782810527
+      ],
+      "duration_s": 7.289491782810527,
+      "collision_margin_m": null,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 9,
+      "j": 0,
+      "energy_Wh": 80.60960790027333,
+      "points": [
+        [
+          338423.3255343109,
+          5653303.36827501,
+          84.97313108077539
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          137.0
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          137.0
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ]
+      ],
+      "durations_s": [
+        113.80877576080384,
+        192.95747184603965,
+        45.75788784140775
+      ],
+      "duration_s": 352.52413544825123,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 9,
+      "j": 1,
+      "energy_Wh": 79.15969015894838,
+      "points": [
+        [
+          338423.3255343109,
+          5653303.36827501,
+          84.97313108077539
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          137.0
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          137.0
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ]
+      ],
+      "durations_s": [
+        113.80877576080384,
+        183.39877221980686,
+        49.0865010785421
+      ],
+      "duration_s": 346.29404905915277,
+      "collision_margin_m": 3.3344894758455066,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 9,
+      "j": 2,
+      "energy_Wh": 80.4891060714191,
+      "points": [
+        [
+          338423.3255343109,
+          5653303.36827501,
+          84.97313108077539
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          137.0
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          137.0
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ]
+      ],
+      "durations_s": [
+        113.80877576080384,
+        182.6141503810587,
+        55.94085060056976
+      ],
+      "duration_s": 352.3637767424323,
+      "collision_margin_m": 9.303390589260163,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 9,
+      "j": 3,
+      "energy_Wh": 82.16312299758891,
+      "points": [
+        [
+          338423.3255343109,
+          5653303.36827501,
+          84.97313108077539
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          137.0
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          137.0
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ]
+      ],
+      "durations_s": [
+        113.80877576080384,
+        182.8314993588234,
+        63.317649458615016
+      ],
+      "duration_s": 359.9579245782422,
+      "collision_margin_m": 8.63502022103274,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 9,
+      "j": 4,
+      "energy_Wh": 83.77231591109697,
+      "points": [
+        [
+          338423.3255343109,
+          5653303.36827501,
+          84.97313108077539
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          137.0
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          137.0
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ]
+      ],
+      "durations_s": [
+        113.80877576080384,
+        182.97423443347105,
+        70.4773787907277
+      ],
+      "duration_s": 367.2603889850026,
+      "collision_margin_m": 8.407714923607168,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 9,
+      "j": 5,
+      "energy_Wh": 81.01430258854613,
+      "points": [
+        [
+          338423.3255343109,
+          5653303.36827501,
+          84.97313108077539
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          137.0
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          137.0
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ]
+      ],
+      "durations_s": [
+        113.80877576080384,
+        191.99138905723225,
+        48.59110642638177
+      ],
+      "duration_s": 354.39127124441785,
+      "collision_margin_m": 6.7552216314598486,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 9,
+      "j": 6,
+      "energy_Wh": 81.9910728665702,
+      "points": [
+        [
+          338423.3255343109,
+          5653303.36827501,
+          84.97313108077539
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          137.0
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          137.0
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ]
+      ],
+      "durations_s": [
+        113.80877576080384,
+        191.96116363061884,
+        53.05979757132712
+      ],
+      "duration_s": 358.8297369627498,
+      "collision_margin_m": 6.768532213129047,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 9,
+      "j": 7,
+      "energy_Wh": 84.37195869310214,
+      "points": [
+        [
+          338423.3255343109,
+          5653303.36827501,
+          84.97313108077539
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          137.0
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          137.0
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ]
+      ],
+      "durations_s": [
+        113.80877576080384,
+        192.10906302140515,
+        63.72014753118829
+      ],
+      "duration_s": 369.6379863133973,
+      "collision_margin_m": 6.986352525059321,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 9,
+      "j": 8,
+      "energy_Wh": 86.02157946323271,
+      "points": [
+        [
+          338423.3255343109,
+          5653303.36827501,
+          84.97313108077539
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          137.0
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          137.0
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ]
+      ],
+      "durations_s": [
+        113.80877576080384,
+        192.30370273973276,
+        71.00963931399882
+      ],
+      "duration_s": 377.12211781453544,
+      "collision_margin_m": 7.255862508248521,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 0,
+      "j": 10,
+      "energy_Wh": 78.0871950687753,
+      "points": [
+        [
+          338575.66214699054,
+          5652889.466327971,
+          116.08210841535646
+        ],
+        [
+          338575.66214699054,
+          5652889.466327971,
+          137.0
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          137.0
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          84.97313108077539
+        ]
+      ],
+      "durations_s": [
+        45.75788784140775,
+        192.95747184603965,
+        113.80877576080384
+      ],
+      "duration_s": 352.52413544825123,
+      "collision_margin_m": -2.043520908046048e-11,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 1,
+      "j": 10,
+      "energy_Wh": 76.76230888999415,
+      "points": [
+        [
+          338567.33726222144,
+          5652909.684506759,
+          114.56045664980932
+        ],
+        [
+          338567.33726222144,
+          5652909.684506759,
+          137.0
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          137.0
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          84.97313108077539
+        ]
+      ],
+      "durations_s": [
+        49.0865010785421,
+        183.39877221980686,
+        113.80877576080384
+      ],
+      "duration_s": 346.29404905915277,
+      "collision_margin_m": 3.3344894758455075,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 2,
+      "j": 10,
+      "energy_Wh": 78.18421902079575,
+      "points": [
+        [
+          338565.3961479184,
+          5652910.886619542,
+          111.42703972545382
+        ],
+        [
+          338565.3961479184,
+          5652910.886619542,
+          137.0
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          137.0
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          84.97313108077539
+        ]
+      ],
+      "durations_s": [
+        55.94085060056976,
+        182.6141503810587,
+        113.80877576080384
+      ],
+      "duration_s": 352.36377674243226,
+      "collision_margin_m": 9.303390589260163,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 3,
+      "j": 10,
+      "energy_Wh": 79.94814949850769,
+      "points": [
+        [
+          338565.9817906398,
+          5652910.570516735,
+          108.05478881891885
+        ],
+        [
+          338565.9817906398,
+          5652910.570516735,
+          137.0
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          137.0
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          84.97313108077539
+        ]
+      ],
+      "durations_s": [
+        63.317649458615016,
+        182.8314993588234,
+        113.80877576080384
+      ],
+      "duration_s": 359.9579245782423,
+      "collision_margin_m": 8.63502022103274,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 4,
+      "j": 10,
+      "energy_Wh": 81.64528734118998,
+      "points": [
+        [
+          338566.0905189685,
+          5652910.262903093,
+          104.78176969566734
+        ],
+        [
+          338566.0905189685,
+          5652910.262903093,
+          137.0
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          137.0
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          84.97313108077539
+        ]
+      ],
+      "durations_s": [
+        70.4773787907277,
+        182.97423443347105,
+        113.80877576080384
+      ],
+      "duration_s": 367.2603889850026,
+      "collision_margin_m": 8.407714923607168,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 5,
+      "j": 10,
+      "energy_Wh": 78.5336805141084,
+      "points": [
+        [
+          338592.4000356378,
+          5652898.408857393,
+          114.78692277651119
+        ],
+        [
+          338592.4000356378,
+          5652898.408857393,
+          137.0
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          137.0
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          84.97313108077539
+        ]
+      ],
+      "durations_s": [
+        48.59110642638177,
+        191.99138905723225,
+        113.80877576080384
+      ],
+      "duration_s": 354.39127124441785,
+      "collision_margin_m": 6.7552216314598486,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 6,
+      "j": 10,
+      "energy_Wh": 79.56637907161955,
+      "points": [
+        [
+          338592.4585810391,
+          5652898.508177522,
+          112.74409253882189
+        ],
+        [
+          338592.4585810391,
+          5652898.508177522,
+          137.0
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          137.0
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          84.97313108077539
+        ]
+      ],
+      "durations_s": [
+        53.05979757132712,
+        191.96116363061884,
+        113.80877576080384
+      ],
+      "duration_s": 358.8297369627498,
+      "collision_margin_m": 6.768532213129047,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 7,
+      "j": 10,
+      "energy_Wh": 82.07877144884576,
+      "points": [
+        [
+          338592.55116708117,
+          5652898.180489073,
+          107.87078970002821
+        ],
+        [
+          338592.55116708117,
+          5652898.180489073,
+          137.0
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          137.0
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          84.97313108077539
+        ]
+      ],
+      "durations_s": [
+        63.72014753118829,
+        192.10906302140515,
+        113.80877576080384
+      ],
+      "duration_s": 369.6379863133973,
+      "collision_margin_m": 6.986352525059321,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    },
+    {
+      "vehicle": 1,
+      "i": 8,
+      "j": 10,
+      "energy_Wh": 83.81750054367114,
+      "points": [
+        [
+          338592.6439625818,
+          5652897.737120828,
+          104.53845059931483
+        ],
+        [
+          338592.6439625818,
+          5652897.737120828,
+          137.0
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          137.0
+        ],
+        [
+          338423.3255343109,
+          5653303.36827501,
+          84.97313108077539
+        ]
+      ],
+      "durations_s": [
+        71.00963931399882,
+        192.30370273973276,
+        113.80877576080384
+      ],
+      "duration_s": 377.1221178145354,
+      "collision_margin_m": 7.255862508248521,
+      "representation": "septic rest-to-rest initialization; C3 continuous"
+    }
+  ],
+  "dwell_s": [
+    20.011081481481483,
+    20.011081481481483,
+    20.011081481481483,
+    20.011081481481483,
+    20.011081481481483,
+    20.011081481481483,
+    20.011081481481483,
+    20.011081481481483,
+    20.011081481481483
+  ],
+  "dwell_Wh": [
+    4.404503898553647,
+    4.403812542916423,
+    4.4028559890414325,
+    4.4028559890414325,
+    4.4028559890414325,
+    4.4039851391665845,
+    4.403167383116664,
+    4.4028559890414325,
+    4.4028559890414325
+  ],
+  "horizon_s": 3600.0,
+  "start_UTC": "2025-07-01T08:00:00+00:00",
+  "current_vehicle_block": "original depots; mobile route block pending",
+  "source_geometry_overlay_sha256": "bd09f4804389b1a67fa5c26afff3fff67b7ba2894057e2235fb54534c952bfdc"
+}

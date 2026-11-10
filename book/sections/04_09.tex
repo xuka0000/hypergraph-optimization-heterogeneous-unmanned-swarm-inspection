@@ -1,0 +1,94 @@
+\section{异构能力、信息条件与执行反馈}
+\label{sec:04_09}
+
+车辆能够到达停靠点、无人机能够飞行，并不意味着某项观测可以立即执行。任务还要求传感器类型匹配、电池可用、天气允许以及成像条件满足。即使规划时这些条件成立，执行后的图像也可能未通过验收。本节将前述物理模型组织为能力、信息和反馈接口，区分标称资格、当前可行与实际完成三个层次。
+
+\subsection{能力资格与状态依赖可行域}
+
+沿用车辆集合$\mathcal V$、飞机集合$\mathcal U$和观测任务集合$\mathcal I$，以$\mathcal A=\mathcal V\mathbin{\dot\cup}\mathcal U$表示具有不同实体类型的执行主体。对$a\in\mathcal A$，令$\mathcal C_a^{\mathrm{nom}}$为其标称功能集合；对$i\in\mathcal I$，令$\mathcal C_i^{\mathrm{req}}$为任务所需功能集合。集合元素是飞行、可见光观测或红外观测等类别，无物理单位。沿用资格量$E_{ai}\in\{0,1\}$，定义
+\begin{equation}
+E_{ai}=\mathbb I\!\left\{\mathcal C_i^{\mathrm{req}}\subseteq\mathcal C_a^{\mathrm{nom}}\right\},
+\qquad a\in\mathcal A,\ i\in\mathcal I.
+\label{s0409:eligibility}
+\end{equation}
+这里的资格只筛除功能不匹配的分配。车辆提供停靠、运输和充电支持，不因参与同一任务链而获得空中观测资格。EMOS以机器人结构描述和运动学数值生成能力档案，为这种功能筛选提供了接口思路\cite{EMOS2025}；传感器型号和运动学范围仍不能代替续航与成像验算。
+
+令$\mathbf s(t)$表示系统实际状态，包含各主体位置、姿态、物理电池对的能量及归属、设备健康状态、车辆服务资源占用和任务进度。位置以$\mathrm m$计，姿态角以$\mathrm{rad}$计，能量以$\mathrm{Wh}$计，时间$t\in[0,T]$以$\mathrm s$计；身份、占用和健康标记为离散量。环境条件$\boldsymbol\zeta$包括道路、地形、障碍物及天气场，其中风速以$\mathrm{m/s}$计，空气密度以$\mathrm{kg/m^3}$计，并保留其位置和时间依赖。
+
+对从$t$开始的任务$i$，以$\gamma$表示包含该任务的联合候选执行片段，记录相关主体的持续时间、轨迹、观测姿态和资源使用。共享资源和相遇约束在同一个片段内检查。定义
+\begin{align}
+\mathcal F_{ai}(\mathbf s(t),\boldsymbol\zeta)
+={}&\{\gamma:\ E_{ai}=1,\ \gamma\text{从}\mathbf s(t)\text{接续},\notag\\
+&\gamma\text{满足运动、安全、成像、能量及服务约束}\},
+\label{s0409:feasible_domain}\\
+A_{ai}(t)={}&\mathbb I\{\mathcal F_{ai}(\mathbf s(t),\boldsymbol\zeta)\ne\varnothing\},
+\quad a\in\mathcal A,\ i\in\mathcal I.
+\label{s0409:available}
+\end{align}
+$A_{ai}(t)$是无量纲的当前可用能力标记。式\eqref{s0409:feasible_domain}调用第\ref{sec:04_02}至\ref{sec:04_08}节的物理关系：电池须满足身份与兼容关系，起降和充电须获得相应资源，轨迹须避障，观测须满足可见性与质量条件。功率按$\mathrm W$积分、时间按$\mathrm s$计时，能耗换算为$\mathrm{Wh}$须除以$3600$。因此，$E_{ai}=1$只是必要条件；其他飞机占用起降位或电池尚未完成充电，都可能使当前可行域为空。该定义针对给定状态和环境条件。它以存在联合可行延拓为判据，并非独立检查每个主体后即可得到的廉价资格表；不同任务分别存在可行片段，也不说明这些片段可以同时执行。未知天气下还须保持第5章的情形与信息约束。
+
+\subsection{收到的信息与动作验收}
+
+实际状态不必为每个主体即时获知。对任一信息接收方$a$，包括执行主体或调度端，令消息$m$携带内容$y_m$、事件发生时刻$t_m^{\mathrm{evt}}$和接收时刻$t_{am}^{\mathrm{rec}}$，两类时刻均以$\mathrm s$计且$t_m^{\mathrm{evt}}\le t_{am}^{\mathrm{rec}}$。收到的信息历史定义为
+\begin{equation}
+H_a(t)=\left(H_a^0,\ (y_m,t_m^{\mathrm{evt}},t_{am}^{\mathrm{rec}})_{\,t_{am}^{\mathrm{rec}}\le t}\right),
+\qquad t\in[0,T],
+\label{s0409:history}
+\end{equation}
+其中$H_a^0$为初始已知信息，消息按接收顺序保留；本地观测和已执行动作也以记录进入历史。动作决策$d_a(t)=\pi_a(H_a(t))$只能依赖该历史。两个情形在$t$前具有相同历史时，确定性策略必须给出相同动作；不能用后来收到的故障消息修改过去的信息条件。由$H_a(t)$重建的状态只是估计，据此判断的可行性可能不同于式\eqref{s0409:available}中的实际可行性。
+
+动作验证先检查资格和当前物理约束，再核验执行结果。COHERENT的动作列表由当前状态和观测生成，并将失败原因或部分完成进度反馈给任务分配端\cite{COHERENT2025}。本节据此构造巡检接口，而不把该框架的动作验证视为本书连续飞行约束的验证器。
+
+例如，比较指令与执行记录时，分别定义位置误差$\Delta p$（$\mathrm m$）、姿态角误差$\Delta\theta$（$\mathrm{rad}$）、能耗预测误差$\Delta e$（$\mathrm{Wh}$）和服务时长误差$\Delta t$（$\mathrm s$）。取同单位的正参考尺度$\sigma_p,\sigma_\theta,\sigma_e,\sigma_t$，才能构成无量纲向量
+\begin{equation}
+\boldsymbol\varepsilon=
+\left(\frac{\Delta p}{\sigma_p},\frac{\Delta\theta}{\sigma_\theta},
+\frac{\Delta e}{\sigma_e},\frac{\Delta t}{\sigma_t}\right)^{\!\top}.
+\label{s0409:normalized_error}
+\end{equation}
+此向量用于定位偏差，不能用综合误差较小抵消碰撞、缺失红外数据或电池越界；本节不为这些尺度指定未经标定的数值。
+
+令$\mathcal D_i(t)$为截至$t$已收到的任务$i$执行证据，包含设备身份、采集时刻、图像及相关状态记录；令$Q_i$为按任务要求检查完整证据的布尔验收函数。完成标记为
+\begin{equation}
+Z_i(t)=\mathbb I\{\mathcal D_i(t)\text{完整且 }Q_i(\mathcal D_i(t))=1\},
+\qquad i\in\mathcal I.
+\label{s0409:completion}
+\end{equation}
+尚在执行、已拍待验收及验收失败均不能记作已完成，但应保留不同进度状态。PARTNR通过执行状态序列检查命题及其时序条件，说明完成验收必须独立于动作提议\cite{PARTNR2025}。反馈因而同时更新状态估计、剩余服务量和验收记录，而非仅将任务名称从队列中删除。
+
+\subsection{教学算例C：故障发生与消息到达}
+
+本书构造的算例C仅考察红外资格和信息延迟。U1没有红外功能，U2初始具有红外功能；任务J2必须取得红外观测。故障发生于$4\,\mathrm{min}$，调度端于$6\,\mathrm{min}$收到消息。例中故障使U2失去红外能力，J2尚未完成；期间没有其他故障通知或替代能力。这里以分钟展示教学时钟，与物理模型接口连接时按$1\,\mathrm{min}=60\,\mathrm s$换算。
+
+\begin{table}[htbp]
+\centering
+\caption{算例C的能力与信息参数}
+\label{s0409:case_parameters}
+\begin{tabular}{lll}
+\toprule
+参数 & 取值 & 单位\\
+\midrule
+$E_{\mathrm{U1},\mathrm{J2}}$ & 0 & 无量纲\\
+$E_{\mathrm{U2},\mathrm{J2}}$ & 1 & 无量纲\\
+故障发生时刻 & 4 & $\mathrm{min}$\\
+消息接收时刻 & 6 & $\mathrm{min}$\\
+故障后未完成任务 & J2 & ---\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+设$\mathcal C^{\mathrm{act}}(t)$为实际仍有红外能力的飞机集合，$\widehat{\mathcal C}^{\mathrm{disp}}(t)$为调度端按已收消息维护的对应集合。前者在故障发生时变为空集，后者在消息接收时才变为空集。因此在$[4,6)\,\mathrm{min}$内，两者分别为空集与$\{\mathrm{U2}\}$。材料中的Python边界重算依次检查了$0$、$3.999$、$4$、$5.999$、$6$及$7\,\mathrm{min}$，所得集合变化与上述规则一致。这是作者设定参数的有限算术核验，不是飞行试验或公开算法复现。
+
+在$6\,\mathrm{min}$重规划时，已执行前缀必须冻结。若$\tau$为本次接续时刻，则对各执行主体$a\in\mathcal A$有
+\begin{equation}
+\gamma_a^{\mathrm{new}}\big|_{[0,\tau)}
+=\gamma_a^{\mathrm{exec}}\big|_{[0,\tau)}.
+\label{s0409:frozen_prefix}
+\end{equation}
+右端指真实执行记录，而非原计划。重规划只能调整尚未执行的部分，并从接续状态出发；远端记录未齐时也不能虚构前缀。迟到消息可以修正对过去状态的认识，却不能令调度端在$4\,\mathrm{min}$提前采取依赖该消息的动作，也不限制机载控制器依靠自己的本地信息处置故障。
+
+收到反馈后，J2仍未完成，且U1的资格仍为零。将J2转移给U1不能恢复可行性；没有新增合格能力时，应保留该任务未满足的结果。故障也不会抹去此前已耗用的时间、能量或已验收的其他任务。
+
+\subsection{接口的适用边界}
+
+当前区域中的飞机采用相同参考配置，上述可见光与红外差异属于教学构造。已有能耗、天气、服务中途接续、成像接续、接触和充电组件的实现及有限验证，但这些组件尚未组成当前参考物理模型的完整联合执行与重规划闭环。完整$237$塔尚无已验收的新完整覆盖方案。EMOS还采用理想场景重建并关闭接触物理仿真，其能力描述机制不能作为本书飞行与电池模型的实验支持\cite{EMOS2025}。算例C核对的是能力筛选、信息时序和验收记录之间的接口关系。

@@ -1,0 +1,10 @@
+{
+  "observed_at": "2026-11-10T06:02:56.257161+00:00",
+  "path": "D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网\\总结\\03_实验数据\\工程化联合求解\\regional_joint\\run_manifest.json",
+  "sha256": "a8d66898f123a47d66936b2daa7c6c5e7023db30069ea17fe4cd2a04266c725d",
+  "run_id": "2bf320f8bbe886f8_24660",
+  "status": "resource_protection",
+  "pid": 24660,
+  "pid_exists": false,
+  "scope": "read-only; no process mutation or new experiments"
+}

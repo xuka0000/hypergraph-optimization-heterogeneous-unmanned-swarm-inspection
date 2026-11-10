@@ -1,0 +1,3067 @@
+{
+  "archives": [
+    {
+      "path": "data/geographic_scenes.zip",
+      "sha256": "7ee893ba3768228e16ca52ee496522e6dddebff662c9532ca841331cc04b6496",
+      "files": [
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/catalog.json",
+          "bytes": 45792,
+          "sha256": "9b4b20d35875dd7c6f3f5b824833ec48c1092038eb3f585a17658b70bb0131d8"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/environment.json",
+          "bytes": 622,
+          "sha256": "9a0936440508a0d91d561c484d83c25783f34865bc5dabeb2c82e27bfd51f28a"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/field_dictionary.json",
+          "bytes": 5140,
+          "sha256": "8fcac5fcab85b7ee326e81b25613d84900472281c3fe253671e5641e30c310c8"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/Agent/Publication/geographic_inspection_scene.py",
+          "bytes": 22072,
+          "sha256": "9acafc695793f22691445fb627e8f204ee5c04d363a4b3d7dead4fef87511cf7"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/Agent/Publication/inspection_charging.py",
+          "bytes": 5578,
+          "sha256": "00c3a2b60e599818b740d8dc5ce4fb9ef2c22ed2975b465cc379e021d1e89322"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/Agent/Run/build_nine_view_reference.py",
+          "bytes": 13695,
+          "sha256": "6590cda91fbafc299c05fe6d65ce1db7212953834b072dd271c6cc480ab782ca"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/Agent/Run/build_operational_inspection_dataset.py",
+          "bytes": 17789,
+          "sha256": "3e0d0ab131df8ddad68e40170027b03a1e958e5dcf0c7b45a42e240375503b24"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/Agent/Run/build_ubeda_100_scene.py",
+          "bytes": 17859,
+          "sha256": "65b6a655c93e565c92e070bb0ee4f435d1cd49080cf6fd314afdaad3fa50c0ea"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/Agent/Run/complete_inspection_reference_parameters.py",
+          "bytes": 19992,
+          "sha256": "29ba0726b5214822e83fd70471103037d5dcdeb7e99a8ed9836e1deb81384e92"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/Agent/Run/prepare_expanded_inspection_geography.py",
+          "bytes": 6268,
+          "sha256": "7f0f090ff60a2ecf9693688c3ce6c92609ea540a2693fad408ac6b307c6506f6"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/apply_regional_inspection_models.py",
+          "bytes": 35176,
+          "sha256": "f68149556f6e8f82fc6f74295ca1510147ff9ba831a684afa42edb31653d8ee8"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/build_geographic_scene_report.py",
+          "bytes": 21774,
+          "sha256": "77b57ee5ce10fcc7b2a8f89dd5f42ca4d8249765603c82a5e7130bfdeeac70c1"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/engineering_inspection_contract.json",
+          "bytes": 28962,
+          "sha256": "68e237f05aa75eaa13237e77400aedb5c024ef4d6fa49e0fba601d13660b107a"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/engineering_inspection_model.tex",
+          "bytes": 28558,
+          "sha256": "78af5e90f870667e7bb8b19f4f408889994656d2ec048dc1cf36a9180848a00e"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/export_geographic_scene_pack.py",
+          "bytes": 46655,
+          "sha256": "09e76128c22417ecdae2e2e973c1d7f3566ed5b1f625fce906108330f81936c7"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/prepare_regional_terrain.py",
+          "bytes": 14837,
+          "sha256": "34b31f2ea075c5eda6484b252b95a5ebc3edc0dd1d7a7f87efc8b51cbd4c9a76"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/scripts/export_geographic_scene_pack.py",
+          "bytes": 46489,
+          "sha256": "7bf7cda6ff70f75a1ba62d88b47042a6ff70a38c87a475cf2addf526162dd73b"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/validate_regional_inspection_models.py",
+          "bytes": 9198,
+          "sha256": "8e45dcc8b2db345912779b5c3604e95c74d9bd9aa2b52037912dc9b44bbcfb12"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/read_scene.py",
+          "bytes": 272,
+          "sha256": "a3ebe9bedca4ed5e9a665cfb8fdcd228945c171d657d7ac2b6d9e1d66a444b59"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/regional_model_validation.json",
+          "bytes": 2949,
+          "sha256": "f06450ce8df44f205cc41e27f758a9ab944b6c6ee2130ce0d51ee5c73f499222"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/report_validation.json",
+          "bytes": 1061,
+          "sha256": "7146dbe0a8ecd0f56266fc6a4e0d89da71ffc3049d9608c698e039896b5b084b"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/scene.schema.json",
+          "bytes": 3562,
+          "sha256": "78815f7bd8362ba3a502c37dc675eb340c9dceb0d2a630f8afc2fb6a72e7111d"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/brauweiler.json",
+          "bytes": 35091618,
+          "sha256": "c574467ac2095b89e150b453e98aac9a060483b5837d9dfc02c32a12f1830660"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/rommerskirchen.json",
+          "bytes": 23320049,
+          "sha256": "d0c668d7cfeea2e7973e6ab387be38e499aea4e935a6530dfaf8900438b8520d"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/ubeda_author_006.json",
+          "bytes": 211469,
+          "sha256": "559b20190c63c925016d4b096a8f9100d563be11d549c57047f8a5391fcefa17"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/ubeda_author_027.json",
+          "bytes": 359460,
+          "sha256": "a1c0f2e442b3f7c231e2c9a73b6c0ad3d33b6442947c44272179afd55e1bdb13"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/ubeda_osm_060.json",
+          "bytes": 7827663,
+          "sha256": "5585dc716867af2b682075d878db447bf92a782bb22a2847b88b411ddd834c32"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/ubeda_osm_100.json",
+          "bytes": 14561693,
+          "sha256": "cd1475d19c29dc4b5ec991e6bf0dff83cd04dc7e7b997b27bb69ebfb707d27a8"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/ubeda_osm_150.json",
+          "bytes": 23129755,
+          "sha256": "a9a62708032ccc043ad1f4705d12b42077dbc6e03517cf151d360cca66e6c08b"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/villevaude.json",
+          "bytes": 41749395,
+          "sha256": "d4f59f8d05689da540adafb1c080196a21e7289cd2959064f6e584553545689d"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/SHA256SUMS.json",
+          "bytes": 29434,
+          "sha256": "a3f68cdda8120608f80f7a22971f7def799fb130b3332c8c0868a2d45c8c10c2"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/LICENSE",
+          "bytes": 1066,
+          "sha256": "d5781369fb3e7cc6310e6841ad58c8178b538155a0630046a5463ebcb2ef1e51"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/osm_map.xml",
+          "bytes": 203967,
+          "sha256": "6649760495b6d031fa891ae966ca78ab58dcc13c6fbb27b56c48877d7f084724"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/osm_ubeda_junction_map.xml",
+          "bytes": 7455035,
+          "sha256": "8b9108970fb64f23532ea90464c34a4947e96b824b43f920e315f57bc44f4c19"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/osm_ubeda_junction_source.json",
+          "bytes": 422,
+          "sha256": "54db810bcafdcebc052801bd5dbd38f6eb1e27c6feed0cf2f171a9a8d4fe99e8"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/pylons.kml",
+          "bytes": 2569,
+          "sha256": "ce7f4c11d3532bf5d04ef845749e9f7b4ea25754a347910cd01ab79d8047c10d"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/source_manifest.json",
+          "bytes": 3293,
+          "sha256": "4542bbe069c5793c17fdd0008bf2243610609d783d762e939ec742f4fe7bbdaf"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/stations.kml",
+          "bytes": 2085,
+          "sha256": "4bf69ff6920461a69842fe242a1f4169824dbbc73c11f13a7484e51a2b89af01"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/terrain_srtm90m.json",
+          "bytes": 50139,
+          "sha256": "426aa996f5478bf19c9fc3e4a86a32691bde2e41de53852bfc34f4d98de8b99c"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_100/retrieval.jsonl",
+          "bytes": 45744,
+          "sha256": "1ce93bb3c169e89394d2958d3b9ee39549eb67697b42e8d8b4aed191357b5713"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_100/road_manifest.json",
+          "bytes": 1796,
+          "sha256": "a2e0adc27c44562cfb61a53beeffc78d9e1fb336f62a443088cf14c2e4227d60"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_100/roads_0_0.xml",
+          "bytes": 6759155,
+          "sha256": "cbee7a9492ae9371e70a39f2c57b2bbe824ec548193043bc1d3a9a2ea01432a2"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_100/roads_0_1.xml",
+          "bytes": 11015867,
+          "sha256": "0b8b1da74122ad1190ad29e6520845951c4d2def34ba50c4c0f74ca55d77c686"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_100/roads_1_0.xml",
+          "bytes": 1453085,
+          "sha256": "6b3bed3606c0a093f48982609cd2e3f76a59f77df096dc159f5a5e812cf55a37"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_100/roads_1_1_0_0_0_0.xml",
+          "bytes": 8141230,
+          "sha256": "2b145f3da319849dca1fc7b9bb80918abeb9c701281b3387f37d2ff476e8b154"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_100/roads_1_1_0_0_0_1.xml",
+          "bytes": 10414644,
+          "sha256": "c2e47faf2a39ab67306965c0b7e3f3b7496340989db2fdf9a29d7a6001927190"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_100/roads_1_1_0_0_1_0.xml",
+          "bytes": 160851,
+          "sha256": "206c2614160ce0f02f92afa0dc81afd28467699f7c91ff0e2cbe0d55cbdcf0dc"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_100/roads_1_1_0_0_1_1.xml",
+          "bytes": 748824,
+          "sha256": "f61e0791941ab8fcd30a50364a432d3f00f5aef7c80bc8bb547da37f154d61c4"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_100/roads_1_1_0_1.xml",
+          "bytes": 1856441,
+          "sha256": "e0b62b920a631ad01d8e9a1827b89f457152ea1d7e3810a4d13f79916f9d87f9"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_100/roads_1_1_1_0.xml",
+          "bytes": 555262,
+          "sha256": "abf4842272a8a60212923d4c6bc8090e6694a726a0584a6b70fb4a4d07504523"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_100/roads_1_1_1_1.xml",
+          "bytes": 2648995,
+          "sha256": "e6aa8ca6689e70220b7619cc6b4d62953159b9a68481bff0a94c9412e0b71685"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_100/terrain.json",
+          "bytes": 168572,
+          "sha256": "8af607f8233758cb9fe76217fa1058adb1ff26c07883fa708587fbd5ceede0e9"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_150/retrieval.jsonl",
+          "bytes": 94956,
+          "sha256": "d9e50609501ea8171c541414b66881bbacc89d356c3df98482ce59ead1ddc3f9"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_150/road_manifest.json",
+          "bytes": 2926,
+          "sha256": "1396555f9d6692dc1ae35865557435bac33dfed6b6a9693397847ba74baaadfb"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_150/roads_0_0.xml",
+          "bytes": 12878221,
+          "sha256": "bd2d8e203d9cdbdd1ead273a379b984801420210df9d3e6f09246f03418097bd"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_150/roads_0_1_0_0.xml",
+          "bytes": 4866519,
+          "sha256": "6e258b3be075851e3eb7066e50eeeb5ff3c16071ec83358f4350c5369d0f5e5f"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_150/roads_0_1_0_1.xml",
+          "bytes": 4383105,
+          "sha256": "a9a917f9bf7b15cec9a5694231636bd7a8ffa660cb8e88832f4ba63b2eb1d547"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_150/roads_0_1_1_0.xml",
+          "bytes": 4642545,
+          "sha256": "b9ae899cb165f7d1bbe168900398cf97e4aed12b3475947d623be26d8bb8170b"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_150/roads_0_1_1_1.xml",
+          "bytes": 5365677,
+          "sha256": "89887f5380952c589714bb17b1173357655b669e4352f73c9d53f4e559d5097c"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_150/roads_1_0.xml",
+          "bytes": 3757493,
+          "sha256": "2c51e4335526a51a0594c71a1cc4037185106ebc483d4e3d1b6892a22225229a"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_150/roads_1_1_0_0_0_0_0_0.xml",
+          "bytes": 5788755,
+          "sha256": "ff5d7f68005ad7ddd0b9e12d7e9e36dafe47a2edef21a6c67195bf59e75e855e"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_150/roads_1_1_0_0_0_0_0_1.xml",
+          "bytes": 6519879,
+          "sha256": "58d438423e9c8c4dd9f6837f756afd6d545d986455119f80542fd8610c00d21c"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_150/roads_1_1_0_0_0_0_1_0.xml",
+          "bytes": 3149644,
+          "sha256": "8c85ee7b01ad486f9f3895f6f09c4c7c5f09ab6f15cf7f0480dd244f37a2d0e3"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_150/roads_1_1_0_0_0_0_1_1.xml",
+          "bytes": 3037799,
+          "sha256": "c44ec4729d59f529183d92d80b7cb8c60fb7944230302a756548616fe3e8d802"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_150/roads_1_1_0_0_0_1.xml",
+          "bytes": 2567708,
+          "sha256": "686b5f49f4c64ae384c5a6bfb4034290fbda400f312ccf845d14d77de575ebae"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_150/roads_1_1_0_0_1_0.xml",
+          "bytes": 374817,
+          "sha256": "1a268613fc43adcbd1e58076afb60d31062dcc5e29d2b2fb73e57b539ad733dd"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_150/roads_1_1_0_0_1_1.xml",
+          "bytes": 1396297,
+          "sha256": "c5ffdb19f2534445d1e5fd6eacbe1539295cc4b6af75cb000002c35f71529cf6"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_150/roads_1_1_0_1.xml",
+          "bytes": 3061738,
+          "sha256": "520f5b0ad8523037c383341317506ee6dbf2f227bf9e03e04a1d22aaa0703fc9"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_150/roads_1_1_1_0.xml",
+          "bytes": 1976213,
+          "sha256": "aa6a230c8914d3baaa883eed7b550e626a95f43df51d5fbf639a40fee1debee4"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_150/roads_1_1_1_1.xml",
+          "bytes": 781221,
+          "sha256": "02506bcd96ebab21ffb26b11889aa809d42bc2b6c9827e816e205541c658b00d"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/caballero2025_data/ubeda_150/terrain.json",
+          "bytes": 358164,
+          "sha256": "fca134061b19a8a3409306d741fb1ae274ecadbe76209fcdc38b8e6cc5996364"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/acquisition_failures.jsonl",
+          "bytes": 17525,
+          "sha256": "bff0a0d69f6a4e48a75f5e5898a1ac741c8f96278f834a611cb53df49b362c1e"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/brauweiler/cop90_04ae29eb3153c3c8d2.json",
+          "bytes": 6281,
+          "sha256": "afbd9f54804c7a980350d573f8ee354742714afc7e551001901c72f029bca447"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/brauweiler/cop90_1ab4c64777834fc4c3.json",
+          "bytes": 6110,
+          "sha256": "f2aec7e09a87ac220185b851934ad4b7364bce08f4e98768c8c3948513210d80"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/brauweiler/cop90_1e65f1b90a86775807.json",
+          "bytes": 6228,
+          "sha256": "280a322f96f525621d6ad384e1fa59c624f4b4972d376e42d58a0f4e3d8fbc3c"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/brauweiler/cop90_2cdccaec7ba797d3ef.json",
+          "bytes": 6230,
+          "sha256": "40785afda0b7f590bb88776315c8c1740148ee297b5a6c562cc7c9a6a7c9e184"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/brauweiler/cop90_35bcdfb38c4e5ed1b9.json",
+          "bytes": 6319,
+          "sha256": "b38e4ca045857122129d6bc471baf8cd52c0317d3c711f9ffb061d25e665a87c"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/brauweiler/cop90_7e79a176785b76a5e2.json",
+          "bytes": 6215,
+          "sha256": "11b9f7bde7058a1e8dbb8c26dd248f6b15530a86e78589597de766381cfd9d85"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/brauweiler/cop90_911939e80558e09209.json",
+          "bytes": 6180,
+          "sha256": "04d365a54e20caaac53c8567f774546a2a2254e77f7fea0427e19fb9c18c259d"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/brauweiler/cop90_a5c34e1662570ec4ef.json",
+          "bytes": 6230,
+          "sha256": "834410aa08b4e0f008d1da74403d19ab5dbf6a002996e9fd6b5501952ad99163"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/brauweiler/cop90_ada9fc2e113f6b7e6e.json",
+          "bytes": 6240,
+          "sha256": "1d70e6ea031347a6f00f15e13bf6cd21ebb1620616385d3fd35037c95c6cc176"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/brauweiler/cop90_b8e1f59221df7149e3.json",
+          "bytes": 6223,
+          "sha256": "e87ce61373ac061959289bc85eaab819d4367d80bcde89ef29d0d451a2b7f419"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/brauweiler/cop90_b9aa17e1be71ceae19.json",
+          "bytes": 6235,
+          "sha256": "ddb8354823575123c2811d4186d6ac8eca98644186ae7e4ec70c65865d99f7d0"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/brauweiler/cop90_bd4f86282a49a01ee5.json",
+          "bytes": 6176,
+          "sha256": "7355efd41df00bf25b9020dc29b5d20d091f05cd2fd9f51694fd899fd760745d"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/brauweiler/cop90_ca4246f87d654a541b.json",
+          "bytes": 6190,
+          "sha256": "c03c688ff596867a80250386511e52debf6c4e0a98f66669f996f8eef208bf5b"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/brauweiler/cop90_dd721f5df7f9b3be75.json",
+          "bytes": 6279,
+          "sha256": "f40abfebca2b7ceebb6ce8745a4a49c8c5a14aff23d9df33b67c9a5c80904066"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/brauweiler/cop90_eae350bdde67c1342c.json",
+          "bytes": 5346,
+          "sha256": "24ea9365f15a776c1e58042e79b9bfdb490bd785e9ae4c229db74ea56f90dd63"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/brauweiler/cop90_fc50ae9c42048879af.json",
+          "bytes": 6257,
+          "sha256": "2da6e64f29605c77ab77dd49dc36887d2f1197d71bb4a82cb6de9235aae2acad"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/brauweiler/terrain.json",
+          "bytes": 213202,
+          "sha256": "455e635a9ab9fb2ee63701f63a2e1d5d8089a202545d3dea4157e0e078fc8413"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rasters/Copernicus_DSM_COG_30_N48_00_E002_00_DEM.source.json",
+          "bytes": 475,
+          "sha256": "844b5bc941cd710eb715b31bd8c9191c2ac368ba74776d7d52f3bc4d1d9dd00d"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rasters/Copernicus_DSM_COG_30_N48_00_E002_00_DEM.tif",
+          "bytes": 5423876,
+          "sha256": "8ddd564249bac5462a82a0305a0fe2bbbd987fae563271a55b3392d80f1385b6"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rasters/srtm_38_02.part",
+          "bytes": 5832704,
+          "sha256": "4211e247ab81e17cfe9d8734c719ddfe26460784d98d87760ab52ed64e1941f8"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/23b776d0e6c8cf0d01.json",
+          "bytes": 2546,
+          "sha256": "a8df50f6ef5370365a9d8401524640f81549b4194b99ad9bf7b9a706ef61c5ca"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/497100394c64fe9669.json",
+          "bytes": 2557,
+          "sha256": "d844d291eb5218ddce5a8e90e800381a99e55f3957fcf4a36b56f8f3d096c9c6"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/7b69ac226be5a077df.json",
+          "bytes": 11985,
+          "sha256": "85727c8d5f559c656a2e9bfc0a076c1e80df26556709456e9a955857883c45a8"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/91a849bb07ee0f21b6.json",
+          "bytes": 2558,
+          "sha256": "b89a5597501789b1692298856588891c71e2fb8fd0a40e5e65f393e0f9ac5bf0"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/9594a38fedbd70d3be.json",
+          "bytes": 2556,
+          "sha256": "52502e89364ebafed9420c3206f84d78b113d9711d77a5d753cb6d4f9f1dce78"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/cop90_0a8639519fd888a94b.json",
+          "bytes": 3404,
+          "sha256": "9315a86962aaf631e040dd9a952b75aa2fca96af3a1f8d636200ea7c2d3384f8"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/cop90_0bad8c9445657e1478.json",
+          "bytes": 6256,
+          "sha256": "78940544cc40c2b3c36f567b1de1afd845dc20385bfbfa6c15df18142c39687c"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/cop90_1fe5a8f1f1ce4c7ada.json",
+          "bytes": 6200,
+          "sha256": "dc1aa55747444ed034a44cd017295cbf40272677988479b69b0f1b01c7bf80b9"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/cop90_2833220a8f2ea5c590.json",
+          "bytes": 6240,
+          "sha256": "7808e43b6f0fc3b476be1377fb9b0b3043f3b828ae3db9eba08965e57bdad6ab"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/cop90_2b9135f9e41711b8b1.json",
+          "bytes": 6233,
+          "sha256": "d920136863158bc8150c1cbc727024d6b5ca1ba09907ce901f3e4856b5c4ec74"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/cop90_325a005493a403d3a4.json",
+          "bytes": 6272,
+          "sha256": "528bed95817bc12d6e907b8a47d095eaa6b7d0f3070d78f20b61cf85e5abb4a1"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/cop90_4bfad5c5008d87b223.json",
+          "bytes": 6197,
+          "sha256": "2e5b9cda9eb76eb1f71f4df95c5f0510422ede7a7a0f1f82b563994238783cb1"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/cop90_7d34b73e5c2d6d5a2a.json",
+          "bytes": 6230,
+          "sha256": "f09c4db40cfa9b5f942c7be5207b85562e16ff9fdcc98e81b900bb1a6a2373d1"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/cop90_833f599bef858beb2d.json",
+          "bytes": 6221,
+          "sha256": "b70739848dde3eaf3f61d563d9336482117c6d8c3f4f48576021c1a7f6ef8711"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/cop90_89a4cf1c24406184d1.json",
+          "bytes": 6177,
+          "sha256": "23b733720d9a1d52e7a0dc02909c9684fcd3bad273ca98f47ce7d90a77041cd2"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/cop90_8c97d779b271e71283.json",
+          "bytes": 6223,
+          "sha256": "91e323818b9e3f1d7cff51e9a98a1abf6248d6c7a215e71b5ff960b9407c0507"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/cop90_9a997ae2a01dfcfd9a.json",
+          "bytes": 6206,
+          "sha256": "e1fcf6b12d9bb3a1889ab7aaabddf3b529cc88a79327887d234e343ae62faeb0"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/cop90_b0ff518531a236d986.json",
+          "bytes": 6192,
+          "sha256": "16e669d8f74299edbc2346273da59970e7b02b77f832481a0944ac15bb5d1860"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/cop90_b328f1c93b5ed4fe91.json",
+          "bytes": 6289,
+          "sha256": "a9a4fb882de0743e3e1c358adfb448b846eaaf61319d824faeb3ce22024eb714"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/cop90_bec41d601d4c683c58.json",
+          "bytes": 6194,
+          "sha256": "850f8ea726bb8fa75813c87658f3ad66c5a7261d263c4ce03580d4409d399363"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/cop90_c363b692f9f2146b74.json",
+          "bytes": 6244,
+          "sha256": "23a6fc8fed7be91276a54beae47ab06063c0fae6aa155250955f9a60ed1f1d89"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/cop90_dcfbd10eb07826c410.json",
+          "bytes": 6151,
+          "sha256": "213fd01959f5b99cda9114799511fe18390cef017f09f533ef26c3d52503022f"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/cop90_edcd8ab52a588fd622.json",
+          "bytes": 6228,
+          "sha256": "a7911bd7a26adfc8ee7beac413065acb5585a8243a3bec980e4c8a801b4ca3bc"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/cop90_eea7a81eb8d1ea10a6.json",
+          "bytes": 6215,
+          "sha256": "9dfc8229d939be386e4fc336e5110b81538801e74742768fb9d70e2986a0ed1b"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/cop90_f1d6bac5e386afe463.json",
+          "bytes": 6210,
+          "sha256": "d7a39a32415391f37b6b467b499ce198c9ecb772a4c5b18b4a65163ba50dde94"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/d37b5cb40956f3d535.json",
+          "bytes": 2721,
+          "sha256": "5feb3e03a2537f5e8cac1a984ec8bcd84421ad96686226481a6547a85ecc82e1"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/ddb26e87a2926d7603.json",
+          "bytes": 2729,
+          "sha256": "35fdcc2abeb944aed51c8991091082fead6ecea13c5dc2e1acab65efaac3e5f8"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/rommerskirchen/terrain.json",
+          "bytes": 262569,
+          "sha256": "f554800062a73a7a522f25f1b8609389a18e19f77d46a131212e2ccc0e2901f8"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/villevaude/cop90_10657914532ad99df1.json",
+          "bytes": 6219,
+          "sha256": "874db19960814ed099e95925ecbf18cbad800c206686379ca609f5d73a595e58"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/villevaude/cop90_1aa50a2c97e65129c3.json",
+          "bytes": 6162,
+          "sha256": "d5076230ad2c23f648e5784f7b26603bc35d618a5e9e707b9f8b76278a016b14"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/villevaude/cop90_3845dc06b5289c4b70.json",
+          "bytes": 6210,
+          "sha256": "ffcb789d06d51c5e6efa5b94695134ccf9d85ad3fb3815ddcf84994453509e60"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/villevaude/cop90_4ed11d08960284e7bf.json",
+          "bytes": 6252,
+          "sha256": "f78384515620f5f4428017eb7b2dcfefe47eeda12ace9fbf656fac43321faeba"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/villevaude/cop90_65ad09316e0c5a5c59.json",
+          "bytes": 6219,
+          "sha256": "5490b224653eac8b7e2c4beff4c1d72a1bff0d9a017beccbe7fe93dd5802bb92"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/villevaude/cop90_65ca4840477cc798fc.json",
+          "bytes": 6151,
+          "sha256": "5ebad26d9107b81d9c46834572ff06f09ee90b53adfbc086af56b0fdc7e02b7a"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/villevaude/cop90_669d6932ab704f70eb.json",
+          "bytes": 6209,
+          "sha256": "933e19c570d6ff0da3b40f558e01e4ba93add4c39e4e8e7e89b5ef8aafbaa31b"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/villevaude/cop90_98fa2511d3f3811e76.json",
+          "bytes": 6070,
+          "sha256": "8679eea993c770c55e0c8a2eb2784f0f8ebf58053a2840763e7530b273aeb457"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/villevaude/cop90_a4094e8254c61ac882.json",
+          "bytes": 6221,
+          "sha256": "028b397f017a0ac2bdfa223d985be172ee424ba688a2f008ae6800b0d5539d9a"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/villevaude/cop90_a95fd76103f4f6918a.json",
+          "bytes": 6150,
+          "sha256": "1824ac43743f82734666dda88ceee221e2c2c6116b899e17425ab75eab5fc543"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/villevaude/cop90_b6336dc22578c86982.json",
+          "bytes": 6229,
+          "sha256": "9a989b99a56b940c099fb4a76dcfc0b63bb479cc89575f9590624953ed94c783"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/villevaude/cop90_dc5cd4c2633f54e2b9.json",
+          "bytes": 6218,
+          "sha256": "1bba2d378b35f94637c16bc0cca67e60c760d4d331690e79215bd9976a10ba99"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/villevaude/cop90_e0064a99cfb255d4c0.json",
+          "bytes": 6199,
+          "sha256": "e138a192e552bf74b09be7e9e1423972a235463e362124871ede464c38eb4a84"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/villevaude/cop90_fbc603c7482507834b.json",
+          "bytes": 6225,
+          "sha256": "3c91a7b1484d4568c409755f531caa51b6de38bc804269f5199450f85939519a"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_dem/villevaude/terrain.json",
+          "bytes": 303823,
+          "sha256": "9112a836755ee8cc8505bf93efc1e4c66c6b5aa1762b573130381769ca28043e"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/regional_weather/weather_records.json",
+          "bytes": 9199909,
+          "sha256": "c006c0ebf1d59686f2498818b0a8e92b73ec77ca1b4c440d33f64dab5c66c092"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/topology_osm/areas.json",
+          "bytes": 388,
+          "sha256": "33d3ef905348a8cc41b2269fd55eb6f7509c3927f8480342ce67d7fb4e15a5cb"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/topology_osm/brauweiler_power.json",
+          "bytes": 164731,
+          "sha256": "a6429871c219d248a40106d4587253ea4b31baefd0b921d717e7d4b45b03cd4c"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/topology_osm/brauweiler_power_provenance.json",
+          "bytes": 431,
+          "sha256": "d90b3001928a29b574a84681ef7f4e87845e98a5c5b8036cd2f35de9857d98f3"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/topology_osm/brauweiler_roads.json",
+          "bytes": 3882837,
+          "sha256": "7551263b29445e575404fa24a9ae3a9eeb7ec71792a8c8e31d1fdc0e35d17723"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/topology_osm/brauweiler_roads_provenance.json",
+          "bytes": 499,
+          "sha256": "11006fd3b3999dd768700fd187de6616dca9d7a67ae78e364295c35751639f4b"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/topology_osm/rommerskirchen_power.json",
+          "bytes": 187223,
+          "sha256": "a690807d5600702e65200891db882a3385617430b8737ca823e755a5ec1b77a9"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/topology_osm/rommerskirchen_power_provenance.json",
+          "bytes": 433,
+          "sha256": "4637820e0f56c837b30c3ac1083a98997f7041e5ce0e4f23ac7a8ba77baf4efd"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/topology_osm/rommerskirchen_roads.json",
+          "bytes": 1907222,
+          "sha256": "197f8d4f91cc6655cc0de98a31b968ce7ed843d26e811ae0809ab04eb7390269"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/topology_osm/rommerskirchen_roads_provenance.json",
+          "bytes": 500,
+          "sha256": "3b89c99ee4c6e68c4f8b2c9fc86c34953735dc4aec713d918d7f32d2bc6662d8"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/topology_osm/villevaude_power.json",
+          "bytes": 310537,
+          "sha256": "8a9de07223b0ec5851de3c18ea75599a5c884bf05872b55a181131f7638267a2"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/topology_osm/villevaude_power_provenance.json",
+          "bytes": 431,
+          "sha256": "33e14cf6025ebf4abc0ba37929383255bd0ee4dc8246d4ff75d683b428a20aaf"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/topology_osm/villevaude_roads.json",
+          "bytes": 3778959,
+          "sha256": "cfae0593eee929710be4ed6aeb3c3d1c423e2090b7bc6327459b4166df2a9d63"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/sources/topology_osm/villevaude_roads_provenance.json",
+          "bytes": 499,
+          "sha256": "7cb8ad06cc22e5eb237119b8519eca715bdbd097796584cfa414bd7353113831"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/validate_package.py",
+          "bytes": 10979,
+          "sha256": "2ea26e04ac9019cc6432cda51c9c9d22a57c0a049d481f5702465247d4992f25"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/validation.json",
+          "bytes": 3970,
+          "sha256": "b223feeaacaf4c5120b949f9f0067a05347cb0bd0c6814f795942dd991319ae5"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/使用说明.txt",
+          "bytes": 4479,
+          "sha256": "1af1b61e48c7cecedb3276eaa45597dd2545c89b0d7dde15ae4db0c7507ca0fd"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/工程化巡检联合数学模型.pdf",
+          "bytes": 252963,
+          "sha256": "2bcacf58994a016ce07c6d5bc477aedb8badf041af489cb98105e76e68978032"
+        },
+        {
+          "path": "总结/03_实验数据/真实地理巡检场景共享/真实地理巡检场景_数据与来源报告.pdf",
+          "bytes": 345818,
+          "sha256": "4ddc0b1a13f1572518df6c1dc509bdd74896ee1463cfff68dd2f5ccc8c3c3956"
+        }
+      ]
+    },
+    {
+      "path": "data/component_results.zip",
+      "sha256": "b525a9cac0c67e87b9d576bd873db7731219138b8a55c0af4009b783282050fe",
+      "files": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/attempts/20261110T083233.json",
+          "bytes": 9470,
+          "sha256": "c49158d68bd82a59f64d87a404fa0639852152bb5e96b03b6adf837069c9d07e"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/attempts/20261110T084930.json",
+          "bytes": 9471,
+          "sha256": "1db8ab995e64b8fa8bce47ba09e46480ade0003b95a5e5503aa3852267686247"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/attempts/20261110T090527.json",
+          "bytes": 9467,
+          "sha256": "a1c7d91665dfd4704af2456d14a3fed821e895425edbf59b062dfe8af4b459ac"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/attempts/20261110T091434.json",
+          "bytes": 9676,
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/protocol.json",
+          "bytes": 912,
+          "sha256": "90a94fb43b8c36857d840bba7995fe0eff4c183eac162acbf3534c2b18434576"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "bytes": 9676,
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/attempts/20261110T084316.json",
+          "bytes": 9947,
+          "sha256": "d115e5686048d64c353003076bf3c1f7863b09006c1cb15e9280e97d6cb74c92"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/attempts/20261110T085953.json",
+          "bytes": 9947,
+          "sha256": "f74dd02367f732d0639dd7ecf67132bb59b35daa1b9df563ac9d602ac4e7e46f"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/attempts/20261110T090557.json",
+          "bytes": 9947,
+          "sha256": "c37ffc976bd62f7cb6bb61a4f01c07900ac80a8a9b5686d329dc02b0f95a790d"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/attempts/20261110T091524.json",
+          "bytes": 10189,
+          "sha256": "6808490666a16c1ffb3b1b3ed56df0507c0d0bfedcf7a3a3ef00668663bea662"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/attempts/20261110T091630.json",
+          "bytes": 10189,
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/protocol.json",
+          "bytes": 559,
+          "sha256": "c1eb9c0b79f1d367b0e0be99f774c49dceec622dd7621adb0b788bdffe4656ec"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "bytes": 10189,
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/attempts/20261110T083706.json",
+          "bytes": 4764,
+          "sha256": "d5810098407a2a774d3c9ac862de9c51f41842c8638cf4abe105eceebce7bf80"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/attempts/20261110T085423.json",
+          "bytes": 4763,
+          "sha256": "b6844a510c7e868b58ec09e146ce0dfddcf0462efce45f7728b8b5a07e7f4701"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/attempts/20261110T091627.json",
+          "bytes": 4763,
+          "sha256": "b8960d0a293a58d23f9da1ad97e59c58aba73a0cc06eb2e31224301c0074ee4d"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/attempts/20261110T100322.json",
+          "bytes": 4763,
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/attempts/numpy_api_portability_failure.json",
+          "bytes": 230,
+          "sha256": "37c0c8823503d468be8d1d6de47559237e7aa4627c3d4e6040c27cd1b03c449c"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/protocol.json",
+          "bytes": 824,
+          "sha256": "6e28c654718eceac323cd5096d8bd3ece8a7b7c76cc7d362f3356e395c290342"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "bytes": 4763,
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/tracking_traces.npz",
+          "bytes": 809180,
+          "sha256": "c63dcb89d055c1ef852412194d1580d0ebd23315aeab9d560319f77681e2fd92"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/geography/attempts/result_3f864a593e45.json",
+          "bytes": 23567,
+          "sha256": "3f864a593e45fb998e80531dfed3029fc6a6ac74d15d39eace241ebd649d91dd"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/geography/attempts/result_985a39163134.json",
+          "bytes": 21043,
+          "sha256": "985a39163134241c45ee8f3f2a0924d2a7259d2a070072cf059fbef41cbbc566"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/geography/attempts/result_d2bc2c112f65.json",
+          "bytes": 23369,
+          "sha256": "d2bc2c112f65509e46014173b87599e2413697da5d6eef58bf8db70e33b3e800"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/geography/attempts/result_e0535289abbd.json",
+          "bytes": 20852,
+          "sha256": "e0535289abbd1d5713001893e823ffb032672c9d2d8f737d6d3776c57977e2d4"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/geography/attempts/truth_58cac781658e.json",
+          "bytes": 66967,
+          "sha256": "58cac781658ee4cd58f4e8ffe2e948529ebf5dc39062da9d9bb5d8a9e8ee2214"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/geography/protocol.json",
+          "bytes": 2570,
+          "sha256": "2e0904fd790be9b6a758e2fc7b26395fb7a7cd4f4f6aa403a13597e4321ea5a6"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/geography/results.json",
+          "bytes": 23697,
+          "sha256": "262af238c13db499a389edaa48475ca1e243c136b29c548f579c9c45cffa5a86"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/geography/truth_table.json",
+          "bytes": 178071,
+          "sha256": "4492b78d4604d4da37f163574e9751d8d0e67301111788007a99414b2287f92c"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/joint_charging/attempts/20261110T101234.json",
+          "bytes": 70681,
+          "sha256": "d96533c39361baae4b48dfe37279d177a98f8d67daea0370a8af2764b740a3bf"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/joint_charging/attempts/20261110T102158.json",
+          "bytes": 70682,
+          "sha256": "870269b1da34fe7c282e9cfafa3f6c388e5fb737b699e9eef90ebcdabba96734"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/joint_charging/results.json",
+          "bytes": 70682,
+          "sha256": "870269b1da34fe7c282e9cfafa3f6c388e5fb737b699e9eef90ebcdabba96734"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/joint_transcription/attempts/20261110T093433.json",
+          "bytes": 5354,
+          "sha256": "86f97a13a787d57d74b990cb0843e200f620769886fe3fb052641f9d7c0690db"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/joint_transcription/attempts/20261110T094629.json",
+          "bytes": 5353,
+          "sha256": "77838f3d12e6fc27a73f5dfe7f8b585e2787b0cdb4539b3af572eb2f131d677a"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/joint_transcription/attempts/20261110T100323.json",
+          "bytes": 5355,
+          "sha256": "225ed938a054157d07805762013d07e83f43d86d5346d6be6bf331950f8ba4ef"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/joint_transcription/attempts/20261110T101611.json",
+          "bytes": 6000,
+          "sha256": "4498b4f4a056e0114274132ad72a26362eabc90dcc19e311fa9cc9d7825b9479"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/joint_transcription/attempts/logging_path_failure.json",
+          "bytes": 311,
+          "sha256": "08249cf5ace6683b6caf709af9f422ae1bbd5433f2b077647ec8b764cf527211"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/joint_transcription/attempts/uninstrumented_first_attempt.json",
+          "bytes": 377,
+          "sha256": "dc0d98fd11e37407fe5249ed3dac5260015b4767cdd067e67ad29c91c2ef2fe0"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/joint_transcription/midpoint_0.5.json",
+          "bytes": 211813,
+          "sha256": "1049ffe585b9b7c76581fabb6a0fce0ead4c1b68aebe1a4aa47be74f4be2e21a"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/joint_transcription/midpoint_1.0.json",
+          "bytes": 107626,
+          "sha256": "2617c00c9b4b5c8c45ab579f1d23a6a3f668003f990984c5a6d03f9bda1ae86c"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/joint_transcription/midpoint_2.0.json",
+          "bytes": 55547,
+          "sha256": "d50026c6de9dfa0bab9db813c3bde52f9ebd60991c1bf70fd5819b3bf2386315"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/joint_transcription/results.json",
+          "bytes": 6000,
+          "sha256": "4498b4f4a056e0114274132ad72a26362eabc90dcc19e311fa9cc9d7825b9479"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/joint_transcription/solver_0.5.log",
+          "bytes": 2996,
+          "sha256": "03a42184b2c46b540ba429236126f6ad572486906f0a323455400d2ab85407d2"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/joint_transcription/solver_1.0.log",
+          "bytes": 2992,
+          "sha256": "914d04f9c3d4e9b4e147c0aaea486952346d49fe9b64f3be2ce60792455b738f"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/joint_transcription/solver_2.0.log",
+          "bytes": 2992,
+          "sha256": "f0cffd7f8a893b4ec6f990ec0e73a87eb5b19c0a27cdcf1052c5aa54284bc702"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/platform_contact/attempts/20261110T095127.json",
+          "bytes": 31844,
+          "sha256": "9f5e36aa059cbe53eb324c9bb71a4274af6cab7e58fb27db7f4116a5669d87dd"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/platform_contact/attempts/20261110T095626.json",
+          "bytes": 210019,
+          "sha256": "df6b73d9d77223a89effa93dac1ba62fbc6632570ffc09e00dc82b58a7798d78"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/platform_contact/attempts/20261110T100325.json",
+          "bytes": 210107,
+          "sha256": "8b2f799a35b64ed5024f95b1c104cb0dca512173a4591f4028dcc02eee4b94f9"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/platform_contact/attempts/20261110T101613.json",
+          "bytes": 212638,
+          "sha256": "031d2fb8b108433df8920fb3291b9da0d4780c1c4ba20ec0cdc4bdfab98632ab"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/platform_contact/results.json",
+          "bytes": 212638,
+          "sha256": "031d2fb8b108433df8920fb3291b9da0d4780c1c4ba20ec0cdc4bdfab98632ab"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/road/attempts/result_40c36f8d7cdb.json",
+          "bytes": 21462,
+          "sha256": "40c36f8d7cdb9d40bdbf13a101553fced3cb8f1f7ad157ad967060f18f24e75d"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/road/attempts/result_550d2d7cda87.json",
+          "bytes": 19062,
+          "sha256": "550d2d7cda8711eefff22a8b2c6fa97d9136622235c5154c22b1bdc03783432a"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/road/attempts/result_93d3bf59c1fd.json",
+          "bytes": 19789,
+          "sha256": "93d3bf59c1fd514ffc9b16a23d262dac826d8ccdbd3f51be1f43f1eb7f63fa98"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/road/protocol.json",
+          "bytes": 1180,
+          "sha256": "c93a3c3620d3df11551d5894a2c72b43c99e14b3496996365a1e16e2468280a5"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/road/results.json",
+          "bytes": 22765,
+          "sha256": "aa9c3e356378262316c86b7aef36b48ada02940407840f79a7ab20dac15ab8ff"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/service_boundary/results.json",
+          "bytes": 7317,
+          "sha256": "e9736bcc4712ce016c02397d28778f25f3cc968124b355c917b6a7a9df025cc6"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/takeoff_landing/attempts/20261110T095929.json",
+          "bytes": 7873,
+          "sha256": "4881fe67b1b07942657c662645777b9b58c52d712c6209bdba9832a1c5cd4bdb"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/takeoff_landing/attempts/20261110T100041.json",
+          "bytes": 7876,
+          "sha256": "4e8cb4530cedde17828bb2614c95eb83e92b193c2c5297ca45361b0845fa477a"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/takeoff_landing/attempts/20261110T100340.json",
+          "bytes": 8023,
+          "sha256": "3b5521c40b56acedcb88987660ca63ba7948636cfe81af0e2206ad6d550a9aa7"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/takeoff_landing/attempts/20261110T100340_trace.npz",
+          "bytes": 212104,
+          "sha256": "a6abd94c15d087f14f3a8ba32349f720acc357d46639ffac11856e7cd107fea0"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/takeoff_landing/attempts/vertical_drag_failure_trace_status.json",
+          "bytes": 318,
+          "sha256": "2c88a4dd8c0b6762021e740bc067a4d3baed51430f45cd14da138bb67b2ce766"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/takeoff_landing/execution_trace.npz",
+          "bytes": 212104,
+          "sha256": "a6abd94c15d087f14f3a8ba32349f720acc357d46639ffac11856e7cd107fea0"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/takeoff_landing/results.json",
+          "bytes": 8023,
+          "sha256": "3b5521c40b56acedcb88987660ca63ba7948636cfe81af0e2206ad6d550a9aa7"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/attempts/20261110T083934.json",
+          "bytes": 63876,
+          "sha256": "98df532ad7d7af55c9eff334e8c02fca3ef881ac77bca116a747ac7fd6dd5325"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/attempts/20261110T083958.json",
+          "bytes": 63746,
+          "sha256": "d8825aeb4df98c7c73cd41d438204c8c632b1eb6d1f1842d59490e62b40bc7b8"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/attempts/20261110T085353.json",
+          "bytes": 63698,
+          "sha256": "32731cf3af4d33757c6646d0105f2c2c6a58c50779f070855932f6912a7d3d20"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/attempts/20261110T091628.json",
+          "bytes": 63698,
+          "sha256": "b432db248eec5920abb8af425f043409d13448a9e598d75631db4e458736df9e"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/attempts/20261110T092408.json",
+          "bytes": 63783,
+          "sha256": "e7935a253128bbfc2a8c7fcb57402232856e0a7acc8ae0a6cc92dc911bc80e25"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/protocol.json",
+          "bytes": 550,
+          "sha256": "a71fa9ab2bcf438f3d8ed8b70ecd803903219516dc836ce58d5204f51db80b8e"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/results.json",
+          "bytes": 63783,
+          "sha256": "e7935a253128bbfc2a8c7fcb57402232856e0a7acc8ae0a6cc92dc911bc80e25"
+        }
+      ]
+    },
+    {
+      "path": "data/energy_weather_evidence.zip",
+      "sha256": "a4c037f31ce8e0c8dbfa7c67e0b87d9f6aedbcd61075be10aaaea88c67300e8a",
+      "files": [
+        {
+          "path": "总结/03_实验数据/天气因素建模/delivery_status.json",
+          "bytes": 1033,
+          "sha256": "f2bbf5875e5c78722f0b3035f1b5742cdc5eb1e416bdee46162631063260f4e3"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/delivery_validation.json",
+          "bytes": 5037,
+          "sha256": "0f0e4f3c3a637d1bbb661a60674ba3a7cd6a2649daa8ce44a44b90c830bf74d1"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/model.json",
+          "bytes": 3688,
+          "sha256": "7aa4a0d944405a851b44ed8a591b0280a29d388fffe0cfaf7ced5af86edf37f2"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/module_pdf_sync.json",
+          "bytes": 4809,
+          "sha256": "830d7ae135249358fd09513de7d7baa708f0b894e453b82b1709b9f511b56be9"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/protocol.json",
+          "bytes": 2354,
+          "sha256": "0d1269f408545cc4525568de725e31613e64b495c5a5acd595e377ccfe81cf43"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/publication_status.json",
+          "bytes": 415,
+          "sha256": "a3c70c96e9b327b18e7fc42844dc26b367b65765bfb46d924a5687863568f95e"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/results.json",
+          "bytes": 27726,
+          "sha256": "dbb335c83663825128504c2f36eb135ce1632d81d8dd979c7724f70df06a61cc"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/scene_period_summary.csv",
+          "bytes": 6560,
+          "sha256": "0fab149134619e9d96f44f6ba1200240759287d8bcf2941a58f48bf17347be19"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/scene_weather_mapping.json",
+          "bytes": 324847,
+          "sha256": "7da350e88fa12f42fd8169df8cbaeed301adec83d72610f7a83b8b578732a334"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/scenes/brauweiler.json",
+          "bytes": 80132,
+          "sha256": "13b7aabe26f7a839d89490897a021bdada14f11b639b8863b722e9353e40854e"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/scenes/rommerskirchen.json",
+          "bytes": 95069,
+          "sha256": "01e9c99204ebd5a82deb7297b59d2db7f909b128580c9432521c43a5c90fb871"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/scenes/ubeda_osm_060.json",
+          "bytes": 34646,
+          "sha256": "beae0b3dddcae37f304ecd6786c1e80307720afbb31e5f9ba31db23353f712da"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/scenes/ubeda_osm_100.json",
+          "bytes": 45817,
+          "sha256": "684e3cf75be475e74c7e9c597bfff1d95cda258a34a4041909d1d63bd650fa72"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/scenes/ubeda_osm_150.json",
+          "bytes": 59710,
+          "sha256": "865e1129271bec9537cdd52ff9e1ff9d45f4a26b77d55c00b3aaa82611d99782"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/scenes/villevaude.json",
+          "bytes": 117098,
+          "sha256": "90b4cbac680d7eaee7904bd74af66e8a77f67ae273e2e8cc80cf1fb0d6a707f8"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/source_audit.json",
+          "bytes": 3489,
+          "sha256": "1127f2f2817e3dc1bde2de7950efdca1cf635188978a7a8e22e76d6ffb939321"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/source_manifest.json",
+          "bytes": 11888,
+          "sha256": "d346230b4244c6d40f3517063dadbcb598b2381c8446a70b105d76d1a3432748"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/sources/ecmwf_wind.html",
+          "bytes": 72961,
+          "sha256": "f8b0062ec3d84f68efa5601c0d4e6aa5c19d89e23f2a2d9ee13c4a99043b2259"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/sources/era5_summer.json",
+          "bytes": 71115,
+          "sha256": "f0f603de04ad1fe8586135be7d3de7391085b451e83e885480f13ea883e965c1"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/sources/era5_winter.json",
+          "bytes": 70855,
+          "sha256": "0c841383152236dff835269a363a603d62f6ca838e0f5046849b65c1f0f9d594"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/sources/gao2021_correction.html",
+          "bytes": 218667,
+          "sha256": "d969e209ff75462a2acac66469901f4c8cacdb1ee86bc59945932a49625358bd"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/sources/geowind2plan2026.html",
+          "bytes": 599596,
+          "sha256": "a4e61c2ab4f5e18ec4197ebe003f476a5d02d32f8fa62d6fcdbe6a160a46837b"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/sources/geowind2plan2026_extracted.txt",
+          "bytes": 116109,
+          "sha256": "d5090ca557635531400bc897dfc88e00718dd6c4a3140e37c548a64b8662b521"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/sources/geowind_commit.json",
+          "bytes": 5797,
+          "sha256": "16266dac992a2519f10d741576a05a34d2d91b9cda9908ac824ad98a01dca332"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/sources/geowind_energy_model.py",
+          "bytes": 2810,
+          "sha256": "1842a15b69d0b766fc1aaf7c501a18d89eab2cd4cf13f416a36e7b821369b398"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/sources/geowind_LICENSE",
+          "bytes": 1081,
+          "sha256": "0a5d14d358f6a25dc860869a69b6257d4e2b37d70671779844afff44e5e9dd37"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/sources/geowind_README.md",
+          "bytes": 5636,
+          "sha256": "08e7079f41976ad293612f86056febe9d3677ca5b53567ad260cf085f789197e"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/sources/m100_specs.html",
+          "bytes": 425,
+          "sha256": "cc4ab4e2c4f655fcbcbad8691f43a939252b829433c7f9ccd760af2622758fe0"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/sources/metpy_density.html",
+          "bytes": 57937,
+          "sha256": "88aa45ca9affff428bc06d9ddd1f25825c501a4664731d666ae3e6c047f51ac8"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/sources/openmeteo_archive.html",
+          "bytes": 392785,
+          "sha256": "848e8dc898d4942caed1edaafeb9a9b7d81cd8aa264731a861dc36994b24398c"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/station_publication.json",
+          "bytes": 2171,
+          "sha256": "138e8534fd9048076dbece2da4d28439ccc1a374368ea6276694a7eeb8325d18"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/table_reference_mapping.json",
+          "bytes": 1873,
+          "sha256": "d59531dee2f2657d64cbd0b0e4cf7de64d44f341eea60d5e565fde1ad9d69de4"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/validation.json",
+          "bytes": 3913,
+          "sha256": "92e32b37f42f8fc48299bc63b7b3652ea63d1737f111691d7b17ebe72bd1b29b"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/weather_records.json",
+          "bytes": 9199909,
+          "sha256": "c006c0ebf1d59686f2498818b0a8e92b73ec77ca1b4c440d33f64dab5c66c092"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/天气因素建模报告.tex",
+          "bytes": 10077,
+          "sha256": "1e74e0f38b4847c7bd7c07e36ba3fe62be1c9678657072f29775752beef2607b"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/天气因素建模报告.txt",
+          "bytes": 6692,
+          "sha256": "52331bcdd301b11cf8837c799758e5eb528ec94dd7206c99e5feacd1776a2dda"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/cases.json",
+          "bytes": 13671,
+          "sha256": "423ce5ff2247bf755eac72922c16499b6023dea5d53d205820a70bc0ebd6c1db"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/delivery_status.json",
+          "bytes": 873,
+          "sha256": "ecbca67dd51b220d9f445976f0d1327448c58a5eb7291c5e9b1e084540fb8569"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/delivery_validation.json",
+          "bytes": 11614,
+          "sha256": "8fd3a6bdeedea5404ac286b68873734832214d90a380398aec50600582e27195"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/execution.json",
+          "bytes": 563,
+          "sha256": "68a7b18a2fb104fddb1f679fc0c66db2890bd86d3b4220771b7a6f9c176d34ae"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/execution_binding.json",
+          "bytes": 1208,
+          "sha256": "f6ba74edf95000b4c76f0cb04d436677b465dfb192f713d71ddedb4a50bf04b1"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/mission.json",
+          "bytes": 13833,
+          "sha256": "f6b8466710fceac20f2fc05fed47c6d89dfe98ade882c18a178b3870969c916b"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/module_pdf_sync.json",
+          "bytes": 5049,
+          "sha256": "838aab201f6e9104eaf765f0de811ef98140f9e89930c9f5115acf1d93831c73"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/predictions/calm_0C_power.csv",
+          "bytes": 364772,
+          "sha256": "149f2f9bcc2540c1f87383f4b0842b46e795f1c9efb2e74de5f76b851f12ecd8"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/predictions/calm_0C_states.csv",
+          "bytes": 3200935,
+          "sha256": "011c9b5e0180d4091a49195b9220fa0c3f8b8169ff98e77b51c499886d1bd9d1"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/predictions/calm_15C_power.csv",
+          "bytes": 364279,
+          "sha256": "7e739c6107c52cc083e3a8f5197565eb5a9f6692e9aa548de99e26d60a14f078"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/predictions/calm_15C_states.csv",
+          "bytes": 3195411,
+          "sha256": "439d91ffa1d2b4ddb5190bea72056445702f17f99c8982dd7da2470249a838c2"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/predictions/calm_35C_power.csv",
+          "bytes": 365498,
+          "sha256": "7cf17c988a330b594fbeba35c42ef04a33839ecb91023d9dcbdc0d36b1acf781"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/predictions/calm_35C_states.csv",
+          "bytes": 3202322,
+          "sha256": "11838bb4958d54874998293ad3b7add0923e3ea563da48df07a4c57fb49ea7c0"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/predictions/cross_4ms_power.csv",
+          "bytes": 364748,
+          "sha256": "8177df7e938c0a33559cdab6418c5485ecfefc2dd69e0e3f2190ada80f251ef7"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/predictions/cross_4ms_states.csv",
+          "bytes": 3253603,
+          "sha256": "2313cd81c74594811977bfd886a4c45d541fd5bb6d441c28ac7cfccc67ddfb10"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/predictions/cross_8ms_power.csv",
+          "bytes": 365666,
+          "sha256": "14bd45c54eb671a28f32c996fc6a991c2fc508152bd3dfb1e412910d1ddfca49"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/predictions/cross_8ms_states.csv",
+          "bytes": 3231929,
+          "sha256": "a77e031932aef0cb300953c03d8241e0b4197664e8ac3ba48a47805f41263812"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/predictions/outbound_head_12ms_power.csv",
+          "bytes": 360445,
+          "sha256": "2c3ac5f551d2cb8cfaabd9ef56e0fc28a6719d5b062b21558c0a3489c3a3b191"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/predictions/outbound_head_12ms_states.csv",
+          "bytes": 3253033,
+          "sha256": "a22cdacbb48b80b4620f864047382f9930ace1884cd00a8b178b732445e5493f"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/predictions/outbound_head_4ms_power.csv",
+          "bytes": 364477,
+          "sha256": "36ac9b0bb5ace9e70a312d8672b41e6fa6abfb7b7defe0c7fe5572802af410ff"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/predictions/outbound_head_4ms_states.csv",
+          "bytes": 3283993,
+          "sha256": "1e1236421292301b5cf04391853585a296ad532dd0af5bd01502010f1ce8dad4"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/predictions/outbound_head_8ms_power.csv",
+          "bytes": 364699,
+          "sha256": "0d3701768cdf9ed09793ca682641dff66bdee6b4de2b82600f82d153e21ec730"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/predictions/outbound_head_8ms_states.csv",
+          "bytes": 3256653,
+          "sha256": "b5d1247c2e01c456f58b2124c4912e68aa4d285cae59c6274b2b7da4716ac61a"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/predictions/outbound_tail_4ms_power.csv",
+          "bytes": 365670,
+          "sha256": "9e547a5a5814e5e108791d17aea73e5b6ae7e22103c95721a991cef9cb51913c"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/predictions/outbound_tail_4ms_states.csv",
+          "bytes": 3263909,
+          "sha256": "2d7260a21afd2be852c95648210a4ad942137c618e70cd68e564dbe428e9f2bf"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/predictions/outbound_tail_8ms_power.csv",
+          "bytes": 362181,
+          "sha256": "e7fcb2d10cf2a1a4f1f36f5bccb74061903d9cc14cfe211e48a368e93d2349f8"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/predictions/outbound_tail_8ms_states.csv",
+          "bytes": 3238807,
+          "sha256": "201716974d34a053df158409e326119725a4b35ec237a6d994a4607c0b90b8a9"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/predictions/summer_actual_noon_power.csv",
+          "bytes": 367670,
+          "sha256": "353c12004fcc6b9cf7ebe5d0cd5decd5d127ebabe4ef1fc8729a8ab2ab34e7d2"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/predictions/summer_actual_noon_states.csv",
+          "bytes": 3291902,
+          "sha256": "f63222c8e6cb989dba4c100574812f47dabe57a202f7c25867821016e3a833f7"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/predictions/winter_actual_noon_power.csv",
+          "bytes": 367637,
+          "sha256": "7b122da45c1a9f970cda8ead07cea6e00865c64f3668485ebd346eb53bd37fea"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/predictions/winter_actual_noon_states.csv",
+          "bytes": 3283082,
+          "sha256": "c9137b08b91afd2c045e4af45685500f5c6d149624e479fd93ef61fb8cf60695"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/protocol.json",
+          "bytes": 7577,
+          "sha256": "29b60e3b2ecad0fe6c0b69334e3832b44f9837fde2a7b033fa7cba62d9b2ca22"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/publication_status.json",
+          "bytes": 415,
+          "sha256": "9f113766a2411e46dbf6e4c7b79aee58ef11de34ebccb4b9b97df1ec7198c188"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/regression.json",
+          "bytes": 788,
+          "sha256": "3afb8c33a5d50b6874cbeabcff39f4d6b1ce40bb63d93c25cdde0723c4601be8"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/report_validation.json",
+          "bytes": 1258,
+          "sha256": "e8e85bfcdf2adc7a2d7d5f95b2d2e73ef823ca1f96542a14ec996353ae991403"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/results.json",
+          "bytes": 78676,
+          "sha256": "8996001de3d2b6a87808424c1c0df6454aa5df3655169dd97c000f4d727b5f24"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/stage_scope_receipt.json",
+          "bytes": 1071,
+          "sha256": "c330bf64631b2bbc0e71cd7a2c21646caa9c16852e057c6a75dbb389086d7d2a"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/station_publication.json",
+          "bytes": 2171,
+          "sha256": "5a27bf9becab82235f672f20f07ce2448c20c4761a9fe2436a9b2bb407353733"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/table_reference_mapping.json",
+          "bytes": 1057,
+          "sha256": "505f827a5f5b501401e53154c9afb55a1281efcab50f02ae16ac19f7477c05e1"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/trajectory_diagnosis.json",
+          "bytes": 128385,
+          "sha256": "9eadd8b7570c45952475c4a0cf86250a8fc2b4883a60abd5fff7faf3f773f421"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/天气_航段_能耗联算报告.tex",
+          "bytes": 11684,
+          "sha256": "1f4f4e4d1ac7eb06923e4031aee891e7b3f6d1d0b933cc650443576c314e1f02"
+        },
+        {
+          "path": "总结/03_实验数据/天气因素建模/航段能耗联算/天气_航段_能耗联算报告.txt",
+          "bytes": 7909,
+          "sha256": "1d29578c9979082839a90dcc6ece5831fbc9c632adc8a2fbc548db184845aa89"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/baldo_reproduction/source_audit.json",
+          "bytes": 54201,
+          "sha256": "08b44f1b698e0f98d66aa2e9e27524e3628a8573702afcdaf4e7270658addafc"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/delivery_validation.json",
+          "bytes": 48770,
+          "sha256": "6552e5be071864ae4751d9a373dd428c92465f1d62d25dfad77a40b189f0439f"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/environment.json",
+          "bytes": 1382,
+          "sha256": "e6f93895a0454423b5530423ccdd5351edac94440384addfb564092c317b8fbf"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/environment_freeze.txt",
+          "bytes": 936,
+          "sha256": "09c45dd45ca10f5cf66e7774506d9b4b6552da8676e2a4edae90641e13d06cf9"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/input_audit.json",
+          "bytes": 49380,
+          "sha256": "d91cf46294d40915d2dae4badc4374fcedc2ff47657edd8915c1aa0ea2502b50"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/module_pdf_sync.json",
+          "bytes": 3871,
+          "sha256": "262a0dc273b94bee9a44c2f165fbbd4c8dbfef43db4a8227e61c4ce152192982"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/paper_comparison.json",
+          "bytes": 3593,
+          "sha256": "5237d3148a6a32094a888910bd2ab61be0695d9a39358a63c98320160a811ec6"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/per_flight_results.csv",
+          "bytes": 39032,
+          "sha256": "c36f252215ffc96be6456b455f87055cf3ccee011c59c1ba1bff97406ce010ff"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_110.csv",
+          "bytes": 94930,
+          "sha256": "3c3522565531797aa1ec209000c82629754dbb12513e4ad5d2400a67d4b1990b"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_119.csv",
+          "bytes": 60116,
+          "sha256": "e273d0f46030809770886bfbdaf09e3f7c8d0d2a43fdf492cc21959afb3b0e38"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_123.csv",
+          "bytes": 86519,
+          "sha256": "ace507917b9e2a8b84dfe24b09c1fcc4d406f18b31f4b1a2862b48ac3baf82a1"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_145.csv",
+          "bytes": 83825,
+          "sha256": "1143425429c8ec1cb87fdbee00c897675561813e7885e54dc22ebbd90585f570"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_148.csv",
+          "bytes": 86682,
+          "sha256": "9cf8f5a5063557cfc8d11fe63f810149b696f494fd9e3369c291fa4093b195b9"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_155.csv",
+          "bytes": 71762,
+          "sha256": "76938e3bad258913532cc157b4a0ebc7f58dde36c37edad77aa0cdb40e2b0b38"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_16.csv",
+          "bytes": 49102,
+          "sha256": "78419fabf766012b7946eae5b5490c5b1e9771bceda8f85d57a7d60a43f0b4da"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_191.csv",
+          "bytes": 75964,
+          "sha256": "7f5c674f21036e1aeac398c476c8c562fcae65131798a730d7b56ffbe8533ae0"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_195.csv",
+          "bytes": 78116,
+          "sha256": "a148396a5b537e6430f208e38b3bfa8a801c49c999b8dec9077f565be0c8371e"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_197.csv",
+          "bytes": 43706,
+          "sha256": "70bc52f1a84d0141c1a2c86b2f789919fa17856075242bf242cef5b10900a231"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_210.csv",
+          "bytes": 104483,
+          "sha256": "7da2d240481e996cb4532e4cca48a841793f04c11a8273fd9b6018a186bb661e"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_23.csv",
+          "bytes": 51329,
+          "sha256": "50e6ea5d04fd87d80c20da47924cd727f623b279c8d28a8866fcf98128830ef8"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_235.csv",
+          "bytes": 39449,
+          "sha256": "af0a3260d8a5ab474ffba271896993760c49336ada692f8f7d6cf3dd06b46a6f"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_239.csv",
+          "bytes": 95057,
+          "sha256": "0204c57bec1c231416dbcad6420525610d7b7b7d05ba31b26601154b9f2180ac"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_241.csv",
+          "bytes": 64337,
+          "sha256": "e1bc89f2212c9ad270b99b59fc3fd81ccff5ff93e297f2b98b6f3105f9235e82"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_247.csv",
+          "bytes": 67549,
+          "sha256": "bcb92df634a615b87d00062f035f686e842479f02b22302f6de995b09c044dba"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_250.csv",
+          "bytes": 71643,
+          "sha256": "1741d8aceb9b56caea819f1514030b0bb529218040d667a00c14e3435c8980c4"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_254.csv",
+          "bytes": 55615,
+          "sha256": "ef64a2fdd42d5277f15f12c6eca03852c9ee8eae96969c3589f5e25f722fc85c"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_255.csv",
+          "bytes": 58914,
+          "sha256": "7d1af5ff1f9e427781c2a152ff3d71ddd2526ffd1a92afb085359f16a1652cdc"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_267.csv",
+          "bytes": 49341,
+          "sha256": "e978c62b75fb3baf2602244f1a9e1bfd5868234d82ea5fea1b04ecd9cbaeeeac"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_268.csv",
+          "bytes": 90213,
+          "sha256": "dc424fd52686e16e8e18e554e2bb7a66ed0d6e55e4aa43e34f62ca43ebf2499f"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_269.csv",
+          "bytes": 60753,
+          "sha256": "85d8ea78a59cde0f6d10da23a460460dbe1d1a2a95c49d68525cd4c9d7d27975"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_270.csv",
+          "bytes": 85142,
+          "sha256": "358a3b01e307749b9a4479fd1e18f1c23dc63ceb44e6fe19f8008720515e8022"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_271.csv",
+          "bytes": 65670,
+          "sha256": "7cab670e2e4170525beec1712a02887ebfd2082def54eecc5d0a2e92c7aa0d16"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_272.csv",
+          "bytes": 137840,
+          "sha256": "9646a93feaca13e4b203c8ed957a93a13ce238b6b8e9f3c8497bdd7fdeb6cbd8"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_273.csv",
+          "bytes": 156620,
+          "sha256": "7dea6f5154cabb9f2a8ffe3de21f1388709e01253ca7a0b7902a2f46bea26b9b"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_276.csv",
+          "bytes": 43170,
+          "sha256": "c222b8e6c5f2aa4065812f2e9a4683fc5bc401f1d11dec0886349866740d6da1"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_277.csv",
+          "bytes": 43086,
+          "sha256": "b03b73ac3119ec54b260246b511d8aca12586a9760c358fec2b650c7c9da4157"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_278.csv",
+          "bytes": 51115,
+          "sha256": "4a24e34e2d6f9c9ad4cf37cb96073295e68dad65c2ba14c6697cf64352db29ff"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_279.csv",
+          "bytes": 49575,
+          "sha256": "0bde4a228bae1893bfd14a83280c87229b85c0e85d596b7f2a5c7f44289fa259"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_79.csv",
+          "bytes": 53637,
+          "sha256": "541eace6afdcf305f95c4cfae9f0c343e8e4bc4ba775385fe48a1ff003fe8aaa"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_80.csv",
+          "bytes": 56042,
+          "sha256": "2861b553a06343b99dad16ba075e6d7ada072d48b1cccd468ee8176f68634339"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_83.csv",
+          "bytes": 66622,
+          "sha256": "afc82b8813eb8f8d4f545f92626756620cd24823d7dba9b531eccd2d4226369b"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_88.csv",
+          "bytes": 74296,
+          "sha256": "63cc62a3317c8a5566fdddf09df3eea7e0f0b6c1024817761872c416c2d92f29"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/predictions/flight_96.csv",
+          "bytes": 77140,
+          "sha256": "9fd4e63b1bc8115d31589a1ecac681e74e173f2b5be3633bf3bf9933e7fdd624"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/preflight_receipt.json",
+          "bytes": 30408,
+          "sha256": "27e239f8a4b809bec6ecaa3c8f6dd49740ed15cd20a7ddcd48f2fd4247366cdc"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/protocol.json",
+          "bytes": 40919,
+          "sha256": "555892b12355fda786a599ebe4070ff201cca6c97192599c89f2d9278daa38df"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/publication_status.json",
+          "bytes": 401,
+          "sha256": "64e306419fe9f0fcb99c3f404055c32615c7ecf11957db8530d3ec6662407182"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/regression.json",
+          "bytes": 232,
+          "sha256": "545870083a894ae16e6e733b0c9411b097894c08debcba0e9d55078ca50962af"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/results.json",
+          "bytes": 117689,
+          "sha256": "7e5b56946caafe2c820a5d9f56e498b11b5e88a1fbf221f19f728a2df77970e4"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/station_publication.json",
+          "bytes": 3220,
+          "sha256": "3428297457f7da230dc08c873f17548e4a9bd8213691fc0556621e36cd94a0cf"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/transition_receipt.json",
+          "bytes": 7392,
+          "sha256": "223e5f8f4e00e1b413c569ee090ff00712c3a276214633b903289d665ea500fa"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/复测报告.txt",
+          "bytes": 5644,
+          "sha256": "1cc73e306a687ee10712382aa76845cd3de5b3e97c2bd8982b9d3da750b78dc2"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/delivery_validation.json",
+          "bytes": 2663,
+          "sha256": "5c0555a7d36a512182629fe1fe127ec4a98eda4e50efe3bc640a12250f4d2e63"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/input_audit.json",
+          "bytes": 5627,
+          "sha256": "aad41c5d3eca3e833e5533c3e25b4c2d52f9ddcbc0c94cfd23b80feab8b65d55"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/interval_diagnostic.json",
+          "bytes": 8276,
+          "sha256": "dafe0bbc8ff9691d0046b8bb49f416caa4b56a42ea3f84370c47c671676c4fba"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/measured_calibration/independent_validation.json",
+          "bytes": 1140,
+          "sha256": "9cfbf3984769be92fc46f14ac25ae383025d5f7f4a3bec4444919705e7feea87"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/measured_calibration/per_flight_results.csv",
+          "bytes": 29780,
+          "sha256": "1560c2b0b9f33bfa96cb77b651284588361336e7923aea5d6eecbcc03978c4e5"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/measured_calibration/power_profile.json",
+          "bytes": 1361,
+          "sha256": "98fd895412809b24956dd082a6207ae7d37335b9e7eb09522345d9857702737d"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/measured_calibration/protocol.json",
+          "bytes": 4225,
+          "sha256": "7d929a24a87f0a39835c8fdb570f5fd6fe5c4ca7a07236eb0cf2b251b30065ec"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/measured_calibration/results.json",
+          "bytes": 136760,
+          "sha256": "d0f503bb6ecb6b5a0e6206248f0f5955b5e03e47847ee473553e4862baf1d174"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/module_pdf_sync.json",
+          "bytes": 3457,
+          "sha256": "abe90a24f75b2a77c67199f6331466bd21f1d152928e13e34a4e54328c80498a"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/per_flight_results.csv",
+          "bytes": 4880,
+          "sha256": "57df5d3d017713fe0c59c8e570e8a2c0320c329412409c5f97eded893a473e85"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/per_regime_results.csv",
+          "bytes": 6823,
+          "sha256": "9f69b85c1affa0fb3cff74db5bde992eafbc7c365b3453fd53280aa6e1fd0d0c"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/predictions/flight_268.csv",
+          "bytes": 128827,
+          "sha256": "a9017c57fc9193aa621dc3b6673ad24ad9c8408530aa8b4017787e978768178e"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/predictions/flight_269.csv",
+          "bytes": 100101,
+          "sha256": "8763a0b8c18664ce823668a422225542e320c443bc2e4224f88e8ab8d6df9abd"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/predictions/flight_270.csv",
+          "bytes": 122286,
+          "sha256": "30848b418b2f127067b2f0c4078863d3a6a7ec81d0b36a1b3ab0ea8ac1a03ffa"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/predictions/flight_271.csv",
+          "bytes": 96974,
+          "sha256": "a2bca6c47299726475c14552e6edc1624c63d478a67355e29a0b2ea0779265a2"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/predictions/flight_272.csv",
+          "bytes": 193006,
+          "sha256": "085085b3cfbbc2419233da706dad6937507bb0401750c544bd8e56f8cc5d183f"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/predictions/flight_273.csv",
+          "bytes": 237733,
+          "sha256": "a0d99341b62f8b49ba79b91c8b586864db3b5b7e697758dec1de8c43b4dda85c"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/predictions/flight_276.csv",
+          "bytes": 68378,
+          "sha256": "ea9fa3b3fdec93f05dff105f5bc5b9580203b7e87d3e6c7d57f6fee74615aeac"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/predictions/flight_277.csv",
+          "bytes": 65754,
+          "sha256": "2e4b50c3bcd2262a8343027ef8a91bbbe3ff48501e59527c0bbea5b610b4ec4e"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/preflight_receipt.json",
+          "bytes": 20876,
+          "sha256": "e4ebb527e064606392c7de383b37b12deea94b05569ed8b8c606409b574de18e"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/protocol.json",
+          "bytes": 3109,
+          "sha256": "f9f6864ae018b7062b16bce008fc74dee296eab6db6b8be1d3da356586928b46"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/publication_status.json",
+          "bytes": 453,
+          "sha256": "23407cbcfa175def5e75a17be8364daa90cfe5b5cb82799a9010109f011bb51b"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/recovery_source_manifest.json",
+          "bytes": 4999,
+          "sha256": "49226e81fdafed730fcecec032ca08368c6e2776c83553d0530d70299ce68663"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/regression.json",
+          "bytes": 144,
+          "sha256": "a26911d26105383361e3146ec8f981db81dc0e2d4caf4061cc41a6b348793291"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/results.json",
+          "bytes": 31797,
+          "sha256": "a452f65d36c5bdb8d81c1c6bc3107fe5bf4713f0ed4786162c28035831fa8559"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/source_manifest.json",
+          "bytes": 60841,
+          "sha256": "3ed4607ea47fd5d51be78bf7fa8f5125efed077fe79f48cd57d1930fe103468f"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/__MACOSX/data/._.DS_Store",
+          "bytes": 120,
+          "sha256": "2f380f4a3d05a8d90c2106f50da75064e9ce57a598599dc5404f8f69a0223aa9"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/__MACOSX/data/127/._.DS_Store",
+          "bytes": 120,
+          "sha256": "2f380f4a3d05a8d90c2106f50da75064e9ce57a598599dc5404f8f69a0223aa9"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/__MACOSX/data/253/._.DS_Store",
+          "bytes": 120,
+          "sha256": "2f380f4a3d05a8d90c2106f50da75064e9ce57a598599dc5404f8f69a0223aa9"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/__MACOSX/data/254/._.DS_Store",
+          "bytes": 120,
+          "sha256": "2f380f4a3d05a8d90c2106f50da75064e9ce57a598599dc5404f8f69a0223aa9"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/.DS_Store",
+          "bytes": 22532,
+          "sha256": "69ff7cf38e932387a696e2a9ee6fbe486029498bf786cd61e34ef643f63ba97b"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/10/processed.csv",
+          "bytes": 149110,
+          "sha256": "4bf20bfba1470c1d284771404a3f56546c1719c5429a559d8f6a5ee73cde9c98"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/100/processed.csv",
+          "bytes": 132705,
+          "sha256": "981e7dd7bf7946f2b6ab3aa50628e0423542180a9e4da4cd99d91d1e1060644b"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/101/processed.csv",
+          "bytes": 146796,
+          "sha256": "d50674625e7e9a89952ddb4e18f683a57dd5e19172111d4ec26c6f1db49d1ca7"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/102/.DS_Store",
+          "bytes": 6148,
+          "sha256": "d65165279105ca6773180500688df4bdc69a2c7b771752f0a46ef120b7fd8ec3"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/102/processed.csv",
+          "bytes": 259292,
+          "sha256": "bb9fd2d7f059419f4ffe3677170ce0a95f7fc8a7eb6d603443d72664bed582c9"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/105/processed.csv",
+          "bytes": 211599,
+          "sha256": "86dd0649a79d130ce5442c38108466adf7b323a1601801a8f1e1bdd43e5e6d89"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/106/processed.csv",
+          "bytes": 179538,
+          "sha256": "79896a15d1cb4c725e91a6639799ebbdcd1c834e44d50f8e1d2723443fbfbbd4"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/107/processed.csv",
+          "bytes": 179831,
+          "sha256": "0bfcf369ba7cc4870cc852c5b88bfe7588092c29d96bd632d290f402711ba14c"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/108/processed.csv",
+          "bytes": 140850,
+          "sha256": "e9e4ed17d58fbaa8ee45183914d093a90e907b9bbcf70c66e47ec5c501cde93f"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/109/processed.csv",
+          "bytes": 239731,
+          "sha256": "8cc793ae0ffa02517b36c1e2d6c66dca265d456f7fd5ddc4af9c5ac24285b9ca"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/110/processed.csv",
+          "bytes": 232382,
+          "sha256": "6a7d8940a91874ee7ca763321b1504f99493b85590ec5664793bbcd8608a09a2"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/111/processed.csv",
+          "bytes": 110998,
+          "sha256": "85b964b35f6ec5e30b3bde0df43d96bcbc47f4a6193a6606b316860763b70b0e"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/112/processed.csv",
+          "bytes": 190384,
+          "sha256": "eee25f4ba8f287cef2ec0ad2b126a869fa95cb79c536916aab81dddd32c9e8bc"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/113/processed.csv",
+          "bytes": 169976,
+          "sha256": "edf61c63ba7bcb050aa566119bb9b03306f65c2b325188dba1db2ad4e91dd864"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/114/processed.csv",
+          "bytes": 156221,
+          "sha256": "96e844df9bc1c2a2c29ba669151bb14074831a943ec3647b563fb156a496a1ed"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/115/processed.csv",
+          "bytes": 122679,
+          "sha256": "dae61ea2727648ef70570e815ff3d9367602460397bf7414ba4cee40be7eb25b"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/116/processed.csv",
+          "bytes": 109574,
+          "sha256": "b13684e01d7a542d60740b575f97c39725d9e9fb0f883d43619a2608cd3026b6"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/117/processed.csv",
+          "bytes": 131914,
+          "sha256": "b8862562f9bcc6363d69291a5a862772fc7c6cf34d9b6770d69822a7417a3a50"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/118/processed.csv",
+          "bytes": 257901,
+          "sha256": "47cfd941d12dadd531787de0461bae51e4033d3e75d968a1ede186d096746c7f"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/119/processed.csv",
+          "bytes": 148785,
+          "sha256": "a88e94ee64d52e9f5cfc3f1e244032f220eaf2bea519412967338b5ff26711eb"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/12/processed.csv",
+          "bytes": 110713,
+          "sha256": "2e5e2f276bb4c33d0f92def98750abd2b16a57405a9f580f16b56c924a3d96bf"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/120/processed.csv",
+          "bytes": 109255,
+          "sha256": "fe3788427ce741d812dc1e70b4dbc7693d64791526fa8d7c528f0fd10fbce654"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/121/processed.csv",
+          "bytes": 167187,
+          "sha256": "a7c314d813dcfc99af01247832d88922a43d3e6554c2fdcb6e5ac55665cc34dd"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/122/processed.csv",
+          "bytes": 157779,
+          "sha256": "d3a4a1d3e1a1df158fd335f8c5d7156eb427f1d57e2e2d9778246c66ad5844f8"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/123/processed.csv",
+          "bytes": 215861,
+          "sha256": "0abb4bd43eadd0d95970386820c7b2fda1dce10d3e555e1032a73193ce014f10"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/124/processed.csv",
+          "bytes": 127402,
+          "sha256": "ec45c995f3d1e7821685a04fbdd1b574043e5b7c7dc9164766df9221c9b5287e"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/125/processed.csv",
+          "bytes": 239044,
+          "sha256": "a5183052e5ab862976090734df260b13d9e8a4f05bd40470d87056a815558fbd"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/126/processed.csv",
+          "bytes": 261542,
+          "sha256": "97b34093ae74764f4c0aed282d9528001e57d90cea19a3d72b6af568c08e8e98"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/127/.DS_Store",
+          "bytes": 6148,
+          "sha256": "d65165279105ca6773180500688df4bdc69a2c7b771752f0a46ef120b7fd8ec3"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/127/processed.csv",
+          "bytes": 147291,
+          "sha256": "0ff99be2df9253982676f0d47cd236b9df2d8aa90d660cb6a520b783ad664171"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/128/processed.csv",
+          "bytes": 188187,
+          "sha256": "94bd809a8fedbc57999b395e3db87665aad7cedbc2509c64ff63998777093927"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/129/processed.csv",
+          "bytes": 178182,
+          "sha256": "47142ec8a89e9a9b382bb3120150e6bc611a615353cb6f6cd9040f8db182ac6e"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/130/processed.csv",
+          "bytes": 135141,
+          "sha256": "93210de5e25f96fd4941f098925b77edca5a577a3cdbdbe71d43fbeed090e99f"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/131/processed.csv",
+          "bytes": 260119,
+          "sha256": "dd5d45f95366aa623f756942f9b06cdd18e1f950c4df96cc284f3c50afac83fa"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/134/processed.csv",
+          "bytes": 133177,
+          "sha256": "f5c9e29dab932aefbc7e9b11118795e85cf390783737ecd6a1ed383eab574ef0"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/135/processed.csv",
+          "bytes": 190246,
+          "sha256": "38e2ffecb632b20ba8712dbb65c623ab528f421971c2b2a88239d71579ef5439"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/136/processed.csv",
+          "bytes": 120455,
+          "sha256": "8e59f308e11005dc1d7df9ad139cfcbd71ec80cb91eacd722aa1be46a0a21236"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/137/processed.csv",
+          "bytes": 186879,
+          "sha256": "995e0a3cc9af1af217bc343789efecf3589a4552a351efcac277ab25d7848c2e"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/138/processed.csv",
+          "bytes": 190641,
+          "sha256": "674b3313ac72199e5bc6945ea0c2955e3f0a322f7ab0e31815a9e95603e6ef8b"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/139/processed.csv",
+          "bytes": 123722,
+          "sha256": "bec0a5137082bb836f5c210711aacdda30e8564bc8676e906635fea9fc82b1d8"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/14/processed.csv",
+          "bytes": 103127,
+          "sha256": "b58925cda2ef74f734b1d64063de6663836cbefb3c76220cc98ab3862c264889"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/140/processed.csv",
+          "bytes": 178883,
+          "sha256": "146d805687fcd2c41264d9b7f5a7f0b452d9d253c50beb0345fc29b726496a97"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/141/processed.csv",
+          "bytes": 158455,
+          "sha256": "6ceb4b99efdcaef78b8f53eac3afbacb018ca64d56ba5df776037dd45b9aa8b0"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/142/processed.csv",
+          "bytes": 169111,
+          "sha256": "9b90ecf8aa6ba156a7d7efbc0ab630a8ef2394dd34ba0a752d5359e811f1bb1c"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/143/processed.csv",
+          "bytes": 137299,
+          "sha256": "9e4234b66bfa3fb8cb61e76c081e2ed77729b6b5ce495fabac8f23e0527a8247"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/144/processed.csv",
+          "bytes": 142557,
+          "sha256": "259304106c198d156b75dd9c2c0096c9772d4f5fe7c05a2bd794e326281e55e9"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/145/processed.csv",
+          "bytes": 210074,
+          "sha256": "bb64725ad76b62f544582697674b44a5baee191b0442ccd95ba78fe40a7b2cd7"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/146/processed.csv",
+          "bytes": 105259,
+          "sha256": "c11ae045840e77a4aaa30439cf2ed2f77f660b72d97122930843805d9c2c727b"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/147/processed.csv",
+          "bytes": 192377,
+          "sha256": "cbaaae0c15170238646a48c1addacdff133d9ade82d99c2da804c8cb47fe47cb"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/148/processed.csv",
+          "bytes": 213569,
+          "sha256": "6ec9a6aac55bb806acec13ea261c2ee5341ac59078ccee48466ce01e32dbbbcb"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/149/processed.csv",
+          "bytes": 160520,
+          "sha256": "e0a97961c7ef33180966d9878cd03f9941943f662d8fc62bc4610c57f28ddb9e"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/15/processed.csv",
+          "bytes": 112771,
+          "sha256": "48a5b513adef2fa606a174fc3aae86b31c672e2ec54c6e31401ea1af7c53dece"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/150/processed.csv",
+          "bytes": 172509,
+          "sha256": "aa2cea91611e136ed46e948d5437fbe3d743c3911b1876aca1bdcbd1ae70a888"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/151/processed.csv",
+          "bytes": 131298,
+          "sha256": "d92c1cbc2517166a115eb4a164f6d944693ccd62d5add20bb914c76ff3684d7f"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/152/processed.csv",
+          "bytes": 188688,
+          "sha256": "64644c90853fc8d7083b81794c96d012ab15dbe3d25325ebb2d1c57213185232"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/153/processed.csv",
+          "bytes": 184501,
+          "sha256": "f4b5b5a514c667d1dc7ceefc032d6836e2e5654a6bcb235559c0389b27d75775"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/154/processed.csv",
+          "bytes": 171787,
+          "sha256": "4914ad9570307e25422023bccc953ac533bd6eb70e19648f7d35cc3cc3b14e1b"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/155/processed.csv",
+          "bytes": 180729,
+          "sha256": "bdc0da73748f8a54ea718c6f5d89b9a71d4e2188e8cd526dfd9755b6f06afdbb"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/156/processed.csv",
+          "bytes": 213131,
+          "sha256": "e786e6708a9ed88036b6e9a42f70e8e7e74a9f28a15dd9ca4d151c8d0700f9a3"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/157/processed.csv",
+          "bytes": 135704,
+          "sha256": "4bf9fd03d3ecda528ea1d3648e2a659e668228be7869e51aa881d7703ca477be"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/158/processed.csv",
+          "bytes": 157467,
+          "sha256": "daa59e03ef2f31f6408941b02beebd7a2d425205b819b78323450a52da3e0ac5"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/159/processed.csv",
+          "bytes": 140283,
+          "sha256": "e85b27e2d933ce6b639f51dd16c5c62d8fae90572b9fca61a6f4b7fb7584f926"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/16/processed.csv",
+          "bytes": 124128,
+          "sha256": "25180d5689888f4c4287b87f8d6bf4fa5922d24f970d3cd9fe78409e5f4d6195"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/160/processed.csv",
+          "bytes": 209655,
+          "sha256": "4b298cdda65093f72e3214f919b68b593f7ad10a51ea10ec35dc790dbc6c97eb"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/163/processed.csv",
+          "bytes": 191132,
+          "sha256": "c524b30960d040dbb3515084304b1fb61743f701b64113b5ee2b6596ebebc9ec"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/164/processed.csv",
+          "bytes": 183007,
+          "sha256": "447c7cca82187c379e618488f3a8048410e829328e9c3248c39b9f9c167095cf"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/165/processed.csv",
+          "bytes": 168900,
+          "sha256": "d5ad134e5d65c40c0bbfc08d9e5844a0d87c95dacdd85715a68f68631ffa103f"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/166/processed.csv",
+          "bytes": 165129,
+          "sha256": "5c7a21f9ad9db95cc80ba2060900121b7215e79a285afb388746c093004d442a"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/167/processed.csv",
+          "bytes": 111361,
+          "sha256": "1fcfc5b0012aa9bcf0b39c3061d94cc5d1ae300727c46feddb5db2591e4161a2"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/169/processed.csv",
+          "bytes": 174315,
+          "sha256": "8514c576d5a6d3028cd42d6190fe3c7b88064ef875332108553742568511eb8b"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/17/processed.csv",
+          "bytes": 147411,
+          "sha256": "a64a2a5c7fb2050a00531519dafd338277245adea51a605a6b69627d08e08192"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/170/processed.csv",
+          "bytes": 147125,
+          "sha256": "5464f8006092cb897465b1036cd9c360502072659fcb72a2b9ee349cf7150386"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/171/processed.csv",
+          "bytes": 104179,
+          "sha256": "108e18ea37d390067d9437a34df4e98b4000062eeb305de1ec5547b0a792c8cc"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/172/processed.csv",
+          "bytes": 214247,
+          "sha256": "3dd08b3f41cf9640253294e4b3aa98b6b732041e99efc71b39ee95479835928d"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/173/processed.csv",
+          "bytes": 217778,
+          "sha256": "866ca09db6d960aaa02ab795516451833cec07f083148a54b6c816e1b6e42cb0"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/174/processed.csv",
+          "bytes": 151862,
+          "sha256": "8314a867b83c62d3d679ec08f0274cc5fab928a2745001d994f1b2a85529af43"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/175/processed.csv",
+          "bytes": 191818,
+          "sha256": "defd318a811417622051d4a1ee030daca8b09e6aee675a4a861a635b8f7636c1"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/176/processed.csv",
+          "bytes": 190867,
+          "sha256": "f193788c806137e06dd35346a18421dcc7fb07d68d0f69e59018d9f2fc1e5fe5"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/177/processed.csv",
+          "bytes": 116173,
+          "sha256": "62b36311d78e9d2b1c35953ed55231a5e36eff3507cbddaf78d235fe4ed6203f"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/178/processed.csv",
+          "bytes": 109841,
+          "sha256": "84bfe4ea752e5074cb6b99e2bd84f6837def1c86a4a5fb172c633e452ebc4082"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/179/processed.csv",
+          "bytes": 211245,
+          "sha256": "fb69a041255421634c7a8335bcfc65a4e07ace2776a7dcba77d3e582c67edca2"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/18/processed.csv",
+          "bytes": 190549,
+          "sha256": "c4757f8bba747d8f57b98c9c0630f537f83268cd18b56e18d6e4b79137e99dde"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/180/processed.csv",
+          "bytes": 157927,
+          "sha256": "8c8aeb6e996302a4153947a00badb1c40d3bee13793128d4874d0f726d594e94"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/181/processed.csv",
+          "bytes": 173069,
+          "sha256": "0327794d08980f1fbb39b1f6dc564119d5d8575c93bcf81ef4859e287f80fb08"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/182/processed.csv",
+          "bytes": 145226,
+          "sha256": "2341f636876d972671fff20155f0743afd2eabc2442f5012d98a10014c63eeee"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/183/processed.csv",
+          "bytes": 106878,
+          "sha256": "81140380197be5ab5e5d31984ab3d6429088bff58d9e754ed0e6516102e396f8"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/184/processed.csv",
+          "bytes": 256254,
+          "sha256": "a856c9d6f87c57838a2119f874e30f4a240f977a4d1b29692220ebd5c1eecf2a"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/185/processed.csv",
+          "bytes": 136870,
+          "sha256": "1a094970f9f6be6a87c7e09f6ef12cbc4ab127a900cb3587adcfd7167e6481d7"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/186/processed.csv",
+          "bytes": 149363,
+          "sha256": "5c6db35eb672ce2d60106fa6db89947bc85bc6640d3506125f8b8f119ec83dfc"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/187/processed.csv",
+          "bytes": 101941,
+          "sha256": "e4d22ed4c92acb682f549224d6c720dab9d96cfe197bb8e19b5954ee7aefda77"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/188/processed.csv",
+          "bytes": 255125,
+          "sha256": "af550457e500c0d09398b79798b830b1c1ad60f86f1a28b9265a131c7507c412"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/189/processed.csv",
+          "bytes": 132698,
+          "sha256": "b34f8f2df11ae818478f49a2de4c2b995ff22c3d71524b24cdebfa499c8c1593"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/190/processed.csv",
+          "bytes": 183731,
+          "sha256": "8e32d7b6ff36644e8f6a3c791f76299842c07fafbbd02a4669cc2e870e9ff98e"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/191/processed.csv",
+          "bytes": 191845,
+          "sha256": "91e5e8758c2a5ecde9edc19231d4b38e1a98053064367b634e0d601f087088f5"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/192/processed.csv",
+          "bytes": 132685,
+          "sha256": "8ce69ac6dd61734ce4b91139348ba7d70292fd1487dee33a14585e7dec3a9f48"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/193/processed.csv",
+          "bytes": 225929,
+          "sha256": "fe2e53217657c1ebcc154753139a0f6ac7c37ccbc4a798852e6000db69ab0ed4"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/194/processed.csv",
+          "bytes": 180652,
+          "sha256": "c142a708a18ce427fb5c278bf86810841db30469f8ce708259369058aeb66c07"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/195/processed.csv",
+          "bytes": 195576,
+          "sha256": "e0adc341930d1dd6b9eec5d40fa89654c84656780150b5fafaaec49c7b71f084"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/196/processed.csv",
+          "bytes": 133754,
+          "sha256": "3abc58e2ed1785dcd9811c12d82b785e899b667e3073211ad556954dcbc3951c"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/197/processed.csv",
+          "bytes": 111794,
+          "sha256": "6937f0469cea7930266e7b318f7fe080920229e9e70acc0ec838a3461df4be51"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/198/processed.csv",
+          "bytes": 140479,
+          "sha256": "f7a4d83b0e980634df4e8876995665f5cf1c18816f9fc2aa5fb1fa68fa24601a"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/199/processed.csv",
+          "bytes": 223444,
+          "sha256": "40e917527c407d69708e2964c72b2c07585893291fd57382acabbaf0259f140c"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/20/processed.csv",
+          "bytes": 147222,
+          "sha256": "59adad9efe16be86c6583b88817b2b6f99115d369244e63101302cf353e991a5"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/200/processed.csv",
+          "bytes": 194806,
+          "sha256": "a74b1c1abab0906a98a083590963a8a09d8f766fe5e17dc6281683d951b71217"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/201/processed.csv",
+          "bytes": 235150,
+          "sha256": "0274dfcb8fea571fac2b0ffefb2cba27e560320215b88ee740fbb7bd5ea9342b"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/202/processed.csv",
+          "bytes": 191181,
+          "sha256": "a80f147a690bbc37f11eb0f1e9ee2f4a0d7b22285e6b43a74942713c7914c3d1"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/203/processed.csv",
+          "bytes": 125069,
+          "sha256": "a68434c7cb46b5d96e7b7032d6c017b98ef5f2cc52e892dab04b5215fb225195"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/204/processed.csv",
+          "bytes": 147630,
+          "sha256": "d392f0a92fe7ada5f5ccc11917bac8611ced0fd20b5f43875edcc320a3e0735e"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/205/processed.csv",
+          "bytes": 143697,
+          "sha256": "3fcab1b2be3687e94de5d7e2a803e865af31f56b2f406eec368d4b04ea211ff5"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/206/processed.csv",
+          "bytes": 170402,
+          "sha256": "99958835f7f112e03a8dfd5b4d261c02e8cf523bf26c0c64bf728104b63dcf86"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/207/processed.csv",
+          "bytes": 141026,
+          "sha256": "ab33d6adff328503ac4343e7c3ec4b42bf23d7f11d48056652997bb7700f4eb3"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/208/processed.csv",
+          "bytes": 188021,
+          "sha256": "eea27c927f6d831cc22b61185e087fb0ceff3f4269678a81d1e0119d20866116"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/209/processed.csv",
+          "bytes": 172918,
+          "sha256": "eaadd53f801c09cf65949ca796ca2694ba4e18f6fed1baec024fde3817f9f7d6"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/210/processed.csv",
+          "bytes": 260708,
+          "sha256": "a6fb0c57e32fbb61788e8cdb9d2a6b0343ef62af25e77af0b1fa6b1d232f43ae"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/225/processed.csv",
+          "bytes": 165739,
+          "sha256": "38e90cdcfda4be67e61eb77d544ad692fa68fb305d8bb501b19a8ee74888fd00"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/226/processed.csv",
+          "bytes": 168116,
+          "sha256": "ad985392e45869b0ece9f80423783c602cf6aeae11a41aed7f402e661bdc0d01"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/227/processed.csv",
+          "bytes": 215067,
+          "sha256": "7bff01682b00294c65eccb649c69dd42b76b5dcf59c56aaaa571a2edffae2e20"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/228/processed.csv",
+          "bytes": 183077,
+          "sha256": "24d74739fcdac5c2c7fdd25dc31d127b7c689f56a94264ff15ebcfd5b66589c2"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/229/processed.csv",
+          "bytes": 141950,
+          "sha256": "3bc59963e19f0f4b320afae1dd8612751b4e0fd756fdd8fdbd669ac17198809d"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/23/processed.csv",
+          "bytes": 130048,
+          "sha256": "637a73c333d999f2232a68a74611bba564ebc4593c78fa624611cb08009baf4e"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/230/processed.csv",
+          "bytes": 145011,
+          "sha256": "f3aefb37b9cad070bd23942880723d458de7cb00fd8f502550245118d1a05b10"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/231/processed.csv",
+          "bytes": 195464,
+          "sha256": "e6a1c98aa877955c7cfa0d3684adccee437306ef4a1f4a240d1b756d6d4dbc4f"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/232/processed.csv",
+          "bytes": 211569,
+          "sha256": "7e3d90c94b1c147f35fec14ff374e05f9da364666064f5dcb2691cd95b6025f7"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/233/processed.csv",
+          "bytes": 219293,
+          "sha256": "b0da97fc864443a768c90ce45f42b61a2e8a605482d4ad786508a9decf306560"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/234/processed.csv",
+          "bytes": 182816,
+          "sha256": "bddc05d1e7a108da9e9cc52a305824c3298b09f86a3a80cc476460f4df042885"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/235/processed.csv",
+          "bytes": 101433,
+          "sha256": "53f4643fba4a57ff2d0e48ae867ff4270cbc2990e79cea0bda069babb4402f19"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/236/processed.csv",
+          "bytes": 118702,
+          "sha256": "15c1ed84e07907cdd26bf4d102c638f7124a3f9ed6ce5bdbe49583dac3b93722"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/237/processed.csv",
+          "bytes": 256115,
+          "sha256": "b4bb947129ad12a21b9548b93d134ee3750154c5853240dd473c28c58a978e07"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/238/processed.csv",
+          "bytes": 212790,
+          "sha256": "0df8e356499aefeec1659c431f6e81f3a8b4bb474ee3436d469887ffe0efb811"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/239/processed.csv",
+          "bytes": 237852,
+          "sha256": "d062a2b8d03fba625ec13218352d5659886755167977e7694f794e37521c6ebe"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/240/processed.csv",
+          "bytes": 188387,
+          "sha256": "65eba110cc185877cb686fd04eb0b88a6368641d51d6e3672c3d1d75abc237c0"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/241/processed.csv",
+          "bytes": 159943,
+          "sha256": "f3330742afd000cfc9e2b78b2f5aec91d3a135118ff78861afdca4f4385d1dfb"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/242/processed.csv",
+          "bytes": 173250,
+          "sha256": "20c6bda9686a28b6e3b0ed29738ad86ea5d894bc803569af25de161553c579cb"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/243/processed.csv",
+          "bytes": 184681,
+          "sha256": "181009ba825d431e1379defc122377f215ba438e248ccc4f4dd9cef7396ba2f6"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/246/processed.csv",
+          "bytes": 188010,
+          "sha256": "7b7fda723f85a928d1528f4a97b69cb65a61568269ada8ae255b66eaf58799e7"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/247/processed.csv",
+          "bytes": 167389,
+          "sha256": "87140db007fb4b39f0cd0dc706190bcca27ea7b9051b88d6890d430bae4b53e4"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/248/processed.csv",
+          "bytes": 238660,
+          "sha256": "8d285f1a75dfa346d90ec300019a4a29655efb4ed520c739940c9d6dfda2f41b"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/249/processed.csv",
+          "bytes": 157255,
+          "sha256": "6cfc80d173c158aed4670f0df2319a9141ff8e567cc2565e9ab4cb5e9a300305"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/250/processed.csv",
+          "bytes": 180762,
+          "sha256": "ac0e550e087abaa37284a25a6b05527eb6286a9103844abdefc7eef1e4ed2db4"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/251/processed.csv",
+          "bytes": 148173,
+          "sha256": "86f6641250daa81cb092c92f7d881b87b6659b9051ccd9c09cc561e73c726b60"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/252/processed.csv",
+          "bytes": 154217,
+          "sha256": "fd87df6056c3d17741c31473701a4489ebc9800a57bb7ad36fd23da2dac9d243"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/253/.DS_Store",
+          "bytes": 6148,
+          "sha256": "d65165279105ca6773180500688df4bdc69a2c7b771752f0a46ef120b7fd8ec3"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/253/processed.csv",
+          "bytes": 113784,
+          "sha256": "f00140a7b4d328b6aaf5d25e29f0d575284f94525c6821f498cc34f49e6e4022"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/254/.DS_Store",
+          "bytes": 6148,
+          "sha256": "d65165279105ca6773180500688df4bdc69a2c7b771752f0a46ef120b7fd8ec3"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/254/processed.csv",
+          "bytes": 140704,
+          "sha256": "6c8bda118eda8732298094ad068620ce96c6f8e8bd74150ce15befed934e58cc"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/255/processed.csv",
+          "bytes": 149616,
+          "sha256": "1dae074ad18660cca6a6eba1a0af0fe181748ba8c5bb0bb2e5399c86b638d998"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/256/processed.csv",
+          "bytes": 160967,
+          "sha256": "4d09f66ccf49286081fbb3fabb15fb3b31f53ae080c13a7e22fcb03ad80e9ca6"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/257/processed.csv",
+          "bytes": 198879,
+          "sha256": "176cc8d57c69293fa8c398cb7890281d050a6f71aa5b7db2c1cac2fed97f9944"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/258/processed.csv",
+          "bytes": 215866,
+          "sha256": "de3086907e4c0bb71394bd5f3abe2dde2448974796d0eabe3492926b54b52e07"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/260/processed.csv",
+          "bytes": 236937,
+          "sha256": "e5c23900c381ff5b00159203431ab1831617060da255da24c5167580ff9af395"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/261/processed.csv",
+          "bytes": 172365,
+          "sha256": "155fddd24e1df24442fefdc556d2af6ce27b4296f6bbc6228c0da965b1bf49c7"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/262/processed.csv",
+          "bytes": 162842,
+          "sha256": "87095212ed66341b24f22dc887b3331045962eae490ecdb660f16a45593d1375"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/263/processed.csv",
+          "bytes": 231974,
+          "sha256": "08a0eacad8fd47d95cab490ff318162bde27be837ee566aa7a95189dc5573b26"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/264/processed.csv",
+          "bytes": 216408,
+          "sha256": "bd7a7358b6a919a44984ecd092e27df3355f0150947101ab1d048edc0fd1a4c3"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/267/processed.csv",
+          "bytes": 125608,
+          "sha256": "0c8594c7a3946025c8504dcd5c306cdd23deb26f1c618fb7ba2d2d3e3390fd60"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/268/processed.csv",
+          "bytes": 225814,
+          "sha256": "ab199407d5877baf1cb8aa28fb52d680c3be732e73a4c3c13c7d388c387c5491"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/269/processed.csv",
+          "bytes": 153446,
+          "sha256": "dbc9ec19d8c531609fd7910522e2c65b142dafad7aabac112feca220f4c307cd"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/270/processed.csv",
+          "bytes": 213109,
+          "sha256": "1bd4920efbf3c5cc4d6b576a631bdc247896ae99f13236c3d70768d27ff93b60"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/271/processed.csv",
+          "bytes": 162896,
+          "sha256": "f23ecfee7926a27fdecc9940ffefd0315056cbed4bee97a4d046c2f42ee226b7"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/272/processed.csv",
+          "bytes": 341463,
+          "sha256": "e4f9285392b5abed637654e52f103943bccb9dc9575e5538f196c078ca410ae6"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/273/processed.csv",
+          "bytes": 380716,
+          "sha256": "bd4a3a0531bc6df96195276bced61c9573ed17a70bdace2697152ca5ab27a9df"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/275/processed.csv",
+          "bytes": 119240,
+          "sha256": "0a54fd2bc4ebd44c62fdc4a28ec509e76c7b7b782e932e27f8d4c360dad9e04c"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/276/processed.csv",
+          "bytes": 110511,
+          "sha256": "c5f4d9cd506430d0cd1a848390b6169fc974168ab76f17a6e862ad4f1f0f886b"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/277/processed.csv",
+          "bytes": 110548,
+          "sha256": "5d152dc13458ce1d542ded16597f75f8281bd81ed7e589bfc860efbb0c82cf0e"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/278/processed.csv",
+          "bytes": 128952,
+          "sha256": "2cfbe1ecd722f6678aa84a2875ab399134341f2f192bbd045e63c246fc506b8b"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/279/processed.csv",
+          "bytes": 124755,
+          "sha256": "5a3c629e8bef5fd9a38fbc24a23990f9137865b01742a5317c60368a361464af"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/59/processed.csv",
+          "bytes": 134708,
+          "sha256": "26fa07b1580ae4e37fa3c91fb71b4dbf743dd7719683458a931783606afc6024"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/60/processed.csv",
+          "bytes": 156533,
+          "sha256": "8a6b5eeecfcdc5e59bdf906b3976d1599106ab8911a2d053197b158faa60db56"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/68/processed.csv",
+          "bytes": 178136,
+          "sha256": "814bfa60d9fc4172f071f1f0071b5644b2c6b0cfceff767dcccbf7a284804455"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/77/processed.csv",
+          "bytes": 107658,
+          "sha256": "c658927460f9c9957d7e79d85bc4376efe4cd5c48cecf98a01e6b18766718030"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/78/processed.csv",
+          "bytes": 179351,
+          "sha256": "3dde02ec1f99496c77e737923318a56ef550df50b5aed9788c5e6190affc3a7e"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/79/processed.csv",
+          "bytes": 134445,
+          "sha256": "279e38d89cd007cca7b351ca14db204d32233409edb3bd2d2b3320ff6907f7b0"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/8/processed.csv",
+          "bytes": 189862,
+          "sha256": "7d6254c28977460486e511eb73cc8b67f85cc1445e13c65ec185157ac36b69b8"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/80/processed.csv",
+          "bytes": 140329,
+          "sha256": "76330c7c638aa60ba1284c9eb0ced4c167ea954e0cc64effbf482b18ccc37909"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/81/processed.csv",
+          "bytes": 193347,
+          "sha256": "bcecf9408664b62d9c74efdee6fff29891650a0c000ab78605418d4b95cc75fb"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/82/processed.csv",
+          "bytes": 169918,
+          "sha256": "7b336fecb669d5d910ff82836fe6d319d7cce1c1875621136b83feed56507858"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/83/processed.csv",
+          "bytes": 165263,
+          "sha256": "d3144822c1008364233244c62648af92d5a084df81548937aff921700510c547"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/84/processed.csv",
+          "bytes": 212867,
+          "sha256": "ced8398598866759c3a02bcd9dbbc636262fdedb99012a580a9b91c2d6a9b733"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/85/processed.csv",
+          "bytes": 180837,
+          "sha256": "d171ffb9d77061eb7ddd1bd99e2b68f77a38e96fb4f75cb9cd91175b69036af9"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/86/processed.csv",
+          "bytes": 177567,
+          "sha256": "6d2228ea1b96a0aa6ab982fd1dba0957f93c30e368366cb872616f8baabc6bf4"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/87/processed.csv",
+          "bytes": 264685,
+          "sha256": "d6ecffbe96f5094866bb7b7d76d4c59e88e05761ca0558a864b27c40291c1716"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/88/processed.csv",
+          "bytes": 185472,
+          "sha256": "7cf0fd0f93f7ea07c477d8b67f05bd27f1933ff7087f76c438da044a9765255c"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/91/processed.csv",
+          "bytes": 164880,
+          "sha256": "8c3ecd3dfa7661fa419366d246f6416378aec29bb25bb40c36daee606984065b"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/92/processed.csv",
+          "bytes": 156188,
+          "sha256": "0e464a56b2f21c0f28e159957ba2f66e57082e45b6c94810099c79cefa508ccc"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/93/processed.csv",
+          "bytes": 170983,
+          "sha256": "eb8dd666d5c820aa0c65d6c59074e9f5b943cc0734d03ef1a6762c6a521f9f31"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/94/processed.csv",
+          "bytes": 213690,
+          "sha256": "4489fb158508446957dd73a79645bacce9e7c0aed6eb652e7f6d911d62789570"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/95/processed.csv",
+          "bytes": 144159,
+          "sha256": "7239c67d4c7ef954a3fa365989173ed751766686b58852808ce8d57efaf9ca45"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/96/processed.csv",
+          "bytes": 193955,
+          "sha256": "3143c267a5480b04fa47f12a7aa6486f75f013b40ca50f8c2cadbfcf9ccfc726"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/97/processed.csv",
+          "bytes": 242199,
+          "sha256": "ff484e3725e42e3399e013295db73f8a03d492df818d28c06dc00a518e08b983"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/98/processed.csv",
+          "bytes": 99648,
+          "sha256": "eab723bf5f1ee3ad553c1b3187c30acd0795c7ad59d740bcc1078133dd414fae"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/99/processed.csv",
+          "bytes": 167827,
+          "sha256": "2273128e8fd99f9eb0a84cc6bcc7406cfa28d63ec9ae3442a6260e45f9e476fd"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data/Flight Sheet.xlsx",
+          "bytes": 39049,
+          "sha256": "db86a7869ccd5f1fc6303be0e5c369ebd6e9cc0d356f452301376eedd590f4e1"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data_min.zip",
+          "bytes": 12374812,
+          "sha256": "3bdc3c0c236f7b18dab64a642b59b64cf9c917b048c94149be05972b96ef6094"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/data_utils.py",
+          "bytes": 14242,
+          "sha256": "88f1454ee70e44329ff30c10bcf078c6e479fe121fedce8077214cefcd91bb9b"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/deep_energy_model.py",
+          "bytes": 6541,
+          "sha256": "281f1480a9e5b6c8ac1964c7ffe5c9932567ba92202c73a7bb8501c56d1b2a28"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/evaluation.py",
+          "bytes": 8561,
+          "sha256": "1b906edf550c5d3150ab711a6f942f7513459609570d7c2860a8fe6a7bb8bb2d"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/LICENSE",
+          "bytes": 1653,
+          "sha256": "e16e663c1e68095d656f43323503aee3ff71529defbb16dc73d5a81d17fee69f"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/liu_model.py",
+          "bytes": 10314,
+          "sha256": "ab519594210b27fc8a91b60b0b2fe179a07b2033e6f1723a9736d3aec7ff9757"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/MetarHandler.py",
+          "bytes": 4034,
+          "sha256": "942f890b23d9ebc5d9a9f11eeaf037969e9f45b51fc0a3431abe05d9922f5fca"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/models/b-LSTM/cp.ckpt.data-00000-of-00002",
+          "bytes": 4595,
+          "sha256": "5e43ce965783b8457d47751a1e44fae2649253761387091044c1db8d734d4eb0"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/models/b-LSTM/cp.ckpt.data-00001-of-00002",
+          "bytes": 677216,
+          "sha256": "9b3a29b7a1eb5dbcf3fc5751ecc9d3ad4cf845581b60f13209c315d00d5f0a61"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/models/b-LSTM/cp.ckpt.index",
+          "bytes": 2398,
+          "sha256": "bf2e0adb7e10e1e36f32abbef0563ba496bf204c5a7f7fe050995e12030060b1"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/models/b-TCN/cp.ckpt.data-00000-of-00002",
+          "bytes": 15853,
+          "sha256": "c19da942f6c2092b78959d35bac2fe6f73da53c18e8b817228092817e616f795"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/models/b-TCN/cp.ckpt.data-00001-of-00002",
+          "bytes": 912900,
+          "sha256": "be6d166b159e23d9130cedc626a6544b653a69fa6140d341dc521650ff7b5f27"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/models/b-TCN/cp.ckpt.index",
+          "bytes": 5994,
+          "sha256": "c3a7c88310538bbe1bcc497a9e79a2f2906b83138b976e58928b8fb3b939d3ec"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/models/s-LSTM/cp.ckpt.data-00000-of-00002",
+          "bytes": 4595,
+          "sha256": "d282e674a0d8ad10ee9e9c28824f916eb4ebd96a6dd3f38cab0bad8cb665a3ab"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/models/s-LSTM/cp.ckpt.data-00001-of-00002",
+          "bytes": 46688,
+          "sha256": "18022822420f2a9ae61ae30c2b84d6ff4d767ccd7e7347c45332ba99226a5d35"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/models/s-LSTM/cp.ckpt.index",
+          "bytes": 2365,
+          "sha256": "f5b2d22816d29a35274bbc4f3af0ab75a05d2e54a55b6cab56d69247f5c2d2df"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/models/s-TCN/cp.ckpt.data-00000-of-00002",
+          "bytes": 15853,
+          "sha256": "583e2143449e2750ddfb3d79a344213c95961d2df50fa6955fa8c98c74552a28"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/models/s-TCN/cp.ckpt.data-00001-of-00002",
+          "bytes": 62724,
+          "sha256": "7f8718026dec2671aba4c91915ee85f39e515a293789ae2de0bbc9c07a76b0a9"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/models/s-TCN/cp.ckpt.index",
+          "bytes": 5922,
+          "sha256": "05f6d0efb6e95093935842f14d29c3aa923aa38b03e9a6b08b7c77b7744efcfb"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/QuadSim.py",
+          "bytes": 21555,
+          "sha256": "2d231687b270ba4e21b35f41224ad2ca039ae909884674343e207cace69b1ece"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/README.md",
+          "bytes": 9637,
+          "sha256": "3e2ff8272a044a584d9baa7d5f23f64e0973760ebd4da9137ed4a67e8b3b9c34"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/requirements.txt",
+          "bytes": 2269,
+          "sha256": "1fdac298baf3bc159d843c5220333174b05aca5dc6c371ba241c86a81673339b"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/Risk.py",
+          "bytes": 2693,
+          "sha256": "7f94e0171b4d3e8d2bd591be6cfb0e58e39f40399f8165aff26385566673f287"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/sim.py",
+          "bytes": 6142,
+          "sha256": "4d2efafa5c746e5b45d0e8f5dd4e45417b917b430f7dfea0fb1f33c2cecc5361"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/source_tree.json",
+          "bytes": 11135,
+          "sha256": "28a0b248512f017bdbc19326b13f275d3a76bc842d715e96ba43c1eff875330d"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/train.py",
+          "bytes": 6600,
+          "sha256": "b928640ea8f941e35f567bc5b99bc7cc31923163edfba1fe6ec498a9fabf5018"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/windfield.py",
+          "bytes": 9721,
+          "sha256": "4c8fb3fc3c813b8c32df6ca3bbb8fe00233488dbaa74246e9de7a42e458e9b51"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/m100_official/flights.csv",
+          "bytes": 107068831,
+          "sha256": "117843be1846d4db353c8961b9f947ee7e6a30fdf3d78c8f8de92b477869f037"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/m100_official/metadata.json",
+          "bytes": 9855,
+          "sha256": "d43ff887f506a0e6455541e7eff7a7db4c04904bb394fa7d0ed5ecdd955c4bb3"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/m100_official/parameters.csv",
+          "bytes": 7867,
+          "sha256": "568dffaed11a4d335ef4f8a932b342c836907af2f4aa54da9b4a0e2ffef2108a"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/sources/m100_official/README.txt",
+          "bytes": 25101,
+          "sha256": "8601dd211d6c297c5411992dc34923bdb98b72cdc287517ed18e479f0e9540fd"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/transition_receipt.json",
+          "bytes": 7390,
+          "sha256": "166b355db41992373ce45f29bc745d1f86f8349584e66e68e44d9aaa0cdd65bb"
+        },
+        {
+          "path": "总结/03_实验数据/电池能耗公开机型验证/首轮测试报告.txt",
+          "bytes": 5509,
+          "sha256": "9d5936c0b338a01efa0283c5f0c330e1a4aaf88cb265e37bb4c371492b675fe6"
+        }
+      ]
+    }
+  ]
+}

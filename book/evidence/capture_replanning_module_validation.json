@@ -1,0 +1,354 @@
+{
+  "protocol": {
+    "experiment_id": "inspection_capture_and_takeover_components",
+    "profile_sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec",
+    "camera_source_sha256": "04fd082a67319a06a4b02cb56b45ad2aadadb9975bf646a03a9aea41289e366b",
+    "replanning_source_sha256": "a176aaf0c8b7dac6571bbcc64ef69c090485597ca6725a40e47027b89707ecf0",
+    "validator_sha256": "61ed7953150a1f38c813373d852429fe3d9ed4a0cf6474f369d1a2f2f206b8c0",
+    "purpose": "verify 2D exposure blur and forbid physical state resets during takeover",
+    "full_mission": false
+  },
+  "observed_at": "2026-11-10T09:05:57.976155+00:00",
+  "checks": [
+    {
+      "name": "stationary_reference_image",
+      "passed": true,
+      "details": {
+        "accepted": true,
+        "reasons": [],
+        "worst_gsd_m_per_px": 0.0030410982518577745,
+        "blur_px": 0.0,
+        "min_range_m": 15.0,
+        "max_range_m": 15.004166088123657,
+        "max_incidence_deg": 1.3502244696995576,
+        "evidence_kind": "simulated_geometric_acceptance_not_real_image_QA",
+        "sample_count": 3
+      }
+    },
+    {
+      "name": "pinhole_gsd_matches_closed_form",
+      "passed": true
+    },
+    {
+      "name": "diagonal_blur_rejected",
+      "passed": true,
+      "details": {
+        "accepted": false,
+        "reasons": [
+          "blur"
+        ],
+        "worst_gsd_m_per_px": 0.0030410982518577745,
+        "blur_px": 1.1313708498985726,
+        "min_range_m": 15.0,
+        "max_range_m": 15.004247555822253,
+        "max_incidence_deg": 1.3633592631508396,
+        "evidence_kind": "simulated_geometric_acceptance_not_real_image_QA",
+        "sample_count": 3
+      }
+    },
+    {
+      "name": "euclidean_blur_oracle",
+      "passed": true,
+      "expected_px": 1.1313708498984762
+    },
+    {
+      "name": "unknown_visibility_ray_rejected",
+      "passed": true,
+      "details": {
+        "accepted": false,
+        "reasons": [
+          "occluded_or_unknown"
+        ],
+        "worst_gsd_m_per_px": 0.0030410982518577745,
+        "blur_px": 0.0,
+        "min_range_m": 15.0,
+        "max_range_m": 15.004166088123657,
+        "max_incidence_deg": 1.3502244696995576,
+        "evidence_kind": "simulated_geometric_acceptance_not_real_image_QA",
+        "sample_count": 3
+      }
+    },
+    {
+      "name": "occlusion_rejected",
+      "passed": true,
+      "details": {
+        "accepted": false,
+        "reasons": [
+          "occluded_or_unknown"
+        ],
+        "worst_gsd_m_per_px": 0.0030410982518577745,
+        "blur_px": 0.0,
+        "min_range_m": 15.0,
+        "max_range_m": 15.004166088123657,
+        "max_incidence_deg": 1.3502244696995576,
+        "evidence_kind": "simulated_geometric_acceptance_not_real_image_QA",
+        "sample_count": 3
+      }
+    },
+    {
+      "name": "low_visibility_rejected",
+      "passed": true,
+      "details": {
+        "accepted": false,
+        "reasons": [
+          "visibility"
+        ],
+        "worst_gsd_m_per_px": 0.0030410982518577745,
+        "blur_px": 0.0,
+        "min_range_m": 15.0,
+        "max_range_m": 15.004166088123657,
+        "max_incidence_deg": 1.3502244696995576,
+        "evidence_kind": "simulated_geometric_acceptance_not_real_image_QA",
+        "sample_count": 3
+      }
+    },
+    {
+      "name": "outside_frame_and_range_rejected",
+      "passed": true,
+      "details": {
+        "accepted": false,
+        "reasons": [
+          "FOV",
+          "incidence",
+          "range"
+        ],
+        "worst_gsd_m_per_px": 0.0030410982518577745,
+        "blur_px": 0.0,
+        "min_range_m": 100.8718246092535,
+        "max_range_m": 101.36629124122082,
+        "max_incidence_deg": 81.4902223327938,
+        "evidence_kind": "simulated_geometric_acceptance_not_real_image_QA",
+        "sample_count": 3
+      }
+    },
+    {
+      "name": "actual_takeover_state_accepted",
+      "passed": true
+    },
+    {
+      "name": "reject_SOC_reset",
+      "passed": true
+    },
+    {
+      "name": "reject_polarization_reset",
+      "passed": true
+    },
+    {
+      "name": "reject_temperature_reset",
+      "passed": true
+    },
+    {
+      "name": "reject_rotor_reset",
+      "passed": true
+    },
+    {
+      "name": "reject_lost_commitment",
+      "passed": true
+    },
+    {
+      "name": "reject_stale_revision",
+      "passed": true
+    },
+    {
+      "name": "reject_future_candidate",
+      "passed": true
+    },
+    {
+      "name": "reject_position_reset",
+      "passed": true
+    },
+    {
+      "name": "quaternion_sign_equivalence_preserved",
+      "passed": true
+    }
+  ],
+  "all_checks_passed": true,
+  "image_fixtures": [
+    {
+      "name": "stationary_reference_image",
+      "accepted": true,
+      "reasons": [],
+      "worst_gsd_m_per_px": 0.0030410982518577745,
+      "blur_px": 0.0,
+      "min_range_m": 15.0,
+      "max_range_m": 15.004166088123657,
+      "max_incidence_deg": 1.3502244696995576,
+      "evidence_kind": "simulated_geometric_acceptance_not_real_image_QA",
+      "sample_count": 3
+    },
+    {
+      "name": "diagonal_blur_rejected",
+      "accepted": false,
+      "reasons": [
+        "blur"
+      ],
+      "worst_gsd_m_per_px": 0.0030410982518577745,
+      "blur_px": 1.1313708498985726,
+      "min_range_m": 15.0,
+      "max_range_m": 15.004247555822253,
+      "max_incidence_deg": 1.3633592631508396,
+      "evidence_kind": "simulated_geometric_acceptance_not_real_image_QA",
+      "sample_count": 3
+    },
+    {
+      "name": "unknown_visibility_ray_rejected",
+      "accepted": false,
+      "reasons": [
+        "occluded_or_unknown"
+      ],
+      "worst_gsd_m_per_px": 0.0030410982518577745,
+      "blur_px": 0.0,
+      "min_range_m": 15.0,
+      "max_range_m": 15.004166088123657,
+      "max_incidence_deg": 1.3502244696995576,
+      "evidence_kind": "simulated_geometric_acceptance_not_real_image_QA",
+      "sample_count": 3
+    },
+    {
+      "name": "occlusion_rejected",
+      "accepted": false,
+      "reasons": [
+        "occluded_or_unknown"
+      ],
+      "worst_gsd_m_per_px": 0.0030410982518577745,
+      "blur_px": 0.0,
+      "min_range_m": 15.0,
+      "max_range_m": 15.004166088123657,
+      "max_incidence_deg": 1.3502244696995576,
+      "evidence_kind": "simulated_geometric_acceptance_not_real_image_QA",
+      "sample_count": 3
+    },
+    {
+      "name": "low_visibility_rejected",
+      "accepted": false,
+      "reasons": [
+        "visibility"
+      ],
+      "worst_gsd_m_per_px": 0.0030410982518577745,
+      "blur_px": 0.0,
+      "min_range_m": 15.0,
+      "max_range_m": 15.004166088123657,
+      "max_incidence_deg": 1.3502244696995576,
+      "evidence_kind": "simulated_geometric_acceptance_not_real_image_QA",
+      "sample_count": 3
+    },
+    {
+      "name": "outside_frame_and_range_rejected",
+      "accepted": false,
+      "reasons": [
+        "FOV",
+        "incidence",
+        "range"
+      ],
+      "worst_gsd_m_per_px": 0.0030410982518577745,
+      "blur_px": 0.0,
+      "min_range_m": 100.8718246092535,
+      "max_range_m": 101.36629124122082,
+      "max_incidence_deg": 81.4902223327938,
+      "evidence_kind": "simulated_geometric_acceptance_not_real_image_QA",
+      "sample_count": 3
+    }
+  ],
+  "takeover_state": {
+    "time_s": 40.0,
+    "revision": 2,
+    "vehicles": {
+      "V1": {
+        "position_m": [
+          0,
+          0,
+          0
+        ]
+      }
+    },
+    "aircraft": {
+      "U1": {
+        "position_m": [
+          12.000766893041273,
+          3.997278188067069,
+          12.000042295682134
+        ],
+        "velocity_mps": [
+          0.0005377430760170801,
+          -0.0004178493386044318,
+          -6.229226124188743e-07
+        ],
+        "body_quaternion_wxyz": [
+          0.9999895113876945,
+          -0.0022141864183802145,
+          0.004009291029616171,
+          -8.86242883578328e-06
+        ],
+        "body_rate_radps": [
+          -0.0014897433548786173,
+          -0.0005938522877184124,
+          -1.1959389682700152e-05
+        ],
+        "rotor_thrust_N": [
+          17.169734706973966,
+          17.16967498441125,
+          17.169725104286844,
+          17.16979499316688
+        ],
+        "mode": "airborne",
+        "battery_pair_id": "B1",
+        "sortie_id": "L1"
+      }
+    },
+    "battery_pairs": {
+      "B1": {
+        "SOC": 0.8862740967320168,
+        "polarization_V": 0.19328645163737457,
+        "temperature_C": 25.248219097935767,
+        "grid_input_Wh": 0.0,
+        "load_output_Wh": 8.186145358005076,
+        "resistive_heat_Wh": 0.19447060693541912,
+        "mode": "in_flight",
+        "aircraft_id": "U1"
+      }
+    },
+    "committed_actions": [
+      {
+        "action_id": "hold_L1",
+        "start_s": 39.0,
+        "end_s": 41.0
+      }
+    ]
+  },
+  "negative_takeover_cases": [
+    {
+      "case": "SOC_reset",
+      "reason": "Reset battery state: SOC"
+    },
+    {
+      "case": "polarization_reset",
+      "reason": "Reset battery state: polarization_V"
+    },
+    {
+      "case": "temperature_reset",
+      "reason": "Reset battery state: temperature_C"
+    },
+    {
+      "case": "rotor_reset",
+      "reason": "Stale takeover actuator state"
+    },
+    {
+      "case": "lost_commitment",
+      "reason": "Changed issued commitment"
+    },
+    {
+      "case": "stale_revision",
+      "reason": "Candidate uses a stale state revision"
+    },
+    {
+      "case": "future_candidate",
+      "reason": "Candidate not yet available at takeover"
+    },
+    {
+      "case": "position_reset",
+      "reason": "Stale takeover position"
+    }
+  ],
+  "full_joint_solver_verified": false,
+  "real_image_quality_calibrated": false
+}

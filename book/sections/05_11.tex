@@ -1,0 +1,102 @@
+\section{异构协作的条件变量—约束超图}
+\label{sec:05_11}
+
+第\ref{sec:05_10}节建立了完整模型的变量与约束关联。本节进一步区分两种变化：能力资格改变变量的允许取值，协作方式与已知信息改变约束的生效条件。二者共同决定当前需要求解的子问题，不能仅从原始关联图读取实际耦合规模。
+
+\subsection{变量域与条件约束因子}
+
+沿用有限转录后的标量决策变量，以$\mathcal X$表示变量索引集，$x_j$表示索引$j\in\mathcal X$对应的变量。给定本次决策可用的信息及参数$\theta$，其域为$\mathcal D_j(\theta)$。例如，某无人机对某观测任务具有合格能力时，相应二元分配分量可以取$0$或$1$；资格不满足时，该分量的域缩为$\{0\}$。这只回答能否分配，不能替代联盟能力总量、同步到达和共享资源约束。STRATA区分可累加能力与不可累加能力，并对后者使用资格阈值；这支持分别处理能力总量和个体资格，而不能把所有能力都直接相加\cite{STRATA2020}。
+
+以$\mathcal C$表示约束身份的索引集。每个因子$\alpha\in\mathcal C$保留作用域$S_\alpha\subseteq\mathcal X$、生效谓词$\gamma_\alpha$、约束函数$f_\alpha$、关系符号$\bowtie_\alpha\in\{=,\leq\}$及参数$\theta_\alpha$，形成
+\begin{equation}
+\label{s0511:conditional_factors}
+\begin{aligned}
+ x_j&\in\mathcal D_j(\theta), &&j\in\mathcal X,\\
+ \gamma_\alpha(x_{S_\alpha};\theta_\alpha)=1
+ &\ \Longrightarrow\ 
+ f_\alpha(x_{S_\alpha};\theta_\alpha)\bowtie_\alpha 0,
+ &&\alpha\in\mathcal C.
+\end{aligned}
+\end{equation}
+其中$x_{S_\alpha}$为作用域内变量组成的子向量，$\gamma_\alpha$取值于$\{0,1\}$。无条件约束的谓词恒为$1$。$S_\alpha$必须包含谓词与约束函数依赖的全部决策变量；已知能力、容量和信息到达记录保留为参数，不计作决策节点。工程变量沿用原模型的单位，各因子两侧必须量纲一致。
+
+联盟因子的作用域包括任务选择、成员分配及参与能力计算的决策分量；任务被选中时，成员组合必须满足对应需求。同步因子连接参与者的服务时刻及协作门变量，只有相关服务被选择时才要求时间关系成立。共享资源因子连接同一资源的占用变量，若占用由服务区间决定，还包括区间端点与选择变量；它在相应时间或事件条件下限制总占用。信息因子连接不能利用尚未区分的信息而分别决策的变量，例如两种信息历史尚不可区分时的对应决策分量；历史相同时要求这些分量相等。信息到达后可以更新后续决策域，不能据此改写此前决策可用的信息。以上因子分别承接第\ref{sec:04_09}、\ref{sec:05_06}及\ref{sec:05_09}节的资格、资源与信息条件。
+
+条件变量—约束超图记为
+\begin{equation}
+\label{s0511:indexed_graph}
+\mathcal H_{XC}=\bigl(\mathcal X,(S_\alpha)_{\alpha\in\mathcal C}\bigr),
+\qquad n_X=|\mathcal X|,\quad m_C=|\mathcal C|.
+\end{equation}
+超边采用带索引的族：即使作用域相同，约束身份、函数和参数仍分别保留。这里$n_X$计变量、$m_C$计约束，与早期候选任务—资源图中$n=|E|$、$m=|V|$的约定不同。给定门变量后，应先代入、传播变量域，再删除恒真关系并重算作用域；不能只从原始边中删去门节点。TAMP将固定计划骨架中的参数与约束组织成因子图，并进一步去除常量和冗余关系，为这种条件化处理提供了具体参照\cite{TAMP2021}。
+
+\subsection{教学算例D：完整关系及条件化重算}
+
+本书构造八个无量纲变量。$a,b$表示两种可选方案，$s$表示是否选择其中一种，$c$表示与两者分别互斥的第三种选择；$t,e,q,z$是展示连续关系的抽象辅助量，不表示秒、能量或成像精度。全部域与参数代入后的约束为
+\begin{equation}
+\label{s0511:example_domains}
+ a,b,c,s\in\{0,1\},\qquad t,e,q,z\in[0,1],
+\end{equation}
+\begin{subequations}
+\label{s0511:example_constraints}
+\begin{align}
+ \mathrm R_1:\quad&s=a+b,\label{s0511:r1}\\
+ \mathrm R_2:\quad&a+c\leq1,\label{s0511:r2}\\
+ \mathrm R_3:\quad&b+c\leq1,\label{s0511:r3}\\
+ \mathrm R_4:\quad&s(e-q+t)=0,\label{s0511:r4}\\
+ \mathrm R_5:\quad&s(t-z)\leq0,\label{s0511:r5}\\
+ \mathrm R_6:\quad&e+q-z=0,\label{s0511:r6}\\
+ \mathrm R_7:\quad&t+z+q\leq1.\label{s0511:r7}
+\end{align}
+\end{subequations}
+这里不存在未指定的容量或权重。$\mathrm R_1$将选择状态与方案闭合，并由$s$的二元域排除同时选择$a,b$；$\mathrm R_2,\mathrm R_3$分别限制与$c$的共存。$\mathrm R_4,\mathrm R_5$在$s=1$时分别要求$e-q+t=0$和$t\leq z$；$\mathrm R_6$规定连续量之间的等式，$\mathrm R_7$限制其总量。
+
+\begin{table}[htbp]
+\centering
+\caption{算例D的编号约束域与生效条件}
+\label{s0511:scopes}
+\begin{tabular}{llll}
+\toprule
+因子 & 变量作用域 & 条件 & 变量数\\
+\midrule
+$\mathrm R_1$ & $\{a,b,s\}$ & 始终 & 3\\
+$\mathrm R_2$ & $\{a,c\}$ & 始终 & 2\\
+$\mathrm R_3$ & $\{b,c\}$ & 始终 & 2\\
+$\mathrm R_4$ & $\{s,t,e,q\}$ & $s=1$ & 4\\
+$\mathrm R_5$ & $\{s,t,z\}$ & $s=1$ & 3\\
+$\mathrm R_6$ & $\{e,q,z\}$ & 始终 & 3\\
+$\mathrm R_7$ & $\{t,z,q\}$ & 始终 & 3\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+表\ref{s0511:scopes}中的条件指相应实质关系何时生效；乘积形式的$\mathrm R_4,\mathrm R_5$始终写在模型中。门$s$本身决定是否施加关系，因此必须计入这两条边。本例只将七条编号关系计为约束超边，变量域不另展开为边，也未加入目标因子。按第\ref{sec:05_10}节的关联统计口径，Python重算结果为
+\begin{equation}
+\label{s0511:original_counts}
+\begin{aligned}
+ n_X&=8,\qquad m_C=7,\\
+ \sum_{\alpha\in\mathcal C}|S_\alpha|
+ &=3+2+2+4+3+3+3=20,\\
+ r_X&=4,\qquad\Delta_X=3.
+\end{aligned}
+\end{equation}
+其中$r_X$为最大作用域大小，$\Delta_X$为变量参与的最大约束数。
+
+固定$s=0$后，$\mathrm R_1$成为$a+b=0$；结合二元域，必须继续传播得到$a=b=0$。于是$\mathrm R_2,\mathrm R_3$均化为域已保证的$c\leq1$，$\mathrm R_4,\mathrm R_5$分别化为$0=0$和$0\leq0$。条件可行域完整写为
+\begin{equation}
+\label{s0511:conditioned_domain}
+\begin{aligned}
+ \mathcal F_0=\bigl\{(c,t,e,q,z):\;&c\in\{0,1\},\quad
+ (t,e,q,z)\in[0,1]^4,\\
+ &e+q-z=0,\quad t+z+q\leq1\bigr\}.
+\end{aligned}
+\end{equation}
+剩余两条非平凡约束仍保留身份$\mathrm R_6,\mathrm R_7$，作用域分别为$\{e,q,z\}$和$\{t,z,q\}$。重算得到关联节点数$4$、约束数$2$、关联数$6$、最大秩$3$、最大度$2$。域中尚未固定的标量变量共有$5$个，其中$c$是孤立变量，不能因其未关联剩余约束而将它视为已固定。这也不是五个独立自由度：$\mathrm R_6$等式仍限制连续变量的可行集合维数。
+
+上述结果是本书构造算例的Python结构重算与代数核对，不是商用求解器实验或公开算法复现。它表明原始四元边在门关闭后可以完全消失；仅保留原始节点数，或把固定门继续计作自由耦合，都会误述当前子问题。
+
+\subsection{三种图的用途与算法边界}
+
+变量—约束超图用于追踪可行性依赖；候选联盟边选择图则把预先确定的成员与资源组合组成候选边，决策是选哪些边；关系消息图描述机器人、任务或对象之间传递哪些信息。消息边本身不等于硬约束，候选边也不等于原模型的一条约束因子。
+
+只有当候选集合有限、每个候选的内部可行性已核验、价值固定，且候选之间的限制可由资源容量完整表达时，才能直接形成前文的带容量超图边选择子问题，并讨论超图匹配方法\cite{GrossmannJRS2026,ReinstadtlerFPU2025}。单位容量下还可用成对冲突表达资源互斥，因而较大边秩不证明不可约高阶优势。若联盟选择仍改变航迹、同步时间、能耗或信息条件，就需要保留相应连续变量与条件因子。将模型交给SCIP等数学规划工具时，仍须提供变量域及可处理的代数约束\cite{SCIP100}；超图关联本身不提供通用连续混合整数非线性规划算法。算例的结构核对亦不构成完整巡检联合模型的科学验证或求解性能证据。

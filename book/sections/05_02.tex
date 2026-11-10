@@ -1,0 +1,304 @@
+\section{航次组成和任务顺序}
+\label{sec:05_02}
+
+第\ref{sec:05_01}节确定任务由哪个航次承担，但任务集合本身尚不能说明无人机如何依次执行这些要求。同一组任务可以具有不同的访问顺序，而不同顺序对应的转移时间、等待时间、能耗和回收条件也可能不同。本节在任务分配的基础上，为每个启用航次确定唯一的飞机与电池身份，并将其剩余执行过程组织为一条从起点到终点的有向事件路径。路径上的任务、相邻关系及时间由模型共同选择，具体空间轨迹仍须满足第4章的运动、成像和安全条件。
+
+\subsection{新航次槽与进行中航次}
+
+沿用式\eqref{s0501:sortie_sets}中的航次集合$\mathcal L_k=\mathcal L_k^{\mathrm{new}}\cup\mathcal L_k^{\mathrm{air}}$。其中，$k$为信息更新索引，$\tau_k$为当前信息时刻，$\mathcal I_k$为尚未验收的任务集合。航次索引$\ell$只标识一次从起飞到回收的执行过程，不预先指定访问杆塔、观测位置或任务排列。
+
+本模型不设置独立的纯转场新航次。由式\eqref{s0501:new_sortie_nonempty}，每个启用的新航次至少承担一项未验收要求；由式\eqref{s0501:unique_assignment}，同一要求至多分配给一个航次。因此，从每个启用的新航次中各取一项所承担的任务，所得任务身份必不相同。这个对应关系给出式\eqref{s0501:new_sortie_count_bound}的计数上界，故可以选取
+\begin{equation}
+ |\mathcal L_k^{\mathrm{new}}|=|\mathcal I_k|.
+ \label{s0502:new_slot_bound}
+\end{equation}
+式\eqref{s0502:new_slot_bound}两侧均为无量纲的非负整数。它给出足够的槽数量，并不要求这些槽全部启用，也不表示单个航次能够完成全部任务。当$\mathcal I_k=\varnothing$时，新槽集合可为空。
+
+进行中航次来自当前实际执行状态，不能由优化器任意增删。令$\bar u_\ell\in\mathcal U$、$\bar p_\ell\in\mathcal B$分别为进行中航次$\ell$已经使用的飞机和物理电池对。由于一架飞机在同一时刻至多处于一个进行中航次，真实状态应满足
+\begin{equation}
+ \bar u_\ell\ne\bar u_{\ell'}
+ \quad\bigl(\ell,\ell'\in\mathcal L_k^{\mathrm{air}},\ \ell\ne\ell'\bigr),
+ \qquad
+ |\mathcal L_k^{\mathrm{air}}|\le|\mathcal U|.
+ \label{s0502:ongoing_count}
+\end{equation}
+这里的身份不等关系是输入状态的一致性要求，数量上界由飞机实体数决定。进行中航次的已执行前缀保持固定，优化只决定尚可调整的后续过程。即使它不再承担任何观测任务，也必须保留回收路径及相应的时间和资源占用。
+
+上述槽定义不产生预制候选路线目录，也不限定一个航次最多访问六座塔。属于不同杆塔的要求可以组合到同一航次，同塔要求也可以分属不同航次；这些组合是否可行，由任务唯一分配、连续运动、观测质量、能量和会合等约束共同决定。
+
+\subsection{飞机、电池与载车身份}
+
+沿用第\ref{sec:04_02}节的车辆集合$\mathcal V$、飞机集合$\mathcal U$和物理电池对集合$\mathcal B$，以及固定载车映射$c(u)\in\mathcal V$、$c(p)\in\mathcal V$。电池索引$p$对应一对共同使用的物理电池，不表示可任意拆分的能量额度。
+
+变量$y_{u\ell}$表示飞机$u$是否执行航次$\ell$，变量$\beta_{p\ell}$表示电池对$p$是否用于该航次。二者均为无量纲二元变量，满足
+\begin{align}
+ y_{u\ell}&\in\{0,1\},
+ &&u\in\mathcal U,\ \ell\in\mathcal L_k,
+ \label{s0502:aircraft_domain}\\
+ \beta_{p\ell}&\in\{0,1\},
+ &&p\in\mathcal B,\ \ell\in\mathcal L_k,
+ \label{s0502:battery_domain}\\
+ \sum_{u\in\mathcal U}y_{u\ell}&=b_\ell,
+ &&\ell\in\mathcal L_k,
+ \label{s0502:one_aircraft}\\
+ \sum_{p\in\mathcal B}\beta_{p\ell}&=b_\ell,
+ &&\ell\in\mathcal L_k,
+ \label{s0502:one_battery}\\
+ y_{u\ell}+\beta_{p\ell}&\le1,
+ &&\ell\in\mathcal L_k,\ u\in\mathcal U,\ p\in\mathcal B:
+ c(u)\ne c(p).
+ \label{s0502:carrier_compatibility}
+\end{align}
+其中$b_\ell\in\{0,1\}$继承前节的航次启用定义。式\eqref{s0502:one_aircraft}和式\eqref{s0502:one_battery}使启用航次恰好选择一架飞机和一对电池，同时使未启用航次的全部身份变量归零。式\eqref{s0502:carrier_compatibility}排除不同载车归属的飞机与电池同时被选中，落实本模型不允许跨车辆换电的边界。它只检查身份相容性，尚不能保证电池在起飞时已经充足、空闲且位于可操作位置。
+
+对进行中航次，身份选择退化为给定状态：
+\begin{align}
+ b_\ell&=1,
+ &&\ell\in\mathcal L_k^{\mathrm{air}},
+ \label{s0502:ongoing_active}\\
+ y_{u\ell}&=\mathbb I\{u=\bar u_\ell\},
+ &&u\in\mathcal U,\ \ell\in\mathcal L_k^{\mathrm{air}},
+ \label{s0502:ongoing_aircraft}\\
+ \beta_{p\ell}&=\mathbb I\{p=\bar p_\ell\},
+ &&p\in\mathcal B,\ \ell\in\mathcal L_k^{\mathrm{air}}.
+ \label{s0502:ongoing_battery}
+\end{align}
+指标函数$\mathbb I\{\cdot\}$在括号内条件成立时为$1$，否则为$0$。因此，重新规划不能通过更换身份变量，将正在飞行的飞机改为另一架飞机，也不能将机载剩余电量解释成另一对电池的电量。不同航次在不同时段可以再次使用同一实体；其是否发生占用重叠，需要由第\ref{sec:05_05}节和第\ref{sec:05_06}节的时间资源约束判断，不能在本节将同一实体限制为整个班次只能使用一次。
+
+\subsection{事件节点与允许的相邻关系}
+
+对每个航次$\ell\in\mathcal L_k$，设置两个区别于任务身份的事件节点：$L_\ell$表示当前待规划路径的起点，$R_\ell$表示回收终点。对于新航次，$L_\ell$对应起飞；对于进行中航次，$L_\ell$对应信息时刻的接续边界，而不是再次起飞。$R_\ell$对应飞机落地，不包含落地后的处理时间。
+
+定义事件节点集合和允许弧集合
+\begin{align}
+ \mathcal N_\ell^{\mathrm{evt}}
+ &=\{L_\ell,R_\ell\}\cup\mathcal I_k,
+ &&\ell\in\mathcal L_k,
+ \label{s0502:event_nodes}\\
+ \mathcal A_\ell^{\mathrm{base}}
+ &=\{(L_\ell,i):i\in\mathcal I_k\}
+ \cup\{(i,j):i,j\in\mathcal I_k,\ i\ne j\}
+ \cup\{(i,R_\ell):i\in\mathcal I_k\},
+ &&\ell\in\mathcal L_k,
+ \label{s0502:base_arcs}\\
+ \mathcal A_\ell^{\mathrm{evt}}
+ &=\begin{cases}
+ \mathcal A_\ell^{\mathrm{base}},
+ &\ell\in\mathcal L_k^{\mathrm{new}},\\
+ \mathcal A_\ell^{\mathrm{base}}\cup\{(L_\ell,R_\ell)\},
+ &\ell\in\mathcal L_k^{\mathrm{air}}.
+ \end{cases}
+ \label{s0502:allowed_arcs}
+\end{align}
+这些集合的元素是事件及其有序对，均无物理单位。弧$(i,j)$表示在当前航次中，事件$i$之后紧接着执行事件$j$；它不等同于道路弧，也不规定两事件之间的几何直线。式\eqref{s0502:allowed_arcs}排除了自环、进入$L_\ell$的弧和离开$R_\ell$的弧。新航次必须经过至少一个任务，因此不设置其起终点直连弧；进行中航次则保留该弧，以表示不再观测而直接回收。
+
+为明确求和范围，对事件$q\in\mathcal N_\ell^{\mathrm{evt}}$定义允许后继集与前驱集
+\begin{equation}
+ \begin{split}
+ \mathcal D_\ell^+(q)
+ &=\{j\in\mathcal N_\ell^{\mathrm{evt}}:(q,j)\in\mathcal A_\ell^{\mathrm{evt}}\},\\
+ \mathcal D_\ell^-(q)
+ &=\{i\in\mathcal N_\ell^{\mathrm{evt}}:(i,q)\in\mathcal A_\ell^{\mathrm{evt}}\},
+ \qquad \ell\in\mathcal L_k.
+ \end{split}
+ \label{s0502:event_neighbors}
+\end{equation}
+二元变量$h_{ij\ell}$表示是否选中允许弧$(i,j)$，并满足
+\begin{align}
+ h_{ij\ell}&\in\{0,1\},
+ &&\ell\in\mathcal L_k,\ (i,j)\in\mathcal A_\ell^{\mathrm{evt}},
+ \label{s0502:arc_domain}\\
+ h_{ij\ell}&\le b_\ell,
+ &&\ell\in\mathcal L_k,\ (i,j)\in\mathcal A_\ell^{\mathrm{evt}}.
+ \label{s0502:arc_activation}
+\end{align}
+$h_{ij\ell}$无量纲；对不属于允许弧集合的有序对，将其约定为$0$，不作为自由变量。式\eqref{s0502:arc_activation}使未启用航次不保留任何事件连接。
+
+任务节点的入度、出度与任务分配变量相等，起终点度数与航次启用变量相等：
+\begin{align}
+ \sum_{j\in\mathcal D_\ell^+(i)}h_{ij\ell}
+ &=x_{i\ell},
+ &&i\in\mathcal I_k,\ \ell\in\mathcal L_k,
+ \label{s0502:task_outdegree}\\
+ \sum_{j\in\mathcal D_\ell^-(i)}h_{ji\ell}
+ &=x_{i\ell},
+ &&i\in\mathcal I_k,\ \ell\in\mathcal L_k,
+ \label{s0502:task_indegree}\\
+ \sum_{j\in\mathcal D_\ell^+(L_\ell)}h_{L_\ell j\ell}
+ &=b_\ell,
+ &&\ell\in\mathcal L_k,
+ \label{s0502:start_degree}\\
+ \sum_{i\in\mathcal D_\ell^-(R_\ell)}h_{iR_\ell\ell}
+ &=b_\ell,
+ &&\ell\in\mathcal L_k.
+ \label{s0502:end_degree}
+\end{align}
+所有度数均为无量纲整数。被分配的任务恰有一个前驱和一个后继；未分配的任务没有入弧和出弧。启用航次恰好离开起点一次并到达终点一次。但这些度数条件还不足以保证全部已分配任务位于同一条路径上，必须进一步利用事件时间排除孤立任务环。
+
+\subsection{事件时钟与相邻事件的时间连接}
+
+采用第\ref{sec:04_03}节的共同时间坐标，班次起点为$0$，终点为固定参数$T$，且$0\le\tau_k\le T$。航次起飞时刻$s_\ell$、落地时刻$e_\ell$、任务开始时刻$t_i$、任务持续时间$d_i$以及下文的转移时间均以$\mathrm{s}$计量。$s_\ell$始终指实际起飞时刻；对于进行中航次，该时刻属于固定历史，不能重置为$\tau_k$。
+
+对启用的新航次和进行中航次分别规定
+\begin{align}
+ b_\ell=1&\ \Longrightarrow\ 
+ \tau_k\le s_\ell\le e_\ell\le T,
+ &&\ell\in\mathcal L_k^{\mathrm{new}},
+ \label{s0502:new_time_domain}\\
+ s_\ell&=\bar s_\ell,\qquad
+ 0\le\bar s_\ell\le\tau_k\le e_\ell\le T,
+ &&\ell\in\mathcal L_k^{\mathrm{air}},
+ \label{s0502:ongoing_time_domain}\\
+ b_\ell=0&\ \Longrightarrow\ s_\ell=e_\ell=0,
+ &&\ell\in\mathcal L_k^{\mathrm{new}}.
+ \label{s0502:inactive_sortie_times}
+\end{align}
+$\bar s_\ell$为已记录的起飞时刻参数。式\eqref{s0502:inactive_sortie_times}中的零值只是未启用变量的规范化取值，不代表时刻$0$发生了一次起落。
+
+令$d_i^{\min}>0$为任务$i$给定的最小服务时长，单位为$\mathrm{s}$。对尚未开始的新服务$i\in\mathcal I_k^{new}$，时序变量的激活规则为
+\begin{align}
+ a_i=1&\ \Longrightarrow\ 
+ \tau_k\le t_i,\qquad d_i\ge d_i^{\min},\qquad t_i+d_i\le T,
+ &&i\in\mathcal I_k^{new},
+ \label{s0502:task_time_domain}\\
+ a_i=0&\ \Longrightarrow\ t_i=d_i=0,
+ &&i\in\mathcal I_k.
+ \label{s0502:inactive_task_times}
+\end{align}
+这里$t_i,d_i$属于非负实数域。任务时钟采用全局任务索引，是因为式\eqref{s0501:unique_assignment}保证每项计划任务只由一个航次承担，无需为同一任务设置多个相互独立的开始时刻。若任务在某个航次上的$x_{i\ell}=0$，但它已分配给另一航次，不能据此将其全局$t_i,d_i$归零；归零条件必须是$a_i=0$。正在服务的任务采用第\ref{sec:05_07}节的固定原起点、原终点和身份约束，不重复施加新服务起点下界。对于全部选中任务定义剩余事件时钟
+\begin{equation}
+ \bar t_i^k=\max(t_i,\tau_k),\qquad
+ \bar d_i^k=t_i+d_i-\bar t_i^k>0.
+ \label{s0502:remaining_event_clock}
+\end{equation}
+新任务有$\bar t_i^k=t_i$、$\bar d_i^k=d_i$；正在服务的任务有$\bar t_i^k=\tau_k$。源点与终点采用下述原端点时刻，持续时间为零。任务路径按剩余事件时钟连接，而原始$t_i$仍用于确定稳定、曝光及历史前缀。待验收记录在接收之前不给出确定完成信用。
+
+
+为统一相邻事件的表达，将任务时钟扩展至两个端点：
+\begin{align}
+ b_\ell=1&\ \Longrightarrow\
+ t_{L_\ell}=\max\{s_\ell,\tau_k\},\qquad
+ t_{R_\ell}=e_\ell,
+ &&\ell\in\mathcal L_k,
+ \label{s0502:endpoint_times}\\
+ b_\ell=0&\ \Longrightarrow\
+ t_{L_\ell}=t_{R_\ell}=0,
+ &&\ell\in\mathcal L_k,
+ \label{s0502:inactive_endpoint_times}\\
+ d_{L_\ell}&=d_{R_\ell}=0,
+ &&\ell\in\mathcal L_k.
+ \label{s0502:endpoint_durations}
+\end{align}
+端点时钟为非负实数，端点持续时间为固定的零秒。对于新航次，起点时刻就是$s_\ell$；对于进行中航次，起点时刻就是$\tau_k$。端点持续时间取零不意味着起飞准备和落地处理无需时间，而是这些地面动作不属于本节的观测事件服务，其占用另由第\ref{sec:05_04}节规定。
+
+对每条允许弧$(i,j)\in\mathcal A_\ell^{\mathrm{evt}}$，引入非负实变量$T_{ij\ell}$，表示事件$i$完成后至事件$j$开始前的全部经过时间，包括实际移动和等待。其定义域、未选弧归零规则及时间连接为
+\begin{align}
+ T_{ij\ell}&\ge0,
+ &&\ell\in\mathcal L_k,\ (i,j)\in\mathcal A_\ell^{\mathrm{evt}},
+ \label{s0502:transfer_domain}\\
+ h_{ij\ell}=0&\ \Longrightarrow\ T_{ij\ell}=0,
+ &&\ell\in\mathcal L_k,\ (i,j)\in\mathcal A_\ell^{\mathrm{evt}},
+ \label{s0502:inactive_transfer}\\
+ h_{ij\ell}=1&\ \Longrightarrow\
+ \bar t_j^k=\bar t_i^k+\bar d_i^k+T_{ij\ell},
+ &&\ell\in\mathcal L_k,\ (i,j)\in\mathcal A_\ell^{\mathrm{evt}}.
+ \label{s0502:time_connection}
+\end{align}
+式\eqref{s0502:time_connection}是以弧选择为条件的时间等式，仅在$h_{ij\ell}=1$时生效。对于任务到任务的弧，它连接前一任务的结束与后一任务的开始；对于起点出弧，它从起飞或当前接续时刻开始计时；对于终点入弧，它将最后一项任务后的转移连接至落地。
+
+$T_{ij\ell}$不是预先给定的两点最短飞行时间，也不能只取距离除以速度。空间移动、姿态调整、云台调整及为满足观测窗口或会合条件而发生的空中等待，都必须占用这段真实时间。式\eqref{s0502:time_connection}与连续轨迹共同决定该时间是否可实现；仅满足时间等式并不能证明两事件之间存在安全轨迹。
+
+\subsection{排除孤立任务环并得到单一路径}
+
+先说明仅有流守恒为何不足。取三个互异的任务身份$i_a,i_b,i_c\in\mathcal I_k$，对某个启用航次选择
+\begin{equation}
+ L_\ell\longrightarrow i_a\longrightarrow R_\ell,
+ \qquad
+ i_b\longrightarrow i_c\longrightarrow i_b,
+ \qquad
+ x_{i_a\ell}=x_{i_b\ell}=x_{i_c\ell}=1.
+ \label{s0502:disconnected_cycle_example}
+\end{equation}
+将所示弧的$h$置为$1$、其余弧置为$0$，三个任务都各有一条入弧和一条出弧，起点与终点度数也正确。因此，该结构甚至满足式\eqref{s0502:task_outdegree}至式\eqref{s0502:end_degree}的完整度数条件，但$i_b,i_c$组成的环与起终点路径分离，无人机无法沿一条执行路径完成这组关系。这是约束逻辑的反例，不是一次计算实验或物理飞行结果。
+
+严格正的任务服务时间可以排除这种结构。假设某个航次含有纯任务有向环
+\begin{equation}
+ i_1\longrightarrow i_2\longrightarrow\cdots
+ \longrightarrow i_q\longrightarrow i_1,
+ \qquad q\ge2,
+ \label{s0502:hypothetical_cycle}
+\end{equation}
+其中$q$为环内任务数，$i_1,\ldots,i_q\in\mathcal I_k$互异，约定$i_{q+1}=i_1$。每条环弧均被选中，因而其端点任务满足$x_{i_r\ell}=1$和$a_{i_r}=1$。沿环对式\eqref{s0502:time_connection}求和，左侧时钟差相互抵消，得到
+\begin{equation}
+ \begin{split}
+ 0
+ &=\sum_{r=1}^{q}(\bar t_{i_{r+1}}^k-\bar t_{i_r}^k)\\
+ &=\sum_{r=1}^{q}\bar d_{i_r}^k
+   +\sum_{r=1}^{q}T_{i_ri_{r+1}\ell}\\
+ &\ge\sum_{r=1}^{q}\bar d_{i_r}^k>0.
+ \end{split}
+ \label{s0502:cycle_contradiction}
+\end{equation}
+各项单位均为$\mathrm{s}$。最后的严格不等式来自每项尚未完成服务的剩余时长严格为正，且转移时间非负。矛盾说明纯任务有向环不可能存在。这个证明不要求任意两任务之间的转移时间严格为正，即便某些转移时间为零，服务时间仍足以排环。反之，若将所有服务时长下界放宽为零，就不能沿用这一证明。
+
+现在考虑$b_\ell=1$的航次。从$L_\ell$唯一的出弧出发，每到达一个任务节点，都有且仅有一个后继。有限节点集合中的这条链若不能到达$R_\ell$，就必然重复访问某个任务节点，从而形成有向环；这已被式\eqref{s0502:cycle_contradiction}排除。因此，从起点出发必然得到一条到达终点的有向路径。
+
+还需证明没有已分配任务被遗漏在该路径之外。若存在这样的任务，其入度和出度均为一。它不能连接到已得到的起终点路径，否则连接位置会违反该路径节点的唯一入度或唯一出度；也不能通过起点或终点形成另一条路径，因为两个端点的度数已被占用。因此，在这些路径外任务构成的有限集合中持续沿后继前进，必然再次形成纯任务环，同样矛盾。由此，度数条件、端点限制和时间排环共同保证：每个启用航次的全部已分配任务恰好构成一条从$L_\ell$到$R_\ell$的有向路径，并且每项任务只出现一次。
+
+对于不再承担任务的进行中航次，有$x_{i\ell}=0$对全部$i\in\mathcal I_k$成立。任务节点全部无入弧、无出弧，而$b_\ell=1$仍要求起点和终点度数各为一，因此必须选择
+\begin{equation}
+ h_{L_\ell R_\ell\ell}=1,
+ \qquad
+ e_\ell=\tau_k+T_{L_\ell R_\ell\ell},
+ \qquad \ell\in\mathcal L_k^{\mathrm{air}}
+ \ \text{且}\ \sum_{i\in\mathcal I_k}x_{i\ell}=0.
+ \label{s0502:direct_return}
+\end{equation}
+这里的直接回收表示不再插入观测事件，并不要求沿空间直线飞行，也不保证回收立即可行。避障、载车停靠、降落条件和剩余能量仍须同时满足。
+
+\subsection{路径时间与飞行能量的连接}
+
+对启用航次$\ell$，定义已分配任务集合与已选弧集合
+\begin{equation}
+ \mathcal I_\ell^{\mathrm{sel}}
+ =\{i\in\mathcal I_k:x_{i\ell}=1\},
+ \qquad
+ \mathcal A_\ell^{\mathrm{sel}}
+ =\{(i,j)\in\mathcal A_\ell^{\mathrm{evt}}:h_{ij\ell}=1\}.
+ \label{s0502:selected_sets}
+\end{equation}
+两者均为由决策确定的有限集合。沿已证明唯一的起终点路径累加时间等式，可以得到
+\begin{equation}
+ e_\ell-\max\{s_\ell,\tau_k\}
+ =\sum_{i\in\mathcal I_\ell^{\mathrm{sel}}}\bar d_i^k
+  +\sum_{(i,j)\in\mathcal A_\ell^{\mathrm{sel}}}T_{ij\ell},
+ \qquad \ell\in\mathcal L_k:\ b_\ell=1.
+ \label{s0502:duration_partition}
+\end{equation}
+式\eqref{s0502:duration_partition}两侧均以$\mathrm{s}$计量。它把当前待规划的飞行时段完整划分为观测服务时段和事件间时段，没有留出不计时的空白。对新航次，该式覆盖起飞至落地的全过程；对进行中航次，该式覆盖$\tau_k$至落地的剩余过程，已经发生的飞行前缀不再成为可调整的时间。
+
+沿用第\ref{sec:04_08}节给定情形下的参考飞行功率$P_\ell(t)$，单位为$\mathrm W$。端点的剩余时钟取$\bar t_{L_\ell}^k=t_{L_\ell}$、$\bar t_{R_\ell}^k=t_{R_\ell}=e_\ell$，$\bar d_{L_\ell}^k=\bar d_{R_\ell}^k=0$。记$\underline t_\ell=\max\{s_\ell,\tau_k\}$，则待规划飞行区间的机载用能满足
+\begin{equation}
+ \begin{split}
+ E_\ell^{\mathrm{rem}}
+ &=\frac{1}{3600}\int_{\underline t_\ell}^{e_\ell}P_\ell(t)\,\mathrm dt\\
+ &=\frac{1}{3600}
+ \left[
+ \sum_{i\in\mathcal I_\ell^{\mathrm{sel}}}
+   \int_{\bar t_i^k}^{t_i+d_i}P_\ell(t)\,\mathrm dt
+ +\sum_{(i,j)\in\mathcal A_\ell^{\mathrm{sel}}}
+   \int_{t_i+d_i}^{\bar t_j^k}P_\ell(t)\,\mathrm dt
+ \right],
+ \qquad \ell\in\mathcal L_k:\ b_\ell=1.
+ \end{split}
+ \label{s0502:energy_partition}
+\end{equation}
+$E_\ell^{\mathrm{rem}}$为非负实数，单位为$\mathrm{Wh}$；积分中的时间单位是$\mathrm{s}$，因此必须除以$3600$完成单位转换。该式是同一飞行积分沿事件路径的分段恒等式，不引入另一套功率模型。相邻闭区间的端点重合不影响积分，也不产生重复用能。
+
+尤其是，若某个$T_{ij\ell}$包含等待，该等待仍位于区间$[t_i+d_i,t_j]$内，必须按当时的位置、运动状态和天气对应的功率计入能耗。不能只对空间位移部分积分，也不能通过增大$T_{ij\ell}$免费推迟观测或落地。对进行中航次，过去的能耗已反映在当前电池状态中，剩余积分必须与这一状态接续，而不能重新从满电开始计算。
+
+至此，事件顺序给出了航次的组合骨架及连续时钟接口。每条选中弧仍须由真实可行的连续运动实现，观测节点也须保持其所要求的持续时间和成像状态；这些条件在第\ref{sec:05_03}节中进一步连接。
+
+% SERVICE_CARRYOVER_BINDING
+\subsection{服务中途切入时的同一访问模型}
+新服务继续使用本节从当前边界以后开始的完整时序。正在执行的服务按式\eqref{s0507:service_carryover}固定原起点、终点及资源身份，并用式\eqref{s0507:ongoing_flow}连接当前航次虚拟源点；该源边不重复产生转移或20.011081481481483 s服务下界。曝光前缀保留，跨边界的成像条件对前后缀合并后的原曝光检查。待验收图像不提前计入完成；若重新安排拍摄，使用新尝试编号。

@@ -1,0 +1,50 @@
+{
+  "run_id": "e748e91827516b35_61848",
+  "recovered": [
+    {
+      "path": "Agent/Publication/engineering_regional_physics.py",
+      "sha256": "a8f23bd5ec106d29e2ed61bbcf23becb552d3aec72c6da6a4abbad9073cd3966",
+      "historical_file": "reproduction\\historical_sources\\a8f23bd5ec106d29e2ed61bbcf23becb552d3aec72c6da6a4abbad9073cd3966.py",
+      "source_archive": "D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网\\总结\\03_实验数据\\工程化联合求解\\unified_implementation_code.json",
+      "byte_identity_verified": true
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_seed_motion.py",
+      "sha256": "d82fb256f6fe4835c193ae0541ac5df8ba4c90bf6bbc71963ab9ccfa8ee7752a",
+      "historical_file": "reproduction\\historical_sources\\d82fb256f6fe4835c193ae0541ac5df8ba4c90bf6bbc71963ab9ccfa8ee7752a.py",
+      "source_archive": "D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网\\总结\\03_实验数据\\工程化联合求解\\unified_implementation_code.json",
+      "byte_identity_verified": true
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_solver.py",
+      "sha256": "85953271651d5ac13fc4db13c8b78f7bd83fcb8b761395cc40d10802937d6b54",
+      "historical_file": "reproduction\\historical_sources\\85953271651d5ac13fc4db13c8b78f7bd83fcb8b761395cc40d10802937d6b54.py",
+      "source_archive": "D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网\\总结\\03_实验数据\\工程化联合求解\\unified_implementation_code.json",
+      "byte_identity_verified": true
+    },
+    {
+      "path": "scripts/run_inspection_regional.py",
+      "sha256": "b9d614132f3eecf0156a0afb853c816a911740a078193e3ed6b4e390852e9903",
+      "historical_file": "reproduction\\historical_sources\\b9d614132f3eecf0156a0afb853c816a911740a078193e3ed6b4e390852e9903.py",
+      "source_archive": "D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网\\总结\\03_实验数据\\工程化联合求解\\unified_implementation_code.json",
+      "byte_identity_verified": true
+    },
+    {
+      "path": "Agent/Publication/engineering_inspection_model.tex",
+      "sha256": "88b7e54dcb4e6a67a844b023b7af8b3c59695e4fd458f7f42e1ddeef69633285",
+      "historical_file": "reproduction\\historical_sources\\88b7e54dcb4e6a67a844b023b7af8b3c59695e4fd458f7f42e1ddeef69633285.tex",
+      "source_archive": "D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网\\总结\\03_实验数据\\工程化联合求解\\unified_implementation_code.json",
+      "byte_identity_verified": true
+    },
+    {
+      "path": "research_quality/inspection_regional_model_data.json",
+      "sha256": "ee30612135a2b3057192d1bcf6c0eb53a28b76e94efe16a828b87dd168e1929c",
+      "historical_file": "reproduction\\historical_sources\\ee30612135a2b3057192d1bcf6c0eb53a28b76e94efe16a828b87dd168e1929c.json",
+      "source_archive": "D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网\\总结\\03_实验数据\\工程化联合求解\\unified_implementation_code.json",
+      "byte_identity_verified": true
+    }
+  ],
+  "missing": [],
+  "archive_sha256_at_read": "0fffdde6245776755f0410c4ff18ce5057388130c9f58bf2aabdc85a4281e99b",
+  "rule": "Historical overrides are content-addressed files, not a second active project. Apply to a disposable reproduction copy; do not alter original owner workspace."
+}

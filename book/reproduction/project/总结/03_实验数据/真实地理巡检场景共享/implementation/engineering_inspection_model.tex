@@ -1,0 +1,287 @@
+% Authoritative mathematical specification; not an implemented joint solver.
+\section{工程化车机协同巡检：模型范围与输出}
+\noindent\textbf{状态：数学模型重建稿。}本稿将预生成航次选择改为任务序列、观测位姿、连续轨迹和资源排程的联合决策。旧模型、旧实验和原始结果保留；本稿未宣称已有整场景求解结果或实飞验证。
+
+\begin{center}\small
+\begin{tabular}{p{.17\linewidth}p{.34\linewidth}p{.39\linewidth}}\toprule
+对象 & 既有参考模型 & 本稿决策变量\\\midrule
+任务与航次 & 固定9点、5/4拆分、连续最多6塔目录 & 任务分配、访问先后、航次启用与起降时刻；取消固定6塔目录\\
+观测 & 固定拍摄坐标与服务时间 & 合格观测区域内的位置、机体航向、云台角、焦距、拍摄时间\\
+飞行 & 模板几何、给定速度 & 三维位置曲线、速度、加速度、航段时长及姿态可执行性\\
+地面车辆 & 停车点间预计算道路路径 & 道路弧、停靠次序、速度与驻留时间；与起降会合联立\\
+电池 & 指定充满后再使用 & 电池对分配、连续剩余能量、何时充、充多少、何时复用\\
+天气 & 独立航段联算 & 预报风场作用于空速、功率、可作业窗口和备用返航能量\\\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent 输出包括：任务与图像验收清单；带绝对时间的机体位置、速度、航向与云台轨迹；车辆道路路线与停靠时段；逐对电池的使用、回收和充电计划；约束余量与不可执行原因。机体滚转/俯仰由力平衡及轨迹导出，并检查限值；本稿不直接下发电机转速。
+
+\subsection{集合、数据与坐标}
+\noindent $\mathcal G$为设备/部件集合，$\mathcal I_g$为其规定的观测要求，$\mathcal I=\cup_g\mathcal I_g$；每项要求$i$包含目标表面、允许视角、质量阈值和时间窗。$\mathcal U,\mathcal V,\mathcal B_v$分别为无人机、车辆和车$v$的电池对集合；$c(u)$为无人机的固定载车归属。$\mathcal L$为可启用的航次槽位，\emph{槽位不指定任务、路径和时间}。仅考虑含巡检任务的航次时可取$|\mathcal L|=|\mathcal I|$；纯转场航次须另列用途与上界。
+
+\noindent 地理输入保留WGS84经纬度和原高程基准；计算采用带原点与转换参数的局部米制坐标，禁止混用经纬度、椭球高和地面相对高度。$t\in[0,H]$以秒计，能量以Wh计，功率以W计，角度在方程中用rad。初始位置、速度、车辆载荷、电池电量来自当前状态。天气使用决策时刻已可获得的预报；事后再分析只用于回放，不冒充在线可知信息。
+
+\subsection{目标与硬约束}
+\begin{equation}
+ \operatorname{lexmin}\left(\sum_{g\in\mathcal G}w_g(1-z_g),\ C_{\max},\ E_{\mathrm{op}}\right).
+ \label{eng:eq:objective}
+\end{equation}
+\noindent $z_g$表示计划满足部件全部观测要求，$w_g$为事前给定的重要度，$C_{\max}$为所有车辆和无人机完成回收返库的时间；$E_{\mathrm{op}}$为一致计量边界内的机载用电和可获得的车辆能耗。没有车辆能耗模型时只报告机载Wh，不将其称为全系统能耗。安全、图像质量与电量下限为硬约束，不能用目标权重补偿违规。优先级保持现有“完整完成优先”；本稿没有新增人为胜出阈值。
+\clearpage
+
+\section{任务序列与自主形成的航次}
+\noindent $a_i,x_{i\ell},b_\ell,y_{u\ell},\beta_{p\ell}$分别为观测要求满足、任务分配、航次启用、无人机分配及电池对分配的二元变量。$x_{i\ell}=1$时，任务$i$的有效拍摄区间$[t_i,t_i+d_i]$须包含在航次$[s_\ell,e_\ell]$内。
+\begin{align}
+ &\sum_{\ell\in\mathcal L}x_{i\ell}=a_i,\quad x_{i\ell}\le b_\ell,\quad
+ b_\ell\le\sum_i x_{i\ell}\le |\mathcal I|b_\ell,\label{eng:eq:assign}\\
+ &\sum_u y_{u\ell}=b_\ell,\qquad \sum_p\beta_{p\ell}=b_\ell,\label{eng:eq:fleet}\\
+ &z_g\le a_i\ (i\in\mathcal I_g),\qquad
+ z_g\ge1-\sum_{i\in\mathcal I_g}(1-a_i).\label{eng:eq:complete}
+\end{align}
+\noindent 电池对和无人机的载车归属必须一致；传感器能力与任务模态必须匹配。仅将已定义非空观测要求的部件纳入收益；没有配置任务的地理杆塔不得自动计为完成。旧场景9点可作初始模板，但不是通用规则；新设备按实际部件及验收要求生成$\mathcal I_g$。
+
+\noindent 对航次$\ell$引入起点$L_\ell$、终点$R_\ell$和访问弧$h_{ij\ell}$。在允许的任务对集合内：
+\begin{align}
+ &\sum_j h_{ij\ell}=\sum_jh_{ji\ell}=x_{i\ell},\quad i\in\mathcal I,\\
+ &\sum_jh_{L_\ell j\ell}=\sum_i h_{iR_\ell\ell}=b_\ell,
+ \quad \sum_i h_{iL_\ell\ell}=\sum_jh_{R_\ell j\ell}=0,\\
+ &h_{ij\ell}=1\Rightarrow t_j\ge t_i+d_i+T_{ij\ell},\quad
+ T_{ij\ell}\ge0.\label{eng:eq:sequence}
+\end{align}
+\noindent $t_{L_\ell}=s_\ell,t_{R_\ell}=e_\ell,d_{L_\ell}=d_{R_\ell}=0$；任务驻留$d_i$有严格正的最小值，故时间先后约束消除纯任务子环。$T_{ij\ell}$来自所选连续转移段的实际时长，不再读取固定航次总成本。相邻拍摄区间间的全部时间由转移段及显式等待段填满；等待同样耗电。
+
+\noindent 对每条激活弧，转移段两端必须等于对应观测/起降状态，并与全航次轨迹连续连接。航次起降地点由停车候选区域及车辆计划决定，可在不同停靠点起降；不使用预生成航次编号约束任务顺序。旧目录仅能作为初始可行解来源，不能限制最终解域。
+
+\subsection{完整性与时间窗}
+\begin{equation}
+ x_{i\ell}=1\Rightarrow
+ [t_i,t_i+d_i]\subseteq[s_\ell,e_\ell]\cap\mathcal W_i,
+ \qquad d_i\ge d_i^{\min}>0.\label{eng:eq:window}
+\end{equation}
+\noindent $\mathcal W_i$包含允许作业时段、可用光照/天气条件及运行方规定的窗口。计划中的$a_i$表示质量约束可满足；实际完成状态必须在执行后根据图像与飞行日志验收更新，不能仅凭规划位置到达而计完成。多视角要求用独立角色或规定角度间隔表达，同一张照片不自动重复满足不同视角。
+\clearpage
+
+\section{连续三维轨迹与姿态可执行性}
+\noindent 对激活航次，优化$\mathbf p_\ell(t),\psi_\ell(t)$及云台角$\boldsymbol\gamma_\ell(t)$。其中$\mathbf p\in\mathbb R^3$为机体位置，$\psi$为航向，$\mathbf v=\dot{\mathbf p}$、$\mathbf a=\ddot{\mathbf p}$、$\mathbf j=\dddot{\mathbf p}$分别为速度、加速度和加加速度。单位上轴$\mathbf e_3$朝上，重力为$-g\mathbf e_3$。
+\begin{align}
+ &\dot{\mathbf p}=\mathbf v,\quad \dot{\mathbf v}=\mathbf a,\quad
+ \mathbf v_{\mathrm{air}}=\mathbf v-\mathbf w(\mathbf p,t),\\
+ &\|\mathbf v\|\le v_g^{\max},\quad\|\mathbf v_{\mathrm{air}}\|\le v_a^{\max},\quad
+ -v_z^-\le v_z\le v_z^+,\quad
+ \|\mathbf a\|\le a^{\max},\quad\|\mathbf j\|\le j^{\max}.\label{eng:eq:kinematic}
+\end{align}
+\noindent 风$\mathbf w$、空气密度$\rho$为外生场；运行限值采用选定飞行模式和载荷下的经核验包络，不把厂家最大速度当常规巡检速度。引入力平衡：
+\begin{align}
+ &\mathbf F_T=m(\mathbf a+g\mathbf e_3)-\mathbf F_D(\mathbf v_{\mathrm{air}},\rho),
+ \quad R_B\mathbf e_3=\mathbf F_T/\|\mathbf F_T\|,\\
+ &F^{\min}\le\|\mathbf F_T\|\le F^{\max},\quad
+ \mathbf e_3^TR_B\mathbf e_3\ge\cos\theta^{\max},\\
+ &R_B\in SO(3),\quad \dot R_B=R_B[\boldsymbol\omega]_\times,
+ \quad |\omega_k|\le\omega_k^{\max}.\label{eng:eq:attitude}
+\end{align}
+\noindent $R_B$将机体系转换到世界系，$\mathbf F_D$为作用于机体的气动力，$m$含载荷。由推力轴和航向构造$R_B$时须避开坐标构造奇异位形。滚转与俯仰受到力平衡约束，不能与位置曲线独立任意设置。此为规划层的降阶动力学；精确电机分配、转动惯量和控制跟踪留给匹配机型的飞控验证，未满足这些条件时不称“全动力学实飞可行”。[R1]
+
+\subsection{有限维表达与连续段检查}
+\begin{equation}
+ \mathbf p_\ell(t)=\sum_{r=0}^{7}\mathbf c_{\ell kr}B_r^7(\xi),\qquad
+ \xi=(t-t_{\ell k})/\Delta_{\ell k}\in[0,1],\quad\Delta_{\ell k}>0.
+ \label{eng:eq:polynomial}
+\end{equation}
+\noindent $B_r^7$为七次Bernstein基函数；控制点$\mathbf c$和段时长$\Delta$均为决策变量，相邻段保持位置至三阶导数连续。每个拍摄/起降事件设锚点，必要时在弯曲、障碍或约束变化处增加节点。云台与航向也用连续曲线，并限制角速度/加速度；时间节点不是预先固定的航迹。
+
+\noindent 静态安全凸走廊内的全部控制点可为整段位置提供充分包含条件。非凸障碍、天气、视野及多机距离仍需区间界或自适应细分复核。仅检查稀疏采样点通过时，记录为“采样可行”，不得标为整段可行。轨迹离散误差与允许跟踪误差须分别设置并报告。
+\clearpage
+
+\section{拍摄位姿、视野与图像验收代理}
+\noindent 观测要求$i$含表面采样点$\mathbf q_{ir}$、单位法向$\mathbf n_{ir}$和切平面正交基$T_{ir}\in\mathbb R^{3\times2}$。相机中心$\mathbf p_C=\mathbf p+R_B\mathbf d_{BC}$，相机姿态$R_C=R_BR_{BC}(\boldsymbol\gamma)$；固定安装偏移$\mathbf d_{BC}$和云台零位需实机标定。光轴采用相机$+z$方向，焦距$f_x,f_y$以像素为单位。
+\begin{align}
+ &\mathbf q^C_{ir}=R_C^T(\mathbf q_{ir}-\mathbf p_C),\quad
+ \pi(\mathbf q^C)=\left(f_xq_x^C/q_z^C+c_x,\ f_yq_y^C/q_z^C+c_y\right),\\
+ &q_z^C>0,\quad m_x\le\pi_x\le N_x-m_x,\quad
+ m_y\le\pi_y\le N_y-m_y,\label{eng:eq:fov}\\
+ &d_i^{\mathrm{focus}}(f)\le\|\mathbf q_{ir}-\mathbf p_C\|\le d_i^{\max},\quad
+ \frac{\mathbf n_{ir}^T(\mathbf p_C-\mathbf q_{ir})}{\|\mathbf p_C-\mathbf q_{ir}\|}
+ \ge\cos\alpha_i^{\max}.\label{eng:eq:viewangle}
+\end{align}
+\noindent 上式在被选择任务的曝光区间和规定表面样点上成立。$N_x,N_y$为图像尺寸，$m_x,m_y$为边缘裕度；$d_i^{\mathrm{focus}}$依焦距变化。相机到目标的开线段必须无遮挡，允许终点落在目标表面；使用完整目标区域而非仅中心点验证视野覆盖。[R2,R3]
+
+\noindent 用投影的局部Jacobian检查最差方向的表面分辨率：
+\begin{align}
+ J_{ir}&=D\pi(\mathbf q^C_{ir})R_C^TT_{ir},\qquad
+ \sigma_{\min}(J_{ir})\ge1/g_i^{\max},\label{eng:eq:gsd}\\
+ t_i^{\mathrm{exp}}\left\|\frac{d}{dt}\pi(\mathbf q^C_{ir}(t))\right\|_\infty
+ &\le b_i^{\max},\quad
+ \|\dot{\boldsymbol\gamma}\|_\infty\le\dot\gamma^{\max},\quad
+ \boldsymbol\gamma\in\Gamma.\label{eng:eq:blur}
+\end{align}
+\begin{equation}
+ f\in\mathcal F_u,\quad |\dot f|\le\dot f^{\max},\quad
+ \max(t_{\mathrm{hw}}^{\min},t_i^{\mathrm{light}})\le t_i^{\mathrm{exp}}
+ \le\min(t_{\mathrm{hw}}^{\max},d_i).\label{eng:eq:exposure}
+\end{equation}
+\noindent $J$单位为像素/米，$g_i^{\max}$为米/像素，$b_i^{\max}$为拖影像素数。$\mathcal F_u$为标定焦距域，$t_i^{\mathrm{light}}$为给定光照、光圈及ISO下保证质量的曝光下限；未知时固定经验证的曝光设置，不能通过趋零曝光逃避拖影约束。式\eqref{eng:eq:blur}仍是一阶代理，需图像验证。驻留须覆盖云台/变焦稳定、对焦及规定帧数的曝光/读出；缺失参数不填造。
+
+\noindent H20官方资料可提供5184$\times$3888变焦照片尺寸、6.83--119.94mm物理焦距、云台俯仰$-120^\circ$至$30^\circ$及偏航$\pm320^\circ$等设备边界。[R3] 物理焦距不得直接作为像素焦距；须由标定内参或像元尺寸转换。工程所需GSD、拖影阈值、带电安全距离和每部件帧数不能从这些厂家规格推定。
+\clearpage
+
+\section{障碍、天气与能耗的共同作用}
+\noindent 对机体外形集合$\mathcal A_u$和障碍集合$\mathcal O(t)$，要求：
+\begin{align}
+ &\operatorname{dist}(\mathbf p_u(t)+R_u(t)\mathcal A_u,\mathcal O(t))
+ \ge d^{\mathrm{safe}}+\epsilon_{\mathrm{map}}+\epsilon_{\mathrm{track}},\\
+ &\|\mathbf p_u(t)-\mathbf p_{u'}(t)\|\ge r_u+r_{u'}+d_{uu'}^{\mathrm{safe}}
+ \quad\text{（同时在空中时）}.\label{eng:eq:collision}
+\end{align}
+\noindent 地形、导线弧垂、塔体、植被及禁入区域分别建模。带电距离取决于电压等级和作业规程，作为有来源的输入；没有该数据时不能填入任意常数并称工程安全。地图/定位/跟踪误差只在各自适用边界内组合，不把粗地形网格当作导线或植被模型。
+
+\noindent 令$\widehat W_{t_0}(\mathbf p,t)$为规划时刻$t_0$可获得的预报，包含风、气温、密度、降水及能见度。所有未来决策采用同一信息截止时刻：
+\begin{align}
+ &\mathbf w=\widehat{\mathbf w}_{t_0}(\mathbf p,t),\quad
+ t\in\mathcal W_u^{\mathrm{flight}}(\widehat W_{t_0}),\\
+ &P_u(t)=\mathcal P_u\big(\mathbf v_{\mathrm{air}},\mathbf a,R_B,\rho,m,
+ P_{\mathrm{payload}},\mathcal H_t\big),\\
+ &E_\ell=\frac1{3600}\int_{s_\ell}^{e_\ell}P_u(t)\,dt.\label{eng:eq:power}
+\end{align}
+\noindent $\mathcal H_t$为预测模型需要的因果状态历史，$P$包含飞行与任务载荷用电；等待、爬升、拍摄、起降均进入同一积分边界。公开机型学习模型只在原机型/数据适用域内使用，原M100模型不能直接视为M300标定模型。越出适用域时使用事前定义的保守功率包络或报告不可评估，不能让优化器利用外推异常降低能耗。[R4]
+
+\noindent 对预报误差，可使用有来源的包络$\mathcal U_{t_0}$：已承诺执行段的安全与返航约束对所有$W\in\mathcal U_{t_0}$成立。尚未承诺部分滚动重规划；采用多场景回溯决策时，共享相同观测历史的决策须满足非预见性。未获得误差分布时，不声明概率安全保证。天气分辨率与轨迹求值分辨率分别记录，小时级区域数据插值不等于逐秒塔旁实测。
+
+\subsection{飞行中途仍能安全回收}
+\begin{equation}
+ E_p(t)\ge E_p^{\mathrm{reserve}}+
+ \overline E^{\mathrm{safe}}_u(\mathbf p_u(t),t),\qquad
+ t\in[s_\ell,e_\ell],\ \beta_{p\ell}=1.\label{eng:eq:return}
+\end{equation}
+\noindent $\overline E^{\mathrm{safe}}$必须是通往已验证可用回收/应急地点的一条可执行备用轨迹的保守能耗估计，并含等待与降落；不能用忽略障碍的直线下界代替。终点回收完成后该项为0。返航预留比例可以继承旧场景20\%作为规划假设，不能称为统一行业标准。
+\clearpage
+
+\section{车辆运动、会合与操作位}
+\noindent 地面道路采用有向网络$(N,A)$及可通行走廊。优化道路弧、到达/离开时刻与停靠区；道路单行、转向、限速、坡度和禁行条件须保持。各车辆从当前状态出发，事件流连续，最终回到指定车库。道路节点可按访问次数复制，以允许同一停车点多次访问；弧时间传播与正行驶时间排除无源子环。
+
+\noindent 对采用阿克曼底盘的车辆，局部运动约束为：
+\begin{align}
+ \dot X_v&=v_v\cos\theta_v,\quad \dot Y_v=v_v\sin\theta_v,\quad
+ \dot\theta_v=v_v\tan\delta_v/L_v,\quad \dot v_v=a_v,\\
+ &-v_v^{\mathrm{rev}}\mathbf1_{\mathrm{parking}}\le v_v\le v_v^{\max}(\mathbf q_v),\quad |a_v|\le a_v^{\max},\\
+ &|\delta_v|\le\delta_v^{\max},\quad|\dot\delta_v|\le\dot\delta_v^{\max},\quad
+ v_v^2|\tan\delta_v|/L_v\le a_v^{\mathrm{lat}}.
+ \label{eng:eq:ugv}
+\end{align}
+\noindent $L_v$为轴距，$\delta_v$为转向角，$a_v^{\mathrm{lat}}$为允许横向加速度。三个区域采用参考Ackermann底盘：轴距2.5m、车宽1.8m、转向角上限35度、道路走廊宽6m，禁止倒车；车辆外形须留在走廊内并满足转弯空间。参数为项目仿真假设，真实底盘及道路宽度待核验。[R5]
+
+\noindent 定义航次准备时间$h_\ell^{\mathrm{pre}}$、回收时间$h_\ell^{\mathrm{post}}$。停靠式起降采用：
+\begin{align}
+ &\mathbf p_\ell(s_\ell)=\mathbf q_{c(u)}(s_\ell)+R_{c(u)}(s_\ell)\mathbf d^{\mathrm{pad}},\\
+ &\mathbf p_\ell(e_\ell)=\mathbf q_{c(u)}(e_\ell)+R_{c(u)}(e_\ell)\mathbf d^{\mathrm{pad}},\\
+ &v_{c(u)}(t)=0\quad t\in[s_\ell-h_\ell^{\mathrm{pre}},s_\ell]
+ \cup[e_\ell,e_\ell+h_\ell^{\mathrm{post}}].\label{eng:eq:rendezvous}
+\end{align}
+\noindent $R_v$为车辆姿态，$\mathbf d^{\mathrm{pad}}$为平台相对车体基准点的安装偏移。起飞/降落初末速度与平台速度一致，并设置起落段所需姿态条件。起飞与回收可发生在不同停车点；车辆可在无人机执行任务期间行驶。移动平台动态降落不在本版范围内，不能仅通过设置一个会合点便称其已解决。
+
+\begin{align}
+ &\sum_{\ell}y_{u\ell}\mathbf1_{[s_\ell-h_\ell^{\mathrm{pre}},\ e_\ell+h_\ell^{\mathrm{post}})}(t)\le1,\\
+ &\sum_{u:c(u)=v}\sum_\ell y_{u\ell}\left[\mathbf1_{[s_\ell-h_\ell^{\mathrm{pre}},s_\ell)}(t)
+ +\mathbf1_{[e_\ell,e_\ell+h_\ell^{\mathrm{post}})}(t)\right]\le K_v^{\mathrm{pad}}.
+ \label{eng:eq:pad}
+\end{align}
+\noindent $K_v^{\mathrm{pad}}$为可同时操作的起降位数；半开区间允许前一作业结束时立即开始下一作业。区间约束均只对激活航次计数。未执行任务不占用资源；同时执行的不同无人机仍受式\eqref{eng:eq:collision}约束。人员操作能力若不同于起降位容量，应单独建立有来源的人员占用约束。
+\clearpage
+
+\section{逐对电池能量守恒与充电调度}
+\noindent 对电池对$p$，$E_p(t)$为可用能量，$P_p^{\mathrm{in}}(t)$为充电输入功率，$c_p(t)$为占用充电通道的二元变量，$A_{p\ell}(t)$表示该电池在航次$\ell$中使用。电池对的两块物理电池作为绑定单元，不与单块电池数量混计。
+\begin{align}
+ \dot E_p(t)&=\frac{\eta_pP_p^{\mathrm{in}}(t)
+ -\sum_\ell A_{p\ell}(t)P_\ell(t)-P_p^{\mathrm{idle}}(t)}{3600},\\
+ &E_p^{\min}\le E_p(t)\le E_p^{\max}(T_p),\quad E_p(0)=E_p^0,\\
+ &0\le P_p^{\mathrm{in}}(t)\le c_p(t)\overline P_p(E_p/E_p^{\max},T_p),\\
+ &\sum_{p\in\mathcal B_v}c_p(t)\le K_v^{\mathrm{charger}},\qquad
+ \sum_{p\in\mathcal B_v}P_p^{\mathrm{in}}(t)\le P_v^{\mathrm{supply}}.
+ \label{eng:eq:battery}
+\end{align}
+\noindent $\eta_p$为充电效率，$P^{\mathrm{idle}}$仅含未在$P_\ell$中计入的上电地面消耗，避免重复计费。温度可用容量和充电功率曲线必须有依据；缺少证据时可采用注明温区的常容量和保守曲线。这里不建立电池老化或寿命优化目标。
+
+\begin{equation}
+ c_p(t)+\sum_\ell\beta_{p\ell}
+ \mathbf1_{[s_\ell-h_\ell^{\mathrm{pre}},\ e_\ell+h_\ell^{\mathrm{post}}+h_p^{\mathrm{cool}})}(t)\le1.
+ \label{eng:eq:batteryavailability}
+\end{equation}
+\noindent 同一电池对不能同时分配到重叠航次；回收、拆卸及必要冷却结束后才可充电。若运营条件不支持行车充电，则$c_p(t)=1\Rightarrow v_{c(p)}(t)=0$；该限制是沿用场景假设，不是所有车载充电系统的物理定律。充电开始、停止、功率及复用顺序均由优化决定，不强制充到100\%才可起飞，只需满足本次完整任务和式\eqref{eng:eq:return}。
+
+\subsection{初末状态与可比性}
+\noindent 到$H$时，所有出动无人机完成回收，车辆到指定终点；电池满足事前给定的$E_p(H)\ge E_p^{\mathrm{terminal}}$。终态要求应由下一班作业需求确定并固定在全部比较中，不能让一个方法通过耗尽末端库存获得虚假优势。尚未指定终态时保持待配置，不自行宣称全体充满或将其删去。
+
+\noindent 本模型允许“先充至足够电量完成短任务，再回来继续充”的决策，但它是否合理取决于充电器控制能力、状态估计和任务回收条件。若实机只支持固定充电程序，则以真实程序限制$P^{\mathrm{in}}$，不能保留无法执行的自由度。
+
+\subsection{与旧模型的关系}
+\noindent 固定所有观测位置、任务顺序、航段速度和起降点，并加入“充满才出动”条件后，可以得到旧模型的一种受限情形。新模型的最优值不自动优于旧实验记录：两者还可能采用不同质量要求、能耗标定和约束，必须在相同输入和共同评价器下重新比较，旧结果不改写。
+\clearpage
+
+\section{超图表达、验证与工程交付边界}
+\noindent 用变量--约束超图$\mathcal H=(\mathcal X,\mathcal C)$表达该联合模型。每个节点对应一个有量纲的决策变量或明确标记的变量块；每条超边$c$连接约束函数$F_c$实际依赖的变量，并保存类型、系数/函数、单位、边界及激活条件。变量块不能与标量变量混用计数。[R6]
+\begin{center}\small
+\begin{tabular}{p{.20\linewidth}p{.47\linewidth}p{.23\linewidth}}\toprule
+约束超边 & 实际关联变量 & 产生的决策影响\\\midrule
+图像合格 & 位置、机体姿态、云台、焦距、曝光、拍摄时刻 & 距离、方向和速度须共同满足\\
+航次能量 & 轨迹控制点、段时长、载荷、电池分配与电量 & 改道/逆风改变任务可合并程度\\
+电池周转 & 多航次分配与开始时刻、连续电量、充电功率 & 充电不足影响后续多个航次\\
+车机会合 & 车辆道路弧、速度、停靠与无人机回收状态 & 飞行与地面行驶不能独立排程\\
+完整交付 & 同一部件全部必要观测的选择与合格状态 & 单项拍到不等于整塔完成\\\bottomrule
+\end{tabular}
+\end{center}
+\noindent 时间局部约束保持局部关联，不把整条轨迹任意拼成一条大超边。天气是外生输入，只有它导致共享可行域或联立决策时才体现为耦合；不把温度数值当可消耗资源。容量1互斥可两两表示；超边大小本身不证明不可约高阶作用或求解优势。该模型含非线性连续约束，不能用普通超图匹配替代全部求解。
+
+\subsection{输入证据与当前缺口}
+\begin{center}\small
+\begin{tabular}{p{.24\linewidth}p{.35\linewidth}p{.31\linewidth}}\toprule
+输入 & 当前可继承 & 缺项对结论的限制\\\midrule
+地理 & 六个真实地理场景的塔位、道路与地形来源 & 道路宽度、停车许可、可通行性未实地核验\\
+目标几何 & 旧9视点参考模板 & 真实塔型、部件表面/法向、导线和植被点云缺失\\
+相机 & H20/H20T官方尺寸、焦距范围、云台边界 & 每台相机内参、安装标定、缺陷所需GSD待补\\
+飞行与能量 & 公开实验机型能耗回放；天气接口 & M300载荷功率包络、拖曳/推力和跟踪误差待标定\\
+地面车辆 & 道路网络和旧调度资源数量 & 实际底盘、轴距、转弯、坡度及充电电源规格缺失\\
+电池 & 库存、回充状态及参考充电曲线 & 可用Wh、部分充电控制、效率、终态需求待确认\\\bottomrule
+\end{tabular}
+\end{center}
+
+\noindent Úbeda的60/100/150塔分别保留540/900/1350个要求；Rommerskirchen、Brauweiler、Villevaudé现已逐塔应用模板，分别生成2133、1665、3087项要求。三个区域的参考数值与输入绑定见下一表；真实设备标定仍未知。既有18项解析基础校验不等于联合求解或实飞验证。
+
+\clearpage
+\section{三个区域的完整参考输入配置}
+\begin{center}\small
+\begin{tabular}{p{.19\linewidth}p{.49\linewidth}p{.22\linewidth}}\toprule
+对象 & 当前配置 & 证据类别\\\midrule
+塔与任务 & 237/185/343塔；每塔9项；逐点经纬度、UTM、高度、朝向与表面法向 & OSM；LI23/KPLC模板\\
+地形与道路 & Copernicus GLO90，250m网格及塔位补点；方向、权限与转向限制；最大强连通分量 & 公开数据派生\\
+基地与停车 & 最大变电站质心吸附道路节点；近塔候选间距120m；许可未核验 & 建模候选\\
+目标与障碍 & 0.5m方形目标面、5点采样；塔柱半径2m；导线参考弧垂5m；无植被模型 & 仿真几何假设\\
+机队与时域 & 2车、4机、8对电池；每车1充电通道及1操作位；8h & 参考资源配置\\
+相机与质量 & 5184×3888；焦距6.83--119.94mm；距离8--25m；GSD$\le$5mm/px；拖影$\le$1px & H20边界＋阈值假设\\
+动力学 & 质量7kg；地速$\le$5m/s；空速$\le$12m/s；加速度$\le$3m/s$^2$；倾角$\le$25度 & 参考限值，待标定\\
+能量 & 每对548Wh；初始100\%、下限及终态20\%；机载能耗边界 & TB60名义容量＋设定\\
+充电 & 20--90\%参考1800s；90--100\%尾段1200s；效率0.9；每车电源1000W & 公开时长＋曲线假设\\
+天气 & 2025年冬夏各7日ERA5回放；30/60/100m层；风/阵风$\le$10m/s；0--40℃、无雨、日间 & 再分析＋筛选阈值\\
+功率代理 & $P=P_h\sqrt{1.225/\rho}+\rho C_DA\|v_a\|^3/2+mg\max(v_z,0)/0.7$；$P_h=548\times3600/2580$W & 参考物理代理，非M300高精度标定\\
+返航与会合 & 剩余能量覆盖可行返航轨迹及20\%预留；停车起降，准备120s、回收240s & 同一约束下验证\\
+数值与决策 & 七次Bernstein；每转移最多3段、每段9检查点；误差0.01m/0.01Wh/0.001s；顺序和轨迹仍为变量 & 数值配置，连续复核待求解\\\bottomrule
+\end{tabular}
+\end{center}
+\noindent 配置文件为三个场景JSON中的\texttt{joint\_reference\_profile}、\texttt{joint\_model}。19类变量及16类约束全部绑定参考输入；未实现完整联合求解器，未生成全量标量关联图。道路和地形是真实地图数据，拍摄点及设备参数中的迁移、设定与未知项分列；停车许可、实测塔型及平台标定仍是部署条件。来源及全部参数见《真实地理巡检场景：数据与来源报告》。
+
+\clearpage
+
+\section{参考来源与适配对应}
+\noindent [R1] Spasojevic I., Murali V., Karaman S. \emph{Perception-aware time optimal path parameterization for quadrotors}. 2020预印本。\url{https://arxiv.org/abs/2005.13986}。已读原PDF第2页II.B--D的动力学、坐标与视野定义。原文研究给定路径的时间参数化及固定安装相机；本稿允许路径控制点和云台改变，不继承其凸性或最优性结论。
+
+\medskip\noindent [R2] Debus P., Rodehorst V. \emph{Potential-guided UAV-flight path planning for the inspection of complex structures}. ISPRS Archives, XLVIII-1/W2-2023, 291--298, 2023. \url{https://doi.org/10.5194/isprs-archives-XLVIII-1-W2-2023-291-2023}。已读第293页4.1节及Fig.2：表面覆盖、距离/分辨率和重建质量分别定义。本稿只采用质量约束的组织依据，未实现或声称复现其势场算法。
+
+\medskip\noindent [R3] DJI. \emph{Zenmuse H20 Series Specifications and Support}. 官方设备资料，访问于2026-11-08。\url{https://enterprise.dji.com/zenmuse-h20-series/specs}；\url{https://www.dji.com/support/product/zenmuse-h20-series}。分别核对Gimbal、Zoom Camera和最小对焦距离说明。设备边界不替代巡检验收阈值。
+
+\medskip\noindent [R4] 本项目《电池能耗公开机型验证》中的CMU原权重复测与《天气--航段--能耗联算报告》。沿用原始论文、代码与权重登记，具体路径见随附JSON输入契约。历史60组条件预测不作为本联合模型的求解结果；功率预测接口不等于完成机型迁移标定。
+
+\medskip\noindent [R5] LaValle S. M. \emph{Planning Algorithms}. Cambridge University Press, 2006, Chapter 13, Differential Models. \url{https://lavalle.pl/planning/ch13.pdf}。车辆运动学作为适用底盘的模型依据，具体车辆参数必须来自真实平台。
+
+\medskip\noindent [R6] Marx D. \emph{Tractable hypergraph properties for constraint satisfaction and conjunctive queries}. STOC 2010扩展摘要及后续完整稿。\url{https://arxiv.org/abs/0911.0801}。用于变量--约束关联的表达依据；其离散CSP复杂性结论不直接套用于本连续非线性模型。
+
+\medskip\noindent\textbf{来源边界：}式\eqref{eng:eq:assign}--\eqref{eng:eq:batteryavailability}为本项目按工程对象组合的模型定义；不是某篇论文原算法的完整复现，也不构成新的超图求解算法。符号、参数单位和实际约束接口须随实现逐条核对。
+
+\medskip\noindent 接续顺序：绑定目标部件与设备参数；实现动态任务序列和连续轨迹决策；接入共同评价器；先核验小规模可执行性，再按既有审核节点比较同一数学问题的算法。输出须记录约束余量、分段复核精度和适用域。

@@ -1,0 +1,333 @@
+\section{成像、可见性和观测质量}
+\label{sec:04_05}
+
+相机光轴指向目标，并不意味着能够获得满足巡检要求的图像。目标还须位于相机前方和有效画幅内，目标表面在图像中的最小投影尺度须足够大，曝光期间的像点运动须受到限制，相机与目标之间也须不存在遮挡。这些条件分别约束投影位置、空间分辨率、运动拖影和视线通达性，不能由单一的拍摄距离替代。文献\cite{Debus2023}对覆盖、距离与分辨率以及观测质量的区分，为组织这些条件提供了参考；以下建立本书采用的参数化模型，不据此宣称复现该文算法或其性能。
+
+\subsection{目标表面、相机状态与约束作用区间}
+
+沿用第\ref{sec:04_01}节的任务集合$\mathcal I$。对每个$i\in\mathcal I$，$\mathcal S_i\subset\mathbb R^3$表示给定的三维平面目标区域，$\mathbf c_i\in\mathbb R^3$为其参考点，$\mathbf n_i\in\mathbb R^3$为指向允许观测侧的单位法向。位置和长度均以$\mathrm m$计，法向无量纲。定义目标切平面的正交基
+\begin{equation}
+ B_i=[\,\mathbf b_{i1},\mathbf b_{i2}\,]\in\mathbb R^{3\times2},
+ \qquad B_i^{\mathsf T}B_i=I_2,
+ \qquad B_i^{\mathsf T}\mathbf n_i=\mathbf0,
+ \qquad \|\mathbf n_i\|=1,
+ \quad i\in\mathcal I.
+ \label{s0405:tangent_basis}
+\end{equation}
+其中$\mathbf b_{i1}$和$\mathbf b_{i2}$是无量纲单位切向量，$I_2$为二阶单位矩阵。对目标面上的任意位置$\mathbf q$，其切平面坐标$\boldsymbol\eta\in\mathbb R^2$以$\mathrm m$计，满足$\mathbf q=\mathbf c_i+B_i\boldsymbol\eta$。$B_i$将二维表面位移转换为三维世界坐标位移，并因列正交而保持位移长度。
+
+目标面的有限验收样点采用独立的索引集合
+\begin{equation}
+ \mathcal J_i=\{1,\ldots,M_i\},\qquad
+ \mathbf q_{ir}=\mathbf c_i+B_i\boldsymbol\eta_{ir}\in\mathcal S_i,
+ \quad r\in\mathcal J_i,\quad i\in\mathcal I,
+ \label{s0405:surface_samples}
+\end{equation}
+其中$M_i\in\mathbb Z_{>0}$为给定样点数，$\boldsymbol\eta_{ir}\in\mathbb R^2$为给定样点的切平面坐标。参考模板使用五个表面样点，一般公式保留$M_i$。集合$\mathcal S_i$始终表示目标区域，不能同时用作样点索引。这里的$\mathbf q_{ir}$、$\mathbf n_i$和$B_i$均为固定目标几何参数，目标本身不随拍摄过程运动。
+
+以下条件针对每个实际安排执行的任务$i$及承载它的航次$\ell$施加，任务与航次的选择关系在第\ref{sec:05_01}节建立。相机光心$\mathbf p_{C,\ell}(t)$、相机到世界的旋转矩阵$R_{C,\ell}(t)$以及焦距$f_\ell(t)$，由第\ref{sec:04_04}节的同一条飞行轨迹、机体姿态及云台状态确定。它们随决策变化，但不能作为相互独立的自由观测参数。
+
+记任务的服务区间为$\mathcal D_i^{\mathrm{obs}}=[t_i,t_i+d_i]$，其中$t_i$为服务开始时刻，$d_i>0$为服务持续时间，单位均为$\mathrm s$。曝光区间记为
+\begin{equation}
+ \mathcal C_i=[a_i^{\mathrm{exp}},a_i^{\mathrm{exp}}+t^{\mathrm{exp}}]
+ \subseteq\mathcal D_i^{\mathrm{obs}},
+ \qquad t^{\mathrm{exp}}>0.
+ \label{s0405:exposure_domain}
+\end{equation}
+$t^{\mathrm{exp}}$为给定的固定曝光时长，单位为$\mathrm s$；$a_i^{\mathrm{exp}}$为曝光开始时刻，是由$t_i$与规定的稳定、对焦时间构造的派生时刻，不是另设的独立自由变量。该构造及服务区间与航次的连接在第\ref{sec:05_03}节给出。本节只需使用已经构造的非空曝光区间。
+
+距离和入射角约束对整个$\mathcal D_i^{\mathrm{obs}}$成立；正深度、画幅、分辨率、拖影和视线约束对$\mathcal C_i$成立。这一区分允许无人机在服务期间完成稳定和对焦，同时要求真正曝光的全过程满足图像条件。不能仅检查曝光中点，也不能将曝光成像条件无条件扩展到整段服务时间。
+
+\subsection{焦距换算、针孔投影与有效画幅}
+
+设$N_x,N_y\in\mathbb Z_{>0}$分别为图像水平方向和竖直方向的像素数，画幅宽、高分别为$N_x\,\mathrm{px}$和$N_y\,\mathrm{px}$。采用连续像平面坐标，图像范围为$[0,N_x]\times[0,N_y]$，主点固定在画幅中心。设$\alpha_d\in(0,\pi)$为镜头在最小焦距$\underline f$处的对角视场角，单位为$\mathrm{rad}$；$\underline f$继承第\ref{sec:04_04}节定义，单位为$\mathrm{mm}$。
+
+在方形像素、中心主点和理想针孔假设下，定义最小焦距对应的像素焦距$F_0$及变焦时的像素焦距$F_{\mathrm{px}}$为
+\begin{equation}
+ F_0=\frac{\sqrt{N_x^2+N_y^2}}{2\tan(\alpha_d/2)},
+ \qquad
+ F_{\mathrm{px}}(f)=F_0\frac{f}{\underline f},
+ \qquad f\in[\underline f,\overline f].
+ \label{s0405:pixel_focal}
+\end{equation}
+$F_0$与$F_{\mathrm{px}}$均以$\mathrm{px}$计，$f/\underline f$为无量纲比值。分子和分母中的物理焦距必须使用相同的$\mathrm{mm}$单位。公式由对角方向的半画幅长度与半视场角关系得到；采用方形像素后，水平和竖直投影使用同一个像素焦距。参考设备的画幅、镜头焦距范围和对角视场角取自设备资料\cite{DJIH20}，按焦距比例缩放的理想针孔表达属于模型适配，并不构成实际镜头在全部焦段上的标定结果。
+
+对每个已安排的$i$、承载航次$\ell$、样点$r\in\mathcal J_i$及$t\in\mathcal C_i$，定义样点的相机坐标
+\begin{equation}
+ \mathbf Q_{ir\ell}(t)
+ =R_{C,\ell}(t)^{\mathsf T}
+   \bigl(\mathbf q_{ir}-\mathbf p_{C,\ell}(t)\bigr)
+ =\begin{pmatrix}Q_{ir\ell,x}(t)\\Q_{ir\ell,y}(t)\\Q_{ir\ell,z}(t)\end{pmatrix}
+ \in\mathbb R^3.
+ \label{s0405:camera_point}
+\end{equation}
+各分量均以$\mathrm m$计，下标$x,y,z$在此表示相机坐标轴；第三轴为光轴正方向。旋转矩阵的转置将世界坐标中的相对位置转换为相机坐标。对于任意$\mathbf Q=(Q_x,Q_y,Q_z)^{\mathsf T}$且$Q_z>0$，针孔投影为
+\begin{equation}
+ \boldsymbol\pi(\mathbf Q,f)
+ =\begin{pmatrix}
+ F_{\mathrm{px}}(f)Q_x/Q_z+N_x/2\\
+ F_{\mathrm{px}}(f)Q_y/Q_z+N_y/2
+ \end{pmatrix},
+ \qquad
+ \mathbf y_{ir\ell}(t)
+ :=\boldsymbol\pi\bigl(\mathbf Q_{ir\ell}(t),f_\ell(t)\bigr).
+ \label{s0405:pinhole_projection}
+\end{equation}
+$\mathbf y_{ir\ell}\in\mathbb R^2$为以$\mathrm{px}$计的连续像点坐标，不要求落在整数像素中心。比值$Q_x/Q_z$和$Q_y/Q_z$无量纲，因此投影式各项单位一致。
+
+设$m_{\mathrm{px}}\ge0$为给定的画幅边距，单位为$\mathrm{px}$，并满足$2m_{\mathrm{px}}<\min\{N_x,N_y\}$。对所有上述任务、样点及曝光时刻要求
+\begin{subequations}
+\label{s0405:frame_constraints}
+\begin{align}
+ Q_{ir\ell,z}(t)&>0,
+ \label{s0405:positive_depth}\\
+ m_{\mathrm{px}}\le y_{ir\ell,x}(t)&\le N_x-m_{\mathrm{px}},
+ \label{s0405:horizontal_frame}\\
+ m_{\mathrm{px}}\le y_{ir\ell,y}(t)&\le N_y-m_{\mathrm{px}}.
+ \label{s0405:vertical_frame}
+\end{align}
+\end{subequations}
+正深度条件排除相机后方的点，也使投影中的除法有定义。两个画幅条件要求样点落在扣除边距后的有效矩形内。目标位于相机前方并不自动满足画幅条件；增大焦距虽然可能改善局部分辨率，也会把离轴样点推向画幅边缘。边距是像平面上的规划参数，不能直接解释为目标与障碍之间的空间安全距离。
+
+\subsection{工作距离、入射角与几何观测区域}
+
+设$0<\underline d\le\overline d$为允许工作距离的下、上界，单位为$\mathrm m$；$\overline\beta\in[0,\pi/2)$为最大允许入射角，单位为$\mathrm{rad}$。对任意$i\in\mathcal I$、$r\in\mathcal J_i$及候选光心位置$\mathbf x\ne\mathbf q_{ir}$，定义距离和入射角余弦
+\begin{equation}
+ d_{ir}(\mathbf x)=\|\mathbf x-\mathbf q_{ir}\|,
+ \qquad
+ \mu_{ir}(\mathbf x)=
+ \frac{\mathbf n_i^{\mathsf T}(\mathbf x-\mathbf q_{ir})}
+ {d_{ir}(\mathbf x)}.
+ \label{s0405:range_incidence}
+\end{equation}
+$d_{ir}$以$\mathrm m$计，$\mu_{ir}\in[-1,1]$无量纲。入射角是目标外向法向与从目标指向相机的方向之间的夹角，其余弦为$\mu_{ir}$。这里使用目标到相机的方向，不能反转向量后仍保持原不等式。
+
+对每个执行任务$i$及其航次$\ell$，要求
+\begin{equation}
+ \underline d\le d_{ir}\bigl(\mathbf p_{C,\ell}(t)\bigr)\le\overline d,
+ \qquad
+ \mu_{ir}\bigl(\mathbf p_{C,\ell}(t)\bigr)\ge\cos\overline\beta,
+ \quad r\in\mathcal J_i,\quad t\in\mathcal D_i^{\mathrm{obs}}.
+ \label{s0405:geometric_constraints}
+\end{equation}
+严格为正的距离下界排除了光心与样点重合的情况。入射角上界小于直角，使光心处于目标面规定的观测侧，并限制斜视程度。距离条件则界定参考作业距离范围，不能单独充当清晰成像或实际自动对焦成功的证明。
+
+将这两类条件合并，定义光心的几何观测区域
+\begin{equation}
+ \mathcal V_i^{\mathrm{geom}}
+ =\bigcap_{r\in\mathcal J_i}
+ \left\{\mathbf x\in\mathbb R^3:
+ \begin{array}{l}
+ \underline d\le\|\mathbf x-\mathbf q_{ir}\|\le\overline d,\\
+ \mathbf n_i^{\mathsf T}(\mathbf x-\mathbf q_{ir})
+ \ge\cos\overline\beta\,\|\mathbf x-\mathbf q_{ir}\|
+ \end{array}\right\},
+ \quad i\in\mathcal I.
+ \label{s0405:geometric_view_region}
+\end{equation}
+因此，式\eqref{s0405:geometric_constraints}等价于服务期间光心始终属于$\mathcal V_i^{\mathrm{geom}}$。该集合仅包含距离和入射角要求，不包含曝光期间的画幅、拖影与视线要求，也不替代第\ref{sec:04_06}节的机体避障条件。若安装偏移为零，光心位置与机体参考位置重合；一般固定偏移下，应先由式\eqref{s0404:camera_world_position}求出光心，再检查区域归属。
+
+\subsection{表面投影微分与最差方向分辨率}
+
+仅限定距离和焦距，不能完整表达倾斜目标面上的分辨率。目标面沿不同切向方向的同等长度，在图像上可能产生不同长度的位移。为限制最不利方向，需对目标表面的二维投影映射求导。
+
+对于$Q_z>0$和允许焦距$f$，固定$f$时的投影雅可比为
+\begin{equation}
+ D_{\mathbf Q}\boldsymbol\pi(\mathbf Q,f)
+ =\begin{pmatrix}
+ F_{\mathrm{px}}(f)/Q_z&0&-F_{\mathrm{px}}(f)Q_x/Q_z^2\\
+ 0&F_{\mathrm{px}}(f)/Q_z&-F_{\mathrm{px}}(f)Q_y/Q_z^2
+ \end{pmatrix}
+ \in\mathbb R^{2\times3}.
+ \label{s0405:projection_jacobian}
+\end{equation}
+矩阵元素的单位为$\mathrm{px/m}$。对每个执行任务、样点和曝光时刻，定义切平面到像平面的雅可比
+\begin{equation}
+ J_{ir\ell}(t)
+ =D_{\mathbf Q}\boldsymbol\pi
+   \bigl(\mathbf Q_{ir\ell}(t),f_\ell(t)\bigr)
+ R_{C,\ell}(t)^{\mathsf T}B_i
+ \in\mathbb R^{2\times2}.
+ \label{s0405:surface_jacobian}
+\end{equation}
+$J_{ir\ell}$以$\mathrm{px/m}$计。矩阵$B_i$先将表面二维位移转换为世界三维位移，$R_{C,\ell}^{\mathsf T}$再将其旋转至相机坐标，最后由投影雅可比转换为像平面位移。因此，对于趋于零的切向位移$\Delta\boldsymbol\eta\in\mathbb R^2$，对应像点位移的一阶项是$J_{ir\ell}\Delta\boldsymbol\eta$。
+
+对任意二维单位方向$\mathbf a\in\mathbb R^2$，$\|J_{ir\ell}\mathbf a\|$表示沿该表面方向每单位长度产生的局部像点位移。最小奇异值满足
+\begin{equation}
+ \sigma_{\min}(J_{ir\ell})
+ =\min_{\|\mathbf a\|=1}\|J_{ir\ell}\mathbf a\|.
+ \label{s0405:minimum_scale}
+\end{equation}
+该量取遍整个二维切平面内的单位方向，不只是分别检查两个给定基向量。若只检查$J_{ir\ell}$的两列长度，仍可能遗漏两列组合后投影尺度很小的方向。
+
+将最不利表面方向的局部地面采样距离记为$\operatorname{GSD}^{\max}_{ir\ell}(t)$，单位为$\mathrm{m/px}$，定义
+\begin{equation}
+ \operatorname{GSD}^{\max}_{ir\ell}(t)
+ =\begin{cases}
+ 1/\sigma_{\min}(J_{ir\ell}(t)),
+ &\sigma_{\min}(J_{ir\ell}(t))>0,\\
+ +\infty,&\sigma_{\min}(J_{ir\ell}(t))=0.
+ \end{cases}
+ \label{s0405:worst_gsd}
+\end{equation}
+这里的地面采样距离指目标切平面上的局部长度与像素位移之比，并不要求目标平面水平。它采用微分尺度，不能直接当作任意大表面区域上的均匀像素尺寸。
+
+设$\overline g>0$为给定的最大允许GSD，单位为$\mathrm{m/px}$。对每个执行任务$i$、承载航次$\ell$及全部$r\in\mathcal J_i$、$t\in\mathcal C_i$，要求
+\begin{equation}
+ \sigma_{\min}\bigl(J_{ir\ell}(t)\bigr)
+ \ge\frac{1}{\overline g},
+ \qquad\text{等价于}\qquad
+ \operatorname{GSD}^{\max}_{ir\ell}(t)\le\overline g.
+ \label{s0405:resolution_constraint}
+\end{equation}
+左侧奇异值及右侧倒数均以$\mathrm{px/m}$计。距离较近或焦距较大通常会增大投影尺度，但斜视方向的压缩仍须通过$J_{ir\ell}$检查。该约束与画幅条件共同限制变焦：不能仅靠不断增加焦距满足分辨率，而忽略样点是否仍留在有效画幅内。
+
+式\eqref{s0405:resolution_constraint}也可写成无量纲的半正定条件
+\begin{equation}
+ \overline g^{\,2}J_{ir\ell}(t)^{\mathsf T}J_{ir\ell}(t)-I_2\succeq0,
+ \quad r\in\mathcal J_i,\quad t\in\mathcal C_i.
+ \label{s0405:resolution_psd}
+\end{equation}
+符号$\succeq0$表示对称矩阵的所有特征值非负。这一形式与最小奇异值约束等价，因为$J^{\mathsf T}J$的特征值恰为$J$的奇异值平方；它没有把最差方向条件改为平均分辨率条件。
+
+\subsection{完整像点导数与固定曝光拖影}
+
+曝光期间，相机平移、机体转动、云台转动和变焦均可使像点移动。对固定世界目标$\mathbf q_{ir}$，由式\eqref{s0405:camera_point}求导可得
+\begin{equation}
+ \dot{\mathbf Q}_{ir\ell}(t)
+ =\dot R_{C,\ell}(t)^{\mathsf T}
+   \bigl(\mathbf q_{ir}-\mathbf p_{C,\ell}(t)\bigr)
+ -R_{C,\ell}(t)^{\mathsf T}\dot{\mathbf p}_{C,\ell}(t).
+ \label{s0405:camera_point_rate}
+\end{equation}
+$\dot{\mathbf Q}_{ir\ell}$以$\mathrm{m/s}$计。第一项反映坐标轴转动，第二项反映光心平移；固定目标的世界坐标导数为零。
+
+为明确机体和云台如何进入第一项，沿用第\ref{sec:04_04}节的固定安装偏移$\mathbf d_{BC}$及云台矩阵$R_{BC}$，有
+\begin{subequations}
+\label{s0405:camera_pose_rates}
+\begin{align}
+ \dot{\mathbf p}_{C,\ell}
+ &=\mathbf v_\ell
+   +R_\ell[\boldsymbol\omega_\ell]_\times\mathbf d_{BC},
+ \label{s0405:camera_translation_rate}\\
+ \dot R_{C,\ell}
+ &=R_\ell[\boldsymbol\omega_\ell]_\times
+   R_{BC}(\boldsymbol\gamma_\ell)
+   +R_\ell\dot R_{BC}(\boldsymbol\gamma_\ell),
+ \label{s0405:camera_rotation_rate}\\
+ \dot R_{BC}(\boldsymbol\gamma_\ell)
+ &=\frac{\partial R_{BC}}{\partial\gamma_p}
+      (\boldsymbol\gamma_\ell)\dot\gamma_{p,\ell}
+  +\frac{\partial R_{BC}}{\partial\gamma_y}
+      (\boldsymbol\gamma_\ell)\dot\gamma_{y,\ell}.
+ \label{s0405:gimbal_rotation_rate}
+\end{align}
+\end{subequations}
+这些关系对各航次的光滑飞行段成立，在曝光区间内按同一绝对时间计算。两个偏导矩阵是对式\eqref{s0404:camera_to_body}的矩阵元素逐项求偏导所得，并非新增控制量。$\dot{\mathbf p}_{C,\ell}$的单位为$\mathrm{m/s}$，旋转矩阵的时间导数以$\mathrm{s^{-1}}$计；角度导数采用弧度制。参考安装偏移为零时，光心速度简化为$\mathbf v_\ell$，但机体转动对$\dot R_{C,\ell}$的贡献仍保留。
+
+由式\eqref{s0405:pixel_focal}，像素焦距变化率为
+\begin{equation}
+ \dot F_{\mathrm{px},\ell}(t)
+ =\frac{F_0}{\underline f}\dot f_\ell(t),
+ \label{s0405:pixel_focal_rate}
+\end{equation}
+其单位为$\mathrm{px/s}$。对每个样点和曝光时刻，像点完整时间导数为
+\begin{align}
+ \dot{\mathbf y}_{ir\ell}(t)
+ ={}&D_{\mathbf Q}\boldsymbol\pi
+       \bigl(\mathbf Q_{ir\ell}(t),f_\ell(t)\bigr)
+       \dot{\mathbf Q}_{ir\ell}(t)\notag\\
+ &+\dot F_{\mathrm{px},\ell}(t)
+ \begin{pmatrix}
+ Q_{ir\ell,x}(t)/Q_{ir\ell,z}(t)\\
+ Q_{ir\ell,y}(t)/Q_{ir\ell,z}(t)
+ \end{pmatrix}.
+ \label{s0405:image_velocity}
+\end{align}
+两项均以$\mathrm{px/s}$计。为了直接检查透视分母的作用，对$h\in\{x,y\}$还可写为
+\begin{align}
+ \dot y_{ir\ell,h}(t)
+ ={}&\dot F_{\mathrm{px},\ell}(t)
+       \frac{Q_{ir\ell,h}(t)}{Q_{ir\ell,z}(t)}\notag\\
+ &+F_{\mathrm{px}}(f_\ell(t))
+ \frac{\dot Q_{ir\ell,h}(t)Q_{ir\ell,z}(t)
+       -Q_{ir\ell,h}(t)\dot Q_{ir\ell,z}(t)}
+      {Q_{ir\ell,z}(t)^2}.
+ \label{s0405:image_velocity_components}
+\end{align}
+该式包含变焦引起的尺度变化、相机相对目标的横向运动以及深度变化。即使无人机地速为零，机体、云台或焦距发生变化时，像点仍可能运动。因此，不能用飞行速度除以目标距离替代这里的完整导数。
+
+设$b_{\mathrm{px}}>0$为允许的拖影上限，单位为$\mathrm{px}$。对每个执行任务$i$、承载航次$\ell$及样点$r\in\mathcal J_i$，施加
+\begin{equation}
+ t^{\mathrm{exp}}
+ \sup_{t\in\mathcal C_i}\|\dot{\mathbf y}_{ir\ell}(t)\|
+ \le b_{\mathrm{px}}.
+ \label{s0405:blur_constraint}
+\end{equation}
+范数为二维欧氏范数，约束对象是合成像点速度，不能改为两个分量分别不超过同一上限。对分段光滑且连续的状态，导数在各光滑段计算，段界采用存在的单侧导数界；不允许通过像点跳变规避该限制。
+
+在这些连续性条件下，任意$t_1,t_2\in\mathcal C_i$且$t_1\le t_2$均满足
+\begin{align}
+ \|\mathbf y_{ir\ell}(t_2)-\mathbf y_{ir\ell}(t_1)\|
+ &\le\int_{t_1}^{t_2}\|\dot{\mathbf y}_{ir\ell}(t)\|\,dt\notag\\
+ &\le t^{\mathrm{exp}}
+       \sup_{t\in\mathcal C_i}\|\dot{\mathbf y}_{ir\ell}(t)\|
+ \le b_{\mathrm{px}}.
+ \label{s0405:blur_displacement_bound}
+\end{align}
+因此，式\eqref{s0405:blur_constraint}控制整个曝光期间像点运动的路径长度上界，也限制任意两个曝光时刻之间的像点位移。它是几何运动拖影的保守约束，而不是镜头光学模糊、传感器噪声或图像识别误差的统一模型。固定$t^{\mathrm{exp}}>0$还排除了通过把曝光时间缩短到趋近于零而绕过拖影要求的做法；本模型不另行优化曝光时间。
+
+\subsection{完整视线与不透明几何边界}
+
+样点进入画幅且具有足够投影尺度，仍可能被相机与目标之间的实体遮挡。记$\mathcal O^{\mathrm{ter}}\subset\mathbb R^3$为由DEM定义的地形实体，$\mathcal O_g^{\mathrm{tower}}\subset\mathbb R^3$为塔$g\in\mathcal G$的实体，$\mathcal O_e^{\mathrm{wire}}\subset\mathbb R^3$为导线$e\in\mathcal E^{\mathrm{wire}}$的实体，其中$\mathcal E^{\mathrm{wire}}$为给定导线索引集合。沿用车辆集合$\mathcal V$，车辆$v$在时刻$t$占据的实体为$\mathcal O_v^{\mathrm{car}}(t)$。这些集合中的点均使用与相机、目标一致的三维坐标，单位为$\mathrm m$。塔、导线和地形几何为给定输入；车辆实体的位置和方向随车辆运动决策改变。
+
+定义时刻$t$的总不透明集合
+\begin{equation}
+ \mathcal O^{\mathrm{opaque}}(t)
+ =\mathcal O^{\mathrm{ter}}
+ \cup\bigcup_{g\in\mathcal G}\mathcal O_g^{\mathrm{tower}}
+ \cup\bigcup_{e\in\mathcal E^{\mathrm{wire}}}\mathcal O_e^{\mathrm{wire}}
+ \cup\bigcup_{v\in\mathcal V}\mathcal O_v^{\mathrm{car}}(t).
+ \label{s0405:opaque_union}
+\end{equation}
+集合中的塔包括目标所属塔，导线也不因其与目标有关而被删除。其具体几何构造在第\ref{sec:04_06}节及第\ref{sec:04_07}节展开。地形只能在有定义的DEM域内使用，未建模区域不能直接当作无障碍空间。
+
+从相机光心到样点的线段参数化为
+\begin{equation}
+ \mathbf z_{ir\ell}(\lambda,t)
+ =(1-\lambda)\mathbf p_{C,\ell}(t)+\lambda\mathbf q_{ir},
+ \qquad \lambda\in[0,1],
+ \label{s0405:sight_segment}
+\end{equation}
+其中$\lambda$为无量纲线段参数，$\mathbf z_{ir\ell}$以$\mathrm m$计。$\lambda=0$对应光心，$\lambda=1$对应目标样点。对每个执行任务$i$及其航次$\ell$，完整视线条件为
+\begin{equation}
+ \mathbf z_{ir\ell}(\lambda,t)
+ \notin\operatorname{int}\mathcal O^{\mathrm{opaque}}(t),
+ \quad r\in\mathcal J_i,\quad
+ t\in\mathcal C_i,\quad \lambda\in[0,1).
+ \label{s0405:visibility_constraint}
+\end{equation}
+$\operatorname{int}$表示三维空间中的集合内部。该条件同时遍历曝光时间与整条目标端点开放的视线段，而不是仅检查几个离散射线位置。目标端点不纳入这条不等式，使样点可以位于目标实体表面；但相机与样点之间的部分仍须检查全部不透明集合。若视线先穿过本塔内部再到达目标，即使目标属于本塔，也不满足式\eqref{s0405:visibility_constraint}。排除目标端点不能变成排除整个目标所属塔。
+
+这里采用的是不进入障碍内部的理想几何约定。它允许视线与不透明集合的外边界相切或接触，并没有要求除目标端点之外的每一点都具有严格正净距。目标端点开放与允许边界相切是两个不同的数学含义，不能将二者合并解释为只有目标端点允许接触障碍。采用非负有符号距离、导线实体半径及地形零净高的视线检查，与这种零额外裕度的约定一致；它仍不等于在地图误差或跟踪误差下保证实际视线具有鲁棒正裕度。
+
+边界允许相切，也不意味着数值验证一定能够证实所有切触情形。区间包络在边界附近可能同时覆盖实体内外，从而返回未决；未决不能计作已经满足视线条件。另一方面，飞行器保持机体安全距离也不能替代视线检查，因为光心自身处于安全位置时，通往目标的线段仍可能经过另一实体内部。
+
+\subsection{观测条件的联合含义与适用范围}
+
+对一个已安排的任务，服务期间的式\eqref{s0405:geometric_constraints}限定可停留的几何观测区域；曝光期间再同时施加式\eqref{s0405:frame_constraints}、式\eqref{s0405:resolution_constraint}、式\eqref{s0405:blur_constraint}和式\eqref{s0405:visibility_constraint}。所有条件使用同一组$\mathbf p_{C,\ell}$、$R_{C,\ell}$、$f_\ell$及同一曝光时钟。各条件分别成立于不同相机状态的结果，不能拼接成同一次有效曝光。
+
+本节的独立输入包括目标几何、样点位置、图像尺寸、参考视场角及允许的距离、入射角、画幅边距、GSD和拖影阈值，曝光时长也为给定参数。轨迹、机体姿态、云台角、焦距以及服务时刻随联合规划决策改变。相机坐标、像点、雅可比、GSD和像点速度均为由这些输入及决策导出的量，不能由优化器单独赋值以绕过其定义关系。具体设备数值和项目阈值在第\ref{sec:06_01}节统一代入；设备资料\cite{DJIH20}提供的镜头边界与本项目选择的图像验收阈值须分别注明来源。
+
+上述条件验收的是有限模板样点及其局部表面投影。五个样点全部合格，不自动保证整个真实部件的每一点均无遮挡或达到同一分辨率，更不构成缺陷检出率的保证。所用目标表面、塔柱和导线几何具有模板性质，尚未由这些公式补入现场植被、实际晶格结构及镜头畸变等信息。因而，满足本节约束表示符合所声明的规划成像模型；实际照片是否完成任务，仍须由图像验收记录判定。
+
+% CAPTURE_COMPONENT_EXPERIMENT
+\subsection{数值算例：曝光轨迹与二维拖影}
+
+取相机光心为原点、光轴沿$+z$，目标中心$(0,0,15)$\,m，法向$(0,0,-1)$。目标正方形边长0.5\,m，使用中心与四角五个样点；焦距6.83\,mm、图像5184$\times$3888、对角视场66.6$^\circ$、曝光0.001\,s。此处射线环境定义为空旷，无额外障碍；它是独立成像算例，不替代真实杆塔的遮挡检查。
+
+焦距像素值$F=\sqrt{5184^2+3888^2}/[2\tan(66.6^\circ/2)]$。静止时最差GSD为$15/F=0.0030410983$\,m/px，像面位移为0。若曝光内相机沿两个像面方向各移动$0.8\times15/F$\,m，两个方向的像素位移均为0.8\,px，二维拖影为
+\begin{equation}
+ \sqrt{0.8^2+0.8^2}=1.13137085\ \mathrm{px}>1\ \mathrm{px}.
+\end{equation}
+因此逐轴小于1\,px不足以满足二维拖影上限。曝光起点、中点和终点计算得到同一结果；未知遮挡、明确遮挡、500\,m能见度及超出画幅的四种反例均被拒绝。采样验收仍须与连续曝光区间的误差界配合；实物缺陷识别、低照度噪声和相机标定没有由该几何算例获得验证。

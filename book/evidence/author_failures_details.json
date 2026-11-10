@@ -1,0 +1,82 @@
+[
+  {
+    "scenario_id": "paper2026_ISPD98_ibm02",
+    "seed": 7,
+    "failure": {
+      "scenario_id": "paper2026_ISPD98_ibm02",
+      "seed": 7,
+      "exit_code": 1,
+      "guard": null,
+      "observed_at": "2026-11-07T13:43:02.578204+00:00"
+    },
+    "log": {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文完整流程原始场景对比/logs/paper2026_ISPD98_ibm02_s7.log",
+      "sha256": "96aa1fc1002c4348f3709ae199ac6754a7ade59acbdc4e10f31a84e806cdb754"
+    },
+    "log_tail": "Traceback (most recent call last):\n  File \"D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网\\scripts\\run_author_bmatching_pipeline.py\", line 131, in <module>\n    elif a.mode=='one':one(a.scenario,a.seed)\n                       ^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网\\scripts\\run_author_bmatching_pipeline.py\", line 79, in one\n    if seed>=0:r=solve(d,seed)\n                 ^^^^^^^^^^^^^\n  File \"D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网\\scripts\\run_author_bmatching_pipeline.py\", line 36, in solve\n    assert valid['feasible'] and valid['objective']==stats[4]\n                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError\n"
+  },
+  {
+    "scenario_id": "paper2026_us04_mtx",
+    "seed": 1,
+    "failure": {
+      "scenario_id": "paper2026_us04_mtx",
+      "seed": 1,
+      "exit_code": 1,
+      "guard": null,
+      "observed_at": "2026-11-07T13:44:14.692429+00:00"
+    },
+    "log": {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文完整流程原始场景对比/logs/paper2026_us04_mtx_s1.log",
+      "sha256": "a44b18fe0f1ecfc7169b6bfbacb8c340e40005dd18bf074945580ee1f9fe92ff"
+    },
+    "log_tail": "Traceback (most recent call last):\n  File \"D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网\\scripts\\run_author_bmatching_pipeline.py\", line 131, in <module>\n    elif a.mode=='one':one(a.scenario,a.seed)\n                       ^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网\\scripts\\run_author_bmatching_pipeline.py\", line 79, in one\n    if seed>=0:r=solve(d,seed)\n                 ^^^^^^^^^^^^^\n  File \"D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网\\scripts\\run_author_bmatching_pipeline.py\", line 31, in solve\n    t1=time.perf_counter();n=lib.solve_pipeline(len(caps),len(weights),p,v,w,c,seed,tries,chosen,times,stats);t2=time.perf_counter()\n                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [WinError -1073741569] Windows Error 0xc00000ff\n"
+  },
+  {
+    "scenario_id": "paper2026_us04_mtx",
+    "seed": 3,
+    "failure": {
+      "scenario_id": "paper2026_us04_mtx",
+      "seed": 3,
+      "exit_code": 1,
+      "guard": "RAM protection",
+      "observed_at": "2026-11-07T13:44:31.333684+00:00"
+    },
+    "log": {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文完整流程原始场景对比/logs/paper2026_us04_mtx_s3.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "log_tail": ""
+  },
+  {
+    "scenario_id": "paper2026_us04_mtx",
+    "seed": 7,
+    "failure": {
+      "scenario_id": "paper2026_us04_mtx",
+      "seed": 7,
+      "exit_code": 1,
+      "guard": null,
+      "observed_at": "2026-11-07T13:45:15.420543+00:00"
+    },
+    "log": {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文完整流程原始场景对比/logs/paper2026_us04_mtx_s7.log",
+      "sha256": "a44b18fe0f1ecfc7169b6bfbacb8c340e40005dd18bf074945580ee1f9fe92ff"
+    },
+    "log_tail": "Traceback (most recent call last):\n  File \"D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网\\scripts\\run_author_bmatching_pipeline.py\", line 131, in <module>\n    elif a.mode=='one':one(a.scenario,a.seed)\n                       ^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网\\scripts\\run_author_bmatching_pipeline.py\", line 79, in one\n    if seed>=0:r=solve(d,seed)\n                 ^^^^^^^^^^^^^\n  File \"D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网\\scripts\\run_author_bmatching_pipeline.py\", line 31, in solve\n    t1=time.perf_counter();n=lib.solve_pipeline(len(caps),len(weights),p,v,w,c,seed,tries,chosen,times,stats);t2=time.perf_counter()\n                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nOSError: [WinError -1073741569] Windows Error 0xc00000ff\n"
+  },
+  {
+    "scenario_id": "paper2026_us04_mtx",
+    "seed": 9,
+    "failure": {
+      "scenario_id": "paper2026_us04_mtx",
+      "seed": 9,
+      "exit_code": 1,
+      "guard": "RAM protection",
+      "observed_at": "2026-11-07T13:45:40.320691+00:00"
+    },
+    "log": {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文完整流程原始场景对比/logs/paper2026_us04_mtx_s9.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "log_tail": ""
+  }
+]

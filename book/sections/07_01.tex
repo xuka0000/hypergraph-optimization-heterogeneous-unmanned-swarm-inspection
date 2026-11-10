@@ -1,0 +1,129 @@
+\section{异构无人集群的实验条件与评价方法}
+\label{sec:07_01}
+
+\subsection{评价对象与条件}
+
+异构无人集群的评价首先确定对象，再说明能力差异、资源耦合、不确定性、通信条件和规模。任务分配、运动可行与完整任务成功具有不同含义：分配正确仍可能发生起降冲突，拍摄完成也可能未满足回收和班次终态要求。
+
+本书区域包含237座杆塔、2133项拍摄任务、2辆车辆、4架无人机和8对物理电池，班次为$28800\,\mathrm{s}$。地空平台具有能力差异，飞机目前采用相同参考配置。地理位置来自OpenStreetMap，目标几何和部分物理参数为模板或明示参考值，不能解释为现场标定的飞行试验\cite{OSMData}。实验条件须绑定整塔观测、航次、会合、起降位和电池周转关系，并记录天气、感知误差、故障及消息到达过程。规模同时用任务数、设备数、候选数和约束关联规模描述。
+
+\begin{table}[htbp]
+\centering
+\caption{代表性基准的规模口径}
+\label{s0701:benchmarks}
+\small
+\begin{tabular}{llll}
+\toprule
+基准 & 对象 & 用途 & 数量\\
+\midrule
+EMOS & 异构机器人 & 消融 & 519回合\\
+COHERENT & 异构机器人 & 任务库 & 100任务、5场景\\
+COHERENT & 异构机器人 & 主比较 & 40任务、5场景\\
+PARTNR & 人机协作 & 训练 & 100000回合、37房屋\\
+PARTNR & 人机协作 & 验证 & 1000回合、13房屋\\
+PARTNR & 人机协作 & 测试 & 1000回合、10房屋\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+表\ref{s0701:benchmarks}中的数量不能合并为共同评价分母。EMOS设置跨楼层导航、协同感知、单层操作重排和多层协作重排，分别考察移动、感知、操作及综合能力；其能力描述结合URDF骨架与运动学信息。理想场景重建、关闭所述PyBullet接触物理及抓取吸附等条件，限制了结果向飞行能耗和接触动力学的外推\cite{EMOS2025}。COHERENT主比较每场景取8项任务，合计10项单类型、15项双类型和15项三类型任务\cite{COHERENT2025}。PARTNR的60座房屋为全部划分总数，5819为对象集合规模，均不是测试分母；其划分应按表中训练、验证、测试分别使用\cite{PARTNR2025}。
+
+\subsection{分层完成指标与验收}
+
+计划层评价候选所预测的过程及其证明材料；执行层评价实际状态与事件序列。以$\ell\in\{\mathrm P,\mathrm E\}$分别标记两层，预先登记回合集合$\mathcal D^\ell$及其大小$N^\ell>0$。对$d\in\mathcal D^\ell$，计划层按预定规则选择截止时刻的提交候选，执行层使用对应的实际过程记录。没有执行记录时，执行层为未知，不能继承计划层通过结论。
+
+令$\mathcal G_d$为目标塔集合，$\mathcal I_{g,d}$为塔$g$的非空要求观测集合，$\mathcal I_d$为这些集合的并集。证据充分时，$y_{di}^{\ell}\in\{0,1\}$表示观测$i$在指定层满足成像、服务和时序条件，$z_{dg}^{\ell}\in\{0,1\}$表示整塔完成。定义
+\begin{align}
+ z_{dg}^{\ell}&=\prod_{i\in\mathcal I_{g,d}}y_{di}^{\ell},
+ &&g\in\mathcal G_d,\ d\in\mathcal D^\ell,
+ \label{s0701:tower}\\
+ C_{\mathrm{tower}}^{\ell}&=
+ \frac{\sum_{d\in\mathcal D^\ell}\sum_{g\in\mathcal G_d}z_{dg}^{\ell}}
+ {\sum_{d\in\mathcal D^\ell}|\mathcal G_d|},
+ &C_{\mathrm{photo}}^{\ell}&=
+ \frac{\sum_{d\in\mathcal D^\ell}\sum_{i\in\mathcal I_d}y_{di}^{\ell}}
+ {\sum_{d\in\mathcal D^\ell}|\mathcal I_d|}.
+ \label{s0701:coverage}
+\end{align}
+覆盖率无量纲，要求分母为正；这是按塔或拍摄任务汇总的比例，并非逐回合覆盖率的等权均值。
+
+令$f_d^{\ell}\in\{0,1\}$表示指定层的完整过程通过资源、安全、时序及终态验收。计划层查预测轨迹和证明材料，执行层查实际过程；二者分别计算
+\begin{equation}
+ s_d^{\ell}=f_d^{\ell}\prod_{g\in\mathcal G_d}z_{dg}^{\ell},\qquad
+ \mathrm{SR}^{\ell}=\frac{\sum_{d\in\mathcal D^\ell}s_d^{\ell}}{N^\ell},\qquad
+ \mathrm{FR}^{\ell}=\frac{\sum_{d\in\mathcal D^\ell}f_d^{\ell}}{N^\ell}.
+ \label{s0701:success}
+\end{equation}
+正常结束但没有提交方案的规划回合，其计划可行指标及交付覆盖记零；这不规定执行层结果。允许部分完成时，$f_d^\ell=1$而$s_d^\ell=0$可以同时成立，完整成功指标不改变原可行域。验收不能只查最后一帧：先后关系、服务持续时间和终态保持均需过程证据。PARTNR也将完整模拟状态序列作为评价器输入，结合命题、依赖、时序与终态约束判定完成\cite{PARTNR2025}。
+
+记录缺失不能置零。若某层有$N_+^\ell$个确定成功和$N_?^\ell$个未知，则
+\begin{equation}
+ \mathrm{SR}^{\ell}\in
+ \left[\frac{N_+^\ell}{N^\ell},
+ \frac{N_+^\ell+N_?^\ell}{N^\ell}\right].
+ \label{s0701:unknown}
+\end{equation}
+可行率和覆盖率同样保留未知项，并以未知二元项取零与取一形成范围。
+
+验收器误差另用具有独立参考判定的集合$\mathcal Q^\ell$检查。对$q\in\mathcal Q^\ell$，$a_q^\ell,b_q^\ell\in\{0,1\}$分别为待测与参考判定，1表示可行。误拒率，即漏接收可行候选的比例，以及误接收率为
+\begin{align}
+ \mathrm{miss}^{\ell}&=
+ \frac{\sum_{q\in\mathcal Q^\ell}\mathbb I(a_q^\ell=0,b_q^\ell=1)}
+ {\sum_{q\in\mathcal Q^\ell}\mathbb I(b_q^\ell=1)},
+ \label{s0701:miss}\\
+ \mathrm{FA}^{\ell}&=
+ \frac{\sum_{q\in\mathcal Q^\ell}\mathbb I(a_q^\ell=1,b_q^\ell=0)}
+ {\sum_{q\in\mathcal Q^\ell}\mathbb I(b_q^\ell=0)}.
+ \label{s0701:falseaccept}
+\end{align}
+计划层的$q$为候选材料，执行层的$q$为过程记录，分别取样。分母为零时比例未定义，参考结论未知者另列。边界时序、能量不足、重复占用及终态违例应纳入检查，不能由同一判定逻辑同时生成待测结果和参考答案。
+
+\subsection{成本、时延与对照规范}
+
+令$\mathcal C_d^\ell=\{g:z_{dg}^\ell=1\}$为指定层的完成塔集合。同完成集合成本比较要求输入相同、$\mathcal C_d^\ell$相同且均通过该层验收；仅完成塔数相同不足以控制任务难度。预测成本与实际执行成本分别报告。
+
+将第\ref{sec:05_08}节对回合$d$和候选$\pi$定义的词典序目标记为$J_d(\pi)$。评价保持相同权重、情形集、各项最坏值聚合和时间边界：第一项为$\sum_g w_g(1-z_g)$，当前$w_g=1$；第二项为$C-t_0$，包含返库、回收处理、冷却和必要终态充电；第三项为本次边界之后的机载飞行能耗，历史常数另报。后两项单位分别为$\mathrm{s}$和$\mathrm{Wh}$。实际执行成本不替代这一预测鲁棒目标。
+
+从收到完整规划输入开始计墙钟时间。令$\mathcal A_d(t)$为截至$t\geq0$已存档且通过计划验收的候选集合；任意有限$t$仅包含有限个候选。定义
+\begin{align}
+ t_d^{\mathrm{first}}&=\inf\{t\geq0:\mathcal A_d(t)\ne\varnothing\},
+ \label{s0701:first}\\
+ \mathbf q_d(t)&=\operatorname{lexmin}_{\pi\in\mathcal A_d(t)}J_d(\pi).
+ \label{s0701:anytime}
+\end{align}
+集合为空时质量未定义；预算内没有可行候选只说明首解时间尚未观测到，不能以预算值代替。部分完成候选可形成首解，但不等于完整成功。
+
+总规划延迟为输入到可下发方案的墙钟间隔，包含预处理、构建、通信等待、推理或搜索、修复及验收；并发阶段不得重复累加。训练成本另列数据生成、训练、调参的样本量、设备时与调用量，未知预训练成本保持未知。令牌量、模拟步数和调用数不能直接换算为飞行时间。$3$至$5\,\mathrm{s}$可作为交互应用的时延参考，不作为所有任务的统一门槛。
+
+对照固定初态、目标、物理参数、扰动实现、信息到达序列、计算设备和同层共同验收器。通信或观测条件作为因素变化时明确标注；任务与运动集成、通信架构及适应性可参照MATAMP分类组织\cite{MATAMP2026}。开发、调参和测试场景隔离，预先规定时间、内存、调用预算及停止规则；最优性间隙须给出合法界、计算定义和适用目标层级，不能因阈值同名就比较，更不能统一套用$5\%$。
+
+消融分别移除能力数值描述、协商、历史记忆、反馈重规划或可行性修复，保持最终验收不变。COHERENT的历史记忆消融中，原文SR由0.975降至0.750，平均步数由12.4增至16.5；其成功期限为两倍参考步数，失败赋为两倍参考步数加一，故该均值含惩罚而非成功完成时长\cite{COHERENT2025}。超时、异常、资源退出及不可行候选均保留原因；重复结果报告波动，同一实例重复计时不计作独立场景。
+
+\subsection{教学核算与证据范围}
+
+教学例E为人为构造的三条教学记录，已有Python算术重算，不是模拟器运行或公开算法复现。
+\begin{table}[htbp]
+\centering
+\caption{教学例E的完成记录}
+\label{s0701:example}
+\begin{tabular}{cccc}
+\toprule
+记录 & 完整成功 & 完成数/要求数 & 完成时长（$\mathrm{min}$）\\
+\midrule
+1 & 是 & $2/2$ & 14\\
+2 & 是 & $2/2$ & 16\\
+3 & 否 & $1/2$ & 未知\\
+\bottomrule
+\end{tabular}
+\end{table}
+由表\ref{s0701:example}直接计算
+\begin{equation}
+ \mathrm{SR}_{E}=\frac23,\qquad
+ C_{\mathrm{task},E}=\frac56\approx83.333\%,\qquad
+ \overline T_{E,\mathrm{success}}=\frac{14+16}{2}\,\mathrm{min}
+ =15\,\mathrm{min}.
+ \label{s0701:examplecalc}
+\end{equation}
+第三条贡献部分任务覆盖，但完整完成时长未知，不能置零混入廉价完成均值。$15\,\mathrm{min}$仅是两个成功记录的条件均值，应与$2/3$同时报告；这些记账结果也不构成计划层或执行层验收证据。
+
+现有实际验证限于能耗、天气、服务中途接续、成像接续、接触和充电等组件的有限条件。当前参考物理模型尚未完成完整联合任务装配，237塔没有新验收的完整覆盖方案，执行与重规划闭环亦未完成。本节规范不代表新增正式算法比较已经执行；组件验证、完整联合验证和科学结论须分别依据各自证据判定。

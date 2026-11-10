@@ -1,0 +1,382 @@
+\section{参数来源、取值和单位转换}
+\label{sec:06_01}
+
+将第4章和第5章的模型用于数值计算，首先需要确定每个常数对应的对象、单位及来源。公开设备规格给出的是特定设备及条件下的边界；项目选定的运行阈值、理想化几何和功率模型则决定本算例的适用范围。两者不能仅因出现在同一参数表中，就被解释为经过同一机型实测标定。本节先说明参数进入模型的方式，再列出当前采用的数值，并区分直接引用、参考设置、模板迁移和公式计算。
+
+\subsection{参数类别与当前取值口径}
+
+本文将设备和模型参数的来源分为四类，表中分别以“公”“设”“迁”“算”表示。“公”指公开设备边界，引用时保留其对象和条件；“设”指项目参考设置，包括运行门限、服务时长、理想化模型及误差裕度；“迁”指从外部图纸或巡检方法中迁移的几何尺寸或拍摄角色；“算”指由已列参数通过明确公式得到的量。上述类别表示来源性质，不构成从低到高的精度排序。例如，由参考误差裕度算出的安全距离仍是参考模型中的距离，不会因经过计算而成为实测安全保证。
+
+地图位置、道路连接关系、地形和预报记录是外部场景输入，应另行保留坐标系、时间支持区间和数据版本。它们既不是设备规格，也不能整体归入几何模板。当前区域采用OSM地理记录、源地形以及模板目标。天气背景取已留存的2025年ERA5再分析，另行定义合成发布与接收时刻、有界残差及高度插值；它不是真实的历史预报档案。旧2026年ECMWF示例、分小时常值天气场、名义视点周围固定球域及固定车辆访问次数不用于本次数值绑定。
+
+对每座杆塔$g\in\mathcal G$，任务集合为$\mathcal I_g$，其中任务$i=(g,k)$由杆塔和拍摄角色共同标识；$\mathcal I=\bigcup_{g\in\mathcal G}\mathcal I_g$。车辆、无人机和物理电池对分别以$\mathcal V$、$\mathcal U$和$\mathcal B$表示，车辆$v$所属的飞机、电池集合仍记为$\mathcal U_v$、$\mathcal B_v$。计数参数均为非负整数，容量参数均作用于相应实体，不能用电池总能量代替物理电池身份。
+
+\begin{table}[htbp]
+\centering\small
+\caption{区域规模、设备数量和公共服务资源的取值}
+\label{s0601:fleet_parameters}
+\begin{tabular}{@{}p{0.32\linewidth}p{0.28\linewidth}p{0.12\linewidth}p{0.18\linewidth}@{}}
+\toprule
+对象与符号 & 数值或取值域 & 单位 & 来源类别与依据\\
+\midrule
+杆塔数$|\mathcal G|$ & $237$ & 座 & 设：地图场景范围\\
+每塔任务数$|\mathcal I_g|$ & $9$ & 项/塔 & 迁：拍摄角色\\
+区域任务数$|\mathcal I|$ & $237\times9=2133$ & 项 & 算：集合计数\\
+车辆数$|\mathcal V|$ & $2$ & 辆 & 设：车队配置\\
+飞机数$|\mathcal U|$ & $4$ & 架 & 设：车队配置\\
+物理电池对数$|\mathcal B|$ & $8$ & 对 & 设：车队配置\\
+每车飞机数$|\mathcal U_v|$ & $2$，$v\in\mathcal V$ & 架 & 设：固定归属\\
+每车电池对数$|\mathcal B_v|$ & $4$，$v\in\mathcal V$ & 对 & 设：固定归属\\
+每车处理位$K_v^{pad}$ & $1$ & 位 & 设：服务容量\\
+每车充电通道$K_v^{ch}$ & $1$ & 通道 & 设：按整对充电\\
+每车供电上限$\overline P_v^{sup}$ & $1000$ & $\mathrm W$ & 设：载车供电\\
+班次起点$t_0$、时长$T$ & $0$；$28800$ & $\mathrm s$ & 设：共同班次时钟\\
+准备时长、回收处理时长 & $120$；$240$ & $\mathrm s$ & 设：服务时间\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+九个拍摄角色迁移自文献\cite{LiInspection2023}中的拍摄位置功能，其中原图编号1--5、8--11对应拍摄，6、7对应转场；本算例没有将后两者再计为图像任务，也没有照搬该文的控制器或飞行路线。全部任务权重取1。两辆车各自拥有两架飞机和四对电池，归属映射$c(u)$、$c(p)$在班次中固定。一个模型充电通道服务一对TB60电池；这一配置与官方资料中BS60同时充两块TB60的对象单位一致，但车载供电系统及其控制能力仍是项目设置\cite{DJITB60}。
+
+\subsection{电热参数、来源与能量单位}
+
+当前完整物理参考配置使用表\ref{tab:ecm_parameters}，状态方程已经逐项代入式\eqref{s0408:numeric_ecm}。单块TB60的公开5935 mAh、274 Wh、52.8 V以及5--40℃充电边界来自官方手册第97页；BS60的两路8.9 A输出来自第32页\cite{DJIM300Manual}。两块按理想并联等效得到11.87 Ah和17.8 A，该拓扑为研究假设。
+
+电路参数$R_0=0.08\,\Omega$、$R_1=0.04\,\Omega$、$C_1=2500$ F，热容2700 J/K、散热系数6 W/K、充电效率0.9及开路电压$40.8+12\zeta$ V均为参考设定。热状态通过电流平方和极化耗散演化；冷却时长不再设为0。标称两块合计548 Wh用于标识硬件规模，不能替代SOC方程。
+
+一次恒流10 A放电300 s产生$10\times300/3600=0.833333$ Ah电荷变化，SOC减少$0.833333/11.87$。一次1200 W放电600 s产生200 Wh端口输出，内部损耗与温度取决于相应状态轨迹。二者分别是电荷和能量口径，不用一个常数电压强行互换。公开M100实测标定保留在独立平台证据中。
+
+\subsection{飞行动力学与相机参数}
+
+飞行约束中的质量$m_U$是参考工作质量，$\mathbf c_D=(0.25,0.25,0.35)$为机体各轴阻力面积，单位为m$^2$，按式\eqref{s0404:drag}使用。无人机地速$\mathbf v$和相对空气速度$\mathbf v_a=\mathbf v-\mathbf w(\mathbf p,t)$分别受到约束，因此地速上限、空速上限和天气运营风速门限是三个不同参数。表\ref{s0601:flight_parameters}给出当前飞行包络。
+
+\begin{longtable}{@{}p{0.32\linewidth}p{0.28\linewidth}p{0.12\linewidth}p{0.18\linewidth}@{}}
+\caption{无人机运动、姿态和功率模型参数}\label{s0601:flight_parameters}\\
+\toprule
+参数与符号 & 数值或边界 & 单位 & 来源类别与依据\\
+\midrule
+\endfirsthead
+\toprule
+参数与符号 & 数值或边界 & 单位 & 来源类别与依据\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+工作质量$m_U$ & $7$ & $\mathrm{kg}$ & 设：工作配置\\
+重力加速度$g_0$ & $9.81$ & $\mathrm{m/s^2}$ & 设：动力学常数\\
+各轴阻力面积$\mathbf c_D$ & $(0.25,0.25,0.35)$ & $\mathrm m^2$ & 设：阻力代理\\
+机体包络半径$r^{\mathrm{body}}$ & $0.6$ & $\mathrm m$ & 设：球形包络\\
+地速范数$\|\mathbf v\|$ & $[0,5]$ & $\mathrm{m/s}$ & 设：运行包络\\
+空速范数$\|\mathbf v_a\|$ & $[0,12]$ & $\mathrm{m/s}$ & 设：运行包络\\
+垂直速度$v_z$ & $[-1,1]$ & $\mathrm{m/s}$ & 设：运行包络\\
+加速度范数$\|\mathbf a\|$ & $[0,3]$ & $\mathrm{m/s^2}$ & 设：运行包络\\
+加加速度范数$\|\mathbf j\|$ & $[0,5]$ & $\mathrm{m/s^3}$ & 设：平滑性限制\\
+推力$F$ & $[0,137.34]$ & $\mathrm N$ & 设：推力包络\\
+最大倾角 & $25^\circ=0.436332313\ldots$ & $\mathrm{rad}$ & 公/设：取25度边界\\
+机体角速度各分量$\omega_d$ & $|\omega_d|\le\pi/6$，$d=1,2,3$ & $\mathrm{rad/s}$ & 设：分量上界\\
+参考密度$\rho_0$ & $1.225$ & $\mathrm{kg/m^3}$ & 设：功率基准\\
+\end{longtable}
+
+M300公开资料中的含电池质量为$6.3\,\mathrm{kg}$、最大起飞质量为$9\,\mathrm{kg}$，倾角边界随模式为25度或30度，抗风能力为$12\,\mathrm{m/s}$\cite{DJIM300}。本算例采用$7\,\mathrm{kg}$工作质量并选取25度倾角限制；地速$5\,\mathrm{m/s}$、推力$137.34\,\mathrm N$及表中其余运行包络不能一并归为厂商原值。推力上限的数值满足$137.34=2\times7\times9.81$，这一算术关系不构成真实电机推力曲线的验证。公开抗风能力$12\,\mathrm{m/s}$也不替代本算例采用的$10\,\mathrm{m/s}$运营天气门限。
+
+当前功率采用式\eqref{s0408:flight_power}，旋翼参数、惯量、执行器响应与控制增益见式\eqref{s0404:numeric_allocation}及式\eqref{s0404:numeric_feedback}。静风悬停736.7 W是该组参数的计算结果。早期由548 Wh与43 min相除得到的764.651163 W只用于历史低阶实验，不再作为完整旋翼模型的等式。
+
+相机将米制目标坐标投影为像素坐标，因此镜头焦距$f$的毫米数值不能直接作为投影矩阵中的像素焦距。H20变焦镜头的公开焦距范围、图像大小和广角端对角视场角提供了理想针孔内参的构造边界\cite{DJIH20}。采用方形像素和图像中心主点时，像素焦距为
+\begin{align}
+ F_{px}(f)
+ &=\frac{\sqrt{5184^2+3888^2}}{2\tan(66.6^\circ/2)}
+   \frac{f}{6.83\,\mathrm{mm}},\\
+ F_{px}(6.83\,\mathrm{mm})&=4932.428602343466\,\mathrm{px}.
+ \label{s0601:focal_conversion}
+\end{align}
+比值$f/(6.83\,\mathrm{mm})$无量纲，因而式中不会混入毫米与米的比例误差。该构造没有引入真实镜头畸变标定。
+
+\begin{longtable}{@{}p{0.32\linewidth}p{0.28\linewidth}p{0.12\linewidth}p{0.18\linewidth}@{}}
+\caption{相机边界、控制速率与观测质量阈值}\label{s0601:camera_parameters}\\
+\toprule
+参数与符号 & 数值或边界 & 单位 & 来源类别与依据\\
+\midrule
+\endfirsthead
+\toprule
+参数与符号 & 数值或边界 & 单位 & 来源类别与依据\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+图像宽、高$N_x,N_y$ & $5184$；$3888$ & $\mathrm{px}$ & 公：H20\\
+焦距$f$ & $[6.83,119.94]$ & $\mathrm{mm}$ & 公：H20\\
+广角端对角视场角 & $66.6$ & 度 & 公：H20\\
+主点$(c_x,c_y)$ & $(2592,1944)$ & $\mathrm{px}$ & 算/设：中心主点\\
+安装偏移$\mathbf d_{BC}$ & $(0,0,0)^T$ & $\mathrm m$ & 设：理想同心\\
+畸变系数向量 & $(0,0,0,0,0)$ & 无量纲 & 设：无畸变\\
+云台俯仰$\gamma_p$ & $[-2\pi/3,\pi/6]$ & $\mathrm{rad}$ & 公：$[-120,30]$度\\
+云台偏航$\gamma_y$ & $[-16\pi/9,16\pi/9]$ & $\mathrm{rad}$ & 公：$\pm320$度\\
+云台角速率$|\dot\gamma_b|$ & $\le\pi/6$，$b\in\{p,y\}$ & $\mathrm{rad/s}$ & 设：速率上界\\
+云台角加速度$|\ddot\gamma_b|$ & $\le\pi/6$，$b\in\{p,y\}$ & $\mathrm{rad/s^2}$ & 设：加速度上界\\
+机体连续偏航速率$|\dot\psi|$ & $\le\pi/6$ & $\mathrm{rad/s}$ & 设：速率上界\\
+机体连续偏航加速度$|\ddot\psi|$ & $\le\pi/6$ & $\mathrm{rad/s^2}$ & 设：加速度上界\\
+变焦速率$|\dot f|$ & $\le10$ & $\mathrm{mm/s}$ & 设：控制上界\\
+观测距离下、上界 & $8$；$25$ & $\mathrm m$ & 设：工作距离\\
+最大入射角 & $\pi/6$ & $\mathrm{rad}$ & 设：30度阈值\\
+图像边界裕度 & $32$ & $\mathrm{px}$ & 设：构图阈值\\
+最大GSD & $0.005$ & $\mathrm{m/px}$ & 设：分辨率阈值\\
+最小切向成像尺度 & $200$ & $\mathrm{px/m}$ & 算：GSD倒数\\
+最大拖影 & $1$ & $\mathrm{px}$ & 设：成像阈值\\
+固定曝光$t^{exp}$ & $0.001$ & $\mathrm s$ & 设：日间参考\\
+稳定、对焦和读出最小时长 & $1$ & $\mathrm s$ & 设：服务参数\\
+每任务所需图像数 & $1$ & 帧 & 设：图像要求\\
+示范九任务最小有效服务时长 & $20.011081481481483$ & $\mathrm s$ & 设：源参考时长\\
+\end{longtable}
+
+表中服务时长来自旧参考路线的非平移开销分摊。该路线采用$1\,\mathrm{m/s}$速度与$3\,\mathrm{m/s^2}$加速度的静止到静止平移，总平移时间为$119.9002666667\,\mathrm s$。从迁移的单塔净参考时间$300\,\mathrm s$中扣除这一项，再平均分给九项观测，得到
+\begin{equation}
+ d_i^{\min}=\frac{300-119.9002666667}{9}
+ =20.0110814815\,\mathrm s.
+ \label{s0601:service_residual}
+\end{equation}
+该值是非平移开销的等残差分配，不能从总时间唯一识别每项实际服务耗时，也不是快门或悬停时间测量。联合模型沿用这个固定服务下界，但不强制新设计的所有路线总计300秒，亦不随新路线变化重新拟合到300秒。稳定、对焦和读出最小时长$1\,\mathrm s$、曝光时长$0.001\,\mathrm s$和有效服务时长是不同量，不能将整个服务事件替换为一次毫秒级曝光。
+
+对$i\in\mathcal I$，目标面为$\mathcal S_i$，样点索引为$\mathcal J_i=\{1,\ldots,5\}$，目标样点为$\mathbf q_{ij}$，$j\in\mathcal J_i$。设$B_i\in\mathbb R^{3\times2}$的两列为目标面的正交单位切向量，$R_C$为相机到世界坐标的旋转矩阵，$\pi$为针孔投影。矩阵
+\begin{equation}
+ J_{ij}=D\pi\bigl(R_C^T(\mathbf q_{ij}-\mathbf p_C)\bigr)R_C^TB_i
+ \label{s0601:surface_scale}
+\end{equation}
+的单位为$\mathrm{px/m}$，其最小奇异值衡量两个切向方向中较差的成像尺度。因此，最大GSD为$0.005\,\mathrm{m/px}$对应
+\begin{equation}
+ \sigma_{\min}(J_{ij})\ge\frac{1}{0.005}
+ =200\,\mathrm{px/m}.
+ \label{s0601:gsd_conversion}
+\end{equation}
+曝光为$0.001\,\mathrm s$且拖影上限为$1\,\mathrm{px}$，还给出曝光区间内像面速度范数不超过$1000\,\mathrm{px/s}$的等价阈值。该像面速度同时包含飞机平移、机体姿态、云台和变焦的影响，不能单由地速判断。
+
+距离、入射角及机体物理净距施加于整个服务区间；正深度、像素边界、分辨率、拖影和视线无遮挡条件施加于曝光子区间。相应像素范围为$[32,5152]\times[32,3856]$。这些阈值是规划中的图像质量代理，五个样点满足条件不等于真实部件所有位置均达到缺陷检出要求。
+
+\subsection{模板几何、净距与车辆道路参数}
+
+杆塔外形和目标面用来构造障碍及拍摄几何，不是对区域内每座实塔的型号识别。KPLC招标文件第73页Appendix 1 A-1提供了132\,kV悬垂塔图，图签日期为2006年9月13日\cite{KPLC2025}。其中$117\,\mathrm{ft}\,3\,\mathrm{in}$换算为
+\begin{equation}
+ H^{tower}=117\times0.3048+3\times0.0254
+ =35.7378\,\mathrm m.
+ \label{s0601:tower_height_conversion}
+\end{equation}
+该尺寸仅作为外部几何模板迁移，不说明德国区域中的237座杆塔均为这一塔型或电压等级。目标面宽高、导线管半径和弧垂等还包含项目构造值，不能统称为图纸原值。
+
+\begin{longtable}{@{}p{0.32\linewidth}p{0.28\linewidth}p{0.12\linewidth}p{0.18\linewidth}@{}}
+\caption{目标与障碍几何参数}\label{s0601:geometry_parameters}\\
+\toprule
+参数与符号 & 数值 & 单位 & 来源类别与依据\\
+\midrule
+\endfirsthead
+\toprule
+参数与符号 & 数值 & 单位 & 来源类别与依据\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+模板塔高$H^{tower}$ & $35.7378$ & $\mathrm m$ & 迁/算：KPLC图纸\\
+塔柱半径$R^{tower}$ & $2$ & $\mathrm m$ & 设：圆柱代理\\
+目标面宽、高 & $0.5$；$0.5$ & $\mathrm m$ & 设：模板面片\\
+目标面样点数$M_i$ & $5$ & 点 & 设：中心及四角\\
+导线管半径$R^{wire}$ & $0.05$ & $\mathrm m$ & 设：管状代理\\
+导线参考弧垂 & $5$ & $\mathrm m$ & 设：曲线构造\\
+导线层高度 & $34.2138,31.0134,$ $25.908,20.8026$ & $\mathrm m$ & 迁：高度模板\\
+导线侧向偏移 & $-4.8768,4.8768$ & $\mathrm m$ & 迁：横向模板\\
+目标对塔支撑面偏移 & $0.01$ & $\mathrm m$ & 设：几何适配\\
+导线表面修正格距 & $0.01$ & $\mathrm m$ & 设：有限搜索\\
+目标对导线构造净距 & $0.01$ & $\mathrm m$ & 设：几何适配\\
+导线修正搜索上限 & $5$ & $\mathrm m$ & 设：有界搜索\\
+跟踪误差裕度$r^{\mathrm{track}}$ & $0.5$ & $\mathrm m$ & 设：误差包络\\
+地图误差裕度$r^{\mathrm{map}}$ & $0.5$ & $\mathrm m$ & 设：误差包络\\
+障碍物附加净距$r^{\mathrm{clear}}$ & $3$ & $\mathrm m$ & 设：运行净距\\
+机间附加净距$r^{\mathrm{clear}}$ & $3$ & $\mathrm m$ & 设：运行净距\\
+\end{longtable}
+
+对于两端点$\mathbf a,\mathbf b\in\mathbb R^3$确定的一根参考导线，设无量纲参数$\lambda\in[0,1]$，其中心线为
+\begin{equation}
+ \mathbf q^{wire}(\lambda)
+ =(1-\lambda)\mathbf a+\lambda\mathbf b
+ -4s_{wire}\lambda(1-\lambda)\mathbf e_3,
+ \qquad s_{wire}=5\,\mathrm m.
+ \label{s0601:wire_numeric_geometry}
+\end{equation}
+端点由源节点位置、地形高度、相应导线层和侧向偏移生成。该式在两端保持零弧垂，在中点产生$5\,\mathrm m$下垂；它是参考曲线，不是温度、张力和风荷载作用下的实测导线形状。
+
+目标几何适配先处理塔柱支撑面，再按$0.01\,\mathrm m$格距检查与导线管及其构造净距的冲突。导线修正最多搜索$5\,\mathrm m$，保留记录中的实际最大导线修正为$0.59\,\mathrm m$；搜索范围内找不到合格位置时会明确报错，不通过删除目标或忽略障碍继续构造。无界网格上的存在性论证不意味着这一有界搜索必然成功。
+
+常规飞行中，飞机中心相对静态障碍的净距参数由机体、跟踪误差、地图误差和附加净距共同构成：
+\begin{equation}
+ r_f=r^{\mathrm{body}}+r^{\mathrm{track}}+r^{\mathrm{map}}+r^{\mathrm{clear}}
+ =0.6+0.5+0.5+3=4.6\,\mathrm m.
+ \label{s0601:clearance_arithmetic}
+\end{equation}
+两架同时飞行的飞机则各计一次机体半径和跟踪误差，中心间距下界为
+\begin{equation}
+ d_{\mathrm{air}}=2(r^{\mathrm{body}}+r^{\mathrm{track}})+r^{\mathrm{clear}}
+ =2(0.6+0.5)+3=5.2\,\mathrm m.
+ \label{s0601:separation_arithmetic}
+\end{equation}
+这两式约束的对象不同，不能将$4.6\,\mathrm m$直接作为两机中心分离距离。对于平台高$1.8\,\mathrm m$的车辆，接触时机体中心相对车辆地面基点的高度为$1.8+0.6=2.4\,\mathrm m$；达到完整常规净距的保护高度为$1.8+4.6=6.4\,\mathrm m$。二者之间按第\ref{sec:05_06}节的接触过渡模型处理，不能在平台接触点直接施加完整常规飞行净距。
+
+车辆参数作用于阿克曼型平面运动学及完整车身包络。该运动学形式可参见文献\cite{LaValle2006}，但表\ref{s0601:vehicle_parameters}中的尺寸、速度和道路几何宽度均为项目参考设置。
+
+\begin{longtable}{@{}p{0.32\linewidth}p{0.28\linewidth}p{0.12\linewidth}p{0.18\linewidth}@{}}
+\caption{车辆、道路和起降平台参数}\label{s0601:vehicle_parameters}\\
+\toprule
+参数与符号 & 数值或边界 & 单位 & 来源类别与依据\\
+\midrule
+\endfirsthead
+\toprule
+参数与符号 & 数值或边界 & 单位 & 来源类别与依据\\
+\midrule
+\endhead
+\bottomrule
+\endfoot
+轴距$L_v^{\mathrm{wb}}$ & $2.5$ & $\mathrm m$ & 设：参考底盘\\
+车身长、宽、高 & $4,1.8,1.8$ & $\mathrm m$ & 设：实体包络\\
+车速$V_v$ & $[0,2.777777\ldots]$ & $\mathrm{m/s}$ & 设/算：$10\,\mathrm{km/h}$\\
+倒车速度上限 & $0$ & $\mathrm{m/s}$ & 设：不倒车\\
+纵向加速度$|a_v|$ & $\le1$ & $\mathrm{m/s^2}$ & 设：控制上界\\
+转向角$|\delta_v|$ & $\le0.610865238\ldots$ & $\mathrm{rad}$ & 设/算：35度\\
+转向角速率$|\dot\delta_v|$ & $\le0.349065850\ldots$ & $\mathrm{rad/s}$ & 设/算：20度/秒\\
+侧向加速度上限 & $1.5$ & $\mathrm{m/s^2}$ & 设：运动包络\\
+道路走廊总宽 & $6$ & $\mathrm m$ & 设：几何走廊\\
+路口基准圆盘半径 & $3$ & $\mathrm m$ & 设：连接区域\\
+候选停靠圆盘半径 & $3$ & $\mathrm m$ & 设：停车区域\\
+路段端部连接长度$\ell_a$ & $\min\{3\,\mathrm m,L_a/4\}$ & $\mathrm m$ & 算：路段构造\\
+车辆实体间最小净距 & $0.5$ & $\mathrm m$ & 设：冲突阈值\\
+每候选停靠点容量 & $1$ & 辆 & 设：停车容量\\
+平台表面高度 & $1.8$ & $\mathrm m$ & 设：车身顶部\\
+起降水平保护半径$r^{\mathrm{pad}}$ & $3$ & $\mathrm m$ & 设：保护区域\\
+接触中心高度 & $2.4$ & $\mathrm m$ & 算：平台加机体半径\\
+完整净距保护高度 & $6.4$ & $\mathrm m$ & 算：平台加$r_f$\\
+\end{longtable}
+
+这里$L_a>0$是有向道路弧$a$的长度。路段实际速度上限还需与源道路限速取最小值，即$\overline V(a)=\min\{2.777777\ldots,V_a^{src}\}$，两项均以$\mathrm{m/s}$计。走廊宽度$6\,\mathrm m$表示参考中心线两侧各$3\,\mathrm m$的几何缓冲，不是现场道路净宽测量。车辆完整足迹必须落在对应走廊或路口区域内，不能只检查车体中心；源数据缺少转向限制记录也不能据此认定现场允许所有转弯及停车。
+
+本算例不允许车辆运动中起降，也不允许道路行驶状态下充电。第5章的连续理论定义不预设固定车辆停靠次数或充电事件次数上限；实际有限转录另采用有界事件槽，其取值与限制必须随数值实例共同给出。角度与速度的统一换算为
+\begin{equation}
+ \theta_{rad}=\frac{\pi}{180}\theta_{deg},
+ \qquad
+ V_{\mathrm{m/s}}=\frac{V_{\mathrm{km/h}}}{3.6}.
+ \label{s0601:angle_speed_conversion}
+\end{equation}
+同一角度换算系数也用于角速率、角加速度，时间单位仍分别保留为秒和秒平方。
+
+\subsection{当前目标坐标与三维数值原点}
+
+经纬度输入采用EPSG:4326，顺序为经度、纬度；水平米制坐标采用EPSG:32632，顺序为东向坐标$E$、北向坐标$N$。源高程记为$z_{src}$，单位为米，但其外部垂直基准尚未独立核验。当前轨迹计算以第一辆车的初始三维位置为固定数值原点：
+\begin{equation}
+ \mathbf o=
+ \begin{pmatrix}
+ 338431.00163273\\
+ 5653263.218314463\\
+ 83.39513972489615
+ \end{pmatrix}\mathrm m.
+ \label{s0601:numeric_origin}
+\end{equation}
+对任意世界坐标$\mathbf p^W=(E,N,z_{src})^T$，局部数值坐标及其逆变换为
+\begin{equation}
+ \mathbf p^0=\mathbf p^W-\mathbf o,
+ \qquad
+ \mathbf p^W=\mathbf p^0+\mathbf o.
+ \label{s0601:coordinate_conversion}
+\end{equation}
+这里三个分量均平移，不能只减去水平原点。若世界地形为$h_{abs}(E,N)$，则局部地形为
+\begin{equation}
+ h_0(x,y)=h_{abs}(338431.00163273+x,\,
+ 5653263.218314463+y)-83.39513972489615.
+ \label{s0601:local_numeric_terrain}
+\end{equation}
+同一平移应用于飞机、车辆、目标和障碍后，距离、相对高度及旋转方向保持不变。原点的高程数值已知，只能确定数值平移；它不能补足外部垂直基准的验证。
+
+目标坐标须在几何适配之后再代入上述变换。以示范塔的全景任务P01为例，当前目标面参考点为
+\begin{equation}
+ \mathbf c_{P01}^{W}=
+ \begin{pmatrix}
+ 338579.12965359824\\
+ 5652902.059832593\\
+ 116.2138
+ \end{pmatrix}\mathrm m.
+ \label{s0601:current_target_center}
+\end{equation}
+原始模板参考点为$(338579.9528080911,5652903.893549223,116.2138)^T\,\mathrm m$。当前点由塔柱适配沿目标单位法向移动约$2.01\,\mathrm m$得到；它与旧局部试算中的修正点也不相同。当前九任务的目标参考点、五个表面样点和名义视点按同一任务平移，所保留的平移一致性残差小于$4.6\times10^{-10}\,\mathrm m$。该残差说明数据变换的一致性，不是目标实测定位误差。
+
+数值实例采用当前修正后的九任务坐标；原始模板和旧局部试算坐标只用于版本对照。名义视点仅用于初始化，不形成半径$2\,\mathrm m$的球形决策域。实际可观测位置由距离、入射角、图像质量、可见性和物理净距共同确定。
+
+\subsection{当前天气绑定、时间支持与信息时刻}
+
+当前参考数值绑定采用2025年7月1日08:00 UTC为$t=0$，终点28800 s；源格点为$(51.00^\circ\mathrm N,6.75^\circ\mathrm E)$。表\ref{s0601:weather_hourly}取自保留的ERA5记录。历史2026年示例及其窗口不用于本次参考配置。
+
+\begin{table}[!ht]\centering
+\caption{2025年7月1日参考背景天气的保留小时记录}\label{s0601:weather_hourly}
+\begin{tabular}{lrrrr}\toprule
+UTC & 温度/℃ & 阵风/(m/s) & 前一小时降水/mm & 日间\\\midrule
+08:00 & 28.7 & 6.1 & 0.0 & 1\\
+09:00 & 30.7 & 6.0 & 0.0 & 1\\
+10:00 & 32.4 & 6.0 & 0.0 & 1\\
+11:00 & 33.4 & 5.7 & 0.0 & 1\\
+12:00 & 34.1 & 5.2 & 0.0 & 1\\
+13:00 & 34.8 & 4.7 & 0.0 & 1\\
+14:00 & 35.1 & 4.0 & 0.0 & 1\\
+15:00 & 37.0 & 3.1 & 0.0 & 1\\
+16:00 & 35.4 & 2.8 & 0.0 & 1\\
+\bottomrule\end{tabular}\end{table}
+
+温度、露点、气压和水平风在时间及30、60、100m层上插值；近地风按式\eqref{s0408:ground_wind}连续降至地面零风。高度为相对背景格点地面的参考高度，实际地面坐标仍须使用同一垂直基准转换。天气包边界之外不外推。降水累计及昼夜标志按左侧小时支持，终点28800s单独读取其记录。
+
+给定摄氏温度$T_a$、露点$T_d$、气压$p_s$（hPa），水汽压和地面湿空气密度采用
+\begin{align}
+ e&=611\,10^{7.5T_d/(T_d+237.3)}\ \mathrm{Pa},\\
+ \rho_0&=\frac{0.0034848}{T_a+273.15}\bigl(100p_s-0.37960e\bigr),\\
+ \rho(h)&=\rho_0\exp\left[-\frac{9.80665h}{287.05(T_a+273.15)}\right].
+ \label{s0601:reference_density}
+\end{align}
+密度单位kg/m$^3$。地面表达式沿用CMU公开能耗代码的Tetens水汽压及湿空气密度函数\cite{Choudhry2021}，常数与该实现一致；高度修正为当前参考配置的等温近似。
+
+\begin{table}[!ht]\centering
+\caption{当前天气、信息与重规划参数}
+\begin{tabular}{lrl}\toprule
+参数 & 取值 & 单位\\\midrule
+工作高度域 & $[0,100]$ & m\\
+风速/阵风上限 & 10/10 & m/s\\
+运行环境温度 & $[0,40]$ & ℃\\
+垂直残差幅值 & 0.4 & m/s\\
+东/北残差幅值 & 2/1 & m/s\\
+温度残差幅值 & 2 & K\\
+可见距离/最低允许 & 5000/1000 & m\\
+共同前缀结束 & 600 & s\\
+残差符号接收 & 660 & s\\
+更新预报发布/接收 & 600/630 & s\\
+周期复核 & 300 & s\\
+SOC亏差触发 & 0.03 & ---\\\bottomrule
+\end{tabular}\end{table}
+
+三种残差使用式\eqref{s0408:numeric_weather}。输入功率误差另取$\epsilon_P^\omega(t)\in\{0,0.05,0.10\}r(t)$的相对幅值，在同一情形下共同使用；它是非负参考附加载荷，不与气动力重复计算。运行温区针对环境，电池充电另受自身5--40℃温区及保护记忆约束。
+
+原始记录全部为日间且无降水，因此当前背景的这两个门限给出
+\begin{equation}
+ \mathcal W_{day,dry}=[0,28800]\ \mathrm s.
+ \label{s0601:weather_window_difference}
+\end{equation}
+此式不单独保证飞行或成像可行；完整窗口还须检查每种情形中的风速、阵风、环境温度及能见度，电池与动力学仍单独约束。
+
+初始预报发布$-3600$s、接收$-3300$s，更新预报发布600s、接收630s，均是明确的合成信息流程；ERA5仍保持再分析数据身份\cite{OpenMeteoHistory,OpenMeteoRuns}。信息发布、接收、残差分叉和候选接管按第\ref{sec:05_09}节约束。基于真实预报误差的概率或可靠性结论，需要另行提供对应档案。
+
+
+\subsection{平台接触与有限启停参数}
+四足接触及地面电机模式采用表\ref{s0601:contact_parameters}。所有数值均为公开设备边界之外的参考假设，接触互补结构依据\cite{PosaContact2014}；未把这些数值解释为M300起落架或电调标定。
+\begin{table}[!ht]\centering\small
+\caption{平台与旋翼地面驱动参考参数}\label{s0601:contact_parameters}
+\begin{tabular}{@{}lrr@{}}\toprule
+量 & 数值 & 单位\\\midrule
+足点水平半径 & 0.3 & m\\
+足点竖直偏移 & 0.6 & m\\
+摩擦系数 & 0.6 & 1\\
+单足法向载荷界 & 200 & N\\
+平台长度 & 4 & m\\
+平台宽度 & 1.8 & m\\
+地面角加速度界 & 2000 & rad/s$^2$\\
+地面电机转矩界 & 0.5 & Nm\\\bottomrule
+\end{tabular}\end{table}
+第\ref{sec:04_04}节给出有风静态受力、有限启停和28秒无风升降循环。平台驱动与空中推力跟踪使用不同执行器方程，交界处保持同一物理旋翼及电池状态。
+

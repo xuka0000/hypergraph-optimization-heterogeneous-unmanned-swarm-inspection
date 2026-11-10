@@ -1,0 +1,24 @@
+{
+  "rows": [
+    {
+      "method": "SCIP_MILP",
+      "N": 21,
+      "solver_median_ms": 1.1042999999999998,
+      "total_median_ms": 3.7201,
+      "objectives": [
+        42
+      ]
+    },
+    {
+      "method": "HeiHGM_Streaming",
+      "N": 21,
+      "solver_median_ms": 0.006,
+      "total_median_ms": 0.0553,
+      "objectives": [
+        39
+      ]
+    }
+  ],
+  "raw_sha256": "95a3094d0fa667a2cf3367baa9cfe8812032da552e4b0ef2b188cd739b0adfbe",
+  "new_timing_run": false
+}

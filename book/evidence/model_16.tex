@@ -1,0 +1,26 @@
+\section{初态、终态与未执行动作接续}
+\begin{align}
+ s^\omega(\tau_k)&=\widehat s_k,\quad
+ E_p^\omega(\tau_k)=\widehat E_{pk},\label{eng:eq:initialstate}\\
+ U^\omega(t)&=U^{committed}(t)\quad\text{对已承诺资源及尚有效区间},\label{eng:eq:commitment}\\
+ C&\in[\tau_k,T],\quad e_\ell+h^{post}+h^{cool}\le C\quad(b_\ell=1),\\
+ \mathbf q_v(t)&=\mathbf q_v^{depot},\quad V_v(t)=0\quad(t\in[C,T]),\\
+ \operatorname{loc}_u(C)&=c(u),\quad\operatorname{loc}_p(C)=c(p),\quad
+ E_p(t)\ge109.6\quad(t\in[C,T]),\label{eng:eq:terminal}\\
+ P_p^{in}(t)&=0\quad(t>C).
+\end{align}
+\noindent $s$统称连续状态与离散资源状态，区别于航次起飞$s_\ell$。完成时刻$C$后不允许继续飞行、驶离车库或补充“免费班后充电”。所有终态需要的充电必须计入$C$之前；若不出任务且初态已在库，则允许$C=t_0$。
+\begin{center}\small
+\begin{tabular}{p{.25\linewidth}p{.65\linewidth}}\toprule
+状态 & 初次日前规划 / 重规划规则\\\midrule
+车辆 & 源车库P001/P002位置和源航向；0速度、0转角 / 当前实测道路状态\\
+飞机 & 本车机库，固定ID / 空中飞机从当前位置、速度、加速度和姿态接续\\
+电池 & 每对548Wh、位于载车 / 当前Wh、温区标志和剩余占用，不重新置满\\
+任务 & 2133项均未验收 / 只移除有图像证据且验收时刻不晚于$\tau_k$的要求\\
+已开始准备/回收 & 无 / 固定资源身份，保留剩余时间，不能清空占用\\
+已发动作 & 无 / 保留承诺前缀；若新安全事件使其失效，切换到实际可行恢复动作\\
+终态 & 指定车库、所有飞机/电池回到所属车、最低20\%电量\\\bottomrule
+\end{tabular}\end{center}
+\noindent 新安全观测与硬承诺冲突时，原计划应标为失效并进入恢复问题；不能同时要求违反安全的旧动作和新的安全条件后宣布有解。不存在可验证恢复动作时记录失败。未来数据不得回填为过去状态。
+\clearpage
+

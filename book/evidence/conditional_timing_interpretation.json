@@ -1,0 +1,14 @@
+{
+  "source": "reproduction/historical_sources/011589d16cc4315518e70b6c21b7a0c2b4118e51fde46e60951a2739ddf80cdd.py",
+  "sha256": "011589d16cc4315518e70b6c21b7a0c2b4118e51fde46e60951a2739ddf80cdd",
+  "total_elapsed_s": 109.2980693000136,
+  "build_elapsed_s": 49.76631820003968,
+  "build_included_in_total": true,
+  "reason": "Same start=time.perf_counter before build; build_wall_s and final elapsed_s both subtract start",
+  "locators": [
+    "run_id=sha(code)[:12]",
+    "build_wall_s=time.perf_counter()-start",
+    "finally: manifest elapsed_s=time.perf_counter()-start"
+  ],
+  "scope": "Source timing interpretation; no runtime repeated"
+}

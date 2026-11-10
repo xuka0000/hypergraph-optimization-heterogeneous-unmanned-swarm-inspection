@@ -1,0 +1,20 @@
+\section{完整道路域、路口与停车模式}
+\noindent 所有有向弧$a=(n,m)$使用源端点与通行标签，不以停靠点间最短路目录代替。中心线为源折线，弧两端设长度$\ell_a=\min(3,L_a/4)$的连接区；其余为有正长度的有向路段核心。弧走廊为中心线的3m缓冲区；路口为节点周围3m圆盘及其邻接连接区的并集。车辆完整足迹须被当前走廊容纳。
+
+\noindent $\mu_v(t)$取道路核心模式$a$、路口模式$n$或停车模式$j$。一次道路核心进入必须从其尾端门户进入，从头端门户离开；记录沿中心线的进度$\zeta_v(t)$。同一路段可多次访问，使用独立事件次序。
+\begin{align}
+ \mu_v=a&\Rightarrow \operatorname{footprint}(\mathbf q_v,\theta_v)\subseteq\mathcal R_a,\quad
+ 0\le\zeta_v\le L_a-2\ell_a,\quad\dot\zeta_v\ge0,\\
+ \mu_v=n&\Rightarrow\operatorname{footprint}(\mathbf q_v,\theta_v)\subseteq\mathcal J_n,\\
+ \mu_v=j&\Rightarrow\eta_{vj}=1,\quad V_v=0,\quad
+ \mathbf q_v\in\mathcal P_j,\label{eng:eq:roadfull}\\
+ \sum_j\eta_{vj}&\le1,\qquad
+ \eta_{vj}=1\Leftrightarrow\mu_v=j,\\
+ (a,n,b)\text{切换}&\Rightarrow\operatorname{head}(a)=n=\operatorname{tail}(b),\quad
+ (a,b)\in\mathcal T_n.\label{eng:eq:roadtransition}
+\end{align}
+\noindent $\mathcal P_j$为候选点3m圆盘内、完整车身也能落在邻接道路/路口走廊内的位置集合。停车只通过所属路口进入/退出。切换只在共享门户发生；位置、航向、速度与转角连续。源弧为相邻源节点间直段，令$\widehat{\mathbf d}_a=(\mathbf x_m-\mathbf x_n)/L_a$，则$\zeta_v=\widehat{\mathbf d}_a^T(\mathbf q_v-\mathbf x_n)-\ell_a$；尾/头门户分别取0与$L_a-2\ell_a$，不能跳过。
+
+\noindent 允许切换仅为$a\to\operatorname{head}(a)$、$\operatorname{tail}(a)\to a$及停车$j\leftrightarrow n(j)$；其余切换禁止。$\mathcal T_n$保留源禁转和通行规则。当前源数据没有转向限制记录，参考模型只施加源方向/权限及几何可行性；不把缺失标签解释为实地许可。连续车辆状态从初点贯穿终点，不允许无源流环。没有固定20次或3次停车上限。
+\clearpage
+

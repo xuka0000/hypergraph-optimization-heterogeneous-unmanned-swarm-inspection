@@ -1,0 +1,26 @@
+\section{车辆连续运动与道路时空冲突}
+\begin{align}
+ \dot q_{vx}&=V_v\cos\theta_v,\quad \dot q_{vy}=V_v\sin\theta_v,\quad
+ \dot\theta_v=V_v\tan\delta_v/L_v,\\
+ \dot V_v&=a_v,\quad\dot\delta_v=\nu_v,\quad L_v=2.5\ \mathrm m,\\
+ 0&\le V_v\le\overline V(\mu_v),\quad |a_v|\le1,\\
+ |\delta_v|&\le35^\circ,\quad|\nu_v|\le20^\circ/\mathrm s,\quad
+ V_v^2|\tan\delta_v|/L_v\le1.5.
+ \label{eng:eq:ugv}
+\end{align}
+\noindent 路段速度上界为$\overline V(a)=\min(2.777778,V_a^{src})$，路口取其相邻弧上界最小值，停车取0。道路模式中车辆朝向与有向中心线内积非负，进度单调。路口连续转弯，不瞬时换航向；停车可静止转向但不倒车。源边固定行驶秒数只用于初始化，不取代变速行驶。[R5]
+
+\noindent 车体足迹为以$(\mathbf q_v,\theta_v)$变换的闭矩形。车辆高度基点取$h(\mathbf q_v)$；本模型为平面底盘加DEM高度参考，不声称已处理坡道姿态/轮胎动力学。
+\begin{align}
+ &\operatorname{dist}(\mathcal B_v(t),\mathcal B_{v'}(t))\ge0.5\ \mathrm m
+                  \quad(v\ne v'),\label{eng:eq:groundcollision}\\
+ &\operatorname{int}\mathcal B_v(t)\cap
+     (\mathcal O^{tower}\cup\mathcal O^{wire})=\varnothing,\label{eng:eq:groundobstacle}\\
+ &\sum_{v\in\mathcal V}\eta_{vj}(t)\le1\quad(j\in\mathcal P).
+ \label{eng:eq:parkingcapacity}
+\end{align}
+\noindent 0.5m车间净距和每候选1车是本版明确新增的仿真参数，非道路主管方标准。车辆对撞、追尾和路口同时占用通过同一时刻实体距离约束检查；单个道路资源不粗暴设成全段仅1车。道路封闭输入在其有效时间禁止相应模式。未提供外部交通轨迹时不模拟社会车辆。
+
+\noindent 车辆可在其无人机飞行时行驶，并在另一停靠点接回；车机相互等待的时间、路线和能耗由后续会合条件与飞行积分共同限制。
+\clearpage
+

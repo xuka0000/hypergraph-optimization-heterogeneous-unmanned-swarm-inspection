@@ -1,0 +1,84 @@
+{
+  "observed_at": "2026-11-07T07:54:08.985130+00:00",
+  "experiment_id": "hypergraph-scip-bundle-demo",
+  "instance_sha256": "0604f1ba4047942ea0d0ba0db1e7a3486f9adc5d6fadcc4059cd4344934e78a5",
+  "scenario_count": 1,
+  "jobs": 12,
+  "resources": 12,
+  "r_max": 6,
+  "r_mean": 3.5,
+  "binary_variables": 12,
+  "capacity_constraints": 12,
+  "incidences": 42,
+  "reference": {
+    "objective": 42,
+    "optimal_selections": [
+      [
+        "T02",
+        "T03",
+        "T04",
+        "T12"
+      ]
+    ],
+    "subsets_checked": 4096,
+    "feasible_subsets": 62,
+    "method": "all subsets, original-JSON capacity sums, no SCIP/native solver calls"
+  },
+  "summary": [
+    {
+      "method": "SCIP_MILP",
+      "selected": [
+        "T02",
+        "T03",
+        "T04",
+        "T12"
+      ],
+      "objective": 42,
+      "feasible": true,
+      "relative_gap_to_proved_optimum": 0.0,
+      "solver_certificate": true,
+      "status": "optimal",
+      "timing_repeats": 21,
+      "objectives_all_repeats": [
+        42
+      ],
+      "solver_median_ms": 1.1042999999999998,
+      "total_median_ms": 3.7201,
+      "total_min_ms": 3.4635,
+      "total_max_ms": 5.2249
+    },
+    {
+      "method": "HeiHGM_Streaming",
+      "selected": [
+        "T01",
+        "T05"
+      ],
+      "objective": 39,
+      "feasible": true,
+      "relative_gap_to_proved_optimum": 0.07142857142857142,
+      "solver_certificate": false,
+      "status": "approximate_one_pass_complete",
+      "timing_repeats": 21,
+      "objectives_all_repeats": [
+        39
+      ],
+      "solver_median_ms": 0.006,
+      "total_median_ms": 0.0553,
+      "total_min_ms": 0.0389,
+      "total_max_ms": 0.18689999999999998
+    }
+  ],
+  "environment": {
+    "platform": "Windows-10-10.0.26200-SP0",
+    "processor": "Intel64 Family 6 Model 191 Stepping 2, GenuineIntel",
+    "python": "3.11.5 | packaged by Anaconda, Inc. | (main, Sep 11 2023, 13:26:23) [MSC v.1916 64 bit (AMD64)]",
+    "pyscipopt": "6.2.1",
+    "scip": "10.0.2",
+    "soplex": "8.0.2",
+    "logical_cpus": 16
+  },
+  "algorithm_kernel_hash": "d7a4536558f7470049467e2b7c0454966f3ab37055dc67268ad3335749a5526f",
+  "runner_hash": "28cb2a84df902acaa07e2201b402cedd4e28c674afee6d7d6be75e77670fa37e",
+  "timing_interpretation": "Warm process and loaded libraries; new instance state/model every time. Same physical machine and single-thread solve. Native C++ vs Python model builder is part of interface cost. Repetitions are timing observations of one instance, not scientific replicates.",
+  "limits": "One constructed example; no general superiority, significance, memory or scaling claim. Full author CLI was not executed; exact author kernels were adapted for Windows I/O."
+}

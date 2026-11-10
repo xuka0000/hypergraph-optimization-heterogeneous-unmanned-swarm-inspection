@@ -1,0 +1,264 @@
+\section{观测时序与轨迹连续性}
+\label{sec:05_03}
+
+第\ref{sec:05_02}节将每个启用航次组织为一条有向事件路径，并用时间等式连接相邻事件。事件路径说明了先执行哪项任务，却尚未保证任务执行期间能够保持所需的观测几何，也未保证相邻事件之间存在连续可执行的运动。本节将每项观测展开为具有持续时间的服务区间，在其中确定稳定准备与曝光的先后关系，并将服务、转移和等待连接到同一条飞行状态轨迹。
+
+以下沿用任务集合$\mathcal I_k$、航次集合$\mathcal L_k$以及二元变量$a_i,x_{i\ell},b_\ell$。$a_i$表示本次计划是否执行任务$i$，$x_{i\ell}$表示该任务是否分配给航次$\ell$，$b_\ell$表示航次是否启用。所有时间使用第\ref{sec:04_03}节的共同时间坐标，单位为$\mathrm{s}$。对新服务使用下面的完整区间；对正在服务的任务，使用原始服务及曝光时刻，并将待检查的动力学与几何区间限制到$[\tau_k,T]$，跨边界曝光保留已执行前缀。
+
+\subsection{完整服务区间与事前作业窗口}
+
+任务$i$的开始时刻为$t_i\in\mathbb R_{\ge0}$，服务时长为$d_i\in\mathbb R_{\ge0}$。仅对$a_i=1$的任务定义其实际占用的服务区间
+\begin{equation}
+ \mathcal D_i^{\mathrm{obs}}=[t_i,t_i+d_i],
+ \qquad i\in\mathcal I_k:\ a_i=1.
+ \label{s0503:service_interval}
+\end{equation}
+$\mathcal D_i^{\mathrm{obs}}$是时间集合，不是空间目标面；空间目标面仍记为$\mathcal S_i$，其离散样点索引仍为$\mathcal J_i$。服务区间包括拍摄前准备、曝光以及服务时长要求所保留的其他时间，不能只用快门开启的时间代替整个服务时间。
+
+令$\mathcal W_i^{\mathrm{op}}\subseteq[0,T]$为事前给定的任务作业时间集合，$\mathcal W_i^{\mathrm{day}}\subseteq[0,T]$为该任务位置和执行日期对应的日间时间集合。二者均由规划输入确定，而非由优化器自由扩大。任务的允许窗口为
+\begin{equation}
+ \mathcal W_i=\mathcal W_i^{\mathrm{op}}\cap\mathcal W_i^{\mathrm{day}},
+ \qquad i\in\mathcal I_k.
+ \label{s0503:window_definition}
+\end{equation}
+集合中的元素为以$\mathrm{s}$计量的绝对时刻。窗口可以是一个区间，也可以由多个不相交的区间组成。对每个实际分配的任务，规定
+\begin{equation}
+ \begin{split}
+ x_{i\ell}=1\ \Longrightarrow\quad
+ &\max\{s_\ell,\tau_k\}\le\bar t_i^k,\\
+ &t_i+d_i\le e_\ell,\\
+ &\mathcal D_i^{\mathrm{obs}}\subseteq\mathcal W_i,\\
+ &d_i\ge d_i^{\min}>0,
+ \qquad i\in\mathcal I_k,\ \ell\in\mathcal L_k.
+ \end{split}
+ \label{s0503:service_window_constraints}
+\end{equation}
+其中$s_\ell,e_\ell$分别为航次的实际起飞与落地时刻，$\tau_k$为当前信息时刻，$d_i^{\min}$为给定的最小服务时长参数。式\eqref{s0503:service_window_constraints}的第一行同时继承前节的任务开始边界与航次时间边界，不会把进行中航次的历史起飞时刻重置为当前时刻。最后一行的时长下界是任务服务要求；其参考取值来自模板设定，不能解释为每个现场目标的实测耗时。
+
+窗口包含关系要求整个服务过程都处于允许时段。若某次可用窗口为$[\alpha,\beta]$，其中$0\le\alpha\le\beta\le T$，单位为$\mathrm{s}$，则服务置于该窗口内必须满足
+\begin{equation}
+ \alpha\le t_i\le\beta-d_i.
+ \label{s0503:single_window_start}
+\end{equation}
+因此，只要求$t_i\in\mathcal W_i$并不足够：在窗口关闭前开始、关闭后才结束的服务仍不可行。对于不连续的窗口，只检查开始与结束分别属于窗口也不够，因为二者之间可能跨过禁止作业的时间间隙。
+
+天气条件不并入一个仅约束观测事件的静态窗口。风、气温及其他飞行天气要求按照式\eqref{s0408:flight_weather_constraints}，在每个启用航次的全部待规划飞行时刻$t\in[\max\{s_\ell,\tau_k\},e_\ell]$成立。这一作用域包括转移和空中等待；即使观测窗口允许拍摄，也不能由此推出前往目标或等待回收期间的天气可行。
+
+\subsection{稳定准备与固定曝光}
+
+令$h^{\mathrm{stab}}>0$为给定的拍摄前稳定与对焦准备时长，$t^{\mathrm{exp}}>0$为给定的曝光时长，二者单位均为$\mathrm{s}$。这里的固定曝光是指$t^{\mathrm{exp}}$为输入参数，不作为可无限缩短的优化变量；它不要求曝光期间的位置、姿态或焦距严格不变。
+
+对每项计划执行的任务，定义准备区间与曝光区间
+\begin{align}
+ \mathcal H_i^{\mathrm{stab}}
+ &=[t_i,t_i+h^{\mathrm{stab}}],
+ &&i\in\mathcal I_k:\ a_i=1,
+ \label{s0503:stabilization_interval}\\
+ \mathcal C_i
+ &=[t_i+h^{\mathrm{stab}},
+     t_i+h^{\mathrm{stab}}+t^{\mathrm{exp}}],
+ &&i\in\mathcal I_k:\ a_i=1,
+ \label{s0503:exposure_interval}\\
+ \mathcal C_i&\subseteq\mathcal D_i^{\mathrm{obs}},
+ &&i\in\mathcal I_k:\ a_i=1.
+ \label{s0503:exposure_containment}
+\end{align}
+这些集合的元素均为绝对时刻。曝光开始位置由服务开始时刻和准备时长共同确定，不能在服务结束后再补记一次不占用航次时间的拍摄。由于$h^{\mathrm{stab}}>0$，式\eqref{s0503:exposure_containment}也保证整个准备区间包含在服务区间内。
+
+结合最小服务时长，可将任务的必要时长条件写为
+\begin{equation}
+ d_i\ge\max\{d_i^{\min},\ h^{\mathrm{stab}}+t^{\mathrm{exp}}\},
+ \qquad i\in\mathcal I_k:\ a_i=1.
+ \label{s0503:effective_duration_bound}
+\end{equation}
+式\eqref{s0503:effective_duration_bound}是前述包含关系和时长下界的直接推论。即使某项模板服务时长短于准备与曝光之和，也必须延长实际服务；反之，若模板服务时长更长，不能以曝光已经结束为由提前结束该项服务。对于式\eqref{s0503:single_window_start}中的单个窗口，能够容纳一项完整服务还必须有$\beta-\alpha\ge\max\{d_i^{\min},h^{\mathrm{stab}}+t^{\mathrm{exp}}\}$。这是时间方面的必要条件，尚不保证存在满足几何和动力学要求的观测轨迹。
+
+准备区间表示模型预留了稳定与对焦时间，不单独构成已达到实际相机稳定状态的证明。本模型不由“稳定”一词另加零速度、零角速度或固定焦距等条件。准备期间仍执行全段运动边界和服务几何要求，曝光期间则进一步检查图像质量。固定正曝光时长使拖影条件具有实质约束力，优化器不能通过令曝光时长趋于零来规避运动造成的像移。
+
+\subsection{全服务几何视域与曝光成像条件}
+
+服务区间与曝光区间承担不同的约束作用。整个服务过程中，无人机必须保持规定的工作距离、入射角及机体物理净距；图像正深度、像素边界、分辨率、拖影和目标视线则施加于曝光区间。下面将这两个作用域分别写明。
+
+对任务$i$，令
+\begin{equation}
+ \mathcal Q_i=\{\mathbf c_i\}\cup
+ \{\mathbf q_{ij}:j\in\mathcal J_i\}\subset\mathbb R^3,
+ \qquad i\in\mathcal I_k,
+ \label{s0503:geometric_target_points}
+\end{equation}
+其中$\mathbf c_i$为目标面参考点，$\mathbf q_{ij}$为第\ref{sec:04_01}节定义的表面样点，各坐标单位为$\mathrm m$。该有限集合用于表达几何检查，不表示对连续目标面每一点都已建立质量保证。令$\underline r_i,\overline r_i$为工作距离下、上界，满足$0<\underline r_i\le\overline r_i$，单位为$\mathrm m$；$\overline\theta_i\in[0,\pi/2)$为允许的最大入射偏角，单位为$\mathrm{rad}$；$\mathbf n_i\in\mathbb R^3$为无量纲单位法向。
+
+记$\mathcal F^{\mathrm{clr}}(t)\subseteq\mathbb R^3$为时刻$t$满足机体物理净距要求的位置集合。其静态部分由式\eqref{s0406:regular_collision_constraints}给定，包括地形定义域、地形上方净距、塔柱与导线净距；随车辆位置变化的安全条件在第\ref{sec:05_06}节联立。这里将机体净距写入集合，只是汇集已有空间条件，不包含相机是否能看见目标的视线条件。
+
+在当前相机平移偏置为零的模型中，$\mathbf p_C(t)=\mathbf p_\ell(t)$，因此几何视域可以直接表示为无人机位置的集合：
+\begin{equation}
+ \begin{split}
+ \mathcal V_i^{\mathrm{geom}}(t)
+ =\biggl\{\mathbf p\in\mathcal F^{\mathrm{clr}}(t):\quad
+ &\underline r_i\le\|\mathbf p-\mathbf q\|
+      \le\overline r_i,\\
+ &\frac{\mathbf n_i^T(\mathbf p-\mathbf q)}
+             {\|\mathbf p-\mathbf q\|}
+      \ge\cos\overline\theta_i,
+ \quad\forall\mathbf q\in\mathcal Q_i\biggr\},
+ \qquad i\in\mathcal I_k.
+ \end{split}
+ \label{s0503:geometric_view_set}
+\end{equation}
+距离不等式的单位为$\mathrm m$，入射角不等式无量纲，正的距离下界保证其分母不为零。若改用非零相机安装偏置，距离与入射角应按式\eqref{s0404:camera_world_position}中的相机位置计算，机体净距仍按机体位置计算；此时不能继续把两种位置不加区别地合为一个纯位置集合。
+
+服务几何约束为
+\begin{equation}
+ x_{i\ell}=1\ \Longrightarrow\
+ \mathbf p_\ell(t)\in\mathcal V_i^{\mathrm{geom}}(t),
+ \quad\forall t\in\mathcal D_i^{\mathrm{obs}},
+ \qquad i\in\mathcal I_k,\ \ell\in\mathcal L_k.
+ \label{s0503:whole_service_geometry}
+\end{equation}
+式\eqref{s0503:whole_service_geometry}并不要求无人机在服务开始时到达某个唯一指定的空间点。观测位置及其服务内的变化由联合模型选择，参考视点仅提供数值初值，不另设以参考中心为中心的固定小球来限制可行位置。位置自由度仍受工作距离、入射角、物理净距以及随后给出的曝光质量条件共同约束。
+
+为明确曝光条件，记$R_{C,\ell}(t)\in\mathrm{SO}(3)$为相机到世界坐标的旋转矩阵，$\mathbf p_{C,\ell}(t)\in\mathbb R^3$为相机位置，$f_\ell(t)>0$为焦距。旋转矩阵无量纲，位置与焦距分别使用$\mathrm m$和$\mathrm{mm}$。对样点$j\in\mathcal J_i$定义
+\begin{align}
+ \mathbf Q_{ij\ell}(t)
+ &=R_{C,\ell}(t)^T
+   \bigl(\mathbf q_{ij}-\mathbf p_{C,\ell}(t)\bigr),
+ \label{s0503:camera_sample}\\
+ \mathbf u_{ij\ell}(t)
+ &=\pi\bigl(\mathbf Q_{ij\ell}(t),f_\ell(t)\bigr).
+ \label{s0503:sample_pixel}
+\end{align}
+这两个定义用于$x_{i\ell}=1$且$t\in\mathcal C_i$的任务、航次与时刻。$\mathbf Q_{ij\ell}\in\mathbb R^3$的单位为$\mathrm m$，$\mathbf u_{ij\ell}\in\mathbb R^2$的单位为$\mathrm{px}$，投影映射$\pi$沿用式\eqref{s0405:pinhole_projection}，其焦距换算保持第\ref{sec:04_05}节的定义。
+
+令$N_x,N_y$为图像宽、高，$m_i^{\mathrm{px}}\ge0$为图像边界余量，三者均以$\mathrm{px}$计量，且$2m_i^{\mathrm{px}}<\min\{N_x,N_y\}$。令$\underline\sigma_i>0$为目标面最小成像尺度，单位为$\mathrm{px/m}$；$\overline b_i>0$为允许拖影长度，单位为$\mathrm{px}$。$B_i\in\mathbb R^{3\times2}$为目标面的无量纲正交切向基。对每个$x_{i\ell}=1$的任务分配，要求
+\begin{align}
+ Q_{ij\ell,z}(t)&>0,
+ &&j\in\mathcal J_i,\ t\in\mathcal C_i,
+ \label{s0503:exposure_depth}\\
+ m_i^{\mathrm{px}}\le u_{ij\ell,x}(t)
+ &\le N_x-m_i^{\mathrm{px}},
+ &&j\in\mathcal J_i,\ t\in\mathcal C_i,
+ \label{s0503:exposure_horizontal}\\
+ m_i^{\mathrm{px}}\le u_{ij\ell,y}(t)
+ &\le N_y-m_i^{\mathrm{px}},
+ &&j\in\mathcal J_i,\ t\in\mathcal C_i,
+ \label{s0503:exposure_vertical}\\
+ \sigma_{\min}\!\left(
+ D_{\mathbf Q}\pi\bigl(\mathbf Q_{ij\ell}(t),f_\ell(t)\bigr)
+ R_{C,\ell}(t)^TB_i\right)
+ &\ge\underline\sigma_i,
+ &&j\in\mathcal J_i,\ t\in\mathcal C_i,
+ \label{s0503:exposure_resolution}\\
+ t^{\mathrm{exp}}\sup_{t\in\mathcal C_i}
+ \left\|\frac{\mathrm d\mathbf u_{ij\ell}(t)}{\mathrm dt}\right\|
+ &\le\overline b_i,
+ &&j\in\mathcal J_i.
+ \label{s0503:exposure_blur}
+\end{align}
+上述各式还共同量化于$i\in\mathcal I_k,\ell\in\mathcal L_k$且$x_{i\ell}=1$。$D_{\mathbf Q}\pi$为投影对三维相机坐标的雅可比矩阵，单位为$\mathrm{px/m}$；$\sigma_{\min}$取矩阵的最小奇异值。式\eqref{s0503:exposure_resolution}限制目标面两个切向方向中较差方向的成像尺度。式\eqref{s0503:exposure_blur}使用二维像素速度的欧氏范数，像素速度单位为$\mathrm{px/s}$，乘曝光时长后得到像素位移上界。该导数包含平移、机体转动、云台运动和焦距变化，不能只用无人机地速替代。
+
+令$\mathcal O^{\mathrm{opaque}}(t)\subseteq\mathbb R^3$为时刻$t$的遮挡实体并集，包含模型中的地形、塔柱、导线与车辆实体。曝光视线要求为
+\begin{equation}
+ \begin{split}
+ &(1-\lambda)\mathbf p_{C,\ell}(t)
+       +\lambda\mathbf q_{ij}
+       \notin\operatorname{int}\mathcal O^{\mathrm{opaque}}(t),\\
+ &\quad j\in\mathcal J_i,\quad t\in\mathcal C_i,
+       \quad\lambda\in[0,1),\\
+ &\quad i\in\mathcal I_k,\quad\ell\in\mathcal L_k:
+       \ x_{i\ell}=1.
+ \end{split}
+ \label{s0503:exposure_visibility}
+\end{equation}
+$\lambda$为无量纲线段参数，线段点的单位为$\mathrm m$。目标所属塔也属于遮挡检查对象，不能因任务位于本塔而将整座塔从遮挡集合中删除；$\lambda<1$保留目标端点可以位于目标表面的含义。
+
+式\eqref{s0503:exposure_depth}至式\eqref{s0503:exposure_visibility}仅在$\mathcal C_i$上施加。服务中的准备时段及曝光后的剩余时段仍须满足式\eqref{s0503:whole_service_geometry}和飞行动力学，但不因此要求目标始终处于像素边界内或始终具有合格分辨率。反过来，仅在曝光瞬间具有合格图像，也不能替代全服务几何约束。物理避障与相机视线分别限制机体和成像光路，二者不能相互代替。
+
+\subsection{同一航次内部的状态连接}
+
+对每个启用航次$\ell$，令$\underline t_\ell=\max\{s_\ell,\tau_k\}$。在待规划飞行区间$[\underline t_\ell,e_\ell]$上，位置$\mathbf p_\ell(t)$、速度$\mathbf v_\ell(t)$和加速度$\mathbf a_\ell(t)$均为三维实向量，单位依次为$\mathrm m$、$\mathrm{m/s}$和$\mathrm{m/s^2}$；机体姿态$R_\ell(t)\in\mathrm{SO}(3)$无量纲；两轴云台角$\gamma_\ell(t)\in\mathbb R^2$以$\mathrm{rad}$计量，采用连续展开角度；焦距$f_\ell(t)$以$\mathrm{mm}$计量。
+
+服务、曝光、转移与等待可以在数值表示中划为多个段，但它们必须是上述同一组函数的限制。令$\mathcal Q_\ell^{\mathrm{join}}\subset(\underline t_\ell,e_\ell)$为这些段的内部连接时刻集合，其元素$q$的单位为$\mathrm{s}$。该集合不包含起飞和落地的平台接触边界。对每个$q\in\mathcal Q_\ell^{\mathrm{join}}$要求
+\begin{align}
+ \mathbf p_\ell(q^-)&=\mathbf p_\ell(q^+),
+ \label{s0503:join_position}\\
+ \mathbf v_\ell(q^-)&=\mathbf v_\ell(q^+),
+ \label{s0503:join_velocity}\\
+ \mathbf a_\ell(q^-)&=\mathbf a_\ell(q^+),
+ \label{s0503:join_acceleration}\\
+ R_\ell(q^-)&=R_\ell(q^+),
+ \label{s0503:join_attitude}\\
+ \gamma_\ell(q^-)&=\gamma_\ell(q^+),
+ \label{s0503:join_gimbal}\\
+ f_\ell(q^-)&=f_\ell(q^+),
+ \qquad\ell\in\mathcal L_k:\ b_\ell=1.
+ \label{s0503:join_focal}
+\end{align}
+这里$q^-,q^+$分别表示从连接点左、右两侧取得的极限。相等关系分别在各自状态空间中成立，不能只连接位置而让速度或加速度独立重置。$R_\ell$为姿态矩阵，区别于前节同形字母表示的终点事件$R_\ell$；前者带时间自变量，后者是事件节点。
+
+这些连接条件须与第\ref{sec:04_04}节的全段导数约束一起使用。具体而言，$\dot{\mathbf p}_\ell=\mathbf v_\ell$、$\dot{\mathbf v}_\ell=\mathbf a_\ell$以及有界加加速度关系在飞行内部成立，姿态、云台和焦距也分别受到角速度、角加速度和变焦速率约束。导数条件应作用于整个连续轨迹，不能理解为只在各段开区间内成立而允许连接点发生脉冲。对于具有角加速度上界的云台角和连续展开航向，其一阶导数同样不能在分段处任意跳变。
+
+例如，令$\overline v>0$、$\overline j>0$和$\overline{\dot f}>0$分别为已有地速、加加速度和变焦速率上界，单位依次为$\mathrm{m/s}$、$\mathrm{m/s^3}$和$\mathrm{mm/s}$。对同一连续飞行区间内任意$t_a\le t_b$，相应导数界给出
+\begin{align}
+ \|\mathbf p_\ell(t_b)-\mathbf p_\ell(t_a)\|
+ &\le\overline v(t_b-t_a),
+ \label{s0503:position_time_bound}\\
+ \|\mathbf a_\ell(t_b)-\mathbf a_\ell(t_a)\|
+ &\le\overline j(t_b-t_a),
+ \label{s0503:acceleration_time_bound}\\
+ |f_\ell(t_b)-f_\ell(t_a)|
+ &\le\overline{\dot f}(t_b-t_a),
+ \qquad\ell\in\mathcal L_k:\ b_\ell=1.
+ \label{s0503:focal_time_bound}
+\end{align}
+这些不等式由有界导数积分得到，不引入新的速度或控制参数。它们说明，有限位置变化、加速度变化和焦距变化均需消耗真实时间。即使相邻任务的最佳拍摄位置重合，若所需云台角或焦距不同，也不能未经调整就把两项独立构造的曝光状态直接拼接。角度连续展开还排除了利用$2\pi$数值跳变绕过角速度约束的做法。
+
+内部连接不等同于平台接触连接。起飞或落地发生接触力切换时，加速度可以具有不同的单侧值；不能把式\eqref{s0503:join_acceleration}跨接触强行施加，也不能把平台停放状态按悬停力平衡处理。该边界由第\ref{sec:05_04}节处理，飞行内部的加加速度限制仍保持有效。
+
+\subsection{分段参数、共同时间与能耗}
+
+采用局部参数表示一段轨迹时，必须保留其与绝对时间的对应。设某个正时长段从$q_r$开始、在$q_{r+1}$结束，$\Delta_r=q_{r+1}-q_r>0$，三者单位均为$\mathrm{s}$，$r$为段索引。以无量纲参数$\sigma\in[0,1]$表示该段，有
+\begin{equation}
+ t=q_r+\Delta_r\sigma,
+ \qquad
+ \widehat{\mathbf p}_r(\sigma)
+ =\mathbf p_\ell(q_r+\Delta_r\sigma).
+ \label{s0503:segment_clock}
+\end{equation}
+这里$\widehat{\mathbf p}_r$仅为同一位置轨迹的局部参数表达，其坐标仍以$\mathrm m$计量。时间导数为
+\begin{align}
+ \mathbf v_\ell(t)
+ &=\Delta_r^{-1}\widehat{\mathbf p}_r'(\sigma),
+ \label{s0503:segment_velocity}\\
+ \mathbf a_\ell(t)
+ &=\Delta_r^{-2}\widehat{\mathbf p}_r''(\sigma),
+ \label{s0503:segment_acceleration}\\
+ \mathbf j_\ell(t)
+ &=\Delta_r^{-3}\widehat{\mathbf p}_r'''(\sigma),
+ \qquad \sigma\in[0,1],
+ \label{s0503:segment_jerk}
+\end{align}
+端点处按相应单侧导数理解。撇号表示对$\sigma$求导，$\mathbf j_\ell$为加加速度，单位为$\mathrm{m/s^3}$。由此可见，改变段时长会同时改变物理速度、加速度与加加速度，不能保持曲线控制点不变后只修改事件时钟而不重新检查动力学。
+
+前节允许某条选中弧的$T_{ij\ell}=0$。这种弧不生成需要除以时长的独立轨迹段，而要求两端在同一时刻共享相同的连接状态；若状态不同，就不能用零时长完成转移。所有正时长段均采用式\eqref{s0503:segment_clock}的实际时钟。天气场也在该时钟上求值，例如空气密度为$\rho(\mathbf p_\ell(t),t)$，不能在每个新段开始时将预报时间归零，或将随位置、时间变化的密度改为固定常数。
+
+令$P_\ell(t)\ge0$为第\ref{sec:04_08}节定义的机载功率，单位为$\mathrm W$。第$r$个正时长段消耗的电能为
+\begin{equation}
+ E_{\ell r}
+ =\frac{1}{3600}\int_{q_r}^{q_{r+1}}P_\ell(t)\,\mathrm dt
+ =\frac{\Delta_r}{3600}\int_0^1
+ P_\ell(q_r+\Delta_r\sigma)\,\mathrm d\sigma.
+ \label{s0503:segment_energy}
+\end{equation}
+$E_{\ell r}\ge0$以$\mathrm{Wh}$计量，除以$3600$将$\mathrm{W\,s}$换算为$\mathrm{Wh}$。对覆盖$[\underline t_\ell,e_\ell]$的全部段求和，应与式\eqref{s0502:energy_partition}给出的剩余航次能耗相同。稳定准备、曝光、服务剩余时间、转移和显式等待均在积分范围内，不因状态变化很小或当前没有拍摄而停止计时、停止计能。
+
+\subsection{计划合格与实际验收的边界}
+
+上述条件将$a_i=1$解释为：在所用目标模板、天气输入、动力学与成像模型下，计划为任务$i$安排了满足要求的完整服务。$A_i^k\in\{0,1\}$则是截至信息时刻$\tau_k$由实际验收记录确定的状态。两者均无量纲，但一个是计划决策，一个是已知执行事实；计划服务结束、曝光时钟经过或模型条件成立，都不能自动将$A_i^k$置为$1$。
+
+实际图像若尚未取得、尚待检查或未满足要求，均不能按已验收任务处理。尤其是，图像已经拍摄但等待验收的任务，需要在执行状态中保留该事实，不能无条件视为已完成，也不能在没有处理其原记录的情况下当作全新的完整服务。跨服务边界与待验收状态的接续范围见第\ref{sec:05_07}节。
+
+同一杆塔上的不同拍摄角色仍对应不同任务身份。即使其几何位置接近，也必须分别满足各自的服务、曝光和质量要求；一张图像不自动产生多个角色的完成量。若将来定义需要多帧的任务，则必须为各帧明确曝光区间及相互关系，不能仅增加任务权重来表示额外拍摄。当前约束给出的是单项服务及其指定曝光的模型可行条件，有限表面样点上的合格也不等于真实部件全部缺陷均已被检出。
+
+% SERVICE_CARRYOVER_BINDING
+\subsection{服务中途切入时的同一访问模型}
+新服务继续使用本节从当前边界以后开始的完整时序。正在执行的服务按式\eqref{s0507:service_carryover}固定原起点、终点及资源身份，并用式\eqref{s0507:ongoing_flow}连接当前航次虚拟源点；该源边不重复产生转移或20.011081481481483 s服务下界。曝光前缀保留，跨边界的成像条件对前后缀合并后的原曝光检查。待验收图像不提前计入完成；若重新安排拍摄，使用新尝试编号。

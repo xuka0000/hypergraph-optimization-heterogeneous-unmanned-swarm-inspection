@@ -1,0 +1,178 @@
+\section{超图表示、冲突表示及适用条件}
+\label{sec:02_04}
+
+第\ref{sec:02_03}节通过资源容量约束定义了候选任务的可行选择。本节讨论同一组关联关系如何表示为超图、任务冲突图以及对偶超图，并区分三种不同的问题：表示是否保留对象身份，转换是否保持整数可行域，以及不同约束形式是否具有相同的线性规划松弛。整数可行域相同，并不要求连续松弛相同，也不直接给出求解时间方面的结论。
+
+\subsection{以资源为顶点的超图表示}
+
+沿用既定索引，$V$ 为资源集合，$E$ 为候选任务索引集合，$m=|V|$ 为资源数，$n=|E|$ 为候选任务数。每个任务 $e\in E$ 对应非空资源组合 $R_e\subseteq V$。本章将超图简记为 $H=(V,E)$，其中 $E$ 按带任务索引的超边族理解，其关联关系由 $(R_e)_{e\in E}$ 给出。这里的顶点是资源，一条超边则表示一个任务必须整体取得的资源组合。
+
+保留任务索引具有实际意义。即使两个不同任务 $e,f\in E$ 满足 $R_e=R_f$，它们仍有各自的变量 $x_e,x_f$ 和收益 $w_e,w_f$，不能仅因资源组合相同就合并为一个候选。关联矩阵允许出现相同的列；相同列表示资源需求一致，并不表示任务身份一致。
+
+定义资源 $v$ 的关联任务集合及关联矩阵为
+\begin{align}
+ N(v)&=\{e\in E:v\in R_e\},
+ &&\forall v\in V,
+ \label{s0204:neighborhood}\\
+ A_{ve}&=\begin{cases}
+ 1,&v\in R_e,\\
+ 0,&v\notin R_e,
+ \end{cases}
+ &&\forall v\in V,\ \forall e\in E.
+ \label{s0204:incidence}
+\end{align}
+其中 $A\in\{0,1\}^{m\times n}$ 的行对应资源、列对应任务，元素为无量纲关联指示量。每个非零元素还对应本模型规定的一份资源需求，因此 $(Ax)_v=\sum_{e\in N(v)}x_e$ 按份解释为资源 $v$ 的总占用。选择量 $x_e\in\{0,1\}$ 无量纲，容量 $b_v\in\mathbb Z_{\geq0}$ 按份计，固定收益 $w_e\in\mathbb R_{>0}$ 无量纲。
+
+在资源集合和候选集合均非空时，定义
+\begin{equation}
+ r=\max_{e\in E}|R_e|,
+ \qquad
+ \Delta=\max_{v\in V}|N(v)|.
+ \label{s0204:rank_degree}
+\end{equation}
+$r$ 是单个任务最多涉及的资源种类数，即资源顶点超图的秩；$\Delta$ 是同一种资源最多关联的候选任务数，即最大顶点度。二者均为无量纲整数计数，但描述不同的关联方向。较大的 $r$ 表明一个任务需要更多种资源，较大的 $\Delta$ 表明某种资源被更多候选共同需求。仅凭超边关联还不能确定哪些任务组合可行，必须同时给出容量 $b_v$ 及每项关联需求的含义。
+
+\subsection{单位容量下的任务冲突图及整数等价性}
+
+现有纯组合实验均使用 $b_v=1$，$\forall v\in V$。在此条件下，两个任务只要共享一种资源，就不能同时入选。以候选任务为图顶点，构造无向简单冲突图
+\begin{equation}
+ G_c=(E,F),
+ \qquad
+ F=\bigl\{\{e,f\}:e,f\in E,\ e\ne f,
+ R_e\cap R_f\ne\varnothing\bigr\}.
+ \label{s0204:conflict_graph}
+\end{equation}
+$F$ 是无序任务对的集合，每条图边表示一对任务之间的互斥关系。这里 $G_c$ 的顶点数为 $n$，其顶点不是资源；即使两个任务共享多种资源，$F$ 中也只保留这一对任务的一条图边。该合并保留了两任务不能共选的事实，但不再区分冲突由哪些资源引起。
+
+对任意 $x\in\{0,1\}^{n}$，令 $S(x)=\{e\in E:x_e=1\}$ 为入选任务集合。图的独立集是内部任意两个不同顶点之间均无图边的顶点子集。定义两种整数可行集合：
+\begin{align}
+ \mathcal F_1
+ &=\left\{x\in\{0,1\}^{n}:
+ \sum_{e\in N(v)}x_e\leq1,\ \forall v\in V\right\},
+ \label{s0204:resource_integer}\\
+ \mathcal F_c
+ &=\left\{x\in\{0,1\}^{n}:
+ x_e+x_f\leq1,\ \forall\{e,f\}\in F\right\}.
+ \label{s0204:conflict_integer}
+\end{align}
+则有
+\begin{equation}
+ x\in\mathcal F_1
+ \quad\Longleftrightarrow\quad
+ x\in\mathcal F_c
+ \quad\Longleftrightarrow\quad
+ S(x)\text{ 是 }G_c\text{ 的独立集}.
+ \label{s0204:integer_equivalence}
+\end{equation}
+
+先证明资源可行性蕴含冲突可行性。任取 $x\in\mathcal F_1$ 和 $\{e,f\}\in F$，由冲突边定义，存在资源 $v\in R_e\cap R_f$。由于 $e,f\in N(v)$ 且全部选择量非负，有
+\begin{equation}
+ x_e+x_f\leq\sum_{h\in N(v)}x_h\leq1.
+ \label{s0204:resource_implies_pair}
+\end{equation}
+其中 $h\in E$ 是求和使用的任务索引。因此每一条两两互斥约束均成立，得到 $x\in\mathcal F_c$。
+
+再证明冲突可行性蕴含资源可行性。任取 $x\in\mathcal F_c$，若存在资源 $v$ 使 $\sum_{e\in N(v)}x_e>1$，则由于 $x$ 为二元向量，$N(v)$ 中至少有两个不同任务 $e,f$ 被选中。二者共享资源 $v$，故 $\{e,f\}\in F$，但此时 $x_e+x_f=2$，违反式\eqref{s0204:conflict_integer}。因此不存在超容量资源，得到 $x\in\mathcal F_1$。最后，对二元变量而言，$x_e+x_f\leq1$ 恰好禁止图边两端同时入选，这就是 $S(x)$ 为独立集的定义。
+
+若同时保留每个任务的原收益，则单位容量模型可以写为最大权独立集问题：
+\begin{equation}
+ \max_{x\in\mathcal F_1}\sum_{e\in E}w_ex_e
+ =\max_{x\in\mathcal F_c}\sum_{e\in E}w_ex_e.
+ \label{s0204:weighted_equivalence}
+\end{equation}
+两侧不仅最优目标值相同，而且任一任务选择向量的可行性及收益均相同。这一等价性依赖单位容量、单位关联需求以及原模型中没有其他选择约束，不依赖 $r$ 的大小。若另有必须选择、组合收益或时序约束，则需同时保留相应条件，不能只凭式\eqref{s0204:conflict_graph}宣称整个扩展模型已经等价转换。
+
+\subsection{资源团约束与两两约束的松弛差异}
+
+对任意资源 $v\in V$，集合 $N(v)$ 中的任意两个不同任务共享 $v$，因而在 $G_c$ 中相邻。当 $N(v)$ 非空时，它构成一个团，即内部顶点两两相邻的集合。原资源约束
+\begin{equation}
+ \sum_{e\in N(v)}x_e\leq1,
+ \qquad \forall v\in V,
+ \label{s0204:resource_clique}
+\end{equation}
+因此也是由资源产生的团不等式；$N(v)=\varnothing$ 时，相应行退化为 $0\leq1$。
+
+将二元变量分别放宽至 $[0,1]$，定义资源形式与两两冲突形式的连续可行域：
+\begin{align}
+ P_R&=\left\{x\in[0,1]^n:
+ \sum_{e\in N(v)}x_e\leq1,\ \forall v\in V\right\},
+ \label{s0204:resource_relaxation}\\
+ P_C&=\left\{x\in[0,1]^n:
+ x_e+x_f\leq1,\ \forall\{e,f\}\in F\right\}.
+ \label{s0204:conflict_relaxation}
+\end{align}
+式\eqref{s0204:resource_implies_pair}只使用非负性与资源行，并未使用整数性，故
+\begin{equation}
+ P_R\subseteq P_C,
+ \qquad
+ P_R\cap\{0,1\}^{n}=P_C\cap\{0,1\}^{n}=\mathcal F_1.
+ \label{s0204:relaxation_relation}
+\end{equation}
+反向证明则依赖二元性：分数占用之和超过一，并不意味着存在两个取值均为一的任务。因此，整数可行域相同不足以推出 $P_R=P_C$。
+
+考虑仅含一个资源 $v$ 和三个候选任务 $e_1,e_2,e_3$ 的说明性构造。三个任务均满足 $R_{e_i}=\{v\}$，$i\in\{1,2,3\}$，且 $b_v=1$ 份。这些编号只用于区分任务身份，不表示实验样本。资源形式为
+\begin{equation}
+ x_{e_1}+x_{e_2}+x_{e_3}\leq1,
+ \label{s0204:three_resource_row}
+\end{equation}
+而两两冲突形式为
+\begin{equation}
+ x_{e_1}+x_{e_2}\leq1,
+ \qquad x_{e_1}+x_{e_3}\leq1,
+ \qquad x_{e_2}+x_{e_3}\leq1.
+ \label{s0204:three_pair_rows}
+\end{equation}
+取分数向量
+\begin{equation}
+ \bar x_{e_1}=\bar x_{e_2}=\bar x_{e_3}=\frac12.
+ \label{s0204:half_vector}
+\end{equation}
+每条两两约束的左端均为一，故 $\bar x\in P_C$；资源行的左端却为 $3/2>1$，故 $\bar x\notin P_R$。这个构造直接说明，资源团约束可以比仅含两两互斥的约束系统给出严格更强的线性规划松弛。
+
+对同一收益向量 $w=(w_e)_{e\in E}$，记 $z_R$、$z_C$ 分别为在 $P_R$、$P_C$ 上最大化 $w^{\mathsf T}x$ 得到的无量纲最优值，$z^\star$ 为整数最优值，则
+\begin{equation}
+ z^\star\leq z_R\leq z_C.
+ \label{s0204:relaxation_bounds}
+\end{equation}
+上述关系表示资源形式给出的最大化上界不劣于仅含两两约束的形式，并不保证每个实例中两个上界严格不同。它也不表示原资源行已经包含冲突图的所有团不等式：一个团内的不同任务对可能分别通过不同资源产生冲突，未必存在一个被全团共同占用的资源。此处证明的是指定两种约束系统之间的包含关系，而非原资源松弛等于整数可行域的凸包。
+
+\subsection{一般容量与对偶关联表示的边界}
+
+单位容量是上述冲突定义成立的关键条件。仍取三个任务共同使用单一资源的构造，但将容量改为 $b_v=2$ 份。此时原模型要求
+\begin{equation}
+ x_{e_1}+x_{e_2}+x_{e_3}\leq2,
+ \qquad x_{e_i}\in\{0,1\},\quad i\in\{1,2,3\}.
+ \label{s0204:capacity_two}
+\end{equation}
+任意两个任务共同入选都可行，三个任务全部入选则不可行。若继续按资源交集非空构造冲突边，三个任务仍两两相邻，式\eqref{s0204:three_pair_rows}将错误地禁止所有双任务选择。
+
+即使将图边重新定义为实际不可共选的任务对，也不能在原三个任务顶点上用简单冲突图精确表达式\eqref{s0204:capacity_two}。原因是每个双任务集合均可行，所以任何一对之间都不能放置冲突边；所得无边图又会允许三个任务全部入选。因此，一般容量限制不能直接替换成原任务变量上的两两互斥约束，应保留 $\sum_{e\in N(v)}x_e\leq b_v$ 等容量信息。若引入辅助变量或其他扩展构造，还需另外证明其与原模型之间的对应关系。容量为零时，同样需要保留禁止相关任务入选的一元限制；无自环的冲突图本身不能禁止单个顶点入选。
+
+另一种常见表示是交换关联关系的两个方向。以任务索引 $E$ 为顶点集合，为每个原资源 $v\in V$ 建立作用域为 $N(v)$ 的超边，可得到带资源索引的对偶超图
+\begin{equation}
+ H^{\mathrm d}=\bigl(E,(N(v))_{v\in V}\bigr),
+ \qquad
+ A^{\mathrm d}=A^{\mathsf T}\in\{0,1\}^{n\times m}.
+ \label{s0204:dual_hypergraph}
+\end{equation}
+上标 $\mathrm d$ 表示关联结构的对偶，不表示第\ref{sec:02_03}节中的线性规划对偶。$A^{\mathrm d}_{ev}=A_{ve}$ 的行对应原任务，列对应原资源，每个元素仍为无量纲关联指示量。即使两个资源具有相同的任务邻域，它们也保留不同的资源索引及容量；若原资源无关联任务，则保留其空作用域及对应零列。
+
+若用 $m^{\mathrm d}$、$n^{\mathrm d}$ 分别表示对偶表示的顶点数和索引超边数，用 $r^{\mathrm d}$、$\Delta^{\mathrm d}$ 分别表示其最大超边大小与最大顶点度，则
+\begin{align}
+ m^{\mathrm d}&=n,
+ & n^{\mathrm d}&=m,
+ \label{s0204:dual_counts}\\
+ r^{\mathrm d}&=\max_{v\in V}|N(v)|=\Delta,
+ &\Delta^{\mathrm d}&=\max_{e\in E}|R_e|=r.
+ \label{s0204:dual_rank_degree}
+\end{align}
+这些等式描述结构角色的交换，不改变全书 $n$ 为候选数、$m$ 为资源数的原始约定。对偶表示中，任务变量附着在顶点上，容量约束附着在带资源索引的超边上，原可行性仍写为
+\begin{equation}
+ (A^{\mathrm d})^{\mathsf T}x\leq b,
+ \qquad x\in\{0,1\}^{n},
+ \qquad b=(b_v)_{v\in V}.
+ \label{s0204:dual_representation_capacity}
+\end{equation}
+转置关联矩阵并没有将任务选择改成资源选择，也没有自动产生另一个等价的超边匹配优化问题。
+
+由此，资源顶点超图、任务顶点对偶超图和任务冲突图具有不同的对象含义：第一种按任务记录资源组合，第二种按资源记录关联任务及容量，第三种仅记录任务对之间的互斥。当前单位容量实验允许第三种表示精确恢复二元可行域，所以高超边秩本身不能作为不可约高阶依赖的证据。资源形式保留关联来源并可能提供更强的连续松弛，但这些数学性质仍不足以证明某种表示或算法必然求解更快；求解性能需要在具体实现与一致评价条件下另行检验。

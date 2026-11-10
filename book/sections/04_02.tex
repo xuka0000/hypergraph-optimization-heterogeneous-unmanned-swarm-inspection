@@ -1,0 +1,193 @@
+\section{车辆、无人机、相机和电池}
+\label{sec:04_02}
+
+观测任务需要由能够移动、成像并持续获得能量的设备执行。车辆提供地面运输、起降服务和充电条件，无人机携带相机到达观测位置，云台调整相机相对机体的指向，物理电池对承担航次中的能量供给。这些设备的作用不能只用一个总数量表示：车辆的位置决定服务地点，飞机的身份决定哪些航次不能重叠，电池的身份则决定能量能否在相邻航次之间接续。因此，需要同时定义设备身份、固定归属、共享容量和物理接口。
+
+\subsection{设备集合与固定载车关系}
+
+记$\mathcal V$、$\mathcal U$和$\mathcal B$分别为有限非空的车辆集合、无人机集合和物理电池对集合。索引$v\in\mathcal V$表示一辆车，$u\in\mathcal U$表示一架飞机，$p\in\mathcal B$表示一对具有持续身份的电池。这些索引均为无量纲标识。每个$p$包含两块配对使用的实体电池；本模型将这一对作为不可拆分的运输、分配、充电和放电单元，不允许把其中两块分别分配给不同飞机。
+
+车辆、无人机和电池对采用不同类型的标识。将固定载车关系定义为
+\begin{equation}
+ c:\mathcal U\cup\mathcal B\longrightarrow\mathcal V,
+ \qquad c(u),c(p)\in\mathcal V.
+ \label{s0402:carrier_mapping}
+\end{equation}
+其中$c(u)$为无人机$u$的固定服务车辆，$c(p)$为电池对$p$的固定归属车辆。映射$c$是输入参数，在一个班次内不随决策改变。它表达设备的服务归属，而非设备在任意时刻都位于车上：无人机起飞后离开车辆，装机的电池对随飞机移动，但两者的固定载车标识保持不变。
+
+对每辆车定义所属设备集合
+\begin{align}
+ \mathcal U_v&=\{u\in\mathcal U:c(u)=v\},
+ &&v\in\mathcal V,
+ \label{s0402:vehicle_aircraft}\\
+ \mathcal B_v&=\{p\in\mathcal B:c(p)=v\},
+ &&v\in\mathcal V.
+ \label{s0402:vehicle_batteries}
+\end{align}
+每架飞机和每对电池仅归属一辆车，故这些集合分别构成$\mathcal U$和$\mathcal B$的划分：
+\begin{align}
+ \bigcup_{v\in\mathcal V}\mathcal U_v&=\mathcal U,
+ &\mathcal U_v\cap\mathcal U_w&=\varnothing
+ &&(v,w\in\mathcal V,\ v\ne w),
+ \label{s0402:aircraft_partition}\\
+ \bigcup_{v\in\mathcal V}\mathcal B_v&=\mathcal B,
+ &\mathcal B_v\cap\mathcal B_w&=\varnothing
+ &&(v,w\in\mathcal V,\ v\ne w).
+ \label{s0402:battery_partition}
+\end{align}
+这里$w$表示另一辆车。划分关系排除了把同一架飞机或同一对电池同时登记为两辆车的独立库存，也明确了本模型不包含跨车辆转移电池的操作。
+
+记$K_v^{\mathrm U},K_v^{\mathrm B}\in\mathbb Z_{\ge0}$分别为车辆$v$允许配置的飞机数量上限和电池对数量上限，二者均为无量纲整数。配置须满足
+\begin{equation}
+ |\mathcal U_v|\le K_v^{\mathrm U},
+ \qquad |\mathcal B_v|\le K_v^{\mathrm B},
+ \qquad \forall v\in\mathcal V.
+ \label{s0402:inventory_capacity}
+\end{equation}
+式\eqref{s0402:inventory_capacity}是设备配置条件，不是随时间变化的航次占用约束。飞机正在飞行时仍属于$\mathcal U_v$，电池正在充电时仍属于$\mathcal B_v$。因此，不能通过暂时离车使设备从配置清单中消失，再将相同身份计为新的可用资源。
+
+固定载车也不意味着固定航次、固定任务或固定停车点。同一架飞机可以在不同时间执行多个航次，同一对电池可以在满足电量与周转条件后重复使用；车辆可访问不同停车候选，也可重访同一位置。固定的是设备由哪辆车提供服务，航次组成及车辆的服务位置仍属于决策。
+
+\subsection{航次与实体设备的连接}
+
+为说明设备之间的最小连接关系，记$\mathcal L$为有限的候选航次标识集合，$\ell\in\mathcal L$表示一个候选航次。这里航次表示一次起飞至回收的执行单元，候选标识本身不指定路线。定义$b_\ell\in\{0,1\}$为航次启用变量，$y_{u\ell}\in\{0,1\}$为飞机分配变量，$\beta_{p\ell}\in\{0,1\}$为电池对分配变量：变量取1分别表示启用航次$\ell$、由飞机$u$执行该航次，以及由电池对$p$为该航次供能。它们均无量纲，并满足
+\begin{align}
+ \sum_{u\in\mathcal U}y_{u\ell}&=b_\ell,
+ &&\ell\in\mathcal L,
+ \label{s0402:one_aircraft}\\
+ \sum_{p\in\mathcal B}\beta_{p\ell}&=b_\ell,
+ &&\ell\in\mathcal L,
+ \label{s0402:one_pair}\\
+ y_{u\ell}+\beta_{p\ell}&\le1,
+ &&\ell\in\mathcal L,\ u\in\mathcal U,\ p\in\mathcal B:
+ c(u)\ne c(p).
+ \label{s0402:carrier_compatibility}
+\end{align}
+式\eqref{s0402:one_aircraft}和式\eqref{s0402:one_pair}规定，每个启用航次恰好选择一架飞机和一对电池，未启用航次不占用这些设备。式\eqref{s0402:carrier_compatibility}禁止把不同载车的飞机与电池配到同一个航次中。由三式可知，一个启用航次选定的飞机和电池必然具有相同的载车归属。
+
+这里的一对电池包含两块，而不是一块电池的另一种计数名称。电池在一次航次内保持身份，不允许飞行途中以另一对满电池替换其能量状态。上述条件只给出航次与设备的连接关系；同一飞机或电池能否参加两个不同航次，还必须检查航次时间、准备回收时间及充电过程。仅有两列分配变量满足式\eqref{s0402:one_aircraft}--\eqref{s0402:carrier_compatibility}，并不能证明它们可以同时执行。航次时序及实体资源互斥在第\ref{sec:05_02}节、第\ref{sec:05_05}节和第\ref{sec:05_06}节进一步建立。
+
+\subsection{车辆服务容量与充电接口}
+
+车辆既是运输设备，也是起降和补能的服务节点。对车辆$v$，记$K_v^{\mathrm{pad}}\in\mathbb Z_{\ge0}$为可同时提供服务的起降位数，$K_v^{\mathrm{ch}}\in\mathbb Z_{\ge0}$为充电通道数，$\overline P_v^{\mathrm{sup}}\in\mathbb R_{\ge0}$为车载供电的功率上限，单位为$\mathrm W$。一个充电通道在本模型中服务一对电池；这一定义应与实体充电设备同时容纳的电池块数区分。
+
+以$T>0$表示班次终止时刻，时间$t\in[0,T]$以$\mathrm s$计，班次起点取0。定义$n_v^{\mathrm{pad}}(t)\in\mathbb Z_{\ge0}$为时刻$t$正在占用车辆$v$起降位的服务动作数。该计数由起飞准备和降落回收等服务区间确定，不等于该车所属的在空飞机数。电池对$p$的充电占用变量记为$c_p(t)\in\{0,1\}$，其充电器输入功率记为$P_p^{\mathrm{in}}(t)\in\mathbb R_{\ge0}$，单位为$\mathrm W$。$c_p(t)$带下标，表示时变充电状态；它与表示固定载车的映射$c(p)$不同。
+
+共享服务能力给出以下必要约束：
+\begin{align}
+ n_v^{\mathrm{pad}}(t)&\le K_v^{\mathrm{pad}},
+ &&v\in\mathcal V,\ t\in[0,T],
+ \label{s0402:pad_capacity}\\
+ \sum_{p\in\mathcal B_v}c_p(t)&\le K_v^{\mathrm{ch}},
+ &&v\in\mathcal V,\ t\in[0,T],
+ \label{s0402:channel_capacity}\\
+ \sum_{p\in\mathcal B_v}P_p^{\mathrm{in}}(t)&\le\overline P_v^{\mathrm{sup}},
+ &&v\in\mathcal V,\ t\in[0,T].
+ \label{s0402:supply_capacity}
+\end{align}
+式\eqref{s0402:pad_capacity}限制同时发生的起降服务，允许飞机离开起降保护区后由其他飞机使用该服务位。式\eqref{s0402:channel_capacity}限制充电对象的数量，式\eqref{s0402:supply_capacity}限制它们合计从车载电源取得的功率。这两个充电约束不能互相替代：通道空闲不保证供电功率足够，而总功率较低也不能使一条通道同时连接任意多对电池。
+
+记$E_p(t)\in\mathbb R_{\ge0}$为电池对$p$的储存能量，单位为$\mathrm{Wh}$；$\overline P_p(E)\ge0$为该电池对在能量$E$下允许的充电器输入功率上界，单位为$\mathrm W$。充电接口满足
+\begin{equation}
+ 0\le P_p^{\mathrm{in}}(t)
+ \le c_p(t)\overline P_p\bigl(E_p(t)\bigr),
+ \qquad p\in\mathcal B,\ t\in[0,T].
+ \label{s0402:charging_interface}
+\end{equation}
+因而未占用通道时输入功率必须为0，占用通道时仍须服从电池当前状态允许的功率上界。停车条件、环境温区，以及电池是否正在准备、飞行、回收或冷却，还会进一步限制$c_p(t)$；这些条件在第\ref{sec:04_08}节和第\ref{sec:05_05}节展开。
+
+充电器输入功率与实际储能功率具有不同含义。若采用常效率参数$\eta_p^{\mathrm{ch}}\in(0,1]$，则储能侧功率为$\eta_p^{\mathrm{ch}}P_p^{\mathrm{in}}(t)$。对于任意$0\le t_a\le t_b\le T$，充电对储能增加的贡献为
+\begin{equation}
+ \Delta E_p^{\mathrm{ch}}(t_a,t_b)
+ =\frac{1}{3600}\int_{t_a}^{t_b}
+ \eta_p^{\mathrm{ch}}P_p^{\mathrm{in}}(t)\,\mathrm dt,
+ \qquad p\in\mathcal B.
+ \label{s0402:charging_energy_interface}
+\end{equation}
+这里$\Delta E_p^{\mathrm{ch}}$以$\mathrm{Wh}$计，除以3600是将$\mathrm W\cdot\mathrm s$换算为$\mathrm{Wh}$；效率只在从输入侧转到储能侧时计入一次。该式只定义充电贡献，区间内电量的净变化还须计入放电，不能直接用它替代完整的电量守恒式。
+
+\subsection{机体、云台和相机的几何接口}
+
+机体、云台与相机共同决定相机在哪里、朝向何处以及使用何种成像尺度，但三者不具有独立任意选择的姿态。机体通过运动和受力约束取得位置与姿态，云台在允许角度范围内调整相机相对机体的朝向，相机再以自身光学参数把目标投影到图像平面。本模型将相机与云台作为所选飞机的机载设备描述，不另设航次之间调换相机或云台的分配变量。
+
+对启用航次$\ell$，记起飞与落地时刻为$s_\ell,e_\ell\in[0,T]$，满足$s_\ell\le e_\ell$。在$t\in[s_\ell,e_\ell]$内，$\mathbf p_\ell(t)\in\mathbb R^3$表示机体参考点的位置，单位为$\mathrm m$；$R_\ell(t)\in SO(3)$表示从机体坐标到共同空间坐标的旋转矩阵，其中
+\begin{equation}
+ SO(3)=\{R\in\mathbb R^{3\times3}:
+ R^{\mathsf T}R=I_3,\ \det R=1\}.
+ \label{s0402:rotation_domain}
+\end{equation}
+$I_3$是三阶单位矩阵，旋转矩阵及其元素均无量纲。正交条件保持长度和夹角，行列式条件排除镜像变换。
+
+本模型采用两个云台控制角，分别为俯仰角$\gamma_{p,\ell}(t)$和偏航角$\gamma_{y,\ell}(t)$，单位为$\mathrm{rad}$；这里下标$p$表示俯仰，并非电池索引。将二者组成$\boldsymbol\gamma_\ell(t)\in\Gamma\subset\mathbb R^2$，其中$\Gamma$为给定的允许角度集合。记$R_{BC}(\boldsymbol\gamma)\in SO(3)$为该两轴模型确定的相机坐标到机体坐标的旋转矩阵，$\mathbf d_{BC}\in\mathbb R^3$为机体坐标下的相机光心偏移，单位为$\mathrm m$。相机位置与姿态接口为
+\begin{align}
+ \mathbf p_{C,\ell}(t)
+ &=\mathbf p_\ell(t)+R_\ell(t)\mathbf d_{BC},
+ \label{s0402:camera_position}\\
+ R_{C,\ell}(t)
+ &=R_\ell(t)R_{BC}\bigl(\boldsymbol\gamma_\ell(t)\bigr),
+ \qquad t\in[s_\ell,e_\ell],\ b_\ell=1.
+ \label{s0402:camera_orientation}
+\end{align}
+其中$\mathbf p_{C,\ell}\in\mathbb R^3$为相机光心位置，单位为$\mathrm m$；$R_{C,\ell}\in SO(3)$为相机坐标到共同空间坐标的旋转。参考模型采用$\mathbf d_{BC}=\mathbf0$，即以机体参考点近似光心位置。这是一项几何简化，不表示实际安装偏移已经测得为零。两轴控制也是规划模型的自由度选择，不能据此声称实际产品只有两轴机械结构。
+
+式\eqref{s0402:camera_orientation}说明，即使云台角保持不变，机体姿态的改变仍会改变相机朝向；反过来，指定一条视线也不能使机体姿态脱离飞行受力约束。云台角度、角速度及角加速度的边界决定这种相对调整能否实现，具体运动约束在第\ref{sec:04_04}节给出。
+
+相机的可调焦距记为$f_\ell(t)\in[f^{\min},f^{\max}]$，其中$0<f^{\min}\le f^{\max}$，单位均为$\mathrm{mm}$；若进入以$\mathrm m$表示长度的投影公式，须先统一单位。成像模块接收相机位置$\mathbf p_{C,\ell}$、姿态$R_{C,\ell}$、焦距$f_\ell$以及第\ref{sec:04_01}节定义的目标几何，输出目标在图像中的位置、覆盖与可见性判定以及分辨率等量。曝光期间的运动还参与拖影计算。无人机运动模块因此向成像模块提供几何和运动状态，成像要求则反过来限制允许的飞行与云台控制；相机不能仅作为一个不影响规划的附加重量。
+
+\subsection{资源的状态、控制与耦合}
+
+表\ref{s0402:resource_interfaces}按对象列出状态、控制及相互连接。表中的状态描述设备当前处境，控制或分配描述可选择的动作，固定载车和安装关系则属于参数。三者分开后，才能判断一项决策需要读取哪些状态，以及会占用哪些资源。
+
+\begin{table}[htbp]
+ \centering
+ \small
+ \caption{巡检设备的状态、控制和耦合接口}
+ \label{s0402:resource_interfaces}
+ \begin{tabularx}{\linewidth}{@{}p{0.12\linewidth}XXX@{}}
+  \toprule
+  对象 & 状态 & 控制或分配 & 主要耦合关系\\
+  \midrule
+  车辆 & 平面位置（$\mathrm m$）、航向（$\mathrm{rad}$）、速度（$\mathrm{m/s}$）及行驶或停车模式 & 道路行驶、转向、停靠位置与服务时段 & 为所属飞机提供起降会合位置，为所属电池提供充电地点与共享供电。\\
+  无人机 & 三维位置（$\mathrm m$）、速度（$\mathrm{m/s}$）、加速度（$\mathrm{m/s^2}$）和机体姿态 & 航次分配、运动控制与姿态调整 & 与一对电池共同执行航次；机体状态决定相机几何接口及飞行功率需求。\\
+  机载相机 & 光心位置、朝向、焦距（$\mathrm{mm}$）及拍摄状态 & 焦距调整、观测开始与持续时间 & 接收机体和云台状态，结合目标几何形成成像条件。\\
+  两轴云台 & 俯仰和偏航角（$\mathrm{rad}$）及角速度（$\mathrm{rad/s}$） & 两个方向的转动控制 & 在机体姿态基础上改变相机朝向，受角度和变化速率限制。\\
+  物理电池对 & 能量$E_p$（$\mathrm{Wh}$）、位置及空闲、充电、准备、飞行、回收或冷却模式 & 航次分配$\beta_{p\ell}$、充电时段及充入能量 & 保持成对身份；飞行时随飞机运动，地面周转由固定载车服务。\\
+  车载充电器 & 通道占用$c_p$及输入功率$P_p^{\mathrm{in}}$（$\mathrm W$） & 选择待充电池对，设定输入功率与停止时刻 & 受电池允许功率、车辆停车条件、通道数和车载供电总功率共同限制。\\
+  \bottomrule
+ \end{tabularx}
+\end{table}
+
+电池对的能量状态必须跟随其实体身份。选择另一对电池意味着换用另一个$p$，不能将原电池的$E_p$直接重置为满电。充电器本身也不提供额外电池库存：它改变已有电池的能量，需要时间、通道和输入电能。参考模型允许在合法电量处结束充电后再次使用，但这只是所采用的控制能力假设；实际硬件能否按模型连续调节输入功率，尚未得到验证。
+
+\subsection{参考配置及参数来源的边界}
+
+前述架构采用一般容量符号。第\ref{sec:06_01}节的参考实例配置为
+\begin{align}
+ |\mathcal V|&=2, &|\mathcal U|&=4, &|\mathcal B|&=8,
+ \label{s0402:reference_fleet}\\
+ |\mathcal U_v|&=2, &|\mathcal B_v|&=4,
+ &&v\in\mathcal V,
+ \label{s0402:reference_inventory}\\
+ K_v^{\mathrm{pad}}&=1, &K_v^{\mathrm{ch}}&=1,
+ &\overline P_v^{\mathrm{sup}}&=1000\,\mathrm W,
+ \qquad v\in\mathcal V.
+ \label{s0402:reference_services}
+\end{align}
+因此，8对电池对应16块实体电池；每车4对对应8块。每车两架飞机共享一个起降位和一条按电池对计的充电通道。这些数量和供电功率属于参考场景配置，不是由无人机产品型号必然推出的车载系统结构，也不表示已完成实车安装验证。
+
+设备参数应区分制造商边界、项目运营阈值和模板假设。制造商资料提供产品在相应配置与条件下的规格；项目可以在这些规格内选择更保守的速度、姿态或能量预留；模板假设则用于补足当前模型所需但尚未标定的关系。后两者不能借用制造商引用而变成原厂测量值。
+
+对于机体，Matrice 300 RTK官方资料列有不含电池质量$3.6\,\mathrm{kg}$、含电池质量$6.3\,\mathrm{kg}$及最大起飞质量$9\,\mathrm{kg}$等规格\cite{DJIM300}。本模型在力平衡中采用的$7\,\mathrm{kg}$是参考飞行配置的总质量参数，不是对原厂空载质量的引用，也不是对当前载荷组合的实测称重。模型采用的飞行速度等运营限制同样需要按各自来源登记，不能将整个参数组统称为官方原值。
+
+对于相机，H20资料支持$6.83$--$119.94\,\mathrm{mm}$的变焦范围、$5184\times3888$的图像像素数，以及相应俯仰和偏航边界\cite{DJIH20}。本模型在这些设备信息基础上使用理想针孔成像、两轴云台控制和零光心偏移等适配。曝光时间、允许拖影以及分辨率验收阈值属于项目设置；这些阈值用于判断模型中的图像质量要求，不直接给出缺陷检出概率。
+
+对于电池，TB60单块名义能量为$274\,\mathrm{Wh}$，按两块成对使用得到参考名义能量
+\begin{equation}
+ E^{\mathrm{nom}}=2\times274=548\,\mathrm{Wh}.
+ \label{s0402:nominal_pair_energy}
+\end{equation}
+$E^{\mathrm{nom}}$表示一对电池的名义储能量，不是保证每次航次都可消耗的能量\cite{DJITB60}。实际可用于任务的部分还受初始电量、最低预留和充电历史限制。参考实例采用初始满电和最低保留20\%的设置，二者是规划条件，不能由名义容量自动推出。
+
+BS60同时充两块TB60的说明与本模型一条通道服务一对电池的计数相对应，但制造商说明并不验证整套车载供电方案。参考充电效率、分段充电曲线和额外冷却时间仍属于项目模型；其中额外冷却取零不能据以认定电池已经满足真实芯温要求，制造商建议冷却后充电这一条件也不能由环境温度代替\cite{DJITB60}。充电曲线及其适用限制在第\ref{sec:04_08}节展开。
+
+现有M100公开机型的历史功率验证与本模型采用的M300参考功率代理属于不同证据对象。前者不能赋予后者同机型实测精度；目前也不能据名义容量和参考充电曲线宣称已经建立高精度M300电化学或热模型。这里建立的是设备身份、连接关系和规划接口，后续运动、成像与能量模型均须在各自假设范围内使用这些接口。

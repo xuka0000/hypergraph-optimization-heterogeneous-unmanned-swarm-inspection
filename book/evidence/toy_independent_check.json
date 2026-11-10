@@ -1,0 +1,52 @@
+{
+  "subsets": 4096,
+  "feasible_count": 62,
+  "optimal_value": 42,
+  "optima": [
+    {
+      "selected": [
+        "T02",
+        "T03",
+        "T04",
+        "T12"
+      ],
+      "feasible": true,
+      "objective": 42,
+      "selected_count": 4,
+      "resource_loads": {
+        "A": 1,
+        "B": 1,
+        "G": 1,
+        "C": 1,
+        "D": 1,
+        "H": 1,
+        "E": 1,
+        "F": 1,
+        "I": 1,
+        "J": 1,
+        "K": 1,
+        "L": 1
+      }
+    }
+  ],
+  "streaming": {
+    "feasible": true,
+    "objective": 39,
+    "selected_count": 2,
+    "resource_loads": {
+      "A": 1,
+      "B": 1,
+      "C": 1,
+      "D": 1,
+      "E": 1,
+      "F": 1,
+      "G": 1,
+      "H": 1,
+      "I": 1,
+      "J": 1,
+      "K": 1,
+      "L": 1
+    }
+  },
+  "note": "Deterministic witness/finite enumeration verification, no timing experiment."
+}

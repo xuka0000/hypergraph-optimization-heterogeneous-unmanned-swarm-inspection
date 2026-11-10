@@ -1,0 +1,506 @@
+\section{道路与车辆运动}
+\label{sec:04_07}
+
+车辆既是无人机和电池的运输载体，也是起降与补能服务的移动平台。其可达位置不能仅由两个停靠点之间的最短路长度描述：道路的通行方向决定能够从哪一端进入，路口的几何空间决定能否连续转弯，车身尺寸决定参考点位于道路内时整车是否仍在道路内，而加减速和转向限制又决定这些动作需要多少时间。本节将道路拓扑、车辆占据空间及连续运动连接起来，建立后续停靠、起降和会合约束所需的车辆基础模型。
+
+\subsection{有向道路身份、连接区与路口区域}
+
+设道路网络为有向多重图$\mathcal D=(\mathcal N,\mathcal A)$，其中$\mathcal N$为道路节点集合，$\mathcal A$为具有独立身份的有向弧集合。节点$n\in\mathcal N$的水平位置为$\mathbf x_n\in\mathbb R^2$，单位为$\mathrm m$。每条弧$a\in\mathcal A$分别具有尾节点$\operatorname{tail}(a)$、头节点$\operatorname{head}(a)$、源几何及通行属性。即使两条弧的头尾节点相同，也不能将它们合并；不同弧可能对应不同道路几何、通行权限或限速。反向通行须由独立的反向弧表示，不能因为几何线段相同就自动获得反向许可。
+
+用$\mathcal A_v^{\mathrm{src}}\subseteq\mathcal A$表示按源通行属性保留给车辆$v\in\mathcal V$的弧集合。这里的许可含义是输入数据及其解释规则所允许的模型通行，不是对现场道路权限的独立认证。对每条保留弧，令$L_a>0$为中心线长度，单位为$\mathrm m$，并以弧长参数$s\in[0,L_a]$表示有向中心线$\mathbf c_a(s)$。参数从尾节点指向头节点，满足
+\begin{equation}
+ \mathbf c_a(0)=\mathbf x_{\operatorname{tail}(a)},\qquad
+ \mathbf c_a(L_a)=\mathbf x_{\operatorname{head}(a)}.
+ \label{s0407:arc_endpoints}
+\end{equation}
+道路层面保留源折线几何；本节给出显式进度公式时，采用当前源弧由相邻源节点间直段组成的表示。若输入改为含内部折点的单条弧，必须相应定义分段进度及折点连接，不能将整条折线的弧长直接代入直段投影公式。
+
+设$r^{\mathrm{conn}}>0$为弧端连接区长度参数，$r^{\mathrm{road}}>0$为道路中心线缓冲半径，$r^{\mathrm{junc}}>0$为节点圆盘半径，三者均以$\mathrm m$计。弧$a$的端部长度及核心长度定义为
+\begin{equation}
+ \ell_a=\min\{r^{\mathrm{conn}},L_a/4\},\qquad
+ L_a^{\mathrm{core}}=L_a-2\ell_a\ge L_a/2>0.
+ \label{s0407:connector_length}
+\end{equation}
+因此，即使源弧较短，两端连接区也不会消耗整条弧；道路核心始终具有正长度。
+
+记$\overline B_2(\mathbf x,r)=\{\mathbf y\in\mathbb R^2:\|\mathbf y-\mathbf x\|\le r\}$为闭圆盘。弧走廊及其尾端、头端连接区域分别为
+\begin{align}
+ \mathcal R_a^{\mathrm{road}}
+ &=\bigcup_{s\in[0,L_a]}
+        \overline B_2(\mathbf c_a(s),r^{\mathrm{road}}),
+ \label{s0407:road_corridor}\\
+ \mathcal R_a^{\mathrm{tail}}
+ &=\bigcup_{s\in[0,\ell_a]}
+        \overline B_2(\mathbf c_a(s),r^{\mathrm{road}}),
+ \label{s0407:tail_connector}\\
+ \mathcal R_a^{\mathrm{head}}
+ &=\bigcup_{s\in[L_a-\ell_a,L_a]}
+        \overline B_2(\mathbf c_a(s),r^{\mathrm{road}}).
+ \label{s0407:head_connector}
+\end{align}
+这些集合都是水平位置集合，缓冲半径是参考道路几何参数，不能据此推断现场道路的实测宽度。定义节点$n$的入弧和出弧集合
+\begin{equation}
+ \mathcal A_n^-=
+ \{a\in\mathcal A:\operatorname{head}(a)=n\},\qquad
+ \mathcal A_n^+=
+ \{a\in\mathcal A:\operatorname{tail}(a)=n\}.
+ \label{s0407:incident_arcs}
+\end{equation}
+路口区域为节点圆盘与相关弧端连接区域的并集：
+\begin{equation}
+ \mathcal R_n^{\mathrm{junc}}
+ =\overline B_2(\mathbf x_n,r^{\mathrm{junc}})
+ \cup\bigcup_{a\in\mathcal A_n^-}\mathcal R_a^{\mathrm{head}}
+ \cup\bigcup_{a\in\mathcal A_n^+}\mathcal R_a^{\mathrm{tail}},
+ \qquad n\in\mathcal N.
+ \label{s0407:junction_region}
+\end{equation}
+路口不是一个允许航向瞬时改变的抽象点，而是车辆必须在其中完成连续转弯的二维区域。道路核心控制沿弧推进的阶段，弧端连接区则为道路与路口之间的连续交接提供空间；二者不能用节点之间的一项固定行驶时间替代。
+
+\subsection{车辆参考点、完整足迹与停车位置}
+
+对车辆$v\in\mathcal V$，令$\mathbf q_v(t)=(q_{vx}(t),q_{vy}(t))^{\mathsf T}\in\mathbb R^2$为规划参考点，$\theta_v(t)\in\mathbb R$为连续展开的车身航向角，单位分别为$\mathrm m$和$\mathrm{rad}$。车辆几何使用以$\mathbf q_v$为中心的闭矩形。设$d_v^{\mathrm{car}}>0$、$w_v^{\mathrm{car}}>0$分别为参考车长和车宽，单位为$\mathrm m$，定义车体坐标中的矩形及平面旋转矩阵
+\begin{equation}
+ \begin{split}
+ Q_v^{\mathrm{car}}
+ &=\left[-\frac{d_v^{\mathrm{car}}}{2},
+           \frac{d_v^{\mathrm{car}}}{2}\right]
+   \times
+   \left[-\frac{w_v^{\mathrm{car}}}{2},
+           \frac{w_v^{\mathrm{car}}}{2}\right],\\
+ R_2(\theta)&=
+ \begin{pmatrix}
+ \cos\theta&-\sin\theta\\
+ \sin\theta&\cos\theta
+ \end{pmatrix}.
+ \end{split}
+ \label{s0407:body_rectangle}
+\end{equation}
+车辆在时刻$t$的水平足迹为
+\begin{equation}
+ \mathcal F_v^{\mathrm{car}}(t)
+ =\{\mathbf q_v(t)+R_2(\theta_v(t))\mathbf r:
+       \mathbf r\in Q_v^{\mathrm{car}}\}.
+ \label{s0407:vehicle_footprint}
+\end{equation}
+其中$\mathbf r$为相对车身中心的水平坐标，单位为$\mathrm m$。足迹包含边界，因而道路包含条件约束车身的每一点，而不只是车辆中心或四个角点。
+
+沿用第\ref{sec:04_06}节的地形函数$h$及其有效定义域$D^{\mathrm{dem}}$。车辆高度基点取$h(\mathbf q_v(t))$，要求该查询位置位于$D^{\mathrm{dem}}$并具有确定的插值高度。以$H_v^{\mathrm{car}}>0$表示参考车体高度，单位为$\mathrm m$，相应的直立车体包络可写为
+\begin{equation}
+ \mathcal O_v^{\mathrm{car}}(t)
+ =\left\{
+ \begin{pmatrix}\mathbf d\\z\end{pmatrix}:
+ \mathbf d\in\mathcal F_v^{\mathrm{car}}(t),\quad
+ h(\mathbf q_v(t))\le z\le
+ h(\mathbf q_v(t))+H_v^{\mathrm{car}}
+ \right\}.
+ \label{s0407:vehicle_solid}
+\end{equation}
+这是平面底盘运动加DEM高度参考的几何表达。它没有依据车轮接地点重建俯仰、侧倾和悬架状态，也没有计算坡道牵引力、轮胎侧滑或侧翻条件；将高度基点随地形提升，并不等于已经建立坡道车辆动力学。
+
+设$\mathcal P$为停车候选索引集合。候选$j\in\mathcal P$具有水平中心$\mathbf p_j^{\mathrm{park}}\in\mathbb R^2$、所属路口$n(j)\in\mathcal N$和候选位置半径$r_j^{\mathrm{park}}>0$，长度单位为$\mathrm m$。设$\mathcal A_j^{\mathrm{adj}}\subseteq\mathcal A$为该候选关联的邻接道路弧，定义其可用邻接走廊
+\begin{equation}
+ \mathcal R_j^{\mathrm{adj}}
+ =\mathcal R_{n(j)}^{\mathrm{junc}}
+   \cup\bigcup_{a\in\mathcal A_j^{\mathrm{adj}}}
+              \mathcal R_a^{\mathrm{road}}.
+ \label{s0407:parking_adjacent_corridor}
+\end{equation}
+停车是否可行依赖车辆尺寸及停放航向，因此将候选位置集合显式写成
+\begin{equation}
+ \mathcal P_{vj}(\theta)
+ =\left\{\mathbf q\in D^{\mathrm{dem}}:
+ \begin{array}{l}
+ \|\mathbf q-\mathbf p_j^{\mathrm{park}}\|
+       \le r_j^{\mathrm{park}},\\
+ \{\mathbf q+R_2(\theta)\mathbf r:
+      \mathbf r\in Q_v^{\mathrm{car}}\}
+      \subseteq\mathcal R_j^{\mathrm{adj}}
+ \end{array}\right\},
+ \quad v\in\mathcal V,\ j\in\mathcal P.
+ \label{s0407:parking_position_set}
+\end{equation}
+这里$\theta\in\mathbb R$为给定航向角。该式展开了停车区域的完整车身条件：参考点必须位于候选圆盘内，整车还必须被邻接走廊容纳。候选圆盘与道路相交，仅说明存在邻近关系，不能保证某一车辆能够停入，更不能保证能够按规定转弯进入。
+
+\subsection{道路核心、路口与停车模式的连续衔接}
+
+时间采用共同班次时钟$t\in[0,T]$，单位为$\mathrm s$。为防止节点、道路弧和停车候选的编号重合，车辆模式取带类型的离散状态
+\begin{equation}
+ \mu_v(t)\in
+ \{(\mathrm{road},a):a\in\mathcal A_v^{\mathrm{src}}\}
+ \cup\{(\mathrm{junc},n):n\in\mathcal N\}
+ \cup\{(\mathrm{park},j):j\in\mathcal P\}.
+ \label{s0407:mode_domain}
+\end{equation}
+模式函数分段常值，切换次数有限；车辆位置、航向、速度和前轮等效转角贯穿全部模式连续。连接区归入路口运动的几何范围，不另设允许跳过道路核心的运动模式。
+
+对当前直段弧$a$，定义从尾端指向头端的单位方向
+\begin{equation}
+ \widehat{\mathbf d}_a
+ =\frac{\mathbf x_{\operatorname{head}(a)}
+             -\mathbf x_{\operatorname{tail}(a)}}{L_a},
+ \qquad
+ L_a=\|\mathbf x_{\operatorname{head}(a)}
+             -\mathbf x_{\operatorname{tail}(a)}\|>0.
+ \label{s0407:arc_direction}
+\end{equation}
+$\widehat{\mathbf d}_a$无量纲。车辆处于该弧核心模式时，其沿弧进度为
+\begin{equation}
+ \zeta_{va}(t)
+ =\widehat{\mathbf d}_a^{\mathsf T}
+       (\mathbf q_v(t)-\mathbf x_{\operatorname{tail}(a)})
+       -\ell_a,
+ \qquad \mu_v(t)=(\mathrm{road},a).
+ \label{s0407:core_progress}
+\end{equation}
+进度以$\mathrm m$计，在一次核心访问期间满足
+\begin{subequations}
+\label{s0407:road_mode_constraints}
+\begin{align}
+ \mathcal F_v^{\mathrm{car}}(t)
+ &\subseteq\mathcal R_a^{\mathrm{road}},
+ \label{s0407:road_body_containment}\\
+ 0\le\zeta_{va}(t)&\le L_a^{\mathrm{core}},
+ \qquad \dot\zeta_{va}(t)\ge0,
+ \label{s0407:monotone_progress}\\
+ \widehat{\mathbf d}_a^{\mathsf T}
+ \begin{pmatrix}\cos\theta_v(t)\\\sin\theta_v(t)\end{pmatrix}
+ &\ge0.
+ \label{s0407:directed_heading}
+\end{align}
+\end{subequations}
+这些条件对所有$v\in\mathcal V$及其道路核心模式时刻成立，导数约束在各光滑段内成立。完整车身包含于整条弧走廊，而核心范围通过参考点进度限定；不要求车身在进入门户的瞬间全部越过门户截面。朝向条件排除车头朝向弧的反方向，进度条件排除沿该弧后退。
+
+对直段定义两个参考点门户
+\begin{align}
+ \Gamma_a^{\mathrm{tail}}
+ &=\{\mathbf q\in\mathcal R_a^{\mathrm{road}}:
+ \widehat{\mathbf d}_a^{\mathsf T}
+ (\mathbf q-\mathbf x_{\operatorname{tail}(a)})=\ell_a\},
+ \label{s0407:tail_portal}\\
+ \Gamma_a^{\mathrm{head}}
+ &=\{\mathbf q\in\mathcal R_a^{\mathrm{road}}:
+ \widehat{\mathbf d}_a^{\mathsf T}
+ (\mathbf q-\mathbf x_{\operatorname{tail}(a)})=L_a-\ell_a\}.
+ \label{s0407:head_portal}
+\end{align}
+尾端门户对应$\zeta_{va}=0$，头端门户对应$\zeta_{va}=L_a^{\mathrm{core}}$。若一次完整核心访问的进入、离开时刻分别为$t_{va,r}^{\mathrm{in}}$和$t_{va,r}^{\mathrm{out}}$，其中$r$为该车辆访问该弧的事件序号，则
+\begin{equation}
+ \zeta_{va}(t_{va,r}^{\mathrm{in}})=0,\qquad
+ \zeta_{va}(t_{va,r}^{\mathrm{out}})=L_a^{\mathrm{core}}.
+ \label{s0407:visit_portal_conditions}
+\end{equation}
+同一弧可以被多次访问，每次访问独立记录其事件次序和进度，不能将一次访问的中间位置直接接到另一次访问的出口。若规划起点已位于道路核心内，起始进度由给定初态确定；位于规划终点的截断访问同样由终态约束处理，不能要求在规划区间外补造一次门户进入或离开。
+
+路口模式和停车模式分别要求
+\begin{align}
+ \mu_v(t)=(\mathrm{junc},n)
+ &\ \Longrightarrow\ 
+ \mathcal F_v^{\mathrm{car}}(t)
+       \subseteq\mathcal R_n^{\mathrm{junc}},
+ \label{s0407:junction_body_containment}\\
+ \mu_v(t)=(\mathrm{park},j)
+ &\ \Longrightarrow\ 
+ \mathbf q_v(t)\in\mathcal P_{vj}(\theta_v(t)),\quad V_v(t)=0.
+ \label{s0407:parking_mode_constraints}
+\end{align}
+其中$V_v(t)$为车辆前向速度，单位为$\mathrm{m\,s^{-1}}$。用二元变量$\eta_{vj}(t)$表示停车候选占用，有
+\begin{equation}
+ \eta_{vj}(t)=\mathbb I\{\mu_v(t)=(\mathrm{park},j)\},\qquad
+ \sum_{j\in\mathcal P}\eta_{vj}(t)\le1,
+ \quad v\in\mathcal V,\ t\in[0,T].
+ \label{s0407:parking_indicator}
+\end{equation}
+因此，道路上因等待而暂时速度为零，并不自动取得某一停车候选的服务占用身份。
+
+允许的模式切换只有以下三类：
+\begin{equation}
+ \begin{split}
+ (\mathrm{road},a)&\longrightarrow
+       (\mathrm{junc},\operatorname{head}(a)),\\
+ (\mathrm{junc},\operatorname{tail}(a))&\longrightarrow
+       (\mathrm{road},a),\\
+ (\mathrm{park},j)&\longleftrightarrow
+       (\mathrm{junc},n(j)).
+ \end{split}
+ \label{s0407:allowed_switches}
+\end{equation}
+第一类只能在$\Gamma_a^{\mathrm{head}}$发生，第二类只能在$\Gamma_a^{\mathrm{tail}}$发生。第三类要求切换时的停车构型同时满足所属路口的车身包含条件和式\eqref{s0407:parking_mode_constraints}，且切换速度为零。停车不直接连接另一停车候选，也不直接连接一条道路核心。
+
+具体地，在任一切换时刻$t_s$，令连续状态为$\mathbf X_v=(\mathbf q_v^{\mathsf T},\theta_v,V_v,\delta_v)^{\mathsf T}$，其中$\delta_v$为前轮等效转角，则要求
+\begin{equation}
+ \mathbf X_v(t_s^-)=\mathbf X_v(t_s^+).
+ \label{s0407:switch_continuity}
+\end{equation}
+切换构型还须同时满足前后两种模式的闭集合约束。空间重叠本身不能生成新的拓扑连接：即使两个不同节点的路口区域在平面上相交，也不能据此增加路口到路口的直接切换。
+
+设$\mathcal T_n\subseteq\mathcal A_n^-\times\mathcal A_n^+$为按源禁转和通行规则保留的转向关系。车辆由入弧$a$经节点$n$转入出弧$b$时必须满足
+\begin{equation}
+ \operatorname{head}(a)=n=\operatorname{tail}(b),\qquad
+ (a,b)\in\mathcal T_n,
+ \qquad a,b\in\mathcal A_v^{\mathrm{src}}.
+ \label{s0407:turn_permission}
+\end{equation}
+在同一次节点访问中插入停车，不应抹去入弧身份而绕过已有禁转关系。当前源数据没有转向限制记录，参考模型据已有方向、权限及几何可行性限制转弯；缺失禁转标签不能解释为已经确认了现场转向许可。即使某个弧对属于$\mathcal T_n$，仍须存在满足连续运动方程且整车位于路口区域内的转弯轨迹。
+
+\subsection{汽车型近似运动学与操纵边界}
+
+采用汽车型非完整运动学描述车辆前进与转向，其基本形式参照LaValle《Planning Algorithms》第13.1.2节\cite{LaValle2006}。令$L_v^{\mathrm{wb}}>0$为模型轴距，单位为$\mathrm m$；$a_v(t)\in\mathbb R$为纵向加速度控制，单位为$\mathrm{m\,s^{-2}}$；$\nu_v(t)\in\mathbb R$为转角变化率控制，单位为$\mathrm{rad\,s^{-1}}$。连续状态满足
+\begin{subequations}
+\label{s0407:vehicle_kinematics}
+\begin{align}
+ \dot q_{vx}(t)&=V_v(t)\cos\theta_v(t),
+ \label{s0407:vehicle_x_rate}\\
+ \dot q_{vy}(t)&=V_v(t)\sin\theta_v(t),
+ \label{s0407:vehicle_y_rate}\\
+ \dot\theta_v(t)&=
+      \frac{V_v(t)\tan\delta_v(t)}{L_v^{\mathrm{wb}}},
+ \label{s0407:vehicle_heading_rate}\\
+ \dot V_v(t)&=a_v(t),
+ \label{s0407:vehicle_speed_rate}\\
+ \dot\delta_v(t)&=\nu_v(t).
+ \label{s0407:vehicle_steering_rate}
+\end{align}
+\end{subequations}
+这些方程对所有车辆在各连续运动段内成立，状态在段间保持连续，控制可分段变化。航向角和转角均以$\mathrm{rad}$计；航向采用连续展开形式，跨越角度表示的周期边界不构成车身转向跳跃。
+
+理想自行车模型通常将平面位置取在后轴参考点。这里的$\mathbf q_v$同时用于车体矩形中心和上述运动方程，应准确理解为规划参考点及所采用的近似运动模型。理想后轴参考点到实车几何中心的安装偏移尚未校准，因而不能把这些方程宣称为已标定到实际几何中心的全车轮精确运动学。本节保持所采用的方程，不另行加入未经标定的参考点变换。
+
+由前两式消去速度可得
+\begin{equation}
+ -\sin\theta_v(t)\dot q_{vx}(t)
+ +\cos\theta_v(t)\dot q_{vy}(t)=0.
+ \label{s0407:no_lateral_translation}
+\end{equation}
+它表示规划参考点没有独立的横向平移自由度。车辆不能在保持车身航向不变的情况下直接横移到邻近停车点；需要通过前进和转向形成满足道路几何的轨迹。
+
+设$\overline V^{\mathrm{op}}>0$为运营速度上限，$V_a^{\mathrm{src}}>0$为弧$a$采用的源限速参数，单位均为$\mathrm{m\,s^{-1}}$。源速度必须先完成单位转换，其来源或缺失值处理在参数章说明。道路、路口和停车模式的速度上界定义为
+\begin{equation}
+ \begin{split}
+ \overline V_a&=\min\{\overline V^{\mathrm{op}},V_a^{\mathrm{src}}\},\\
+ \overline V_n&=\min_{a\in\mathcal A_n^-\cup\mathcal A_n^+}
+                      \overline V_a,\\
+ \overline V(\mu)&=
+ \begin{cases}
+ \overline V_a,&\mu=(\mathrm{road},a),\\
+ \overline V_n,&\mu=(\mathrm{junc},n),\\
+ 0,&\mu=(\mathrm{park},j).
+ \end{cases}
+ \end{split}
+ \label{s0407:mode_speed_limit}
+\end{equation}
+路口上界在具有邻接弧的节点上定义，采用相邻道路上界的最小值。孤立节点不能借用空集合上的最小值成为车辆通行路口。
+
+令$\overline a_v>0$为纵向加速度幅值上界，$\overline\delta_v\in(0,\pi/2)$为转角幅值上界，$\overline\nu_v>0$为转角变化率上界，$\overline a_v^{\mathrm{lat}}>0$为参考横向加速度上界。其单位依次为$\mathrm{m\,s^{-2}}$、$\mathrm{rad}$、$\mathrm{rad\,s^{-1}}$和$\mathrm{m\,s^{-2}}$。车辆还须满足
+\begin{subequations}
+\label{s0407:vehicle_control_bounds}
+\begin{align}
+ 0\le V_v(t)&\le\overline V(\mu_v(t)),
+ \label{s0407:speed_bound}\\
+ |a_v(t)|&\le\overline a_v,
+ \label{s0407:acceleration_bound}\\
+ |\delta_v(t)|&\le\overline\delta_v,
+ \label{s0407:steering_bound}\\
+ |\nu_v(t)|&\le\overline\nu_v,
+ \label{s0407:steering_rate_bound}\\
+ \frac{V_v(t)^2|\tan\delta_v(t)|}{L_v^{\mathrm{wb}}}
+ &\le\overline a_v^{\mathrm{lat}}.
+ \label{s0407:lateral_acceleration_bound}
+\end{align}
+\end{subequations}
+上述各式对$v\in\mathcal V$及全部相应时刻成立。速度非负意味着本模型不含倒车；加速度幅值限制同时约束加速和制动。进入速度上限更低的模式之前，车辆必须在前一段内完成必要减速，因为模式切换不能重置速度。
+
+当$V_v>0$时，模型曲率为$\kappa_v=\tan\delta_v/L_v^{\mathrm{wb}}$，单位为$\mathrm{m^{-1}}$，横向加速度幅值为$V_v^2|\kappa_v|$。因此，转角约束限定几何转弯能力，横向加速度约束进一步使较急转弯必须以较低速度完成。这里的横向加速度是所采用平面近似模型内的运动学量，并不构成轮胎附着力或实际侧翻安全的证明。
+
+在道路核心模式内，式\eqref{s0407:core_progress}与位置方程给出
+\begin{equation}
+ \dot\zeta_{va}(t)
+ =V_v(t)\widehat{\mathbf d}_a^{\mathsf T}
+       \begin{pmatrix}\cos\theta_v(t)\\\sin\theta_v(t)\end{pmatrix}
+ \ge0.
+ \label{s0407:progress_rate_relation}
+\end{equation}
+该关系说明非负速度、道路朝向及单调进度相互一致。它不强制车辆贴着中心线行驶；允许的横向位置仍由完整足迹包含条件限制。
+
+停车时可以在转角及转角变化率边界内调整前轮，但不能使车身原地旋转。事实上，$V_v(t)=0$时，式\eqref{s0407:vehicle_kinematics}直接给出
+\begin{equation}
+ \dot{\mathbf q}_v(t)=\mathbf0,\qquad
+ \dot\theta_v(t)=0,\qquad
+ \dot\delta_v(t)=\nu_v(t).
+ \label{s0407:stationary_steering}
+\end{equation}
+所以在一个停车时间区间内，位置和车身航向保持不变，前轮等效转角可以连续变化。车辆离开停车状态后，仍须通过前进产生航向变化。路口内同样遵守这组方程，不能在到达节点时直接将航向替换为下一条弧的方向。
+
+\subsection{时间占用、冲突接口与模型边界}
+
+道路运动必须从给定初态沿共同时间轴连续延伸。模式序列中的每次道路访问都对应实际运动区间，其进度由式\eqref{s0407:core_progress}计算，不能只在图上选择若干弧而另行附加与初态无关的闭合流环。源道路记录中的固定行驶秒数可用于初始化，但实际旅行时间须与式\eqref{s0407:vehicle_kinematics}、速度及操纵边界共同相容。
+
+若给定道路封闭输入，可令$\chi_v(\mu,t)\in\{0,1\}$表示车辆$v$在时刻$t$使用模式$\mu$的可用状态，并施加
+\begin{equation}
+ \chi_v(\mu_v(t),t)=1,
+ \qquad v\in\mathcal V,\quad t\in[0,T].
+ \label{s0407:time_dependent_access}
+\end{equation}
+$\chi_v$是输入而非决策变量；封闭有效期间对应模式不可使用。未提供外部交通轨迹时，本模型不模拟社会车辆，也不能由内部车辆之间无冲突推断道路不存在外部交通干扰。
+
+多车共用道路需要同一时刻的实体冲突检查。车辆中心处于不同位置，并不足以排除车身碰撞；两车使用同一道路弧，也不意味着它们必然冲突。本模型以$\mathcal O_v^{\mathrm{car}}(t)$作为车辆实体，与其他车辆、塔柱和导线在同一时刻进行几何检查。车辆之间的参考净距为$0.5\,\mathrm m$，每个停车候选的参考容量为一辆车；这些是本模型的仿真设定，不是道路主管方标准。具体的实体距离、停车容量以及起落保护区互斥约束在第\ref{sec:05_06}节统一给出。
+
+因此，道路资源不设置成整条弧任一时刻只能有一辆车。只要同时刻实体距离及其他条件允许，沿同一弧分离行驶可以是可行的；反之，即使两车的弧编号不同，它们也可能在路口或相交走廊内发生冲突。车辆对撞、追尾和路口交叉占用必须由位置、航向、车身尺寸和时间共同判断。
+
+车辆可在其无人机执行航次时行驶，并在另一停车候选接回飞机；道路运动本身不要求车辆始终留在起飞位置。是否能够按时到达、是否需要等待，以及起落服务期间是否静止，由第\ref{sec:05_04}节的停靠与会合条件进一步限制。停车候选的占用身份、车辆实际运动和飞机的服务事件因此必须使用同一时钟。
+
+本节只要求每条模式轨迹具有有限次切换，不预设任意固定的停车次数上限，也不禁止同一道路或同一候选的重复访问。有限数值模型为了建立变量而选用的事件槽数量，属于数值转录范围；若该数量限制了可表示的访问次数，须作为数值模型边界单独说明，不能将其解释为车辆物理规律。道路尺寸、运营速度和操纵参数的具体取值在第6章代入；本节的几何及运动方程本身不提供任何区域求解成功或实际道路可通行的结果证明。
+
+\subsection{连续转弯的参数代入与完整算例}
+
+取三个平面节点$(0,0)$、$(40,0)$和$(40,40)$，坐标单位为$\mathrm m$，有向弧依次连接三个节点。初态取$\mathbf q(0)=(0,0)^{\mathsf T}$、$\theta(0)=0$、$V(0)=0$、$\delta(0)=0$；终态取$\mathbf q(T)=(40,40)^{\mathsf T}$、$\theta(T)=\pi/2$、$V(T)=0$、$\delta(T)=0$。本例采用表\ref{s0407:numeric_parameters}的参考车辆参数，验证运动学及操纵限制。该局部几何是用于控制变量的构造输入，未替换Rommerskirchen的真实道路。
+
+\begin{table}[htbp]
+\centering\small
+\caption{局部车辆算例的参考参数}
+\label{s0407:numeric_parameters}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+参数 & 数值 & 单位\\
+\midrule
+轴距 & 2.5 & m\\
+车长、车宽 & 4.0、1.8 & m\\
+道路走廊宽度 & 6.0 & m\\
+运营速度上限 & 2.7778 & $\mathrm{m\,s^{-1}}$\\
+纵向加速度幅值 & 1.0 & $\mathrm{m\,s^{-2}}$\\
+横向加速度上限 & 1.5 & $\mathrm{m\,s^{-2}}$\\
+前轮转角幅值 & 35.0 & $^{\circ}$\\
+前轮转角变化率 & 20.0 & $^{\circ}\mathrm{s^{-1}}$\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+表中值是规划参考设定，不是对特定无人车的标定值。车体参考点约定沿用前述近似模型；后轴到几何中心的实际安装变换需要独立标定\cite{LaValle2006}。本例两条道路均采用运营速度上限；另设5\,km/h的反例以检验道路限速进入轨迹的方式。
+
+用一段圆弧替代直角顶点，半径和恒定转角为
+\begin{equation}
+ R=\frac{2.5}{\tan35^{\circ}}+0.01=3.5803700\,\mathrm m,
+ \qquad \delta_\star=\arctan(2.5/R)=0.60955175\,\mathrm{rad}.
+\end{equation}
+其中0.01\,m为圆弧构造的数值裕量，非车辆名牌参数。两个切点为$\mathbf p_A=(36.4196300,0)^{\mathsf T}\,\mathrm m$、$\mathbf p_B=(40,3.5803700)^{\mathsf T}\,\mathrm m$，圆心为$\mathbf c=(36.4196300,3.5803700)^{\mathsf T}\,\mathrm m$。轨迹由直行、静止调轮、圆弧、静止回轮、直行五段组成；车身在静止调轮期间不转动。
+
+令第$j$段时长为$T_j>0$，局部归一化时间为$\tau=(t-\sum_{h<j}T_h)/T_j\in[0,1]$，采用
+\begin{equation}
+ H(\tau)=35\tau^4-84\tau^5+70\tau^6-20\tau^7,
+ \quad H'(\tau)=140\tau^3(1-\tau)^3.
+ \label{s0407:septic_progress}
+\end{equation}
+其端点满足$H(0)=0$、$H(1)=1$且一至三阶导数为0。因此，五段的位置、速度、航向和转角可以连续衔接。各段位置完全写为
+\begin{equation}
+ \mathbf q_j(\tau)=
+ \begin{cases}
+ (36.4196300H(\tau),0)^{\mathsf T},&j=1,\\
+ (36.4196300,0)^{\mathsf T},&j=2,\\
+ \mathbf c+3.5803700(\cos\psi(\tau),\sin\psi(\tau))^{\mathsf T},&j=3,\\
+ (40,3.5803700)^{\mathsf T},&j=4,\\
+ (40,3.5803700+36.4196300H(\tau))^{\mathsf T},&j=5,
+ \end{cases}
+ \label{s0407:full_numeric_path}
+\end{equation}
+式中长度按$\mathrm m$代入，$\psi(\tau)=-\pi/2+(\pi/2)H(\tau)$。航向与前轮转角分别为
+\begin{equation}
+ \theta_j(\tau)=
+ \begin{cases}
+ 0,&j=1,2,\\
+ (\pi/2)H(\tau),&j=3,\\
+ \pi/2,&j=4,5,
+ \end{cases}
+ \qquad
+ \delta_j(\tau)=
+ \begin{cases}
+ 0,&j=1,5,\\
+ 0.60955175H(\tau),&j=2,\\
+ 0.60955175,&j=3,\\
+ 0.60955175[1-H(\tau)],&j=4.
+ \end{cases}
+\end{equation}
+两段直线各长36.4196300\,m，圆弧长5.6240321\,m，总长78.4632920\,m。行驶段速度与加速度由$V_j=l_jH'/T_j$、$a_j=l_jH''/T_j^2$求得，调轮段两者均为0。这样，路线构造给定后，仍可优化每段持续时间。
+
+由多项式导数的驻点可得
+\begin{equation}
+ \max H'=\frac{35}{16},\qquad
+ \max|H''|=\frac{84\sqrt5}{25}.
+\end{equation}
+将速度、纵向加速度、横向加速度及调轮速率约束全部代入，可得五变量时长模型
+\begin{subequations}
+\begin{align}
+ \min\quad &T_1+T_2+T_3+T_4+T_5,\\
+ \text{满足}\quad
+ &T_1,T_5\ge 28.6804586,\\
+ &T_1^2,T_5^2\ge 273.6275417,\\
+ &T_2,T_4\ge 3.8198937,\\
+ &T_3\ge 4.4289253,\\
+ &T_3^2\ge 42.2544125,\\
+ &T_3^2\ge 28.1820467,\\
+ &T_1,T_2,T_3,T_4,T_5\ge0.01.
+\end{align}
+\label{s0407:numeric_timing_model}
+\end{subequations}
+正文系数及表内结果按显示位数舍入，求解使用电子数据的完整精度。所有$T_j$以秒代入，平方项右端以$\mathrm s^2$计；0.01\,s为该数值构造允许的最小时长。前三类行驶约束分别来自速度和纵向加速度，圆弧另受横向加速度约束。已固定的几何和转角满足曲率上界；五段结构固定，目标是该轨迹族内的最短执行时间，不是道路网络上的全局最短时间。
+
+\subsection{时长求解、限速反例与走廊宽度实验}
+
+SCIP对式\eqref{s0407:numeric_timing_model}求得最优状态，未设置10秒停止限制。每段的解析下界可独立取上述约束的最大值，与求解器结果比较如表\ref{s0407:timing_result}。总时长为71.5010441\,s，解析值与SCIP目标差为$8.528\times10^{-11}\,\mathrm s$；差值按计算精度报告，不代表实车计时精度。
+\begin{table}[htbp]
+\centering\small
+\caption{固定五段轨迹的最短时长（s）}
+\label{s0407:timing_result}
+\begin{tabular}{@{}rlrr@{}}
+\toprule
+段 & 动作 & 解析下界 & SCIP时长\\
+\midrule
+1 & 直行 & 28.6804586 & 28.6804586\\
+2 & 静止调轮 & 3.8198937 & 3.8198937\\
+3 & 圆弧行驶 & 6.5003394 & 6.5003394\\
+4 & 静止回轮 & 3.8198937 & 3.8198937\\
+5 & 直行 & 28.6804586 & 28.6804586\\
+\midrule
+合计 & & 71.5010441 & 71.5010441\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+随后在实际运动生成函数中构造直线、左右转弯和低限速轨迹，每个运动段取501个归一化时刻，计算运动学导数残差及连接处状态残差。数值微分步长为归一化时间的$10^{-5}$。本组检查中，速度、纵向及横向加速度、转角和调轮速率均不超过输入上限。左右转的最大纵向加速度为0.999996\,$\mathrm{m\,s^{-2}}$，横向加速度为1.000442\,$\mathrm{m\,s^{-2}}$，调轮速率为20\,$^{\circ}\mathrm{s^{-1}}$。这组采样核验用于检查实现；连续多项式的速度和加速度界另由导数极值给出。
+
+\begin{table}[htbp]
+\centering\small
+\caption{运动模块的实际生成结果}
+\label{s0407:motion_results}
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+条件 & 长度（m） & 时间（s） & 峰值速度 & 限速\\
+\midrule
+40m直线 & 40.0000 & 31.5000 & 2.7778 & 2.7778\\
+左转90度 & 78.4633 & 71.5010 & 2.7778 & 2.7778\\
+右转90度 & 78.4633 & 71.5010 & 2.7778 & 2.7778\\
+5km/h直线 & 40.0000 & 63.0000 & 1.3889 & 1.3889\\
+5km/h转弯 & 78.4633 & 131.2195 & 1.3889 & 1.3889\\
+混合限速直线 & 80.0000 & 126.0000 & 1.3889 & 1.3889\\
+OSM低限速段 & 67.0666 & 105.6300 & 1.3889 & 1.3889\\
+\bottomrule
+\end{tabular}
+\par\smallskip{\footnotesize 两个速度列的单位均为$\mathrm{m\,s^{-1}}$。}
+\end{table}
+
+真实道路例取保存OSM道路259946408的节点2654108401至2654108403，原始标签为\texttt{maxspeed=5}，对应5\,km/h\cite{OSMData}。该段长67.0666\,m。若错误地只采用统一10\,km/h运营上限，生成轨迹的峰值为2.7778\,$\mathrm{m\,s^{-1}}$，超过源标签上限1.3889\,$\mathrm{m\,s^{-1}}$；同时其时长被低估为52.8150\,s。将源道路限速与运营上限取最小值后，峰值降至1.3889\,$\mathrm{m\,s^{-1}}$，时长为105.6300\,s。旧结果作为违规反例保留，不参与可行行程统计。若一段合并直线跨越多个限速区，本构造使用所经区段及路口的最小速度上限，因而可能比允许途中变速的最优轨迹更保守。
+
+最后固定车辆及90度转弯几何，仅改变走廊宽度。圆弧生成器以整车足迹及采样间位移裕量检查包含关系，结果见表\ref{s0407:width_sensitivity}。
+\begin{table}[htbp]
+\centering\small
+\caption{固定圆弧构造的走廊宽度敏感性}
+\label{s0407:width_sensitivity}
+\begin{tabular}{@{}rrrrrr@{}}
+\toprule
+宽度（m） & 2 & 3 & 4 & 6 & 8\\
+\midrule
+构造通过（1/0） & 0 & 0 & 1 & 1 & 1\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+2\,m和3\,m宽度不能容纳本例的固定圆弧构造；该结果不排除采用其他允许轨迹时可通行。反例还检验了不能原地掉头、短路口不足以完成该圆弧、错误初始朝向及缺失反向弧。对尚未接入的平行弧和禁转关系，构造器显式拒绝，不合并不同道路身份或忽略规则。本节实验验证运动原语及其时间参数；完整道路模式搜索、车辆会合和多车冲突仍须在联合问题中一起满足。

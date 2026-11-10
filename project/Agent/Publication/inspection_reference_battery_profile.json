@@ -1,0 +1,111 @@
+{
+  "profile_id": "inspection_reference_matched_pair_ecm",
+  "schema_version": 1,
+  "platform_role": "declared generic reference battery pair at TB60 published scale; not calibrated hardware",
+  "topology": "two identical packs represented by an ideal parallel equivalent; research assumption, not manufacturer topology claim",
+  "parameters": {
+    "capacity_Ah": 11.87,
+    "ocv_empty_V": 40.8,
+    "ocv_slope_V": 12.0,
+    "R0_ohm": 0.08,
+    "R1_ohm": 0.04,
+    "C1_F": 2500.0,
+    "resistance_temperature_coefficient_per_K": 0.02,
+    "reference_temperature_C": 25.0,
+    "thermal_capacity_J_per_K": 2700.0,
+    "thermal_conductance_W_per_K": 6.0,
+    "charge_efficiency": 0.9,
+    "charge_current_max_A": 17.8,
+    "discharge_current_max_A": 50.0,
+    "terminal_voltage_max_V": 52.8,
+    "terminal_voltage_min_V": 36.0,
+    "charger_input_max_W": 1000.0,
+    "soc_min": 0.2,
+    "soc_max": 1.0,
+    "charge_temperature_min_C": 5.0,
+    "charge_temperature_max_C": 40.0,
+    "charge_restart_temperature_C": 39.0,
+    "flight_temperature_min_C": -20.0,
+    "flight_temperature_max_C": 50.0
+  },
+  "nominal_nameplate_pair_energy_Wh": 548,
+  "energy_interpretation": "nameplate is metadata; SOC follows Ah, chemical energy integrates declared OCV; never use 548*SOC as stored energy",
+  "sources": [
+    {
+      "id": "DJI_M300_manual",
+      "path": "总结/07_证据与复现索引/综合报告检索/场景设置文献/dji_m300_manual.pdf",
+      "sha256": "d313aefbda4508c7dcc52d41f001a2d3be5de4b0dffd12d396ec05caab3c9a3e",
+      "url": "https://dl.djicdn.com/downloads/matrice-300/20230526UM/M300_RTK_User_Manual_EN_v3.4.pdf",
+      "pages": [
+        30,
+        32,
+        35,
+        97
+      ],
+      "role": "per-pack Ah, voltage ceiling, two charging outputs and temperature boundaries; no RC/thermal fit"
+    },
+    {
+      "id": "Huang2021",
+      "url": "https://doi.org/10.3390/electronics10222753",
+      "role": "power-input RC and electrothermal model structure; source uses two RC/two thermal states; no numerical parameter transfer"
+    },
+    {
+      "id": "PyBaMM_Thevenin",
+      "url": "https://docs.pybamm.org/en/latest/source/api/models/equivalent_circuit/thevenin.html",
+      "role": "ECM/CCCV model family; this implementation is independently written and not PyBaMM performance"
+    }
+  ],
+  "provenance": {
+    "capacity_Ah": "manufacturer_boundary_or_derived_pair_scale",
+    "ocv_empty_V": "declared_reference_assumption",
+    "ocv_slope_V": "declared_reference_assumption",
+    "R0_ohm": "declared_reference_assumption",
+    "R1_ohm": "declared_reference_assumption",
+    "C1_F": "declared_reference_assumption",
+    "resistance_temperature_coefficient_per_K": "declared_reference_assumption",
+    "reference_temperature_C": "declared_reference_assumption",
+    "thermal_capacity_J_per_K": "declared_reference_assumption",
+    "thermal_conductance_W_per_K": "declared_reference_assumption",
+    "charge_efficiency": "declared_reference_assumption",
+    "charge_current_max_A": "manufacturer_boundary_or_derived_pair_scale",
+    "discharge_current_max_A": "declared_reference_assumption",
+    "terminal_voltage_max_V": "manufacturer_boundary_or_derived_pair_scale",
+    "terminal_voltage_min_V": "declared_reference_assumption",
+    "charger_input_max_W": "declared_reference_assumption",
+    "soc_min": "declared_reference_assumption",
+    "soc_max": "declared_reference_assumption",
+    "charge_temperature_min_C": "manufacturer_boundary_or_derived_pair_scale",
+    "charge_temperature_max_C": "manufacturer_boundary_or_derived_pair_scale",
+    "charge_restart_temperature_C": "declared_reference_assumption",
+    "flight_temperature_min_C": "manufacturer_boundary_or_derived_pair_scale",
+    "flight_temperature_max_C": "manufacturer_boundary_or_derived_pair_scale"
+  },
+  "assumptions": [
+    "linear temperature-independent OCV",
+    "zero reversible entropic heat",
+    "unity Coulombic efficiency",
+    "lumped average temperature, not spatially resolved core temperature",
+    "R0/R1 temperature dependence declared, no aging",
+    "continuous controllable charger interface; not verified BS60 API",
+    "thermal-ready hysteresis 39/40 C; passive cooling only"
+  ],
+  "sensitivity": {
+    "R0_multiplier": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "thermal_conductance_multiplier": [
+      0.5,
+      1.0,
+      2.0
+    ],
+    "ambient_C": [
+      5.0,
+      25.0,
+      35.0
+    ]
+  },
+  "measured_M300_calibration": false,
+  "public_M100_transfer": false
+}

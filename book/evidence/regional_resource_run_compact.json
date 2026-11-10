@@ -1,0 +1,140 @@
+{
+  "observed_at": "2026-11-10T03:35:48.035769+00:00",
+  "run_id": "c9434b4984e09850_2852",
+  "status": "resource_protection",
+  "run_record_sha256": "feb28554051602463d77443c77d3a601d1fdf697bd8fce50ab0d8005b5baab72",
+  "elapsed_s": 317.9888937000651,
+  "numerical_grid": {
+    "road_phases_per_carrier": [
+      631,
+      627
+    ],
+    "minimum_all_stop_topology_phases": [
+      631,
+      627
+    ],
+    "charging_events_per_carrier": 156,
+    "trajectory_degree": 7,
+    "transfer_pieces": 3,
+    "minimum_positive_piece_s": 0.001
+  },
+  "solver_configuration": {
+    "nlp/disable": true,
+    "numerical_library_threads": 1,
+    "staged_memory_admission": false,
+    "verified_repair_warm_start": false,
+    "shared_recovery": true,
+    "require_all_towers_diagnostic": false,
+    "lp/scaling": 2,
+    "capture_first_lp": false,
+    "stable_lp": true,
+    "restore_dem_grid": true,
+    "compact_memory": true,
+    "primal_heuristics_disabled": false,
+    "compact_parameters": {
+      "memory/arraygrowfac": 1.05,
+      "memory/savefac": 0.5,
+      "misc/usevartable": false,
+      "misc/useconstable": false
+    },
+    "source": "https://scipopt.org/doc/html/PARAMETERS.php",
+    "reason": "Explicit memory diagnostic; changes internal relaxation algorithm, not mathematical feasible decisions",
+    "stable_lp_parameters": {
+      "lp/minmarkowitz": 0.999,
+      "lp/fastmip": 0,
+      "lp/presolving": false,
+      "lp/refactorinterval": 40
+    }
+  },
+  "build": {
+    "wall_s": 83.832447300083,
+    "tasks": 2133,
+    "towers": 237,
+    "optional_flights": 156,
+    "variables": 698280,
+    "explicit_rows": 205605,
+    "indexed_relations": 42290,
+    "physical_integrals_materialized": 0,
+    "physical_families_guarded_by_candidate_handler": true,
+    "full_scalar_incidence_available": false,
+    "rss_GiB": 1.6012535095214844,
+    "available_RAM_GiB": 5.765663146972656
+  },
+  "derived_terrain": {
+    "restore_grid": true,
+    "samples": 1953,
+    "elevations_changed": 0,
+    "source_samples_removed": 0,
+    "old_surface_equivalence_claim": false,
+    "source": "总结\\03_实验数据\\真实地理巡检场景共享\\sources\\regional_dem\\rommerskirchen\\terrain.json",
+    "source_sha256": "f554800062a73a7a522f25f1b8609389a18e19f77d46a131212e2ccc0e2901f8",
+    "grid_query_count": 1716,
+    "restored_grid_samples": 1716,
+    "unchanged_non_grid_samples": 237,
+    "maximum_coordinate_restoration_m": 6.492359682792416e-05,
+    "method": "exact acquisition-query roundtrip match, no elevation smoothing or sample deletion",
+    "retained_source_triangle_connectivity": true,
+    "exactly_degenerate_grid_triangles_removed": 144,
+    "old_triangle_indices": {
+      "count": 3742,
+      "first": [
+        25,
+        35
+      ]
+    },
+    "projected_samples_sha256": "e942fe37bbdd79d6eeb11b306ba3e04d0829a5235851c5ebcf764c8d07f5521a",
+    "triangles": 3742,
+    "triangulation_sha256": "cb355b7659c712465959233e7a1abcff284876d9310a3aee07dcf20c8e430d77"
+  },
+  "result": {
+    "status": "resource_protection",
+    "error": {
+      "type": "MemoryError",
+      "message": "{'observed_at': '2026-11-10T02:55:33.755640+00:00', 'available_RAM_GiB': 2.5433425903320312, 'free_disks_GiB': {'C': 15.038867950439453, 'D': 157.85332489013672}, 'memory': {'physical_available_GiB': 2.5433425903320312, 'process_private_GiB': 4.038352966308594, 'commit_limit_GiB': 59.106689453125, 'commit_available_GiB': 1.6756629943847656}, 'reason': 'live RAM/commit/storage and native peak protection; no elapsed-time optimization cutoff'}"
+    },
+    "resource": {
+      "observed_at": "2026-11-10T02:55:33.757639+00:00",
+      "available_RAM_GiB": 2.5433273315429688,
+      "free_disks_GiB": {
+        "C": 15.038867950439453,
+        "D": 157.85332489013672
+      },
+      "memory": {
+        "physical_available_GiB": 2.5433273315429688,
+        "process_private_GiB": 4.038352966308594,
+        "commit_limit_GiB": 59.106689453125,
+        "commit_available_GiB": 1.6756629943847656
+      },
+      "reason": "live RAM/commit/storage and native peak protection; no elapsed-time optimization cutoff"
+    },
+    "complete": false,
+    "incumbent": {
+      "observed_at": "2026-11-10T02:55:33.757639+00:00",
+      "native_algebra_passed": null,
+      "acceptance": {
+        "passed": null,
+        "reason": "resource reserve; vector retained for later independent revalidation"
+      },
+      "full_candidate_feasible": null,
+      "completed_towers": 4,
+      "selected_tasks": 36,
+      "active_flights": 4,
+      "uncompleted_towers": 233.0,
+      "makespan_s": 6555.305426080421,
+      "energy_Wh": 1129.3229644471123,
+      "original_continuous_optimality_proved": false,
+      "coverage_complete": false,
+      "regional_task_complete": false,
+      "witness": "incumbent_c9434b4984e09850_2852.json.gz",
+      "witness_sha256": "cc4e8fde5f691d4fa09c247251e8cad128c9cea3a541ba9f4a9e050c46875133",
+      "witness_revalidation_required": true
+    }
+  },
+  "files_bound": 49,
+  "files_unresolved": [],
+  "witness": {
+    "path": "reproduction/historical_sources/incumbent_c9434b4984e09850_2852.json.gz",
+    "sha256": "cc4e8fde5f691d4fa09c247251e8cad128c9cea3a541ba9f4a9e050c46875133"
+  },
+  "scope": "Resource-protected stopped run. Retained four-tower vector is NOT accepted by this run; exact revalidation is pending."
+}

@@ -1,0 +1,178 @@
+Agent/Publication/engineering_regional_acceptance.py SHA256 c232bb99b86a4c40301b93fb6cfbc358c526abc5b9e5dcd35da82ce1026bd42c
+91:             self._geometric(out,dict(task=seg.task,index=seg.index),requests,unresolved,'static')
+92:             if target:
+93:                 exposure_curve=restrict(c,1./T,1.001/T)
+94:                 for q,point in enumerate(target['target']['surface_samples_utm_m']):
+95:                     out=self.geometry.sight_line(exposure_curve,np.asarray(point))
+96:                     self._geometric(out,dict(task=seg.task,index=seg.index,surface_sample=q,exposure=True),requests,unresolved,'static')
+97:             active.append(dict(segment=seg,c=c,ac=ac,T=T,start=start,end=start+T,flight=flight,carrier=j.path.flights[flight].carrier,own_contact=own,target=target))
+98:         if requests or unresolved:return dict(passed=False,requests=requests,unresolved=unresolved)
+99:         for carrier,phases in enumerate(j.vehicles.phases):
+100:             for phase in phases:
+101:                 if phase.index%64==0:resource_checkpoint()
+102:                 cp=array(phase.controls);T=value(phase.duration);start=value(phase.start);category=int(round(value(phase.mode.value)))
+103:                 base=dict(carrier=carrier,phase_index=phase.index,category=category)
+104:                 mode=j.vehicles.domain.modes[category]
+105:                 geometric_key=(cp.tobytes(),T,category)
+106:                 if geometric_key not in vehicle_cache:
+107:                     vehicle_cache[geometric_key]=[
+108:                         ('vehicle_physics',self.geometry.vehicle_dynamics(cp,T,mode)),
+109:                         ('footprint',self.geometry.footprint(cp,category)),
+110:                         ('vehicle_static',self.geometry.vehicle_static(cp))]
+111:                 for family,out in vehicle_cache[geometric_key]:
+112:                     self._geometric(out,base,requests,unresolved,family)
+113:                 vehicles.append(dict(phase=phase,c=cp,T=T,start=start,end=start+T,category=category,carrier=carrier,
+114:                                      collision_key=(cp.tobytes(),start,T)))
+115:         if requests or unresolved:return dict(passed=False,requests=requests,unresolved=unresolved)
+116:         active.sort(key=lambda x:x['start'])
+117:         for ai,a in enumerate(active):
+118:             for b in active[ai+1:]:
+119:                 if b['start']>a['end']+1e-6:break
+120:                 if a['flight']==b['flight']:continue
+121:                 out=self.geometry.aircraft_pair(a['c'],a['start'],a['T'],b['c'],b['start'],b['T'])
+122:                 self._geometric(out,dict(task_a=a['segment'].task,index_a=a['segment'].index,task_b=b['segment'].task,index_b=b['segment'].index),requests,unresolved,'uav_pair')
+123:             for b in vehicles:
+124:                 if b['start']>a['end']+1e-6 or a['start']>b['end']+1e-6:continue
+125:                 out=self.geometry.aircraft_vehicle(a['c'],a['start'],a['T'],b['c'],b['start'],b['T'],a['own_contact'] and a['carrier']==b['carrier'])
+126:                 base=dict(task=a['segment'].task,index=a['segment'].index,carrier=b['carrier'],phase_index=b['phase'].index)
+127:                 self._geometric(out,base,requests,unresolved,'aircraft_vehicle')
+128:                 if a['target']:
+129:                     for q,point in enumerate(a['target']['target']['surface_samples_utm_m']):
+130:                         out=self.geometry.vehicle_sight_line(restrict(a['c'],1/a['T'],1.001/a['T']),a['start']+1,.001,b['c'],b['start'],b['T'],np.asarray(point))
+131:                         self._geometric(out,dict(base,surface_sample=q),requests,unresolved,'vehicle_los')
+132:         for ai,a in enumerate(vehicles):
+133:             for b in vehicles[ai+1:]:
+134:                 if a['carrier']==b['carrier'] or b['start']>a['end']+1e-6 or a['start']>b['end']+1e-6:continue
+135:                 base=dict(carrier_a=a['carrier'],index_a=a['phase'].index,carrier_b=b['carrier'],index_b=b['phase'].index)
+
+Agent/Publication/engineering_regional_enclosure.py SHA256 822a7ac089a5a3487460f101fcb9b72ff4982a7d18847160bb027d9e642bf193
+138:         except (ValueError,ArithmeticError):return low,high,'range'
+139: 
+140:     def optics(self,c,T,ac,task,body,exposure=True):
+141:         cfg=self.cfg['camera'];angles=body['angles'];rates=body['rates'];gp,gy=angles[1],angles[2]
+142:         gpd,gyd=rates[1],rates[2]
+143:         opt=vector([gp.cos()*gy.cos(),gp.cos()*gy.sin(),gp.sin()]);right=vector([gy.sin(),-gy.cos(),0]);down=cross(opt,right)
+144:         optd=vector([-gp.sin()*gpd*gy.cos()-gp.cos()*gy.sin()*gyd,
+145:                      -gp.sin()*gpd*gy.sin()+gp.cos()*gy.cos()*gyd,gp.cos()*gpd])
+146:         rightd=vector([gy.cos()*gyd,gy.sin()*gyd,0]);downd=cross(optd,right)+cross(opt,rightd)
+147:         cols=body['body_columns'];dcols=body['body_column_rates']
+148:         rotate=lambda x:cols[0]*x[0]+cols[1]*x[1]+cols[2]*x[2]
+149:         rc=[rotate(x) for x in [right,down,opt]]
+150:         rd=[dcols[0]*x[0]+dcols[1]*x[1]+dcols[2]*x[2]+rotate(xd) for x,xd in zip([right,down,opt],[rightd,downd,optd])]
+151:         target=task['target'];center=np.array([target[k] for k in ['easting_m','northing_m','altitude_m']])
+152:         nominal=np.array([task[k] for k in ['easting_m','northing_m','altitude_m']])
+153:         delta=body['position']-center;distance=norm(delta);incidence=dot(I(target['normal_world']),delta)/distance
+154:         checks=dict(focus=float(distance.lo)>=8-1e-7 and float(distance.hi)<=25+1e-7,
+155:             incidence=float(incidence.lo)>=math.cos(math.radians(30))-1e-7)
+156:         radius=task['observation_requirement'].get('viewpoint_ball_radius_m')
+157:         if radius is not None:
+158:             checks['viewpoint']=float(np.linalg.norm(np.asarray(c)-nominal,axis=1).max())<=radius+1e-7
+159:         # The viewing region (distance/incidence) persists over service;
+160:         # image formation/blur is required only during the declared exposure.
+161:         if not exposure:
+162:             for point in target['surface_samples_utm_m']:
+163:                 delta=body['position']-I(point);distance=norm(delta)
+164:                 incidence=dot(I(target['normal_world']),delta)/distance
+165:                 checks['focus'] &= float(distance.lo)>=8-1e-7 and float(distance.hi)<=25+1e-7
+166:                 checks['incidence'] &= float(incidence.lo)>=math.cos(math.radians(30))-1e-7
+167:             return all(checks.values()),dict(checks,exposure=False)
+168:         fx0=math.hypot(5184,3888)/(2*math.tan(math.radians(66.6/2)));f=fx0*angles[3];fd=fx0*rates[3]
+169:         blur=0.;border=math.inf;gsd=math.inf
+170:         for point in target['surface_samples_utm_m']:
+171:             rel=I(point)-body['position'];vel=-body['velocity'];qc=[dot(col,rel) for col in rc]
+172:             sample_distance=norm(rel);sample_incidence=dot(I(target['normal_world']),-rel)/sample_distance
+173:             checks['focus'] &= float(sample_distance.lo)>=8-1e-7 and float(sample_distance.hi)<=25+1e-7
+174:             checks['incidence'] &= float(sample_incidence.lo)>=math.cos(math.radians(30))-1e-7
+175:             if qc[2].lo<=0:return False,dict(checks,camera_depth=False)
+176:             qcd=[dot(cold,rel)+dot(col,vel) for col,cold in zip(rc,rd)]
+177:             pixel=[f*qc[q]/qc[2] for q in [0,1]]
+178:             border=min(border,float(pixel[0].lo+2560),float(2560-pixel[0].hi),float(pixel[1].lo+1912),float(1912-pixel[1].hi))
+179:             pixel_rates=[]
+180:             for q in [0,1]:
+181:                 rate=fd*qc[q]/qc[2]+f*(qcd[q]*qc[2]-qc[q]*qcd[2])/qc[2].square()
+182:                 pixel_rates.append(rate)
+183:             blur=max(blur,float(norm(vector(pixel_rates)).hi)*.001)
+184:             J=[]
+185:             for tangent in target['tangent_basis']:
+186:                 z=[dot(col,I(tangent)) for col in rc]
+187:                 J.append([f*(z[q]*qc[2]-qc[q]*z[2])/qc[2].square() for q in [0,1]])
+188:             aa=(J[0][0].square()+J[0][1].square())*.005**2-1
+189:             bb=(J[1][0].square()+J[1][1].square())*.005**2-1
+190:             ab=(J[0][0]*J[1][0]+J[0][1]*J[1][1])*.005**2
+191:             gsd=min(gsd,float(aa.lo),float(bb.lo),float((aa*bb-ab.square()).lo))
+192:         checks.update(blur=blur<=1+1e-7,border=border>=-1e-7,gsd_psd=gsd>=-1e-7)
+193:         return all(checks.values()),dict(checks,blur_upper_px=blur,border_margin_px=border,gsd_psd_lower=gsd)
+194: 
+195:     def integrate_and_check(self,c,T,ac,start,task=None,energy_tolerance_Wh=.01,max_depth=20):
+196:         # Differentiate once, in local coordinates, then subdivide the
+197:         # derivative polynomials. Differentiating tiny world-coordinate hulls
+198:         # amplifies UTM roundoff by duration^-3 and invents jerk violations.
+199:         origin=np.asarray(c)[0].copy();cp=np.asarray(c)-origin;ap=np.asarray(ac)
+200:         ds=[];work=cp
+
+Agent/Publication/engineering_regional_physics.py SHA256 4b886bfd3579d9cdbe541ef2100f3885550b2d0a2ada6e2131c69876124311e5
+128:         return v
+129: 
+130:     def optics(self,block,s,data,key):
+131:         pixels=super().optics(block,s,data,key)
+132:         # Contract5 specifies every patch sample and the 2D blur norm. The
+133:         # pilot checks its center and per-axis blur; retain those necessary
+134:         # rows and add the missing full contract conditions here only.
+135:         task=self.targets[block['task']];target=task['target'];active=block['active']
+136:         fx0=math.hypot(5184,3888)/(2*math.tan(math.radians(66.6/2)))
+137:         fx=fx0*data['angles'][3]
+138:         rc=[[self.vars[key+f'_cam_{k}_{q}'] for q in range(3)] for k in range(3)]
+139:         rcd=[[self.vars[key+f'_cam_dot_{k}_{q}'] for q in range(3)] for k in range(3)]
+140:         for k,point in enumerate(target['surface_samples_utm_m']):
+141:             delta=[data['position'][q]-point[q] for q in range(3)]
+142:             distance=self.aux(sqrt(dot(delta,delta)+1e-12),key+f'_sample{k}_distance',1e-9,30000)
+143:             self.gate(distance,active,8,25,name=key+f'_sample{k}_focus',family='camera_fov')
+144:             self.gate(dot(target['normal_world'],delta)-math.cos(math.radians(30))*distance,active,lo=0,
+145:                       name=key+f'_sample{k}_incidence',family='camera_fov')
+146:             qc=[self.vars[key+f'_q{k}_{q}'] for q in range(3)];depth=self.vars[key+f'_depth_safe{k}']
+147:             qcd=[dot(cold,[-x for x in delta])-dot(col,data['velocity']) for col,cold in zip(rc,rcd)]
+148:             rates=[.001*(fx0*data['rates'][3]*qc[q]/depth+fx*(qcd[q]*depth-qc[q]*qcd[2])/depth**2) for q in range(2)]
+149:             self.gate(dot(rates,rates),active,hi=1,name=key+f'_sample{k}_blur_norm',family='motion_blur')
+150:         return pixels
+151: 
+152:     def view_region(self,segment,data,key):
+153:         """Whole-service geometric region; image constraints are exposure-only."""
+154:         target=self.targets[segment.task]['target'];active=segment.active
+155:         for k,point in enumerate(target['surface_samples_utm_m']):
+156:             delta=[data['position'][q]-point[q] for q in range(3)]
+157:             dist=self.aux(sqrt(dot(delta,delta)+1e-12),key+f'_view_distance{k}',1e-9,30000)
+158:             self.gate(dist,active,8,25,name=key+f'_view_focus{k}',family='view_region')
+159:             self.gate(dot(target['normal_world'],delta)-math.cos(math.radians(30))*dist,
+160:                 active,lo=0,name=key+f'_view_incidence{k}',family='view_region')
+161: 
+162:     def physics_segment(self,segment,s,key):
+163:         active=segment.active;cfg=self.cfg;air=cfg['aircraft'];energy=cfg['energy']
+164:         bound=self.auxiliary_bounds
+165:         p,v,a,jerk=[self.state_aux(x,key+f'_state{r}','C',r) for r,x in enumerate(segment.evaluate(s,'C',3))]
+166:         angles,rates,accels=[self.state_aux(x,key+f'_pose{r}','A',r) for r,x in enumerate(segment.evaluate(s,'A',2))]
+167:         world=[p[q]+self.origin[q] for q in range(3)]
+168:         ground,gx,gy=self.ground(world,key)
+169:         agl=self.aux(world[2]-ground,key+'_agl',0,100)
+170:         clock=self.aux(segment.clock+s*segment.duration,key+'_absolute_clock',0,self.path.H)
+171:         W=self.forecast.add_point(self.m,self.rel,clock,agl,active,key)
+172:         if self.seed_solution is not None:
+173:             tt=float(self.m.getSolVal(self.seed_solution,clock));hh=float(self.m.getSolVal(self.seed_solution,agl))
+174:             h,k=self.forecast.cell(tt,hh);lo,hi,*coeff=self.forecast.coefficients(h,k)
+175:             self._seed_selector(W['selector'],h*3+k)
+176:             for seedvar,value in zip(W['coefficient_variables']['origins'],[self.forecast.times[h],lo]):self.m.setSolVal(self.seed_solution,seedvar,float(value))
+177:             for vr,cr in zip(W['coefficient_variables']['coefficients'],coeff):
+178:                 for seedvar,value in zip(vr,cr):self.m.setSolVal(self.seed_solution,seedvar,float(value))
+179:         rho=self.aux(W['density_kg_m3'],key+'_density',max(.5,bound['weather_min'][2]-1e-8),min(2,bound['weather_max'][2]+1e-8))
+180:         wind=[self.aux(W[f],key+'_'+f,max(-30,bound['weather_min'][q]-1e-8),min(30,bound['weather_max'][q]+1e-8))
+181:               for q,f in enumerate(['wind_east_ms','wind_north_ms'])]+[0.]
+182:         self.gate(dot(wind,wind),active,hi=100,name=key+'_wind_limit',family='weather')
+183:         self.gate(W['temperature_C'],active,0,40,name=key+'_temperature',family='weather')
+184:         task=self.curves.owner(segment)
+185:         # Only the first piece of a root task and the last recovery piece may
+186:         # use the own-pad contact ramp. Other terrain/obstacles keep4.6m.
+187:         contact=None;is_launch=False
+188:         if segment.role=='in' and segment.index==0:contact=task.root;is_launch=True
+189:         elif segment.role=='recovery' and segment.index==2*self.curves.transfers:contact=task.last
+190:         margin=4.6
+191:         if contact is not None:
+192:             dock=self.var(key+'_dock_ground',float(self.terrain_index.z.min()),float(self.terrain_index.z.max()))

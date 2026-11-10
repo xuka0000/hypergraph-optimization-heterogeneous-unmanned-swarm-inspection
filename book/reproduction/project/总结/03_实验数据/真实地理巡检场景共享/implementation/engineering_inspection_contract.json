@@ -1,0 +1,823 @@
+{
+  "schema_version": 1,
+  "model_id": "inspection_engineering_joint_model",
+  "revision": "2",
+  "observed_at": "2026-11-08T06:36:45.209490+00:00",
+  "user_request": "修改更加真实的数学建模，使巡检决策更偏向工程应用",
+  "status": "mathematical_specification_with_three_complete_declared_reference_inputs",
+  "joint_solver_implemented": false,
+  "deployment_ready": false,
+  "mathematical_source": "Agent/Publication/engineering_inspection_model.tex",
+  "mathematical_source_sha256": "78af5e90f870667e7bb8b19f4f408889994656d2ec048dc1cf36a9180848a00e",
+  "report": "总结/06_论文初稿/工程化巡检联合数学模型.pdf",
+  "variables": [
+    {
+      "id": "task_assignment",
+      "domain": "binary",
+      "indexing": "observation x sortie",
+      "symbol": "x_i_l"
+    },
+    {
+      "id": "task_success_planned",
+      "domain": "binary",
+      "indexing": "observation",
+      "symbol": "a_i"
+    },
+    {
+      "id": "complete_component",
+      "domain": "binary",
+      "indexing": "component",
+      "symbol": "z_g"
+    },
+    {
+      "id": "sortie_active",
+      "domain": "binary",
+      "indexing": "uncommitted sortie slot",
+      "symbol": "b_l"
+    },
+    {
+      "id": "task_successor",
+      "domain": "binary",
+      "indexing": "sortie x ordered observation/endpoint pair",
+      "symbol": "h_i_j_l"
+    },
+    {
+      "id": "aircraft_assignment",
+      "domain": "binary",
+      "indexing": "aircraft x sortie",
+      "symbol": "y_u_l"
+    },
+    {
+      "id": "battery_pair_assignment",
+      "domain": "binary",
+      "indexing": "battery pair x sortie",
+      "symbol": "beta_p_l"
+    },
+    {
+      "id": "event_times",
+      "domain": "continuous_seconds",
+      "indexing": "launch capture recovery charge",
+      "symbol": "t_event"
+    },
+    {
+      "id": "aircraft_position_control_points",
+      "domain": "continuous_m",
+      "indexing": "sortie x segment x coefficient x xyz",
+      "symbol": "c_l_k_r"
+    },
+    {
+      "id": "segment_duration",
+      "domain": "continuous_seconds",
+      "indexing": "sortie x segment",
+      "symbol": "Delta_l_k"
+    },
+    {
+      "id": "aircraft_yaw",
+      "domain": "continuous_rad",
+      "indexing": "trajectory",
+      "symbol": "psi_l"
+    },
+    {
+      "id": "gimbal_angles",
+      "domain": "continuous_rad",
+      "indexing": "trajectory x gimbal axis",
+      "symbol": "gamma_l"
+    },
+    {
+      "id": "camera_focal_length",
+      "domain": "continuous_mm_or_discrete_verified_modes",
+      "indexing": "capture",
+      "symbol": "f_i"
+    },
+    {
+      "id": "exposure",
+      "domain": "continuous_seconds_or_discrete_verified_modes",
+      "indexing": "capture",
+      "symbol": "t_exp_i"
+    },
+    {
+      "id": "vehicle_road_arcs",
+      "domain": "binary",
+      "indexing": "vehicle x road arc x visit",
+      "symbol": "r_v_a_visit"
+    },
+    {
+      "id": "vehicle_motion",
+      "domain": "continuous_SI",
+      "indexing": "x y yaw speed steering acceleration",
+      "symbol": "q_v_v_v_delta_v"
+    },
+    {
+      "id": "battery_energy",
+      "domain": "continuous_Wh",
+      "indexing": "battery pair x time",
+      "symbol": "E_p"
+    },
+    {
+      "id": "charging_channel",
+      "domain": "binary",
+      "indexing": "battery pair x time",
+      "symbol": "c_p"
+    },
+    {
+      "id": "charging_input_power",
+      "domain": "continuous_W",
+      "indexing": "battery pair x time",
+      "symbol": "P_in_p"
+    }
+  ],
+  "constraint_families": [
+    {
+      "id": "assign",
+      "scope": "task_successor_aircraft_battery",
+      "equation_labels": [
+        "eng:eq:assign",
+        "eng:eq:fleet",
+        "eng:eq:sequence"
+      ],
+      "implementation": "mathematical_definition_only; selected primitives separately checked"
+    },
+    {
+      "id": "completion",
+      "scope": "task_success_planned_complete_component",
+      "equation_labels": [
+        "eng:eq:complete"
+      ],
+      "implementation": "mathematical_definition_only; selected primitives separately checked"
+    },
+    {
+      "id": "time_window",
+      "scope": "capture_times_dwell_weather",
+      "equation_labels": [
+        "eng:eq:window"
+      ],
+      "implementation": "mathematical_definition_only; selected primitives separately checked"
+    },
+    {
+      "id": "kinematics",
+      "scope": "position_control_points_durations_wind",
+      "equation_labels": [
+        "eng:eq:kinematic"
+      ],
+      "implementation": "mathematical_definition_only; selected primitives separately checked"
+    },
+    {
+      "id": "attitude",
+      "scope": "acceleration_drag_mass_yaw_rotation",
+      "equation_labels": [
+        "eng:eq:attitude"
+      ],
+      "implementation": "mathematical_definition_only; selected primitives separately checked"
+    },
+    {
+      "id": "camera_fov",
+      "scope": "position_rotation_gimbal_focal_length_target",
+      "equation_labels": [
+        "eng:eq:fov",
+        "eng:eq:viewangle"
+      ],
+      "implementation": "mathematical_definition_only; selected primitives separately checked"
+    },
+    {
+      "id": "surface_resolution",
+      "scope": "position_rotation_gimbal_intrinsics_surface_tangent",
+      "equation_labels": [
+        "eng:eq:gsd"
+      ],
+      "implementation": "mathematical_definition_only; selected primitives separately checked"
+    },
+    {
+      "id": "motion_blur",
+      "scope": "position_derivative_rotation_rate_gimbal_zoom_exposure_light",
+      "equation_labels": [
+        "eng:eq:blur",
+        "eng:eq:exposure"
+      ],
+      "implementation": "mathematical_definition_only; selected primitives separately checked"
+    },
+    {
+      "id": "continuous_collision",
+      "scope": "aircraft_trajectories_vehicle_geometry_obstacles_error_margin",
+      "equation_labels": [
+        "eng:eq:collision"
+      ],
+      "implementation": "mathematical_definition_only; selected primitives separately checked"
+    },
+    {
+      "id": "weather_power",
+      "scope": "trajectory_air_velocity_weather_payload_model_history",
+      "equation_labels": [
+        "eng:eq:power"
+      ],
+      "implementation": "mathematical_definition_only; selected primitives separately checked"
+    },
+    {
+      "id": "emergency_recovery",
+      "scope": "energy_position_weather_verified_recovery_trajectory",
+      "equation_labels": [
+        "eng:eq:return"
+      ],
+      "implementation": "mathematical_definition_only; selected primitives separately checked"
+    },
+    {
+      "id": "road_vehicle_motion",
+      "scope": "road_arc_pose_speed_steering_corridor",
+      "equation_labels": [
+        "eng:eq:ugv"
+      ],
+      "implementation": "mathematical_definition_only; selected primitives separately checked"
+    },
+    {
+      "id": "rendezvous",
+      "scope": "aircraft_endpoint_vehicle_pose_event_times",
+      "equation_labels": [
+        "eng:eq:rendezvous"
+      ],
+      "implementation": "mathematical_definition_only; selected primitives separately checked"
+    },
+    {
+      "id": "handling_capacity",
+      "scope": "aircraft_assignment_event_intervals_handling_capacity",
+      "equation_labels": [
+        "eng:eq:pad"
+      ],
+      "implementation": "mathematical_definition_only; selected primitives separately checked"
+    },
+    {
+      "id": "battery_conservation",
+      "scope": "battery_assignment_flight_power_charge_power_energy",
+      "equation_labels": [
+        "eng:eq:battery"
+      ],
+      "implementation": "mathematical_definition_only; selected primitives separately checked"
+    },
+    {
+      "id": "battery_availability",
+      "scope": "sortie_intervals_battery_assignment_charge_cooling",
+      "equation_labels": [
+        "eng:eq:batteryavailability"
+      ],
+      "implementation": "mathematical_definition_only; selected primitives separately checked"
+    }
+  ],
+  "objective": {
+    "order": [
+      "weighted_incomplete_components",
+      "fleet_return_makespan_seconds",
+      "operational_energy_with_explicit_boundary"
+    ],
+    "hard_constraints": [
+      "safety",
+      "image_quality",
+      "energy_reserve"
+    ],
+    "battery_ageing_objective": false,
+    "success_threshold": null
+  },
+  "planning_scope": {
+    "fixed_flight_catalogue_required": false,
+    "fixed_six_tower_limit": false,
+    "continuous_trajectory_control_points": true,
+    "segment_durations_are_decisions": true,
+    "camera_viewpoints_are_decisions": true,
+    "partial_charge_allowed_if_hardware_verified": true,
+    "vehicle_path_and_stop_sequence_are_decisions": true,
+    "carrier_transfer": false,
+    "moving_platform_landing": false,
+    "direct_motor_command_optimization": false,
+    "state_resolution": "adaptive_event_anchored_piecewise_polynomial",
+    "weather_resolution": "retain_source_resolution_not_claimed_equal_to_trajectory_grid",
+    "old_candidates_role": "warm_start_only_not_feasible_domain"
+  },
+  "source_scenes": [
+    {
+      "scene_id": "ubeda_osm_060",
+      "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/ubeda_osm_060.json",
+      "sha256": "5585dc716867af2b682075d878db447bf92a782bb22a2847b88b411ddd834c32",
+      "statistics": {
+        "eligible_source_towers": 223,
+        "towers": 60,
+        "power_nodes": 60,
+        "power_ways": 3,
+        "power_segments": 57,
+        "road_nodes": 14490,
+        "road_edges": 26476,
+        "road_segments": 0,
+        "candidate_stops": 68,
+        "photo_tasks": 540,
+        "nonphoto_waypoints": 180,
+        "terrain_samples": 1491
+      },
+      "coordinate_reference": {
+        "geographic": "EPSG:4326",
+        "projected": "EPSG:32630",
+        "lon_lat_order": [
+          "longitude",
+          "latitude"
+        ],
+        "longitude_unit": "degree_east",
+        "latitude_unit": "degree_north",
+        "xy_unit": "m",
+        "z_unit": "m",
+        "projected_axis_order": [
+          "easting",
+          "northing"
+        ],
+        "vertical_datum": null,
+        "vertical_datum_status": "not independently verified in retained source metadata"
+      },
+      "source_status": "public_geography_with_declared_templates",
+      "observations_present": true,
+      "observed_geometry_is_as_built": false,
+      "original_scene_modified": false,
+      "task_geometry_locator": "/inspection_tasks/*/target",
+      "legacy_viewpoint_locator": "/inspection_tasks/*/(easting_m,northing_m,altitude_m)",
+      "legacy_camera_angles": "initialization_only_not_fixed_new_decisions",
+      "target_surface_mesh": null,
+      "target_surface_normals": null,
+      "conductors_and_vegetation_mesh": null,
+      "inspection_acceptance_profile": null,
+      "reference_inputs_complete": false,
+      "reference_profile": null,
+      "field_calibration_complete": false
+    },
+    {
+      "scene_id": "ubeda_osm_100",
+      "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/ubeda_osm_100.json",
+      "sha256": "cd1475d19c29dc4b5ec991e6bf0dff83cd04dc7e7b997b27bb69ebfb707d27a8",
+      "statistics": {
+        "eligible_source_towers": 223,
+        "towers": 100,
+        "power_nodes": 100,
+        "power_ways": 3,
+        "power_segments": 97,
+        "road_nodes": 27088,
+        "road_edges": 50762,
+        "road_segments": 0,
+        "candidate_stops": 115,
+        "photo_tasks": 900,
+        "nonphoto_waypoints": 300,
+        "terrain_samples": 1491
+      },
+      "coordinate_reference": {
+        "geographic": "EPSG:4326",
+        "projected": "EPSG:32630",
+        "lon_lat_order": [
+          "longitude",
+          "latitude"
+        ],
+        "longitude_unit": "degree_east",
+        "latitude_unit": "degree_north",
+        "xy_unit": "m",
+        "z_unit": "m",
+        "projected_axis_order": [
+          "easting",
+          "northing"
+        ],
+        "vertical_datum": null,
+        "vertical_datum_status": "not independently verified in retained source metadata"
+      },
+      "source_status": "public_geography_with_declared_templates",
+      "observations_present": true,
+      "observed_geometry_is_as_built": false,
+      "original_scene_modified": false,
+      "task_geometry_locator": "/inspection_tasks/*/target",
+      "legacy_viewpoint_locator": "/inspection_tasks/*/(easting_m,northing_m,altitude_m)",
+      "legacy_camera_angles": "initialization_only_not_fixed_new_decisions",
+      "target_surface_mesh": null,
+      "target_surface_normals": null,
+      "conductors_and_vegetation_mesh": null,
+      "inspection_acceptance_profile": null,
+      "reference_inputs_complete": false,
+      "reference_profile": null,
+      "field_calibration_complete": false
+    },
+    {
+      "scene_id": "ubeda_osm_150",
+      "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/ubeda_osm_150.json",
+      "sha256": "a9a62708032ccc043ad1f4705d12b42077dbc6e03517cf151d360cca66e6c08b",
+      "statistics": {
+        "eligible_source_towers": 223,
+        "towers": 150,
+        "power_nodes": 150,
+        "power_ways": 3,
+        "power_segments": 147,
+        "road_nodes": 42389,
+        "road_edges": 81438,
+        "road_segments": 0,
+        "candidate_stops": 147,
+        "photo_tasks": 1350,
+        "nonphoto_waypoints": 450,
+        "terrain_samples": 3167
+      },
+      "coordinate_reference": {
+        "geographic": "EPSG:4326",
+        "projected": "EPSG:32630",
+        "lon_lat_order": [
+          "longitude",
+          "latitude"
+        ],
+        "longitude_unit": "degree_east",
+        "latitude_unit": "degree_north",
+        "xy_unit": "m",
+        "z_unit": "m",
+        "projected_axis_order": [
+          "easting",
+          "northing"
+        ],
+        "vertical_datum": null,
+        "vertical_datum_status": "not independently verified in retained source metadata"
+      },
+      "source_status": "public_geography_with_declared_templates",
+      "observations_present": true,
+      "observed_geometry_is_as_built": false,
+      "original_scene_modified": false,
+      "task_geometry_locator": "/inspection_tasks/*/target",
+      "legacy_viewpoint_locator": "/inspection_tasks/*/(easting_m,northing_m,altitude_m)",
+      "legacy_camera_angles": "initialization_only_not_fixed_new_decisions",
+      "target_surface_mesh": null,
+      "target_surface_normals": null,
+      "conductors_and_vegetation_mesh": null,
+      "inspection_acceptance_profile": null,
+      "reference_inputs_complete": false,
+      "reference_profile": null,
+      "field_calibration_complete": false
+    },
+    {
+      "scene_id": "rommerskirchen",
+      "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/rommerskirchen.json",
+      "sha256": "d0c668d7cfeea2e7973e6ab387be38e499aea4e935a6530dfaf8900438b8520d",
+      "statistics": {
+        "geometric_crossings_outside_mapped_substations": 23,
+        "geometric_crossings_all": 25,
+        "towers": 237,
+        "power_nodes": 337,
+        "power_ways": 113,
+        "power_segments": 321,
+        "road_nodes": 13936,
+        "road_edges": 20455,
+        "road_segments": 14843,
+        "candidate_stops": 104,
+        "photo_tasks": 2133,
+        "nonphoto_waypoints": 711,
+        "terrain_samples": 1953,
+        "routing_nodes": 10000
+      },
+      "coordinate_reference": {
+        "geographic": "EPSG:4326",
+        "projected": "EPSG:32632",
+        "lon_lat_order": [
+          "longitude",
+          "latitude"
+        ],
+        "longitude_unit": "degree_east",
+        "latitude_unit": "degree_north",
+        "xy_unit": "m",
+        "z_unit": "m",
+        "projected_axis_order": [
+          "easting",
+          "northing"
+        ],
+        "vertical_datum": null,
+        "vertical_datum_status": "not independently verified in retained source metadata"
+      },
+      "source_status": "public_geography_with_declared_templates",
+      "observations_present": true,
+      "observed_geometry_is_as_built": false,
+      "original_scene_modified": true,
+      "task_geometry_locator": "/inspection_tasks/*/target",
+      "legacy_viewpoint_locator": "/inspection_tasks/*/(easting_m,northing_m,altitude_m)",
+      "legacy_camera_angles": "initialization_only_not_fixed_new_decisions",
+      "target_surface_mesh": "/inspection_tasks/*/target/surface_samples_utm_m",
+      "target_surface_normals": "/inspection_tasks/*/target/normal_world",
+      "conductors_and_vegetation_mesh": "/obstacle_model",
+      "inspection_acceptance_profile": "/joint_reference_profile/camera",
+      "reference_inputs_complete": true,
+      "reference_profile": "/joint_reference_profile",
+      "field_calibration_complete": false
+    },
+    {
+      "scene_id": "brauweiler",
+      "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/brauweiler.json",
+      "sha256": "c574467ac2095b89e150b453e98aac9a060483b5837d9dfc02c32a12f1830660",
+      "statistics": {
+        "geometric_crossings_outside_mapped_substations": 2,
+        "geometric_crossings_all": 9,
+        "towers": 185,
+        "power_nodes": 262,
+        "power_ways": 70,
+        "power_segments": 243,
+        "road_nodes": 25422,
+        "road_edges": 32773,
+        "road_segments": 26983,
+        "candidate_stops": 76,
+        "photo_tasks": 1665,
+        "nonphoto_waypoints": 555,
+        "terrain_samples": 1585,
+        "routing_nodes": 16598
+      },
+      "coordinate_reference": {
+        "geographic": "EPSG:4326",
+        "projected": "EPSG:32632",
+        "lon_lat_order": [
+          "longitude",
+          "latitude"
+        ],
+        "longitude_unit": "degree_east",
+        "latitude_unit": "degree_north",
+        "xy_unit": "m",
+        "z_unit": "m",
+        "projected_axis_order": [
+          "easting",
+          "northing"
+        ],
+        "vertical_datum": null,
+        "vertical_datum_status": "not independently verified in retained source metadata"
+      },
+      "source_status": "public_geography_with_declared_templates",
+      "observations_present": true,
+      "observed_geometry_is_as_built": false,
+      "original_scene_modified": true,
+      "task_geometry_locator": "/inspection_tasks/*/target",
+      "legacy_viewpoint_locator": "/inspection_tasks/*/(easting_m,northing_m,altitude_m)",
+      "legacy_camera_angles": "initialization_only_not_fixed_new_decisions",
+      "target_surface_mesh": "/inspection_tasks/*/target/surface_samples_utm_m",
+      "target_surface_normals": "/inspection_tasks/*/target/normal_world",
+      "conductors_and_vegetation_mesh": "/obstacle_model",
+      "inspection_acceptance_profile": "/joint_reference_profile/camera",
+      "reference_inputs_complete": true,
+      "reference_profile": "/joint_reference_profile",
+      "field_calibration_complete": false
+    },
+    {
+      "scene_id": "villevaude",
+      "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/villevaude.json",
+      "sha256": "d4f59f8d05689da540adafb1c080196a21e7289cd2959064f6e584553545689d",
+      "statistics": {
+        "geometric_crossings_outside_mapped_substations": 46,
+        "geometric_crossings_all": 46,
+        "towers": 343,
+        "power_nodes": 383,
+        "power_ways": 66,
+        "power_segments": 370,
+        "road_nodes": 29681,
+        "road_edges": 39656,
+        "road_segments": 31382,
+        "candidate_stops": 135,
+        "photo_tasks": 3087,
+        "nonphoto_waypoints": 1029,
+        "terrain_samples": 2411,
+        "routing_nodes": 22494
+      },
+      "coordinate_reference": {
+        "geographic": "EPSG:4326",
+        "projected": "EPSG:32631",
+        "lon_lat_order": [
+          "longitude",
+          "latitude"
+        ],
+        "longitude_unit": "degree_east",
+        "latitude_unit": "degree_north",
+        "xy_unit": "m",
+        "z_unit": "m",
+        "projected_axis_order": [
+          "easting",
+          "northing"
+        ],
+        "vertical_datum": null,
+        "vertical_datum_status": "not independently verified in retained source metadata"
+      },
+      "source_status": "public_geography_with_declared_templates",
+      "observations_present": true,
+      "observed_geometry_is_as_built": false,
+      "original_scene_modified": true,
+      "task_geometry_locator": "/inspection_tasks/*/target",
+      "legacy_viewpoint_locator": "/inspection_tasks/*/(easting_m,northing_m,altitude_m)",
+      "legacy_camera_angles": "initialization_only_not_fixed_new_decisions",
+      "target_surface_mesh": "/inspection_tasks/*/target/surface_samples_utm_m",
+      "target_surface_normals": "/inspection_tasks/*/target/normal_world",
+      "conductors_and_vegetation_mesh": "/obstacle_model",
+      "inspection_acceptance_profile": "/joint_reference_profile/camera",
+      "reference_inputs_complete": true,
+      "reference_profile": "/joint_reference_profile",
+      "field_calibration_complete": false
+    }
+  ],
+  "missing_required_parameters": [
+    {
+      "id": "target_surface_and_normals",
+      "value": null,
+      "unit": "mesh/m/unit_normal",
+      "required_source": "survey_or_verified_engineering_model",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "conductor_sag_vegetation_obstacles",
+      "value": null,
+      "unit": "m",
+      "required_source": "survey_with_uncertainty",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "energized_clearance_by_voltage",
+      "value": null,
+      "unit": "m",
+      "required_source": "applicable_operator_rule",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "camera_intrinsics_and_mount",
+      "value": null,
+      "unit": "px/rad/m",
+      "required_source": "camera_calibration",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "image_quality_acceptance",
+      "value": null,
+      "unit": "m_per_px/px/frame_count",
+      "required_source": "inspection_defect_requirement",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "airframe_loaded_envelope",
+      "value": null,
+      "unit": "m/s,m/s2,m/s3,N,rad/s",
+      "required_source": "manufacturer_mode_and_validation",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "airframe_power_model_and_domain",
+      "value": null,
+      "unit": "W",
+      "required_source": "same_platform_calibration_or_declared_bound",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "trajectory_tracking_error_bound",
+      "value": null,
+      "unit": "m",
+      "required_source": "controller_and_conditions_validation",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "vehicle_chassis_and_corridor",
+      "value": null,
+      "unit": "m/rad/m/s",
+      "required_source": "actual_vehicle_and_road_survey",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "battery_usable_capacity",
+      "value": null,
+      "unit": "Wh",
+      "required_source": "actual_pack_and_temperature_domain",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "charger_partial_charge_curve",
+      "value": null,
+      "unit": "W/efficiency",
+      "required_source": "actual_charger_verified_control",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "vehicle_power_supply",
+      "value": null,
+      "unit": "W",
+      "required_source": "actual_vehicle_electrical_spec",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "battery_terminal_energy",
+      "value": null,
+      "unit": "Wh",
+      "required_source": "next_shift_operating_requirement",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "forecast_available_at_and_error",
+      "value": null,
+      "unit": "UTC,m/s",
+      "required_source": "forecast_issue_and_validation",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "solver_discretization_tolerances",
+      "value": null,
+      "unit": "m/s/rad/Wh",
+      "required_source": "declared_numerical_accuracy",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    }
+  ],
+  "regional_reference_input_profiles": [
+    {
+      "scene_id": "rommerskirchen",
+      "scene_sha256": "d0c668d7cfeea2e7973e6ab387be38e499aea4e935a6530dfaf8900438b8520d",
+      "profile": "/joint_reference_profile",
+      "complete_for_declared_reference_simulation": true,
+      "calibrated_for_deployment": false
+    },
+    {
+      "scene_id": "brauweiler",
+      "scene_sha256": "c574467ac2095b89e150b453e98aac9a060483b5837d9dfc02c32a12f1830660",
+      "profile": "/joint_reference_profile",
+      "complete_for_declared_reference_simulation": true,
+      "calibrated_for_deployment": false
+    },
+    {
+      "scene_id": "villevaude",
+      "scene_sha256": "d4f59f8d05689da540adafb1c080196a21e7289cd2959064f6e584553545689d",
+      "profile": "/joint_reference_profile",
+      "complete_for_declared_reference_simulation": true,
+      "calibrated_for_deployment": false
+    }
+  ],
+  "manufacturer_boundaries": {
+    "source": "https://enterprise.dji.com/zenmuse-h20-series/specs",
+    "zoom_photo_pixels": [
+      5184,
+      3888
+    ],
+    "physical_focal_length_mm": [
+      6.83,
+      119.94
+    ],
+    "gimbal_pitch_deg": [
+      -120,
+      30
+    ],
+    "gimbal_yaw_deg": [
+      -320,
+      320
+    ],
+    "calibrated_fx_fy_px": null,
+    "field_image_quality_thresholds": null,
+    "role": "hardware_bounds_not_inspection_acceptance"
+  },
+  "inherited_reference_assumptions": {
+    "reserve_fraction": 0.2,
+    "horizon_seconds": 28800,
+    "vehicles": 2,
+    "uavs_per_vehicle": 2,
+    "battery_pairs_per_vehicle": 4,
+    "concurrent_charging_pairs_per_vehicle": 1,
+    "handling_positions_per_vehicle": 1,
+    "source": "shared_scene_parameters; design assumptions, not measured fleet inventory"
+  },
+  "output_contract": {
+    "trajectory": [
+      "vehicle_or_aircraft_id",
+      "time_UTC",
+      "local_xyz_m",
+      "geographic_lon_lat_alt_with_datum",
+      "velocity_mps",
+      "acceleration_mps2",
+      "body_orientation",
+      "gimbal_angles",
+      "segment_id",
+      "continuous_verification_status"
+    ],
+    "capture": [
+      "task_id",
+      "target_region_id",
+      "time_UTC",
+      "camera_intrinsics_id",
+      "exposure_s",
+      "planned_quality_margins",
+      "post_execution_acceptance"
+    ],
+    "resources": [
+      "aircraft_id",
+      "carrier_id",
+      "battery_pair_id",
+      "charge_interval",
+      "charge_power_W",
+      "SOC_or_Wh_trace",
+      "terminal_energy_requirement"
+    ],
+    "validation": [
+      "minimum_constraint_slack",
+      "source_identity",
+      "assumption_flags",
+      "continuous_vs_sampled_check",
+      "failure_reason",
+      "forecast_issue_time"
+    ]
+  },
+  "hypergraph": {
+    "vertices": "scalar decision variables or explicitly declared blocks",
+    "hyperedges": "actual constraint scopes retaining functions bounds units activation",
+    "resource_candidate_dual": "only after specifying identical incidence, not automatic new complexity",
+    "rank_and_degree": null,
+    "hypergraph_advantage_established": false,
+    "matching_alone_is_full_solver": false
+  },
+  "evidence": [
+    "research_quality/inspection_engineering_model_validation.json",
+    "research_quality/inspection_granularity_hypergraph_audit.json",
+    "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/results.json",
+    "总结/03_实验数据/天气因素建模/航段能耗联算/results.json"
+  ],
+  "next_stage": "Implement and verify the joint model after review of bound modeling materials; no algorithm comparison launched"
+}

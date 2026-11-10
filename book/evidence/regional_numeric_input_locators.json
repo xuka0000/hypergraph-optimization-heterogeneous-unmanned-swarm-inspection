@@ -1,0 +1,78 @@
+{
+  "scene": {
+    "archive": "reproduction/inspection_existing_data.zip",
+    "member": "总结/03_实验数据/真实地理巡检场景共享/scenes/rommerskirchen.json",
+    "sha256": "d0c668d7cfeea2e7973e6ab387be38e499aea4e935a6530dfaf8900438b8520d",
+    "fields": {
+      "tower": "towers[*].id/easting_m/northing_m/ground_elevation_m/photo_task_ids",
+      "task": "inspection_tasks[*].id/tower_id/target.normal_world/target.tangent_basis/effective_service_seconds",
+      "road_node": "roads.nodes[*].id/easting_m/northing_m",
+      "road_arc": "roads.edges[*].id/tail/head/speed_limit_mps/access; geometric L=norm(head_xy-tail_xy); source length_m separate",
+      "stop": "stops[*].id/xy_m/osm_node_id",
+      "tower_solid": "obstacle_model.tower_cylinders[*].id/center_xy_m/base_elevation_m/radius_m/height_m/source_tower_id",
+      "wire": "obstacle_model.conductor_curves[*].id/endpoint_xyz_m/sag_m/radius_m/parameter_interval",
+      "fleet": "fleet.vehicles/aircraft/battery_pairs",
+      "reference_parameters": "joint_reference_profile"
+    }
+  },
+  "corrected_targets": {
+    "path": "evidence/snapshot/research_quality/inspection_regional_model_data.json",
+    "sha256": "ee30612135a2b3057192d1bcf6c0eb53a28b76e94efe16a828b87dd168e1929c",
+    "join": "inspection_tasks.id == corrections.task_id; source_index is a check, not join key",
+    "fields": "corrections[*].target_xyz_m/surface_samples_utm_m/viewpoint_center_xyz_m/normal_world/min_dwell_s; B from scene task.target.tangent_basis",
+    "count": 2133
+  },
+  "terrain": {
+    "path": "reproduction/numeric_inputs/regional_terrain.npz",
+    "sha256": "44d543c959674f89a4779909dd45d49633266c5cc24a381229c67bee39ad219d",
+    "world_xyz_shape": [
+      1953,
+      3
+    ],
+    "triangles_shape": [
+      3742,
+      3
+    ],
+    "index_base": 0,
+    "source_sample_order": "scene.terrain.samples original order retained",
+    "projected_samples_sha256": "e942fe37bbdd79d6eeb11b306ba3e04d0829a5235851c5ebcf764c8d07f5521a",
+    "triangulation_sha256": "cb355b7659c712465959233e7a1abcff284876d9310a3aee07dcf20c8e430d77",
+    "formula": "subtract same V1 three-dimensional origin for local XYZ; triangle indices unchanged"
+  },
+  "weather": {
+    "path": "reproduction/numeric_inputs/forecast_nodes.json",
+    "sha256": "44fbca0fb761d2fd207ff3369f8e9a732fe85e226b596d699917a10f129dee8c",
+    "rows": 9,
+    "shape": [
+      9,
+      3,
+      4
+    ]
+  },
+  "verified_counts": {
+    "towers": 237,
+    "tasks": 2133,
+    "samples": 10665,
+    "roads_nodes": 13936,
+    "roads_edges": 20455,
+    "stops": 104,
+    "wires": 2568
+  },
+  "road_scope": {
+    "unique_ordered_node_pairs": 20455,
+    "retained_parallel_policy": "minimum-time source segment retained per ordered node pair; no invented connection",
+    "source_segments": 14843,
+    "excluded_segments": 2745,
+    "turn_restrictions": [],
+    "unsupported_turn_relations": [],
+    "access_values": [
+      "designated",
+      "permissive",
+      "yes"
+    ],
+    "field_access_verified": false,
+    "boundary": "Complete retained input graph, not unfiltered original OSM graph; current graph has no parallel ordered pairs. Domain code preserves edge IDs if provided."
+  },
+  "new_optimization_runs": 0,
+  "owner_writes": 0
+}

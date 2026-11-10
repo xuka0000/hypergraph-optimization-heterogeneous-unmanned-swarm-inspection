@@ -1,0 +1,32 @@
+{\small\setlength{\tabcolsep}{4pt}
+\begin{longtable}{llrrr}
+\caption{预定质量与时间联合条件在三个结构种子中的满足数}\label{tab:controlled_support}\\
+\toprule
+因素 & 水平 & Streaming & Greedy & ILS1000\\
+\midrule
+\endfirsthead
+\toprule
+因素 & 水平 & Streaming & Greedy & ILS1000\\
+\midrule
+\endhead
+\midrule
+\multicolumn{5}{r}{续下页}\\
+\endfoot
+\bottomrule
+\endlastfoot
+基准 & -- & 0/3 & 2/3 & 1/3\\
+资源度 & 16 & 0/3 & 1/3 & 3/3\\
+资源度 & 32 & 0/3 & 1/3 & 1/3\\
+资源度 & 8 & 0/3 & 2/3 & 3/3\\
+超边秩 & 16 & 0/3 & 0/3 & 2/3\\
+超边秩 & 32 & 0/3 & 0/3 & 1/3\\
+超边秩 & 8 & 0/3 & 1/3 & 3/3\\
+权重跨度 & 1 & 0/3 & 0/3 & 3/3\\
+权重跨度 & 10 & 0/3 & 0/3 & 3/3\\
+权重跨度 & 1000 & 1/3 & 2/3 & 0/3\\
+候选数 & 1024 & 0/3 & 2/3 & 1/3\\
+候选数 & 4096 & 0/3 & 3/3 & 3/3\\
+候选数 & 16384 & 0/3 & 0/3 & 3/3\\
+\end{longtable}
+}
+每个种子同时满足收益至少为SCIP已得可行收益的95\%且完整调用时间不超过SCIP的一半时计一；这是开发条件下的描述性计数。

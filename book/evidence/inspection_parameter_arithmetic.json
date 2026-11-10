@@ -1,0 +1,22 @@
+{
+  "pair_capacity_Wh": 548,
+  "minimum_pair_Wh": 109.60000000000001,
+  "knee_Wh": 493.2,
+  "initial_fleet_Wh": 4384,
+  "initial_usable_fleet_Wh": 3507.2000000000003,
+  "charge_low_input_W": 852.4444444444443,
+  "charge_high_input_W": 182.66666666666663,
+  "optimistic_fleet_Wh_upper": 15782.4,
+  "safety_m": 4.6,
+  "inter_uav_m": 5.2,
+  "dock_offset_m": 2.4,
+  "safe_offset_m": 6.3999999999999995,
+  "focal_pixels_at_wide": 4932.428602343466,
+  "GSD_to_resolution_px_per_m": 200.0,
+  "energy_trigger_Wh": 10.96,
+  "angle_25_rad": 0.4363323129985824,
+  "angle_30_rad": 0.5235987755982988,
+  "angle_35_rad": 0.6108652381980153,
+  "angle_20_rad": 0.3490658503988659,
+  "speed_vehicle_mps": 2.7777777777777777
+}

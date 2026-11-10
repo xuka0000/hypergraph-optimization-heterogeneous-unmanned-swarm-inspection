@@ -1,0 +1,33 @@
+\section{无人机轨迹、力平衡与姿态}
+\noindent 对每个活动航次、全部$t\in[\max(s_\ell,\tau_k),e_\ell]$：
+\begin{align}
+ &\dot{\mathbf p}=\mathbf v,\quad\dot{\mathbf v}=\mathbf a,\quad
+ \dot{\mathbf a}=\mathbf j,\quad\mathbf v_a=\mathbf v-\mathbf w(\mathbf p,t),\\
+ &\|\mathbf v\|\le5,\quad\|\mathbf v_a\|\le12,\quad |v_z|\le1,\quad
+ \|\mathbf a\|\le3,\quad\|\mathbf j\|\le5,\label{eng:eq:kinematic}\\
+ &\mathbf F_D=-\tfrac12\rho C_DA\|\mathbf v_a\|\mathbf v_a,\quad
+ m\mathbf a=F R\mathbf e_3-mg\mathbf e_3+\mathbf F_D,\\
+ &R^TR=I,\quad\det R=1,\quad \dot R=R[\boldsymbol\omega]_\times,\\
+ &0\le F\le137.34,\quad\mathbf e_3^TR\mathbf e_3\ge\cos25^\circ,
+       \quad |\omega_j|\le\pi/6.
+ \label{eng:eq:attitude}
+\end{align}
+\noindent $m=7$kg，$g=9.81$，$C_DA=0.25\,\mathrm{m}^2$，$\mathbf e_3$向上。力平衡用$FR\mathbf e_3$表达，不除以可能为0的推力。机体滚转/俯仰不能独立于风与加速度任取。姿态为规划层执行包络，尚不含电机转速/转矩分配。[R1]
+\begin{align}
+ &-120^\circ\le\gamma_p\le30^\circ,\quad
+ -320^\circ\le\gamma_y\le320^\circ,\\
+ &|\dot\gamma_j|\le\pi/6,\quad|\ddot\gamma_j|\le\pi/6,\quad
+ |\dot\psi|\le\pi/6,\quad|\ddot\psi|\le\pi/6,\\
+ &6.83\le f(t)\le119.94\ \mathrm{mm},\qquad |\dot f(t)|\le10\ \mathrm{mm/s}.
+ \label{eng:eq:gimbal}
+\end{align}
+\noindent $\psi=\operatorname{unwrap}(\operatorname{atan2}(R_{21},R_{11}))$；倾角上界排除该坐标的竖直奇异位形。角度函数连续展开，不以$2\pi$跳变绕过速率限值。当前参考云台为两轴；相机轴由下式唯一确定：
+\begin{align}
+ \mathbf d&=(\cos\gamma_p\cos\gamma_y,\cos\gamma_p\sin\gamma_y,\sin\gamma_p)^T,\\
+ \mathbf r&=(\sin\gamma_y,-\cos\gamma_y,0)^T,\quad
+ R_{BC}=[\mathbf r,\ \mathbf d\times\mathbf r,\ \mathbf d],\\
+ R_C&=RR_{BC},\qquad \mathbf p_C=\mathbf p+R\mathbf d_{BC},\quad\mathbf d_{BC}=0.
+ \label{eng:eq:cameraaxes}
+\end{align}
+\clearpage
+

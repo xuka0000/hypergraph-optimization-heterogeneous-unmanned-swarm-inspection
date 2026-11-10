@@ -1,0 +1,21 @@
+\section{参考来源与公式适配}
+\noindent [R1] Spasojevic I., Murali V., Karaman S. \emph{Perception-aware time optimal path parameterization for quadrotors}. 2020预印本。\url{https://arxiv.org/abs/2005.13986}。PDF第2页II.A--D：运动、推力轴与视野的关联。原文为给定路径；本模型的任务、车辆、路径及云台是共同变量，不继承其凸性结论。
+
+\noindent [R2] Debus P., Rodehorst V. \emph{Potential-guided UAV-flight path planning for the inspection of complex structures}. ISPRS Archives, XLVIII-1/W2-2023, 291--298, 2023. \url{https://doi.org/10.5194/isprs-archives-XLVIII-1-W2-2023-291-2023}。第293页4.1与Fig.2：覆盖、距离/分辨率和质量分列；非原算法复现。
+
+\noindent [R3] DJI. \emph{Zenmuse H20 Series Specifications and Support}; \emph{Matrice 300 RTK Specifications}. \url{https://enterprise.dji.com/zenmuse-h20-series/specs}；\url{https://www.dji.com/support/product/zenmuse-h20-series}；\url{https://enterprise.dji.com/matrice-300/specs}。设备边界不等于巡检阈值；参考充电时长、传感器及容量的逐字段来源继承源场景清单。
+
+\noindent [R4] 本项目《电池能耗公开机型验证》《天气--航段--能耗联算报告》及真实地理场景数据与来源报告。源场景JSON保留原论文LI23、KPLC25、公开数据链接、访问记录和SHA。M100公开实测证据保留，但本稿功率公式为另行声明的M300参考代理。
+
+\noindent [R5] LaValle S. M. \emph{Planning Algorithms}. Cambridge University Press, 2006, Chapter13, Section13.1.2. \url{https://lavalle.pl/planning/ch13.pdf}。采用汽车型非完整运动学，具体车辆尺寸和道路走廊为项目设定。
+
+\noindent [R6] Marx D. \emph{Tractable hypergraph properties for constraint satisfaction and conjunctive queries}. STOC2010扩展摘要及完整稿。\url{https://arxiv.org/abs/0911.0801}。仅采用变量--约束依赖定义，其离散CSP复杂性定理不直接适用于本连续非线性问题。
+
+\noindent [R7] do-mpc. \emph{Basics of model predictive control}. 官方文档，核对于2026-11-09。\url{https://www.do-mpc.com/en/latest/theory_mpc.html}。用于状态反馈、滚动优化和非预见性定义，不表示已实现do-mpc巡检求解器。
+
+\noindent [R8] Open-Meteo. \emph{Single Runs API}; \emph{Historical Weather API}. \url{https://open-meteo.com/en/docs/single-runs-api}；\url{https://open-meteo.com/en/docs/historical-weather-api}。预报单次运行与事后再分析区分；初始化时间仍须与实际可用时刻区分。
+
+\noindent [R9] Li Z., Zhang Y., Wu H., et al. \emph{Design and Application of a UAV Autonomous Inspection System for High-Voltage Power Transmission Lines}. Remote Sensing, 2023, 15(3):865. \url{https://doi.org/10.3390/rs15030865}。已核对原PDF第5--6页3.2.1节及Fig.3；9个拍摄角色与2个无拍摄转场点分开，原航线顺序不冻结为本模型决策。
+
+\noindent [R10] Kenya Power and Lighting Company. \emph{Tender Document for Reconstruction of Towers on Collapsed and Compromised Transmission Lines Sections}, April2025, p73, Appendix1A-1. \url{https://kplc.co.ke/storage/01JQXMQ0QWCHBZKRQ1MBHAJADM.pdf}。所附132kV悬垂塔图签日期为2006年9月13日；模板尺寸迁移不代表德国现场塔型。
+

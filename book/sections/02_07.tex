@@ -1,0 +1,128 @@
+\section{已有解的逐项核验与解释}
+\label{sec:02_07}
+
+上一节给出了十二个候选任务的完整数值模型。对于一个已有选择结果，需要分别回答三个问题：选择变量是否满足二元域，各种资源的占用是否超过容量，以及目标值是否确实达到最优。前两个问题决定方案能否被接受，第三个问题决定其收益水平。即使一个方案用满全部资源，也不能据此认定其最优。
+
+本节使用同一教学算例的保存结果及独立枚举核对记录。SCIP返回任务集合 $\{\mathrm{T02},\allowbreak\mathrm{T03},\allowbreak\mathrm{T04},\allowbreak\mathrm{T12}\}$，Streaming返回任务集合 $\{\mathrm{T01},\allowbreak\mathrm{T05}\}$。以下逐项代入原模型，说明两者的可行性、收益差异及其证据范围；本节不涉及重新运行求解或计时。
+
+\subsection{选择向量与逐资源容量核验}
+
+沿用上一节的变量顺序，$x_j$ 对应任务 $\mathrm{T01}$ 至 $\mathrm{T12}$ 中的第 $j$ 项，$j\in\{1,\ldots,12\}$。以 $x^{\star}$ 表示经枚举确认的最优选择，以 $x^{\mathrm{S}}$ 表示保存的Streaming选择。两者的十二维向量分别为
+\begin{align}
+ x^{\star}&=(0,1,1,1,0,0,0,0,0,0,0,1),
+ \label{s0207:optimal_vector}\\
+ x^{\mathrm{S}}&=(1,0,0,0,1,0,0,0,0,0,0,0).
+ \label{s0207:streaming_vector}
+\end{align}
+每个分量都是无量纲的零或一，因此两者均满足二元变量域。其中，$x^{\star}$ 接受四个任务，$x^{\mathrm{S}}$ 接受两个任务；未入选任务的变量全部为零，不产生收益或资源需求。
+
+令资源集合为 $V=\{\mathrm{A},\mathrm{B},\ldots,\mathrm{L}\}$。对每个 $v\in V$ 和 $j\in\{1,\ldots,12\}$，关联指示量 $A_{vj}\in\{0,1\}$ 表示任务 $j$ 是否需要资源 $v$：需要时取一，否则取零。定义资源负载及剩余容量的数值为
+\begin{align}
+ \ell_v(x)&=\sum_{j=1}^{12}A_{vj}x_j,
+ &&v\in V,
+ \label{s0207:resource_load}\\
+ s_v(x)&=1-\ell_v(x),
+ &&v\in V.
+ \label{s0207:resource_slack}
+\end{align}
+$\ell_v(x)$ 统计选择向量 $x$ 对资源 $v$ 的需求份数，$s_v(x)$ 表示该资源尚可使用的份数，两者均以一份对应的不可分割资源为计数单位。对任意二元向量，$\ell_v(x)$ 为非负整数；资源约束要求 $\ell_v(x)\leq1$，等价于 $s_v(x)\geq0$。因此，在本例的可行解中，每种资源的负载和剩余容量只能取零或一。
+
+表\ref{s0207:load_check}按上一节各容量行的变量顺序代入两个选择向量。表内每个加数对应一个候选任务对该行资源的需求，右端容量均为一份。
+
+\begin{table}[htbp]
+ \centering
+ \caption{两个已有选择的逐资源负载核验（各行以对应资源的一份为单位）}
+ \label{s0207:load_check}
+ \small
+ \begin{tabular}{ccccc}
+  \toprule
+  资源 & $\ell_v(x^{\star})$的代入结果 & $\ell_v(x^{\mathrm{S}})$的代入结果 & 容量 & 两解剩余容量 \\
+  \midrule
+  $\mathrm{A}$ & $0+1+0=1$ & $1+0+0=1$ & $1$ & $0$ \\
+  $\mathrm{B}$ & $0+1+0=1$ & $1+0+0=1$ & $1$ & $0$ \\
+  $\mathrm{C}$ & $0+1+0=1$ & $1+0+0=1$ & $1$ & $0$ \\
+  $\mathrm{D}$ & $0+1+0=1$ & $1+0+0=1$ & $1$ & $0$ \\
+  $\mathrm{E}$ & $0+1+0=1$ & $1+0+0=1$ & $1$ & $0$ \\
+  $\mathrm{F}$ & $0+1+0=1$ & $1+0+0=1$ & $1$ & $0$ \\
+  $\mathrm{G}$ & $1+0+0+0=1$ & $0+1+0+0=1$ & $1$ & $0$ \\
+  $\mathrm{H}$ & $1+0+0+0=1$ & $0+1+0+0=1$ & $1$ & $0$ \\
+  $\mathrm{I}$ & $1+0+0+0=1$ & $0+1+0+0=1$ & $1$ & $0$ \\
+  $\mathrm{J}$ & $0+0+0+1=1$ & $1+0+0+0=1$ & $1$ & $0$ \\
+  $\mathrm{K}$ & $0+0+0+1=1$ & $1+0+0+0=1$ & $1$ & $0$ \\
+  $\mathrm{L}$ & $0+0+0+1=1$ & $1+0+0+0=1$ & $1$ & $0$ \\
+  \bottomrule
+ \end{tabular}
+\end{table}
+
+例如，资源 $\mathrm{G}$ 的负载为 $x_2+x_5+x_8+x_{11}$。最优选择由 $\mathrm{T02}$ 占用该资源，故得到 $1+0+0+0=1$；Streaming选择则由 $\mathrm{T05}$ 占用，故得到 $0+1+0+0=1$。资源 $\mathrm{J}$ 和 $\mathrm{K}$ 在最优选择中分别供给 $\mathrm{T12}$，在Streaming选择中分别供给 $\mathrm{T05}$。尽管这两行的代入数值相同，核验的仍是两种不同资源。
+
+全部十二行均满足容量约束，结合式\eqref{s0207:optimal_vector}和式\eqref{s0207:streaming_vector}的二元取值，可确认两个选择都是模型\eqref{s0206:numerical_model}的可行解。两者还恰好使每一种资源都被使用一次。不过，原约束是容量上界，并未要求负载等于一；全零向量同样可行，且全部资源闲置。因此，表中的满负载是这两个具体选择的性质，不能改写为模型的一般要求。
+
+\subsection{收益复算与唯一最优性的依据}
+
+目标函数只对接受的完整任务计入一次收益。将两个向量代入式\eqref{s0206:objective}，所有未接受任务的项均为零，得到
+\begin{align}
+ z(x^{\star})&=12+11+10+9=42,
+ \label{s0207:optimal_value}\\
+ z(x^{\mathrm{S}})&=19+20=39.
+ \label{s0207:streaming_value}
+\end{align}
+这里的收益是无量纲教学数值。式\eqref{s0207:optimal_value}验证了所报收益与选择向量一致，但仅凭一次代入尚不能排除其他可行选择具有更高收益。
+
+本例只有十二个二元变量，全部可能选择共有 $2^{12}=4096$ 个。为明确枚举的判定对象，定义可行选择集合
+\begin{equation}
+ \mathcal{F}=\left\{x\in\{0,1\}^{12}:\ell_v(x)\leq1,\ \forall v\in V\right\}.
+ \label{s0207:feasible_set}
+\end{equation}
+保存的枚举记录直接依据原始任务资源组合，对每个子集计算各资源需求之和，再对满足容量上界的子集计算收益。该记录给出62个可行子集，最大收益为42，达到该值的选择只有式\eqref{s0207:optimal_vector}对应的一项。另存的独立核对记录得到相同结果，即
+\begin{equation}
+ |\mathcal{F}|=62,\qquad
+ \max_{x\in\mathcal{F}}z(x)=42,\qquad
+ \operatorname*{arg\,max}_{x\in\mathcal{F}}z(x)=\{x^{\star}\}.
+ \label{s0207:enumeration_certificate}
+\end{equation}
+由于枚举覆盖全部二元选择，且判定采用原始容量和收益数据，式\eqref{s0207:enumeration_certificate}为这个有限实例提供了唯一最优性的核验依据。保存的SCIP记录同时报告最优状态，其返回选择与枚举所得唯一最优解一致。上述结论限于当前十二任务实例，不能由此推断其他实例的最优选择或求解难度。
+
+以已经确认的最优收益为分母，Streaming选择的绝对收益损失和相对收益损失分别为
+\begin{align}
+ d_{\mathrm{S}}&=z(x^{\star})-z(x^{\mathrm{S}})=42-39=3,
+ \label{s0207:absolute_loss}\\
+ g_{\mathrm{S}}&=\frac{z(x^{\star})-z(x^{\mathrm{S}})}{z(x^{\star})}
+ =\frac{3}{42}\approx7.1429\%.
+ \label{s0207:relative_loss}
+\end{align}
+$d_{\mathrm{S}}$ 与目标函数采用相同的无量纲收益尺度，$g_{\mathrm{S}}$ 是无量纲比值。这里的分母是枚举确认的最优值，因此该比值表示本例的实际最优收益损失。Streaming保存状态表示一次扫描已经完成，并不表示已取得最优性证书；其结果可行，但确实未达到本例最优值。
+
+\subsection{完整资源组合对结果的影响}
+
+最优选择将资源划分为四个互不重叠的任务需求组：$\mathrm{T02}$ 使用 $\{\mathrm{A},\allowbreak\mathrm{B},\allowbreak\mathrm{G}\}$，$\mathrm{T03}$ 使用 $\{\mathrm{C},\allowbreak\mathrm{D},\allowbreak\mathrm{H}\}$，$\mathrm{T04}$ 使用 $\{\mathrm{E},\allowbreak\mathrm{F},\allowbreak\mathrm{I}\}$，$\mathrm{T12}$ 使用 $\{\mathrm{J},\allowbreak\mathrm{K},\allowbreak\mathrm{L}\}$。Streaming选择则由 $\mathrm{T01}$ 使用 $\mathrm{A}$ 至 $\mathrm{F}$，由 $\mathrm{T05}$ 使用 $\mathrm{G}$ 至 $\mathrm{L}$。两种分配都覆盖全部十二种资源，但组合方式不同，因而所得收益不同。
+
+单个任务收益较高，并不意味着围绕该任务形成的可行组合收益最高。例如，$\mathrm{T01}$ 的收益19高于 $\mathrm{T02}$、$\mathrm{T03}$、$\mathrm{T04}$ 中任一任务的收益；然而，接受 $\mathrm{T01}$ 会分别通过资源 $\mathrm{A},\mathrm{B}$、$\mathrm{C},\mathrm{D}$、$\mathrm{E},\mathrm{F}$ 排除这三个任务。类似地，$\mathrm{T05}$ 分别通过资源 $\mathrm{G}$、$\mathrm{H}$、$\mathrm{I}$ 与这三个任务冲突，并通过资源 $\mathrm{J},\allowbreak\mathrm{K},\allowbreak\mathrm{L}$ 与 $\mathrm{T12}$ 冲突。因而不能在保留 $\mathrm{T01}$ 和 $\mathrm{T05}$ 的同时，直接补入最优选择中的任务。
+
+事实上，Streaming选择已经用满全部资源，而每个候选任务至少需要一种资源，所以不存在仅增加任务、不撤销已选任务的可行改进。这种性质称为按集合包含关系极大的可行选择：无法继续添加任务。它与收益最大的选择不同。当前收益39的选择已经极大，却仍可通过撤销原有任务并重新组合，使收益提高到42。这给出了不能以“已无任务可添加”作为最优性判据的具体反例。
+
+任务数也不能代替总收益。虽然这里的最优选择包含四个任务，Streaming选择只包含两个任务，但可行子集 $\{\mathrm{T02},\allowbreak\mathrm{T03},\allowbreak\mathrm{T04}\}$ 包含三个任务，其收益仅为 $12+11+10=33$，仍低于两个任务 $\{\mathrm{T01},\allowbreak\mathrm{T05}\}$ 的收益39。评价选择时，需要同时检查完整资源组合的兼容性与总收益，不能只比较任务数量、单项收益或资源是否全部使用。
+
+上述冲突关系解释了两个输出为何具有不同收益，但仅凭最终选择不能还原Streaming内部每一步的接受、保留或替换过程。本例能够确认的是该次保存运行存在收益损失，不能将这一损失进一步归因于未经记录核实的某个内部操作。
+
+\subsection{保存计时的含义与适用范围}
+
+同一结果文件保存了每种方法21次重复运行的计时中位数，见表\ref{s0207:saved_timing}。重复期间SCIP所报收益均为42，Streaming所报收益均为39。
+
+\begin{table}[htbp]
+ \centering
+ \caption{同一教学实例的保存计时中位数}
+ \label{s0207:saved_timing}
+ \begin{tabular}{lccc}
+  \toprule
+  方法 & 重复次数 & 求解或内核时间（$\mathrm{ms}$） & 整链时间（$\mathrm{ms}$） \\
+  \midrule
+  SCIP & 21 & 1.1043 & 3.7201 \\
+  Streaming & 21 & 0.0060 & 0.0553 \\
+  \bottomrule
+ \end{tabular}
+\end{table}
+
+SCIP的求解时间由求解调用前后的墙钟差获得，Streaming的内核时间则由原生代码内部的计时器获得；整链时间还包含输入转换或建模及结果提取，不能与求解或内核计时混为同一口径。保存记录注明，计时使用同一物理机器和单线程求解，进程及依赖库已经加载，但每次重新建立实例状态或模型。原生C++内核与Python建模接口的差异也会进入相应的整链开销。
+
+在这一实例和保存的计时条件下，Streaming的时间中位数较小，同时其收益比最优值低3。这个不利的质量结果应与时间结果一并保留。21次重复只是同一实例的计时观测，不是21个独立问题实例，也不能据此给出跨实例的显著性或普遍速度结论。不同实验的停止规则、接口开销和计算环境所带来的影响，在第三章的完整实验分析中另行讨论。

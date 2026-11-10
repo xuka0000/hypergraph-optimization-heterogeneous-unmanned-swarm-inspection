@@ -1,0 +1,595 @@
+{
+  "controlled_groups": [
+    {
+      "axis": "base",
+      "level": null,
+      "n": 256,
+      "conditions": [
+        "S01",
+        "S11",
+        "S21"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.8487253673812946,
+          "quality_min": 0.7987804878048781,
+          "quality_max": 0.8763837638376384,
+          "time_ratio_mean": 155.98080972587272,
+          "time_ratio_min": 48.69347142324874,
+          "time_ratio_max": 365.0438539805742,
+          "support_count": 0,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.9717712599431584,
+          "quality_min": 0.9497232472324724,
+          "quality_max": 0.9920262664165104,
+          "time_ratio_mean": 43.465038187145964,
+          "time_ratio_min": 15.418357071879413,
+          "time_ratio_max": 95.69532225396756,
+          "support_count": 2,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 1.0128432486554724,
+          "quality_min": 1.0028142589118199,
+          "quality_max": 1.0218778486782134,
+          "time_ratio_mean": 2.1057753808671573,
+          "time_ratio_min": 0.594108113633648,
+          "time_ratio_max": 4.742838532502336,
+          "support_count": 1,
+          "planned": 3
+        }
+      }
+    },
+    {
+      "axis": "degree",
+      "level": 16,
+      "n": 256,
+      "conditions": [
+        "S02",
+        "S12",
+        "S22"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.8006387593927167,
+          "quality_min": 0.765906362545018,
+          "quality_max": 0.8561721404303511,
+          "time_ratio_mean": 2114.0416643314297,
+          "time_ratio_min": 445.159303125007,
+          "time_ratio_max": 5344.352256445847,
+          "support_count": 0,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.9029826854320752,
+          "quality_min": 0.8400926998841252,
+          "quality_max": 0.963985594237695,
+          "time_ratio_mean": 378.46828149377365,
+          "time_ratio_min": 196.27236441159627,
+          "time_ratio_max": 742.5896182807749,
+          "support_count": 1,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 0.9865075126187236,
+          "quality_min": 0.9629200463499421,
+          "quality_max": 1.0,
+          "time_ratio_mean": 30.716818762572203,
+          "time_ratio_min": 6.833327056078097,
+          "time_ratio_max": 74.99082768725994,
+          "support_count": 3,
+          "planned": 3
+        }
+      }
+    },
+    {
+      "axis": "degree",
+      "level": 32,
+      "n": 256,
+      "conditions": [
+        "S03",
+        "S13",
+        "S23"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.6867238032578314,
+          "quality_min": 0.6623134328358209,
+          "quality_max": 0.7305502846299811,
+          "time_ratio_mean": 483.0494162047106,
+          "time_ratio_min": 198.9592263383535,
+          "time_ratio_max": 731.0921457575565,
+          "support_count": 0,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.9199507135175095,
+          "quality_min": 0.8880597014925373,
+          "quality_max": 0.952561669829222,
+          "time_ratio_mean": 115.66862033495369,
+          "time_ratio_min": 54.76782543145869,
+          "time_ratio_max": 174.0504119601395,
+          "support_count": 1,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 0.9410949921244747,
+          "quality_min": 0.9192307692307692,
+          "quality_max": 0.952561669829222,
+          "time_ratio_mean": 4.408919060755722,
+          "time_ratio_min": 1.8131879387656011,
+          "time_ratio_max": 6.652843244273505,
+          "support_count": 1,
+          "planned": 3
+        }
+      }
+    },
+    {
+      "axis": "degree",
+      "level": 8,
+      "n": 256,
+      "conditions": [
+        "S04",
+        "S14",
+        "S24"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.7620064208181979,
+          "quality_min": 0.6987788331071914,
+          "quality_max": 0.8739376770538244,
+          "time_ratio_mean": 340.66620282402306,
+          "time_ratio_min": 126.4805041232292,
+          "time_ratio_max": 589.2268890623474,
+          "support_count": 0,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.9515980569328392,
+          "quality_min": 0.9220963172804533,
+          "quality_max": 0.9686544342507645,
+          "time_ratio_mean": 87.70620114940152,
+          "time_ratio_min": 44.04526170594912,
+          "time_ratio_max": 136.8508338803855,
+          "support_count": 2,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 0.9866612806033099,
+          "quality_min": 0.9686544342507645,
+          "quality_max": 1.003541076487252,
+          "time_ratio_mean": 6.851680781027032,
+          "time_ratio_min": 2.6640617881687225,
+          "time_ratio_max": 13.743222542036694,
+          "support_count": 3,
+          "planned": 3
+        }
+      }
+    },
+    {
+      "axis": "rank",
+      "level": 16,
+      "n": 256,
+      "conditions": [
+        "S05",
+        "S15",
+        "S25"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.7502009140120969,
+          "quality_min": 0.7050487156775908,
+          "quality_max": 0.7819947043248014,
+          "time_ratio_mean": 10850.037884624213,
+          "time_ratio_min": 10605.773024445078,
+          "time_ratio_max": 11119.618496489624,
+          "support_count": 0,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.8656826515012056,
+          "quality_min": 0.8127118644067797,
+          "quality_max": 0.9131975199291408,
+          "time_ratio_mean": 4371.025961230619,
+          "time_ratio_min": 3821.6461032590705,
+          "time_ratio_max": 4654.331599913439,
+          "support_count": 0,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 0.9693767066904219,
+          "quality_min": 0.9302736098852604,
+          "quality_max": 1.0,
+          "time_ratio_mean": 230.21277113778203,
+          "time_ratio_min": 219.07055647454186,
+          "time_ratio_max": 248.20424035033565,
+          "support_count": 2,
+          "planned": 3
+        }
+      }
+    },
+    {
+      "axis": "rank",
+      "level": 32,
+      "n": 256,
+      "conditions": [
+        "S06",
+        "S16",
+        "S26"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.7054379298707507,
+          "quality_min": 0.6015132408575031,
+          "quality_max": 0.7635869565217391,
+          "time_ratio_mean": 11846.021187463251,
+          "time_ratio_min": 7381.8863507036285,
+          "time_ratio_max": 18003.04538471203,
+          "support_count": 0,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.8136101639752363,
+          "quality_min": 0.7578814627994955,
+          "quality_max": 0.90625,
+          "time_ratio_mean": 5984.142268772674,
+          "time_ratio_min": 4646.032035840798,
+          "time_ratio_max": 8321.800785052501,
+          "support_count": 0,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 0.9146627601137788,
+          "quality_min": 0.8604368932038835,
+          "quality_max": 0.9773013871374527,
+          "time_ratio_mean": 312.54448689067493,
+          "time_ratio_min": 182.23699722852018,
+          "time_ratio_max": 469.7084568897617,
+          "support_count": 1,
+          "planned": 3
+        }
+      }
+    },
+    {
+      "axis": "rank",
+      "level": 8,
+      "n": 256,
+      "conditions": [
+        "S07",
+        "S17",
+        "S27"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.7991731355677282,
+          "quality_min": 0.7300242130750605,
+          "quality_max": 0.8409090909090909,
+          "time_ratio_mean": 3119.8144975954383,
+          "time_ratio_min": 334.482292337487,
+          "time_ratio_max": 6163.425491842086,
+          "support_count": 0,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.8970358656312878,
+          "quality_min": 0.8422077922077922,
+          "quality_max": 0.9763922518159807,
+          "time_ratio_mean": 1535.3803292668647,
+          "time_ratio_min": 237.84386001804063,
+          "time_ratio_max": 3331.882981689069,
+          "support_count": 1,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 0.9882444999655302,
+          "quality_min": 0.9716012084592145,
+          "quality_max": 1.0058441558441558,
+          "time_ratio_mean": 80.31005981793619,
+          "time_ratio_min": 6.989853997999876,
+          "time_ratio_max": 166.30813675985166,
+          "support_count": 3,
+          "planned": 3
+        }
+      }
+    },
+    {
+      "axis": "spread",
+      "level": 1,
+      "n": 256,
+      "conditions": [
+        "S08",
+        "S18",
+        "S28"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.7692147034252298,
+          "quality_min": 0.7678571428571429,
+          "quality_max": 0.7719298245614035,
+          "time_ratio_mean": 4971252.779594008,
+          "time_ratio_min": 1193702.715404163,
+          "time_ratio_max": 6959098.366036181,
+          "support_count": 0,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.7633667502088555,
+          "quality_min": 0.75,
+          "quality_max": 0.7857142857142857,
+          "time_ratio_mean": 1576473.0068563146,
+          "time_ratio_min": 274924.4813200388,
+          "time_ratio_max": 2249737.3055119812,
+          "support_count": 0,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 0.9763993316624895,
+          "quality_min": 0.9649122807017544,
+          "quality_max": 0.9821428571428571,
+          "time_ratio_mean": 52558.791489057694,
+          "time_ratio_min": 11749.090415021044,
+          "time_ratio_max": 104281.70890386461,
+          "support_count": 3,
+          "planned": 3
+        }
+      }
+    },
+    {
+      "axis": "spread",
+      "level": 10,
+      "n": 256,
+      "conditions": [
+        "S09",
+        "S19",
+        "S29"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.8168750849593062,
+          "quality_min": 0.78839590443686,
+          "quality_max": 0.8482758620689655,
+          "time_ratio_mean": 3838.9101220959287,
+          "time_ratio_min": 2617.292493281935,
+          "time_ratio_max": 4920.376895622198,
+          "support_count": 0,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.921657595000307,
+          "quality_min": 0.8862068965517241,
+          "quality_max": 0.9401993355481728,
+          "time_ratio_mean": 1153.3610362875277,
+          "time_ratio_min": 900.2351927761238,
+          "time_ratio_max": 1355.1360490473103,
+          "support_count": 0,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 1.0013056787289005,
+          "quality_min": 0.9867109634551495,
+          "quality_max": 1.013793103448276,
+          "time_ratio_mean": 56.464448995987944,
+          "time_ratio_min": 30.896161386844792,
+          "time_ratio_max": 92.76586726008141,
+          "support_count": 3,
+          "planned": 3
+        }
+      }
+    },
+    {
+      "axis": "spread",
+      "level": 1000,
+      "n": 256,
+      "conditions": [
+        "S10",
+        "S20",
+        "S30"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.9044513968323008,
+          "quality_min": 0.8406019307211812,
+          "quality_max": 0.9776465868057546,
+          "time_ratio_mean": 40.43036968549737,
+          "time_ratio_min": 26.618922248248506,
+          "time_ratio_max": 51.37868481107445,
+          "support_count": 1,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.9784672253846469,
+          "quality_min": 0.9489432703003337,
+          "quality_max": 1.003267037313005,
+          "time_ratio_mean": 13.587140052971936,
+          "time_ratio_min": 11.449646807363738,
+          "time_ratio_max": 15.860282870653865,
+          "support_count": 2,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 1.0014711220649204,
+          "quality_min": 1.0,
+          "quality_max": 1.0044133661947612,
+          "time_ratio_mean": 0.8888103547018683,
+          "time_ratio_min": 0.6837762270377664,
+          "time_ratio_max": 1.1822963411839293,
+          "support_count": 0,
+          "planned": 3
+        }
+      }
+    },
+    {
+      "axis": "n",
+      "level": 1024,
+      "n": 1024,
+      "conditions": [
+        "S31",
+        "S32",
+        "S33"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.8914683795468706,
+          "quality_min": 0.8451969592259848,
+          "quality_max": 0.9321111768184506,
+          "time_ratio_mean": 412.12626525396934,
+          "time_ratio_min": 96.79394257498382,
+          "time_ratio_max": 1030.25660310624,
+          "support_count": 0,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.9688188660273608,
+          "quality_min": 0.9454042847270214,
+          "quality_max": 0.9977528089887641,
+          "time_ratio_mean": 163.71733044925108,
+          "time_ratio_min": 34.23660917420117,
+          "time_ratio_max": 406.62063906700797,
+          "support_count": 2,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 1.0048291599612345,
+          "quality_min": 0.9892612697663441,
+          "quality_max": 1.0264931992903608,
+          "time_ratio_mean": 3.8378443708370096,
+          "time_ratio_min": 0.6272765641333085,
+          "time_ratio_max": 10.13038554001214,
+          "support_count": 1,
+          "planned": 3
+        }
+      }
+    },
+    {
+      "axis": "n",
+      "level": 4096,
+      "n": 4096,
+      "conditions": [
+        "S34",
+        "S37",
+        "S38"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.88793849817915,
+          "quality_min": 0.8783721199490564,
+          "quality_max": 0.9047361948468761,
+          "time_ratio_mean": 1234.9807714215144,
+          "time_ratio_min": 493.4449564327046,
+          "time_ratio_max": 1652.1879596996278,
+          "support_count": 0,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.9690172857714799,
+          "quality_min": 0.9620238508741461,
+          "quality_max": 0.9815831308677525,
+          "time_ratio_mean": 1049.5615083210441,
+          "time_ratio_min": 890.624343102664,
+          "time_ratio_max": 1232.9705771914714,
+          "support_count": 3,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 1.0026223912663563,
+          "quality_min": 0.9944714599976844,
+          "quality_max": 1.0161672515672335,
+          "time_ratio_mean": 5.133141566423189,
+          "time_ratio_min": 3.907222576783299,
+          "time_ratio_max": 6.487192855131473,
+          "support_count": 3,
+          "planned": 3
+        }
+      }
+    },
+    {
+      "axis": "n",
+      "level": 16384,
+      "n": 16384,
+      "conditions": [
+        "S39",
+        "S56",
+        "S57"
+      ],
+      "methods": {
+        "Streaming": {
+          "quality_mean": 0.8793848067224241,
+          "quality_min": 0.8756687879643507,
+          "quality_max": 0.8815141692839534,
+          "time_ratio_mean": 20606.884703384483,
+          "time_ratio_min": 14467.5524547474,
+          "time_ratio_max": 29871.10127428686,
+          "support_count": 0,
+          "planned": 3
+        },
+        "Greedy": {
+          "quality_mean": 0.9472237872517743,
+          "quality_min": 0.9448221083664883,
+          "quality_max": 0.9495160110915634,
+          "time_ratio_mean": 8607.74783171759,
+          "time_ratio_min": 6146.487223021536,
+          "time_ratio_max": 11356.92374004368,
+          "support_count": 0,
+          "planned": 3
+        },
+        "ILS1000": {
+          "quality_mean": 0.9779295713665194,
+          "quality_min": 0.9766946851719119,
+          "quality_max": 0.9801213613074964,
+          "time_ratio_mean": 12.375091849536194,
+          "time_ratio_min": 8.350071466545891,
+          "time_ratio_max": 15.245663083655845,
+          "support_count": 3,
+          "planned": 3
+        }
+      }
+    }
+  ],
+  "condition_count": 59,
+  "run_count": 236,
+  "all_feasible": true,
+  "method_ranges": {
+    "Streaming": {
+      "time_min": 0.0003826,
+      "time_max": 0.1535918,
+      "quality_ratio_min": 0.6015132408575031,
+      "quality_ratio_max": 0.9776465868057546,
+      "minimum_quality_condition": "S26",
+      "maximum_quality_condition": "S10",
+      "completed_within_3_seconds": 59,
+      "completed_within_5_seconds": 59
+    },
+    "Greedy": {
+      "time_min": 0.0013814999838359654,
+      "time_max": 0.2899119000067003,
+      "quality_ratio_min": 0.75,
+      "quality_ratio_max": 1.0188183934536241,
+      "minimum_quality_condition": "S28",
+      "maximum_quality_condition": "S41",
+      "completed_within_3_seconds": 59,
+      "completed_within_5_seconds": 59
+    },
+    "ILS1000": {
+      "time_min": 0.01916440000059083,
+      "time_max": 1240.4823723000009,
+      "quality_ratio_min": 0.8604368932038835,
+      "quality_ratio_max": 1.0378097063252218,
+      "minimum_quality_condition": "S16",
+      "maximum_quality_condition": "S49",
+      "completed_within_3_seconds": 36,
+      "completed_within_5_seconds": 36
+    },
+    "SCIP": {
+      "time_min": 0.017190499987918884,
+      "time_max": 3163.606117200048,
+      "quality_ratio_min": 1.0,
+      "quality_ratio_max": 1.0,
+      "minimum_quality_condition": "S01",
+      "maximum_quality_condition": "S01",
+      "completed_within_3_seconds": 41,
+      "completed_within_5_seconds": 41
+    }
+  }
+}

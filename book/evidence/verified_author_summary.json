@@ -1,0 +1,85 @@
+{
+  "planned": 70,
+  "valid": 65,
+  "failed": 5,
+  "conditions": [
+    {
+      "scenario_id": "paper2026_ISPD98_ibm01",
+      "planned": 10,
+      "valid": 10,
+      "failed": 0,
+      "all_seed_mean_objective": 257814,
+      "valid_subset_mean_objective": 257814,
+      "minimum": 257521,
+      "maximum": 258013,
+      "valid_subset_mean_seconds": 0.09906722999876365
+    },
+    {
+      "scenario_id": "paper2026_ISPD98_ibm02",
+      "planned": 10,
+      "valid": 9,
+      "failed": 1,
+      "all_seed_mean_objective": null,
+      "valid_subset_mean_objective": 379719.3333333333,
+      "minimum": 379495,
+      "maximum": 379987,
+      "valid_subset_mean_seconds": 0.1480755333129006
+    },
+    {
+      "scenario_id": "paper2026_us04_mtx",
+      "planned": 10,
+      "valid": 6,
+      "failed": 4,
+      "all_seed_mean_objective": null,
+      "valid_subset_mean_objective": 978,
+      "minimum": 933,
+      "maximum": 1065,
+      "valid_subset_mean_seconds": 12.33891306668132
+    },
+    {
+      "scenario_id": "paper2026_bibd_49_3_mtx",
+      "planned": 10,
+      "valid": 10,
+      "failed": 0,
+      "all_seed_mean_objective": 2289.9,
+      "valid_subset_mean_objective": 2289.9,
+      "minimum": 2288,
+      "maximum": 2307,
+      "valid_subset_mean_seconds": 0.022157599992351607
+    },
+    {
+      "scenario_id": "paper2026_sat14_AProVE07-01_cnf_dual",
+      "planned": 10,
+      "valid": 10,
+      "failed": 0,
+      "all_seed_mean_objective": 132908.6,
+      "valid_subset_mean_objective": 132908.6,
+      "minimum": 132820,
+      "maximum": 133005,
+      "valid_subset_mean_seconds": 0.08643844001344406
+    },
+    {
+      "scenario_id": "paper2026_sat14_AProVE07-27_cnf_dual",
+      "planned": 10,
+      "valid": 10,
+      "failed": 0,
+      "all_seed_mean_objective": 154209.6,
+      "valid_subset_mean_objective": 154209.6,
+      "minimum": 154055,
+      "maximum": 154455,
+      "valid_subset_mean_seconds": 0.07166901999153197
+    },
+    {
+      "scenario_id": "paper2026_dac2012_superblue19",
+      "planned": 10,
+      "valid": 10,
+      "failed": 0,
+      "all_seed_mean_objective": 11405360.9,
+      "valid_subset_mean_objective": 11405360.9,
+      "minimum": 11405242,
+      "maximum": 11405475,
+      "valid_subset_mean_seconds": 7.938115750002908
+    }
+  ],
+  "scope": "Independently summed original input weights and capacities; failed seeds remain null, valid-subset means explicitly named."
+}

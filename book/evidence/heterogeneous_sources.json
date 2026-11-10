@@ -1,0 +1,174 @@
+[
+  {
+    "key": "EMOS2025",
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/8ec46cecdae5407662899c5f6698cd8b-Paper-Conference.pdf",
+    "path": "总结\\超图优化与无人集群巡检建模专著\\reference\\heterogeneous\\EMOS2025.pdf",
+    "sha256": "09d43096a712c5f7b3ec8621e693a7b540e79a657cdcf17dde90fbfa788e3396",
+    "pages": 21,
+    "status": "selected_pages_read_and_claims_checked",
+    "parent_pages_read": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      21
+    ],
+    "whole_paper_read": false
+  },
+  {
+    "key": "PARTNR2025",
+    "url": "https://proceedings.iclr.cc/paper_files/paper/2025/file/a3cf318fbeec1126da21e9185ae9908c-Paper-Conference.pdf",
+    "path": "总结\\超图优化与无人集群巡检建模专著\\reference\\heterogeneous\\PARTNR2025.pdf",
+    "sha256": "78127a35a1d0ea89e8318fc1dc83005a2881239aba1614ed55a1f5998a39706e",
+    "pages": 64,
+    "status": "selected_pages_read_and_claims_checked",
+    "parent_pages_read": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "whole_paper_read": false
+  },
+  {
+    "key": "COHERENT2025",
+    "url": "https://arxiv.org/pdf/2409.15146v3",
+    "path": "总结\\超图优化与无人集群巡检建模专著\\reference\\heterogeneous\\COHERENT2025.pdf",
+    "sha256": "3780db471bf44191bf8ad468bcea2fa220d8f3949fe69a8849a22c21ec654731",
+    "pages": 7,
+    "status": "selected_pages_read_and_claims_checked",
+    "parent_pages_read": [
+      3,
+      4,
+      5
+    ],
+    "whole_paper_read": false
+  },
+  {
+    "key": "STRATA2020",
+    "url": "https://arxiv.org/pdf/1903.05149v3",
+    "path": "总结\\超图优化与无人集群巡检建模专著\\reference\\heterogeneous\\STRATA2020.pdf",
+    "sha256": "cfa857cfca3e5d6ce59bcedadb0c8253b88618aa96285a1cef2edb42eefe677d",
+    "pages": 28,
+    "status": "selected_pages_read_and_claims_checked",
+    "parent_pages_read": [
+      4,
+      6,
+      7,
+      8,
+      9,
+      12
+    ],
+    "whole_paper_read": false
+  },
+  {
+    "key": "TAMP2021",
+    "url": "https://arxiv.org/pdf/2010.01083",
+    "path": "总结\\超图优化与无人集群巡检建模专著\\reference\\heterogeneous\\TAMP2021.pdf",
+    "sha256": "1c887d8a6d45ee1531a8b9c298ce3b13f7a7dc8239d910e0434a350fe3043a2f",
+    "pages": 30,
+    "status": "selected_pages_read_and_claims_checked",
+    "parent_pages_read": [
+      1,
+      8,
+      9,
+      14,
+      15
+    ],
+    "whole_paper_read": false
+  },
+  {
+    "key": "CBBA2009",
+    "url": "https://dspace.mit.edu/bitstreams/9954d25d-991a-4c8d-be1d-3574ee986f43/download",
+    "error": "429 Client Error: Too Many Requests for url: https://dspace.mit.edu/bitstreams/9954d25d-991a-4c8d-be1d-3574ee986f43/download"
+  },
+  {
+    "key": "MATAMP2026",
+    "url": "https://link.springer.com/content/pdf/10.1007/s10462-026-11588-5.pdf",
+    "path": "总结\\超图优化与无人集群巡检建模专著\\reference\\heterogeneous\\MATAMP2026.pdf",
+    "sha256": "75aef64d2a354cac7b56132cf9d652af3384513f29ff3cd77bab660d5fffe667",
+    "pages": 40,
+    "status": "selected_pages_read_and_claims_checked",
+    "parent_pages_read": [
+      1,
+      5,
+      6,
+      7,
+      8
+    ],
+    "whole_paper_read": false
+  },
+  {
+    "key": "HARL2024",
+    "url": "https://www.jmlr.org/papers/volume25/23-0488/23-0488.pdf",
+    "path": "总结\\超图优化与无人集群巡检建模专著\\reference\\heterogeneous\\HARL2024.pdf",
+    "sha256": "5098f1695a7fb19351e3ab1f9952360e80fe09be57cfb5ad9f8ba304f1281bca",
+    "pages": 67,
+    "selected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "status": "selected_pages_read_and_claims_checked",
+    "parent_pages_read": [
+      1,
+      3,
+      4,
+      5
+    ],
+    "whole_paper_read": false
+  },
+  {
+    "key": "NoMaD2024",
+    "url": "https://arxiv.org/pdf/2310.07896",
+    "path": "总结\\超图优化与无人集群巡检建模专著\\reference\\heterogeneous\\NoMaD2024.pdf",
+    "sha256": "05fe73918a7e454c6a006b7cba9aaec6bfc46ce96f65e28eb7a0967263a48af9",
+    "pages": 8,
+    "selected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "status": "selected_pages_read_and_claims_checked",
+    "parent_pages_read": [
+      2,
+      3
+    ],
+    "whole_paper_read": false
+  },
+  {
+    "key": "OpenVLA2024",
+    "url": "https://arxiv.org/pdf/2406.09246",
+    "path": "总结\\超图优化与无人集群巡检建模专著\\reference\\heterogeneous\\OpenVLA2024.pdf",
+    "sha256": "353c37df34458f12f969b14dfd8b77175b727b9cddea7bb891759beddeefe1be",
+    "pages": 37,
+    "selected": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "status": "selected_pages_read_and_claims_checked",
+    "parent_pages_read": [
+      2,
+      3
+    ],
+    "whole_paper_read": false
+  }
+]

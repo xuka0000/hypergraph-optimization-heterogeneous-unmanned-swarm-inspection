@@ -1,0 +1,35 @@
+{
+  "recorded_at": "2026-11-10T04:24:18.419322+00:00",
+  "execution": "python -B -X utf8 reproduction/package_tools.py --deep",
+  "observed_returncode": 0,
+  "files_checked": 2007,
+  "errors": [],
+  "known_missing_historical_files": 1,
+  "scope": "Earlier tool execution in this session verified all declared base files, three binding sets and821archive members; no optimization run.",
+  "evidence_bindings": [
+    {
+      "path": "reproduction/source_manifest.json",
+      "sha256": "92c699afc79063094dd7a4f77f0f5a59d7a6690f2402edf33d5b7d7c7ba8a33a"
+    },
+    {
+      "path": "reproduction/archive_inventory.json",
+      "sha256": "fd2b56c58f51e01a6de1454404a8366cc1e5ebfcedfb67f3ead61f86428e00e2"
+    },
+    {
+      "path": "reproduction/conditional_source_bindings.json",
+      "sha256": "9d4f9fd176aba71de327ea7249662c6a5fbe8eedaf38adfb18673bf74fda209f"
+    },
+    {
+      "path": "reproduction/regional_resource_source_bindings.json",
+      "sha256": "16ef614b9e6702455ccc52aac4d4e8714b0f154e6230276c144a3d9889ad4cb1"
+    },
+    {
+      "path": "reproduction/latest_regional_source_bindings.json",
+      "sha256": "91c79f6bf8cc763fd3bccabfafabbd125bc6bced1674615611907dc75038acd5"
+    },
+    {
+      "path": "reproduction/package_tools.py",
+      "sha256": "8e5914af3bbc71551a8b795ee1db49fa101f472cd97c7b43a4edea0bf6914e0a"
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "protocol": {
+    "experiment_id": "inspection_battery_electrothermal_component",
+    "purpose": "validate signed electrical/thermal states and test their effect on battery availability and charger order",
+    "scientific_comparison": false,
+    "complete_joint_mission": false,
+    "termination": "finite physical trajectories and SCIP optimality; no ten-second optimizer cutoff",
+    "independent_oracles": [
+      "constant-current closed form",
+      "quadrature thermal response",
+      "energy conservation",
+      "enumerated two-job scheduling"
+    ],
+    "tolerances": {
+      "state": 2e-07,
+      "energy_balance_Wh": 2e-06,
+      "scheduling_s": 1e-05
+    },
+    "source_sha256": "559f6eacfa4a40062049b59d2b6f693b0302e12442bfcd85d61981bd45af0a3b",
+    "validator_sha256": "4fff6f46ec8dae71b3acf802588dfca50d913e576bcd752f11136a4cfad7728d",
+    "profile_sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+  },
+  "attempt_id": "20261110T091434",
+  "observed_at": "2026-11-10T09:14:35.571897+00:00",
+  "checks": [
+    {
+      "name": "constant_current_closed_form",
+      "passed": true,
+      "max_state_error": 4.263256414560601e-14,
+      "final_soc": 0.7297950014040926,
+      "final_voltage_V": 48.37247613735951,
+      "final_temperature_C": 25.864650269119878
+    },
+    {
+      "name": "polarization_relaxation_and_persistent_soc",
+      "passed": true
+    },
+    {
+      "name": "power_port_high_voltage_branch",
+      "passed": true,
+      "max_power_residual_W": 1.1368683772161603e-13
+    },
+    {
+      "name": "excessive_power_rejected",
+      "passed": true
+    },
+    {
+      "name": "hot_pack_cools_before_charging",
+      "passed": true,
+      "cooling_duration_s": 223.3965988412519,
+      "analytic_s": 223.3965988412513
+    },
+    {
+      "name": "cc_cv_supply_and_temperature_limits",
+      "passed": true,
+      "modes": [
+        "CC",
+        "CV",
+        "supply"
+      ],
+      "max_voltage_V": 52.8,
+      "max_grid_W": 1000.0000000000002,
+      "max_temperature_C": 39.0,
+      "charge_end_s": 1656.0426397385565
+    },
+    {
+      "name": "chemical_rc_loss_grid_energy_balance",
+      "passed": true,
+      "max_residual_Wh": 4.3761660961649795e-12
+    },
+    {
+      "name": "soc_threshold_stops_without_clipping",
+      "passed": true,
+      "stop_s": 7.271939002108527,
+      "final_soc": 0.199999999
+    },
+    {
+      "name": "unreachable_temperature_is_not_fake_ready",
+      "passed": true
+    },
+    {
+      "name": "replanning_carries_all_six_states",
+      "passed": true,
+      "max_state_error": 1.4210854715202004e-14
+    },
+    {
+      "name": "partial_charge_is_actual_control",
+      "passed": true,
+      "full_s": 664.3733736181603,
+      "half_s": 1266.8046603609519
+    },
+    {
+      "name": "invalid_physical_parameters_rejected",
+      "passed": true,
+      "rejected": 4
+    },
+    {
+      "name": "sensitivity_energy_balance",
+      "passed": true
+    },
+    {
+      "name": "scheduler_matches_enumeration_False",
+      "passed": true
+    },
+    {
+      "name": "scheduler_matches_enumeration_True",
+      "passed": true
+    },
+    {
+      "name": "thermal_constraint_changes_decision_and_rejects_old_plan",
+      "passed": true
+    },
+    {
+      "name": "hot_hysteresis_memory_survives_planning_boundary",
+      "passed": true
+    },
+    {
+      "name": "split_charge_same_physical_state_as_continuous",
+      "passed": true
+    }
+  ],
+  "all_checks_passed": true,
+  "sensitivity": [
+    {
+      "axis": "R0_multiplier",
+      "value": 0.5,
+      "completed": true,
+      "stop_reason": null,
+      "end_s": 600.0,
+      "final_SOC": 0.4371138530660414,
+      "peak_temperature_C": 30.77620041005226,
+      "load_Wh": 199.99999999999932,
+      "resistive_heat_Wh": 7.39287625140297,
+      "energy_residual_Wh": -8.073541835074138e-13
+    },
+    {
+      "axis": "R0_multiplier",
+      "value": 1.0,
+      "completed": true,
+      "stop_reason": null,
+      "end_s": 600.0,
+      "final_SOC": 0.4293307450210887,
+      "peak_temperature_C": 33.90449825395986,
+      "load_Wh": 199.99999999999937,
+      "resistive_heat_Wh": 11.664894021904097,
+      "energy_residual_Wh": -6.608047442568932e-13
+    },
+    {
+      "axis": "R0_multiplier",
+      "value": 2.0,
+      "completed": true,
+      "stop_reason": null,
+      "end_s": 600.0,
+      "final_SOC": 0.41368221849520587,
+      "peak_temperature_C": 40.03519211259838,
+      "load_Wh": 199.99999999999937,
+      "resistive_heat_Wh": 20.22554771120642,
+      "energy_residual_Wh": -9.343636975245317e-13
+    },
+    {
+      "axis": "thermal_conductance_multiplier",
+      "value": 0.5,
+      "completed": true,
+      "stop_reason": null,
+      "end_s": 600.0,
+      "final_SOC": 0.42975767964107936,
+      "peak_temperature_C": 36.33521566075798,
+      "load_Wh": 199.99999999999937,
+      "resistive_heat_Wh": 11.456238549771472,
+      "energy_residual_Wh": -5.240252676230739e-13
+    },
+    {
+      "axis": "thermal_conductance_multiplier",
+      "value": 1.0,
+      "completed": true,
+      "stop_reason": null,
+      "end_s": 600.0,
+      "final_SOC": 0.4293307450210887,
+      "peak_temperature_C": 33.90449825395986,
+      "load_Wh": 199.99999999999937,
+      "resistive_heat_Wh": 11.664894021904097,
+      "energy_residual_Wh": -6.608047442568932e-13
+    },
+    {
+      "axis": "thermal_conductance_multiplier",
+      "value": 2.0,
+      "completed": true,
+      "stop_reason": null,
+      "end_s": 600.0,
+      "final_SOC": 0.42872552233433553,
+      "peak_temperature_C": 30.989609778649495,
+      "load_Wh": 199.99999999999937,
+      "resistive_heat_Wh": 11.961998677548069,
+      "energy_residual_Wh": -6.945555242054979e-13
+    },
+    {
+      "axis": "ambient_C",
+      "value": 5.0,
+      "completed": true,
+      "stop_reason": null,
+      "end_s": 600.0,
+      "final_SOC": 0.4189372703829152,
+      "peak_temperature_C": 18.008986884639565,
+      "load_Wh": 199.99999999999935,
+      "resistive_heat_Wh": 17.014735117255725,
+      "energy_residual_Wh": -2.5579538487363607e-13
+    },
+    {
+      "axis": "ambient_C",
+      "value": 25.0,
+      "completed": true,
+      "stop_reason": null,
+      "end_s": 600.0,
+      "final_SOC": 0.4293307450210887,
+      "peak_temperature_C": 33.90449825395986,
+      "load_Wh": 199.99999999999937,
+      "resistive_heat_Wh": 11.664894021904097,
+      "energy_residual_Wh": -6.608047442568932e-13
+    },
+    {
+      "axis": "ambient_C",
+      "value": 35.0,
+      "completed": true,
+      "stop_reason": null,
+      "end_s": 600.0,
+      "final_SOC": 0.4332149212633285,
+      "peak_temperature_C": 42.344204485887516,
+      "load_Wh": 199.99999999999935,
+      "resistive_heat_Wh": 9.637749739855874,
+      "energy_residual_Wh": -6.856737400084967e-13
+    }
+  ],
+  "charger_jobs": [
+    {
+      "id": "A",
+      "soc": 0.65,
+      "T": 48.0,
+      "weight": 5.0,
+      "release_s": 223.3965988412519,
+      "duration_s": 682.5128508121998
+    },
+    {
+      "id": "B",
+      "soc": 0.8,
+      "T": 25.0,
+      "weight": 1.0,
+      "release_s": 0,
+      "duration_s": 300.8440481833471
+    }
+  ],
+  "schedules": [
+    {
+      "thermal_constraints": false,
+      "status": "optimal",
+      "objective_weighted_s": 4395.921153056546,
+      "wall_s": 0.0015341000398620963,
+      "solver_s": 0.0,
+      "nodes": 1,
+      "order": [
+        "A",
+        "B"
+      ],
+      "starts_s": [
+        0.0,
+        682.5128508121998
+      ],
+      "independent_enumeration": {
+        "order": [
+          "A",
+          "B"
+        ],
+        "start_s": [
+          0.0,
+          682.5128508121998
+        ],
+        "objective_weighted_s": 4395.921153056545
+      },
+      "replay": [
+        {
+          "pack": "A",
+          "scheduled_start_s": 0.0,
+          "temperature_at_start_C": 48.0,
+          "thermal_ready": false,
+          "actual_charge_end_s": 905.9094496534516
+        },
+        {
+          "pack": "B",
+          "scheduled_start_s": 682.5128508121998,
+          "temperature_at_start_C": 25.0,
+          "thermal_ready": true,
+          "actual_charge_end_s": 983.3568989955469
+        }
+      ],
+      "physically_feasible": false
+    },
+    {
+      "thermal_constraints": true,
+      "status": "optimal",
+      "objective_weighted_s": 5217.628543161085,
+      "wall_s": 0.0007769999792799354,
+      "solver_s": 0.0,
+      "nodes": 1,
+      "order": [
+        "B",
+        "A"
+      ],
+      "starts_s": [
+        300.8440481833477,
+        0.0
+      ],
+      "independent_enumeration": {
+        "order": [
+          "B",
+          "A"
+        ],
+        "start_s": [
+          300.8440481833471,
+          0.0
+        ],
+        "objective_weighted_s": 5217.628543161081
+      },
+      "replay": [
+        {
+          "pack": "A",
+          "scheduled_start_s": 300.8440481833477,
+          "temperature_at_start_C": 36.78646555875357,
+          "thermal_ready": true,
+          "actual_charge_end_s": 983.3568989986122
+        },
+        {
+          "pack": "B",
+          "scheduled_start_s": 0.0,
+          "temperature_at_start_C": 25.0,
+          "thermal_ready": true,
+          "actual_charge_end_s": 300.8440481833471
+        }
+      ],
+      "physically_feasible": true
+    }
+  ],
+  "wall_s": 0.9245645999908447,
+  "full_joint_model_verified": false,
+  "parameter_identification_from_TB60_measurements": false
+}

@@ -1,0 +1,13 @@
+{
+  "observed_at": "2026-11-10T08:02:05.482802+00:00",
+  "passed": true,
+  "draft_sha256": "9d1ef5c20c4c9d402d3b7ba0223b698bae8a143f700a93e299ec4b5e6094e997",
+  "checks": [
+    "seven trajectory result rows equal raw evidence at declared precision",
+    "five SCIP timing variables and analytic objective agree",
+    "all original equation labels preserved",
+    "original OSM maxspeed5 present",
+    "source/assumption and restricted trajectory family distinguished"
+  ],
+  "scope_refresh": "Only removed an unresolved forward reference; numeric rows unchanged and checked against source."
+}

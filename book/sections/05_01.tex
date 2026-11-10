@@ -1,0 +1,206 @@
+\section{任务分配与整塔完成}
+\label{sec:05_01}
+
+第\ref{sec:04_01}节以杆塔及其拍摄角色定义观测任务，第\ref{sec:04_05}节进一步规定一次观测应满足的成像、可见性与质量条件。在此基础上，联合决策首先需要回答：哪些要求已经验收，哪些尚未完成的要求由当前计划承担，以及这些要求分别交由哪个航次执行。这三个问题分别涉及历史状态、计划完成状态和任务分配，不能用同一个二元变量代替。整塔完成则由塔内全部要求共同决定，不能由拍摄次数或单项任务的完成状态直接替代。
+
+\subsection{历史验收状态与本次计划承担的要求}
+
+沿用第\ref{sec:04_01}节的杆塔集合$\mathcal G$、塔内任务集合$\mathcal I_g$和区域任务集合$\mathcal I$。每项任务由所属杆塔及其拍摄角色唯一标识。为区分拍摄角色与下文的信息更新序号，本节将角色索引写为$r$，即$i=(g,r)$，其中$r\in\mathcal K_g$。任务集合满足
+\begin{equation}
+ \mathcal I=\bigcup_{g\in\mathcal G}\mathcal I_g,\qquad
+ \mathcal I_g\ne\varnothing\quad(g\in\mathcal G),\qquad
+ \mathcal I_g\cap\mathcal I_{g'}=\varnothing
+ \quad(g,g'\in\mathcal G,\ g\ne g').
+ \label{s0501:task_partition}
+\end{equation}
+式\eqref{s0501:task_partition}中的集合均为有限集合，元素是任务身份，不具有物理单位。非空条件使整塔完成始终对应至少一项实际要求；互不相交条件保证一个任务不会同时归属于两座塔。同一角色的重复照片也不形成新的任务身份，不能替代同塔其他角色的要求。
+
+在第$k$次信息更新时刻$\tau_k$，令$A_i^k$表示任务$i$是否已经验收。$k$为非负整数索引，$\tau_k$采用第\ref{sec:04_03}节的共同时间坐标，单位为$\mathrm{s}$。在当前一次优化中，$A_i^k$是给定参数，而非可由求解器改变的决策：
+\begin{equation}
+ A_i^k\in\{0,1\}\quad(i\in\mathcal I),\qquad
+ \mathcal I_k=\{i\in\mathcal I:A_i^k=0\}.
+ \label{s0501:accepted_state}
+\end{equation}
+其中，$A_i^k=1$表示截至$\tau_k$已取得该要求的验收记录，$A_i^k=0$表示尚未取得。仅有拍摄动作、尚待检查的图像或上一轮计划中的完成承诺，均不能自动置为已验收。集合$\mathcal I_k$因此包含本轮仍需处理的要求，包括尚未获得验收的进行中任务。
+
+对全部$i\in\mathcal I$定义二元变量$a_i$：当$a_i=1$时，当前计划承担在固定班次终点$T$之前完成并满足验收条件的要求$i$；当$a_i=0$时，当前计划不新增该要求的完成量。$T$的单位为$\mathrm{s}$，且$\tau_k\le T$。在固定$k$的模型中省略$a_i$等决策变量的更新序号。历史状态与新增完成量的关系为
+\begin{align}
+ a_i&\in\{0,1\}, && i\in\mathcal I,\label{s0501:completion_domain}\\
+ a_i&\le 1-A_i^k, && i\in\mathcal I.\label{s0501:no_recompletion}
+\end{align}
+上述量均无量纲。式\eqref{s0501:no_recompletion}固定已验收任务的$a_i=0$，避免将历史完成量重新计入本轮计划；对于未验收任务，该式允许选择完成或暂不完成。
+
+为便于解释，定义无量纲的派生状态
+\begin{equation}
+ q_i=A_i^k+a_i\in\{0,1\},\qquad i\in\mathcal I.
+ \label{s0501:combined_completion}
+\end{equation}
+$q_i$不增加独立决策自由度。其取值为$1$，表示该要求或者已经验收，或者由本次计划承担完成；其取值为$0$，表示这两种条件均不成立。由于式\eqref{s0501:no_recompletion}禁止$A_i^k$与$a_i$同时为$1$，求和不会产生重复计数。这里的计划完成状态仍需由后续时序、轨迹、成像和资源约束支撑，并不等同于已经发生的验收事实。
+
+\subsection{任务分配与航次启用}
+
+令$\mathcal L_k^{\mathrm{new}}$为从$\tau_k$起可安排的新航次槽集合，$\mathcal L_k^{\mathrm{air}}$为在$\tau_k$已经执行、需要接续的航次集合，并定义
+\begin{equation}
+ \mathcal L_k=\mathcal L_k^{\mathrm{new}}\cup\mathcal L_k^{\mathrm{air}},\qquad
+ \mathcal L_k^{\mathrm{new}}\cap\mathcal L_k^{\mathrm{air}}=\varnothing.
+ \label{s0501:sortie_sets}
+\end{equation}
+航次槽只是供优化选择的身份索引，并不是预先给定的路线。新槽尚未绑定任务序列；进行中航次则已经具有飞机、电池及执行前缀，其后续决定必须与这些状态接续。
+
+二元变量$x_{i\ell}$表示要求$i$是否由航次$\ell$承担，二元变量$b_\ell$表示航次$\ell$是否启用。二者均无量纲，其定义域及任务分配约束为
+\begin{align}
+ x_{i\ell}&\in\{0,1\},
+ &&i\in\mathcal I,\ \ell\in\mathcal L_k,
+ \label{s0501:assignment_domain}\\
+ b_\ell&\in\{0,1\},
+ &&\ell\in\mathcal L_k,
+ \label{s0501:activation_domain}\\
+ \sum_{\ell\in\mathcal L_k}x_{i\ell}&=a_i,
+ &&i\in\mathcal I,
+ \label{s0501:unique_assignment}\\
+ x_{i\ell}&\le b_\ell,
+ &&i\in\mathcal I,\ \ell\in\mathcal L_k.
+ \label{s0501:assignment_activation}
+\end{align}
+式\eqref{s0501:unique_assignment}同时给出两方面限制。若当前计划承担某项要求，即$a_i=1$，恰有一个航次负责执行；若$a_i=0$，则所有航次对该要求的分配变量均为$0$。因此，不能在未分配任何执行航次的情况下宣称新增完成，也不能将同一要求重复安排给多个航次并重复记分。结合式\eqref{s0501:no_recompletion}可得
+\begin{equation}
+ A_i^k=1\ \Longrightarrow\ 
+ a_i=0,\quad x_{i\ell}=0\quad(\ell\in\mathcal L_k),
+ \qquad i\in\mathcal I.
+ \label{s0501:accepted_fixed_zero}
+\end{equation}
+式\eqref{s0501:accepted_fixed_zero}是对已验收任务的显式固定规则。历史任务即使出现在进行中航次的已执行前缀内，也不再进入本轮剩余任务的分配。
+
+式\eqref{s0501:assignment_activation}禁止未启用航次承担任务。对新航次还需排除没有任何观测要求的空启用，故施加
+\begin{equation}
+ b_\ell\le
+ \sum_{i\in\mathcal I_k}x_{i\ell}
+ \le |\mathcal I_k|b_\ell,
+ \qquad \ell\in\mathcal L_k^{\mathrm{new}}.
+ \label{s0501:new_sortie_nonempty}
+\end{equation}
+其中，$|\mathcal I_k|$为未验收要求的整数个数，求和为该航次承担的任务数。左侧不等式要求每个启用的新航次至少承担一项要求；右侧不等式使未启用的新航次不承担要求，并给出由任务总数产生的组合上界。该上界不表示能源或时间足以支持一个航次执行全部剩余任务。
+
+由任务唯一分配和新航次非空性可推出
+\begin{equation}
+ \sum_{\ell\in\mathcal L_k^{\mathrm{new}}}b_\ell
+ \le
+ \sum_{i\in\mathcal I_k}
+ \sum_{\ell\in\mathcal L_k^{\mathrm{new}}}x_{i\ell}
+ \le
+ \sum_{i\in\mathcal I_k}a_i
+ \le |\mathcal I_k|.
+ \label{s0501:new_sortie_count_bound}
+\end{equation}
+式\eqref{s0501:new_sortie_count_bound}说明，在每个新航次必须承担任务且不设置独立纯转场航次的模型范围内，取$|\mathcal I_k|$个新槽已足以表示所有可能启用的新航次数。槽的数量不预先限定同塔任务的拆分方式，也不规定每个航次访问多少座塔。若$\mathcal I_k=\varnothing$，无需创建新槽；即使保留空槽，式\eqref{s0501:new_sortie_nonempty}也会将其固定为未启用。
+
+进行中航次采用不同的边界条件：
+\begin{equation}
+ b_\ell=1,\qquad \ell\in\mathcal L_k^{\mathrm{air}}.
+ \label{s0501:ongoing_sortie_active}
+\end{equation}
+对这些航次保留式\eqref{s0501:unique_assignment}和式\eqref{s0501:assignment_activation}，但不施加式\eqref{s0501:new_sortie_nonempty}的非空下界。其剩余任务数允许为零，此时仍须完成符合物理约束的回收过程。已经起飞的无人机不能因为不再承担新观测而从资源占用和安全约束中消失；同样，也不能为了满足新航次的非空条件而被迫追加任务。
+
+\subsection{传感器模态与执行飞机的兼容性}
+
+任务具有明确的观测模态要求，不能仅凭存在一架空闲飞机就进行分配。令$m_i^{\mathrm{req}}$为任务$i$所需的模态类别，$\mathcal M_u^{\mathrm{cam}}$为飞机$u\in\mathcal U$所配置相机可提供的模态集合。模态是类别标识，无物理单位。当前模型仅允许RGB观测，定义给定的兼容系数
+\begin{equation}
+ \chi_{iu}=
+ \begin{cases}
+ 1, & m_i^{\mathrm{req}}=\mathrm{RGB}
+      \ \text{且}\ \mathrm{RGB}\in\mathcal M_u^{\mathrm{cam}},\\
+ 0, & \text{其他情况},
+ \end{cases}
+ \qquad i\in\mathcal I,\ u\in\mathcal U.
+ \label{s0501:modality_coefficient}
+\end{equation}
+$\chi_{iu}\in\{0,1\}$无量纲，由任务属性和设备配置确定。当前任务的$m_i^{\mathrm{req}}$均为RGB；式\eqref{s0501:modality_coefficient}并未引入红外或其他模态任务的完成能力。
+
+沿用第\ref{sec:04_02}节的飞机指派变量$y_{u\ell}$：$y_{u\ell}=1$表示飞机$u$执行航次$\ell$。相应的无量纲二元域及唯一飞机约束写为
+\begin{align}
+ y_{u\ell}&\in\{0,1\},
+ &&u\in\mathcal U,\ \ell\in\mathcal L_k,
+ \label{s0501:aircraft_domain}\\
+ \sum_{u\in\mathcal U}y_{u\ell}&=b_\ell,
+ &&\ell\in\mathcal L_k.
+ \label{s0501:one_aircraft}
+\end{align}
+因此，一个启用航次恰由一架飞机执行，未启用航次不占用飞机身份。任务、航次与执行飞机之间的模态限制为
+\begin{equation}
+ x_{i\ell}+y_{u\ell}\le 1+\chi_{iu},
+ \qquad i\in\mathcal I,\ u\in\mathcal U,\ \ell\in\mathcal L_k.
+ \label{s0501:modality_constraint}
+\end{equation}
+当$\chi_{iu}=0$时，该式禁止$x_{i\ell}$和$y_{u\ell}$同时为$1$；当$\chi_{iu}=1$时，该式不增加限制。结合式\eqref{s0501:one_aircraft}，每项已分配任务必由模态兼容的飞机执行。进行中航次的$y_{u\ell}$按已确定的飞机身份固定，不能在本轮优化中借助重新选择飞机绕过兼容性要求。
+
+模态兼容只是执行任务的必要条件。即使$\chi_{iu}=1$，观测仍须满足第\ref{sec:04_05}节的成像与可见性约束；飞机、电池及载车身份也仍须满足第\ref{sec:04_02}节的资源关系。兼容系数不能代替这些随轨迹、时刻和资源状态变化的条件。
+
+\subsection{整塔完成的双向逻辑}
+
+对每座塔$g\in\mathcal G$定义无量纲二元变量$z_g$。$z_g=1$表示在历史验收与当前计划共同构成的完成状态下，塔内全部要求均已覆盖；$z_g=0$表示仍有至少一项要求未覆盖。完整的逻辑关系为
+\begin{align}
+ z_g&\in\{0,1\}, &&g\in\mathcal G,
+ \label{s0501:tower_domain}\\
+ z_g&\le A_i^k+a_i,
+ &&g\in\mathcal G,\ i\in\mathcal I_g,
+ \label{s0501:tower_upper}\\
+ z_g&\ge 1-\sum_{i\in\mathcal I_g}(1-A_i^k-a_i),
+ &&g\in\mathcal G.
+ \label{s0501:tower_lower}
+\end{align}
+式\eqref{s0501:tower_upper}逐项检查塔内要求。只要存在$i\in\mathcal I_g$使$A_i^k+a_i=0$，就有$z_g\le0$，从而该塔不能被计为完整。式\eqref{s0501:tower_lower}则约束反方向：若全部任务均满足$A_i^k+a_i=1$，求和为零，故$z_g\ge1$，必须将该塔计为完整。
+
+具体地，若一座塔还有$d$项要求未覆盖，其中$d\in\{0,\ldots,|\mathcal I_g|\}$，则式\eqref{s0501:tower_lower}的右端为$1-d$。当$d=0$时，下界强制$z_g=1$；当$d\ge1$时，下界允许$z_g=0$，而式\eqref{s0501:tower_upper}将其固定为$0$。因此，这组线性约束在给定二元域内精确表达
+\begin{equation}
+ z_g=1
+ \ \Longleftrightarrow\ 
+ A_i^k+a_i=1\quad\text{对所有 }i\in\mathcal I_g,
+ \qquad g\in\mathcal G.
+ \label{s0501:tower_equivalence}
+\end{equation}
+等价地，可用乘积表达其逻辑含义：
+\begin{equation}
+ z_g=\prod_{i\in\mathcal I_g}(A_i^k+a_i),
+ \qquad g\in\mathcal G.
+ \label{s0501:tower_product}
+\end{equation}
+式\eqref{s0501:tower_product}用于解释严格的逻辑与关系，建模时采用式\eqref{s0501:tower_upper}和式\eqref{s0501:tower_lower}即可，无需另外加入非线性乘积约束。
+
+若只保留上界，全部任务均覆盖时仍允许$z_g=0$；即使某个优化目标可能促使它取$1$，完成状态的定义也会依赖目标是否被充分优化。若只保留下界，则在缺少要求时仍可能允许$z_g=1$。双向约束使完成指标在每个可行解中都有确定含义，而不依赖最优性或求解停止状态。对历史上已经整塔验收的杆塔，全部$A_i^k=1$且全部$a_i=0$，同一组约束直接给出$z_g=1$，无需再安排航次。
+
+\subsection{完成计数与允许部分完成的边界}
+
+为区分观测数量与整塔数量，定义以下无量纲整数计数：
+\begin{align}
+ N_{\mathrm{obs}}^{\mathrm{new}}
+ &=\sum_{i\in\mathcal I}a_i,
+ &&0\le N_{\mathrm{obs}}^{\mathrm{new}}\le|\mathcal I_k|,
+ \label{s0501:new_observation_count}\\
+ N_{\mathrm{obs}}^{\mathrm{total}}
+ &=\sum_{i\in\mathcal I}(A_i^k+a_i),
+ &&0\le N_{\mathrm{obs}}^{\mathrm{total}}\le|\mathcal I|,
+ \label{s0501:total_observation_count}\\
+ N_{\mathrm{tower}}^{\mathrm{complete}}
+ &=\sum_{g\in\mathcal G}z_g,
+ &&0\le N_{\mathrm{tower}}^{\mathrm{complete}}\le|\mathcal G|,
+ \label{s0501:complete_tower_count}\\
+ N_{\mathrm{tower}}^{\mathrm{incomplete}}
+ &=\sum_{g\in\mathcal G}(1-z_g),
+ &&0\le N_{\mathrm{tower}}^{\mathrm{incomplete}}\le|\mathcal G|.
+ \label{s0501:incomplete_tower_count}
+\end{align}
+前两项分别统计本轮新增完成要求和包含历史验收的累计覆盖要求；后两项分别统计完整塔与不完整塔。第\ref{sec:01_01}节所述首层目标采用不完整塔数量，因此其评价单位是整塔，而不是单项观测。
+
+这种区别可以直接由式\eqref{s0501:tower_product}看出。对尚未验收的任务$i\in\mathcal I_g$，固定其他任务的完成状态，仅将$a_i$由$0$改为$1$，记由此引起的逻辑计数变化为$\Delta_i$，则
+\begin{equation}
+ \Delta_i N_{\mathrm{obs}}^{\mathrm{new}}=1,\qquad
+ \Delta_i z_g=
+ \prod_{j\in\mathcal I_g\setminus\{i\}}(A_j^k+a_j),
+ \qquad g\in\mathcal G,\ i\in\mathcal I_g\cap\mathcal I_k.
+ \label{s0501:completion_marginal}
+\end{equation}
+其中空乘积约定为$1$。式\eqref{s0501:completion_marginal}是完成指标的代数性质，并不假定这样的单变量改变一定满足航次与资源约束。它说明，每新增完成一项要求，观测计数增加一；只有当同塔其余要求均已覆盖时，整塔计数才增加一。因此，相同的新增观测数量可能对应不同的完整塔数量，最大化观测数不能替代最小化不完整塔数。
+
+本模型允许未验收任务取$a_i=0$，也允许一座塔只完成其中部分要求。部分完成通过$a_i$如实记录，整塔指标仍按式\eqref{s0501:tower_equivalence}取值，不设置$z_g=1$对所有杆塔成立的强制条件。不安排新增观测也不会解除进行中航次的回收、资源占用和状态接续义务，因而不能仅由任务变量可取零推断完整联合问题必定可行。
+
+允许部分完成改变的是服务数量，而不是服务标准。凡被计划承担的观测，仍须满足成像质量、飞行安全、能源下限和会合等硬约束；不能以较多的计划完成量补偿其中任一条件的违反。本节给出的分配与整塔逻辑只是联合可行域的一部分，全任务是否可行，仍取决于任务顺序、连续轨迹、车辆停靠、电池周转以及班次边界能否共同满足。

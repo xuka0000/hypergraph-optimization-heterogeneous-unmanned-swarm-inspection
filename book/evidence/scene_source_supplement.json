@@ -1,0 +1,112 @@
+{
+  "observed_at": "2026-11-10T06:14:13.371798+00:00",
+  "origin": "D:\\博士研究生\\刘老师全包干花费\\paper11_paper1延申时间网\\总结\\03_实验数据\\真实地理巡检场景共享\\implementation",
+  "copied_without_execution": true,
+  "files": [
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/Agent/Publication/geographic_inspection_scene.py",
+      "sha256": "9acafc695793f22691445fb627e8f204ee5c04d363a4b3d7dead4fef87511cf7",
+      "bytes": 22072,
+      "lines": 384,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/Agent/Publication/inspection_charging.py",
+      "sha256": "00c3a2b60e599818b740d8dc5ce4fb9ef2c22ed2975b465cc379e021d1e89322",
+      "bytes": 5578,
+      "lines": 111,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/Agent/Run/build_nine_view_reference.py",
+      "sha256": "6590cda91fbafc299c05fe6d65ce1db7212953834b072dd271c6cc480ab782ca",
+      "bytes": 13695,
+      "lines": 192,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/Agent/Run/build_operational_inspection_dataset.py",
+      "sha256": "3e0d0ab131df8ddad68e40170027b03a1e958e5dcf0c7b45a42e240375503b24",
+      "bytes": 17789,
+      "lines": 214,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/Agent/Run/build_ubeda_100_scene.py",
+      "sha256": "65b6a655c93e565c92e070bb0ee4f435d1cd49080cf6fd314afdaad3fa50c0ea",
+      "bytes": 17859,
+      "lines": 275,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/Agent/Run/complete_inspection_reference_parameters.py",
+      "sha256": "29ba0726b5214822e83fd70471103037d5dcdeb7e99a8ed9836e1deb81384e92",
+      "bytes": 19992,
+      "lines": 216,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/Agent/Run/prepare_expanded_inspection_geography.py",
+      "sha256": "7f0f090ff60a2ecf9693688c3ce6c92609ea540a2693fad408ac6b307c6506f6",
+      "bytes": 6268,
+      "lines": 82,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/apply_regional_inspection_models.py",
+      "sha256": "f68149556f6e8f82fc6f74295ca1510147ff9ba831a684afa42edb31653d8ee8",
+      "bytes": 35176,
+      "lines": 376,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/build_geographic_scene_report.py",
+      "sha256": "77b57ee5ce10fcc7b2a8f89dd5f42ca4d8249765603c82a5e7130bfdeeac70c1",
+      "bytes": 21774,
+      "lines": 203,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/engineering_inspection_contract.json",
+      "sha256": "68e237f05aa75eaa13237e77400aedb5c024ef4d6fa49e0fba601d13660b107a",
+      "bytes": 28962,
+      "lines": 823,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/engineering_inspection_model.tex",
+      "sha256": "78af5e90f870667e7bb8b19f4f408889994656d2ec048dc1cf36a9180848a00e",
+      "bytes": 28558,
+      "lines": 287,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/export_geographic_scene_pack.py",
+      "sha256": "09e76128c22417ecdae2e2e973c1d7f3566ed5b1f625fce906108330f81936c7",
+      "bytes": 46655,
+      "lines": 612,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/prepare_regional_terrain.py",
+      "sha256": "34b31f2ea075c5eda6484b252b95a5ebc3edc0dd1d7a7f87efc8b51cbd4c9a76",
+      "bytes": 14837,
+      "lines": 186,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/scripts/export_geographic_scene_pack.py",
+      "sha256": "7bf7cda6ff70f75a1ba62d88b47042a6ff70a38c87a475cf2addf526162dd73b",
+      "bytes": 46489,
+      "lines": 610,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    },
+    {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/implementation/validate_regional_inspection_models.py",
+      "sha256": "8e45dcc8b2db345912779b5c3604e95c74d9bd9aa2b52037912dc9b44bbcfb12",
+      "bytes": 9198,
+      "lines": 118,
+      "role": "retained scene-construction source; may include historical configuration, not current solver overrides"
+    }
+  ]
+}

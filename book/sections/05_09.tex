@@ -1,0 +1,194 @@
+\section{信息可得性、不确定性和滚动重规划}
+\label{sec:05_09}
+
+第\ref{sec:05_08}节的联合可行域规定了任务、轨迹和资源必须共同满足的条件，但物理上分别可行的情形方案，未必能够在实际信息到达的顺序下执行。如果当前任务分配依赖尚未发生的风，或者求解完成后仍从求解开始时的位置出发，这样的方案即使满足各自的静态约束，也没有形成可实施的决策过程。本节进一步规定输入何时可用、不同情形何时可以采用不同决定，以及计算期间的真实状态如何接入下一段计划。
+
+滚动状态反馈的基本思想是：根据当前可得记录求解未来计划，执行其中已经下发的部分，再根据新记录更新问题。模型预测控制中的状态反馈和多情形非预见性提供了这一组织方式的概念依据\cite{DoMPC}。这里采用这些概念说明本书模型的信息接口，不表示使用了do-mpc软件求解，也不由滚动求解这一形式推导稳定性、递归可行性或实际安全保证。
+
+\subsection{信息历史与预报可得时间}
+
+沿用共同时间轴$[t_0,T]$，所有时间坐标均以$\mathrm s$计量。第$k$次规划的信息边界为$\tau_k$，$k\in\mathbb Z_{\ge0}$。以$\mathcal Y_t^\xi$表示情形$\xi\in\Xi_k$下，截至$t$已经接收的信息历史。它是带时间、来源和对象身份的记录序列，而非仅由当前几个测量值组成的向量。记录内容包括车辆和飞机状态、电池电量与占用、道路通行信息、预报产品、已经下发的命令，以及图像验收结果。两个历史相同，要求其可用记录及接收顺序相同，不能只比较最后一次风速或电量读数。
+
+设$\mathcal R^{\mathrm{info}}$为信息记录索引集合，$r\in\mathcal R^{\mathrm{info}}$为无量纲索引，$t_r^{\mathrm{recv}}$为记录接收时刻。对于测量、道路事件和验收等描述已经发生事实的记录，再以$t_r^{\mathrm{evt}}$表示其实际发生时刻。这类记录进入当前历史的必要条件是
+\begin{equation}
+ t_r^{\mathrm{evt}}\le t_r^{\mathrm{recv}}\le t,
+ \qquad r\in\mathcal R^{\mathrm{info}}
+ \text{ 中描述已发生事实的记录}.
+ \label{s0509:received_event}
+\end{equation}
+三项均以$\mathrm s$计量。事件发生与事件可被决策者利用是不同边界。例如，道路已经关闭但关闭通知尚未到达时，不能将通知内容用于更早的分配；这同时意味着迟到信息可能揭示旧计划已经失效，不能据此假定旧计划一直安全。
+
+预报包含未来有效时刻上的预测值，因此不能对其预测对象要求有效时刻早于当前时刻。对预报记录$r$，分别记初始化时刻$t_r^{\mathrm{init}}$、实际发布时间$t_r^{\mathrm{issue}}$、本系统接收时刻$t_r^{\mathrm{recv}}$及有效时间集合$\mathcal V_r^{\mathrm{time}}\subseteq\mathbb R$。这些时间坐标均以$\mathrm s$计量，索引$r$本身无量纲。若该产品作为覆盖剩余班次的预报输入，则必须满足
+\begin{equation}
+ t_r^{\mathrm{issue}}\le t_r^{\mathrm{recv}}\le\tau_k,
+ \qquad
+ [\tau_k,T]\subseteq\mathcal V_r^{\mathrm{time}}.
+ \label{s0509:forecast_availability}
+\end{equation}
+第一组关系限制信息可得性，第二组关系限制预测值的有效时间范围。只有初始化时刻而没有实际发布与接收依据，不能据此判定第一组关系成立。Open-Meteo的单次预报接口按初始化时刻组织预报运行，这一索引方式不使初始化时刻自动成为本系统能够取得该产品的时刻\cite{OpenMeteoRuns}。
+
+式\eqref{s0509:forecast_availability}还不能代替输入完整性检查。天气记录须保留第\ref{sec:04_08}节所需的空间位置、参考高度、变量单位、有效时段和缺失标志；例如，前一小时降水不能被当作瞬时降水强度插值。若采用多个产品拼接剩余时间窗口，每个被实际使用的片段都必须满足发布与接收条件，且所有片段共同覆盖所需区间，重叠部分的选取规则也须预先确定。缺失的必要天气量不能由优化器自行补成有利值。
+
+ERA5及ERA5-Land等再分析数据属于事后重建的天气资料\cite{OpenMeteoHistory}。它们可以用于离线执行回放中的实现环境输入，但不能作为过去规划边界已经知道的未来天气。回放时必须分别保存决策端的预报历史与执行端的实现天气：执行器在时间推进到$t$时可以受到该时刻实现天气的作用，规划器只能通过截至$t$已经返回的观测取得相应信息。若把整段再分析序列提前交给规划器，则所得结果具有未来信息，不能再解释为满足本节条件的在线决策结果。
+
+\subsection{单预测情形、多情形与非预见性}
+
+情形$\xi\in\Xi_k$指定未来环境输入及有依据的误差取值，例如风场、密度场和功率误差。它是用于规划的外部输入，不是优化器能够调整的物理控制。对于任何活动航次$\ell$，空气密度仍须按位置和时刻求值：
+\begin{equation}
+ \rho_\ell^\xi(t)
+ =\rho^\xi\bigl(\mathbf p_\ell^\xi(t),t\bigr),
+ \qquad \xi\in\Xi_k,\quad
+ \ell\in\mathcal L_k^{\mathrm{act},\xi},\quad
+ t\in\mathcal T_\ell^\xi.
+ \label{s0509:scenario_density}
+\end{equation}
+其中$\rho_\ell^\xi$以$\mathrm{kg/m^3}$计量，$\mathbf p_\ell^\xi\in\mathbb R^3$以$\mathrm m$计量；活动航次及剩余飞行区间沿用式\eqref{s0508:remaining_flight_domain}。引入天气情形不改变第\ref{sec:04_04}节的状态含义，也不能把随位置和时间变化的密度悄悄固定为常数。
+
+没有可信误差依据时，采用式\eqref{s0508:singleton_scenario}的单预测情形。此时，给定预报后求解的是确定性联合计划；实际环境与预报不同所产生的偏差，通过后续状态反馈暴露和处理。单预测情形没有描述偏差分布，因而不能给出概率完成率或未建模扰动下的保证。
+
+若存在已经核验的多个情形，则对每个情形保留式\eqref{s0508:full_feasible_domain}中的全部物理约束，并按式\eqref{s0508:robust_epigraph}比较逐分量最坏目标。该形式不需要为情形指定概率。它所限制的范围仍是给定$\Xi_k$，不能把有限情形下可行解释为任意天气下可行；更不能通过增设未经标定的误差分布，将参考功率代理升级为经过验证的设备误差模型。
+
+多情形模型中的关键联系是共同的信息历史。定义在时刻$t$不能通过已有记录区分的情形等价类
+\begin{equation}
+ [\xi]_t
+ =\{\xi'\in\Xi_k:\mathcal Y_t^{\xi'}=\mathcal Y_t^\xi\},
+ \qquad \xi\in\Xi_k,\quad t\in[\tau_k,T].
+ \label{s0509:history_class}
+\end{equation}
+$[\xi]_t$是无量纲情形索引的集合。以$\mathscr H_t$表示时刻$t$可能接收到的信息历史集合，以$\mathscr U_t$表示该时刻允许作出的控制和离散决定的乘积空间。$\mathscr U_t$的连续分量采用各自物理单位，启用、分配等离散分量无量纲。一个只使用已得信息的决策规则可写为
+\begin{equation}
+ \pi_t:\mathscr H_t\longrightarrow\mathscr U_t,
+ \qquad
+ U^\xi(t)=\pi_t(\mathcal Y_t^\xi),
+ \qquad \xi\in\Xi_k,\quad t\in[\tau_k,T].
+ \label{s0509:history_policy}
+\end{equation}
+这里$U^\xi(t)$包含在$t$实际作出的运动、充电、启用、分配和事件决定，而非把$X^\xi$中的全部未来变量都视为已经下发的命令。由同一个$\pi_t$作用于相同历史，立即得到
+\begin{equation}
+ U^\xi(t)=U^{\xi'}(t),
+ \qquad
+ \xi'\in[\xi]_t,\quad \xi\in\Xi_k,\quad
+ t\in[\tau_k,T].
+ \label{s0509:nonanticipative_controls}
+\end{equation}
+这正是式\eqref{s0508:nonanticipativity}的信息含义。若所有情形在$\tau_k$继承相同历史，那么当前决定的任务分配、资源启用和控制必须相同。未来才作出的决定可以随着新的可观测信息改变，但已经下发且仍有效的承诺继续受式\eqref{s0507:committed_controls}约束。
+
+式\eqref{s0509:nonanticipative_controls}不要求不同扰动下的真实位置、速度或电量始终相等。同一控制可能在不同风场下产生不同运动和能耗；如果这些差别尚未被接收的信息揭示，控制器仍不能利用情形编号选择不同动作。一旦新测量形成不同历史，才允许在相应分支采用不同的后续决定。因此，场景树的分支必须对应可接收的观测，不能仅因两个情形的未来风速不同就在当前时刻分叉。若没有给出情形到观测历史的对应关系，仅列出若干独立的未来轨迹，并不足以构成具有反馈含义的多情形方案。
+
+\subsection{周期复核与事件触发}
+
+滚动规划需要同时规定正常复核间隔和提前触发条件。令$\Delta^{\mathrm{per}}>0$为周期复核间隔，单位为$\mathrm s$。电量触发采用给定阈值$\varepsilon_p^E>0$，单位为$\mathrm{Wh}$，其中$p\in\mathcal B$是物理电池对索引。也可以用给定无量纲比例$\alpha_E\in(0,1)$定义
+\begin{equation}
+ \varepsilon_p^E=\alpha_E E_p^{\max},
+ \qquad p\in\mathcal B.
+ \label{s0509:energy_trigger_parameter}
+\end{equation}
+$E_p^{\max}$为该电池对电量上界，单位为$\mathrm{Wh}$。周期与阈值均为执行配置，不是由本节推导出的最优参数；参考数值及其来源在第\ref{sec:06_01}节给出。
+
+实际电池触发使用SOC预测亏差$\zeta_p^{pred}(t)-\widehat\zeta_p(t)\ge0.03$；0.03为本参考配置的无量纲阈值。温度或电压违反硬边界时立即触发安全事件，不等待周期。已有Wh亏差公式仅用于旧低阶模型的对照，不能据此重构SOC和温度。
+
+\subsection{计算延迟、状态推进与接管}
+
+信息边界$\tau_k$与新计划能够接管的时刻不同。令$d_k^{\mathrm{solve}}\ge0$为从$\tau_k$到候选可交付所经历的计算时间，包含该次构建、求解和必要验证时间；令$d_k^{\mathrm{comm}}\ge0$为此后至执行端接收的通信与下发延迟。二者均以$\mathrm s$计量。候选的最早接管时刻记为
+\begin{equation}
+ \sigma_k=\tau_k+d_k^{\mathrm{solve}}+d_k^{\mathrm{comm}}.
+ \label{s0509:takeover_time}
+\end{equation}
+若另有排队、验证或等待环节，其实际耗时也须计入相应时间项，不能从环境时钟中删除。$\sigma_k$只是候选可以到达的时刻；接管检查不通过时，并不发生计划切换。若$\sigma_k>T$，候选也不能再作为本班次尚未执行动作的有效接管方案。
+
+在$[\tau_k,\sigma_k)$内，系统继续执行已经下发且仍有效的动作，或者已经验证可用的恢复动作。为区分物理推进与优化器预测，以$s^{\mathrm{exec}}(t)$表示执行器中的连续物理状态及离散资源模式，不把尚未返回的验收结论包含为既成事实。令$U^{\mathrm{issued}}$为已下发动作过程，$W^{\mathrm{real}}$为实现天气场，$P^{\mathrm{real}}$为实现功率过程。对$\Delta t>0$且$t+\Delta t\le T$，执行推进写为
+\begin{equation}
+ \begin{aligned}
+ s^{\mathrm{exec}}(t+\Delta t)=\Phi\bigl(&s^{\mathrm{exec}}(t),
+ U^{\mathrm{issued}}|_{[t,t+\Delta t]},\\
+ &W^{\mathrm{real}}|_{[t,t+\Delta t]},
+ P^{\mathrm{real}}|_{[t,t+\Delta t]},\Delta t\bigr).
+ \end{aligned}
+ \label{s0509:execution_transition}
+\end{equation}
+竖线表示将相应过程限制在该时间区间。$\Phi$是独立仿真执行器或实际执行过程的状态转移接口，输入与输出属于同一个物理状态和模式的乘积空间；位置、电量、姿态等分量分别采用$\mathrm m$、$\mathrm{Wh}$、无量纲旋转矩阵等既有单位和域。$\Delta t$以$\mathrm s$计量，天气各分量采用第\ref{sec:04_08}节的单位，功率以$\mathrm W$计量。式\eqref{s0509:execution_transition}不是求解器预测方程的自我验收；实现状态须通过观测记录或独立执行器输出进入$\mathcal Y_t$。
+
+例如，在不跨越电池模式切换的飞行区间$[t,t+\Delta t]$内，设电池$p$持续给同一飞机供电，其实现机载功率为$P_p^{\mathrm{air,real}}(\vartheta)\ge0$，则
+\begin{equation}
+ \mathbf x_p^b(t+\Delta t)=\Phi_b(\mathbf x_p^b(t),P_p^{load},P_p^{in},T_a;[t,t+\Delta t]).
+ \label{s0509:execution_energy}
+\end{equation}
+其中$\mathbf x_p^b=(\zeta_p,V_p^{pol},T_p^b)$，$\Phi_b$按第\ref{sec:04_08}节电热方程积分；输入、输出和发热账本同时累加。计算和通信期间旧命令继续执行，不能冻结位置、电机推力或电池状态。
+
+
+令$\widehat s(\sigma_k)$为接管时取得并对齐到$\sigma_k$的状态和执行记录，$s_k^{\mathrm{new}}$为候选在该时刻的接续状态。令$\operatorname{IDs}$表示飞机、电池、车辆、航次及正在执行操作之间的身份对应，属于离散记录空间。正常接管至少要求
+\begin{align}
+ s_k^{\mathrm{new}}(\sigma_k)&=\widehat s(\sigma_k),
+ \label{s0509:takeover_state}\\
+ \operatorname{IDs}_k^{\mathrm{new}}(\sigma_k)
+ &=\operatorname{IDs}^{\mathrm{actual}}(\sigma_k).
+ \label{s0509:takeover_identity}
+\end{align}
+第一式逐分量比较位置、速度、飞行内部加速度、姿态、相机状态、电量、模式与执行记录，各分量沿用第\ref{sec:05_07}节的域和单位；接触瞬间仍遵循单侧受力接口。第二式单独强调身份一致，不能以总电量或可用数量相同替代。式中的精确相等属于理想状态输入模型；若数值接管采用误差容限，必须说明各分量的容限单位及其如何进入跟踪和安全检查，不能把未说明的偏差视为自动满足等式。
+
+接管边界相符仍只是必要条件。候选还必须与已经执行的前缀一致，保留$\sigma_k$以后仍有效的承诺，并针对计算期间新收到的天气、道路和资源信息复核剩余联合约束。如果候选始终以$\widehat s_k$为起点，却没有包含实际发生的延迟段，不能仅把所有时刻平移$d_k^{\mathrm{solve}}+d_k^{\mathrm{comm}}$后直接下发，因为天气窗口、车辆位置、会合关系和电池电量都可能已经改变。
+
+因此，候选在到达时不衔接或已经失效，需要根据当前记录重新计算或修正并重新验证。没有及时可用的新解时，只能继续经复核仍有效的旧计划尾段，或者采用从当前状态出发、已经验证可行的恢复动作。继续旧尾段也要满足新的硬条件，并非只要它曾经可行就永远有效。如果新安全信息已经否定旧承诺，则按第\ref{sec:05_07}节进入恢复问题，不能同时保留失效命令和新的硬安全要求后宣布接管成功。尚无可验证动作时，应如实记录接管或恢复未成功，不能用冻结时间、冻结位置或零耗能悬停填补计算空档。
+
+\subsection{实际验收与观测中途接续的边界}
+
+执行反馈同时包含物理状态和图像结果，两者不可互相代替。对任务$i\in\mathcal I$，实际验收量$A_i(t)\in\{0,1\}$沿用式\eqref{s0507:accepted_history}，只有可追溯的通过记录已经返回时才取一。在事件时刻$t$，令$\mathcal Q_i^{\mathrm{new}}(t)$为此时新收到的任务$i$验收记录集合，$\zeta_r\in\{0,1\}$表示记录$r$是否通过，且记录已满足验收发生时间不晚于接收时间的要求。更新关系为
+\begin{equation}
+ A_i(t^+)=\max\left\{A_i(t^-),\
+       \max_{r\in\mathcal Q_i^{\mathrm{new}}(t)}\zeta_r\right\},
+ \qquad i\in\mathcal I,
+ \label{s0509:acceptance_update}
+\end{equation}
+其中空集合上的内层最大值约定为零，$t^-$与$t^+$分别表示处理本次返回记录前后，所有$A_i$与$\zeta_r$均无量纲。该式采用本模型中通过后保留验收状态的历史口径；拍摄失败记录保留，但不能把尚未通过的任务改为已验收。
+
+规划变量$a_i^\xi=1$表示方案安排满足相应观测要求，既不证明图像已经生成，也不证明图像已经通过实际验收。飞机到达目标、曝光结束以及预计服务结束，都不能替代式\eqref{s0509:acceptance_update}。据此，在任意报告时刻$t\in[t_0,T]$，实际完整塔数定义为
+\begin{equation}
+ N_{\mathrm{tower}}^{\mathrm{acc}}(t)
+ =\sum_{g\in\mathcal G}\prod_{i\in\mathcal I_g}A_i(t).
+ \label{s0509:actual_complete_towers}
+\end{equation}
+$\mathcal I_g$为塔$g$的必要观测集合，非空且有限；乘积只有在该塔全部要求通过验收时才为一。$N_{\mathrm{tower}}^{\mathrm{acc}}$是无量纲计数，不能直接用计划中的$\sum_g z_g^\xi$替代。计划完成、实际执行和实际验收应分别保留记录。
+
+任意时刻触发还可能落在一次观测服务内部。此时必须保留第\ref{sec:05_07}节的$\mathcal I_k^{\mathrm{serv}}$、$\mathcal I_k^{\mathrm{pend}}$以及原服务开始、结束、曝光集合和执行资源身份。对正在服务的$i\in\mathcal I_k^{\mathrm{serv}}$，原曝光时间集合$\widehat{\mathcal E}_i$可在当前边界分为
+\begin{align}
+ \widehat{\mathcal E}_{ik}^{\mathrm{past}}
+ &=\widehat{\mathcal E}_i\cap(-\infty,\tau_k),
+ \label{s0509:exposure_prefix}\\
+ \widehat{\mathcal E}_{ik}^{\mathrm{rem}}
+ &=\widehat{\mathcal E}_i\cap[\tau_k,\infty),
+ \qquad i\in\mathcal I_k^{\mathrm{serv}}.
+ \label{s0509:exposure_remainder}
+\end{align}
+这些集合中的时间坐标均以$\mathrm s$计量，并共同恢复原曝光集合。已经发生的曝光前缀关联实际轨迹、相机状态与图像记录，不能由新解改写。即使剩余服务时长为$\widehat t_i^{\mathrm{end}}-\tau_k$，仍需检查原稳定阶段、剩余曝光和跨边界质量条件，不能只把服务时长改成这一差值就认为接口已经闭合。
+
+第\ref{sec:05_02}节仅对新服务采用$t_i\ge\tau_k$和完整最低服务时长。正在执行的服务固定原起点，以$\bar t_i^k=\max(t_i,\tau_k)$及$\bar d_i^k=t_i+d_i-\bar t_i^k$连接剩余路径、时间和功率积分；曝光前缀仍来自原观测记录。对于已经拍摄但尚待结果的$i\in\mathcal I_k^{\mathrm{pend}}$，也必须保留原图像身份与待验收关联，并维持$A_i(\tau_k)=0$；不能为适应新任务变量而丢弃该记录，或提前将其置为已验收。
+
+观测中途与待验收图像按第\ref{sec:05_07}节的状态划分、虚拟源点及延迟验收规则进入当前问题。新计划必须保留服务身份、曝光前缀和正在执行的控制；这些边界关系不替代候选后缀的动力学和成像验收。
+
+\subsection{执行记录能够支持的结论}
+
+验证一次滚动过程，至少需要将每次采用的预报及其发布、接收、有效时间，与当时状态输入、已发动作、触发记录、计算通信耗时和接管结果关联。图像结果还须关联到原任务、曝光及执行资源。否则，即使最终轨迹看似连续，也无法判断它是否使用了后来才取得的信息，或者是否在计算期间漏计了运动与能量。
+
+完成时间继续采用从$t_0$起算的实际全队回收返库口径。尚未返库时不能用零秒或计划完成时刻替代。能量应分别记录实际机载耗能、充电输入、逐对电池终态和守恒残差；滚动重算不能再次扣除历史耗能，也不能抹去延迟段的消耗。接管记录应保留被废弃的候选及其原因，使未取得可用新解、候选不衔接和实际执行失败保持不同含义。
+
+上述条件是模型的因果性与执行验收要求，不是现有执行已经通过验证的结论。当前单次预报输入的实际发布日期及接收可得性仍需按具体来源区分已核实事实与假设，其数值采用和结果影响需要在参数记录与评价方案中分别核实；仅有初始化标识不能补足这一依据。当前区域已有四塔暖启动通过构建阶段数值检查，但没有已验收的新完整覆盖联合方案；资源退出时另行保存的候选仍需与对应版本的输入和轨迹重新核验。因此，既不能以求解器输出代替实际图像验收，也不能以本节给出的理论信息条件宣称已经完成任意时刻滚动执行的验证。
+
+% CAUSAL_COMPONENT_EXPERIMENT
+\subsection{数值算例：非预见性改变可实施决策}
+
+考虑信息尚未分叉时必须选择的一条路线，两个候选为A、B。三个情形中的代价为
+\begin{equation}
+ C=\begin{bmatrix}4&10\\9&5\\6&7\end{bmatrix}.
+\end{equation}
+这些数值是用于检查信息结构的教学代价，不是实测巡检收益。令$x_{\omega A},x_{\omega B}\in\{0,1\}$，完整数值模型为
+\begin{align}
+ \min\quad &z,\\
+ x_{\omega A}+x_{\omega B}&=1,\quad\omega=1,2,3,\\
+ z&\ge4x_{1A}+10x_{1B},\\
+ z&\ge9x_{2A}+5x_{2B},\\
+ z&\ge6x_{3A}+7x_{3B},\\
+ x_{1A}&=x_{2A}=x_{3A}.
+\end{align}
+最后一行是相同观测历史下的非预见性约束。SCIP得到共同路线A、最坏代价9；去掉最后一行得到(A,B,A)、最坏代价6，但该方案在得知情形之前无法下发。两个值均与穷举一致，不能把较小的6解释为更好的在线算法。
+
+天气模块共15项检查覆盖发布时间、接收延迟、共同情形、近地风及非预见性。接管检查使用第\ref{sec:04_04}节40\,s飞行后的实际积分状态，拒绝SOC重置、极化重置、温度重置、旋翼推力重置、充电保护记忆重置、丢弃承诺、旧状态版本、未来才可用的候选和位置重置九种错误；四元数$q$与$-q$仍被识别为同一姿态。这些是求解器接管接口的组件证据，尚不表示完整联合重规划已经获得区域结果。

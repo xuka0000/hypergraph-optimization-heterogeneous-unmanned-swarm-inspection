@@ -1,0 +1,111 @@
+\section{超图及组合优化基本概念}
+\label{sec:01_02}
+
+\subsection{顶点、超边与关联矩阵}
+
+在资源选择问题中，需要分别表示可被占用的资源与提出占用要求的任务。设$V$为有限非空资源集合，$E$为有限非空候选任务集合，每个任务$e\in E$对应一个非空资源子集$e\subseteq V$，则$H=(V,E)$称为超图。资源是超图的顶点，任务所需资源的集合是超边。本节所比较的普通图是无自环的无向简单图，其每条边恰好连接两个不同顶点；超边则可以包含一个、两个或更多顶点。因此，超边表达的是一个候选任务对一组资源的共同要求，不是执行这些资源之间的移动路径。例如，一个候选同时需要三项资源，就可以用包含这三个资源顶点的一条超边表示。顶点和超边均为组合对象，本身没有长度、时间或能量单位；资源是否包含时间段、位置或设备身份，要由具体模型另外定义。
+
+为将集合关系写成代数关系，定义关联矩阵$A$，其行对应资源，列对应候选任务。沿用本书组合实验的记号，$m$表示资源数，$n$表示候选任务数，不能将二者与另一种顶点、边计数习惯混用：
+\begin{align}
+ m&=|V|,\qquad n=|E|,\qquad A\in\{0,1\}^{m\times n},
+ \label{s0102:matrix_size}\\
+ A_{ve}&=
+ \begin{cases}
+ 1, & v\in e,\\
+ 0, & v\notin e,
+ \end{cases}
+ \qquad v\in V,\ e\in E.
+ \label{s0102:incidence}
+\end{align}
+矩阵元素$A_{ve}$是无量纲关联指示量。沿某一任务列求和，得到该任务需要的资源种类数，即超边基数；沿某一资源行求和，得到需要该资源的候选任务数，即顶点度：
+\begin{align}
+ |e|&=\sum_{v\in V}A_{ve},\qquad e\in E,\\
+ \deg(v)&=\sum_{e\in E}A_{ve},\qquad v\in V,\\
+ r&=\max_{e\in E}|e|,\qquad
+ \Delta=\max_{v\in V}\deg(v).
+ \label{s0102:rank_degree}
+\end{align}
+其中，$r$称为超图的秩，表示单个候选最多关联多少项资源；$\Delta$表示单项资源最多被多少个候选需要。上述数量均为无量纲整数，并满足$1\leq r\leq m$和$1\leq\Delta\leq n$，单个顶点则允许$\deg(v)=0$。对关联矩阵分别按行和按列计数，还可得到
+\begin{equation}
+ \sum_{e\in E}|e|=\sum_{v\in V}\deg(v).
+ \label{s0102:incidence_count}
+\end{equation}
+等式两侧都在计算资源与任务之间的关联总数。超边基数描述一个任务的资源需求范围，顶点度描述一个资源面对的候选数量；二者含义不同，均不能单独决定可接受任务数或求解难度。
+
+下面给出一个仅用于解释符号的\textbf{教学定义示意}，它不是原始实验实例。取三个资源与三个候选任务：
+\begin{equation}
+ \begin{gathered}
+ V=\{v_1,v_2,v_3\},\qquad E=\{e_1,e_2,e_3\},\\
+ e_1=\{v_1,v_2\},\qquad
+ e_2=\{v_2,v_3\},\qquad
+ e_3=\{v_1\}.
+ \end{gathered}
+ \label{s0102:illustrative_sets}
+\end{equation}
+按$v_1,v_2,v_3$排列矩阵行，按$e_1,e_2,e_3$排列矩阵列，有
+\begin{equation}
+ A=\begin{pmatrix}
+ 1&0&1\\
+ 1&1&0\\
+ 0&1&0
+ \end{pmatrix}.
+ \label{s0102:illustrative_matrix}
+\end{equation}
+例如，第二行表示资源$v_2$被任务$e_1$和$e_2$需要，第三列表示任务$e_3$只需要资源$v_1$。列和依次为$2,2,1$，行和依次为$2,2,1$，因而本示意中$m=n=3$、$r=2$、$\Delta=2$，关联总数为$5$。这些数值直接由集合定义得到，不涉及算法运行；第2章另行给出正式的十二候选任务数值实例。
+
+\subsection{容量、匹配与加权选择}
+
+关联矩阵只说明哪些资源被哪些候选需要，能否同时接受这些候选，还取决于资源容量。令$b=(b_v)_{v\in V}$为容量向量，其中$b_v\in\mathbb{Z}_{\geq0}$表示资源$v$可提供的占用份数；令$x=(x_e)_{e\in E}\in\{0,1\}^{n}$为选择向量，$x_e=1$表示接受任务$e$，$x_e=0$表示不接受。这里每个被接受的任务对其关联资源恰好占用一份，$b_v$与$x_e$均为无量纲量。给定$b$后，基本选择可行集定义为
+\begin{equation}
+ \mathcal{X}(b)=\left\{
+ x\in\{0,1\}^{n}:\ 
+ \sum_{e\in E}A_{ve}x_e\leq b_v,\quad \forall v\in V
+ \right\}.
+ \label{s0102:feasible_set}
+\end{equation}
+其中，$\sum_{e\in E}A_{ve}x_e=(Ax)_v$是所选任务对资源$v$的总占用份数。满足这些容量限制的超边集合称为超图的$b$匹配；本书采用每个候选最多选择一次的二元形式。当所有$b_v=1$时，所选超边必须两两不相交，得到超图匹配，也就是以资源为元素、候选为子集的集合打包。对前述教学示意，取$b=(1,1,1)^{\mathsf T}$，其中$\mathsf T$表示转置，则
+\begin{align}
+ A\begin{pmatrix}0\\1\\1\end{pmatrix}
+ &=\begin{pmatrix}1\\1\\1\end{pmatrix}\leq b,
+ \label{s0102:feasible_example}\\
+ A\begin{pmatrix}1\\1\\0\end{pmatrix}
+ &=\begin{pmatrix}1\\2\\1\end{pmatrix}.
+ \label{s0102:infeasible_example}
+\end{align}
+第一个选择接受$e_2$与$e_3$，每项资源的占用均不超过容量；第二个选择接受$e_1$与$e_2$，使$v_2$的占用达到两份，违反容量一的限制。向量不等式按分量理解。当前全部组合实验均采用容量一，因而其二元可行性可以通过两两冲突表达；超边包含较多资源本身并不证明存在不可约的高阶依赖，该表示关系在第2章展开。
+
+在可行选择之间进行比较，还需要给定收益。对每个$e\in E$，令固定正权重$w_e\in\mathbb{R}_{>0}$表示接受该任务获得的收益，本节统一采用无量纲分值。定义总收益函数$f$、最优目标值$z^\star$及任一最优选择$x^\star$为
+\begin{align}
+ f(x)&=\sum_{e\in E}w_ex_e,\qquad x\in\mathcal{X}(b),
+ \label{s0102:weight_function}\\
+ z^\star&=\max_{x\in\mathcal{X}(b)}f(x),\qquad
+ x^\star\in\operatorname*{arg\,max}_{x\in\mathcal{X}(b)}f(x).
+ \label{s0102:optimal_choice}
+\end{align}
+这是最大权$b$匹配的基本选择形式，在容量一时也是最大权集合打包。一个整数可行解只须满足二元取值和全部容量限制；一个最优解还须在所有可行选择中取得最大收益。由于不选择任何任务的零向量始终属于$\mathcal{X}(b)$，且候选集合有限，该基本模型存在最优解，但最优解不一定唯一。正权重说明增加一个能够兼容的任务会增加收益，却不意味着应当接受所有任务，因为资源容量可能阻止这种增加。最大总权重也不等于最大任务数量；只有当所有任务权重相同，二者才具有相同的最优选择集合。教学示意没有指定权重，因此前述计算只判定可行性，不判定哪种选择最优。
+
+\subsection{可行解、目标界与最优性差距}
+
+求解过程未必能立即给出最优解，但可以用目标值的上下界说明当前解与未知最优值之间的关系。对最大化问题，任一已经核验的可行选择$\widehat{x}\in\mathcal{X}(b)$给出下界$L=f(\widehat{x})$；上界$U$则须保证任何可行选择的收益都不超过它。因而有
+\begin{equation}
+ 0\leq L\leq z^\star\leq U.
+ \label{s0102:objective_bounds}
+\end{equation}
+例如，由$0\leq x_e\leq1$及$w_e>0$可直接得到一个可能较松但有效的上界：
+\begin{equation}
+ U_{\mathrm{sum}}=\sum_{e\in E}w_e,\qquad z^\star\leq U_{\mathrm{sum}}.
+ \label{s0102:sum_bound}
+\end{equation}
+这个界允许所有候选同时贡献收益，因此忽略了资源竞争，通常不能解释为某个可执行选择的收益。另一种构造上界的方式是将二元条件放宽为$0\leq x_e\leq1$，同时保留容量限制；放宽后的可行集包含全部整数可行选择，其最大目标值便是原问题的上界。放宽模型中的分数选择一般不满足任务整体接受或拒绝的要求，不能直接当作整数可行解。下界与上界都以收益分值计，两者承担的证明作用不同。
+
+给定有限且有效的$L$与$U$，绝对最优性差距定义为$g_{\mathrm{abs}}=U-L$，单位与目标值相同。为说明相对差距的含义，本节采用以上界归一化的定义
+\begin{equation}
+ g_{\mathrm{rel}}=
+ \begin{cases}
+ \dfrac{U-L}{U},&U>0,\\[4pt]
+ 0,&U=0,
+ \end{cases}
+ \qquad 0\leq g_{\mathrm{rel}}\leq1.
+ \label{s0102:relative_gap}
+\end{equation}
+$g_{\mathrm{rel}}$是无量纲比例；当$U=0$时，式\eqref{s0102:objective_bounds}已保证$L=z^\star=0$，故定义其为零。绝对差距给出当前可行解可能损失收益的上限，即$0\leq z^\star-L\leq g_{\mathrm{abs}}$。在界有效且按精确数学关系判定的条件下，$L=U$能够证明$\widehat{x}$最优；$L<U$则只说明现有界尚未闭合，当前解仍可能已经最优而上界较松。不同求解器可能采用不同的相对差距分母及数值容差，因此式\eqref{s0102:relative_gap}是本节的概念定义，不能直接替代软件输出中的差距口径。仅有一个求解器报告的目标值，既不能自动证明所对应选择已通过全部约束核验，也不能在缺少有效上界时据此宣称达到最优。

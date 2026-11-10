@@ -1,0 +1,340 @@
+{
+  "files": [
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/results.json",
+      "sha256": "beceac2c8cf42d578d97055b662a09034d30c33826b0f0514388c96b997f5c59"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n300_r6_seed0_SCIP_MILP.json",
+      "sha256": "101114e878839d2e9b1a828e05f77d1524bfca963bcc32d36b494493f8e4d9cf"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n300_r6_seed0_HeiHGM_Streaming.json",
+      "sha256": "b2af97f218649b3c2c561a5b351414e484d17b3d743fe9ecfecf39e5e91c910f"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n1000_r6_seed0_SCIP_MILP.json",
+      "sha256": "21e514696b8776cd19fdf422596c24bad503f6b038ede5a1d4959737eb3167a0"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n1000_r6_seed0_HeiHGM_Streaming.json",
+      "sha256": "204991ba8554b036f026a6733d24cdeef30d7c3947896003c7668f68d44016dc"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n3000_r6_seed0_SCIP_MILP.json",
+      "sha256": "eb9413238489a9d8a4e4d860735b693a460f399df6f3868410dde3af9e9fc547"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n3000_r6_seed0_HeiHGM_Streaming.json",
+      "sha256": "1fd30072842aa77d37d898cc3c8a7f3bd402e38156194414969cd718f9c6418b"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n1000_r3_seed0_SCIP_MILP.json",
+      "sha256": "9f0b83a1089f1958fe5be77024d1c33f965898bd8dae2f7b4f5c150cfecc2f41"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n1000_r3_seed0_HeiHGM_Streaming.json",
+      "sha256": "1c5d3434cd46edda692d66a72e730741b0abe880a9c2002ad6b2e5a9b421f329"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n1000_r12_seed0_SCIP_MILP.json",
+      "sha256": "4935e30ea13905dd99291ea3b83b79d53ef861d75672d9cb371dfce688755602"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n1000_r12_seed0_HeiHGM_Streaming.json",
+      "sha256": "dfdea2b70e308cae81ab441673fef158c0213bce77e29afd3f5765611b47aeea"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/原作者ILS迭代/raw/n1000_r12_seed0_tries-1.json",
+      "sha256": "78c92dd45bdd75ca02a79832c741f5df8e910902bf3caf24dad06e7d48297562"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/原作者ILS迭代/raw/n1000_r12_seed0_tries1000.json",
+      "sha256": "c783e97c485dab7ae8c1963c9f19400fffe02d6c1cf5a38793b11c1fdfb4df43"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/原作者ILS迭代/raw/n1000_r12_seed0_tries5000.json",
+      "sha256": "7e3148f20bed9e00c5e3f2017feeacf2c078989870f97276204ce9d6443c37c1"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n1000_r24_seed0_SCIP_MILP.json",
+      "sha256": "5e89c0b069a9778d5f951ac0c06c324fa1d7a00626fcd5f2fe2a3b51719ae981"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n1000_r24_seed0_HeiHGM_Streaming.json",
+      "sha256": "2b7540ddafd527801ab7a087bd619a596c92257a5153f82c2ee6f48d1e716c66"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n300_r6_seed1_SCIP_MILP.json",
+      "sha256": "1d7600894b05df428f90718d071ab0a5d5a0a4f1b44d36af3a8b475cf34a4b99"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n300_r6_seed1_HeiHGM_Streaming.json",
+      "sha256": "f5dd795087a98731783795c73f74f851fc6db2ece7e1c7e53cf98ca3e4c0903c"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n1000_r6_seed1_SCIP_MILP.json",
+      "sha256": "4536d7dca99a6d0b20903169ecaa15ad4851f8521fcdbf16fe0a75ab61f92dc7"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n1000_r6_seed1_HeiHGM_Streaming.json",
+      "sha256": "75d89ebf6e38aae6956102f6b4fdd7cb1b6c65f4e33ea19bdfb912011dd12f1e"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n3000_r6_seed1_SCIP_MILP.json",
+      "sha256": "2b7b51245091e4072f6f2c4a87d82bf6311acab4f6bcf22e006d3cdedd5d6404"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n3000_r6_seed1_HeiHGM_Streaming.json",
+      "sha256": "71033f3b0387ad9fe6fdec14e5660ad67ea3466f1899f77cef02407799e29e08"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n1000_r3_seed1_SCIP_MILP.json",
+      "sha256": "a1486a1f90e79751c55e5f56926e371783f5267ac772ac3a18dfa437e0b9614a"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n1000_r3_seed1_HeiHGM_Streaming.json",
+      "sha256": "d7e07428e524194bcd93f1b090d3afbc2d4e046e908d5981984a351518c0b4a6"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n1000_r12_seed1_SCIP_MILP.json",
+      "sha256": "210bc88060507e060ba2b1837c7f3b2d1bfc24e119c867ca65d9741de03fb1fc"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n1000_r12_seed1_HeiHGM_Streaming.json",
+      "sha256": "d5a49d6d6b3e741bc0ff84fb9b721601a803809e8bbb84ca07e830a55632c451"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n1000_r24_seed1_SCIP_MILP.json",
+      "sha256": "5a7e18e266d764bc6404179e529054bef7467e7764c8cb879df82c795da9ac77"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n1000_r24_seed1_HeiHGM_Streaming.json",
+      "sha256": "850ccf96ffa35af869eac3095c8022a8109cab6899592d86f2b40d7f988bc42c"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n300_r6_seed2_SCIP_MILP.json",
+      "sha256": "918bcc4e833fddb61fa8dcf07a3fa4da2f90b3c49351ad121ad5f7a3b3491275"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n300_r6_seed2_HeiHGM_Streaming.json",
+      "sha256": "141b2f9aad09a142716cd99791a9365cd830a67fafd830655b470f51dd2641f3"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n1000_r6_seed2_SCIP_MILP.json",
+      "sha256": "4eba5abc3d3b482812f1a9709029ae78d7847186e0ba9abf598107b2abb538e4"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n1000_r6_seed2_HeiHGM_Streaming.json",
+      "sha256": "1a44acb8c2fa661b4b75136a7078f84d7408b580f4f2607f6aeab7fd97d2bb05"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n3000_r6_seed2_SCIP_MILP.json",
+      "sha256": "1099ca09a945c99a9907420ea0b3f2b92cb5f9fa0f5eaf7894bfa386a38358e3"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n3000_r6_seed2_HeiHGM_Streaming.json",
+      "sha256": "8902ac0c8120ceae300092563b5e69c9cd47bc6c1211b819e5caa2692f80ae1e"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n1000_r3_seed2_SCIP_MILP.json",
+      "sha256": "ed433720d209c00b110e9d06cce08bbd28291ae3950503144b8103efdaf77d09"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n1000_r3_seed2_HeiHGM_Streaming.json",
+      "sha256": "999bc715f0a1ce53eb96c4a2909a1969960bb7ba821cad89d927400ef4ebce6c"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n1000_r12_seed2_SCIP_MILP.json",
+      "sha256": "034cdb58e7503a82fe9f2aedf808e90d6182bb3fcb012b35e258736912e1ea20"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n1000_r12_seed2_HeiHGM_Streaming.json",
+      "sha256": "c2f57b168d148bfbfcb18cec1730080b5e4f79387c7810314b78bed9ee99b333"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n1000_r24_seed2_SCIP_MILP.json",
+      "sha256": "a7f8f23bfcf4e74aab5a8134b546bac9ad1072dbb3928656f36f88d49dbcd5c0"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/复杂度扩展/raw/n1000_r24_seed2_HeiHGM_Streaming.json",
+      "sha256": "b6b82d99f84952d4d070b01ba26ef787eb794720569c04918811356953c9361b"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_HypOp2025/raw/hypop2025_mis_n500_d3_SCIP_MILP.json",
+      "sha256": "0c7b911f25730279d4522a6863e4f423781523a7575fbd0d21b684a910b45efa"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/SCIP_gap5持续求解/raw/hypop2025_mis_n500_d3_SCIP.json",
+      "sha256": "ae0eac25b20ef42214de3505ec6cc90a5ad01e43818fd94ae2231ff68a6d764e"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_HypOp2025/raw/hypop2025_mis_n500_d3_HeiHGM_Streaming.json",
+      "sha256": "950bf1fd7cb40e40531d800b4c698226aef37b8277a6c469f06ecd564d079206"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/原作者ILS迭代/raw/hypop2025_mis_n500_d3_tries-1.json",
+      "sha256": "b57cf935cdf509dcef1b34aac2e450d465231f3bb8d259dfe8b923c21cc15dc2"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/原作者ILS迭代/raw/hypop2025_mis_n500_d3_tries1000.json",
+      "sha256": "7225f151b0bb9e25716d8fc318f53162316260f0aacae15daafb8193387c3512"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/原作者ILS迭代/raw/hypop2025_mis_n500_d3_tries5000.json",
+      "sha256": "41430c23533f984ab12348ae455e181494763ff73eeb563f5dfc7fd166a8d90e"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_HypOp2025/raw/hypop2025_mis_n1000_d3_SCIP_MILP.json",
+      "sha256": "5b8c67648da50078592f16526f3cbb7df209867a0bb8007d353ba867bf89c101"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/SCIP_gap5持续求解/raw/hypop2025_mis_n1000_d3_SCIP.json",
+      "sha256": "dec62f05a95a198bc5a75cd9936aa9dd3844869a01f2ddb5170bc2ff91cc5793"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_HypOp2025/raw/hypop2025_mis_n1000_d3_HeiHGM_Streaming.json",
+      "sha256": "dbaa9b3bdc2bbaa98415595e66e224fc90596309fc945b1102a83c84ceafe4b8"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_HypOp2025/raw/hypop2025_mis_n2000_d3_SCIP_MILP.json",
+      "sha256": "40f29267aaac997979b6aaf0112b3f689dc1c6bfe9fdee11dbb35748c772e001"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_HypOp2025/raw/hypop2025_mis_n2000_d3_HeiHGM_Streaming.json",
+      "sha256": "428e87f02cd221b2f45f3fed90e297c7ec58ad42717a4add40c2dfc9f45fd821"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_HypOp2025/raw/hypop2025_mis_n500_d5_SCIP_MILP.json",
+      "sha256": "1908b6520c14f90a6c99a3e4c9322a2bec007f102de4a32757b3b0d1ab2617bf"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_HypOp2025/raw/hypop2025_mis_n500_d5_HeiHGM_Streaming.json",
+      "sha256": "667a2b85db91510bf92b8f338c1269904baf7f4aba27f26206961bc9cca3b57b"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_HypOp2025/raw/hypop2025_mis_n1000_d5_SCIP_MILP.json",
+      "sha256": "cec3c9db71d1e2a585023b356f8e3fda9dcaf0f18aa17df0509c95355ef743d1"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_HypOp2025/raw/hypop2025_mis_n1000_d5_HeiHGM_Streaming.json",
+      "sha256": "e039c40df9decd4816e9131abda5e8f96e71b29903d63312572546767a541d4c"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_HypOp2025/raw/hypop2025_mis_n2000_d5_SCIP_MILP.json",
+      "sha256": "d4fbb3ae00cafa55292128c6e02501d075638942cdc1d3331c96c52230b48a00"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_HypOp2025/raw/hypop2025_mis_n2000_d5_HeiHGM_Streaming.json",
+      "sha256": "20de97e1017cadf07c1f7aaa3b1f7c9dd34e729c0983e8f12c55d6dc686d2346"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_匹配2025_2026/raw/paper2026_ISPD98_ibm01_SCIP_MILP.json",
+      "sha256": "7dc2d805fab205a427f021393c346b40411baafff8ae33aacee90845250c74a3"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_匹配2025_2026/raw/paper2026_ISPD98_ibm01_HeiHGM_Streaming.json",
+      "sha256": "b1ff42a61a40ffa4ab5207da2267dd186e33e052c40eaefc533a7c5d2582e26c"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/原作者ILS迭代/raw/paper2026_ISPD98_ibm01_tries-1.json",
+      "sha256": "af796fdf3211858be823740f00e8ebca24b8431c7f756f92e8826ac12aa3fcd0"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/原作者ILS迭代/raw/paper2026_ISPD98_ibm01_tries1000.json",
+      "sha256": "84e7df8efa84c4e3b1019d03ec3db4bca07e8e10d2d0d88819cde15dffcf9111"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/原作者ILS迭代/raw/paper2026_ISPD98_ibm01_tries5000.json",
+      "sha256": "0027b006a7d66650cff61b137ea429f749aeff47be08eec05324eccf67ec2625"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_匹配2025_2026/raw/paper2026_ISPD98_ibm02_SCIP_MILP.json",
+      "sha256": "b908621f01abf7ed62bfa445bb4570796425acca8d789021983949cb6225a180"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_匹配2025_2026/raw/paper2026_ISPD98_ibm02_HeiHGM_Streaming.json",
+      "sha256": "654b20de8248aacf75292c834c5d5722b87b7cc7270f5e394c301e6cbc4387f2"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_匹配2025_2026/raw/paper2026_us04_mtx_SCIP_MILP.json",
+      "sha256": "b664b9b59af08ffb270743230c135e77a05be5592dac72aa4a8379c32faf5bfc"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_匹配2025_2026/raw/paper2026_us04_mtx_HeiHGM_Streaming.json",
+      "sha256": "82198fa21774b8aca26c90313b78a5bf3d8b49a2c49fc32ad091c7a39faf554b"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_匹配2025_2026/raw/paper2026_bibd_49_3_mtx_SCIP_MILP.json",
+      "sha256": "af9031461dd651b043f5436e08d2ef5c2f3e8bc119043330724c102e85180949"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_匹配2025_2026/raw/paper2026_bibd_49_3_mtx_HeiHGM_Streaming.json",
+      "sha256": "3c537cdd288856a213c6a0de905af799f56c1da0f44cb19f3bfdd9aff6955ce0"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_匹配2025_2026/raw/paper2026_sat14_AProVE07-01_cnf_dual_SCIP_MILP.json",
+      "sha256": "fc04263d8793247ff3cc42b32ba31242c0416aaffba6efc481c909e6b2ff1335"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_匹配2025_2026/raw/paper2026_sat14_AProVE07-01_cnf_dual_HeiHGM_Streaming.json",
+      "sha256": "6ec3342fecea152e18ccd9568c09fbb91718fa9df6cce08092cd6deaffad0630"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_匹配2025_2026/raw/paper2026_sat14_AProVE07-27_cnf_dual_SCIP_MILP.json",
+      "sha256": "ba7547b926602544e4f97b10a490255ceda2ed9ff89faeef95df77bb523801ca"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_匹配2025_2026/raw/paper2026_sat14_AProVE07-27_cnf_dual_HeiHGM_Streaming.json",
+      "sha256": "964fed73954793acbd0ca8a72f4080737c34bf85f6bfc1c2277c7b22f0805ac2"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/SCIP首次有效决策/raw/paper2026_dac2012_superblue19_SCIP.json",
+      "sha256": "a8893bdde50c032ba0320d6f4584b91d9284f71d5b488354e9143b258c42c5a4"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文完整流程原始场景对比/raw/paper2026_dac2012_superblue19_SCIP_cold_gap05.json",
+      "sha256": "afeff80985fe74e76980aaf4fbac4428f0805e4383ec4e87c5e8cced538c46f4"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_匹配2025_2026/raw/paper2026_dac2012_superblue19_HeiHGM_Streaming.json",
+      "sha256": "ce2b9821e2908d124109bd90ac4962a0723c3f06139c9ce96b3c8707b1bb4574"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/SCIP首次有效决策/raw/paper2025_dac2012_superblue19_SCIP.json",
+      "sha256": "d9ec16e67b8393412adee8a9ba6ee3ac33a455797b297d88a40a12f03cfa28c5"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/论文原始实例_匹配2025_2026/raw/paper2025_dac2012_superblue19_HeiHGM_Streaming.json",
+      "sha256": "e2c2b72b17cd33528898d722339db25e1a9c36c4e53672b9e06512e8f80d4f6c"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/原作者ILS迭代/results.json",
+      "sha256": "ff6a0040c0a610f05c37beff6912779c59f1e9ac8ed0577390f70749dcc74f82"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/原作者ILS迭代/protocol.json",
+      "sha256": "70e980410dd4e1ba45297b95d557ab42533f7ad37da477469082bf84dec0b597"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/四因素压力测试/protocol.json",
+      "sha256": "b91fcee3345e23ff23cba806786c8a02dda2b78c93540379448d37ce925ada7b"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/raw_runs.json",
+      "sha256": "95a3094d0fa667a2cf3367baa9cfe8812032da552e4b0ef2b188cd739b0adfbe"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/protocol.json",
+      "sha256": "b19a968767a78bbe7e40b0d1b921efeede5f2067a63b26475580e04c748ad32d"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/benchmark_validation.json",
+      "sha256": "4fa0cd0d302ceaec3fab83b7dfff1a9f16545e60c75e1d5fcde10fd3b0203394"
+    },
+    {
+      "path": "总结/03_实验数据/超图与SCIP组合任务对比/adapter_audit.json",
+      "sha256": "cc8d8d81471378509125e17a5c52451e42edde90790a39dbe76c6bc416bd40ff"
+    }
+  ]
+}

@@ -1,0 +1,138 @@
+% Source-bound internal modeling analysis; does not modify the live SCIP model.
+\section*{联合巡检模型的超图表示}
+\noindent 分析对象：Rommerskirchen，237塔、2133项观测，2车、4机、8组物理电池。推荐采用带类型和生效条件的变量--约束超图，并按物理事件与轨迹段组织层次结构。已执行条件超图消息传递试验；尚未取得全域可行方案或性能优势证据。[H1,H2]
+
+\begin{align*}
+ \mathcal H&=(V,E),\qquad V=\{x_j:\text{标量决策变量}\},\\
+ e_c&=\operatorname{supp}\bigl(g_c(x_{S_c};\theta_c),\ \text{生效条件}\bigr),\\
+ \operatorname{lexmin}_x\quad &\left(\sum_g(1-z_g),\ C-t_0,\ \sum_\ell E_\ell^{air}\right),\\
+ \text{s.t.}\quad &x_j\in D_j,\quad \chi_c(x)=1\Rightarrow g_c(x_{S_c};\theta_c)\bowtie_c0\quad(c\in E).
+\end{align*}
+\noindent $D_j$为变量定义域；$\theta_c$为有来源的数据；$\chi_c$为生效谓词，恒生效约束取1；$\bowtie_c$为等式或不等式关系。每条超边保留约束函数、单位、容差、条件选择变量与方程来源。三个目标保持原词典序，单独记录，不与可行性超边混计。
+
+\begin{center}\small
+\begin{tabular}{p{24mm}p{58mm}p{63mm}}\toprule
+物理耦合 & 相连决策 & 建图方式\\\midrule
+整塔完成 & 9项成功标志、1个整塔标志 & 完整塔AND因子；保留全部上下界\\
+航迹与拍摄 & 位置、速度、姿态、云台、焦距、时间 & 轨迹段内非线性因子；段间连续性超边\\
+天气与能耗 & 时间、高度、空速、功率、积分Wh & 天气作为外部函数；时间和状态作为顶点\\
+车机会合 & 车辆曲线、无人机端点、时间、操作位 & 共享时空接口；道路和起降点仍自由选择\\
+电池周转 & 前次落地SOC、充电、后次航次、实体身份 & 物理电池状态链；相邻守恒与身份连接\\
+充电与操作位 & 同资源竞争事件、先后次序、停靠区间 & 全局容量语义＋等价事件因子；分别计数\\
+碰撞与遮挡 & 同时存在的轨迹、视线、激活条件 & 保留实际交互对象；两机避碰仍属两对象交互\\\bottomrule
+\end{tabular}\end{center}
+
+\noindent 底层保留标量变量及完整约束；上层把任务事件、自由轨迹段、车辆阶段和充电事件组织为优化块，以跨块超边连接。共享变量只设一个归属，或通过显式等式连接副本。全部块共同服务同一目标，不能先固定车辆路线再优化无人机。[H1,H2]
+
+\noindent 任务前驱、航次归属、道路模式和充电对象也是决策。保存完整索引域与条件因子；候选方案对应的活动子图只用于该候选的分析，不能替代完整可行域。
+\noindent 当前日前实例使用单一预报情景。重规划时更新实测状态、剩余任务和已承诺动作的边界因子；多情景非预见性连接须以实际可用误差数据为依据，不能把当前单情景称为已完成不确定性求解。
+\clearpage
+
+\section*{当前规模与可核验的超边}
+\begin{center}\small
+\begin{tabular}{p{73mm}r p{42mm}}\toprule
+统计对象 & 数量 & 口径\\\midrule
+初始统一SCIP标量变量 & 869442 & 当前已构建实例\\
+初始显式约束行 & 394966 & 不含全部延迟展开行\\
+索引关系 & 42143 & 一个关系可展开多行\\
+可选航次槽 & 156 & 每车78；不是固定航次\\
+自由无人机轨迹段 & 14931 & 2133任务，每任务7段\\
+车辆道路阶段 & 512 & 每车256，有限数值网格\\
+充电事件槽 & 312 & 每车156，有限数值网格\\
+初始显式$N_I$／最大边／最大度 & 1643782／78／1248 & 完整条件并集仍未知\\\bottomrule
+\end{tabular}\end{center}
+
+\noindent 下表是从当前源码公式及全场景实体独立枚举的两个子图。$n$为涉及的变量数，$m$为标量约束数，$N_I=\sum_e|e|$。只统计所列约束，排除变量界与目标；不得相加后称完整模型。
+
+\begin{center}\small
+\begin{tabular}{p{40mm}rrrrr}\toprule
+子图 & $n$ & $m$ & $N_I$ & 最大边大小 & 最大顶点度\\\midrule
+237塔完整性 & 2370 & 2370 & 6636 & 10 & 10\\
+12个实体资源唯一链根 & 936 & 12 & 936 & 78 & 1\\\bottomrule
+\end{tabular}\end{center}
+
+\begin{align*}
+ z_g&\le a_i\quad(i\in\mathcal I_g),\qquad
+ z_g\ge\sum_{i\in\mathcal I_g}a_i-8,\\
+ \sum_{\ell\in\mathcal L_v}u_{r\ell}&\le1
+ \quad(r:\text{本车物理无人机或电池}),\qquad|\mathcal L_v|=78.
+\end{align*}
+\noindent $u_{r\ell}$为该实体在航次$\ell$成为使用链起点的辅助标志；其定义、先后关系与能量守恒另有约束。78表示可选航次指示变量数，不表示78个资源。
+
+\begin{center}\small
+\begin{tabular}{p{38mm}p{107mm}}\toprule
+容易混淆的数量 & 本模型应采用的解释\\\midrule
+31类变量、30类约束 & 语义类型数量，不是$n=31,m=30$的实际优化实例\\
+高阶物理耦合 & 多事件或多实体共同决定可行性；与多项式次数、隐藏向量维度分开\\
+一条大电池超边 & 可用相邻SOC守恒因子分解；边越大并不必然越适合超图算法\\
+条件连接的并集 & 所有前驱或道路选择的并集可能很密；选定方案的稀疏性不能提前当作已知\\
+需要新增的结构指标 & 跨块接口维数、连接代价、分解后填充量；结构宽度须注明估计方法\\\bottomrule
+\end{tabular}\end{center}
+\noindent 离散CSP文献说明约束结构宽度与可解性有关；其理论条件不能直接移用到本模型的非凸连续变量与物理约束。[H3]
+\clearpage
+
+\section*{求解方式的适用范围}
+\begin{center}\small
+\begin{tabular}{p{36mm}p{48mm}p{61mm}}\toprule
+方法与时间 & 可利用的结构 & 对本模型的边界\\\midrule
+Plasmo＋MadNLP，2022 & 优化块及连接超边；Schur/Schwarz处理连续问题的线性系统 & 可研究连续块；不能单独解决全部离散选择或证明非凸全局最优[H1]\\
+图结构Benders，2026-04-25 & 层次优化块和接口变量；公开PlasmoBenders实现 & 论文分解针对线性/混合整数线性形式；当前非凸物理子问题需另证有效切面[H2]\\
+KaHyPar & 超图划分、割与连接代价 & 属于结构划分工具；不能把划分结果当成巡检方案[H4]\\
+固定航次超图匹配 & 资源节点、预制航次超边 & 当前自由航迹和道路决策无法直接保留；不宜作为主模型\\
+有向时序超图 & 前置事件、资源状态与后继事件 & 可作为执行和因果视图；需补充完整物理约束\\\bottomrule
+\end{tabular}\end{center}
+
+\noindent 优先研究的机制是：让局部轨迹、成像和能耗约束集中在块内，通过少量时空、SOC和资源身份接口协调。若接口过密、条件松弛过弱或划分开销抵消收益，则超图表示不一定改善求解。
+
+\begin{center}\small
+\begin{tabular}{p{36mm}p{109mm}}\toprule
+后续对比 & 必须记录的证据\\\midrule
+统一问题 & 相同变量域、道路、物理约束、天气、精度与词典序目标\\
+求解收益 & 首个全场景可行方案时间；完整塔数、返库时间、Wh随时间变化\\
+结构收益 & 峰值内存、线性系统填充、接口规模；计入建图与划分耗时\\
+真实性 & 独立连续验收；全域方案及失败保留；局部NLP失败不作全局不可行证明\\\bottomrule
+\end{tabular}\end{center}
+
+\noindent \textbf{SCIP观测状态：}11月09日19:22（UTC+8）同一237塔进程仍在运行，已运行约310分钟。最新原生事件未记录可行向量；不能把旧事件当实时心跳。未重启或复制该作业。关闭启发式属于内存诊断配置，不作为默认SCIP性能证据。
+
+\small
+[H1] Cole, D. L.; Shin, S.; Zavala, V. \emph{A Julia Framework for Graph-Structured Nonlinear Optimization}. 2022. DOI: \href{https://doi.org/10.1021/acs.iecr.2c01253}{10.1021/acs.iecr.2c01253}。\par
+[H2] Cole, D. L., et al. \emph{Graph-Based modeling and decomposition of hierarchical optimization problems}. Mathematical Programming Computation, 2026-04-25. DOI: \href{https://doi.org/10.1007/s12532-026-00315-4}{10.1007/s12532-026-00315-4}。\par
+[H3] Marx, D. \emph{Tractable hypergraph properties for constraint satisfaction and conjunctive queries}. STOC 2010扩展摘要；\href{https://arxiv.org/abs/0911.0801}{arXiv:0911.0801}。\par
+[H4] \href{https://kahypar.org/}{KaHyPar官方文档}；\href{https://plasmo-dev.github.io/Plasmo.jl/dev/documentation/modeling/}{Plasmo官方建模文档}。\normalsize
+% CONDITIONAL_HYPERGRAPH_TRIAL_START
+\clearpage
+\begingroup\small
+\section*{条件超图求解：实际试运行}
+\noindent 观测：11月09日19:27（UTC+8）。237塔、2133项观测，全场景变量域不缩小。每批200轮是首次工程试验工作量，不是用户的成功标准或SCIP限时。
+\begin{center}\small
+\begin{tabular}{p{35mm}p{110mm}}\toprule
+项目 & 实际实现与边界\\\midrule
+算法 & 变量--约束因子上的共识消息传递，采用ADMM式更新[H5]；本项目试验性适配\\
+局部计算 & 线性行精确投影；非线性行至多4步局部Newton投影；不保证非凸收敛\\
+离散变量 & 每轮共识更新投影到原整数／二元定义域；未冻结航次、道路或电池选择\\
+生效条件 & 索引类别、编码位与外部开关共同进入蕴含约束；所有原候选域保留\\
+迟加载因素 & 原42143个关系工厂及连续验收保留；未展开的物理因素不计作已满足\\
+当前目标 & 仅尝试第一目标：未完整塔数；返库时间与Wh次级优化尚未进入\\
+身份 & 未执行ILS或超图划分器；不是原论文三权重算法的忠实复现或独立新算法声明\\\bottomrule
+\end{tabular}\end{center}
+\begin{center}\small
+\begin{tabular}{p{37mm}rrrr}\toprule
+初始化 & 轮数 & 总耗时(s) & 最后违例行 & 可行方案数\\\midrule
+界中点（诊断） & 200 & 237.48 & 40294 & 0\\
+小正值（诊断） & 200 & 105.92 & 15785 & 0\\
+界同步后的小正值 & 200 & 109.30 & 15785 & 0\\
+\bottomrule\end{tabular}\end{center}
+\noindent 前两批未同步建变量后的界修改，仅保留为工程诊断；第三批已逐变量核对原模型界。违例数仅针对当时已展开行，行集随迭代变化。正式目标向量均未取得，未校验标志不代表任务完成。
+\begin{center}\small
+\begin{tabular}{p{55mm}rr}\toprule
+当前批次显式图 & 初始 & 最后\\\midrule
+标量变量$n$ & 869442 & 869442\\
+显式行$m$ & 394966 & 434991\\
+关联$N_I$ & 1643782 & 1942658\\
+最大超边大小$r$ & 78 & 78\\
+最大变量度 & 1248 & 2496\\\bottomrule
+\end{tabular}\end{center}
+\noindent 这些是已物化行的精确统计，不含全部条件选择并集、变量界和目标因子。13项基础核验通过，包括表达式及梯度、开关真值表、已知解和修改后变量界。全域物理可行性仍未通过。
+
+\footnotesize [H5] Derbinsky, N.; Bento, J.; Elser, V.; Yedidia, J. S. \emph{An Improved Three-Weight Message-Passing Algorithm}. arXiv:1305.1961, 2013-05-08；本文参考式(5)--(7)的标准权重消息更新，非原三权重方法复现。\par\endgroup

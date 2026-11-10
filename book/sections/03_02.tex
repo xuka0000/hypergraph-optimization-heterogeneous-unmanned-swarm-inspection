@@ -1,0 +1,172 @@
+\section{Streaming方法}
+\label{sec:03_02}
+
+Streaming方法按输入顺序读取候选任务，以资源上的累计收益信息筛选需要保留的任务，再从保留序列的末端向前构造可行解。本节采用Reinstädtler等提出的半流式超图匹配框架及其$\delta_g$更新规则\cite{ReinstadtlerFPU2025}。该方法直接处理任务收益和资源关联，不包含神经网络、参数训练或训练数据。已有实验中的Streaming实现也不等同于后文介绍的归约、局部搜索和解恢复组成的原作者完整流程。
+
+\subsection{输入对象与资源势值}
+
+沿用前节的任务索引集合$E$和资源集合$V$，记$n=|E|$为候选任务数，$m=|V|$为资源数。每个任务$e\in E$对应非空资源集合$R_e\subseteq V$，收益为无量纲正数$w_e\in\mathbb{R}_{>0}$。资源列表中的每个关联项称为一个pin，表示该任务需要占用对应资源。具有相同资源集合的不同任务仍保留不同索引。这里只讨论单位容量$b_v=1$，即一个资源至多被一个已选任务占用。
+
+设$M\subseteq E$为最终选择的任务集合，$W(M)=\sum_{e\in M}w_e$为其无量纲总收益。相应优化问题为
+\begin{equation}
+ z^\star=\max_{M\subseteq E}\left\{W(M):
+ R_e\cap R_f=\varnothing,
+ \quad\forall e,f\in M,\ e\ne f\right\}.
+\label{s0302:matching_problem}
+\end{equation}
+这里的资源无交集条件与单位容量约束等价；它要求一个任务所需的全部资源共同可用。对一般$b_v>1$的容量模型，不能直接沿用本节的无交集接收条件。
+
+算法为每个资源$v\in V$保存非负势值$\phi_v\in\mathbb{R}_{\geq0}$，初值为零。势值与收益具有相同的无量纲尺度，用来累计此前保留任务对该资源形成的收益增量。它不是资源占用次数，也不表示该资源已经分配给最终方案。另设栈$S$保存待筛选的任务索引；栈具有顺序，后入栈的任务先被检查。
+
+将输入中的任务排列记为$(e_1,\ldots,e_n)$，其中每个任务索引恰好出现一次。已有实现按这一原始顺序扫描，不先按收益排序。处理第$k$个任务$e_k$时，$k\in\{1,\ldots,n\}$，用更新前的势值计算
+\begin{align}
+ \Phi_{e_k}&=\sum_{v\in R_{e_k}}\phi_v,
+ \label{s0302:potential_sum}\\
+ g_{e_k}&=w_{e_k}-\Phi_{e_k}.
+ \label{s0302:residual_gain}
+\end{align}
+$\Phi_{e_k}\geq0$汇总该任务全部资源上的既有势值，$g_{e_k}\in\mathbb{R}$是相对于这一汇总值的残余收益。二者均无量纲，并按任务被扫描时的状态计算一次。残余收益不是把任务加入当前可行匹配后的实际目标增量，因为扫描阶段尚未维护一个可行匹配。
+
+设$\varepsilon\in\mathbb{R}_{\geq0}$为无量纲筛选参数。实验使用$\varepsilon=0.1$。当任务满足
+\begin{equation}
+ w_{e_k}>(1+\varepsilon)\Phi_{e_k}
+\label{s0302:strict_acceptance}
+\end{equation}
+时，将其放入栈，并执行$\delta_g$更新
+\begin{equation}
+ \phi_v^{\mathrm{new}}=
+ \begin{cases}
+ \phi_v^{\mathrm{old}}+g_{e_k},&v\in R_{e_k},\\
+ \phi_v^{\mathrm{old}},&v\notin R_{e_k}.
+ \end{cases}
+\label{s0302:gain_update}
+\end{equation}
+这里$\phi_v^{\mathrm{old}}$和$\phi_v^{\mathrm{new}}$分别表示本次任务处理前后的势值。每个关联资源增加的是同一个$g_{e_k}$，不是$g_{e_k}/|R_{e_k}|$。计算该增量后再更新各资源，不能在更新过程中重新计算$\Phi_{e_k}$，否则后处理的资源将使用不同的增量，改变算法。
+
+由式\eqref{s0302:strict_acceptance}可知，入栈任务满足$g_{e_k}>\varepsilon\Phi_{e_k}\geq0$，因此各资源势值只增不减。后续任务若需要这些资源，其势值总和也随之增大，需要更高收益才能通过筛选。不满足入栈条件的任务被跳过，既不进入栈，也不改变任何势值。
+
+\subsection{一遍入栈与逆序构造可行解}
+
+算法的输入为任务序列、各任务的资源集合与收益，以及参数$\varepsilon$；输出为任务集合$M$、对应二元选择$x_e$及总收益$W(M)$。完整步骤如下。
+
+\begin{enumerate}
+ \item 初始化空栈$S$，令$\phi_v=0$对所有$v\in V$成立。
+ \item 按$k=1,\ldots,n$的顺序依次读取$e_k$。对当前任务，先计算$\Phi_{e_k}=\sum_{v\in R_{e_k}}\phi_v$。若$w_{e_k}\leq(1+\varepsilon)\Phi_{e_k}$，直接处理下一个任务；否则，保存$g_{e_k}=w_{e_k}-\Phi_{e_k}$，将$e_k$压入栈顶，并对每个$v\in R_{e_k}$执行$\phi_v\leftarrow\phi_v+g_{e_k}$。
+ \item 全部输入扫描完毕后，初始化$M=\varnothing$和$U=\varnothing$。其中$U\subseteq V$记录最终方案当前已经占用的资源，与扫描阶段的势值含义不同。
+ \item 当栈非空时，取出栈顶任务$e$并将其从栈中移除。若$R_e\cap U=\varnothing$，执行
+ \begin{equation}
+ M\leftarrow M\cup\{e\},\qquad
+ U\leftarrow U\cup R_e.
+ \label{s0302:reverse_acceptance}
+ \end{equation}
+ 若$R_e\cap U\ne\varnothing$，则跳过该任务，保持$M$与$U$不变。重复本步骤直至栈为空。
+ \item 返回$M$，并形成
+ \begin{equation}
+ x_e=
+ \begin{cases}
+ 1,&e\in M,\\
+ 0,&e\notin M,
+ \end{cases}
+ \quad e\in E,
+ \qquad
+ W(M)=\sum_{e\in M}w_e.
+ \label{s0302:output}
+ \end{equation}
+\end{enumerate}
+
+栈中允许共享资源的任务同时存在。入栈仅表示该任务通过收益筛选，并不意味着已经满足最终选择之间的互斥关系。逆序阶段才执行资源无交集检查：初始空集可行，每次接收的任务都与已有占用资源无交集，因此归纳可得最终输出满足
+\begin{equation}
+ \sum_{e\in E:\,v\in R_e}x_e\leq1,
+ \qquad\forall v\in V.
+\label{s0302:output_feasibility}
+\end{equation}
+
+后进入栈的任务在逆序阶段先被检查，可能阻止较早入栈的冲突任务被选中。这种顺序是算法的一部分，不能用从栈底向上扫描代替。输入顺序还会改变势值累积过程，进而改变保留任务和最终输出。原论文允许任意输入顺序，包括不利顺序；允许任意顺序的理论保证不意味着不同顺序必然产生相同结果。
+
+因此，一遍处理指对原输入任务流只扫描一次，之后仍须遍历保留栈以构造匹配。它既不是没有后处理，也不是任务到达时立即作出不可撤回的在线执行决定。实际适配器从栈的末端向前遍历，与上述逐项出栈具有相同的选择顺序，但并不要求在遍历时物理删除栈元素。
+
+\subsection{近似保证的含义与适用条件}
+
+令超图阶数为
+\begin{equation}
+ r=\max_{e\in E}|R_e|,
+ \qquad r\in\mathbb{Z}_{>0},
+\label{s0302:rank}
+\end{equation}
+其中假定$E$非空；空输入直接返回空选择即可。$r$表示一个任务最多需要多少种资源，是计数而非物理长度。对正权重、单位容量问题，在原论文的实数运算分析条件下，$\delta_g$更新及逆序选择具有近似保证\cite{ReinstadtlerFPU2025}
+\begin{equation}
+ W(M)\geq\frac{z^\star}{r(1+\varepsilon)}.
+\label{s0302:approximation}
+\end{equation}
+这一保证限制最坏情况下可能损失的收益，不预言某个具体输入上必然接近最优。
+
+下面说明势值更新与该界之间的联系。以$\bar\phi_v$表示输入扫描结束后的势值，并定义$y_v=(1+\varepsilon)\bar\phi_v$。对被筛除的任务$e$，筛除时已有$w_e\leq(1+\varepsilon)\Phi_e$，后续势值只增不减。对入栈任务$e$，更新后的资源势值之和为
+\begin{equation}
+ \Phi_e+|R_e|g_e
+ =w_e+(|R_e|-1)g_e\geq w_e.
+\label{s0302:accepted_dual_coverage}
+\end{equation}
+因此，扫描结束后有
+\begin{equation}
+ y_v\geq0\quad(\forall v\in V),
+ \qquad
+ \sum_{v\in R_e}y_v\geq w_e\quad(\forall e\in E).
+\label{s0302:dual_feasibility}
+\end{equation}
+$y_v$是单位容量匹配线性松弛的一个可行对偶赋值，弱对偶关系给出
+\begin{equation}
+ z^\star\leq\sum_{v\in V}y_v
+ =(1+\varepsilon)\sum_{v\in V}\bar\phi_v.
+\label{s0302:dual_bound}
+\end{equation}
+
+设$\mathcal{S}\subseteq E$为曾经入栈的任务索引集合，并保留其入栈先后关系。每个入栈任务$e$向$|R_e|$个资源各增加$g_e$，故
+\begin{equation}
+ \sum_{v\in V}\bar\phi_v
+ =\sum_{e\in\mathcal{S}}|R_e|g_e
+ \leq r\sum_{e\in\mathcal{S}}g_e.
+\label{s0302:potential_accounting}
+\end{equation}
+为将右端与输出收益联系起来，可把每个最终未选中的入栈任务，归属给逆序检查时阻止它被接收的某个已选任务；最终选中的任务归属给自身。每个未选任务都有这样的阻挡者，且阻挡者比它更晚入栈。记$\mathcal{C}_f$为归属给已选任务$f\in M$的任务集合，则这些集合构成$\mathcal{S}$的一个划分。
+
+任务$f$被扫描时，其$\Phi_f$包含所有更早入栈任务在$R_f$上留下的增量。每个$e\in\mathcal{C}_f\setminus\{f\}$至少与$f$共享一个资源，因而其$g_e$在$\Phi_f$中至少出现一次。由$w_f=g_f+\Phi_f$得到
+\begin{equation}
+ w_f\geq\sum_{e\in\mathcal{C}_f}g_e,
+ \qquad\forall f\in M,
+ \qquad
+ W(M)\geq\sum_{e\in\mathcal{S}}g_e.
+\label{s0302:reverse_charging}
+\end{equation}
+结合式\eqref{s0302:dual_bound}至式\eqref{s0302:reverse_charging}即可得到式\eqref{s0302:approximation}。逆序选择保证阻挡者较晚入栈，因此它的势值总和已经计入被阻挡任务的增量；这解释了逆序操作在论证中的作用。
+
+当$\varepsilon=0.1$时，该界为$1/(1.1r)$，不能据此声称每个观测结果均达到最优收益的$0.95$。原论文还以$\varepsilon$调节质量保证与存储需求之间的关系：较小的参数改善上述最坏情形质量界，较大的参数提供更严格的保留门槛。取$\varepsilon=0$时，原论文的内存保证不再成立，不能把零参数的质量界与正参数下的存储保证同时使用。上述论证也不说明高阶超图必然带来算法优势；当前单位容量问题仍可用任务之间的两两冲突表达相同的二元可行域。
+
+\subsection{论文规则与实际实现的边界}
+
+原论文Algorithm~1在$w_e\geq(1+\varepsilon)\Phi_e$时保留任务，而本批实验采用的公开代码在$w_e>(1+\varepsilon)\Phi_e$时才保留任务。二者在等号边界上的处理不同：论文伪代码保留，实际实现跳过。本节式\eqref{s0302:strict_acceptance}及操作步骤对应实际实现，这一边界取舍来自公开代码，不是本书提出的改进。
+
+在理想实数运算下，等号处跳过任务仍满足式\eqref{s0302:dual_feasibility}所需的覆盖关系，以上论证中的非严格界不因此失效。然而，实际适配器的势值、势值求和及残余增量使用\texttt{float}类型，输入收益字段则为整数。浮点求和、类型转换及更新中的舍入可能影响临界条件附近的入栈判断；程序中的$\varepsilon$也以浮点形式传入。因此，式\eqref{s0302:approximation}是实数分析下的理论保证，不能直接视为每次浮点运行已经取得的数值证书。
+
+输出的组合可行性可另行检查：回到原输入，核对所选任务标识，并计算每个资源的整数占用次数及所选任务的原始收益总和。这样的检查能够验证实际方案是否满足单位容量约束，以及报告收益是否与原输入一致，却不会自动把浮点势值转换成经过严格舍入验证的对偶上界。
+
+实现中的资源数与任务数还应按接口含义绑定，不能只看形参名称。适配器将\texttt{solve}的第一个规模参数用于创建资源势值数组，第二个规模参数用于遍历任务；它们分别对应本书的$m=|V|$和$n=|E|$。输入中的任务资源列表以偏移数组和关联项数组表示，资源标识必须能正确索引势值数组。该接口次序不改变本书关于$n$、$m$的定义。
+
+\subsection{计时范围与已有失优结果}
+
+适配器的内部计时从创建算法存储结构之前开始，到完成逆序匹配构造之后结束。设这两个单调时钟读数分别为$t_a$和$t_b$，则记录的内部耗时为
+\begin{equation}
+ T_{\mathrm{core}}=t_b-t_a\geq0,
+\label{s0302:core_time}
+\end{equation}
+单位为$\mathrm{s}$。这一计时包含势值数组初始化、逐任务建立资源列表、扫描与入栈，以及最终逆序构造匹配。它不是仅对式\eqref{s0302:gain_update}进行计时，也不是只有输入扫描而没有后处理的时间。
+
+调用方在进入该函数之前完成的输入数组转换不在$T_{\mathrm{core}}$内。适配器在$t_b$之后才将已选任务标识复制到输出数组，因此这部分输出操作也不在内部计时范围内。若使用覆盖输入转换、函数调用和结果提取的外层计时，其范围会比式\eqref{s0302:core_time}更宽；必须依据相应调用方的实际计时起止点报告，不能把内部耗时称为包含这些步骤的端到端时间。内部计时包含列表构造，外层计时可能包含额外数组转换，二者也不能混为同一种输入处理成本。
+
+已有记录中，Streaming $\delta_g$覆盖$33$个初始条件和$59$个压力条件，均采用一遍扫描。覆盖这些条件只说明执行范围，不意味着每个条件都获得最优解。第2.7节的十二候选任务算例已经给出具体失优：Streaming所得收益为$39$，该例已核验的最优收益为$42$。其绝对收益差和相对最优收益分别为
+\begin{equation}
+ 42-39=3,
+ \qquad
+ \frac{39}{42}=\frac{13}{14}\approx0.9286<0.95.
+\label{s0302:toy_loss}
+\end{equation}
+这里的差值与收益均无量纲，收益比也无量纲。该结果表明，入栈筛选与逆序可行化能够返回可行方案，但不会保证在具体实例上选出收益最大的组合；这一不利结果应保留在方法评价中。跨条件的质量与时间分布在第3.7节统一讨论，并按各批次的停止条件、计时范围和并发设置解释。

@@ -1,0 +1,85 @@
+{
+  "delivered_pdf_pages": 221,
+  "rebuilt_pdf_pages": 221,
+  "all_page_text_identical": true,
+  "all_page_dimensions_identical": true,
+  "layout_warnings": [],
+  "current_python_sources_parsed": 152,
+  "syntax_errors": [],
+  "observed_at": "2026-11-10T16:00:19.966620+00:00",
+  "clean_environment_install": "passed: Windows, Python 3.11.5, fresh venv, pip binary wheels",
+  "core_environment": {
+    "core_modules_imported": 10,
+    "battery_soc_error": 6.661338147750939e-16,
+    "scip_status": "optimal",
+    "scip_objective": 5.0,
+    "heterogeneous_assignment_feasible": 1,
+    "full_regional_experiment": false
+  },
+  "charging_checks": [
+    {
+      "name": "current_ceiling_0.5_1000.0",
+      "passed": true,
+      "status": "optimal"
+    },
+    {
+      "name": "energy_account_0.5_1000.0",
+      "passed": true
+    },
+    {
+      "name": "current_ceiling_0.99_1000.0",
+      "passed": true,
+      "status": "optimal"
+    },
+    {
+      "name": "energy_account_0.99_1000.0",
+      "passed": true
+    },
+    {
+      "name": "current_ceiling_0.5_250.0",
+      "passed": true,
+      "status": "optimal"
+    },
+    {
+      "name": "energy_account_0.5_250.0",
+      "passed": true
+    },
+    {
+      "name": "hot_memory_cannot_be_overridden_by_connection",
+      "passed": true
+    },
+    {
+      "name": "one_charger_allocated_to_higher_weight",
+      "passed": true
+    },
+    {
+      "name": "unconnected_battery_does_not_receive_energy",
+      "passed": true
+    },
+    {
+      "name": "active_battery_keeps_electrothermal_state",
+      "passed": true
+    },
+    {
+      "name": "loaded_sources_unchanged_during_run",
+      "passed": true
+    }
+  ],
+  "original_frozen_integrity": {
+    "checked": 2022,
+    "errors": [],
+    "known_missing_historical_source_hashes": 1
+  },
+  "restoration": {
+    "status": "passed",
+    "overlay_changes": 15,
+    "archive_members_restored": true
+  },
+  "public_payload_scan": {
+    "files_and_members_scanned": 3849,
+    "findings": [],
+    "excluded_accounts_and_private_sessions": true
+  },
+  "external_source_urls_checked": 62,
+  "full_regional_solver_rerun": false
+}

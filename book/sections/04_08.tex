@@ -1,0 +1,172 @@
+\section{天气、旋翼功率与电池电热状态}
+\label{sec:04_08}
+
+飞行轨迹改变旋翼负载，负载通过电流影响SOC、端电压和发热；温度又改变内阻及后续充电资格。本节将这条关系写成连续状态方程。物理参数分为公开规格和明确的参考假设；公开M100飞行数据的能耗标定结果不转用于这里的7\,kg参考平台。
+
+\subsection{具有时间支持区间的天气场}
+
+令$W^\omega(\mathbf p,t)$为情形$\omega$中的共同天气场，含东、北、上三个风分量、温度、气压、露点、阵风、前一小时降水、能见度和昼夜标志。全部车辆、飞机和充电点读取同一情形，不能分别选择有利天气。连续温度和水平风在已绑定的时间、高度节点间线性插值；降水累计量与昼夜标志保留小时支持区间。有限情形约束为
+\begin{equation}
+ b_\ell=1\Rightarrow
+ \left\{\begin{aligned}
+ \|\mathbf w^\omega(\mathbf p_\ell,t)\|&\le10\ \mathrm{m/s},\\
+ G_{10}^\omega&\le10\ \mathrm{m/s},\quad 0\le T_a^\omega\le40\ ^\circ\mathrm C,\\
+ R_{1h}^\omega&=0,\quad D^\omega=1,\quad V_{vis}^\omega\ge1000\ \mathrm m.
+ \end{aligned}\right.
+ \label{s0408:flight_weather_constraints}
+\end{equation}
+这些是本实例的运行与成像门限。它们与动力学、成像和电池边界同时施加。环境允许不等于电池温度允许。
+
+\textbf{数值算例：共同天气情形。} 取Rommerskirchen保留格点$(51.00^\circ\mathrm N,6.75^\circ\mathrm E)$，以2025年7月1日08:00 UTC为$t=0$，规划区间为$[0,28800]$\,s。已有ERA5再分析仅提供参考背景场，实验中的预报发布、接收和残差均是明示的仿真构造，不是实有预报档案\cite{OpenMeteoHistory,OpenMeteoRuns}。30、60、100\,m层之间线性插值；近地层采用
+\begin{equation}
+ \mathbf w_h(t)=\frac h{30}\mathbf w_{30}(t),\quad0\le h<30\ \mathrm m.
+ \label{s0408:ground_wind}
+\end{equation}
+这一定义连续连接地面零风与30\,m层，但不包含塔体绕流的实测校正。
+
+令$a_\omega\in\{0,1,-1\}$分别对应基准、偏东偏热、偏西偏冷三个情形，
+\begin{align}
+ r(t)&=1-\exp[-\max(t-600,0)/300],\qquad s(h)=\min(h/30,1),\\
+ \epsilon_E^\omega&=2a_\omega r(t)s(h)\sin(2\pi t/1800),\\
+ \epsilon_N^\omega&=a_\omega r(t)s(h)\sin(2\pi t/2400),\\
+ w_U^\omega&=0.4a_\omega r(t)s(h)\sin(2\pi t/60),\\
+ \epsilon_T^\omega&=2a_\omega r(t).
+ \label{s0408:numeric_weather}
+\end{align}
+风速以m/s、温度差以K计。气体密度从温度、露点和气压计算，再采用明确的静力高度修正；可见距离取5000\,m。前600\,s三个情形相同，660\,s收到无噪声的残差符号观测。该观测模型及三个残差块是参考假设，不赋予经验概率。
+
+\begin{table}[!ht]\centering
+\caption{参考预报的信息时刻（s）}
+\begin{tabular}{lrrr}\toprule
+记录 & 发布时间 & 接收时间 & 覆盖终点\\\midrule
+初始预报 & $-3600$ & $-3300$ & 28800\\
+更新预报 & 600 & 630 & 28800\\
+残差符号观测 & 660 & 660 & ---\\\bottomrule
+\end{tabular}
+\end{table}
+在629\,s求解只能读取初始预报；630\,s以后才可读取更新。观测历史相同的情形必须给出相同的已下发决策。天气信息算例及非预见性对照在第\ref{sec:05_09}节给出。
+
+\subsection{旋翼功率与负载端口}
+
+令$f_r$为第$r$个旋翼推力，$\Omega_r$为角速度，$k_f,k_q$为推力、反扭矩系数，$J_{rot}$为单旋翼转动惯量。非回馈驱动器的参考功率为
+\begin{align}
+ f_r&=k_f\Omega_r^2,\quad \Omega_r\ge0,\\
+ P_\ell&=P_{aux}+\frac1{\eta_m}\sum_{r=1}^4
+ \max\left(k_q\Omega_r^3+\frac{J_{rot}}{2k_f}\dot f_r,0\right),
+ \label{s0408:flight_power}\\
+ P_\ell&\ge P_{aux}>0.
+ \label{s0408:power_nonnegative}
+\end{align}
+其中$J_{rot}\dot f_r/(2k_f)=J_{rot}\Omega_r\dot\Omega_r$保留加速旋翼所需功率，在$f_r=0$处也不需要除以$\Omega_r$。电池负载$P_p^{load}$按实际身份叠加该飞机的飞行、地面启动和电子设备功率；同一负载只计一次。天气先通过相对空速与阻力影响推力，不能又把同一风影响作为独立功率损失重复加入。功率偏差情形若启用，只乘以预先声明的剩余误差比例。
+
+本参考平台取$k_f=1.07296875\times10^{-4}$、$k_q=2.1459375\times10^{-6}$、$J_{rot}=2\times10^{-4}\,\mathrm{kg\,m^2}$、$\eta_m=0.8$和$P_{aux}=50$\,W。静风悬停时，每旋翼推力17.1675\,N，角速度400\,rad/s，代入式\eqref{s0408:flight_power}得736.7\,W。该值由参考旋翼参数计算，不是M300实测功率，也不继承M100模型的预测误差。
+
+\subsection{一阶RC电路、温度与能量核算}
+
+对于物理电池对$p$，状态为SOC $\zeta_p$、极化电压$V_p^{pol}$及集总温度$T_p^b$。电流$I_p>0$表示放电，$I_p<0$表示充电。采用电路与热状态耦合的建模方式\cite{HuangBattery2021,PyBaMMThevenin}：
+\begin{align}
+ \dot\zeta_p&=-I_p/(3600Q_p),\\
+ \dot V_p^{pol}&=-V_p^{pol}/(R_{1p}C_{1p})+I_p/C_{1p},\\
+ U_p&=U_{oc}(\zeta_p)-V_p^{pol}-R_{0p}I_p,\\
+ C_p^{th}\dot T_p^b&=R_{0p}I_p^2+(V_p^{pol})^2/R_{1p}-h_pA_p(T_p^b-T_a),\\
+ U_pI_p&=P_p^{load}-\eta_p^{ch}P_p^{in}.
+ \label{s0408:ecm_system}
+\end{align}
+$Q_p$以Ah计，电压以V、电流以A、电阻以$\Omega$、电容以F计。热容以J/K、散热系数以W/K计。库仑效率取1，开路电压不依赖温度，熵热项取零。这些是本算例假设；单个集总温度不表示已解析电芯内部温度分布。Huang等采用两阶RC与两状态热网络，本节只继承电热耦合思路和耗散项，不迁移其辨识参数或精度。
+
+令$A_p=U_{oc}-V_p^{pol}$、$P_p^{net}=P_p^{load}-\eta_p^{ch}P_p^{in}$。选择高电压支路：
+\begin{equation}
+ I_p=\frac{2P_p^{net}}{A_p+\sqrt{A_p^2-4R_{0p}P_p^{net}}},\qquad
+ A_p>0,\quad A_p^2-4R_{0p}P_p^{net}>0.
+ \label{s0408:power_branch}
+\end{equation}
+该写法在$P_p^{net}=0$时直接得到$I_p=0$；超出供电能力的请求不可行，不能截小负载使其通过。
+
+\textbf{数值算例：参考电池对。} 两块相同电池按理想并联等效，$Q=2\times5.935=11.87$\,Ah；这是假设的等效连接，不代表已识别真实机内拓扑。单块5935\,mAh、274\,Wh，充电输出52.8\,V及每路8.9\,A来自官方手册第32、97页\cite{DJIM300Manual}。其余电路和热参数见表\ref{tab:ecm_parameters}，均为明确参考值。
+
+\begin{table}[!ht]\centering
+\caption{电热模型的完整参考参数}\label{tab:ecm_parameters}
+\begin{tabular}{llr}\toprule
+参数 & 单位 & 数值\\\midrule
+$Q$ & Ah & 11.87\\
+$U_{oc}(\zeta)$ & V & $40.8+12\zeta$\\
+$R_0(25^\circ\mathrm C)$ & $\Omega$ & 0.08\\
+$R_1(25^\circ\mathrm C)$ & $\Omega$ & 0.04\\
+$C_1$ & F & 2500\\
+内阻温度系数$\alpha_R$ & $\mathrm{K^{-1}}$ & 0.02\\
+$C^{th}$ & J/K & 2700\\
+$hA$ & W/K & 6\\
+$\eta^{ch}$ & --- & 0.9\\
+$I^{ch}_{max},I^{dis}_{max}$ & A & 17.8，50\\
+$U_{min},U_{max}$ & V & 36，52.8\\
+$\zeta_{min},\zeta_{max}$ & --- & 0.2，1\\
+$T^{b,ch}_{min},T^{b,ch}_{max}$ & $^\circ$C & 5，40\\
+冷却后充电重启温度 & $^\circ$C & 39\\
+使用温区 & $^\circ$C & $[-20,50]$\\
+充电器输入上限 & W & 1000\\\bottomrule
+\end{tabular}
+\end{table}
+内阻取$R_i(T)=R_i(25)\exp[0.02(25-T)]$。由此得到完整数值状态方程：
+\begin{align}
+ \dot\zeta&=-I/42732,\qquad a(T)=\exp[0.02(25-T)],\\
+ \dot V^{pol}&=-V^{pol}/[100a(T)]+I/2500,\\
+ U&=40.8+12\zeta-V^{pol}-0.08a(T)I,\\
+ \dot T^b&=\{0.08a(T)I^2+(V^{pol})^2/[0.04a(T)]-6(T^b-T_a)\}/2700,\\
+ UI&=P^{load}-0.9P^{in}.
+ \label{s0408:numeric_ecm}
+\end{align}
+全部状态随换电、落地和重规划连续继承。548\,Wh是成对铭牌能量，不等于在任何SOC下都成立的储能函数$548\zeta$。对于这里的线性开路电压，化学能量与极化电容能量分别为
+\begin{equation}
+ E^{chem}=11.87(40.8\zeta+6\zeta^2),\qquad
+ E^{pol}=2500(V^{pol})^2/7200,
+ \label{s0408:chemical_energy}
+\end{equation}
+单位均为Wh。两者与端口耗能及内部耗散满足
+\begin{equation}
+ \Delta(E^{chem}+E^{pol})+E^{load}+E^{heat}=0.9E^{grid},
+ \quad E^{heat}=\frac1{3600}\int(R_0I^2+(V^{pol})^2/R_1)\,dt.
+ \label{s0408:physical_ledger}
+\end{equation}
+该关系是本参考模型的独立核算式；电池散热同时进入温度方程。
+
+\subsection{恒流、恒压、供电上限与冷却}
+
+设$j=-I\ge0$为充电电流，$u\in[0,1]$为参考充电控制比例，$\bar P^{in}$为当前车载供电可用上限。令
+\begin{align}
+ j_{CV}&=\max\{0,(52.8-A)/R_0\},\\
+ j_{sup}&=\frac{2(0.9\bar P^{in})}{A+\sqrt{A^2+4R_0(0.9\bar P^{in})}},\\
+ j&=u\min\{17.8,j_{CV},j_{sup}\},\qquad P^{in}=Uj/0.9.
+ \label{s0408:cccv}
+\end{align}
+这些界分别对应恒流、恒压和供电限制。连续调节$u$是可控充电器的参考能力，未验证其为BS60实际开放接口。温度高于40℃时先冷却，降至39℃后重启充电；充电过程中达到40℃再次停止。以$H_p\in\{0,1\}$保存高温保护记忆：温度超过40℃或充电中到达40℃时置一，降到39℃才清零；$H_p=1$时$c_p=0$。重规划继承$H_p$，不能只从当前39--40℃的温度重新判断。48℃电池冷却至第200s时仍在39--40℃之间，继续保留保护记忆的分段积分与连续500s积分一致。低于5℃的电池不能直接充电，本算例只允许被动回温，不虚构自动加热的功耗。
+
+\textbf{解析校验。} 为取得封闭表达，令$\alpha_R=0$，其余参数不变。恒流10\,A、初态$(\zeta,V^{pol},T^b)=(0.8,0.1,25)$，历时300\,s，则
+\begin{equation}
+ \zeta(t)=0.8-10t/42732,\qquad
+ V^{pol}(t)=0.4-0.3e^{-t/100}.
+ \label{s0408:analytic_pulse}
+\end{equation}
+热状态由这两个已知量代入式\eqref{s0408:numeric_ecm}的线性热方程积分。另取$T^b(0)=48$℃、$T_a=25$℃且$I=V^{pol}=0$，冷却至39℃所需时间为
+\begin{equation}
+ t_{cool}=450\log\frac{48-25}{39-25}=223.396599\ \mathrm s.
+ \label{s0408:cooling_example}
+\end{equation}
+数值积分与恒流解析解、热响应独立积分和该冷却时刻相符。电池模块的状态、电功率支路、充电温区和能量守恒共18项检查全部通过；这些检查验证方程实现，不构成实机参数辨识。
+
+\textbf{敏感性实验。} 从SOC 0.8、温度等于环境的初态开始，以1200\,W连续放电600\,s；每次仅改变一个参数。表\ref{tab:battery_sensitivity}保留全部九组结果，热参数改变后终态不能用统一的Wh差值替代。
+\begin{table}[!ht]\centering
+\caption{电热参考参数的单因素实验}\label{tab:battery_sensitivity}
+\begin{tabular}{lrrrr}\toprule
+变化量 & 取值 & 终态SOC & 最高温度/℃ & 内耗/Wh\\\midrule
+$R_0$倍数 & 0.5 & 0.437114 & 30.776 & 7.3929\\
+$R_0$倍数 & 1 & 0.429331 & 33.904 & 11.6649\\
+$R_0$倍数 & 2 & 0.413682 & 40.035 & 20.2255\\
+$hA$倍数 & 0.5 & 0.429758 & 36.335 & 11.4562\\
+$hA$倍数 & 1 & 0.429331 & 33.904 & 11.6649\\
+$hA$倍数 & 2 & 0.428726 & 30.990 & 11.9620\\
+$T_a$/℃ & 5 & 0.418937 & 18.009 & 17.0147\\
+$T_a$/℃ & 25 & 0.429331 & 33.904 & 11.6649\\
+$T_a$/℃ & 35 & 0.433215 & 42.344 & 9.6377\\
+\bottomrule\end{tabular}
+\end{table}
+本实验不估计电池老化。热状态的作用是确定当时允许的电流、充电和再次使用条件；对任务排序的影响在下一章的双电池调度算例中直接检验。

@@ -1,0 +1,773 @@
+{
+  "observed_at": "2026-11-10T15:52:01.641873+00:00",
+  "files": [
+    {
+      "path": "Agent/Publication/__init__.py",
+      "sha256": "cce777be896986d710ecd4ba76afb5ccfbe497071e78575790292ebc7b29c0bc",
+      "bytes": 310
+    },
+    {
+      "path": "Agent/Publication/engineering_battery_electrothermal.py",
+      "sha256": "559f6eacfa4a40062049b59d2b6f693b0302e12442bfcd85d61981bd45af0a3b",
+      "bytes": 12592
+    },
+    {
+      "path": "Agent/Publication/engineering_conditional_hypergraph.py",
+      "sha256": "613b3a9f4cdbd03f8878e45f6d7ea10b099af850518fa983f2c3e8e960e4fae3",
+      "bytes": 14348
+    },
+    {
+      "path": "Agent/Publication/engineering_constraint_diagnosis.tex",
+      "sha256": "7e1a0b0f6bc23b7a1247d4ec6e52c9bd4b6222823e624a59db6a8a4152902e46",
+      "bytes": 12009
+    },
+    {
+      "path": "Agent/Publication/engineering_energy_enclosure.py",
+      "sha256": "6d3e064aeeac4dea41ddc63f2d718c5589008b2d4e812a09d9e8a46dbd863078",
+      "bytes": 10426
+    },
+    {
+      "path": "Agent/Publication/engineering_event_charging.py",
+      "sha256": "1e65aad005cb569332eb654629f96317565376ae84d635a5e0d7b80b709cbbc3",
+      "bytes": 7201
+    },
+    {
+      "path": "Agent/Publication/engineering_fleet_schedule.py",
+      "sha256": "2b9042cebd063cbd79c4a2c3d1e83a8ff73e68d9d8d7f79b63ad00900a5c3353",
+      "bytes": 10178
+    },
+    {
+      "path": "Agent/Publication/engineering_flight_labels.py",
+      "sha256": "183783f8fe040e710b560ec322068a1259033a7c25345521389e6f72cad38603",
+      "bytes": 1073
+    },
+    {
+      "path": "Agent/Publication/engineering_free_trajectory.py",
+      "sha256": "cf99c2353281858defe79d74e6551e925bf772749bfa24853772e7c0bd1dac2e",
+      "bytes": 8389
+    },
+    {
+      "path": "Agent/Publication/engineering_hypergraph_analysis.tex",
+      "sha256": "99f49498b5754fa39d82d70f47ddac20faeda464882fc35e3c6f5898ba3df963",
+      "bytes": 11205
+    },
+    {
+      "path": "Agent/Publication/engineering_image_acceptance.py",
+      "sha256": "04fd082a67319a06a4b02cb56b45ad2aadadb9975bf646a03a9aea41289e366b",
+      "bytes": 3952
+    },
+    {
+      "path": "Agent/Publication/engineering_indexed_constraints.py",
+      "sha256": "c1d108fafcfbf99a8df18509e816a3710c03dcfbdab6b34ab0fbb1fc789f5037",
+      "bytes": 9957
+    },
+    {
+      "path": "Agent/Publication/engineering_indexed_terrain.py",
+      "sha256": "cbc6f70233e1aecf417037fc2419bfece16f76ab0a8c4cc166163c58dec08fff",
+      "bytes": 4621
+    },
+    {
+      "path": "Agent/Publication/engineering_inspection_contract.json",
+      "sha256": "4a8a117f57d9c1d188dfcce46fc51b0192896571cd045b3193bac711c9be6558",
+      "bytes": 75872
+    },
+    {
+      "path": "Agent/Publication/engineering_inspection_model.tex",
+      "sha256": "6d0b69bda203ff9ef3062540e99bf24ab65f471de1ebd94558dbf514a05a7c61",
+      "bytes": 75566
+    },
+    {
+      "path": "Agent/Publication/engineering_inspection_primitives.py",
+      "sha256": "d67745df4dc64664a1c511b35d26a19eafd45c21098b5da98fef2fad9d59b438",
+      "bytes": 4717
+    },
+    {
+      "path": "Agent/Publication/engineering_interval_physics.py",
+      "sha256": "c31f8aac813ee195992c8eaebe3ccfcbedd8130de97569f4fb1a77f39b9e62c5",
+      "bytes": 7168
+    },
+    {
+      "path": "Agent/Publication/engineering_joint_charging.py",
+      "sha256": "3b78d16880a8f5182ba163bc663a9e4b126e89ac7f6992e92342d145afd9b778",
+      "bytes": 3176
+    },
+    {
+      "path": "Agent/Publication/engineering_joint_execution.py",
+      "sha256": "b51d9c42c1ddeb870620b562e74f494d6941bb997a743677f9bac49ebc4f60f1",
+      "bytes": 12675
+    },
+    {
+      "path": "Agent/Publication/engineering_joint_optical_trajectory.py",
+      "sha256": "7a7af6ad60dd064a0248823eec4a0852f51149f83133e354e48388bddd59afd0",
+      "bytes": 20197
+    },
+    {
+      "path": "Agent/Publication/engineering_joint_optimality.py",
+      "sha256": "b51beaf79c073aba9e13a5416341b79f0563a612914713c2e8bd1ffa98b822e3",
+      "bytes": 6954
+    },
+    {
+      "path": "Agent/Publication/engineering_joint_safety.py",
+      "sha256": "3eae3dca4a75f92f3e5ba154f070e483ae8ce2218099d7d54dd89ed9d49d60f6",
+      "bytes": 8128
+    },
+    {
+      "path": "Agent/Publication/engineering_joint_transcription.py",
+      "sha256": "c88087ad46078c6320c528f45b9336df2f11c56105562cf1fe60b88f5ce0e554",
+      "bytes": 12232
+    },
+    {
+      "path": "Agent/Publication/engineering_joint_weather.py",
+      "sha256": "0f5a8e0fc4a500cc81a22dae42b27b28336ceaf3ce5961dbbe539484594776f1",
+      "bytes": 2829
+    },
+    {
+      "path": "Agent/Publication/engineering_model_dependencies.py",
+      "sha256": "4c44fa1f35ddb77261b1fdf433491cc07f10e012e8ec4ccb946f41d5df21cba7",
+      "bytes": 3974
+    },
+    {
+      "path": "Agent/Publication/engineering_model_integration.py",
+      "sha256": "433707d4f6cc7ffa971502baa606b4afa18fdec4619238fc33076d5b913a2168",
+      "bytes": 1714
+    },
+    {
+      "path": "Agent/Publication/engineering_multicarrier_schedule.py",
+      "sha256": "53e8d333b48a0131719ee89952787886911ebffdb31972122c7d0734f59c104b",
+      "bytes": 16319
+    },
+    {
+      "path": "Agent/Publication/engineering_platform_contact.py",
+      "sha256": "a63eabc79ea0704b895cb3e1ff477e3438ab35ce9d061ba462a9b34ca9b4a046",
+      "bytes": 5465
+    },
+    {
+      "path": "Agent/Publication/engineering_process_budget.py",
+      "sha256": "41bf27ca41ede0749800c86f323024de5ac5224c15a7f48132ee326b51db18ad",
+      "bytes": 1897
+    },
+    {
+      "path": "Agent/Publication/engineering_reference_flight.py",
+      "sha256": "18d08acf4503ca5741c5d26dc9a754bb87f3317bcf37c4ce776540cbcf29e5db",
+      "bytes": 7360
+    },
+    {
+      "path": "Agent/Publication/engineering_reference_weather.py",
+      "sha256": "80c64fbcc8a0897f24b25827704e8c6907b8b7b8db98ec615261d647bf6d3732",
+      "bytes": 6301
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_acceptance.py",
+      "sha256": "c232bb99b86a4c40301b93fb6cfbc358c526abc5b9e5dcd35da82ce1026bd42c",
+      "bytes": 14380
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_charging.py",
+      "sha256": "b64690e8ee4cff10c660d9e4698f8daf486439b92ece215dc148f3e0962b5aae",
+      "bytes": 11287
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_compaction.py",
+      "sha256": "767167e0b989d83342e0e2f3a76f99ac4a4a98074544e2efeebfa1bfa576c11c",
+      "bytes": 12127
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_curves.py",
+      "sha256": "3f18fce16c824ea73e2e76c9c80f85c84a9e39b80f18ed73f93d466fa7b82788",
+      "bytes": 14480
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_diagnostics.py",
+      "sha256": "fd721b8da965869370c6331c3944c39b2978614708c805385e2fcd73a20dfdb6",
+      "bytes": 5395
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_enclosure.py",
+      "sha256": "822a7ac089a5a3487460f101fcb9b72ff4982a7d18847160bb027d9e642bf193",
+      "bytes": 17069
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_geometry.py",
+      "sha256": "a51c66c313c54ad6547bfc4e54f6e82cc6acbbacd46aec47fc0a0195aa1865bf",
+      "bytes": 21739
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_memory.py",
+      "sha256": "d249496696a229a1c4010e77017e4291cffce6c33061715a7ab1ee93cafc4a83",
+      "bytes": 2458
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_physics.py",
+      "sha256": "4b886bfd3579d9cdbe541ef2100f3885550b2d0a2ada6e2131c69876124311e5",
+      "bytes": 21935
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_physics_bounds.py",
+      "sha256": "675772395f0ac67cc5295b6331e3c36d894c513f10f853f6a976755e9cf1b2e8",
+      "bytes": 2843
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_rendezvous.py",
+      "sha256": "67268f1e0f60095ab40243b88259de48e1b970504d001ba66d2a6f8d4b2edf3b",
+      "bytes": 13402
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_resource_envelope.py",
+      "sha256": "1dc0ba49f0315969e5f56fb387197891d4807ed72c851ea5cea913827cdb99f9",
+      "bytes": 4049
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_resources.py",
+      "sha256": "9468fe77901eefad09e581e2476229712da6af000360d538e4e2c05c20ebd445",
+      "bytes": 11859
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_roads.py",
+      "sha256": "4562daba55bb4bd77cad33890bbbee7144c302ac287efd574ce5c4faf83166a0",
+      "bytes": 19924
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_safety.py",
+      "sha256": "43bbadaf2b22fea2e22f84d459ae5f391b0ab7c49fda6386266548c0c85cd0db",
+      "bytes": 20309
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_seed.py",
+      "sha256": "57482ce92ef7dbfaaac5d6afb748b845c73daa60b9277386f6c9df2c0334448d",
+      "bytes": 6312
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_seed_motion.py",
+      "sha256": "1cfcaa7bf26b9d42e1304aa12ee5a4e22b471ce6a87609f8529b47d23c286282",
+      "bytes": 5160
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_solver.py",
+      "sha256": "525e743cf248a67767a92c416685e34dae2990b1c2aed98c0b3cc40882a27b6d",
+      "bytes": 29507
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_structure.py",
+      "sha256": "c02420c07684c0d1bf9dcada69227bd1c29ebbdf251de1507ed104e3f6aa70b9",
+      "bytes": 12077
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_task_order.py",
+      "sha256": "4f92472e70ad1fd5a025320963a534289c46aa5416abf133a21906c8ed05709c",
+      "bytes": 2292
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_terrain.py",
+      "sha256": "0986a7e447fd55188147586e7da47dc7824a6bb31f7607c78ebef25ce1d3c7d2",
+      "bytes": 5746
+    },
+    {
+      "path": "Agent/Publication/engineering_regional_weather.py",
+      "sha256": "037143f84af7ac48baa924084180db9b7a58c86e43d3ebecafe59453e92ed4e2",
+      "bytes": 8160
+    },
+    {
+      "path": "Agent/Publication/engineering_replanning.py",
+      "sha256": "b594c872d938f218006e5e593a6a3c5446bb307ff31609a4b17c4e7c01f15c55",
+      "bytes": 16730
+    },
+    {
+      "path": "Agent/Publication/engineering_road_certificate.py",
+      "sha256": "c3cadbcbcec22f875c22d91b243ba4e48f4a8d919e5fe76af9e79df70bfee93d",
+      "bytes": 5873
+    },
+    {
+      "path": "Agent/Publication/engineering_road_motion.py",
+      "sha256": "d811a8bbd25f66c58aa1569fe1d402dccccacd4b42f6cb795b0a3a3967d70594",
+      "bytes": 14854
+    },
+    {
+      "path": "Agent/Publication/engineering_service_boundary.py",
+      "sha256": "3bf456fe0f000aea7874a8639352132b3a2e8a75c2352ea69dd2cd8c58096360",
+      "bytes": 5846
+    },
+    {
+      "path": "Agent/Publication/engineering_solve_trace.py",
+      "sha256": "a3bf776a5f7c54d2011181f848b813afc25f8d358cb34394cabf259d22e8c99e",
+      "bytes": 8967
+    },
+    {
+      "path": "Agent/Publication/engineering_target_surface.py",
+      "sha256": "8201e3bf3476f75cb0ec7faaf7449cb1e49d057c32dda7772d05aa927e6d9e14",
+      "bytes": 2185
+    },
+    {
+      "path": "Agent/Publication/engineering_unified_inspection.py",
+      "sha256": "464c16e3309eccb88ea0f02545f5e393de5d967fc99541406f80b347a65f9e70",
+      "bytes": 49097
+    },
+    {
+      "path": "Agent/Publication/inspection_reference_battery_profile.json",
+      "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86",
+      "bytes": 4615
+    },
+    {
+      "path": "Agent/Publication/inspection_reference_flight_profile.json",
+      "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704",
+      "bytes": 2983
+    },
+    {
+      "path": "Agent/Publication/inspection_reference_image_profile.json",
+      "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec",
+      "bytes": 1957
+    },
+    {
+      "path": "Agent/Publication/inspection_reference_weather_profile.json",
+      "sha256": "7a62160e1f9b4341e8a7a0accb6c155ea62b0af1074c09c4dbcf686dd844c1b6",
+      "bytes": 69970
+    },
+    {
+      "path": "Agent/Publication/weather_factors.py",
+      "sha256": "af8783d0368397d943a7f5f82c6974a51b16d6f6974a87304fe32354af05d2b6",
+      "bytes": 6272
+    },
+    {
+      "path": "Agent/Publication/weather_mission_adapter.py",
+      "sha256": "8078094091563d087e2e0e87c93453ba9f24fcb63fcdb03c11988736ad199cf8",
+      "bytes": 5373
+    },
+    {
+      "path": "research_quality/inspection_regional_model_data.json",
+      "sha256": "ee30612135a2b3057192d1bcf6c0eb53a28b76e94efe16a828b87dd168e1929c",
+      "bytes": 7623393
+    },
+    {
+      "path": "research_quality/inspection_solvability_repair.json",
+      "sha256": "8b8be39a5f13b32f957902bcc73dfdf6b549b10c6271aa69492373845ddc92cd",
+      "bytes": 153103
+    },
+    {
+      "path": "research_quality/inspection_unified_completion.json",
+      "sha256": "391a006b3a4381957ca151bc791499296b68f08e262a75a8755ccdde13845256",
+      "bytes": 229557
+    },
+    {
+      "path": "scripts/build_engineering_inspection_contract.py",
+      "sha256": "c6ad2a082f78910336d177eed9de7b68abe8126fc221796c2446e4e4124fb656",
+      "bytes": 14862
+    },
+    {
+      "path": "scripts/build_inspection_parameter_ledger.py",
+      "sha256": "0e1bceba7a792236deaa99136a73544be435a44f51b3333ad592caace1b91216",
+      "bytes": 9863
+    },
+    {
+      "path": "scripts/build_weather_factors.py",
+      "sha256": "fdfa47c0ac192a2b3daa840fcc74493fd6fcb01be202954abfe36e0cc9170f70",
+      "bytes": 16646
+    },
+    {
+      "path": "scripts/check_engineering_replanning.py",
+      "sha256": "1caa7481a2c5c459ddec301ea0bcbbbaa96042188c46f7536e097335a374fdef",
+      "bytes": 9525
+    },
+    {
+      "path": "scripts/check_joint_airspace.py",
+      "sha256": "d8a773d70a8c4bad502fdcbb51dd9bf98e9da5267f2eefac3751694137af4ea7",
+      "bytes": 4256
+    },
+    {
+      "path": "scripts/check_unified_energy_enclosure.py",
+      "sha256": "9a41e56217463730b836e149ea1e9ba59276ce12e2aba540405a7013fc647411",
+      "bytes": 3165
+    },
+    {
+      "path": "scripts/check_unified_model_completion.py",
+      "sha256": "cd5353a3c15df5411de089a0e7dcff1fe1a5ac5ee9512bb98a84cd9e75603eb9",
+      "bytes": 6796
+    },
+    {
+      "path": "scripts/check_unified_refinement.py",
+      "sha256": "97133a42e8edc06a17157069d3756ebccc286b3c5b5a469a03b6c24c831bae16",
+      "bytes": 6672
+    },
+    {
+      "path": "scripts/check_unified_trace_and_domain.py",
+      "sha256": "28a4d88424013cc46d989204542155a67bbc19726c1e687f629c287b2b80aebe",
+      "bytes": 6151
+    },
+    {
+      "path": "scripts/compare_all_hypergraph_dimensions.py",
+      "sha256": "8d394dce42da1e38db1c97f2e8ccac87b9a11117c8ed0ddb3ad405ca60ca6ce2",
+      "bytes": 19426
+    },
+    {
+      "path": "scripts/diagnose_inspection_constraint_layers.py",
+      "sha256": "4152f3cc78cbcdd2e76ccaa8233d825def90425edfc1589cf7bc2584fb05a77a",
+      "bytes": 50460
+    },
+    {
+      "path": "scripts/diagnose_weather_mission_coupling.py",
+      "sha256": "c66be2081a90bb5ce608b542132e13b7f6d9f591ea682e7b3690c50b4a1866c8",
+      "bytes": 3480
+    },
+    {
+      "path": "scripts/extract_published_hypergraphs.py",
+      "sha256": "be59122aa63e7946e74c39eed43d15a2392d5a44e6675edd0b8773b2d3eb8173",
+      "bytes": 2060
+    },
+    {
+      "path": "scripts/hypergraph_stress_common.py",
+      "sha256": "940b6750a2899e0dd6737c827200981301ca1191937cb9e381fa84c253f5e1ff",
+      "bytes": 10377
+    },
+    {
+      "path": "scripts/prepare_author_bmatching_pipeline.py",
+      "sha256": "0a0749f62ac32d67028eb2617b566d1f7bd22421c2033abe05ae2b2e6b7ad7b7",
+      "bytes": 12566
+    },
+    {
+      "path": "scripts/prepare_author_hgr_comparison.py",
+      "sha256": "12c776057ed5621642d854d615b8f9ede4b3ffdbe79544af6138de34bc376602",
+      "bytes": 6742
+    },
+    {
+      "path": "scripts/prepare_hypergraph_scip_demo.py",
+      "sha256": "7e1efd041cf2279e8b770aa653c374538255eb8600167f46568c944c4af2092f",
+      "bytes": 7604
+    },
+    {
+      "path": "scripts/prepare_hypergraph_scip_scaling.py",
+      "sha256": "b5b2a766d69bcaf8f574fc828e334535d7f79b9cc8234718394b9e1bf69b6226",
+      "bytes": 8747
+    },
+    {
+      "path": "scripts/prepare_hypop_mis_comparison.py",
+      "sha256": "0c7d35ae0708bcb8996b415f8ad647ccb83673b8fee6d9c7b9f86d9044017a71",
+      "bytes": 4796
+    },
+    {
+      "path": "scripts/prepare_inspection_regional_day_ahead.py",
+      "sha256": "f75805446b3143c00ed8072a5ddb4f8a50548d8e7d86f10e6677f7d8efabecce",
+      "bytes": 7688
+    },
+    {
+      "path": "scripts/prepare_inspection_regional_seed.py",
+      "sha256": "c3a72b4ac90877221c3468f14c6f4fec42cb73fd005ffa3b5ce4ec0a41e594bc",
+      "bytes": 28230
+    },
+    {
+      "path": "scripts/prepare_weather_factors.py",
+      "sha256": "32fd73c13cb38b3a32efa414ce7902025acf64d9c57b23c80cf714ef195c17ca",
+      "bytes": 8655
+    },
+    {
+      "path": "scripts/record_m100_validation_delivery.py",
+      "sha256": "642d8eaf7888b4b5b804b8e31a5740fc502b223b976e484cf280da649088a2c2",
+      "bytes": 14121
+    },
+    {
+      "path": "scripts/record_weather_delivery.py",
+      "sha256": "d4037b08bb23d47a36e85669bb1527984109fb0d83d74f1881f06ed77d880cee",
+      "bytes": 12746
+    },
+    {
+      "path": "scripts/record_weather_mission_delivery.py",
+      "sha256": "9b4cb337a1f02a2265665149f0a22e94c436c14525037a80f7c0c474c134db31",
+      "bytes": 13634
+    },
+    {
+      "path": "scripts/repair_inspection_joint_candidate.py",
+      "sha256": "421e04bd23e9615ca2cbf7f97fe53c41230eb88a1e7295df4f1a9a1e78f74112",
+      "bytes": 10097
+    },
+    {
+      "path": "scripts/report_weather_factors.py",
+      "sha256": "d95f132fac75c5de114b0e6b523e7ed5d35ed25f29bec04780a1eeba6a8bdbfa",
+      "bytes": 18144
+    },
+    {
+      "path": "scripts/report_weather_mission_coupling.py",
+      "sha256": "1d2ffcaca39f492804eef90603e941a87cd671e709b637849b5cb956db7c8b51",
+      "bytes": 18055
+    },
+    {
+      "path": "scripts/review_gate.py",
+      "sha256": "a78dd2c08ca166f93e2aee8a96d3de68951cb2d9a8206a2f97dc156291412721",
+      "bytes": 14040
+    },
+    {
+      "path": "scripts/run_author_bmatching_ils.py",
+      "sha256": "7ec0bfd3258eb342527b37b2ba331ce915b15a090b5e99b015b83a14ded0f4e8",
+      "bytes": 5798
+    },
+    {
+      "path": "scripts/run_author_bmatching_pipeline.py",
+      "sha256": "590808eae16c69a5d6175488ab6c035eb5082569103d00e773216241ed28f685",
+      "bytes": 9875
+    },
+    {
+      "path": "scripts/run_engineering_full_joint.py",
+      "sha256": "aedf3405099ccdf7a6cd1f8d3d2e86b67e6318820bd64ccd8209f5312b9c4059",
+      "bytes": 11630
+    },
+    {
+      "path": "scripts/run_engineering_joint_pilot.py",
+      "sha256": "bbeb2494a7f18afb9a50943cb66c45d4a28933965225fbf4e3e12f279e747e3a",
+      "bytes": 14832
+    },
+    {
+      "path": "scripts/run_hypergraph_comparison_batch.py",
+      "sha256": "912d30146e3982ead04b90cc4b6cd2ce1b75257c8ea582f0e56e52accebc4578",
+      "bytes": 8230
+    },
+    {
+      "path": "scripts/run_hypergraph_scip_demo.py",
+      "sha256": "28cb2a84df902acaa07e2201b402cedd4e28c674afee6d7d6be75e77670fa37e",
+      "bytes": 12752
+    },
+    {
+      "path": "scripts/run_hypergraph_stress.py",
+      "sha256": "782d99a14971bf2492e1a26124b5b4fc51283bbe8cf4292bb269f9ebaa1c001d",
+      "bytes": 14034
+    },
+    {
+      "path": "scripts/run_inspection_regional.py",
+      "sha256": "4635ab8cc9e95ec5f893516b38d2150016070f4ee62f9effa54a3320fcc32744",
+      "bytes": 14880
+    },
+    {
+      "path": "scripts/run_m100_energy_validation.py",
+      "sha256": "8b6cd7e3825c82ab6b2338f861d8f4cd70526a6cf6b6f8a2db18e81711d773e9",
+      "bytes": 13384
+    },
+    {
+      "path": "scripts/run_m100_pretrained.py",
+      "sha256": "50d146f6552c4dadfbc9c87e2bf5e60b75c390128a16e4b3f9499479a88509bb",
+      "bytes": 11773
+    },
+    {
+      "path": "scripts/run_scip_first_decision.py",
+      "sha256": "ba261674d7cc143a2d8c6bc74b741b7bba4c9d0a9b426077441145165e6e2ad5",
+      "bytes": 9894
+    },
+    {
+      "path": "scripts/run_scip_gap05.py",
+      "sha256": "f9b640b7518f43b2c78491fab9a5cc9bec997c038050d5b5eb431ba5a19c1d8c",
+      "bytes": 8427
+    },
+    {
+      "path": "scripts/run_unified_inspection.py",
+      "sha256": "b5609a0b8565c598bd5db2900e3d7950dbba07e7f23aad02260f512c7c1e0bd7",
+      "bytes": 18075
+    },
+    {
+      "path": "scripts/run_weather_mission_coupling.py",
+      "sha256": "3473e217c06d3ebf38f8722c0356e3159f33eecdd0609364fd29f04afb487a05",
+      "bytes": 20014
+    },
+    {
+      "path": "scripts/summarize_author_bmatching_pipeline.py",
+      "sha256": "005c972a47e6bc8985422fbc8e7557bdda6074145879df9e31b2ab686c727963",
+      "bytes": 10443
+    },
+    {
+      "path": "scripts/summarize_hypergraph_stress.py",
+      "sha256": "1bbb44e48c11bbb59c62e80ef4b5630a48d2d232f6bafdcdb69add1bf3551bbc",
+      "bytes": 14556
+    },
+    {
+      "path": "scripts/summarize_scip_gap05.py",
+      "sha256": "70124ec96dc9d851d76f44b58efbd2aae7470bb4422b0b95d5ae6ae8d2788839",
+      "bytes": 6833
+    },
+    {
+      "path": "scripts/validate_inspection_battery_module.py",
+      "sha256": "4fff6f46ec8dae71b3acf802588dfca50d913e576bcd752f11136a4cfad7728d",
+      "bytes": 14873
+    },
+    {
+      "path": "scripts/validate_inspection_capture_replanning.py",
+      "sha256": "2260e0c6b3cd48bce3e8e5bd484f71590a8dc336d01f958144ec729d216161ff",
+      "bytes": 7533
+    },
+    {
+      "path": "scripts/validate_inspection_flight_module.py",
+      "sha256": "3964855e0547447ae4b1ad5e2eb9a14c2507fe9ca2bcd9ce391cc484035c899b",
+      "bytes": 8683
+    },
+    {
+      "path": "scripts/validate_inspection_geography_module.py",
+      "sha256": "aa9a41b157c5852cfce56d0b24228639dbbff22249f263c519f4748f8f079555",
+      "bytes": 14207
+    },
+    {
+      "path": "scripts/validate_inspection_joint_charging.py",
+      "sha256": "42b6ede291d43c17ad1e24787538bd91dd149e39855fc749ab575f44981a128e",
+      "bytes": 7312
+    },
+    {
+      "path": "scripts/validate_inspection_joint_transcription.py",
+      "sha256": "a780b7026e7528108eb3f78904e5b883420e7aa5ebb0aaed7cad58e2708c159d",
+      "bytes": 9860
+    },
+    {
+      "path": "scripts/validate_inspection_platform_contact.py",
+      "sha256": "267f9b3baef3d5831865cb57bbd5f527e16fbc5ad2bd95d68a9793a2dc6f96f6",
+      "bytes": 10491
+    },
+    {
+      "path": "scripts/validate_inspection_road_module.py",
+      "sha256": "8923644131910e832fe97cde6e7936e3f9794395e3924b6c0d82845ae13d455b",
+      "bytes": 11786
+    },
+    {
+      "path": "scripts/validate_inspection_service_boundary.py",
+      "sha256": "18b2640eba4b0c378c8e1d4329c4be86ea5adabfb2cfb0adaff806f51e13c422",
+      "bytes": 4596
+    },
+    {
+      "path": "scripts/validate_inspection_takeoff_landing.py",
+      "sha256": "80b4dcdede343ecf4a2451dd1ec1fb1a20079f9984acee8318eac5c718d24ce5",
+      "bytes": 8906
+    },
+    {
+      "path": "scripts/validate_inspection_weather_module.py",
+      "sha256": "ee906bf12ed583f4e60a8324f976661ac494295294024274a3a0181506aec04a",
+      "bytes": 8073
+    },
+    {
+      "path": "scripts/verify_engineering_joint_pilot.py",
+      "sha256": "732a88371820d544455920d972a1e049fac9182f7cc59ba185518b05e8cce22e",
+      "bytes": 12602
+    },
+    {
+      "path": "scripts/verify_free_trajectory_block.py",
+      "sha256": "61269469251326cfc6c25bdc172835ff67a084769c26a8f7225167f502ed5d89",
+      "bytes": 6259
+    },
+    {
+      "path": "scripts/verify_heterogeneous_teaching_examples.py",
+      "sha256": "7b5b6bea029f7a433407cc7641c88f04881db51d9fe32df522964c816e4738f6",
+      "bytes": 4962
+    },
+    {
+      "path": "scripts/verify_hypergraph_scip_demo.py",
+      "sha256": "e0182f8059fcd8fc71f1b822c1474640f9d4e147e7234419340d72de0cbb5a0d",
+      "bytes": 9669
+    },
+    {
+      "path": "scripts/verify_hypergraph_stress.py",
+      "sha256": "112be23322d140c6698331451da4637e3ce78a1aa087aef1d1fc3d7ff8f92ba5",
+      "bytes": 4766
+    },
+    {
+      "path": "scripts/verify_inspection_integrated_definition.py",
+      "sha256": "35881760097ff94c74fe16d5d25c18b8a126b18bb80c8c0559125bd54e0b3e72",
+      "bytes": 7398
+    },
+    {
+      "path": "scripts/verify_joint_optical_trajectory.py",
+      "sha256": "5203c1b0a6aa471c4790a7eb57fdcef380474117a73bbadedaff37acbfb88b9c",
+      "bytes": 18455
+    },
+    {
+      "path": "scripts/verify_unified_inspection.py",
+      "sha256": "e8522b32a1a2b2655e569f000d811c55b950f4f0b4710a8c6815ef83310b719f",
+      "bytes": 16514
+    },
+    {
+      "path": "scripts/verify_weather_factors.py",
+      "sha256": "d9e10d16ee5ed34a63937104970af667752cacf6d3c9ceb94158a3c13ff70007",
+      "bytes": 9866
+    },
+    {
+      "path": "scripts/verify_weather_mission_coupling.py",
+      "sha256": "3be79847f3566e72562ae20cf4543a8aacdd9395e9a48c0cc0c0dd7504ff493d",
+      "bytes": 6872
+    },
+    {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/sources/cmu2021/MetarHandler.py",
+      "sha256": "942f890b23d9ebc5d9a9f11eeaf037969e9f45b51fc0a3431abe05d9922f5fca",
+      "bytes": 4034
+    }
+  ],
+  "external_import_roots": [
+    "Agent",
+    "__future__",
+    "argparse",
+    "array",
+    "ast",
+    "casadi",
+    "check_joint_airspace",
+    "check_research_stage",
+    "check_unified_model_completion",
+    "collections",
+    "concurrent",
+    "copy",
+    "csv",
+    "ctypes",
+    "data_utils",
+    "dataclasses",
+    "datetime",
+    "deep_energy_model",
+    "engineering_joint_optimality",
+    "engineering_replanning",
+    "evaluation",
+    "faulthandler",
+    "fitz",
+    "gc",
+    "gzip",
+    "hashlib",
+    "heapq",
+    "importlib",
+    "itertools",
+    "json",
+    "liu_model",
+    "math",
+    "matplotlib",
+    "networkx",
+    "numba",
+    "numpy",
+    "os",
+    "pandas",
+    "pathlib",
+    "platform",
+    "prepare_hypergraph_scip_demo",
+    "prepare_weather_factors",
+    "psutil",
+    "pyproj",
+    "pyscipopt",
+    "random",
+    "re",
+    "record_m100_validation_delivery",
+    "requests",
+    "review_gate",
+    "run_author_bmatching_ils",
+    "run_author_bmatching_pipeline",
+    "run_engineering_full_joint",
+    "run_engineering_joint_pilot",
+    "run_hypergraph_scip_demo",
+    "run_m100_energy_validation",
+    "run_scip_gap05",
+    "run_weather_mission_coupling",
+    "scipy",
+    "scripts",
+    "shapely",
+    "shutil",
+    "statistics",
+    "subprocess",
+    "summarize_hypergraph_stress",
+    "sys",
+    "tarfile",
+    "tempfile",
+    "tensorflow",
+    "threading",
+    "time",
+    "traceback",
+    "types",
+    "typing",
+    "verify_engineering_joint_pilot",
+    "verify_free_trajectory_block",
+    "verify_joint_optical_trajectory",
+    "verify_unified_inspection",
+    "weather_factors",
+    "weather_mission_adapter"
+  ],
+  "scientific_changes": 0
+}

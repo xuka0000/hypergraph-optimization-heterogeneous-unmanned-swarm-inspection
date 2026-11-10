@@ -1,0 +1,14 @@
+{
+  "observed_at": "2026-11-10T02:19:09.111858+00:00",
+  "conditions": 92,
+  "stress_conditions": 59,
+  "stress_runs": 236,
+  "valid_runs": 236,
+  "input_bytes": 190875195,
+  "total_n": 1576147,
+  "total_m": 1996815,
+  "total_nnz": 6036761,
+  "failures": [],
+  "source_hash": "69f84c37fdf39458df89b2cd7aaf767afb155009f72ced5293d868fcfb875452",
+  "scope": "Input identities/dimensions and 236 saved matching witnesses only. Does not validate runtime instrumentation or solver optimality."
+}

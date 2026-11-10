@@ -1,0 +1,108 @@
+BOUND SOURCE SHA256 613b3a9f4cdbd03f8878e45f6d7ea10b099af850518fa983f2c3e8e960e4fae3
+class Tape:
+    """Postorder expression tapes and unique scalar incidences, streamed at build."""
+    def __init__(self):
+        self.op=array('b'); self.left=array('i'); self.right=array('i'); self.par=array('d')
+        self.ptr=array('q',[0]); self.pinptr=array('q',[0]); self.ids=array('i')
+        self.lo=array('d'); self.hi=array('d'); self.enabled=array('b')
+        self.names=[]; self.con_indices={}; self.varnames=[]; self.lb=[]; self.ub=[]; self.integer=[]
+
+    def node(self,op,left=-1,right=-1,par=0.):
+        k=len(self.op); self.op.append(op); self.left.append(left); self.right.append(right); self.par.append(par); return k
+
+    def add(self,cons,name):
+        local={}
+        def var(v):
+            i=v.getIndex()
+            if i not in local:
+                local[i]=len(self.ids); self.ids.append(i)
+            return self.node(1,local[i])
+        def const(c):return self.node(0,par=float(c))
+        def expr(e):
+            if isinstance(e,Variable):return var(e)
+            if isinstance(e,(int,float,np.number)):return const(e)
+            if isinstance(e,Expr):
+                terms=[]
+                for term,c in e.terms.items():
+                    if not c:continue
+                    factors=[var(v) for v in term]
+                    if not factors:terms.append(const(c));continue
+                    q=factors[0]
+                    for v in factors[1:]:q=self.node(3,q,v)
+                    if c!=1:q=self.node(3,q,const(c))
+                    terms.append(q)
+                if not terms:return const(0)
+                q=terms[0]
+                for v in terms[1:]:q=self.node(2,q,v)
+                return q
+            op=e.getOp()
+            if op=='var':return var(e.children[0])
+            if op=='const':return const(e.number)
+            if op=='sum':
+                q=const(e.constant)
+                for c,v in zip(e.coefs,e.children):
+                    a=expr(v)
+                    if c!=1:a=self.node(3,a,const(c))
+                    q=self.node(2,q,a)
+                return q
+            if op=='prod':
+                q=const(e.constant)
+                for v in e.children:q=self.node(3,q,expr(v))
+                return q
+            if op=='**':return self.node(4,expr(e.children[0]),par=e.expo)
+            if op=='sqrt':return self.node(4,expr(e.children[0]),par=.5)
+            ops={'sin':5,'cos':6,'exp':7,'log':8,'abs':9}
+            if op in ops:return self.node(ops[op],expr(e.children[0]))
+            raise NotImplementedError('Expression operator '+str(op))
+        last=expr(cons.expr)
+        assert last==len(self.op)-1
+        self.ptr.append(len(self.op)); self.pinptr.append(len(self.ids))
+        self.lo.append(-np.inf if cons._lhs is None else cons._lhs)
+        self.hi.append(np.inf if cons._rhs is None else cons._rhs)
+        # 0=removed, 1=affine (exact projection), 2=nonlinear (inexact).
+        self.enabled.append(1 if cons.expr.degree()<=1 else 2); self.names.append(name)
+        return len(self.names)-1
+
+    def arrays(self):
+        # Copies deliberately release resizable array buffers for lazy additions.
+        return tuple(np.array(x) for x in (self.op,self.left,self.right,self.par,self.ptr,self.pinptr,self.ids,self.lo,self.hi,self.enabled))
+
+    def counts(self):
+        degree=np.bincount(self.ids,minlength=len(self.varnames));rank=np.diff(self.pinptr)
+        return dict(n=len(self.varnames),m=len(self.names),N_I=len(self.ids),r=int(max(rank,default=0)),
+                    maximum_variable_degree=int(max(degree,default=0)),isolated_variables=int(sum(degree==0)),
+                    tape_nodes=len(self.op),scope='currently materialized explicit algebra only; excludes latent selector alternatives and continuous oracle families')
+
+
+class RecordingModel(Model):
+    """SCIP is used for model construction and validation, not message updates."""
+Parent interpretation: counts are registered unique scalar leaves of materialized expressions. Linear Expr skips zero coefficients. Nonlinear expression traversal is not a proof of globally minimal functional support after every algebraic cancellation; derivative zero at one state is not grounds to delete a structural dependency.
+
+Parent audit of count semantics (2026-11-10): Tape.counts does not filter enabled. delCons only sets enabled[index]=0 and leaves names, ids, pinptr, op in memory. materialize_segment can retire an old energy_integral_link and add a replacement. Therefore reported m/N_I/r/degree/isolated_variables/tape_nodes describe all retained registered tape rows and leaves, including any disabled rows, not necessarily currently active constraint incidence. No active-only recount was provided. Evaluation/projection skips disabled rows.
+SOURCE reproduction\project\Agent\Publication\engineering_conditional_hypergraph.py SHA256 613b3a9f4cdbd03f8878e45f6d7ea10b099af850518fa983f2c3e8e960e4fae3
+    def delCons(self,c):
+        i=self.tape.con_indices[c.name]; self.tape.enabled[i]=0
+        return super().delCons(c)
+
+SOURCE reproduction\project\Agent\Publication\engineering_regional_physics.py SHA256 163d4d0e92acb2b1b0605d42891dc4b331281660f07b3cc5d94ec8ff2541e837
+    def materialize_segment(self,segment,order=5):
+        key=(segment.task,segment.index,order)
+        if key in self.materialized_segments:return self.energy[key]
+        nodes,weights=np.polynomial.legendre.leggauss(order);nodes=(nodes+1)/2;weights=weights/2
+        terms=[]
+        for k,(s,w) in enumerate(zip(nodes,weights)):
+            data=self.physics_segment(segment,float(s),f'physical_task{segment.task+1}_seg{segment.index}_q{order}_{k}')
+            terms.append(float(w)*segment.duration*data['power']/3600)
+        self.energy[key]=self.aux(quicksum(terms),f'physical_task{segment.task+1}_seg{segment.index}_q{order}_Wh',
+            0,548-109.6,'aircraft_energy_quadrature')
+        if self.energy_registered:
+            identity=(segment.task,segment.index)
+            if identity in self.energy_links:self.m.delCons(self.energy_links[identity])
+            self.energy_links[identity]=self.m.addCons(self.segment_energy[identity]==self.energy[key],
+                     name=f'energy_integral_link_task{segment.task+1}_seg{segment.index}_q{order}')
+            self.current_orders[identity]=order
+        self.materialized_segments.add(key)
+        self.rel.lock(self.m.getVars())
+        return self.energy[key]
+
+

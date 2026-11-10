@@ -1,0 +1,350 @@
+{
+  "sha": "3d27ac92ba5db36a2fe3fc1449bbb5c422e10ca6",
+  "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/trees/3d27ac92ba5db36a2fe3fc1449bbb5c422e10ca6",
+  "tree": [
+    {
+      "path": "ARE.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62b5caeb7aa2daa2e16e9482cd80fbb145bd3bec",
+      "size": 3501,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/62b5caeb7aa2daa2e16e9482cd80fbb145bd3bec"
+    },
+    {
+      "path": "LinearRegression.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4c7dbcec5b2237fd8462ce64273ee7a738ac92b8",
+      "size": 1341,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/4c7dbcec5b2237fd8462ce64273ee7a738ac92b8"
+    },
+    {
+      "path": "METAR_KAGC.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ba248e83859ec258344823a87a6b7ed5d62c4f02",
+      "size": 5736,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/ba248e83859ec258344823a87a6b7ed5d62c4f02"
+    },
+    {
+      "path": "R-XGBoost-Model",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ab4a49d763534eb032b1787cc23b26eb12dbcff7",
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/trees/ab4a49d763534eb032b1787cc23b26eb12dbcff7"
+    },
+    {
+      "path": "R-XGBoost-Model/.DS_Store",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cd1a6360d409835f6c30463583f12a0bece02f31",
+      "size": 10244,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/cd1a6360d409835f6c30463583f12a0bece02f31"
+    },
+    {
+      "path": "R-XGBoost-Model/helpers.r",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f19a1f58ae1c04b3d2ab1189bd26909f6b3550e3",
+      "size": 7944,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/f19a1f58ae1c04b3d2ab1189bd26909f6b3550e3"
+    },
+    {
+      "path": "R-XGBoost-Model/modeling_byregime.r",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ff88c78e37719f9cc8d6ade7d250c787aebd0b2e",
+      "size": 2634,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/ff88c78e37719f9cc8d6ade7d250c787aebd0b2e"
+    },
+    {
+      "path": "R-XGBoost-Model/plotsModels",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cbd3f69230cee56304d7d1f3fe845149087a5b2b",
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/trees/cbd3f69230cee56304d7d1f3fe845149087a5b2b"
+    },
+    {
+      "path": "R-XGBoost-Model/plotsModels/.DS_Store",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "11ffb93c52d63d2f6d8845f0290cbf9c07d53461",
+      "size": 14340,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/11ffb93c52d63d2f6d8845f0290cbf9c07d53461"
+    },
+    {
+      "path": "R-XGBoost-Model/plotsModels/all",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "41cb144300ed187cd5e3a6b4db23fefa7c13ffbe",
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/trees/41cb144300ed187cd5e3a6b4db23fefa7c13ffbe"
+    },
+    {
+      "path": "R-XGBoost-Model/plotsModels/all/.DS_Store",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5008ddfcf53c02e82d7eee2e57c38e5672ef89f6",
+      "size": 6148,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/5008ddfcf53c02e82d7eee2e57c38e5672ef89f6"
+    },
+    {
+      "path": "R-XGBoost-Model/plotsModels/cruise",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "41cb144300ed187cd5e3a6b4db23fefa7c13ffbe",
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/trees/41cb144300ed187cd5e3a6b4db23fefa7c13ffbe"
+    },
+    {
+      "path": "R-XGBoost-Model/plotsModels/cruise/.DS_Store",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5008ddfcf53c02e82d7eee2e57c38e5672ef89f6",
+      "size": 6148,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/5008ddfcf53c02e82d7eee2e57c38e5672ef89f6"
+    },
+    {
+      "path": "R-XGBoost-Model/plotsModels/landing",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "41cb144300ed187cd5e3a6b4db23fefa7c13ffbe",
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/trees/41cb144300ed187cd5e3a6b4db23fefa7c13ffbe"
+    },
+    {
+      "path": "R-XGBoost-Model/plotsModels/landing/.DS_Store",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5008ddfcf53c02e82d7eee2e57c38e5672ef89f6",
+      "size": 6148,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/5008ddfcf53c02e82d7eee2e57c38e5672ef89f6"
+    },
+    {
+      "path": "R-XGBoost-Model/plotsModels/takeOff",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "41cb144300ed187cd5e3a6b4db23fefa7c13ffbe",
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/trees/41cb144300ed187cd5e3a6b4db23fefa7c13ffbe"
+    },
+    {
+      "path": "R-XGBoost-Model/plotsModels/takeOff/.DS_Store",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5008ddfcf53c02e82d7eee2e57c38e5672ef89f6",
+      "size": 6148,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/5008ddfcf53c02e82d7eee2e57c38e5672ef89f6"
+    },
+    {
+      "path": "R-XGBoost-Model/predicted-values",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "244819019301d635fba391f1eb3450eed047cd5e",
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/trees/244819019301d635fba391f1eb3450eed047cd5e"
+    },
+    {
+      "path": "R-XGBoost-Model/predicted-values/.DS_Store",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5008ddfcf53c02e82d7eee2e57c38e5672ef89f6",
+      "size": 6148,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/5008ddfcf53c02e82d7eee2e57c38e5672ef89f6"
+    },
+    {
+      "path": "R-XGBoost-Model/predicted-values/predictions_cruise.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b17e03a627392c2502ed60ae53890b9eb0b5b7b1",
+      "size": 2192492,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/b17e03a627392c2502ed60ae53890b9eb0b5b7b1"
+    },
+    {
+      "path": "R-XGBoost-Model/predicted-values/predictions_landing.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6038eecbfad3e352e18b89a1e96fc26a0e3b44e4",
+      "size": 1171788,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/6038eecbfad3e352e18b89a1e96fc26a0e3b44e4"
+    },
+    {
+      "path": "R-XGBoost-Model/predicted-values/predictions_takeOff.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "077dbc42c92504f0a5db050022f2c675ecae83ea",
+      "size": 709073,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/077dbc42c92504f0a5db050022f2c675ecae83ea"
+    },
+    {
+      "path": "README.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b9e7b8954cd867426b00c933268188a1712d9175",
+      "size": 6859,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/b9e7b8954cd867426b00c933268188a1712d9175"
+    },
+    {
+      "path": "airdensity.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "479448ff5f49f6d6458c3e0590cc4e0bcfaa8f9c",
+      "size": 762,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/479448ff5f49f6d6458c3e0590cc4e0bcfaa8f9c"
+    },
+    {
+      "path": "data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f1332297ed5048d83294d7fd0460ad080aae97c0",
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/trees/f1332297ed5048d83294d7fd0460ad080aae97c0"
+    },
+    {
+      "path": "data/model_2error.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b066801ece175fe1306812fafa399953176c69e7",
+      "size": 1148,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/b066801ece175fe1306812fafa399953176c69e7"
+    },
+    {
+      "path": "data/predictions_cruise.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b17e03a627392c2502ed60ae53890b9eb0b5b7b1",
+      "size": 2192492,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/b17e03a627392c2502ed60ae53890b9eb0b5b7b1"
+    },
+    {
+      "path": "data/predictions_landing.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6038eecbfad3e352e18b89a1e96fc26a0e3b44e4",
+      "size": 1171788,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/6038eecbfad3e352e18b89a1e96fc26a0e3b44e4"
+    },
+    {
+      "path": "data/predictions_takeOff.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "077dbc42c92504f0a5db050022f2c675ecae83ea",
+      "size": 709073,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/077dbc42c92504f0a5db050022f2c675ecae83ea"
+    },
+    {
+      "path": "data/sample.csv",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "144cc4300b0680fb1ead812991ec878109346bc6",
+      "size": 579,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/144cc4300b0680fb1ead812991ec878109346bc6"
+    },
+    {
+      "path": "energy_distance.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f6da0978c9e5b478b7d0c26d18fc09ee65e77b4e",
+      "size": 5786,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/f6da0978c9e5b478b7d0c26d18fc09ee65e77b4e"
+    },
+    {
+      "path": "energy_model.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6f140b24f2eddcb2f4b594851b10486bd370a788",
+      "size": 3830,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/6f140b24f2eddcb2f4b594851b10486bd370a788"
+    },
+    {
+      "path": "energy_summary.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bc3304d73d5047c9fc1ef5c192c97ca4a220f535",
+      "size": 2864,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/bc3304d73d5047c9fc1ef5c192c97ca4a220f535"
+    },
+    {
+      "path": "ghg_emission.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7bf8097fd0ec0c6d19a698d0db561c271c9c7cbc",
+      "size": 5441,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/7bf8097fd0ec0c6d19a698d0db561c271c9c7cbc"
+    },
+    {
+      "path": "ghg_subregions.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "898faa6bfcd633f006d155e2572cd489d8195c8d",
+      "size": 10974,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/898faa6bfcd633f006d155e2572cd489d8195c8d"
+    },
+    {
+      "path": "inflightcomponents.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "830ab3392ede50a481e196f1d7fc915d4f70a4b9",
+      "size": 686,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/830ab3392ede50a481e196f1d7fc915d4f70a4b9"
+    },
+    {
+      "path": "main.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "47fd14ee124cfd848be7eda23792a3f7a77d04fd",
+      "size": 961,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/47fd14ee124cfd848be7eda23792a3f7a77d04fd"
+    },
+    {
+      "path": "mass_analysis.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cf0a7fc4ed111d2af138f165dc19fa242ce9373c",
+      "size": 3549,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/cf0a7fc4ed111d2af138f165dc19fa242ce9373c"
+    },
+    {
+      "path": "power_speed.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c3ebe81a3811e1374d50e402f8ade5acbd20e044",
+      "size": 742,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/c3ebe81a3811e1374d50e402f8ade5acbd20e044"
+    },
+    {
+      "path": "pre_processing.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e208a7d9a72beb4e52dc909a1a87e264dca6ad55",
+      "size": 1180,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/e208a7d9a72beb4e52dc909a1a87e264dca6ad55"
+    },
+    {
+      "path": "regime.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6dfedb3cb1b16ee2bb39761fa75d707d4304cd06",
+      "size": 7179,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/6dfedb3cb1b16ee2bb39761fa75d707d4304cd06"
+    },
+    {
+      "path": "results",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "934cba4cead130bb251d0291e7f3a4d787a02e7a",
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/trees/934cba4cead130bb251d0291e7f3a4d787a02e7a"
+    },
+    {
+      "path": "results/file.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "67c3297611451bb352bbda488b0cd7cb2528a0d3",
+      "size": 1,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/67c3297611451bb352bbda488b0cd7cb2528a0d3"
+    },
+    {
+      "path": "vehicle_comparison.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b8ce382713df70b1eabe6ed775273815b8ae06cb",
+      "size": 7299,
+      "url": "https://api.github.com/repos/thiago-a-rod/drone_energy_consumption/git/blobs/b8ce382713df70b1eabe6ed775273815b8ae06cb"
+    }
+  ],
+  "truncated": false
+}

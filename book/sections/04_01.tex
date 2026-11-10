@@ -1,0 +1,386 @@
+\section{地理区域、杆塔与观测任务}
+\label{sec:04_01}
+
+巡检首先需要明确两件事：哪些杆塔属于工作对象，以及每座杆塔取得哪些有效观测后才算完成。地图上的杆塔位置提供空间定位，拍摄角色区分需要观察的内容，目标面则把每项观测要求落实为具有位置、尺度和朝向的几何对象。无人机到达杆塔附近，或者取得一定数量的照片，都不能直接替代对这些要求的判断。本节建立杆塔、角色与目标面的对应关系，给出整塔完成的逻辑模型，再以固定输入顺序中的首座杆塔展开数值实例，并用实际模块实验检查对象身份、几何关系及完成判定。
+
+\subsection{地理区域与观测对象}
+
+以$\Omega_{\mathrm{geo}}\subset\mathbb R^2$表示统一平面坐标下的地理数据覆盖范围，其中两个坐标分量均以$\mathrm m$计。该范围用于组织杆塔、道路和地形数据，其边界本身不表示飞行许可边界，也不直接确定车辆或无人机的可行运动范围。记$\mathcal G$为纳入规划的有限非空杆塔标识集合，$g\in\mathcal G$表示其中一座杆塔。令$\mathbf r_g=(r_{g,1},r_{g,2})^{\mathsf T}$为其地图平面位置，则
+\begin{equation}
+ \mathbf r_g\in\Omega_{\mathrm{geo}},
+ \qquad \forall g\in\mathcal G.
+ \label{s0401:tower_locations}
+\end{equation}
+$r_{g,1}$和$r_{g,2}$均以$\mathrm m$计，上标$\mathsf T$表示转置；杆塔标识是无量纲标签，不由坐标大小决定。参考区域的杆塔位置和道路来自保存的OpenStreetMap查询数据\cite{OSMData}，经纬度采用UTM投影转换为平面坐标\cite{PROJUTM}。杆塔的地图记录提供位置和身份，但不能据此推定其完整三维表面、构件尺寸或现场作业许可。
+
+一座杆塔通常需要多个角色的观测。例如，全貌、左侧地线和右侧下层构件分别承担不同的检查内容。以有限非空集合$\mathcal K_g$表示杆塔$g$的必需拍摄角色，将单项观测任务定义为有序对$i=(g,k)$，其中$k\in\mathcal K_g$。塔内任务集合与区域任务集合分别为
+\begin{align}
+ \mathcal I_g&=\{(g,k):k\in\mathcal K_g\},
+ &&g\in\mathcal G,
+ \label{s0401:tower_tasks}\\
+ \mathcal I&=\bigcup_{g\in\mathcal G}\mathcal I_g.
+ \label{s0401:regional_tasks}
+\end{align}
+$\mathcal G$、$\mathcal K_g$、$\mathcal I_g$和$\mathcal I$均为无量纲索引集合。任务身份包含杆塔和角色两个分量，所以不同杆塔的任务集合两两不交：
+\begin{align}
+ \mathcal I_g\cap\mathcal I_h&=\varnothing,
+ &&g,h\in\mathcal G,\quad g\ne h,
+ \label{s0401:disjoint_tasks}\\
+ |\mathcal I|&=\sum_{g\in\mathcal G}|\mathcal I_g|
+ =\sum_{g\in\mathcal G}|\mathcal K_g|.
+ \label{s0401:task_count}
+\end{align}
+这里$h$表示另一杆塔标识，集合基数为无量纲整数。两座杆塔即使采用相同模板，其同名角色也不能合并；否则，某塔取得的观测就可能被错误地用于抵偿另一塔的缺项。本章的$\mathcal I$专指巡检观测任务集合。
+
+参考场景采用Li等文献第3.2.1节及图3中的九个拍摄角色\cite{LiInspection2023}，保留来源编号，令
+\begin{equation}
+ \mathcal K_g=\mathcal K_{\mathrm{photo}}
+ =\{1,2,3,4,5,8,9,10,11\},
+ \qquad \forall g\in\mathcal G.
+ \label{s0401:photographic_roles}
+\end{equation}
+其中1号为全貌角色，2至5号为左侧地线及上、中、下层角色，8至11号为右侧相应角色。来源中的6号和7号是无拍摄的转场点，不创建对应的观测任务。这样可以区分巡检需要取得的观测与为位置接续设置的航路点。
+
+式\eqref{s0401:photographic_roles}继承角色划分，不继承文献中的固定航线顺序。编号较小不表示必须先执行，编号的空缺也不要求访问两个预设转场位置。任务由哪架无人机执行、怎样排序以及相邻观测之间怎样飞行，仍需由执行模型决定。
+
+角色划分与目标结构尺寸也有不同来源。参考目标模板的结构尺寸依据之一为KPLC的2025年招标文件第73页附录1 A-1所附杆塔图\cite{KPLC2025}。该图为132\,kV悬垂塔图，图签日期为2006年9月13日。这里迁移其参考几何，不据此认定德国区域杆塔的实际电压、型号或构件尺寸。同一模板可以放置到多个OSM位置，而模板目标仍属于各自的杆塔。
+
+\subsection{目标面与整塔完成的数学模型}
+
+对每项任务$i\in\mathcal I$，以$\mathcal S_i\subset\mathbb R^3$表示非空有界的平面目标区域，以$\mathbf c_i\in\mathcal S_i$表示目标面参考点，以$\mathbf n_i\in\mathbb R^3$表示指向规定观测侧的单位法向量。目标面是承担成像要求的几何代理，不必等同于一整块实际构件表面。目标位置及参考点的坐标均以$\mathrm m$计，法向量无量纲，并满足
+\begin{equation}
+ \|\mathbf n_i\|_2=1,
+ \qquad
+ \mathbf n_i^{\mathsf T}(\mathbf q-\mathbf c_i)=0,
+ \quad \forall\mathbf q\in\mathcal S_i,
+ \quad \forall i\in\mathcal I.
+ \label{s0401:target_plane}
+\end{equation}
+$\mathbf q$表示目标面上的任意位置，$\|\cdot\|_2$为欧氏范数。单位长度条件使法向量只表达方向，正交条件使目标区域位于经过$\mathbf c_i$的指定平面内。后一个等式的左端以$\mathrm m$计。
+
+参考点和法向量只能确定无限平面，不能确定需要成像的有限范围。为给出本节使用的目标面，取无量纲面内单位向量$\mathbf t_{i,1},\mathbf t_{i,2}\in\mathbb R^3$，使
+\begin{equation}
+ \begin{aligned}
+ &\|\mathbf t_{i,1}\|_2=\|\mathbf t_{i,2}\|_2=1,
+ \qquad \mathbf t_{i,1}^{\mathsf T}\mathbf t_{i,2}=0,\\
+ &\mathbf n_i^{\mathsf T}\mathbf t_{i,1}
+ =\mathbf n_i^{\mathsf T}\mathbf t_{i,2}=0,
+ \qquad \forall i\in\mathcal I.
+ \end{aligned}
+\end{equation}
+若正方形目标面的边长为$a_i>0$，单位为$\mathrm m$，则其范围定义为
+\begin{equation}
+ \mathcal S_i=
+ \left\{\mathbf c_i+\alpha\mathbf t_{i,1}+\beta\mathbf t_{i,2}:
+ |\alpha|\leq\frac{a_i}{2},\quad
+ |\beta|\leq\frac{a_i}{2}\right\},
+ \qquad i\in\mathcal I.
+\end{equation}
+$\alpha$、$\beta$为以$\mathrm m$计的面内坐标。上述表示同时给出目标位置、朝向和边界；采用其他形状时，需要相应替换面内边界。
+
+法向量的正负区分目标的观测侧。对任意空间位置$\mathbf x\in\mathbb R^3$，$\mathbf n_i^{\mathsf T}(\mathbf x-\mathbf c_i)$是以$\mathrm m$计的有符号平面距离，其正负表示$\mathbf x$位于目标平面的哪一侧。目标法向不是无人机机体方向，也不是相机光轴；相机位姿与目标法向的关系由成像模型建立。
+
+为实施有限点检查，令$M_i\in\mathbb Z_{>0}$为目标样点数，$\mathcal J_i=\{1,\ldots,M_i\}$为样点索引集合，$\mathbf q_{ij}\in\mathbb R^3$为样点位置，并要求
+\begin{equation}
+ \mathbf q_{ij}\in\mathcal S_i,
+ \qquad \forall j\in\mathcal J_i,\quad\forall i\in\mathcal I.
+ \label{s0401:target_samples}
+\end{equation}
+$M_i$与$j$无量纲，$\mathbf q_{ij}$的坐标以$\mathrm m$计。样点共同描述一项任务的目标范围，不产生额外任务身份。因而，一个目标设置五个样点时，式\eqref{s0401:task_count}中的任务数仍只增加一项。
+
+样点位置为视野、遮挡和局部分辨率检查提供几何输入。目标出现在图像中，不一定具有足够分辨率；距离适当，也不一定没有遮挡。有限样点满足条件能否代表连续目标面，还取决于具体成像条件和近似方式，不能只由样点数量推出。
+
+在此基础上，令$y_{gk}\in\{0,1\}$表示杆塔$g$的角色$k$是否满足规定的有效观测要求，令$z_g\in\{0,1\}$表示该塔是否全部完成。两类变量均无量纲。此处先研究给定角色状态后如何确定整塔状态，单项状态与物理成像、任务分配的连接分别见第\ref{sec:04_05}节和第\ref{sec:05_01}节。完成判定约束为
+\begin{subequations}
+\begin{align}
+ z_g&\leq y_{gk},
+ &&g\in\mathcal G,\quad k\in\mathcal K_g,\\
+ z_g&\geq\sum_{k\in\mathcal K_g}y_{gk}-|\mathcal K_g|+1,
+ &&g\in\mathcal G,\\
+ y_{gk}&\in\{0,1\},\qquad z_g\in\{0,1\},
+ &&g\in\mathcal G,\quad k\in\mathcal K_g.
+\end{align}
+\end{subequations}
+第一组不等式要求整塔完成不能超过任何一个必需角色的完成状态。若存在$k$使$y_{gk}=0$，则$z_g\leq0$，结合二元域得到$z_g=0$。若全部角色均满足要求，则第二组不等式的右端为$|\mathcal K_g|-|\mathcal K_g|+1=1$，从而$z_g=1$。因此，两组约束共同给出
+\begin{equation}
+ z_g=1
+ \quad\Longleftrightarrow\quad
+ y_{gk}=1\ \text{对每个 }k\in\mathcal K_g\text{均成立},
+ \qquad g\in\mathcal G.
+\end{equation}
+当只有部分角色完成时，下界右端不大于0，不会要求$z_g=1$；对应未完成角色的上界则保证$z_g=0$。
+
+两个方向均不可省略。仅保留上界时，全部角色完成仍允许$z_g=0$；仅保留下界时，缺失角色又可能允许$z_g=1$。完整约束使逻辑关系不依赖目标函数是否奖励整塔完成。重复取得同一角色的照片不能补偿其他角色，未达到观测要求的图像也不能使相应$y_{gk}$取1。这里建立的是完成判定模块，并未要求区域内所有杆塔必选，也没有决定实现这些完成状态所需的飞行、车辆和电池安排。
+
+\subsection{首座杆塔的完整数值实例}
+
+取Rommerskirchen固定输入顺序中的首座杆塔\texttt{OSM\_269885418}，记为$g_\star$。该选择由输入顺序确定，不按实验表现筛选。保存的OSM记录给出经度$6.7597896^{\circ}$、纬度$51.0062853^{\circ}$\cite{OSMData}。从EPSG:4326转换至北半球UTM第32分区，即EPSG:32632后\cite{PROJUTM}，其位置为
+\begin{equation}
+ \mathbf r_{g_\star}\approx
+ \begin{pmatrix}
+ 342834.8765\\
+ 5652912.3809
+ \end{pmatrix}\mathrm m.
+\end{equation}
+两个分量依次为东向坐标和北向坐标。以下三维数值使用源世界坐标$(E,N,Z)$；数值局部原点及其三维平移在第\ref{sec:04_03}节统一定义。
+
+该塔保存的参考高程为$h_{g_\star}^{\mathrm{ref}}=68.0\,\mathrm m$，在此作为模板放置的高程代理。区域高程背景采用Copernicus GLO-90，其标称空间分辨率为$90\,\mathrm m$，属于数字表面模型（DSM），包含植被和基础设施等表面影响\cite{CopernicusDEM}。因此，该参考值不能表述为现场测得的裸地高程。产品标称的EGM2008垂直基准也不自动证明保存接口中每个高程值的外部垂直转换已逐项核验。
+
+以
+\begin{equation}
+ \mathbf a_{g_\star}=
+ \begin{pmatrix}
+ r_{g_\star,1}\\r_{g_\star,2}\\h_{g_\star}^{\mathrm{ref}}
+ \end{pmatrix}
+\end{equation}
+表示模板的三维放置参考点，单位为$\mathrm m$。对$k\in\mathcal K_{g_\star}$，定义$\mathbf d_k=\mathbf c_{(g_\star,k)}-\mathbf a_{g_\star}$为目标中心相对该点的位移。表\ref{s0401:task_attributes}给出当前派生目标的全部九行数值，三个分量依次对应东向、北向和高程方向。
+
+\begin{table}[htbp]
+ \centering
+ \small
+ \caption{首塔九个角色的目标相对位置}
+ \label{s0401:task_attributes}
+ \begin{tabular}{@{}rlrrr@{}}
+  \toprule
+  $k$ & 角色 & $d_{k,1}$（m） & $d_{k,2}$（m） & $d_{k,3}$（m）\\
+  \midrule
+  1  & 全貌     & $-2.0008$ & $-0.1917$ & $34.2138$\\
+  2  & 左侧地线 & $-0.4708$ & $ 4.9143$ & $34.2138$\\
+  3  & 左上层   & $-0.4708$ & $ 4.9143$ & $31.0134$\\
+  4  & 左中层   & $-0.4708$ & $ 4.9143$ & $25.9080$\\
+  5  & 左下层   & $-0.4708$ & $ 4.9143$ & $20.8026$\\
+  8  & 右侧地线 & $ 0.4708$ & $-4.9143$ & $34.2138$\\
+  9  & 右上层   & $ 0.4708$ & $-4.9143$ & $31.0134$\\
+  10 & 右中层   & $ 0.4708$ & $-4.9143$ & $25.9080$\\
+  11 & 右下层   & $ 0.4708$ & $-4.9143$ & $20.8026$\\
+  \bottomrule
+ \end{tabular}
+\end{table}
+
+各中心可由$\mathbf c_{(g_\star,k)}=\mathbf a_{g_\star}+\mathbf d_k$恢复。左右角色沿用模板的标识，不表示地图的正西、正东方向。角色划分依据Li等\cite{LiInspection2023}，高度层次和横向几何采用基于参考杆塔图的模板\cite{KPLC2025}，表内数值来自该模板的当前派生几何，并非对本塔逐构件测量的结果。
+
+本例每项任务的目标面边长取$a_i=0.5\,\mathrm m$，样点数取$M_i=5$，使用中心和四角。目标面尺度与五点配置均为本研究设置，不归属于KPLC图纸的实测目标尺寸或采样规范。以第一项任务$i_\star=(g_\star,1)$为例，派生处理前的模板中心与单位法向为
+\begin{equation}
+ \mathbf c_{i_\star}^{\mathrm{src}}\approx
+ \begin{pmatrix}
+ 342834.8765\\
+ 5652912.3809\\
+ 102.2138
+ \end{pmatrix}\mathrm m,
+ \qquad
+ \mathbf n_{i_\star}\approx
+ \begin{pmatrix}
+ -0.99544275\\
+ -0.09536105\\
+ 0
+ \end{pmatrix}.
+\end{equation}
+上标$\mathrm{src}$表示派生位移前的模板值，不表示OSM提供了该目标面的测量坐标。当前参考几何沿法向采用$\delta_{i_\star}=2.01\,\mathrm m$的位移，得到
+\begin{align}
+ \mathbf c_{i_\star}
+ &=\mathbf c_{i_\star}^{\mathrm{src}}
+   +\delta_{i_\star}\mathbf n_{i_\star},\\
+ \mathbf c_{i_\star}&\approx
+ \begin{pmatrix}
+ 342832.8757\\
+ 5652912.1892\\
+ 102.2138
+ \end{pmatrix}\mathrm m.
+\end{align}
+同一目标面的每个样点也作相同平移，即
+\begin{equation}
+ \mathbf q_{i_\star j}
+ =\mathbf q_{i_\star j}^{\mathrm{src}}
+  +\delta_{i_\star}\mathbf n_{i_\star},
+ \qquad j\in\mathcal J_{i_\star}.
+\end{equation}
+因此，样点相对中心的位置、面边长及法向保持不变。该处理改变参考目标几何，原始OSM杆塔位置$\mathbf r_{g_\star}$保持不变。平移是否按定义实现，与目标及后续飞行是否满足障碍物净空是两个检查问题，后者由第\ref{sec:04_06}节的安全模型处理。
+
+写$\mathbf q=(E,N,Z)^{\mathsf T}$，第一目标所在平面的数值方程为
+\begin{equation}
+ \begin{split}
+ &-0.99544275\,(E-342832.8757)\\
+ &\quad-0.09536105\,(N-5652912.1892)=0.
+ \end{split}
+\end{equation}
+$E,N,Z$均按$\mathrm m$代入。法向量第三分量为0，故平面方程没有$Z$项，但这不意味着目标沿高程方向无限延伸：其有限范围还由正方形边界限定。坐标与偏移显示至小数点后4位，法向及面内基显示至8位；实验和电子数据保留原始计算精度。
+
+为具体展开面内范围，采用与上述法向正交的两个无量纲单位向量
+\begin{equation}
+ \mathbf t_{i_\star,1}\approx
+ \begin{pmatrix}
+ -0.09536105\\0.99544275\\0
+ \end{pmatrix},
+ \qquad
+ \mathbf t_{i_\star,2}=\begin{pmatrix}0\\0\\1\end{pmatrix}.
+\end{equation}
+于是
+\begin{equation}
+ \mathcal S_{i_\star}=
+ \left\{\mathbf c_{i_\star}
+ +\alpha\mathbf t_{i_\star,1}+\beta\mathbf t_{i_\star,2}:
+ |\alpha|\leq0.25\,\mathrm m,\quad
+ |\beta|\leq0.25\,\mathrm m\right\}.
+\end{equation}
+令$\mathcal J_{i_\star}=\{1,2,3,4,5\}$，中心和四个角点的构造为
+\begin{equation}
+ \begin{aligned}
+ \mathbf q_{i_\star 1}&=\mathbf c_{i_\star},\\
+ \mathbf q_{i_\star 2}&=\mathbf c_{i_\star}
+ +0.25\,\mathrm m\,\mathbf t_{i_\star,1}
+ -0.25\,\mathrm m\,\mathbf t_{i_\star,2},\\
+ \mathbf q_{i_\star 3}&=\mathbf c_{i_\star}
+ +0.25\,\mathrm m\,\mathbf t_{i_\star,1}
+ +0.25\,\mathrm m\,\mathbf t_{i_\star,2},\\
+ \mathbf q_{i_\star 4}&=\mathbf c_{i_\star}
+ -0.25\,\mathrm m\,\mathbf t_{i_\star,1}
+ -0.25\,\mathrm m\,\mathbf t_{i_\star,2},\\
+ \mathbf q_{i_\star 5}&=\mathbf c_{i_\star}
+ -0.25\,\mathrm m\,\mathbf t_{i_\star,1}
+ +0.25\,\mathrm m\,\mathbf t_{i_\star,2}.
+ \end{aligned}
+\end{equation}
+对应数值向量为
+\begin{align}
+ \mathbf q_{i_\star 1}&\approx
+ (342832.8757,\ 5652912.1892,\ 102.2138)^{\mathsf T}\,\mathrm m,\\
+ \mathbf q_{i_\star 2}&\approx
+ (342832.8519,\ 5652912.4380,\ 101.9638)^{\mathsf T}\,\mathrm m,\\
+ \mathbf q_{i_\star 3}&\approx
+ (342832.8519,\ 5652912.4380,\ 102.4638)^{\mathsf T}\,\mathrm m,\\
+ \mathbf q_{i_\star 4}&\approx
+ (342832.8995,\ 5652911.9403,\ 101.9638)^{\mathsf T}\,\mathrm m,\\
+ \mathbf q_{i_\star 5}&\approx
+ (342832.8995,\ 5652911.9403,\ 102.4638)^{\mathsf T}\,\mathrm m.
+\end{align}
+这些向量描述被观测目标上的位置。第一样点是目标中心，角色1或任务名中的P01也只是身份标识，均不能作为无人机位置使用。无人机和相机的位姿需要另外定义，并通过成像条件与这些目标点连接。
+
+下面完整展开该塔的完成判定模型。简记$y_k=y_{g_\star k}$、$z=z_{g_\star}$，以最大化整塔完成标志作为测试目标：
+\begin{subequations}
+\begin{align}
+ &\max\ z,\\
+ \text{满足}\quad
+ &z\leq y_1,\qquad z\leq y_2,\qquad z\leq y_3,\\
+ &z\leq y_4,\qquad z\leq y_5,\qquad z\leq y_8,\\
+ &z\leq y_9,\qquad z\leq y_{10},\qquad z\leq y_{11},\\
+ &z\geq y_1+y_2+y_3+y_4+y_5+y_8+y_9+y_{10}+y_{11}-8,\\
+ &y_1,y_2,y_3,y_4,y_5,y_8,y_9,y_{10},y_{11},z\in\{0,1\}.
+\end{align}
+\end{subequations}
+该模型含九个角色状态和一个整塔状态，全部变量无量纲。下界中的常数$8=|\mathcal K_{g_\star}|-1$，来自九个角色的逻辑合取。
+
+第一种检验输入固定全部九个角色均已满足要求：
+\begin{equation}
+ y_1=y_2=y_3=y_4=y_5=y_8=y_9=y_{10}=y_{11}=1.
+\end{equation}
+代入后，下界为$z\geq9-8=1$，九个上界均为$z\leq1$，故求得$z=1$，目标值为1。
+
+第二种输入仅将11号角色设为0，其余八个角色保持为1：
+\begin{equation}
+ y_1=y_2=y_3=y_4=y_5=y_8=y_9=y_{10}=1,
+ \qquad y_{11}=0.
+\end{equation}
+此时$z\leq y_{11}=0$，下界为$z\geq8-8=0$，故求得$z=0$，目标值为0。即使其余八个角色均已完成，右下层角色的缺失仍使整塔不完整。这两种输入均包含在后述实际求解的全部二元模式中。
+
+上述固定条件用于检验完成关系，不是在联合巡检中预先固定任务选择。若去掉固定条件而又不增加物理执行约束，最大化$z$可以把全部角色状态置为1，但这种赋值只说明完成逻辑允许该组合，不能证明飞机能够取得对应图像。本例的测试目标也不替代整场巡检的优化目标。
+
+\subsection{地理对象与完成逻辑的实验结果}
+
+地理模块实验检查了六个场景配置，分别统计杆塔身份、任务身份、角色集合及坐标转换。对象规模和UTM分区如下。
+\begin{table}[htbp]
+ \centering
+ \small
+ \caption{六个场景配置的对象规模与UTM分区}
+ \begin{tabular}{@{}lrrc@{}}
+  \toprule
+  场景 & 塔数 & 任务数 & UTM分区\\
+  \midrule
+  Ubeda 60       & 60  & 540  & 30N\\
+  Ubeda 100      & 100 & 900  & 30N\\
+  Ubeda 150      & 150 & 1350 & 30N\\
+  Rommerskirchen & 237 & 2133 & 32N\\
+  Brauweiler     & 185 & 1665 & 32N\\
+  Villevaude     & 343 & 3087 & 31N\\
+  \bottomrule
+ \end{tabular}
+\end{table}
+
+六个配置均采用EPSG:4326地理坐标输入，30N、31N和32N分别对应EPSG:32630、EPSG:32631和EPSG:32632。三个Ubeda配置来自同一区域的嵌套规模，用于检查对象增加时身份和转换的一致性，不能作为三个独立地理数据集计数。
+
+检查结果显示，各配置的任务标识均唯一，角色集合均与式\eqref{s0401:photographic_roles}一致。Rommerskirchen区域具有
+\begin{equation}
+ |\mathcal G|=237,
+ \qquad |\mathcal I_g|=9\quad(\forall g\in\mathcal G),
+ \qquad |\mathcal I|=237\times9=2133.
+ \label{s0401:regional_counts}
+\end{equation}
+其中2133是待满足观测要求的输入数量，不是已取得或验收的照片数。每个目标使用五个样点，因此该区域目标面检查涉及$2133\times5=10665$个样点。
+
+坐标核验采用三种对照。第一种从各场景经纬度重算投影坐标，并与保存值比较。六个配置的最大投影差均为$0\,\mathrm m$；逆投影最大误差在Ubeda 60、Ubeda 100和Villevaude中为$1.421\times10^{-14}$度，在Ubeda 150、Rommerskirchen和Brauweiler中为$2.132\times10^{-14}$度。这是同一转换库下的重算一致性，主要检查数据传递和投影配置是否一致，不能排除两次计算共享同一错误的可能。
+
+第二种采用PROJ公开的UTM数值控制例\cite{PROJUTM}。经度$12^{\circ}$、纬度$56^{\circ}$经北半球第32分区转换，结果如表\ref{s0401:proj_control}所示。两坐标分量的最大绝对差为$0.003252\,\mathrm m$；公开值显示至厘米，差值包含参考值舍入的影响。该检查使用外部公开数值，并非本区域的实测测量控制点。
+\begin{table}[htbp]
+ \centering\small
+ \caption{公开UTM控制例的数值核验（m）}
+ \label{s0401:proj_control}
+ \begin{tabular}{@{}lrr@{}}
+ \toprule
+ 分量 & PROJ公开值 & 本次计算\\
+ \midrule
+ 东向 & 687071.44 & 687071.4391\\
+ 北向 & 6210141.33 & 6210141.3267\\
+ \bottomrule
+ \end{tabular}
+\end{table}
+
+第三种将Rommerskirchen全部237座杆塔的经纬度与保存的原始OSM记录逐项核对，未发现不一致。它验证来源坐标是否被忠实保留，不能测定OSM位置与现场真实位置的偏差。三种检查分别对应内部重算一致性、外部数值对照和来源忠实性；微小数值残差不能解释为地图具有同等实测精度。
+
+几何检查针对式\eqref{s0401:target_plane}和式\eqref{s0401:target_samples}计算代数残差。在Rommerskirchen原始模板的10665个样点中，以派生前的中心和样点计算，最大平面残差为
+\begin{equation}
+ \max_{i\in\mathcal I,\ j\in\mathcal J_i}
+ \left|\mathbf n_i^{\mathsf T}(\mathbf q_{ij}^{\mathrm{src}}-\mathbf c_i^{\mathrm{src}})\right|
+ =4.613\times10^{-10}\,\mathrm m.
+\end{equation}
+法向平方范数相对1的最大残差为
+\begin{equation}
+ \max_{i\in\mathcal I}
+ \left|\mathbf n_i^{\mathsf T}\mathbf n_i-1\right|
+ =3.331\times10^{-16}.
+\end{equation}
+后一个量无量纲。当前派生目标的平移一致性检查覆盖全部2133项任务，最大位置残差为$4.647\times10^{-10}\,\mathrm m$。这些量反映参考面、法向及平移在数值实现中的一致性，不反映参考模板与实际杆塔表面的吻合精度，也不单独证明目标或飞行的障碍物净空成立。
+
+错误输入检查保留了四种反例：缺少一个必需角色、重复一个角色、把无拍摄的转场点计作观测角色，以及用其他杆塔的任务替代本塔任务。四种构造均被按预期拒绝。重复角色或跨塔替代可能不改变记录总条数，因此仅核对任务数量不足以验证式\eqref{s0401:tower_tasks}中的身份关系。坐标轴交换反例还产生了$7025553.014\,\mathrm m$的位置差。即使两个分量都以米计，交换其含义仍会造成严重的位置错误，故坐标顺序与单位必须同时明确。
+
+完成逻辑实验对九个角色的全部$2^9=512$种二元模式逐一固定输入，分别以最小化和最大化$z$为目标调用同一生产约束构造函数和SCIP求解\cite{SCIP100}，两次均与独立Python的\texttt{all()}结果对照。布尔函数的输入是九个角色状态，仅在全部输入为1时返回真。每种模式的最小值和最大值均等于独立逻辑值，累计1024次求解，逻辑不一致数为0。两个方向分别能够暴露缺失下界和缺失上界的问题；布尔计算在这里作为对照，并未替代求解器执行。按已满足角色数分组的结果如下。
+
+\begin{table}[htbp]
+ \centering
+ \small
+ \caption{九角色整塔完成逻辑的全部二元模式检验}
+ \begin{tabular}{@{}rrrr@{}}
+  \toprule
+  有效角色数 & 模式数 & $z=1$数 & 不一致数\\
+  \midrule
+  0 & 1   & 0 & 0\\
+  1 & 9   & 0 & 0\\
+  2 & 36  & 0 & 0\\
+  3 & 84  & 0 & 0\\
+  4 & 126 & 0 & 0\\
+  5 & 126 & 0 & 0\\
+  6 & 84  & 0 & 0\\
+  7 & 36  & 0 & 0\\
+  8 & 9   & 0 & 0\\
+  9 & 1   & 1 & 0\\
+  \midrule
+  合计 & 512 & 1 & 0\\
+  \bottomrule
+ \end{tabular}
+\end{table}
+
+表中的有效角色数专指已满足有效观测要求的角色数$\sum_{k\in\mathcal K_{g_\star}}y_k$，不是照片文件总数。对于有效角色数$r\in\{0,\ldots,9\}$，不同模式数为$\binom{9}{r}$。只有九项全部为1的唯一模式得到$z=1$；有效角色数为8的九种模式全部得到$z=0$。这说明遗漏任何一个必需角色均会使整塔不完整，并非只有数值例中选取的11号角色具有这一作用。
+
+真值表检查的墙钟时间为$3.641\,\mathrm s$，整个地理模块验证的墙钟时间为$7.738\,\mathrm s$。这些时间描述本次模块检查过程，不是整场巡检规划的求解时间。512种模式穷尽了九角色完成逻辑的二元输入域，因此结果支持该有限逻辑关系的实现；实验没有枚举无人机轨迹、曝光姿态或车辆状态。
+
+道路检查中，两个基地B001和B002分别均能在保存的有向图上到达全部104个停车候选。这里的可达只表示存在由基地出发的有向路径。本次数据中的转弯限制条目数为0，不能据此认定所有转弯均获许可，也不能推断车辆车身能够通过每个路口。该结果不包含转弯几何、停车合法性及完整巡检可行性的判断。
+
+这些检查使一项观测具有明确的杆塔归属、角色身份和目标几何，并使已取得的有效观测能够按固定规则汇总为整塔状态。要进一步判断$y_{gk}$能否取1，还需要描述执行该任务的无人机与相机，以及曝光期间的视野、可见性和成像质量。目标面及其样点提供这些物理约束的空间输入，完成逻辑则接收它们产生的有效观测状态。

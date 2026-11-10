@@ -1,0 +1,84 @@
+\section{数值目标和约束逐条展开}
+\label{sec:02_06}
+
+十二候选任务算例的决策是：在一个给定窗口内，选择若干任务，为每个入选任务完整分配其所需资源，使接受任务的总收益最大。资源 $\mathrm{A}$ 至 $\mathrm{L}$ 各有一份不可分割的可用量，同一份资源不能分配给两个入选任务。以下将全部收益和资源关联逐项代入，给出可直接建立的数值模型。
+
+为简化下标，令 $x_j$ 表示是否接受编号为 $j$ 的任务，$j\in\{1,\ldots,12\}$，依次对应原始输入中的 $\mathrm{T01}$ 至 $\mathrm{T12}$。$x_j=1$ 表示接受该任务并完整分配其资源组合，$x_j=0$ 表示不接受。变量 $x_j$ 为无量纲二元指示量；它不是任务完成比例，也不是分配给任务的资源份数。任务被接受时，在每一种所需资源上均产生一份需求，这些需求由同一个 $x_j$ 联动表示。
+
+\subsection{目标函数与全部资源容量约束}
+
+记 $z(x)$ 为选择向量 $x=(x_1,\ldots,x_{12})$ 对应的总收益。收益为无量纲教学数值，$z(x)$ 是由选择变量确定的函数，不是另设的独立决策变量。完整数值模型为
+\begin{subequations}
+\label{s0206:numerical_model}
+\begin{align}
+ \max_{x}\quad
+ &19x_1+12x_2+11x_3+10x_4+20x_5+9x_6 \notag\\
+ &\quad +9x_7+8x_8+9x_9+8x_{10}+8x_{11}+9x_{12}.
+ \label{s0206:objective}
+\end{align}
+约束为
+\begin{align}
+ x_1+x_2+x_6 &\leq 1,
+ &&\text{资源 }\mathrm{A},
+ \label{s0206:capacity_a}\\
+ x_1+x_2+x_7 &\leq 1,
+ &&\text{资源 }\mathrm{B},
+ \label{s0206:capacity_b}\\
+ x_1+x_3+x_8 &\leq 1,
+ &&\text{资源 }\mathrm{C},
+ \label{s0206:capacity_c}\\
+ x_1+x_3+x_9 &\leq 1,
+ &&\text{资源 }\mathrm{D},
+ \label{s0206:capacity_d}\\
+ x_1+x_4+x_{10} &\leq 1,
+ &&\text{资源 }\mathrm{E},
+ \label{s0206:capacity_e}\\
+ x_1+x_4+x_{11} &\leq 1,
+ &&\text{资源 }\mathrm{F},
+ \label{s0206:capacity_f}\\
+ x_2+x_5+x_8+x_{11} &\leq 1,
+ &&\text{资源 }\mathrm{G},
+ \label{s0206:capacity_g}\\
+ x_3+x_5+x_7+x_{10} &\leq 1,
+ &&\text{资源 }\mathrm{H},
+ \label{s0206:capacity_h}\\
+ x_4+x_5+x_8+x_{11} &\leq 1,
+ &&\text{资源 }\mathrm{I},
+ \label{s0206:capacity_i}\\
+ x_5+x_6+x_9+x_{12} &\leq 1,
+ &&\text{资源 }\mathrm{J},
+ \label{s0206:capacity_j}\\
+ x_5+x_6+x_9+x_{12} &\leq 1,
+ &&\text{资源 }\mathrm{K},
+ \label{s0206:capacity_k}\\
+ x_5+x_7+x_{10}+x_{12} &\leq 1,
+ &&\text{资源 }\mathrm{L},
+ \label{s0206:capacity_l}\\
+ x_j &\in\{0,1\},
+ &&j=1,\ldots,12.
+ \label{s0206:binary_domain}
+\end{align}
+\end{subequations}
+
+目标函数\eqref{s0206:objective}中，每个系数只与对应任务的接受状态相乘。例如，$19x_1$ 表示接受 $\mathrm{T01}$ 所获得的收益，$20x_5$ 表示接受 $\mathrm{T05}$ 所获得的收益。任务需要多种资源，并不意味着其收益要按资源种类重复计算；一个任务无论涉及多少种资源，都只在目标函数中出现一次。因此，目标系数表示完整任务的收益，而非每份资源的收益。
+
+约束\eqref{s0206:capacity_a}至\eqref{s0206:capacity_l}逐种资源核算占用。每行左端统计需要该资源的入选任务数；由于每个相关任务恰好需要一份该资源，这个计数也就是该资源的需求份数。右端的一表示可用容量为一份。各行均以一份对应资源为计数单位，省略了共同的单位因子；不同资源的份数不能相互替代。采用不等式而非等式，允许资源闲置，并不要求十二种资源全部用满。
+
+资源 $\mathrm{A}$、$\mathrm{B}$ 分别限制任务组 $(\mathrm{T01},\mathrm{T02},\mathrm{T06})$ 和 $(\mathrm{T01},\mathrm{T02},\mathrm{T07})$ 中至多接受一个任务；资源 $\mathrm{C}$、$\mathrm{D}$ 分别对 $(\mathrm{T01},\mathrm{T03},\mathrm{T08})$ 和 $(\mathrm{T01},\mathrm{T03},\mathrm{T09})$ 施加同样的容量限制。资源 $\mathrm{E}$ 的竞争发生在 $\mathrm{T01}$、$\mathrm{T04}$、$\mathrm{T10}$ 之间，资源 $\mathrm{F}$ 的竞争发生在 $\mathrm{T01}$、$\mathrm{T04}$、$\mathrm{T11}$ 之间。这六行分别记录六种资源，不能仅保留任务 $\mathrm{T01}$ 的某一条约束来代替其完整资源需求。
+
+资源 $\mathrm{G}$ 限制 $\mathrm{T02}$、$\mathrm{T05}$、$\mathrm{T08}$、$\mathrm{T11}$ 的共同选择；资源 $\mathrm{H}$ 限制 $\mathrm{T03}$、$\mathrm{T05}$、$\mathrm{T07}$、$\mathrm{T10}$ 的共同选择；资源 $\mathrm{I}$ 限制 $\mathrm{T04}$、$\mathrm{T05}$、$\mathrm{T08}$、$\mathrm{T11}$ 的共同选择。资源 $\mathrm{J}$ 和 $\mathrm{K}$ 各自限制 $\mathrm{T05}$、$\mathrm{T06}$、$\mathrm{T09}$、$\mathrm{T12}$，资源 $\mathrm{L}$ 则限制 $\mathrm{T05}$、$\mathrm{T07}$、$\mathrm{T10}$、$\mathrm{T12}$。每条约束都作用于其列出的整个任务组，而不是只限制其中某一个任务。
+
+\subsection{资源行的形成与重复行的含义}
+
+以资源 $\mathrm{A}$ 为例，原始需求表中只有 $\mathrm{T01}$、$\mathrm{T02}$ 和 $\mathrm{T06}$ 需要它。接受这三个任务分别产生 $x_1$、$x_2$、$x_6$ 份资源 $\mathrm{A}$ 的需求，其余任务对该资源的需求为零。将三项相加，并与一份可用容量比较，就得到约束\eqref{s0206:capacity_a}。若 $x_1=1$，则该行成为
+\begin{equation}
+ 1+x_2+x_6\leq 1.
+ \label{s0206:a_implication}
+\end{equation}
+结合二元变量的非负性，必有 $x_2=x_6=0$。这一推导说明，容量行通过共同资源排除不兼容的选择。它只表达资源 $\mathrm{A}$ 的限制；任务 $\mathrm{T01}$ 还需要资源 $\mathrm{B}$ 至 $\mathrm{F}$，所以 $x_1$ 还必须同时出现在这五种资源的容量行中。
+
+资源 $\mathrm{J}$ 的需求来自 $\mathrm{T05}$、$\mathrm{T06}$、$\mathrm{T09}$ 和 $\mathrm{T12}$，每个任务需要一份，因而得到约束\eqref{s0206:capacity_j}。这四个任务也都需要一份资源 $\mathrm{K}$，且没有其他任务需要 $\mathrm{K}$，于是约束\eqref{s0206:capacity_k}具有完全相同的左端和右端。两行相同源于本例的关联关系和容量恰好一致，并不表示 $\mathrm{J}$ 与 $\mathrm{K}$ 是同一种资源。例如，接受 $\mathrm{T06}$ 时需要分别分配一份 $\mathrm{J}$ 和一份 $\mathrm{K}$，不能只分配其中一种来满足两项需求。
+
+从当前数值模型的可行域看，保留约束\eqref{s0206:capacity_j}时，约束\eqref{s0206:capacity_k}已经被满足；反过来也成立。因此，在保持所有其他约束不变的条件下，删除这两条重复不等式中的任意一条，不改变可行选择向量的集合。这里的冗余是当前不等式系统的代数性质，不是删除资源身份或修改任务资源组合的依据。为保持原始输入的资源身份与容量记录，模型\eqref{s0206:numerical_model}仍完整保留十二条资源行。
+
+最后，二元域\eqref{s0206:binary_domain}将完整接受与不接受两种状态明确区分。一个任务的变量在其所有资源行中保持一致，故选择该任务就同时计入全部所需资源的占用，无须再为同一任务设置可独立变化的逐资源接受变量。给定任意满足这些约束的二元向量，每种资源至多被一个入选任务需求，因而可以为所有入选任务分配完整资源组合；反过来，任何符合本例分配规则的任务选择也必然满足十二条资源容量约束。由此，数值模型完整表达了本例一个窗口内的静态资源组合分配规则。

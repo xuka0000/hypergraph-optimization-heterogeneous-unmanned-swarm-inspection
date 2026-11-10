@@ -1,0 +1,26 @@
+\section{图像视野、分辨率、拖影和可见性}
+\noindent 目标$i$有5个表面样点$\mathbf q_{ir}$、单位法向$\mathbf n_i$及切向正交基$B_i\in\mathbb R^{3\times2}$。对曝光区间$\mathcal C_i$的每个时刻、每个样点：
+\begin{align}
+ \mathbf Q_{ir}&=R_C^T(\mathbf q_{ir}-\mathbf p_C),\quad
+ F_{px}(f)=\frac{\sqrt{5184^2+3888^2}}{2\tan(66.6^\circ/2)}\frac{f}{6.83},\\
+ \pi(\mathbf Q)&=(F_{px}Q_x/Q_z+2592,\ F_{px}Q_y/Q_z+1944)^T,\\
+ Q_z&>0,\quad 32\le\pi_x\le5152,\quad32\le\pi_y\le3856,\label{eng:eq:fov}\\
+ 8&\le\|\mathbf q_{ir}-\mathbf p_C\|\le25,\quad
+ \frac{\mathbf n_i^T(\mathbf p_C-\mathbf q_{ir})}{\|\mathbf p_C-\mathbf q_{ir}\|}\ge\cos30^\circ,
+ \label{eng:eq:viewangle}\\
+ D\pi(\mathbf Q)&=\begin{bmatrix}F_{px}/Q_z&0&-F_{px}Q_x/Q_z^2\\
+ 0&F_{px}/Q_z&-F_{px}Q_y/Q_z^2\end{bmatrix},\\
+ \sigma_{\min}\!\left(D\pi(\mathbf Q)R_C^TB_i\right)&\ge200\ \mathrm{px/m},
+ \label{eng:eq:gsd}\\
+ t^{exp}\sup_{t\in\mathcal C_i}\left\|\frac{d}{dt}\pi(\mathbf Q_{ir}(t),f(t))\right\|&\le1\ \mathrm{px}.
+ \label{eng:eq:blur}
+\end{align}
+\noindent 拖影导数包含位置、机体转动、云台和变焦；固定曝光消除趋近零曝光的取巧解。奇异值约束等价于两个切向方向最差GSD不超过5mm/px。5个样点是本参考目标面的验收离散化，不是整个真实部件的缺陷检出保证。[R2,R3]
+\begin{equation}
+ (1-\lambda)\mathbf p_C(t)+\lambda\mathbf q_{ir}\notin\operatorname{int}\mathcal O^{opaque},
+ \quad 0\le\lambda<1,\ t\in\mathcal C_i.
+ \label{eng:eq:visibility}
+\end{equation}
+\noindent $\mathcal O^{opaque}$为地形、塔柱、导线和车辆实体；所有障碍均保留，包括目标所属塔。仅目标端点可接触目标表面；不能整体排除本塔遮挡。未建模的植被、实际晶格及镜头畸变仍属实测输入缺项。
+\clearpage
+

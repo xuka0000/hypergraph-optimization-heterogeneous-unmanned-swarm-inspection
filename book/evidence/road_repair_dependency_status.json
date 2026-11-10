@@ -1,0 +1,12 @@
+{
+  "observed_at": "2026-11-10T08:10:37.752757+00:00",
+  "scope": "road generator repair",
+  "changed_source": "Agent/Publication/engineering_road_motion.py",
+  "actual_cache_guard": "scripts/run_unified_inspection.py: road_options rejects mismatched road_code_sha256",
+  "prior_results_retained": true,
+  "affected_road_options_recomputed": false,
+  "reason": "No full joint or warm-start run authorized across next bound review node in this batch",
+  "new_component_results": "总结/03_实验数据/工程化联合求解/module_validation/road/results.json",
+  "failure_archive": "总结/03_实验数据/工程化联合求解/module_validation/road/attempts",
+  "full_executor_ready": false
+}

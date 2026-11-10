@@ -1,0 +1,27 @@
+\section{任务、完整塔与自主航次组成}
+\begin{align}
+ &\sum_{\ell}x_{i\ell}=a_i\quad(i\in\mathcal I_k),\qquad a_i\le1-A_i^k,\\
+ &x_{i\ell}\le b_\ell,\quad
+ b_\ell\le\sum_{i\in\mathcal I_k}x_{i\ell}\le|\mathcal I_k|b_\ell
+       \quad(\ell\in\mathcal L_k^{new}),\label{eng:eq:assign}\\
+ &\sum_u y_{u\ell}=\sum_p\beta_{p\ell}=b_\ell,\qquad
+ y_{u\ell}+\beta_{p\ell}\le1\quad\text{若 }c(u)\ne c(p),\label{eng:eq:fleet}\\
+ &z_g\le A_i^k+a_i\quad(i\in\mathcal I_g),\\
+ &z_g\ge1-\sum_{i\in\mathcal I_g}(1-A_i^k-a_i).
+ \label{eng:eq:complete}
+\end{align}
+\noindent 对已验收$i$固定$a_i=x_{i\ell}=0$。塔完成量由全部9项同时决定，不把1项拍到当整塔完成。$\mathcal L_k^{air}$固定$b_\ell=1$及原机--电池身份，不施加新航次非空条件。不同传感器/任务模态不匹配的$x_{i\ell}y_{u\ell}$禁止；当前全部为RGB。
+
+\noindent 航次$\ell$设起点$L_\ell$和终点$R_\ell$；只允许起点到任务、不同任务之间及任务到终点的有向弧。进行中航次另允许$L_\ell\to R_\ell$直接回收。
+\begin{align}
+ &\sum_jh_{ij\ell}=\sum_jh_{ji\ell}=x_{i\ell}\quad(i\in\mathcal I_k),\\
+ &\sum_jh_{L_\ell j\ell}=\sum_i h_{iR_\ell\ell}=b_\ell,\qquad
+ h_{iL_\ell\ell}=h_{R_\ell j\ell}=0,\\
+ &h_{ij\ell}=1\Rightarrow t_j=t_i+d_i+T_{ij\ell},\quad T_{ij\ell}\ge0.
+ \label{eng:eq:sequence}
+\end{align}
+\noindent $t_{L_\ell}=\max(s_\ell,\tau_k)$，$t_{R_\ell}=e_\ell$，两个端点$d=0$。任务$d_i\ge d_i^{min}>0$；沿任何纯任务环累加等式将得到$0>0$，故无孤立任务子环。$T_{ij\ell}$包括转移和等待的全部真实时间；所有时间均在飞行功率积分内。
+
+\noindent 初始2133个航次槽只是组合上界。没有固定5/4拆分、6塔上限或预制航次目录；同一航次可在资源、能量和质量允许时组合任意塔的要求。
+\clearpage
+

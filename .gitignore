@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+/book/build/
+/scratch/
+.env
+.env.*
+*.pem
+*.key

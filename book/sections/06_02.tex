@@ -1,0 +1,351 @@
+\section{每类模型的完整数值实例}
+\label{sec:06_02}
+
+完整数值实例需要同时确定输入对象、决策变量、目标与约束的作用范围。对于纯组合问题，第\ref{sec:02_05}节已给出十二候选任务的全部参数，第\ref{sec:02_06}节已逐条展开数值目标、资源容量约束和二元变量域，第\ref{sec:02_07}节则核验已有解。因此，该实例直接作为纯组合模型的完整算例，不在此重复列式。巡检区域采用237塔的参数化定义。本节从该区域抽出一座塔的九个拍摄角色，展开目标面、成像条件、服务时间和电池能量的数值代入，使区域模型中的一组具体约束可以逐项复算。
+
+单塔数据在这里是完整区域输入的一个组成部分，不是另行求解的单塔最优问题。区域仍包含237座塔、2133项观测、2辆车、4架无人机和8对物理电池，班次时长为$28800\,\mathrm s$。在首次规划的共同时间原点$t_0=0$下，区域目标写为
+\begin{equation}
+ \operatorname{lexmin}_{X\in\mathcal F}
+ \left(237-\sum_{g\in\mathcal G}y_g,\ C,\ E^{air}\right).
+ \label{s0602:regional_objective}
+\end{equation}
+其中，$X$包含第\ref{sec:05_08}节定义的离散决策和连续状态，$\mathcal F$为相应可行域；$y_g\in\{0,1\}$表示塔$g$的九项图像要求是否全部完成，第一项目标的单位为座；$C\in[0,28800]\,\mathrm s$为车队完成回收并返回后的班次经过时间；$E^{air}\ge0$为无人机耗能，单位为$\mathrm{Wh}$。三个分量按顺序优化，不相加，也不把$y_g=1$对所有塔强制成立。单塔几何代入不能取代区域中的道路运动、航次接续、会合和物理电池周转约束。
+
+\subsection{一塔九角色的当前数值数据}
+
+示范塔取自区域中的OSM杆塔269894017。其角色集合为
+\begin{equation}
+ \mathcal K_g=\{1,2,3,4,5,8,9,10,11\},\qquad
+ \mathcal I_g=\{(g,k):k\in\mathcal K_g\}.
+ \label{s0602:role_set}
+\end{equation}
+角色编号沿用拍摄功能的来源编号：1为全景，2--5为左侧四层，8--11为右侧四层；原图中的6、7承担转场功能，不再增加图像任务\cite{LiInspection2023}。这些角色提供拍摄对象的组织方式，不固定本算例的飞行顺序。表中P01等名称是本塔角色的简写，公式中的任务索引仍为$i=(g,k)$。
+
+每项任务由目标面参考点$\mathbf c_i$、单位法向$\mathbf n_i$、两个正交单位切向量、五个表面样点和最小服务时长确定。目标参考点与飞机的名义视点是不同对象：前者定义被摄目标，后者仅给出优化初始化位置。表\ref{s0602:current_centers}采用当前几何适配后的坐标，水平坐标为EPSG:32632东向、北向米制坐标，高程为源高程；表内小数作显示舍入，电子输入保留原精度。
+
+\begin{table}[htbp]
+\centering\small
+\caption{示范塔九角色的当前目标参考点及服务下界；数据取自当前修正目标输入}
+\label{s0602:current_centers}
+\begin{tabular}{@{}clrrrr@{}}
+\toprule
+角色 & 含义 & $E/\mathrm m$ & $N/\mathrm m$ & $z_{src}/\mathrm m$ & $d_i^{\min}/\mathrm s$\\
+\midrule
+P01 & 全景 & 338579.129654 & 5652902.059833 & 116.2138 & 20.0110814815\\
+P02 & 左地线层 & 338575.439858 & 5652905.919410 & 116.2138 & 20.0110814815\\
+P03 & 左上层 & 338575.439858 & 5652905.919410 & 113.0134 & 20.0110814815\\
+P04 & 左中层 & 338575.439858 & 5652905.919410 & 107.9080 & 20.0110814815\\
+P05 & 左下层 & 338575.439858 & 5652905.919410 & 102.8026 & 20.0110814815\\
+P08 & 右地线层 & 338584.456635 & 5652901.871784 & 116.2138 & 20.0110814815\\
+P09 & 右上层 & 338584.456635 & 5652901.871784 & 113.0134 & 20.0110814815\\
+P10 & 右中层 & 338584.456635 & 5652901.871784 & 107.9080 & 20.0110814815\\
+P11 & 右下层 & 338584.456635 & 5652901.871784 & 102.8026 & 20.0110814815\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+四个层高相对该塔源地面分别为$34.2138$、$31.0134$、$25.9080$和$20.8026\,\mathrm m$。它们来自外部几何模板的迁移，不表示对本塔各构件高度进行了现场测量\cite{KPLC2025}。当前九任务均为RGB观测，任务权重均为1，每项要求1帧图像，表中的服务下界对九项分别成立。
+
+\begin{table}[htbp]
+\centering\small
+\caption{当前九角色的名义视点；这些坐标只用于初始化}
+\label{s0602:initial_viewpoints}
+\begin{tabular}{@{}crrr@{}}
+\toprule
+角色 & $E/\mathrm m$ & $N/\mathrm m$ & $z_{src}/\mathrm m$\\
+\midrule
+P01 & 338572.986710 & 5652888.375380 & 116.2138\\
+P02 & 338566.204495 & 5652910.065160 & 116.2138\\
+P03 & 338566.204495 & 5652910.065160 & 113.0134\\
+P04 & 338566.204495 & 5652910.065160 & 107.9080\\
+P05 & 338566.204495 & 5652910.065160 & 102.8026\\
+P08 & 338593.691998 & 5652897.726033 & 116.2138\\
+P09 & 338593.691998 & 5652897.726033 & 113.0134\\
+P10 & 338593.691998 & 5652897.726033 & 107.9080\\
+P11 & 338593.691998 & 5652897.726033 & 102.8026\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+记表\ref{s0602:initial_viewpoints}中的位置为$\overline{\mathbf p}_i\in\mathbb R^3$。当前模型不施加$\mathbf p_C=\overline{\mathbf p}_i$，也不施加$\|\mathbf p_C-\overline{\mathbf p}_i\|\le2\,\mathrm m$。相机位置$\mathbf p_C(t)$必须由实际轨迹和姿态确定，其允许范围由物理净距、距离、入射角及曝光成像条件共同限制。
+
+上述服务下界的来源是参考路线的非平移开销分摊：
+\begin{equation}
+ d_i^{\min}
+ =\frac{300-119.90026666666664}{9}
+ =20.011081481481483\,\mathrm s,
+ \qquad i\in\mathcal I_g.
+ \label{s0602:service_value}
+\end{equation}
+式中$300\,\mathrm s$是旧单塔参考路线总时长，$119.90026666666664\,\mathrm s$是该路线在参考启停运动下的平移时长。两者之差分给九项服务，并不是九次快门、悬停或对焦过程的逐项测量。联合模型将这个值保留为固定下界；路径改变后，不重新调整$d_i^{\min}$以使新路线仍等于$300\,\mathrm s$。
+
+\subsection{坐标版本与五点目标面的展开}
+
+目标几何的数值代入必须区分原始模板、历史局部试算和当前修正三个版本。它们均以同一地理场景为基础，但目标参考点并不相同。表\ref{s0602:historical_centers}列出前两个版本的水平坐标；各角色的高程仍按表\ref{s0602:current_centers}取值。当前坐标只使用表\ref{s0602:current_centers}，不从历史版本混选分量。
+
+\begin{table}[htbp]
+\centering\small
+\caption{历史目标参考点的水平坐标对照；原始模板与旧局部试算输入分别保留}
+\label{s0602:historical_centers}
+\begin{tabular}{@{}llrr@{}}
+\toprule
+版本 & 适用角色 & $E/\mathrm m$ & $N/\mathrm m$\\
+\midrule
+原始模板 & P01 & 338579.952808 & 5652903.893549\\
+旧局部试算 & P01 & 338578.984271 & 5652901.735967\\
+原始模板 & P02--P05 & 338575.503719 & 5652905.890743\\
+旧局部试算 & P02--P05 & 338575.070378 & 5652906.085270\\
+原始模板 & P08--P11 & 338584.401897 & 5652901.896355\\
+旧局部试算 & P08--P11 & 338584.785062 & 5652901.724353\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+当前P01相对原始模板沿法向平移约$2.01\,\mathrm m$，用于塔柱支撑面适配；左侧四角色沿各自法向平移$0.07\,\mathrm m$，右侧四角色平移$0.06\,\mathrm m$，用于处理模板面片与导线管及构造净距的冲突。后两组修正分别对应$0.01\,\mathrm m$格距上的7步和6步。目标中心、五个样点及名义视点按相同位移更新，所保留的平移一致性残差小于$4.6\times10^{-10}\,\mathrm m$。这是数据平移的数值一致性，不是实测几何精度，也不单独证明从某一视点可以无遮挡拍摄。
+
+为明确九个目标面的方向，将全景、左侧和右侧分别记为方向类别$O,L,R$。以下向量无量纲，显示值为原始方向数据的舍入：
+\begin{align}
+ \mathbf n_O&=(-0.4095295985,-0.9122968311,0)^T,
+ &\mathbf b_O&=(0.9122968311,-0.4095295985,0)^T,\\
+ \mathbf n_L&=(-0.9122968310,0.4095295985,0)^T,
+ &\mathbf b_L&=(-0.4095295985,-0.9122968310,0)^T,\\
+ \mathbf n_R&=-\mathbf n_L,
+ &\mathbf b_R&=-\mathbf b_L.
+ \label{s0602:surface_directions}
+\end{align}
+对P01取类别$O$，对P02--P05取$L$，对P08--P11取$R$；第二个切向量统一为$\mathbf e_3=(0,0,1)^T$。于是$B_i=[\mathbf b_i\ \mathbf e_3]\in\mathbb R^{3\times2}$满足$B_i^TB_i=I_2$和$B_i^T\mathbf n_i=0$。每个目标区域为
+\begin{equation}
+ \mathcal S_i=
+ \left\{\mathbf c_i+s\mathbf b_i+r\mathbf e_3:
+ -0.25\,\mathrm m\le s,r\le0.25\,\mathrm m\right\}.
+ \label{s0602:numeric_patch}
+\end{equation}
+其中$s,r$是面内米制坐标，$\mathcal S_i$是三维中的平面正方形，不是样点索引集合。五点验收使用$\mathcal J_i=\{1,2,3,4,5\}$，其坐标完整定义为
+\begin{align}
+ \mathbf q_{i1}&=\mathbf c_i,\\
+ \mathbf q_{i2}&=\mathbf c_i-0.25\mathbf b_i-0.25\mathbf e_3,&
+ \mathbf q_{i3}&=\mathbf c_i-0.25\mathbf b_i+0.25\mathbf e_3,\\
+ \mathbf q_{i4}&=\mathbf c_i+0.25\mathbf b_i-0.25\mathbf e_3,&
+ \mathbf q_{i5}&=\mathbf c_i+0.25\mathbf b_i+0.25\mathbf e_3.
+ \label{s0602:five_samples}
+\end{align}
+式中数值$0.25$按米计。由表\ref{s0602:current_centers}和式\eqref{s0602:surface_directions}，九个目标共45个样点均被确定；不需要再为不同高度引入新的表面朝向。
+
+以P01为例，当前参考点精确取值为
+\begin{equation}
+ \mathbf c_{P01}=
+ \begin{pmatrix}
+ 338579.12965359824\\
+ 5652902.059832593\\
+ 116.2138
+ \end{pmatrix}\mathrm m.
+ \label{s0602:p01_center}
+\end{equation}
+将其代入式\eqref{s0602:five_samples}，按样点1至5逐行排列，可得
+\begin{equation}
+ \begin{pmatrix}
+ \mathbf q_{P01,1}^T\\
+ \mathbf q_{P01,2}^T\\
+ \mathbf q_{P01,3}^T\\
+ \mathbf q_{P01,4}^T\\
+ \mathbf q_{P01,5}^T
+ \end{pmatrix}
+ \simeq
+ \begin{pmatrix}
+ 338579.129654&5652902.059833&116.2138\\
+ 338578.901579&5652902.162215&115.9638\\
+ 338578.901579&5652902.162215&116.4638\\
+ 338579.357728&5652901.957450&115.9638\\
+ 338579.357728&5652901.957450&116.4638
+ \end{pmatrix}\mathrm m.
+ \label{s0602:p01_samples}
+\end{equation}
+这五行是中心和四个角点，不能将四角误写为两个切向轴上的四个中点。当前数值求解还需按式\eqref{s0601:coordinate_conversion}减去固定三维原点$\mathbf o$；若相机位置也减去同一原点，则$\mathbf q_{ij}-\mathbf p_C$不变，下面的投影运算可以等价地在世界坐标或局部坐标中进行。
+
+\subsection{服务区间与曝光成像条件的具体代入}
+
+对已启用的任务$i$，记服务开始时刻为$t_i\ge0$、服务时长为$d_i>0$，两者均以秒计，服务区间记为$\mathcal T_i^{srv}=[t_i,t_i+d_i]$。固定曝光为$0.001\,\mathrm s$，按式\eqref{s0503:exposure_interval}，曝光开始时刻固定为$\tau_i=t_i+1\,\mathrm s$，则
+\begin{align}
+ d_i&\ge20.011081481481483, &t_i+d_i&\le28800,\\
+ \mathcal C_i&=[\tau_i,\tau_i+0.001],
+ &\mathcal C_i&\subseteq\mathcal T_i^{srv}.
+ \label{s0602:service_exposure_times}
+\end{align}
+稳定、对焦和读出的最小时长$1\,\mathrm s$仍按第\ref{sec:05_03}节的服务时序约束安排；它和曝光均包含在相应服务安排中，不能把$d_i^{\min}$解释为一次曝光持续20秒。服务区间还须落在允许的天气时段内，当前背景的日间无雨支持区间见式\eqref{s0601:weather_window_difference}。
+
+相机位置为$\mathbf p_C(t)\in\mathbb R^3$，单位为米；相机到世界坐标的旋转为$R_C(t)\in SO(3)$，无量纲。整个服务区间内，对$j\in\mathcal J_i$要求
+\begin{align}
+ 8\,\mathrm m
+ &\le\|\mathbf q_{ij}-\mathbf p_C(t)\|
+ \le25\,\mathrm m,\\
+ \mathbf n_i^T\bigl(\mathbf p_C(t)-\mathbf q_{ij}\bigr)
+ &\ge\frac{\sqrt3}{2}\,
+ \|\mathbf p_C(t)-\mathbf q_{ij}\|,
+ \qquad t\in\mathcal T_i^{srv}.
+ \label{s0602:service_geometry}
+\end{align}
+第一行同时限制最近工作距离和最远观测距离；第二行规定从表面外侧观察，视线相对外法向的夹角不超过$30^\circ$。这组约束与机体物理净距共同作用于整个服务过程，不能仅在快门开启时检查。
+
+曝光期间还需将每个样点变换到相机坐标系。定义
+\begin{equation}
+ \mathbf Q_{ij}(t)=R_C(t)^T\bigl(\mathbf q_{ij}-\mathbf p_C(t)\bigr)
+ =(Q_x,Q_y,Q_z)^T,
+ \qquad j\in\mathcal J_i,\\ t\in\mathcal C_i.
+ \label{s0602:camera_coordinates}
+\end{equation}
+三个分量均以米计，$Q_z$沿相机光轴。镜头焦距$f(t)\in[6.83,119.94]\,\mathrm{mm}$对应的像素焦距为
+\begin{equation}
+ F(t)=4932.428602343466\,
+ \frac{f(t)}{6.83\,\mathrm{mm}}\,\mathrm{px}.
+ \label{s0602:pixel_focal}
+\end{equation}
+该理想内参由H20公开图像尺寸和广角端视场角构造\cite{DJIH20}。针孔投影及其数值边界为
+\begin{align}
+ \pi_x&=2592+F\frac{Q_x}{Q_z},&
+ \pi_y&=1944+F\frac{Q_y}{Q_z},\\
+ Q_z&>0,&
+ \left|F\frac{Q_x}{Q_z}\right|&\le2560,\\
+ &&\left|F\frac{Q_y}{Q_z}\right|&\le1912.
+ \label{s0602:pixel_bounds}
+\end{align}
+这里像素坐标及边界均以$\mathrm{px}$计。$2560=2592-32$、$1912=1944-32$是扣除32像素边界裕度后的半幅宽、高，等价于$32\le\pi_x\le5152$和$32\le\pi_y\le3856$。正深度约束不可省略，否则位于相机后方的点也可能满足形式上的像素比值边界。
+
+分辨率条件需要检查面内两个方向，而不只检查目标中心的距离。将投影对三维相机坐标的导数写为
+\begin{equation}
+ D\pi(\mathbf Q)=
+ \begin{pmatrix}
+ F/Q_z&0&-FQ_x/Q_z^2\\
+ 0&F/Q_z&-FQ_y/Q_z^2
+ \end{pmatrix},
+ \qquad
+ J_{ij}=D\pi(\mathbf Q_{ij})R_C^TB_i.
+ \label{s0602:numeric_jacobian}
+\end{equation}
+$J_{ij}\in\mathbb R^{2\times2}$的单位为$\mathrm{px/m}$，其作用是将目标面内的小位移映射为像面位移。最大GSD为$0.005\,\mathrm{m/px}$，因此对全部$j\in\mathcal J_i$、$t\in\mathcal C_i$要求
+\begin{equation}
+ J_{ij}^TJ_{ij}\succeq
+ 40000\,(\mathrm{px/m})^2I_2.
+ \label{s0602:resolution_matrix}
+\end{equation}
+若将$J_{ij}^TJ_{ij}$的数值矩阵记为$\begin{pmatrix}a&b\\b&c\end{pmatrix}$，三个元素均按$(\mathrm{px/m})^2$计，则式\eqref{s0602:resolution_matrix}可完整写成
+\begin{equation}
+ a\ge40000,\qquad c\ge40000,\qquad
+ (a-40000)(c-40000)-b^2\ge0.
+ \label{s0602:resolution_scalar}
+\end{equation}
+最后一个条件限制两个方向之间的相关性；只检查两个对角元素不足以保证最小奇异值达到$200\,\mathrm{px/m}$。
+
+固定曝光还要求
+\begin{equation}
+ 0.001\,\mathrm s\,
+ \sup_{t\in\mathcal C_i}
+ \left\|\frac{d}{dt}\pi\bigl(\mathbf Q_{ij}(t),f(t)\bigr)\right\|
+ \le1\,\mathrm{px},
+ \qquad j\in\mathcal J_i.
+ \label{s0602:numeric_blur}
+\end{equation}
+等价的像面速度上界为$1000\,\mathrm{px/s}$。导数包含相机位置、机体转动、云台转动及变焦变化；因此把飞机地速设为零并不能自动消除拖影。
+
+视线检查对曝光区间中的全部时刻和每个样点成立：
+\begin{equation}
+ (1-\lambda)\mathbf p_C(t)+\lambda\mathbf q_{ij}
+ \notin\operatorname{int}\mathcal O^{opaque},
+ \quad
+ \lambda\in[0,1),\quad t\in\mathcal C_i,\quad j\in\mathcal J_i.
+ \label{s0602:numeric_visibility}
+\end{equation}
+$\mathcal O^{opaque}$包含地形、塔柱、导线和车辆实体，其中保留目标所属杆塔。排除$\lambda=1$只允许视线终点落在目标表面，不能据此把整座目标塔从遮挡集合中删除。像素边界、正深度、分辨率、拖影和视线条件均作用于曝光子区间；将它们全部扩展到整个服务区间会改变当前模型的可行域。
+
+可以用P01的名义视点检验上述代入的量纲和数量级。其相对目标中心的位置满足
+\begin{equation}
+ \overline{\mathbf p}_{P01}-\mathbf c_{P01}
+ \simeq15\,\mathrm m\,\mathbf n_O.
+ \label{s0602:nominal_distance}
+\end{equation}
+仅为计算理想静态投影，取相机方向$R_C=[\mathbf b_O\ {-\mathbf e_3}\ {-\mathbf n_O}]$，并取广角焦距$6.83\,\mathrm{mm}$。该矩阵的三列为正交单位向量且满足右手关系。五点在相机坐标中的数值依次为
+\begin{equation}
+ \begin{pmatrix}
+ \mathbf Q_1^T\\\mathbf Q_2^T\\\mathbf Q_3^T\\\mathbf Q_4^T\\\mathbf Q_5^T
+ \end{pmatrix}
+ \simeq
+ \begin{pmatrix}
+ 0&0&15\\
+ -0.25&0.25&15\\
+ -0.25&-0.25&15\\
+ 0.25&0.25&15\\
+ 0.25&-0.25&15
+ \end{pmatrix}\mathrm m.
+ \label{s0602:nominal_camera_points}
+\end{equation}
+中心投影为$(2592,1944)$，四角相对主点的水平、竖直偏移绝对值均为
+\begin{equation}
+ \frac{4932.428602343466\times0.25}{15}
+ \simeq82.207143\,\mathrm{px},
+ \label{s0602:nominal_pixel_offset}
+\end{equation}
+小于式\eqref{s0602:pixel_bounds}中的两个半幅边界。中心距离为$15\,\mathrm m$，四角距离为$\sqrt{15^2+0.25^2+0.25^2}\,\mathrm m$，均位于8至25米之间；四角入射余弦为$15/\sqrt{15^2+0.25^2+0.25^2}$，大于$\sqrt3/2$。此时各点的切向投影导数为
+\begin{equation}
+ J_{ij}\simeq
+ \begin{pmatrix}
+ 4932.428602343466/15&0\\
+ 0&-4932.428602343466/15
+ \end{pmatrix}\mathrm{px/m},
+ \label{s0602:nominal_scale}
+\end{equation}
+其最小奇异值约为$328.828573\,\mathrm{px/m}$，满足分辨率门限。若该相机位置、方向和焦距在曝光中保持不变，则理想像面速度为零。这些计算只验证指定静态姿态下的局部光学条件；它们没有验证到达该位置的动力学轨迹、视线遮挡、机体避碰或天气窗口，不能据此宣称获得了一个完整可行航次。
+
+\subsection{旋翼功率、电热状态与整对电池的代入}
+
+当前参数实例按第\ref{sec:04_04}节的17状态刚体方程、式\eqref{s0408:numeric_ecm}的电热方程，以及第\ref{sec:05_05}节的身份与通道约束组成。每车一个成对充电通道，供电上限1000 W；八对电池分别具有SOC、极化和温度状态，不能合并为可任意流转的储能池。
+
+取所有旋翼400 rad/s、实际推力17.1675 N，代入得到736.7 W。固定这组悬停状态且无额外负载时，一项20.011081481481483 s服务的端口积分为
+\begin{equation}
+ 736.7\times20.011081481481483/3600=4.095045480\ \mathrm{Wh}.
+\end{equation}
+该代数值只对应所列静态条件，具体轨迹仍须积分实际功率。电池取初态$(1,0,25)$，则任一时刻$I$按式\eqref{s0408:power_branch}求得；SOC和端电压还受$\zeta\ge0.2$、$36\le U\le52.8$约束。沿同一回收轨迹继续积分，才能检验返航电压、温度和SOC。
+
+双电池调度的完整三变量模型及其SCIP结果已在式\eqref{s0505:numeric_schedule}给出；它验证充电顺序中的温度耦合。下面保留的九任务记录属于早期受限模型，用于说明历史计算对象，不能作为当前完整物理模型的新求解结果。
+
+\subsection{历史九任务受限实例及其解释边界}
+
+历史局部输入另保留了同一座塔的九任务试算，其班次起点为2025年7月1日08:00 UTC，时长为$3600\,\mathrm s$，使用旧局部目标坐标、名义视点周围$2\,\mathrm m$球域，以及原始驻地起降锚点。当时的车辆移动路线部分尚未纳入该局部输入。这些设置共同定义一个历史受限问题，不能把其中的日期、球域或驻地锚点直接填入当前$28800\,\mathrm s$区域问题。
+
+历史输入对每个载车分别保存任务之间及起降锚点之间的预制转移段。九任务的有向任务间连接有$9\times8$条，起飞锚点到任务有9条，任务到回收锚点有9条，因此两辆车合计
+\begin{equation}
+ 2\bigl(9\times8+9+9\bigr)=180
+ \label{s0602:historical_leg_count}
+\end{equation}
+条记录。180表示该历史连接表的条目数，不表示180个实际航次，更不是当前连续区域模型全部可能轨迹的数量。每条记录包含端点及中间点、分段持续时间、总时间、积分能量和碰撞裕量字段；完整记录保存在随书历史电子输入中。
+
+其中，历史P01连接端点为$(338575.66214699054,5652889.466327971,116.08210841535646)^T\,\mathrm m$，历史P02连接端点为$(338567.33726222144,5652909.684506759,114.56045664980932)^T\,\mathrm m$。这些是历史预制连接使用的点，不是表\ref{s0602:current_centers}的目标中心，也不是表\ref{s0602:initial_viewpoints}的当前名义视点。历史P01至P02连接先升至源高程$137\,\mathrm m$，再水平转移，最后下降，其三段持续时间为
+\begin{align}
+ \Delta_1&=45.75788784140775\,\mathrm s,\\
+ \Delta_2&=12.817016221619431\,\mathrm s,\\
+ \Delta_3&=49.0865010785421\,\mathrm s,\\
+ \Delta_1+\Delta_2+\Delta_3
+ &=107.66140514156928\,\mathrm s.
+ \label{s0602:historical_transfer_time}
+\end{align}
+这些时长属于七次静止到静止轨迹的初始化记录，不是从当前位置重新求解的最短转移时间。
+
+\begin{table}[htbp]
+\centering\small
+\caption{第一辆车对应的历史局部转移记录摘录；缺失裕量保留为未记录}
+\label{s0602:historical_leg_examples}
+\begin{tabular}{@{}lrrl@{}}
+\toprule
+有向连接 & 总时长/$\mathrm s$ & 能量/$\mathrm{Wh}$ & 碰撞裕量/$\mathrm m$\\
+\midrule
+P01$\to$P02 & 107.661405 & 24.286013 & $-2.043520908\times10^{-11}$\\
+P02$\to$P01 & 107.661405 & 24.399663 & $-2.043520908\times10^{-11}$\\
+P02$\to$P03 & 6.854350 & 1.506807 & $3.424679908$\\
+P03$\to$P04 & 7.376799 & 1.624177 & 未记录\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+前两条连接时长相同而能量不同，说明在该功率及天气计算下不能用一个无向距离权重替代有向转移能量。表中极小负碰撞裕量保留原符号；它接近零，但仅凭这个字段不能给出严格连续可行性结论。未记录的裕量也不能解释为正裕量或检查通过。历史P01服务能量记录为$4.404503898553647\,\mathrm{Wh}$，其计算条件与本节736.7 W旋翼功率的静态代入不同，不能以两者不相等为由改写历史记录。
+
+当前目标输入、原始模板和历史局部输入在电子材料中分别保留，包含本节显示舍入前的坐标、方向、五点样本及服务参数；历史文件另保留全部180条连接。区域其余输入采用第\ref{sec:06_01}节的设备和单位定义，并在电子场景数据中逐项保存。这样，纸面展示可以聚焦于可复算的具体行，而不会把未展示的连接或区域对象从模型中删除。
+
+本节的数值代入确定了目标面如何进入成像约束、服务持续时间如何进入时序、飞行功率如何进入物理电池账目。指定姿态下的局部成像满足条件、历史连接具有数值记录和完整区域获得可行解，是三个不同层次的结论。当前区域已有有限转录构建及运行记录，但尚无已验收的新完整覆盖方案；本节不据上述代入给出新的航次最优值或区域最优值。

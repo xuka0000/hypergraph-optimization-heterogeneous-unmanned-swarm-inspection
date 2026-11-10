@@ -1,0 +1,42 @@
+{
+  "observed_at": "2026-11-10T04:49:14.214586+00:00",
+  "scope": "Numerical compatibility of retained affine terrain pieces only; not terrain measurement validation, flight validation, or an optimization experiment",
+  "run_id": "2bf320f8bbe886f8_24660",
+  "source_code_sha256": "0986a7e447fd55188147586e7da47dc7824a6bb31f7607c78ebef25ce1d3c7d2",
+  "scene_sha256": "d0c668d7cfeea2e7973e6ab387be38e499aea4e935a6530dfaf8900438b8520d",
+  "terrain_source_sha256": "f554800062a73a7a522f25f1b8609389a18e19f77d46a131212e2ccc0e2901f8",
+  "projected_samples_sha256": "e942fe37bbdd79d6eeb11b306ba3e04d0829a5235851c5ebcf764c8d07f5521a",
+  "triangulation_sha256": "cb355b7659c712465959233e7a1abcff284876d9310a3aee07dcf20c8e430d77",
+  "triangles": 3742,
+  "intersecting_pairs": 23440,
+  "intersection_vertices_checked": 28972,
+  "positive_area_overlap_pairs": 0,
+  "maximum_intersection_area_m2": 0.0,
+  "maximum_height_discrepancy_m": 2.842170943040401e-14,
+  "worst_height_pair": {
+    "triangles": [
+      730,
+      740
+    ],
+    "local_xy": [
+      -1881.1593674771138,
+      -3056.5069016907364
+    ],
+    "height_values": [
+      81.0,
+      80.99999999999997
+    ]
+  },
+  "union_area_m2": 102125000.0,
+  "convex_hull_area_m2": 102125000.0,
+  "uncovered_hull_area_m2": 0.0,
+  "outside_hull_area_m2": 0.0,
+  "height_tolerance_m": 1e-08,
+  "area_tolerance_m2": 1e-10,
+  "numerical_compatibility_passed": true,
+  "exact_arithmetic_proof": false,
+  "geos_version": "3.13.1",
+  "elapsed_s": 5.85999999998603,
+  "new_optimization_runs": 0,
+  "original_workspace_writes": 0
+}

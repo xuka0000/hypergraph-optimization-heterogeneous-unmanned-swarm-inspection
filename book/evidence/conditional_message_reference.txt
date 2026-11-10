@@ -1,0 +1,487 @@
+PDF PAGE 2
+The message-passing version of ADMM that we de-
+velop here gives an intuitive explanation of how the
+algorithm functions—messages are sent back and forth
+between variables and cost functions about the best
+values for the variables, until consensus is reached. It
+also raises a natural question—how should those mes-
+sages be weighted?
+We introduce here an extension of ADMM, that is well-
+suited to a variety of non-convex problems, whereby
+the messages can have three diﬀerent weights. A “cer-
+tain” weight means that a cost function or variable
+is certain about the value of a variable and all other
+opinions should defer to that value; a “no opinion”
+weight means that the function or variable has no opin-
+ion about the value, while a “standard weight” means
+that the message is weighted equally with all other
+standard-weight messages.
+The message-passing version of the standard ADMM
+algorithm will use only standard-weight messages; we
+will show that adding “certain” and “no opinion”
+weights gives a natural way to improve the algorithm
+for non-convex problems. In particular, we show that
+for solving problems like Sudoku, “certain” weights
+can let the algorithm implement constraint propaga-
+tion (Tack, 2009), while for problems like packing cir-
+cles into a square, “no opinion” weights improve con-
+vergence by letting the algorithm ignore “slack” con-
+straints and focus on active ones.
+Although our three-weight version of the ADMM al-
+gorithm only constitutes a relatively small change to
+the standard ADMM algorithm, it gives enormous im-
+provements in the rate at which the algorithm ﬁnds
+solutions for a variety of diﬀerent problems. In this pa-
+per we have focused on the Soduku and circle packing
+problems for purposes of illustration, but we empha-
+size that the three-weight algorithm can be applied to
+a wide range of other convex or non-convex optimiza-
+tion problems.
+2
+MESSAGE-PASSING ADMM
+We begin by deriving a message-passing version of the
+ADMM algorithm, and show that it can be applied to
+a completely general optimization problem. Suppose
+that we are given the general optimization problem
+of ﬁnding a conﬁguration of some variables that min-
+imizes some objective function, subject to some con-
+straints. The variables may be continuous or discrete,
+but we will represent all variables as continuous, which
+we can do by adding constraints that enforce the dis-
+crete nature of some of the variables. For example, if
+we have a variable that can take on Q discrete labels,
+we could represent it with Q binary indicator variables
+representing whether the original variable is in one of
+the Q states, and each binary variable is represented
+as a continuous variable but subject to the constraint
+that exactly one of the Q indicator variables is equal
+to 1 while the rest are equal to 0.
+We can collect all of our N continuous variables, and
+represent them as a vector r ∈RN, and our problem
+becomes one of minimizing an objective function E(r),
+subject to some constraints on r. We can consider all
+the constraints to be part of the objective function by
+introducing a cost function Ea(r) for each constraint,
+such that Ea(r) = 0 if the constraint is satisﬁed, and
+Ea(r) = ∞if the constraint is not satisﬁed. The origi-
+nal objective function E(r) may also be decomposable
+into a collection of local cost functions. For example,
+for the problem of minimizing an Ising Model objec-
+tive function, there would be a collection of local cost
+functions representing the “soft” pairwise interactions
+and local ﬁelds, and there would be other cost func-
+tions representing the the “hard” constraints that each
+Ising variable can only take on two possible values.
+To summarize, then, we focus on the general prob-
+lem of minimizing an objective function written as
+PM
+a=1 Ea(r) where there are M cost functions that can
+be either “soft” or “hard”, and r ∈Rn. Such a prob-
+lem can be given a standard “factor graph” (Kschis-
+chang et al., 2001; Loeliger, 2004) representation like
+that in Figure 1(a).
+To derive our message-passing algorithm, we will ma-
+nipulate the problem into a series of equivalent forms,
+before actually minimizing the objective.
+The ﬁrst
+manipulation is to convert our problem over the vari-
+ables rj into an equivalent problem that depends on
+variables xij that sit on the edges of a “normalized”
+Forney-style factor graph (Forney Jr, 2001), as in Fig-
+ure 1(b). The variables in the standard factor graph
+are replaced with equality constraints, and each of the
+edge variables is a copy of the corresponding variable
+that was on its right. The point is that edge variables
+attached to the same equality constraint must ulti-
+mately equal each other, but they can temporarily be
+unequal while they separately try to satisfy diﬀerent
+cost functions on the left. We will use the notation x
+to represent a vector consisting of the entire collection
+of xij edge variables; note that x normally has higher
+dimensionality than r.
+Because of the bipartite structure of a Forney factor
+graph, we can split our cost functions into two groups:
+those on the left that represent our original soft cost
+functions and hard constraints, and those on the right
+that represent equality constraints. We now imagine
+that each xij edge variable sits on the left side of the
+edge, and make a copy of it called zij that sits on the
+right side of the edge, and formally split our objective
+
+PDF PAGE 3
+r1
+r2
+r3
+r4
+r5
+r6
+E1
+E2
+E3
+E4
+x11
+x12
+x21
+x23
+x32
+x33
+x34
+x35
+x36
+x46
+x45
+r1
+r2
+r3
+r4
+r5
+r6
+E1
+E2
+E3
+E4
+(a)
+(b)
+=
+=
+=
+=
+=
+=
+Figure 1: Factor graph representations of an optimiza-
+tion problem. (a) The blue circles represent the vari-
+ables, while the red squares represent hard or soft cost
+functions. If a line connects a square to circle, that
+means that the corresponding cost function depends
+on the corresponding variable.
+(b) A Forney factor
+graph representing the same problem.
+Each of the
+original rj variable nodes is converted into an equality
+constraint, and the rj variable is replaced by copies
+denoted xij that sit on the edges.
+function E(x) into a sum of the left cost functions f(x)
+and the right cost functions g(z), where z is a vector
+made from all the zij variables (see Figure 2).
+The constraint that each edge variable xij equals its
+copy zij will be enforced by a Lagrange multiplier
+yij, in a Lagrangian that we can write as L(x, y, z) =
+f(x) + g(z) + y · (x −z). It will turn out to be useful
+to add another term (ρ/2)(x −z)2 to “augment” the
+Lagrangian. Since x = z at the optimum, this term is
+zero at the optimum and non-negative elsewhere, so it
+clearly does not change the optimum. The parameter
+ρ can be thought of as a scalar, but later we will gen-
+eralize it to be a vector with a diﬀerent ρij for each
+edge. In summary, as illustrated in Figure 2, our origi-
+nal problem of minimizing E(r) has become equivalent
+to ﬁnding the minimum of the augmented Lagrangian
+L(x, y, z) = f(x) + g(z) + y · (x −z) + ρ
+2(x −z)2. (1)
+To make progress in the derivation of our algorithm,
+we now make the assumption that each of the local cost
+functions fa(x) on the left side of the factor graph is
+convex. We emphasize again that our ﬁnal algorithm
+will be well-deﬁned even when this assumption is vio-
+lated. All the equality cost functions on the right are
+clearly convex, and the augmenting quadratic terms
+x
+z
+f(x)
+g(z)
+y
+L(x, y, z) = f(x) + g(z) + y · (x −z) + (⇢/2)(x −z)2
+Figure 2: Solving constrained optimization problems
+is equivalent to a minimization problem that naturally
+splits into three pieces: (1) minimizing the original soft
+and hard cost functions f(x) on the left, (2) minimiz-
+ing the equality cost functions g(z) on the right, and
+(3) ensuring that the x = z with the Lagrange multi-
+pliers y.
+are convex, so our overall function is convex as well
+(Boyd and Vandenberghe, 2004). That means that we
+can ﬁnd the minimimum of our Lagrangian by maxi-
+mizing the dual function
+h(y) = L(x∗, y, z∗)
+(2)
+where (x∗, z∗) are the values of x and z that minimize
+L for a particular choice of y:
+(x∗, z∗) = argmin
+x,z
+L(x, y, z)
+(3)
+We use a gradient ascent algorithm to maximize h(y).
+Thus, given values of yt at some iteration t, we itera-
+tively compute (x∗, z∗) = argmin
+x,z
+L(x, yt, z), and then
+move in the direction of the gradient of h(y) according
+to
+yt+1 = yt + α∂h
+∂y = yt + α(x∗−z∗)
+(4)
+where α is a step-size parameter.
+We take advantage of the bipartite structure of our
+factor graph to decouple the minimizations of x and
+z. Introducing the scaled Lagrange multiplier u = y/ρ
+(see Boyd et al., 2011, sec. 3.1.1) and the “messages”
+mt = xt +ut and nt = zt −ut, we obtain the following
+iterative equations which deﬁne our message-passing
+version of ADMM:
+xt = argmin
+x
+
+f(x) + (ρ/2)(x −nt)2
+(5)
+zt+1 = argmin
+z
+
+g(z) + (ρ/2)(z −mt)2
+(6)
+
+PDF PAGE 4
+ut+1 = ut + α
+ρ (xt −zt+1)
+(7)
+The algorithm is initialized by choosing u0 = 0, and
+starting with some initial z0. Then equation (5) de-
+termines x0, equation (6) determines z1, equation (7)
+determines u1, we go back to equation (5) for x1, and
+so on.
+Intuitively, the z and x variables are analogous to the
+single-node and multi-node “beliefs” in belief propa-
+gation, while the messages m and n are messages from
+the nodes on the left to those on the right, and vice-
+versa, respectively, much as in the “two-way” version
+of the standard belief propagation algorithm (Yedidia
+et al., 2005).
+In each iteration, the algorithm com-
+putes beliefs on the left based on the messages com-
+ing from the right, then beliefs on the right based on
+the messages from the left, and then tries to equalize
+the beliefs on the left and right using the u variables.
+Notice that the u variables keep a running total of
+the diﬀerences between the beliefs on the left and the
+right, and are much like control variables tracking a
+time-integrated diﬀerence from a target value.
+It is very important to realize that all the updates
+in these equations are local computations and can be
+done in parallel. Thus, if function cost a is connected
+to a small set of edges with variables {x}a, then it will
+only need to look at the messages {n}t
+a on those same
+edges to perform its local computation
+{x}t+1
+a
+= argmin
+{x}a
+
+fa({x}a) + (ρ/2)({x}a −{n}t
+a)2
+.
+(8)
+These local computations are usually easy to imple-
+ment with small “minimizing” subroutines specialized
+to the particular fa({x}a). Such a subroutine balances
+the desire to minimize the local fa({x}a) with the
+desire to agree with the {n}t
+a messages coming from
+other nodes. The ρ parameter lets us vary the relative
+strength of these competing inﬂuences.
+The minimizations in equation (6) are similarly all lo-
+cal computations that can be done in parallel. In fact,
+because the ga({z}a) functions on the right all rep-
+resent hard equality constraints, these minimizations
+will reduce to a particularly simple form (the output
+z’s will be given as the mean of the incoming m mes-
+sages), as we shall describe in the next section.
+When all the fa({x}a) functions are convex, our over-
+all problem is convex, and the ADMM algorithm prov-
+ably converges to the correct global minimum (Boyd
+et al., 2011), although it is important to note that
+no guarantees are made about the speed of conver-
+gence.1 However, as is easy to see, the algorithm is
+1Our derivation starting with an arbitrary optimization
+in fact perfectly well deﬁned even for problems where
+the fa({x}a) functions are not convex (so long as they
+are bounded below). In the next section, we begin our
+investigation of how the algorithm might be used for
+non-convex problems, beginning with its relation to
+the Divide and Concur algorithm.
+3
+DIVIDE AND CONCUR
+The Divide and Concur (DC) algorithm (Gravel and
+Elser, 2008) for constraint satisfaction problems his-
+torically traces its roots back to the Douglas-Rachford
+algorithm (Douglas and Rachford, 1956), later ex-
+tended into a projection operator splitting method
+for solving convex problems by Lions and Mercier
+(1979). The surprisingly successful application of such
+a “diﬀerence-map” projection algorithm to the non-
+convex phase retrieval problem by Fienup (1982) led
+to the realization that these algorithms could also be
+useful for non-convex problems (Bauschke et al., 2002;
+Elser et al., 2007).
+Our object in this section is to make clear that the
+DC algorithm is in fact a special case of the ADMM
+algorithm, for those problems where the fa({x}a) all
+represent hard constraints. In that case, we can write
+the legal conﬁgurations of {x}a as a constraint set D,
+and require that fa({x}a) = 0 for {x}a ∈D, and
+fa({x}a) = ∞for {x}a /∈D. Then each local min-
+imization to compute {x}t+1
+a
+as given by equation (8)
+would reduce to a projection of the incoming messages
+{n}a onto the constraint set:
+{x}t+1
+a
+= PD({n}t
+a).
+(9)
+This is easily understood if one realizes that the
+fa({x}a) term in equation (8) enforces that {x}a
+must be in the constraint set, while minimizing the
+(ρ/2)({x}a −{n}t
+a)2 term enforces that the computed
+{x}a values are as close as possible (using a Euclidean
+metric) to the messages {n}t
+a, and that is the deﬁnition
+of a projection.
+Similarly the cost functions ga({z}) represent hard
+equality constraints, so we can write the {z}t+1
+a
+up-
+dates as projections of the {m}t
+a messages onto the
+equality constraint sets C:
+{z}t+1
+a
+= PC({m}t
+a).
+(10)
+Assuming that all the ρ weights are equal (we will
+go beyond this assumption in the next section), this
+problem and using Forney factor graphs guarantees that
+the ga({z}a) functions on the right are all equality con-
+straints, which are convex.
+More generally, ADMM can
+be considered to be an algorithm which operates on any
+functions f(x) and g(z), and gives exact answers so long
+as f(x) and g(z) are both convex, as in (Boyd et al., 2011).
+
+PDF PAGE 5
+can be further simpliﬁed: the {z}t+1
+a
+values on the
+edges connected to an equality constraint node should
+all equal the mean of the messages incoming to that
+equality node.
+Now if we choose the step-size parameter α to equal
+the weight ρ, we can further simplify, and show that
+instead of requiring updates of all the variables xt, zt,
+ut, mt, and nt, our algorithm actually reduces to an
+iteration of a single state variable: the messages mt.
+Some tedious but straightforward algebra manipulat-
+ing equations (5), (6), and (7), along with the deﬁni-
+tions of mt and nt, lets us eliminate the xt, zt, and ut
+variables and reduce to the message-update equations:
+nt+1 = 2PC(mt) −mt
+(11)
+and
+mt+1 = mt + PD(nt+1) −PC(mt)
+(12)
+or equivalently leave us with the single update equa-
+tion for the mt messages:
+mt+1 = PD(2PC(mt) −mt) −(Pc(mt) −mt)
+(13)
+Equation (13) is also known as the “diﬀerence-map”
+iteration used by the Divide and Concur algorithm.2
+4
+THREE-WEIGHT ALGORITHM
+Notice that although the DC algorithm is a special
+case of the ADMM algorithm, the weights ρ in ADMM
+have disappeared in the DC update equations. These
+weights have a very intuitive meaning in our message-
+passing ADMM algorithm—they reﬂect how strongly
+the messages should be adhered to in comparison to
+the local function costs; i.e. the “reliability” or “cer-
+tainty” of a message. It is thus natural to consider
+a generalized version of the message-passing ADMM
+algorithm where each edge (ij) connecting a function
+cost i to an equality node j is given its own value of
+ρij reﬂecting the certainty of messages on that edge.
+In fact, it is more natural to consider an even greater
+generalization, with diﬀerent weights for messages go-
+ing to the left and those going to the right, and where
+the weights can change with each iteration. We denote
+the vector of weights going to the left at time t as ←−ρ t,
+and similarly the vector of weights going to the right
+are denoted −→ρ t. When we want to denote a particular
+weight on an edge (ij), we will denote it ←−ρ t
+ij or −→ρ t
+ij.
+We need to be careful that for a convex problem, we
+ensure that leftward and rightward weights eventually
+equal each other and are constant, because otherwise
+2Sometimes Divide and Concur uses the dual version of
+the diﬀerence-map, where nt is updated according to a rule
+obtained from Equation (13) by swapping the PC and PD
+projections.
+such an algorithm will not necessarily converge to the
+global optimum.3
+We therefore need to be relatively conservative in mod-
+ifying the algorithm, and present here a relatively sim-
+ple modiﬁcation which allows for only three possible
+values for the weights on each edge.
+First we have
+standard weight messages with some weight ρ0 that
+is greater than zero and less than inﬁnity. The exact
+value of ρ0 will be important for the rate of conver-
+gence for problems with soft cost functions, but it will
+be irrelevant for problems consisting entirely of hard
+constraints, just as it is in standard DC, so for simplic-
+ity one can suppose that ρ0 = 1 for those problems.
+Second we allow for inﬁnite-weight messages, which
+intuitively represent that the message’s value is cer-
+tainly correct. Finally we allow for zero-weight mes-
+sages, which intuitively represent that a function cost
+node or equality node is completely uncertain about
+the value that a variable should have, and its opinion
+should be ignored.
+In modifying the ADMM message-passing algorithm
+to allow for zero weights or inﬁnite weights, we need
+to also be careful to properly deal with updates of uij
+variables.
+Intuitively, uij variables are tracking the
+“disagreement” between the left and right beliefs on
+an edge (ij). The uij variable on an edge will grow in
+magnitude over time if the left belief xij is persistently
+less than or persistently greater than the right belief
+zij. Because the uij variables are added or subtracted
+to the beliefs to form the messages, the message val-
+ues can become quite diﬀerent from the actual belief
+values, as the uij variables try to resolve the disagree-
+ment. With inﬁnite and zero weight messages, it is im-
+portant to be able to “reset” the uij variables to zero
+if there is no disagreement on that edge; for example
+when a inﬁnite weight message is sent on an edge, it
+means that the message is certainly correct, so any
+previous disagreement recorded in the uij should be
+ignored.
+4.1
+DETAILED DESCRIPTION OF
+THREE-WEIGHT ALGORITHM
+For clarity, rather than provide a pseudo-code descrip-
+tion of the algorithm, we provide a fully explicit En-
+glish language description.
+We initialize by setting all u0
+ij = 0, and normally use
+3We observed empirically that variants of our algo-
+rithm would fail for convex problems when the weights
+in the two directions were not eventually equal or when
+they were not eventually constant. Also, the convergence
+proof for ADMM on convex problems presented in (Boyd
+et al., 2011) can be generalized straightforwardly to diﬀer-
+ent weights on each edge, but it depends on the weights
+being constant within an iteration and between iterations.

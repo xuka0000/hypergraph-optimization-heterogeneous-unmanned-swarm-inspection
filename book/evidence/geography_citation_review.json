@@ -1,0 +1,32 @@
+{
+  "observed_at": "2026-11-10T07:32:47.320653+00:00",
+  "primary_sources": [
+    {
+      "key": "LiInspection2023",
+      "url": "https://www.mdpi.com/2072-4292/15/3/865",
+      "locator": "Section3.2.1, Figure3 and following description",
+      "verified_claim": "photo roles1,2,3,4,5,8,9,10,11; points6,7 no photographs",
+      "reading": "publisher full text relevant section; retained PDF bound separately"
+    },
+    {
+      "key": "OSMData",
+      "url": "https://www.openstreetmap.org/copyright",
+      "verified_claim": "data attribution to OSM contributors; historical query files bound in experiment"
+    },
+    {
+      "key": "PROJUTM",
+      "url": "https://proj.org/en/stable/operations/projections/utm.html",
+      "verified_claim": "UTM forward/inverse and published control(12,56)->(687071.44,6210141.33)"
+    },
+    {
+      "key": "CopernicusDEM",
+      "url": "https://dataspace.copernicus.eu/explore-data/data-collections/copernicus-contributing-missions/collections-description/COP-DEM",
+      "verified_claim": "GLO90 DSM, 90m, DOI10.5270/ESA-c5d3d65; includes infrastructure/vegetation; product vertical EGM2008"
+    }
+  ],
+  "do_not_infer": [
+    "OSM provides tower surface geometry",
+    "GLO90 is field-surveyed ground",
+    "all example inputs are measured parameters"
+  ]
+}

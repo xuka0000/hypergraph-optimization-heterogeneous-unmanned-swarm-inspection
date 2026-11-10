@@ -1,0 +1,28 @@
+\section{同时刻避碰与起落接触}
+\noindent 不同飞机的航次$\ell,\ell'$在同一绝对时刻$t$同时活动时，要求
+\begin{align}
+ &\|\mathbf p_\ell(t)-\mathbf p_{\ell'}(t)\|\ge
+       2(0.6+0.5)+3=5.2\ \mathrm m,\label{eng:eq:collision}\\
+ &\operatorname{dist}(\mathbf p_\ell(t),\mathcal B_v(t))\ge r_f
+       \quad\text{对非起落接触载车},\label{eng:eq:airvehicle}
+\end{align}
+\noindent $\mathcal B_v(t)$是车辆的4m×1.8m×1.8m实体。未飞行飞机存放于本车，不作为悬浮在同一平台的重复飞行球；全部车载载荷包含在车辆参考包络内。
+
+\noindent 平台表面相对车体基点高1.8m。无人机中心的接触位置为
+\begin{equation}
+ \mathbf p^{dock}_v(t)=\big(q_{vx},q_{vy},h(\mathbf q_v)+1.8+0.6\big)^T.
+ \label{eng:eq:dock}
+\end{equation}
+\noindent 不能把球形机体中心放在平台表面后再要求实体不相交。设$r_{pad}=3$m，保护区高$z_{safe}=h(\mathbf q_v)+1.8+r_f$。在起飞$[s_\ell,s_\ell^+]$及降落$[e_\ell^-,e_\ell]$，本车静止，无人机水平位置限制在平台周围半径3m内，且$p_z\ge p_z^{dock}$；离开/进入端点满足$p_z=z_{safe}$。
+\begin{align}
+ \lambda_{pad}(t)&=\min\{1,\max\{0,(p_z-p_z^{dock})/(r_f-0.6)\}\},\\
+ r_{contact}(t)&=0.6+(r_f-0.6)\lambda_{pad}(t),\\
+ \operatorname{dist}(\mathbf p_\ell(t),\mathcal B_{c(u)}(t))&\ge r_{contact}(t),\qquad
+ p_z-h(p_x,p_y)\ge r_{contact}(t).
+ \label{eng:eq:padcontact}
+\end{align}
+\noindent 仅上述两个区间用$r_{contact}$替换本车/地形裕度；常规飞行仍用4.6m。保护区不得与塔柱、导线或别车相交；多个飞机仍满足5.2m分离。接触时误差裕度收敛到0是参考精准对接假设，须由实机降落控制验证，不能外推为无条件安全。
+
+\noindent 新起飞和落地端点速度为0；机体在平台上取水平姿态，云台/焦距连续继承上次状态或受地面有界调整。进入气动飞行的释放时刻采用单侧力平衡；停放时平台接触力承担重量，不错误施加悬停耗电。
+\clearpage
+

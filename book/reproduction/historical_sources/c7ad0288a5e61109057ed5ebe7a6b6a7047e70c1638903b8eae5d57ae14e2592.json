@@ -1,0 +1,47 @@
+{
+  "task_id": "inspection_conditional_hypergraph_solver",
+  "registered_at": "2026-11-09T11:08:14.983445+00:00",
+  "user_authorization": "开始尝试！议采用“带生效条件的变量—约束超图”，并用超图算法求解！",
+  "scope": "same237tower2133task finite joint transcription, all original roads/resources/continuous acceptance",
+  "mode": "authorized same-stage engineering implementation and full-domain diagnostic; not formal algorithm comparison",
+  "algorithm": "inexact factor-consensus message passing (ADMM-style), our experimental adaptation",
+  "identity_limit": "not a faithful reproduction of Three-Weight Algorithm or a guaranteed nonconvex MINLP method; not ILS or partition-only",
+  "source": "https://la.disneyresearch.com/wp-content/uploads/An-Improved-Three-Weight-Message-Passing-Algorithm-Paper.pdf",
+  "source_read": "equations5-7, factor graph construction, nonconvex scope; single standard-weight messages only",
+  "mechanism": "constraint-local projections, incidence consensus, dual messages; lazy conditional rows retain selectors/gates; oracle verifies complete model",
+  "primary_output": "independently accepted237tower-scene objective vector; otherwise null",
+  "diagnostics": [
+    "elapsed_s",
+    "explicit_algebra_violation_count",
+    "residual_norm",
+    "integrality",
+    "conditional_rows_added",
+    "accepted_checks",
+    "resource_usage"
+  ],
+  "first_engineering_batch": {
+    "message_sweeps": 200,
+    "reason": "bounded implementation trial, not a solver wall-time cap or user success standard",
+    "public_comparison": false
+  },
+  "controls": {
+    "original_SCIP_pid": 47724,
+    "original_SCIP_create_time": 1794204739.9118638,
+    "do_not_restart": true,
+    "paid_actions": false,
+    "new_agents": false
+  },
+  "formal_preflight": "not applicable to bounded implementation diagnosis; comparative claims remain blocked until evaluator and complete baselines validated",
+  "remaining": [
+    "full accepted regional feasibility",
+    "fair public solver comparison",
+    "complete continuous-domain optimum"
+  ],
+  "engineering_diagnosis": {
+    "first_full_attempt": "1e09f2ed7cee_61376",
+    "observed": "200 sweeps completed, no accepted plan; largest residual ~5e11 in auxiliary squared-GSD definition",
+    "cause": "midpoint initialization of loose 1e12 auxiliary upper bounds combined with bounded local Newton steps",
+    "repair": "start continuous values at clip(0.001,original bounds), preserve every variable/domain/factor and unchanged original objective",
+    "repeat_scope": "same237tower engineering regression,200sweeps, not scientific improvement round"
+  }
+}

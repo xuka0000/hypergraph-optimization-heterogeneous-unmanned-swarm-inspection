@@ -1,0 +1,18 @@
+{
+  "observed_at": "2026-11-10T02:57:15.553264+00:00",
+  "conditions": 33,
+  "rows": 78,
+  "diagnostic_rows": 9,
+  "all_feasible": true,
+  "absolute_float_reporting_tolerance": 1e-06,
+  "nonzero_roundoff": [
+    {
+      "condition": "C32",
+      "role": "scip_latest_completed",
+      "objective": 11642395,
+      "reported_floating_objective": 11642394.999999993,
+      "floating_difference": -7.450580596923828e-09
+    }
+  ],
+  "scope": "Exact integer original-input sums reported; floating solver summaries compared at absolute 1e-6 only. Historical/latest runs not independent replications; no solver reruns or optimality proof."
+}

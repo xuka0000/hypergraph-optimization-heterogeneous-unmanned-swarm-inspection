@@ -1,0 +1,142 @@
+{
+  "protocol": {
+    "experiment_id": "inspection_rigid_flight_component",
+    "scientific_comparison": false,
+    "purpose": "verify revision8 rigid-body/thrust/contact equations and reference tracking with battery replay",
+    "profile_sha256": "2075ea12ecdf883e92e78b217c336be6eee761773a21cd2b3bb8c534f7c31fab",
+    "source_sha256": "18d08acf4503ca5741c5d26dc9a754bb87f3317bcf37c4ce776540cbcf29e5db",
+    "battery_source_sha256": "559f6eacfa4a40062049b59d2b6f693b0302e12442bfcd85d61981bd45af0a3b",
+    "validator_sha256": "2ce9791e3a3951ff4e4e3934484e5bac066d19fe053381c59d7137e5b80a3156",
+    "time_steps_s": [
+      0.04,
+      0.02
+    ],
+    "scenario_set": [
+      "calm",
+      "crosswind",
+      "time_varying_3d_wind"
+    ],
+    "scope": "finite reference trajectories; not actual aircraft calibration, robust guarantee or joint optimization"
+  },
+  "observed_at": "2026-11-10T09:16:27.501106+00:00",
+  "checks": [
+    {
+      "name": "force_and_torque_hover_equilibrium",
+      "passed": true,
+      "max_derivative": 0.0
+    },
+    {
+      "name": "rotor_wrench_mapping_invertible",
+      "passed": true
+    },
+    {
+      "name": "quaternion_yaw_matches_exact_solution",
+      "passed": true,
+      "quaternion_error": 4.2734918710510044e-14
+    },
+    {
+      "name": "motor_lag_matches_exact_solution",
+      "passed": true,
+      "max_thrust_error_N": 1.6271428648906294e-11
+    },
+    {
+      "name": "hover_rotor_power_identity",
+      "passed": true,
+      "hover_power_W": 736.6999999999999
+    },
+    {
+      "name": "spinup_power_contains_rotor_inertia",
+      "passed": true,
+      "extra_W": 4.659967962720316
+    },
+    {
+      "name": "zero_thrust_ground_support",
+      "passed": true,
+      "normal_N": 68.67
+    },
+    {
+      "name": "impact_not_silently_stopped",
+      "passed": true
+    },
+    {
+      "name": "frictionless_liftoff_contact_rejected_in_crosswind",
+      "passed": true,
+      "normal_N": -0.0,
+      "needed_friction_N": 3.828125
+    },
+    {
+      "name": "tracking_and_power_battery_calm",
+      "passed": true,
+      "max_error_m": 0.005284201735986278
+    },
+    {
+      "name": "tracking_and_power_battery_crosswind",
+      "passed": true,
+      "max_error_m": 0.03245564959725031
+    },
+    {
+      "name": "tracking_and_power_battery_time_varying_3d_wind",
+      "passed": true,
+      "max_error_m": 0.006844075360666763
+    },
+    {
+      "name": "step_refinement",
+      "passed": true,
+      "max_state_difference": 6.9046990347487736e-09
+    }
+  ],
+  "all_checks_passed": true,
+  "experiments": [
+    {
+      "scenario": "calm",
+      "peak_position_error_m": 0.005284201735986278,
+      "rms_position_error_m": 0.002914343814719028,
+      "final_position_error_m": 3.437864661169731e-07,
+      "quaternion_norm_error": 1.3322676295501878e-15,
+      "peak_bodyrate_radps": 0.0024137531700130434,
+      "peak_thrust_N": 17.198168910815006,
+      "saturation_samples": 0,
+      "flight_energy_Wh": 8.18597766855204,
+      "battery_load_Wh": 8.185977668808224,
+      "ending_SOC": 0.8862743858386625,
+      "battery_peak_temperature_C": 25.248205758067478,
+      "battery_domain_pass": true,
+      "energy_residual_Wh": -2.1951884754400908e-13
+    },
+    {
+      "scenario": "crosswind",
+      "peak_position_error_m": 0.03245564959725031,
+      "rms_position_error_m": 0.006371233317574807,
+      "final_position_error_m": 6.713380741976056e-07,
+      "quaternion_norm_error": 5.085931675807842e-13,
+      "peak_bodyrate_radps": 0.07386205233842245,
+      "peak_thrust_N": 17.22615611777191,
+      "saturation_samples": 0,
+      "flight_energy_Wh": 8.184249041132436,
+      "battery_load_Wh": 8.184249039872341,
+      "ending_SOC": 0.8862773642394222,
+      "battery_peak_temperature_C": 25.248098107400256,
+      "battery_domain_pass": true,
+      "energy_residual_Wh": 1.9453882948994305e-13
+    },
+    {
+      "scenario": "time_varying_3d_wind",
+      "peak_position_error_m": 0.006844075360666763,
+      "rms_position_error_m": 0.003692369127179182,
+      "final_position_error_m": 0.0028281043226383237,
+      "quaternion_norm_error": 9.992007221626409e-16,
+      "peak_bodyrate_radps": 0.002390572671208214,
+      "peak_thrust_N": 17.19259095955201,
+      "saturation_samples": 0,
+      "flight_energy_Wh": 8.186145358418727,
+      "battery_load_Wh": 8.186145358005076,
+      "ending_SOC": 0.8862740967320168,
+      "battery_peak_temperature_C": 25.248219097935767,
+      "battery_domain_pass": true,
+      "energy_residual_Wh": -3.917421942389865e-13
+    }
+  ],
+  "wall_s": 24.93752629996743,
+  "full_joint_verified": false,
+  "field_calibration": false
+}

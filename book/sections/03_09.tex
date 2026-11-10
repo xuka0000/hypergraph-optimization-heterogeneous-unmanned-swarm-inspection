@@ -1,0 +1,130 @@
+\section{异构任务分配与联合优化方法}
+\label{sec:03_09}
+
+\subsection{共同原问题与集中求解}
+
+异构任务分配需要同时确定执行主体、共享资源占用时序和能够实现任务的运动。比较求解方法，首先应保持这些决策对应的目标与可行域一致。记离散决策为 $x\in\mathcal X$，包括任务选择、主体分配和先后关系，$\mathcal X$ 为给定有限转录下的有限取值集合；连续决策为 $y\in\mathcal Y$，包括时刻、位置和能量，其分量分别采用 $\mathrm{s}$、$\mathrm{m}$、$\mathrm{Wh}$ 等对应单位。能力、平台、运动与能量约束共同定义
+\begin{equation}
+\label{s0309:shared_domain}
+\mathcal F=\{(x,y)\in\mathcal X\times\mathcal Y:
+ g_a(x,y)\leq0\ (a\in\mathcal A),\quad
+ h_b(x,y)=0\ (b\in\mathcal H)\}.
+\end{equation}
+其中 $\mathcal A$、$\mathcal H$ 分别为不等式和等式索引集，各残差保留对应物理量的单位。该式是第\ref{sec:05_08}节完整约束的统一记法，不替代具体物理定义。
+
+本书依次最小化未完成塔数、车队返回历时和机载耗能。词典序优化的数学定义要求：只有此前阶段的最优值已经取得并被证明，才能将这些最优值固定为后续阶段的约束。若仅取得可行上界，以该值继续优化只是条件优化，不能称为完整词典序全局最优。以下以 $f(x,y)$ 表示一个标量阶段的目标，单位沿用该阶段目标，前序最优值限制并入 $\mathcal F$。定义
+\begin{align}
+\label{s0309:value_function}
+V(x)&=\inf_{y\in\mathcal Y}\{f(x,y):(x,y)\in\mathcal F\},\\
+\label{s0309:decomposition}
+\inf_{(x,y)\in\mathcal F}f(x,y)&=\min_{x\in\mathcal X}V(x).
+\end{align}
+这里假定 $\mathcal X$ 非空，空条件可行集的值约定为 $+\infty$。右端是有限集合上扩展实数值的最小化；要恢复实际最优方案，还须相应连续子问题取得有限下确界。写出 $\inf$ 并不证明问题有界，也不意味着数值计算已取得有效界。核验通过的可行解提供最小化问题的上界，有效松弛可提供下界。
+
+集中方法输入完整参数、初态和约束，输出联合决策及求解状态。有限模型的目标与约束均线性时形成MILP；保留非线性运动、功率或几何关系时形成MINLP。集中组织便于统一检查共享资源，但承担信息汇集、模型存储和联合搜索成本，非凸模型的局部解也不自动具有全局最优性。式\eqref{s0309:decomposition}表明，计算分解可以保留统一目标和全部约束；若上游不可逆地固定 $x=\bar x$，下游则只求 $V(\bar x)$，一般会缩小原问题的搜索范围。
+
+\subsection{拍卖分配与能力分布的接口}
+
+CBBA将市场式任务选择与局部一致性过程结合\cite{CBBA2009}。用于上述原问题时，其输入包括任务、主体资格、评分和通信关系，输出任务归属候选。若评分只包含单机飞行代价，就未计入其他飞机占用平台引起的等待；共享时序检查必须反馈到评分或分配修正中，才能表达这种耦合。适配成本因此包括通信、重复评估和冲突协调。其保证依赖评分与通信连通性等条件，不能直接迁移为完整巡检模型的最优性保证。
+
+STRATA接收任务能力需求、种群组成、随机能力模型和任务间转移关系，优化转移率，使主体分布达到所需能力配置\cite{STRATA2020}。此处引用2020年2月6日版本，初稿发表于2019年。令 $\mathcal C$ 为主体类别集，$\mathcal D$ 为能力类别集，$N_{ic}\geq0$ 为任务 $i\in\mathcal I$ 上类别 $c\in\mathcal C$ 的主体数量或连续分布近似，$Q_{cd}$ 为对应类别的随机能力量。对可累加能力集 $\mathcal D_{\mathrm{add}}\subseteq\mathcal D$，有
+\begin{equation}
+\label{s0309:trait_aggregation}
+Y_{id}=\sum_{c\in\mathcal C}N_{ic}Q_{cd},
+\qquad i\in\mathcal I,\ d\in\mathcal D_{\mathrm{add}}.
+\end{equation}
+$N_{ic}$ 为无量纲计数，$Y_{id}$ 与 $Q_{cd}$ 采用该能力的单位，不同能力列不能直接相加。该框架考虑类别间和个体间差异，并区分可累加与不可累加属性。对于速度、特殊技能等不可累加属性，采用阈值资格表示后统计达标主体数量，不能将多架飞机的速度相加。
+
+能力分布回答的是任务获得了多少、何种能力。落到巡检执行时，还需将连续分布落实为整数主体及具体飞机身份，并接入物理电池、航次和平台时序。转移率及其分布动力学不直接给出这些资源的可执行日程，也不替代旋翼运动与能量约束。
+
+\subsection{任务运动交替与不确定性反馈}
+
+TAMP以动作前提、状态变化和连续几何约束为输入，联合搜索动作骨架与连续参数，输出满足动作约束的计划\cite{TAMP2021}。该文发表于2021年，作者预印本发表于2020年。巡检中的起飞、观测和会合可构成骨架，位置、时刻与轨迹用于检验其可实现性；适配需要建立动作接口、连续检查及反馈机制。
+
+固定骨架后的NLP失败可能源于初始化、数值困难或搜索不足。只有证明整个条件可行集为空，才能据此排除骨架。例如，$x\in\{0,1\}^{d_x}$ 为长度 $d_x$ 的二进制编码，若 $\bar x$ 已被证明不存在任何可行连续补全，才可加入
+\begin{equation}
+\label{s0309:nogood}
+\sum_{j:\bar x_j=1}(1-x_j)+
+\sum_{j:\bar x_j=0}x_j\geq1,
+\end{equation}
+其中求和索引均取自 $\{1,\ldots,d_x\}$，各项无量纲。局部NLP失败不能生成这种全局有效的排除约束。任务优先、运动优先与交替搜索是任务和运动的组织方式，通信架构与规划适应性则是另外的分类维度\cite{MATAMP2026}；该综述于2026年5月23日在线发表，不是一个新增求解器。
+
+不确定性处理仍应保留同一组物理约束，并限制决策使用的信息。设第 $k$ 次更新的已知初态与记录为 $H_k$，有限情形集合为 $\Xi_k$，情形 $\xi$ 下的完整决策为 $z^\xi=(x^\xi,y^\xi)$。令 $r$ 表示参与决策的主体，$\ell$ 表示其决策时刻，$H_{r\ell}^\xi$ 为该主体截至该时刻实际收到的信息历史。策略 $\pi$ 的动作必须对这些信息生成的 $\sigma$ 代数可测，不能使用其他主体尚未传达的信息。用 $\Pi_k^{\mathrm{info}}$ 表示满足此条件的策略集；其非预知性要求为
+\begin{equation}
+\label{s0309:nonanticipativity}
+H_{r\ell}^{\xi}=H_{r\ell}^{\xi'}
+\ \Longrightarrow\ 
+\pi_{r\ell}(H_{r\ell}^{\xi})=
+\pi_{r\ell}(H_{r\ell}^{\xi'}),
+\qquad \forall r,\ell,\xi,\xi'.
+\end{equation}
+动作的单位随控制量或任务决策而定。给定无量纲概率 $p_\xi\geq0$ 且 $\sum_{\xi\in\Xi_k}p_\xi=1$，随机情景问题写为
+\begin{equation}
+\label{s0309:scenario}
+\begin{aligned}
+\min_{\pi}\quad &\sum_{\xi\in\Xi_k}p_\xi f(z^\xi;\xi)\\
+\text{约束}\quad &z^\xi\in\mathcal F(H_k;\xi),\qquad \forall\xi\in\Xi_k,\\
+&\pi\in\Pi_k^{\mathrm{info}}.
+\end{aligned}
+\end{equation}
+在同一情形集上，鲁棒问题写为
+\begin{equation}
+\label{s0309:robust}
+\begin{aligned}
+\min_{\pi}\quad &\sup_{\xi\in\Xi_k}f(z^\xi;\xi)\\
+\text{约束}\quad &z^\xi\in\mathcal F(H_k;\xi),\qquad \forall\xi\in\Xi_k,\\
+&\pi\in\Pi_k^{\mathrm{info}}.
+\end{aligned}
+\end{equation}
+两式中的 $z^\xi$ 均由策略和情形共同产生，目标沿用当前标量阶段的单位。这是本书的一般建模表达。情景方法需要概率依据，鲁棒方法需要有物理依据的不确定集合；前者不保证未纳入情形的表现，后者可能增加保守性。滚动优化只执行当前决策段，再依据新信息更新，其成本包括多情形计算和状态接续。当前已有观测状态接续组件，但完整区域的规划、执行与重规划尚未形成闭环。
+
+\subsection{共享平台的完整教学算例}
+
+本书构造算例B说明分配与时序的相互作用。两个任务为 $J_1,J_2$，两架飞机为 $U_1,U_2$；$J_1$ 可由任一飞机执行，$J_2$ 只能由 $U_2$ 执行。两任务在时刻零释放，共享起飞平台容量为1，每次平台服务持续 $3\,\mathrm{min}$。全部飞行时长见表\ref{s0309:parameters}。
+\begin{table}[htbp]
+\centering
+\caption{教学算例B的任务飞行时长}
+\label{s0309:parameters}
+\begin{tabular}{ccc}
+\toprule
+飞机 & $J_1$（$\mathrm{min}$） & $J_2$（$\mathrm{min}$）\\
+\midrule
+$U_1$ & 10 & 不具资格\\
+$U_2$ & 12 & 8\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+本例省略返航、电池和路线，以最晚巡检完成时间为目标；同机下一次起飞服务必须等待前一任务完成。令 $a_j$ 为任务 $J_j$ 的飞机编号，$s_j,C_j$ 分别为平台服务开始和巡检完成时刻，$C_{\max}$ 为最晚完成时刻，三者以 $\mathrm{min}$ 计；$d_{a_j,j}$ 为表中合法组合的飞行时长。完整模型为
+\begin{align}
+\label{s0309:example_model}
+\min\;&C_{\max},\\
+a_1&\in\{1,2\},\qquad a_2=2,\\
+s_j,C_j&\geq0\quad(j\in\{1,2\}),\qquad C_{\max}\geq0,\\
+C_j&=s_j+3+d_{a_j,j},\quad
+C_{\max}\geq C_j,\qquad j\in\{1,2\},\\
+(s_1+3\leq s_2)&\ \lor\ (s_2+3\leq s_1),\\
+a_1=a_2&\ \Longrightarrow\
+\bigl[(C_1\leq s_2)\lor(C_2\leq s_1)\bigr].
+\end{align}
+平台析取约束禁止服务重叠，最后一行禁止同机任务重叠，二者分别限制平台和飞机。
+
+采用Python全枚举与算术重算，遍历两种分配及两种平台顺序。固定分配和顺序后，推迟服务不会降低最晚完成时间，故取满足资源限制的最早开始时刻即可得到该组合的最优日程。
+\begin{table}[htbp]
+\centering
+\caption{全部分配与平台顺序的最早日程}
+\label{s0309:enumeration}
+\begin{tabular}{ccccc}
+\toprule
+$(a_1,a_2)$ & 平台顺序 & $(s_1,s_2)$ & $(C_1,C_2)$ & $C_{\max}$\\
+ & & $\mathrm{min}$ & $\mathrm{min}$ & $\mathrm{min}$\\
+\midrule
+$(1,2)$ & $J_1,J_2$ & $(0,3)$ & $(13,14)$ & 14\\
+$(1,2)$ & $J_2,J_1$ & $(3,0)$ & $(16,11)$ & 16\\
+$(2,2)$ & $J_1,J_2$ & $(0,15)$ & $(15,26)$ & 26\\
+$(2,2)$ & $J_2,J_1$ & $(11,0)$ & $(26,11)$ & 26\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+同一分配因平台顺序不同得到14和16分钟，单机执行的两种顺序均为26分钟。因此该模型的枚举最优值为14分钟，而任务归属本身尚不足以确定联合目标。上述结果属于本书教学模型的完整有限枚举，不是SCIP、CBBA或其他公开算法的复现与性能比较；其最优性仅针对本例列明的约束，不构成区域巡检方案的验收结论。

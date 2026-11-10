@@ -1,0 +1,11 @@
+{
+  "observed_at": "2026-11-10T03:56:55.769388+00:00",
+  "run_id": "2bf320f8bbe886f8_24660",
+  "status": "resource_protection",
+  "pid": 24660,
+  "pid_exists": false,
+  "evidence": "evidence/latest_regional_run_compact.json",
+  "full_region_accepted": false,
+  "candidate_requires_revalidation": true,
+  "previous_record_preserved": "evidence/regional_resource_run_compact.json"
+}

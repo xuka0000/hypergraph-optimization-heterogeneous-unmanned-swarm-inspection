@@ -1,0 +1,2083 @@
+{
+  "scope": "Current regional numerical target view, extracted from existing bound correction records; not a new geometry validation or experiment",
+  "run_id": "2bf320f8bbe886f8_24660",
+  "tower": "OSM_269894017",
+  "tasks": [
+    {
+      "task": {
+        "id": "OSM_269894017_P01",
+        "tower_id": "OSM_269894017",
+        "paper_point_number": 1,
+        "role": "overview",
+        "longitude": 6.69910359550719,
+        "latitude": 51.00488951102718,
+        "easting_m": 338572.9867096207,
+        "northing_m": 5652888.375380128,
+        "altitude_m": 116.21379999999999,
+        "height_above_tower_ground_m": 34.2138,
+        "target": {
+          "longitude": 6.699184992738513,
+          "latitude": 51.005014192664646,
+          "easting_m": 338579.12965359824,
+          "northing_m": 5652902.059832593,
+          "altitude_m": 116.21379999999999,
+          "surface_id": "OSM_269894017_P01_surface",
+          "normal_world": [
+            -0.40952959850505327,
+            -0.9122968310524211,
+            0.0
+          ],
+          "tangent_basis": [
+            [
+              0.9122968310524211,
+              -0.40952959850505327,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "surface_samples_utm_m": [
+            [
+              338579.12965359824,
+              5652902.059832593,
+              116.21379999999999
+            ],
+            [
+              338578.90157939045,
+              5652902.1622149935,
+              115.96379999999999
+            ],
+            [
+              338578.90157939045,
+              5652902.1622149935,
+              116.46379999999999
+            ],
+            [
+              338579.357727806,
+              5652901.957450193,
+              115.96379999999999
+            ],
+            [
+              338579.357727806,
+              5652901.957450193,
+              116.46379999999999
+            ]
+          ],
+          "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+        },
+        "camera_azimuth_deg": 24.175288341868622,
+        "camera_elevation_deg": 0.0,
+        "modality": "RGB",
+        "effective_service_seconds": 20.011081481481483,
+        "time_evidence_kind": "calibrated_equal_residual",
+        "geometry_evidence_kind": "transferred_engineering_template",
+        "source_ids": [
+          "KPLC25",
+          "LI23",
+          "MODEL_REGIONAL",
+          "MODEL_TIMING",
+          "MODEL_VIEWS",
+          "TERRAIN_rommerskirchen"
+        ],
+        "observation_requirement": {
+          "camera_model": "joint_reference_profile.camera",
+          "nominal_viewpoint_role": "initialization_only",
+          "viewpoint_ball_radius_m": null,
+          "min_dwell_s": 20.011081481481483,
+          "weight": 1.0,
+          "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+          "planned_status": "required_not_completed",
+          "capture_domain": "physical_optics_visibility_clearance"
+        }
+      },
+      "correction": {
+        "task_id": "OSM_269894017_P01",
+        "tower_id": "OSM_269894017",
+        "role": "overview",
+        "source_index": 216,
+        "source_ids": [
+          "KPLC25",
+          "LI23",
+          "MODEL_REGIONAL",
+          "MODEL_TIMING",
+          "MODEL_VIEWS",
+          "TERRAIN_rommerskirchen"
+        ],
+        "normal_world": [
+          -0.40952959850505327,
+          -0.9122968310524211,
+          0.0
+        ],
+        "min_dwell_s": 20.011081481481483,
+        "source_target_xyz_m": [
+          338579.9528080911,
+          5652903.893549223,
+          116.21379999999999
+        ],
+        "target_xyz_m": [
+          338579.12965359824,
+          5652902.059832593,
+          116.21379999999999
+        ],
+        "target_longitude": 6.699184992738513,
+        "target_latitude": 51.005014192664646,
+        "source_viewpoint_xyz_m": [
+          338573.8098641136,
+          5652890.209096758,
+          116.21379999999999
+        ],
+        "viewpoint_center_xyz_m": [
+          338572.9867096207,
+          5652888.375380128,
+          116.21379999999999
+        ],
+        "viewpoint_longitude": 6.69910359550719,
+        "viewpoint_latitude": 51.00488951102718,
+        "source_surface_samples_utm_m": [
+          [
+            338579.9528080911,
+            5652903.893549223,
+            116.21379999999999
+          ],
+          [
+            338579.72473388334,
+            5652903.9959316235,
+            115.96379999999999
+          ],
+          [
+            338579.72473388334,
+            5652903.9959316235,
+            116.46379999999999
+          ],
+          [
+            338580.1808822989,
+            5652903.791166823,
+            115.96379999999999
+          ],
+          [
+            338580.1808822989,
+            5652903.791166823,
+            116.46379999999999
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338579.12965359824,
+            5652902.059832593,
+            116.21379999999999
+          ],
+          [
+            338578.90157939045,
+            5652902.1622149935,
+            115.96379999999999
+          ],
+          [
+            338578.90157939045,
+            5652902.1622149935,
+            116.46379999999999
+          ],
+          [
+            338579.357727806,
+            5652901.957450193,
+            115.96379999999999
+          ],
+          [
+            338579.357727806,
+            5652901.957450193,
+            116.46379999999999
+          ]
+        ],
+        "correction_distance_m": 2.0099999997764826,
+        "host_cylinder_correction_m": 2.0099999997764826,
+        "wire_surface_correction_m": 0.0,
+        "wire_surface_receipt": {
+          "initial_conflicts": [],
+          "grid_steps": 0,
+          "final_clearance_margin_m": 0.01
+        },
+        "correction_kind": "source_host_and_wire_surface_reference",
+        "target_is_template": true,
+        "field_surveyed": false
+      },
+      "translation_residual_m": 2.0710588799488505e-10
+    },
+    {
+      "task": {
+        "id": "OSM_269894017_P02",
+        "tower_id": "OSM_269894017",
+        "paper_point_number": 2,
+        "role": "left_groundwire",
+        "longitude": 6.698997362413182,
+        "latitude": 51.005082495726505,
+        "easting_m": 338566.20449484716,
+        "northing_m": 5652910.065160273,
+        "altitude_m": 116.21379999999999,
+        "height_above_tower_ground_m": 34.2138,
+        "target": {
+          "longitude": 6.6991307291295765,
+          "latitude": 51.00504783658333,
+          "easting_m": 338575.43985812727,
+          "northing_m": 5652905.919410241,
+          "altitude_m": 116.21379999999999,
+          "surface_id": "OSM_269894017_P02_surface",
+          "normal_world": [
+            -0.9122968310442907,
+            0.40952959852316506,
+            0.0
+          ],
+          "tangent_basis": [
+            [
+              -0.40952959852316506,
+              -0.9122968310442907,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "surface_samples_utm_m": [
+            [
+              338575.43985812727,
+              5652905.919410241,
+              116.21379999999999
+            ],
+            [
+              338575.5422405269,
+              5652906.147484449,
+              115.96379999999999
+            ],
+            [
+              338575.5422405269,
+              5652906.147484449,
+              116.46379999999999
+            ],
+            [
+              338575.33747572766,
+              5652905.691336033,
+              115.96379999999999
+            ],
+            [
+              338575.33747572766,
+              5652905.691336033,
+              116.46379999999999
+            ]
+          ],
+          "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+        },
+        "camera_azimuth_deg": 114.17528834300612,
+        "camera_elevation_deg": 0.0,
+        "modality": "RGB",
+        "effective_service_seconds": 20.011081481481483,
+        "time_evidence_kind": "calibrated_equal_residual",
+        "geometry_evidence_kind": "transferred_engineering_template",
+        "source_ids": [
+          "KPLC25",
+          "LI23",
+          "MODEL_REGIONAL",
+          "MODEL_TIMING",
+          "MODEL_VIEWS",
+          "TERRAIN_rommerskirchen"
+        ],
+        "observation_requirement": {
+          "camera_model": "joint_reference_profile.camera",
+          "nominal_viewpoint_role": "initialization_only",
+          "viewpoint_ball_radius_m": null,
+          "min_dwell_s": 20.011081481481483,
+          "weight": 1.0,
+          "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+          "planned_status": "required_not_completed",
+          "capture_domain": "physical_optics_visibility_clearance"
+        }
+      },
+      "correction": {
+        "task_id": "OSM_269894017_P02",
+        "tower_id": "OSM_269894017",
+        "role": "left_groundwire",
+        "source_index": 217,
+        "source_ids": [
+          "KPLC25",
+          "LI23",
+          "MODEL_REGIONAL",
+          "MODEL_TIMING",
+          "MODEL_VIEWS",
+          "TERRAIN_rommerskirchen"
+        ],
+        "normal_world": [
+          -0.9122968310442907,
+          0.40952959852316506,
+          0.0
+        ],
+        "min_dwell_s": 20.011081481481483,
+        "source_target_xyz_m": [
+          338575.50371890544,
+          5652905.890743169,
+          116.21379999999999
+        ],
+        "target_xyz_m": [
+          338575.43985812727,
+          5652905.919410241,
+          116.21379999999999
+        ],
+        "target_longitude": 6.6991307291295765,
+        "target_latitude": 51.00504783658333,
+        "source_viewpoint_xyz_m": [
+          338566.26835562533,
+          5652910.036493201,
+          116.21379999999999
+        ],
+        "viewpoint_center_xyz_m": [
+          338566.20449484716,
+          5652910.065160273,
+          116.21379999999999
+        ],
+        "viewpoint_longitude": 6.698997362413182,
+        "viewpoint_latitude": 51.005082495726505,
+        "source_surface_samples_utm_m": [
+          [
+            338575.50371890544,
+            5652905.890743169,
+            116.21379999999999
+          ],
+          [
+            338575.60610130505,
+            5652906.118817377,
+            115.96379999999999
+          ],
+          [
+            338575.60610130505,
+            5652906.118817377,
+            116.46379999999999
+          ],
+          [
+            338575.40133650583,
+            5652905.662668961,
+            115.96379999999999
+          ],
+          [
+            338575.40133650583,
+            5652905.662668961,
+            116.46379999999999
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338575.43985812727,
+            5652905.919410241,
+            116.21379999999999
+          ],
+          [
+            338575.5422405269,
+            5652906.147484449,
+            115.96379999999999
+          ],
+          [
+            338575.5422405269,
+            5652906.147484449,
+            116.46379999999999
+          ],
+          [
+            338575.33747572766,
+            5652905.691336033,
+            115.96379999999999
+          ],
+          [
+            338575.33747572766,
+            5652905.691336033,
+            116.46379999999999
+          ]
+        ],
+        "correction_distance_m": 0.07,
+        "host_cylinder_correction_m": 0.0,
+        "wire_surface_correction_m": 0.07,
+        "wire_surface_receipt": {
+          "initial_conflicts": [
+            {
+              "sample": 0,
+              "wire": 1385,
+              "wire_id": "WIRE_116050405:0_0_1",
+              "distance_m": -0.05,
+              "parameter": 1.0
+            },
+            {
+              "sample": 0,
+              "wire": 1689,
+              "wire_id": "WIRE_325327247:0_0_1",
+              "distance_m": -0.05,
+              "parameter": 0.0
+            },
+            {
+              "sample": 0,
+              "wire": 1753,
+              "wire_id": "WIRE_325327279:0_0_1",
+              "distance_m": -0.05,
+              "parameter": 1.0
+            },
+            {
+              "sample": 0,
+              "wire": 1761,
+              "wire_id": "WIRE_325327280:0_0_1",
+              "distance_m": -0.05,
+              "parameter": 1.0
+            }
+          ],
+          "grid_steps": 7,
+          "grid_m": 0.01,
+          "final_clearance_margin_m": 0.01,
+          "reason": "template patch intersects source wire tube or its1cm construction margin"
+        },
+        "correction_kind": "source_host_and_wire_surface_reference",
+        "target_is_template": true,
+        "field_surveyed": false
+      },
+      "translation_residual_m": 6.241497596537471e-11
+    },
+    {
+      "task": {
+        "id": "OSM_269894017_P03",
+        "tower_id": "OSM_269894017",
+        "paper_point_number": 3,
+        "role": "left_upper",
+        "longitude": 6.698997362413182,
+        "latitude": 51.005082495726505,
+        "easting_m": 338566.20449484716,
+        "northing_m": 5652910.065160273,
+        "altitude_m": 113.0134,
+        "height_above_tower_ground_m": 31.0134,
+        "target": {
+          "longitude": 6.6991307291295765,
+          "latitude": 51.00504783658333,
+          "easting_m": 338575.43985812727,
+          "northing_m": 5652905.919410241,
+          "altitude_m": 113.0134,
+          "surface_id": "OSM_269894017_P03_surface",
+          "normal_world": [
+            -0.9122968310442907,
+            0.40952959852316506,
+            0.0
+          ],
+          "tangent_basis": [
+            [
+              -0.40952959852316506,
+              -0.9122968310442907,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "surface_samples_utm_m": [
+            [
+              338575.43985812727,
+              5652905.919410241,
+              113.0134
+            ],
+            [
+              338575.5422405269,
+              5652906.147484449,
+              112.7634
+            ],
+            [
+              338575.5422405269,
+              5652906.147484449,
+              113.2634
+            ],
+            [
+              338575.33747572766,
+              5652905.691336033,
+              112.7634
+            ],
+            [
+              338575.33747572766,
+              5652905.691336033,
+              113.2634
+            ]
+          ],
+          "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+        },
+        "camera_azimuth_deg": 114.17528834300612,
+        "camera_elevation_deg": 0.0,
+        "modality": "RGB",
+        "effective_service_seconds": 20.011081481481483,
+        "time_evidence_kind": "calibrated_equal_residual",
+        "geometry_evidence_kind": "transferred_engineering_template",
+        "source_ids": [
+          "KPLC25",
+          "LI23",
+          "MODEL_REGIONAL",
+          "MODEL_TIMING",
+          "MODEL_VIEWS",
+          "TERRAIN_rommerskirchen"
+        ],
+        "observation_requirement": {
+          "camera_model": "joint_reference_profile.camera",
+          "nominal_viewpoint_role": "initialization_only",
+          "viewpoint_ball_radius_m": null,
+          "min_dwell_s": 20.011081481481483,
+          "weight": 1.0,
+          "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+          "planned_status": "required_not_completed",
+          "capture_domain": "physical_optics_visibility_clearance"
+        }
+      },
+      "correction": {
+        "task_id": "OSM_269894017_P03",
+        "tower_id": "OSM_269894017",
+        "role": "left_upper",
+        "source_index": 218,
+        "source_ids": [
+          "KPLC25",
+          "LI23",
+          "MODEL_REGIONAL",
+          "MODEL_TIMING",
+          "MODEL_VIEWS",
+          "TERRAIN_rommerskirchen"
+        ],
+        "normal_world": [
+          -0.9122968310442907,
+          0.40952959852316506,
+          0.0
+        ],
+        "min_dwell_s": 20.011081481481483,
+        "source_target_xyz_m": [
+          338575.50371890544,
+          5652905.890743169,
+          113.0134
+        ],
+        "target_xyz_m": [
+          338575.43985812727,
+          5652905.919410241,
+          113.0134
+        ],
+        "target_longitude": 6.6991307291295765,
+        "target_latitude": 51.00504783658333,
+        "source_viewpoint_xyz_m": [
+          338566.26835562533,
+          5652910.036493201,
+          113.0134
+        ],
+        "viewpoint_center_xyz_m": [
+          338566.20449484716,
+          5652910.065160273,
+          113.0134
+        ],
+        "viewpoint_longitude": 6.698997362413182,
+        "viewpoint_latitude": 51.005082495726505,
+        "source_surface_samples_utm_m": [
+          [
+            338575.50371890544,
+            5652905.890743169,
+            113.0134
+          ],
+          [
+            338575.60610130505,
+            5652906.118817377,
+            112.7634
+          ],
+          [
+            338575.60610130505,
+            5652906.118817377,
+            113.2634
+          ],
+          [
+            338575.40133650583,
+            5652905.662668961,
+            112.7634
+          ],
+          [
+            338575.40133650583,
+            5652905.662668961,
+            113.2634
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338575.43985812727,
+            5652905.919410241,
+            113.0134
+          ],
+          [
+            338575.5422405269,
+            5652906.147484449,
+            112.7634
+          ],
+          [
+            338575.5422405269,
+            5652906.147484449,
+            113.2634
+          ],
+          [
+            338575.33747572766,
+            5652905.691336033,
+            112.7634
+          ],
+          [
+            338575.33747572766,
+            5652905.691336033,
+            113.2634
+          ]
+        ],
+        "correction_distance_m": 0.07,
+        "host_cylinder_correction_m": 0.0,
+        "wire_surface_correction_m": 0.07,
+        "wire_surface_receipt": {
+          "initial_conflicts": [
+            {
+              "sample": 0,
+              "wire": 1387,
+              "wire_id": "WIRE_116050405:0_1_1",
+              "distance_m": -0.05,
+              "parameter": 1.0
+            },
+            {
+              "sample": 0,
+              "wire": 1691,
+              "wire_id": "WIRE_325327247:0_1_1",
+              "distance_m": -0.05,
+              "parameter": 0.0
+            },
+            {
+              "sample": 0,
+              "wire": 1755,
+              "wire_id": "WIRE_325327279:0_1_1",
+              "distance_m": -0.05,
+              "parameter": 1.0
+            },
+            {
+              "sample": 0,
+              "wire": 1763,
+              "wire_id": "WIRE_325327280:0_1_1",
+              "distance_m": -0.05,
+              "parameter": 1.0
+            }
+          ],
+          "grid_steps": 7,
+          "grid_m": 0.01,
+          "final_clearance_margin_m": 0.01,
+          "reason": "template patch intersects source wire tube or its1cm construction margin"
+        },
+        "correction_kind": "source_host_and_wire_surface_reference",
+        "target_is_template": true,
+        "field_surveyed": false
+      },
+      "translation_residual_m": 6.241497596537471e-11
+    },
+    {
+      "task": {
+        "id": "OSM_269894017_P04",
+        "tower_id": "OSM_269894017",
+        "paper_point_number": 4,
+        "role": "left_middle",
+        "longitude": 6.698997362413182,
+        "latitude": 51.005082495726505,
+        "easting_m": 338566.20449484716,
+        "northing_m": 5652910.065160273,
+        "altitude_m": 107.908,
+        "height_above_tower_ground_m": 25.908,
+        "target": {
+          "longitude": 6.6991307291295765,
+          "latitude": 51.00504783658333,
+          "easting_m": 338575.43985812727,
+          "northing_m": 5652905.919410241,
+          "altitude_m": 107.908,
+          "surface_id": "OSM_269894017_P04_surface",
+          "normal_world": [
+            -0.9122968310442907,
+            0.40952959852316506,
+            0.0
+          ],
+          "tangent_basis": [
+            [
+              -0.40952959852316506,
+              -0.9122968310442907,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "surface_samples_utm_m": [
+            [
+              338575.43985812727,
+              5652905.919410241,
+              107.908
+            ],
+            [
+              338575.5422405269,
+              5652906.147484449,
+              107.658
+            ],
+            [
+              338575.5422405269,
+              5652906.147484449,
+              108.158
+            ],
+            [
+              338575.33747572766,
+              5652905.691336033,
+              107.658
+            ],
+            [
+              338575.33747572766,
+              5652905.691336033,
+              108.158
+            ]
+          ],
+          "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+        },
+        "camera_azimuth_deg": 114.17528834300612,
+        "camera_elevation_deg": 0.0,
+        "modality": "RGB",
+        "effective_service_seconds": 20.011081481481483,
+        "time_evidence_kind": "calibrated_equal_residual",
+        "geometry_evidence_kind": "transferred_engineering_template",
+        "source_ids": [
+          "KPLC25",
+          "LI23",
+          "MODEL_REGIONAL",
+          "MODEL_TIMING",
+          "MODEL_VIEWS",
+          "TERRAIN_rommerskirchen"
+        ],
+        "observation_requirement": {
+          "camera_model": "joint_reference_profile.camera",
+          "nominal_viewpoint_role": "initialization_only",
+          "viewpoint_ball_radius_m": null,
+          "min_dwell_s": 20.011081481481483,
+          "weight": 1.0,
+          "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+          "planned_status": "required_not_completed",
+          "capture_domain": "physical_optics_visibility_clearance"
+        }
+      },
+      "correction": {
+        "task_id": "OSM_269894017_P04",
+        "tower_id": "OSM_269894017",
+        "role": "left_middle",
+        "source_index": 219,
+        "source_ids": [
+          "KPLC25",
+          "LI23",
+          "MODEL_REGIONAL",
+          "MODEL_TIMING",
+          "MODEL_VIEWS",
+          "TERRAIN_rommerskirchen"
+        ],
+        "normal_world": [
+          -0.9122968310442907,
+          0.40952959852316506,
+          0.0
+        ],
+        "min_dwell_s": 20.011081481481483,
+        "source_target_xyz_m": [
+          338575.50371890544,
+          5652905.890743169,
+          107.908
+        ],
+        "target_xyz_m": [
+          338575.43985812727,
+          5652905.919410241,
+          107.908
+        ],
+        "target_longitude": 6.6991307291295765,
+        "target_latitude": 51.00504783658333,
+        "source_viewpoint_xyz_m": [
+          338566.26835562533,
+          5652910.036493201,
+          107.908
+        ],
+        "viewpoint_center_xyz_m": [
+          338566.20449484716,
+          5652910.065160273,
+          107.908
+        ],
+        "viewpoint_longitude": 6.698997362413182,
+        "viewpoint_latitude": 51.005082495726505,
+        "source_surface_samples_utm_m": [
+          [
+            338575.50371890544,
+            5652905.890743169,
+            107.908
+          ],
+          [
+            338575.60610130505,
+            5652906.118817377,
+            107.658
+          ],
+          [
+            338575.60610130505,
+            5652906.118817377,
+            108.158
+          ],
+          [
+            338575.40133650583,
+            5652905.662668961,
+            107.658
+          ],
+          [
+            338575.40133650583,
+            5652905.662668961,
+            108.158
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338575.43985812727,
+            5652905.919410241,
+            107.908
+          ],
+          [
+            338575.5422405269,
+            5652906.147484449,
+            107.658
+          ],
+          [
+            338575.5422405269,
+            5652906.147484449,
+            108.158
+          ],
+          [
+            338575.33747572766,
+            5652905.691336033,
+            107.658
+          ],
+          [
+            338575.33747572766,
+            5652905.691336033,
+            108.158
+          ]
+        ],
+        "correction_distance_m": 0.07,
+        "host_cylinder_correction_m": 0.0,
+        "wire_surface_correction_m": 0.07,
+        "wire_surface_receipt": {
+          "initial_conflicts": [
+            {
+              "sample": 0,
+              "wire": 1389,
+              "wire_id": "WIRE_116050405:0_2_1",
+              "distance_m": -0.05,
+              "parameter": 1.0
+            },
+            {
+              "sample": 0,
+              "wire": 1693,
+              "wire_id": "WIRE_325327247:0_2_1",
+              "distance_m": -0.05,
+              "parameter": 0.0
+            },
+            {
+              "sample": 0,
+              "wire": 1757,
+              "wire_id": "WIRE_325327279:0_2_1",
+              "distance_m": -0.05,
+              "parameter": 1.0
+            },
+            {
+              "sample": 0,
+              "wire": 1765,
+              "wire_id": "WIRE_325327280:0_2_1",
+              "distance_m": -0.05,
+              "parameter": 1.0
+            }
+          ],
+          "grid_steps": 7,
+          "grid_m": 0.01,
+          "final_clearance_margin_m": 0.01,
+          "reason": "template patch intersects source wire tube or its1cm construction margin"
+        },
+        "correction_kind": "source_host_and_wire_surface_reference",
+        "target_is_template": true,
+        "field_surveyed": false
+      },
+      "translation_residual_m": 6.241497596537471e-11
+    },
+    {
+      "task": {
+        "id": "OSM_269894017_P05",
+        "tower_id": "OSM_269894017",
+        "paper_point_number": 5,
+        "role": "left_lower",
+        "longitude": 6.698997362413182,
+        "latitude": 51.005082495726505,
+        "easting_m": 338566.20449484716,
+        "northing_m": 5652910.065160273,
+        "altitude_m": 102.8026,
+        "height_above_tower_ground_m": 20.8026,
+        "target": {
+          "longitude": 6.6991307291295765,
+          "latitude": 51.00504783658333,
+          "easting_m": 338575.43985812727,
+          "northing_m": 5652905.919410241,
+          "altitude_m": 102.8026,
+          "surface_id": "OSM_269894017_P05_surface",
+          "normal_world": [
+            -0.9122968310442907,
+            0.40952959852316506,
+            0.0
+          ],
+          "tangent_basis": [
+            [
+              -0.40952959852316506,
+              -0.9122968310442907,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "surface_samples_utm_m": [
+            [
+              338575.43985812727,
+              5652905.919410241,
+              102.8026
+            ],
+            [
+              338575.5422405269,
+              5652906.147484449,
+              102.5526
+            ],
+            [
+              338575.5422405269,
+              5652906.147484449,
+              103.0526
+            ],
+            [
+              338575.33747572766,
+              5652905.691336033,
+              102.5526
+            ],
+            [
+              338575.33747572766,
+              5652905.691336033,
+              103.0526
+            ]
+          ],
+          "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+        },
+        "camera_azimuth_deg": 114.17528834300612,
+        "camera_elevation_deg": 0.0,
+        "modality": "RGB",
+        "effective_service_seconds": 20.011081481481483,
+        "time_evidence_kind": "calibrated_equal_residual",
+        "geometry_evidence_kind": "transferred_engineering_template",
+        "source_ids": [
+          "KPLC25",
+          "LI23",
+          "MODEL_REGIONAL",
+          "MODEL_TIMING",
+          "MODEL_VIEWS",
+          "TERRAIN_rommerskirchen"
+        ],
+        "observation_requirement": {
+          "camera_model": "joint_reference_profile.camera",
+          "nominal_viewpoint_role": "initialization_only",
+          "viewpoint_ball_radius_m": null,
+          "min_dwell_s": 20.011081481481483,
+          "weight": 1.0,
+          "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+          "planned_status": "required_not_completed",
+          "capture_domain": "physical_optics_visibility_clearance"
+        }
+      },
+      "correction": {
+        "task_id": "OSM_269894017_P05",
+        "tower_id": "OSM_269894017",
+        "role": "left_lower",
+        "source_index": 220,
+        "source_ids": [
+          "KPLC25",
+          "LI23",
+          "MODEL_REGIONAL",
+          "MODEL_TIMING",
+          "MODEL_VIEWS",
+          "TERRAIN_rommerskirchen"
+        ],
+        "normal_world": [
+          -0.9122968310442907,
+          0.40952959852316506,
+          0.0
+        ],
+        "min_dwell_s": 20.011081481481483,
+        "source_target_xyz_m": [
+          338575.50371890544,
+          5652905.890743169,
+          102.8026
+        ],
+        "target_xyz_m": [
+          338575.43985812727,
+          5652905.919410241,
+          102.8026
+        ],
+        "target_longitude": 6.6991307291295765,
+        "target_latitude": 51.00504783658333,
+        "source_viewpoint_xyz_m": [
+          338566.26835562533,
+          5652910.036493201,
+          102.8026
+        ],
+        "viewpoint_center_xyz_m": [
+          338566.20449484716,
+          5652910.065160273,
+          102.8026
+        ],
+        "viewpoint_longitude": 6.698997362413182,
+        "viewpoint_latitude": 51.005082495726505,
+        "source_surface_samples_utm_m": [
+          [
+            338575.50371890544,
+            5652905.890743169,
+            102.8026
+          ],
+          [
+            338575.60610130505,
+            5652906.118817377,
+            102.5526
+          ],
+          [
+            338575.60610130505,
+            5652906.118817377,
+            103.0526
+          ],
+          [
+            338575.40133650583,
+            5652905.662668961,
+            102.5526
+          ],
+          [
+            338575.40133650583,
+            5652905.662668961,
+            103.0526
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338575.43985812727,
+            5652905.919410241,
+            102.8026
+          ],
+          [
+            338575.5422405269,
+            5652906.147484449,
+            102.5526
+          ],
+          [
+            338575.5422405269,
+            5652906.147484449,
+            103.0526
+          ],
+          [
+            338575.33747572766,
+            5652905.691336033,
+            102.5526
+          ],
+          [
+            338575.33747572766,
+            5652905.691336033,
+            103.0526
+          ]
+        ],
+        "correction_distance_m": 0.07,
+        "host_cylinder_correction_m": 0.0,
+        "wire_surface_correction_m": 0.07,
+        "wire_surface_receipt": {
+          "initial_conflicts": [
+            {
+              "sample": 0,
+              "wire": 1391,
+              "wire_id": "WIRE_116050405:0_3_1",
+              "distance_m": -0.05,
+              "parameter": 1.0
+            },
+            {
+              "sample": 0,
+              "wire": 1695,
+              "wire_id": "WIRE_325327247:0_3_1",
+              "distance_m": -0.05,
+              "parameter": 0.0
+            },
+            {
+              "sample": 0,
+              "wire": 1759,
+              "wire_id": "WIRE_325327279:0_3_1",
+              "distance_m": -0.05,
+              "parameter": 1.0
+            },
+            {
+              "sample": 0,
+              "wire": 1767,
+              "wire_id": "WIRE_325327280:0_3_1",
+              "distance_m": -0.05,
+              "parameter": 1.0
+            }
+          ],
+          "grid_steps": 7,
+          "grid_m": 0.01,
+          "final_clearance_margin_m": 0.01,
+          "reason": "template patch intersects source wire tube or its1cm construction margin"
+        },
+        "correction_kind": "source_host_and_wire_surface_reference",
+        "target_is_template": true,
+        "field_surveyed": false
+      },
+      "translation_residual_m": 6.241497596537471e-11
+    },
+    {
+      "task": {
+        "id": "OSM_269894017_P08",
+        "tower_id": "OSM_269894017",
+        "paper_point_number": 8,
+        "role": "right_groundwire",
+        "longitude": 6.69939430541201,
+        "latitude": 51.004979338167544,
+        "easting_m": 338593.6919983668,
+        "northing_m": 5652897.726033471,
+        "altitude_m": 116.21379999999999,
+        "height_above_tower_ground_m": 34.2138,
+        "target": {
+          "longitude": 6.699260939080563,
+          "latitude": 51.0050139976172,
+          "easting_m": 338584.4566350867,
+          "northing_m": 5652901.871783502,
+          "altitude_m": 116.21379999999999,
+          "surface_id": "OSM_269894017_P08_surface",
+          "normal_world": [
+            0.9122968310442907,
+            -0.40952959852316506,
+            0.0
+          ],
+          "tangent_basis": [
+            [
+              0.40952959852316506,
+              0.9122968310442907,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "surface_samples_utm_m": [
+            [
+              338584.4566350867,
+              5652901.871783502,
+              116.21379999999999
+            ],
+            [
+              338584.3542526871,
+              5652901.6437092945,
+              115.96379999999999
+            ],
+            [
+              338584.3542526871,
+              5652901.6437092945,
+              116.46379999999999
+            ],
+            [
+              338584.5590174863,
+              5652902.09985771,
+              115.96379999999999
+            ],
+            [
+              338584.5590174863,
+              5652902.09985771,
+              116.46379999999999
+            ]
+          ],
+          "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+        },
+        "camera_azimuth_deg": 294.1752883430061,
+        "camera_elevation_deg": 0.0,
+        "modality": "RGB",
+        "effective_service_seconds": 20.011081481481483,
+        "time_evidence_kind": "calibrated_equal_residual",
+        "geometry_evidence_kind": "transferred_engineering_template",
+        "source_ids": [
+          "KPLC25",
+          "LI23",
+          "MODEL_REGIONAL",
+          "MODEL_TIMING",
+          "MODEL_VIEWS",
+          "TERRAIN_rommerskirchen"
+        ],
+        "observation_requirement": {
+          "camera_model": "joint_reference_profile.camera",
+          "nominal_viewpoint_role": "initialization_only",
+          "viewpoint_ball_radius_m": null,
+          "min_dwell_s": 20.011081481481483,
+          "weight": 1.0,
+          "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+          "planned_status": "required_not_completed",
+          "capture_domain": "physical_optics_visibility_clearance"
+        }
+      },
+      "correction": {
+        "task_id": "OSM_269894017_P08",
+        "tower_id": "OSM_269894017",
+        "role": "right_groundwire",
+        "source_index": 221,
+        "source_ids": [
+          "KPLC25",
+          "LI23",
+          "MODEL_REGIONAL",
+          "MODEL_TIMING",
+          "MODEL_VIEWS",
+          "TERRAIN_rommerskirchen"
+        ],
+        "normal_world": [
+          0.9122968310442907,
+          -0.40952959852316506,
+          0.0
+        ],
+        "min_dwell_s": 20.011081481481483,
+        "source_target_xyz_m": [
+          338584.4018972768,
+          5652901.896355278,
+          116.21379999999999
+        ],
+        "target_xyz_m": [
+          338584.4566350867,
+          5652901.871783502,
+          116.21379999999999
+        ],
+        "target_longitude": 6.699260939080563,
+        "target_latitude": 51.0050139976172,
+        "source_viewpoint_xyz_m": [
+          338593.6372605569,
+          5652897.750605246,
+          116.21379999999999
+        ],
+        "viewpoint_center_xyz_m": [
+          338593.6919983668,
+          5652897.726033471,
+          116.21379999999999
+        ],
+        "viewpoint_longitude": 6.69939430541201,
+        "viewpoint_latitude": 51.004979338167544,
+        "source_surface_samples_utm_m": [
+          [
+            338584.4018972768,
+            5652901.896355278,
+            116.21379999999999
+          ],
+          [
+            338584.2995148772,
+            5652901.66828107,
+            115.96379999999999
+          ],
+          [
+            338584.2995148772,
+            5652901.66828107,
+            116.46379999999999
+          ],
+          [
+            338584.5042796764,
+            5652902.124429486,
+            115.96379999999999
+          ],
+          [
+            338584.5042796764,
+            5652902.124429486,
+            116.46379999999999
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338584.4566350867,
+            5652901.871783502,
+            116.21379999999999
+          ],
+          [
+            338584.3542526871,
+            5652901.6437092945,
+            115.96379999999999
+          ],
+          [
+            338584.3542526871,
+            5652901.6437092945,
+            116.46379999999999
+          ],
+          [
+            338584.5590174863,
+            5652902.09985771,
+            115.96379999999999
+          ],
+          [
+            338584.5590174863,
+            5652902.09985771,
+            116.46379999999999
+          ]
+        ],
+        "correction_distance_m": 0.06,
+        "host_cylinder_correction_m": 0.0,
+        "wire_surface_correction_m": 0.06,
+        "wire_surface_receipt": {
+          "initial_conflicts": [
+            {
+              "sample": 0,
+              "wire": 1384,
+              "wire_id": "WIRE_116050405:0_0_-1",
+              "distance_m": -0.05,
+              "parameter": 1.0
+            },
+            {
+              "sample": 0,
+              "wire": 1688,
+              "wire_id": "WIRE_325327247:0_0_-1",
+              "distance_m": -0.05,
+              "parameter": 0.0
+            },
+            {
+              "sample": 0,
+              "wire": 1752,
+              "wire_id": "WIRE_325327279:0_0_-1",
+              "distance_m": -0.05,
+              "parameter": 1.0
+            },
+            {
+              "sample": 0,
+              "wire": 1760,
+              "wire_id": "WIRE_325327280:0_0_-1",
+              "distance_m": -0.05,
+              "parameter": 1.0
+            }
+          ],
+          "grid_steps": 6,
+          "grid_m": 0.01,
+          "final_clearance_margin_m": 0.01,
+          "reason": "template patch intersects source wire tube or its1cm construction margin"
+        },
+        "correction_kind": "source_host_and_wire_surface_reference",
+        "target_is_template": true,
+        "field_surveyed": false
+      },
+      "translation_residual_m": 4.5263679263052303e-10
+    },
+    {
+      "task": {
+        "id": "OSM_269894017_P09",
+        "tower_id": "OSM_269894017",
+        "paper_point_number": 9,
+        "role": "right_upper",
+        "longitude": 6.69939430541201,
+        "latitude": 51.004979338167544,
+        "easting_m": 338593.6919983668,
+        "northing_m": 5652897.726033471,
+        "altitude_m": 113.0134,
+        "height_above_tower_ground_m": 31.0134,
+        "target": {
+          "longitude": 6.699260939080563,
+          "latitude": 51.0050139976172,
+          "easting_m": 338584.4566350867,
+          "northing_m": 5652901.871783502,
+          "altitude_m": 113.0134,
+          "surface_id": "OSM_269894017_P09_surface",
+          "normal_world": [
+            0.9122968310442907,
+            -0.40952959852316506,
+            0.0
+          ],
+          "tangent_basis": [
+            [
+              0.40952959852316506,
+              0.9122968310442907,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "surface_samples_utm_m": [
+            [
+              338584.4566350867,
+              5652901.871783502,
+              113.0134
+            ],
+            [
+              338584.3542526871,
+              5652901.6437092945,
+              112.7634
+            ],
+            [
+              338584.3542526871,
+              5652901.6437092945,
+              113.2634
+            ],
+            [
+              338584.5590174863,
+              5652902.09985771,
+              112.7634
+            ],
+            [
+              338584.5590174863,
+              5652902.09985771,
+              113.2634
+            ]
+          ],
+          "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+        },
+        "camera_azimuth_deg": 294.1752883430061,
+        "camera_elevation_deg": 0.0,
+        "modality": "RGB",
+        "effective_service_seconds": 20.011081481481483,
+        "time_evidence_kind": "calibrated_equal_residual",
+        "geometry_evidence_kind": "transferred_engineering_template",
+        "source_ids": [
+          "KPLC25",
+          "LI23",
+          "MODEL_REGIONAL",
+          "MODEL_TIMING",
+          "MODEL_VIEWS",
+          "TERRAIN_rommerskirchen"
+        ],
+        "observation_requirement": {
+          "camera_model": "joint_reference_profile.camera",
+          "nominal_viewpoint_role": "initialization_only",
+          "viewpoint_ball_radius_m": null,
+          "min_dwell_s": 20.011081481481483,
+          "weight": 1.0,
+          "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+          "planned_status": "required_not_completed",
+          "capture_domain": "physical_optics_visibility_clearance"
+        }
+      },
+      "correction": {
+        "task_id": "OSM_269894017_P09",
+        "tower_id": "OSM_269894017",
+        "role": "right_upper",
+        "source_index": 222,
+        "source_ids": [
+          "KPLC25",
+          "LI23",
+          "MODEL_REGIONAL",
+          "MODEL_TIMING",
+          "MODEL_VIEWS",
+          "TERRAIN_rommerskirchen"
+        ],
+        "normal_world": [
+          0.9122968310442907,
+          -0.40952959852316506,
+          0.0
+        ],
+        "min_dwell_s": 20.011081481481483,
+        "source_target_xyz_m": [
+          338584.4018972768,
+          5652901.896355278,
+          113.0134
+        ],
+        "target_xyz_m": [
+          338584.4566350867,
+          5652901.871783502,
+          113.0134
+        ],
+        "target_longitude": 6.699260939080563,
+        "target_latitude": 51.0050139976172,
+        "source_viewpoint_xyz_m": [
+          338593.6372605569,
+          5652897.750605246,
+          113.0134
+        ],
+        "viewpoint_center_xyz_m": [
+          338593.6919983668,
+          5652897.726033471,
+          113.0134
+        ],
+        "viewpoint_longitude": 6.69939430541201,
+        "viewpoint_latitude": 51.004979338167544,
+        "source_surface_samples_utm_m": [
+          [
+            338584.4018972768,
+            5652901.896355278,
+            113.0134
+          ],
+          [
+            338584.2995148772,
+            5652901.66828107,
+            112.7634
+          ],
+          [
+            338584.2995148772,
+            5652901.66828107,
+            113.2634
+          ],
+          [
+            338584.5042796764,
+            5652902.124429486,
+            112.7634
+          ],
+          [
+            338584.5042796764,
+            5652902.124429486,
+            113.2634
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338584.4566350867,
+            5652901.871783502,
+            113.0134
+          ],
+          [
+            338584.3542526871,
+            5652901.6437092945,
+            112.7634
+          ],
+          [
+            338584.3542526871,
+            5652901.6437092945,
+            113.2634
+          ],
+          [
+            338584.5590174863,
+            5652902.09985771,
+            112.7634
+          ],
+          [
+            338584.5590174863,
+            5652902.09985771,
+            113.2634
+          ]
+        ],
+        "correction_distance_m": 0.06,
+        "host_cylinder_correction_m": 0.0,
+        "wire_surface_correction_m": 0.06,
+        "wire_surface_receipt": {
+          "initial_conflicts": [
+            {
+              "sample": 0,
+              "wire": 1386,
+              "wire_id": "WIRE_116050405:0_1_-1",
+              "distance_m": -0.05,
+              "parameter": 1.0
+            },
+            {
+              "sample": 0,
+              "wire": 1690,
+              "wire_id": "WIRE_325327247:0_1_-1",
+              "distance_m": -0.05,
+              "parameter": 0.0
+            },
+            {
+              "sample": 0,
+              "wire": 1754,
+              "wire_id": "WIRE_325327279:0_1_-1",
+              "distance_m": -0.05,
+              "parameter": 1.0
+            },
+            {
+              "sample": 0,
+              "wire": 1762,
+              "wire_id": "WIRE_325327280:0_1_-1",
+              "distance_m": -0.05,
+              "parameter": 1.0
+            }
+          ],
+          "grid_steps": 6,
+          "grid_m": 0.01,
+          "final_clearance_margin_m": 0.01,
+          "reason": "template patch intersects source wire tube or its1cm construction margin"
+        },
+        "correction_kind": "source_host_and_wire_surface_reference",
+        "target_is_template": true,
+        "field_surveyed": false
+      },
+      "translation_residual_m": 4.5263679263052303e-10
+    },
+    {
+      "task": {
+        "id": "OSM_269894017_P10",
+        "tower_id": "OSM_269894017",
+        "paper_point_number": 10,
+        "role": "right_middle",
+        "longitude": 6.69939430541201,
+        "latitude": 51.004979338167544,
+        "easting_m": 338593.6919983668,
+        "northing_m": 5652897.726033471,
+        "altitude_m": 107.908,
+        "height_above_tower_ground_m": 25.908,
+        "target": {
+          "longitude": 6.699260939080563,
+          "latitude": 51.0050139976172,
+          "easting_m": 338584.4566350867,
+          "northing_m": 5652901.871783502,
+          "altitude_m": 107.908,
+          "surface_id": "OSM_269894017_P10_surface",
+          "normal_world": [
+            0.9122968310442907,
+            -0.40952959852316506,
+            0.0
+          ],
+          "tangent_basis": [
+            [
+              0.40952959852316506,
+              0.9122968310442907,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "surface_samples_utm_m": [
+            [
+              338584.4566350867,
+              5652901.871783502,
+              107.908
+            ],
+            [
+              338584.3542526871,
+              5652901.6437092945,
+              107.658
+            ],
+            [
+              338584.3542526871,
+              5652901.6437092945,
+              108.158
+            ],
+            [
+              338584.5590174863,
+              5652902.09985771,
+              107.658
+            ],
+            [
+              338584.5590174863,
+              5652902.09985771,
+              108.158
+            ]
+          ],
+          "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+        },
+        "camera_azimuth_deg": 294.1752883430061,
+        "camera_elevation_deg": 0.0,
+        "modality": "RGB",
+        "effective_service_seconds": 20.011081481481483,
+        "time_evidence_kind": "calibrated_equal_residual",
+        "geometry_evidence_kind": "transferred_engineering_template",
+        "source_ids": [
+          "KPLC25",
+          "LI23",
+          "MODEL_REGIONAL",
+          "MODEL_TIMING",
+          "MODEL_VIEWS",
+          "TERRAIN_rommerskirchen"
+        ],
+        "observation_requirement": {
+          "camera_model": "joint_reference_profile.camera",
+          "nominal_viewpoint_role": "initialization_only",
+          "viewpoint_ball_radius_m": null,
+          "min_dwell_s": 20.011081481481483,
+          "weight": 1.0,
+          "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+          "planned_status": "required_not_completed",
+          "capture_domain": "physical_optics_visibility_clearance"
+        }
+      },
+      "correction": {
+        "task_id": "OSM_269894017_P10",
+        "tower_id": "OSM_269894017",
+        "role": "right_middle",
+        "source_index": 223,
+        "source_ids": [
+          "KPLC25",
+          "LI23",
+          "MODEL_REGIONAL",
+          "MODEL_TIMING",
+          "MODEL_VIEWS",
+          "TERRAIN_rommerskirchen"
+        ],
+        "normal_world": [
+          0.9122968310442907,
+          -0.40952959852316506,
+          0.0
+        ],
+        "min_dwell_s": 20.011081481481483,
+        "source_target_xyz_m": [
+          338584.4018972768,
+          5652901.896355278,
+          107.908
+        ],
+        "target_xyz_m": [
+          338584.4566350867,
+          5652901.871783502,
+          107.908
+        ],
+        "target_longitude": 6.699260939080563,
+        "target_latitude": 51.0050139976172,
+        "source_viewpoint_xyz_m": [
+          338593.6372605569,
+          5652897.750605246,
+          107.908
+        ],
+        "viewpoint_center_xyz_m": [
+          338593.6919983668,
+          5652897.726033471,
+          107.908
+        ],
+        "viewpoint_longitude": 6.69939430541201,
+        "viewpoint_latitude": 51.004979338167544,
+        "source_surface_samples_utm_m": [
+          [
+            338584.4018972768,
+            5652901.896355278,
+            107.908
+          ],
+          [
+            338584.2995148772,
+            5652901.66828107,
+            107.658
+          ],
+          [
+            338584.2995148772,
+            5652901.66828107,
+            108.158
+          ],
+          [
+            338584.5042796764,
+            5652902.124429486,
+            107.658
+          ],
+          [
+            338584.5042796764,
+            5652902.124429486,
+            108.158
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338584.4566350867,
+            5652901.871783502,
+            107.908
+          ],
+          [
+            338584.3542526871,
+            5652901.6437092945,
+            107.658
+          ],
+          [
+            338584.3542526871,
+            5652901.6437092945,
+            108.158
+          ],
+          [
+            338584.5590174863,
+            5652902.09985771,
+            107.658
+          ],
+          [
+            338584.5590174863,
+            5652902.09985771,
+            108.158
+          ]
+        ],
+        "correction_distance_m": 0.06,
+        "host_cylinder_correction_m": 0.0,
+        "wire_surface_correction_m": 0.06,
+        "wire_surface_receipt": {
+          "initial_conflicts": [
+            {
+              "sample": 0,
+              "wire": 1388,
+              "wire_id": "WIRE_116050405:0_2_-1",
+              "distance_m": -0.05,
+              "parameter": 1.0
+            },
+            {
+              "sample": 0,
+              "wire": 1692,
+              "wire_id": "WIRE_325327247:0_2_-1",
+              "distance_m": -0.05,
+              "parameter": 0.0
+            },
+            {
+              "sample": 0,
+              "wire": 1756,
+              "wire_id": "WIRE_325327279:0_2_-1",
+              "distance_m": -0.05,
+              "parameter": 1.0
+            },
+            {
+              "sample": 0,
+              "wire": 1764,
+              "wire_id": "WIRE_325327280:0_2_-1",
+              "distance_m": -0.05,
+              "parameter": 1.0
+            }
+          ],
+          "grid_steps": 6,
+          "grid_m": 0.01,
+          "final_clearance_margin_m": 0.01,
+          "reason": "template patch intersects source wire tube or its1cm construction margin"
+        },
+        "correction_kind": "source_host_and_wire_surface_reference",
+        "target_is_template": true,
+        "field_surveyed": false
+      },
+      "translation_residual_m": 4.5263679263052303e-10
+    },
+    {
+      "task": {
+        "id": "OSM_269894017_P11",
+        "tower_id": "OSM_269894017",
+        "paper_point_number": 11,
+        "role": "right_lower",
+        "longitude": 6.69939430541201,
+        "latitude": 51.004979338167544,
+        "easting_m": 338593.6919983668,
+        "northing_m": 5652897.726033471,
+        "altitude_m": 102.8026,
+        "height_above_tower_ground_m": 20.8026,
+        "target": {
+          "longitude": 6.699260939080563,
+          "latitude": 51.0050139976172,
+          "easting_m": 338584.4566350867,
+          "northing_m": 5652901.871783502,
+          "altitude_m": 102.8026,
+          "surface_id": "OSM_269894017_P11_surface",
+          "normal_world": [
+            0.9122968310442907,
+            -0.40952959852316506,
+            0.0
+          ],
+          "tangent_basis": [
+            [
+              0.40952959852316506,
+              0.9122968310442907,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              1.0
+            ]
+          ],
+          "surface_samples_utm_m": [
+            [
+              338584.4566350867,
+              5652901.871783502,
+              102.8026
+            ],
+            [
+              338584.3542526871,
+              5652901.6437092945,
+              102.5526
+            ],
+            [
+              338584.3542526871,
+              5652901.6437092945,
+              103.0526
+            ],
+            [
+              338584.5590174863,
+              5652902.09985771,
+              102.5526
+            ],
+            [
+              338584.5590174863,
+              5652902.09985771,
+              103.0526
+            ]
+          ],
+          "geometry_kind": "declared0.5m_reference_patch_not_surveyed_component"
+        },
+        "camera_azimuth_deg": 294.1752883430061,
+        "camera_elevation_deg": 0.0,
+        "modality": "RGB",
+        "effective_service_seconds": 20.011081481481483,
+        "time_evidence_kind": "calibrated_equal_residual",
+        "geometry_evidence_kind": "transferred_engineering_template",
+        "source_ids": [
+          "KPLC25",
+          "LI23",
+          "MODEL_REGIONAL",
+          "MODEL_TIMING",
+          "MODEL_VIEWS",
+          "TERRAIN_rommerskirchen"
+        ],
+        "observation_requirement": {
+          "camera_model": "joint_reference_profile.camera",
+          "nominal_viewpoint_role": "initialization_only",
+          "viewpoint_ball_radius_m": null,
+          "min_dwell_s": 20.011081481481483,
+          "weight": 1.0,
+          "weather_window_rule": "all occupied UTC hours satisfy regional_reference_profile weather limits",
+          "planned_status": "required_not_completed",
+          "capture_domain": "physical_optics_visibility_clearance"
+        }
+      },
+      "correction": {
+        "task_id": "OSM_269894017_P11",
+        "tower_id": "OSM_269894017",
+        "role": "right_lower",
+        "source_index": 224,
+        "source_ids": [
+          "KPLC25",
+          "LI23",
+          "MODEL_REGIONAL",
+          "MODEL_TIMING",
+          "MODEL_VIEWS",
+          "TERRAIN_rommerskirchen"
+        ],
+        "normal_world": [
+          0.9122968310442907,
+          -0.40952959852316506,
+          0.0
+        ],
+        "min_dwell_s": 20.011081481481483,
+        "source_target_xyz_m": [
+          338584.4018972768,
+          5652901.896355278,
+          102.8026
+        ],
+        "target_xyz_m": [
+          338584.4566350867,
+          5652901.871783502,
+          102.8026
+        ],
+        "target_longitude": 6.699260939080563,
+        "target_latitude": 51.0050139976172,
+        "source_viewpoint_xyz_m": [
+          338593.6372605569,
+          5652897.750605246,
+          102.8026
+        ],
+        "viewpoint_center_xyz_m": [
+          338593.6919983668,
+          5652897.726033471,
+          102.8026
+        ],
+        "viewpoint_longitude": 6.69939430541201,
+        "viewpoint_latitude": 51.004979338167544,
+        "source_surface_samples_utm_m": [
+          [
+            338584.4018972768,
+            5652901.896355278,
+            102.8026
+          ],
+          [
+            338584.2995148772,
+            5652901.66828107,
+            102.5526
+          ],
+          [
+            338584.2995148772,
+            5652901.66828107,
+            103.0526
+          ],
+          [
+            338584.5042796764,
+            5652902.124429486,
+            102.5526
+          ],
+          [
+            338584.5042796764,
+            5652902.124429486,
+            103.0526
+          ]
+        ],
+        "surface_samples_utm_m": [
+          [
+            338584.4566350867,
+            5652901.871783502,
+            102.8026
+          ],
+          [
+            338584.3542526871,
+            5652901.6437092945,
+            102.5526
+          ],
+          [
+            338584.3542526871,
+            5652901.6437092945,
+            103.0526
+          ],
+          [
+            338584.5590174863,
+            5652902.09985771,
+            102.5526
+          ],
+          [
+            338584.5590174863,
+            5652902.09985771,
+            103.0526
+          ]
+        ],
+        "correction_distance_m": 0.06,
+        "host_cylinder_correction_m": 0.0,
+        "wire_surface_correction_m": 0.06,
+        "wire_surface_receipt": {
+          "initial_conflicts": [
+            {
+              "sample": 0,
+              "wire": 1390,
+              "wire_id": "WIRE_116050405:0_3_-1",
+              "distance_m": -0.05,
+              "parameter": 1.0
+            },
+            {
+              "sample": 0,
+              "wire": 1694,
+              "wire_id": "WIRE_325327247:0_3_-1",
+              "distance_m": -0.05,
+              "parameter": 0.0
+            },
+            {
+              "sample": 0,
+              "wire": 1758,
+              "wire_id": "WIRE_325327279:0_3_-1",
+              "distance_m": -0.05,
+              "parameter": 1.0
+            },
+            {
+              "sample": 0,
+              "wire": 1766,
+              "wire_id": "WIRE_325327280:0_3_-1",
+              "distance_m": -0.05,
+              "parameter": 1.0
+            }
+          ],
+          "grid_steps": 6,
+          "grid_m": 0.01,
+          "final_clearance_margin_m": 0.01,
+          "reason": "template patch intersects source wire tube or its1cm construction margin"
+        },
+        "correction_kind": "source_host_and_wire_surface_reference",
+        "target_is_template": true,
+        "field_surveyed": false
+      },
+      "translation_residual_m": 4.5263679263052303e-10
+    }
+  ],
+  "source_bindings": [
+    {
+      "path": "evidence/snapshot/research_quality/inspection_regional_model_data.json",
+      "sha256": "ee30612135a2b3057192d1bcf6c0eb53a28b76e94efe16a828b87dd168e1929c"
+    },
+    {
+      "path": "evidence/inspection_parameters.json",
+      "sha256": "355a69e24aa85166a103a8e65d34f1de0ad387ed3b60dd8f34e922051109e38a"
+    },
+    {
+      "path": "reproduction/latest_regional_source_bindings.json",
+      "sha256": "91c79f6bf8cc763fd3bccabfafabbd125bc6bced1674615611907dc75038acd5"
+    }
+  ],
+  "distinctions": {
+    "raw_source": "inspection_parameters.numeric_tasks",
+    "historical_pilot": "inspection_numeric_pilot_input.tasks",
+    "current": "this file tasks[*].task; original source and historical pilot remain unchanged"
+  }
+}

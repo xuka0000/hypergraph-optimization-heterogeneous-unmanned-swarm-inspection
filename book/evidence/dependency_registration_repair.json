@@ -1,0 +1,562 @@
+{
+  "observed_at": "2026-11-10T07:38:38.450375+00:00",
+  "before": {
+    "task_assignment": [
+      "task_assignment",
+      "task_success",
+      "sortie_active",
+      "aircraft_assignment",
+      "pack_assignment"
+    ],
+    "tower_completion": [
+      "task_success",
+      "tower_complete"
+    ],
+    "task_order": [
+      "successor",
+      "task_assignment",
+      "event_time",
+      "transfer_duration"
+    ],
+    "time_and_capture_region": [
+      "task_assignment",
+      "event_time",
+      "position",
+      "capture_duration"
+    ],
+    "continuous_state_joins": [
+      "position",
+      "velocity",
+      "acceleration",
+      "attitude",
+      "gimbal",
+      "focal_length"
+    ],
+    "flight_kinematics": [
+      "position",
+      "velocity",
+      "acceleration",
+      "jerk",
+      "event_time"
+    ],
+    "force_and_attitude": [
+      "position",
+      "velocity",
+      "acceleration",
+      "attitude",
+      "body_rate",
+      "thrust",
+      "event_time"
+    ],
+    "gimbal_and_zoom": [
+      "attitude",
+      "gimbal",
+      "focal_length"
+    ],
+    "camera_FOV_and_incidence": [
+      "position",
+      "attitude",
+      "gimbal",
+      "focal_length",
+      "event_time"
+    ],
+    "surface_resolution": [
+      "position",
+      "attitude",
+      "gimbal",
+      "focal_length"
+    ],
+    "exposure_blur": [
+      "position",
+      "velocity",
+      "attitude",
+      "body_rate",
+      "gimbal",
+      "focal_length",
+      "event_time"
+    ],
+    "continuous_visibility": [
+      "position",
+      "attitude",
+      "gimbal",
+      "vehicle_state",
+      "event_time"
+    ],
+    "static_collision": [
+      "position",
+      "event_time"
+    ],
+    "simultaneous_collision": [
+      "position",
+      "vehicle_state",
+      "aircraft_assignment",
+      "event_time"
+    ],
+    "contact_mode": [
+      "position",
+      "vehicle_state",
+      "event_time",
+      "parking_occupancy"
+    ],
+    "road_path_and_modes": [
+      "vehicle_state",
+      "road_mode",
+      "road_progress",
+      "parking_occupancy"
+    ],
+    "vehicle_kinematics": [
+      "vehicle_state",
+      "vehicle_control",
+      "road_mode"
+    ],
+    "ground_conflict": [
+      "vehicle_state",
+      "parking_occupancy",
+      "event_time"
+    ],
+    "vehicle_aircraft_rendezvous": [
+      "position",
+      "attitude",
+      "gimbal",
+      "focal_length",
+      "vehicle_state",
+      "event_time",
+      "aircraft_assignment",
+      "parking_occupancy"
+    ],
+    "handling_capacity": [
+      "aircraft_assignment",
+      "event_time"
+    ],
+    "physical_pack_availability": [
+      "pack_assignment",
+      "pack_mode",
+      "event_time",
+      "charge_channel",
+      "position",
+      "vehicle_state"
+    ],
+    "charging_capacity": [
+      "charge_channel",
+      "charge_power",
+      "parking_occupancy",
+      "vehicle_state",
+      "event_time"
+    ],
+    "battery_conservation": [
+      "pack_energy",
+      "charge_power",
+      "flight_power",
+      "pack_assignment",
+      "event_time"
+    ],
+    "weather_window": [
+      "position",
+      "event_time"
+    ],
+    "weather_power": [
+      "position",
+      "velocity",
+      "event_time",
+      "flight_power"
+    ],
+    "planned_recovery_reserve": [
+      "pack_energy",
+      "flight_power",
+      "event_time",
+      "pack_assignment"
+    ],
+    "initial_and_terminal": [
+      "vehicle_state",
+      "position",
+      "attitude",
+      "pack_energy",
+      "pack_mode",
+      "event_time",
+      "makespan",
+      "charge_power",
+      "gimbal",
+      "focal_length"
+    ],
+    "commitment": [
+      "vehicle_state",
+      "position",
+      "pack_mode",
+      "event_time",
+      "aircraft_assignment",
+      "pack_assignment",
+      "charge_power"
+    ],
+    "causal_information": [
+      "event_time",
+      "vehicle_control",
+      "jerk",
+      "body_rate",
+      "gimbal",
+      "charge_power",
+      "successor",
+      "task_assignment"
+    ],
+    "execution_takeover": [
+      "position",
+      "vehicle_state",
+      "attitude",
+      "pack_energy",
+      "event_time",
+      "task_success"
+    ],
+    "rigid_body_rotation": null,
+    "tracking_execution": null,
+    "electrothermal_battery": null,
+    "weather_joint_scenarios": null,
+    "temporal_energy": null,
+    "state_handover": null,
+    "platform_model_binding": null
+  },
+  "after": {
+    "task_assignment": [
+      "task_assignment",
+      "task_success",
+      "sortie_active",
+      "aircraft_assignment",
+      "pack_assignment"
+    ],
+    "tower_completion": [
+      "task_success",
+      "tower_complete"
+    ],
+    "task_order": [
+      "successor",
+      "task_assignment",
+      "event_time",
+      "transfer_duration"
+    ],
+    "time_and_capture_region": [
+      "task_assignment",
+      "event_time",
+      "position",
+      "capture_duration"
+    ],
+    "continuous_state_joins": [
+      "position",
+      "velocity",
+      "acceleration",
+      "attitude",
+      "gimbal",
+      "focal_length"
+    ],
+    "flight_kinematics": [
+      "position",
+      "velocity",
+      "acceleration",
+      "jerk",
+      "event_time"
+    ],
+    "force_and_attitude": [
+      "position",
+      "velocity",
+      "acceleration",
+      "attitude",
+      "body_rate",
+      "thrust",
+      "event_time",
+      "rotor_thrust"
+    ],
+    "gimbal_and_zoom": [
+      "attitude",
+      "gimbal",
+      "focal_length"
+    ],
+    "camera_FOV_and_incidence": [
+      "position",
+      "attitude",
+      "gimbal",
+      "focal_length",
+      "event_time"
+    ],
+    "surface_resolution": [
+      "position",
+      "attitude",
+      "gimbal",
+      "focal_length"
+    ],
+    "exposure_blur": [
+      "position",
+      "velocity",
+      "attitude",
+      "body_rate",
+      "gimbal",
+      "focal_length",
+      "event_time"
+    ],
+    "continuous_visibility": [
+      "position",
+      "attitude",
+      "gimbal",
+      "vehicle_state",
+      "event_time"
+    ],
+    "static_collision": [
+      "position",
+      "event_time"
+    ],
+    "simultaneous_collision": [
+      "position",
+      "vehicle_state",
+      "aircraft_assignment",
+      "event_time"
+    ],
+    "contact_mode": [
+      "position",
+      "vehicle_state",
+      "event_time",
+      "parking_occupancy"
+    ],
+    "road_path_and_modes": [
+      "vehicle_state",
+      "road_mode",
+      "road_progress",
+      "parking_occupancy"
+    ],
+    "vehicle_kinematics": [
+      "vehicle_state",
+      "vehicle_control",
+      "road_mode"
+    ],
+    "ground_conflict": [
+      "vehicle_state",
+      "parking_occupancy",
+      "event_time"
+    ],
+    "vehicle_aircraft_rendezvous": [
+      "position",
+      "attitude",
+      "gimbal",
+      "focal_length",
+      "vehicle_state",
+      "event_time",
+      "aircraft_assignment",
+      "parking_occupancy"
+    ],
+    "handling_capacity": [
+      "aircraft_assignment",
+      "event_time"
+    ],
+    "physical_pack_availability": [
+      "pack_assignment",
+      "pack_mode",
+      "event_time",
+      "charge_channel",
+      "position",
+      "vehicle_state"
+    ],
+    "charging_capacity": [
+      "charge_channel",
+      "charge_power",
+      "parking_occupancy",
+      "vehicle_state",
+      "event_time"
+    ],
+    "battery_conservation": [
+      "pack_SOC",
+      "pack_current",
+      "pack_voltage",
+      "pack_core_temperature",
+      "terminal_energy_counters",
+      "charge_channel",
+      "charge_power",
+      "flight_power",
+      "pack_assignment",
+      "event_time"
+    ],
+    "weather_window": [
+      "position",
+      "event_time"
+    ],
+    "weather_power": [
+      "position",
+      "velocity",
+      "event_time",
+      "flight_power",
+      "attitude",
+      "power_history"
+    ],
+    "planned_recovery_reserve": [
+      "pack_SOC",
+      "pack_voltage",
+      "pack_current",
+      "pack_core_temperature",
+      "flight_power",
+      "event_time",
+      "pack_assignment",
+      "position",
+      "vehicle_state"
+    ],
+    "initial_and_terminal": [
+      "vehicle_state",
+      "position",
+      "attitude",
+      "pack_SOC",
+      "pack_mode",
+      "event_time",
+      "makespan",
+      "charge_power",
+      "gimbal",
+      "focal_length",
+      "pack_polarization",
+      "pack_core_temperature",
+      "rotor_thrust",
+      "body_rate",
+      "power_history"
+    ],
+    "commitment": [
+      "vehicle_state",
+      "position",
+      "pack_mode",
+      "event_time",
+      "aircraft_assignment",
+      "pack_assignment",
+      "charge_power",
+      "pack_polarization",
+      "pack_core_temperature",
+      "rotor_thrust",
+      "body_rate",
+      "power_history"
+    ],
+    "causal_information": [
+      "event_time",
+      "vehicle_control",
+      "jerk",
+      "body_rate",
+      "gimbal",
+      "charge_power",
+      "successor",
+      "task_assignment",
+      "rotor_command",
+      "controller_reference",
+      "charge_channel"
+    ],
+    "execution_takeover": [
+      "position",
+      "vehicle_state",
+      "attitude",
+      "pack_SOC",
+      "event_time",
+      "task_success",
+      "pack_polarization",
+      "pack_core_temperature",
+      "rotor_thrust",
+      "body_rate",
+      "power_history"
+    ],
+    "rigid_body_rotation": [
+      "position",
+      "velocity",
+      "acceleration",
+      "attitude",
+      "body_rate",
+      "thrust",
+      "rotor_thrust",
+      "rotor_command",
+      "rotor_speed",
+      "landing_contact_force",
+      "landing_contact_moment",
+      "vehicle_state",
+      "event_time",
+      "flight_power"
+    ],
+    "tracking_execution": [
+      "controller_reference",
+      "position",
+      "velocity",
+      "acceleration",
+      "attitude",
+      "body_rate",
+      "rotor_thrust",
+      "rotor_command",
+      "event_time"
+    ],
+    "electrothermal_battery": [
+      "pack_SOC",
+      "pack_voltage",
+      "pack_current",
+      "pack_polarization",
+      "pack_core_temperature",
+      "pack_cooling_duration",
+      "charge_channel",
+      "charge_power",
+      "flight_power",
+      "pack_assignment",
+      "pack_mode",
+      "event_time",
+      "rotor_thrust",
+      "rotor_speed"
+    ],
+    "weather_joint_scenarios": [
+      "position",
+      "vehicle_state",
+      "event_time",
+      "flight_power",
+      "pack_SOC",
+      "pack_core_temperature"
+    ],
+    "temporal_energy": [
+      "position",
+      "velocity",
+      "attitude",
+      "body_rate",
+      "power_history",
+      "flight_power",
+      "event_time",
+      "aircraft_assignment"
+    ],
+    "state_handover": [
+      "position",
+      "velocity",
+      "acceleration",
+      "attitude",
+      "body_rate",
+      "rotor_thrust",
+      "gimbal",
+      "focal_length",
+      "vehicle_state",
+      "vehicle_control",
+      "road_mode",
+      "road_progress",
+      "pack_SOC",
+      "pack_voltage",
+      "pack_current",
+      "pack_polarization",
+      "pack_core_temperature",
+      "pack_mode",
+      "charge_power",
+      "power_history",
+      "task_success",
+      "event_time",
+      "controller_reference",
+      "aircraft_assignment",
+      "pack_assignment"
+    ],
+    "platform_model_binding": [
+      "attitude",
+      "body_rate",
+      "rotor_thrust",
+      "rotor_command",
+      "rotor_speed",
+      "flight_power",
+      "power_history",
+      "pack_SOC",
+      "pack_voltage",
+      "pack_current",
+      "pack_polarization",
+      "pack_core_temperature",
+      "charge_power",
+      "gimbal",
+      "focal_length"
+    ]
+  },
+  "scientific_model_changed": false,
+  "scalar_hypergraph_verified": false,
+  "generator_updated": true,
+  "failure_preserved": "evidence/dependency_registration_failure.json"
+}

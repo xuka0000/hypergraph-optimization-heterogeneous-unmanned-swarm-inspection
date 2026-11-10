@@ -1,0 +1,12 @@
+{
+  "id": "rolling_observation_boundary",
+  "status": "documented_limitation",
+  "source": [
+    "evidence/model_04.tex",
+    "evidence/model_05.tex",
+    "evidence/model_16.tex",
+    "evidence/model_17.tex"
+  ],
+  "finding": "t_i>=tau and full dmin for every planned unaccepted task do not directly represent partially completed committed service or completed-but-pending-image-validation; startup regional numerical model tau0 is unaffected.",
+  "book_action": "State scope at 5.2 and discuss missing residual/pending-state transcription at 5.7/5.9/8.4; no owner source edit or result upgrade."
+}

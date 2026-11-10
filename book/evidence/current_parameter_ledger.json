@@ -1,0 +1,4132 @@
+{
+  "schema_version": 1,
+  "observed_at": "2026-11-10T10:31:52.468580+00:00",
+  "authoritative_scene": {
+    "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/rommerskirchen.json",
+    "sha256": "d0c668d7cfeea2e7973e6ab387be38e499aea4e935a6530dfaf8900438b8520d"
+  },
+  "authoritative_contract": {
+    "path": "Agent/Publication/engineering_inspection_contract.json",
+    "sha256": "4a8a117f57d9c1d188dfcce46fc51b0192896571cd045b3193bac711c9be6558"
+  },
+  "parameters": [
+    {
+      "id": "geometry.target_patch_width_m",
+      "value": 0.5,
+      "input_pointer": "/joint_reference_profile/geometry/target_patch_width_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/geography/results.json",
+          "sha256": "262af238c13db499a389edaa48475ca1e243c136b29c548f579c9c45cffa5a86"
+        }
+      ],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "geometry.target_patch_height_m",
+      "value": 0.5,
+      "input_pointer": "/joint_reference_profile/geometry/target_patch_height_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/geography/results.json",
+          "sha256": "262af238c13db499a389edaa48475ca1e243c136b29c548f579c9c45cffa5a86"
+        }
+      ],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "geometry.target_surface_samples",
+      "value": 5,
+      "input_pointer": "/joint_reference_profile/geometry/target_surface_samples",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/geography/results.json",
+          "sha256": "262af238c13db499a389edaa48475ca1e243c136b29c548f579c9c45cffa5a86"
+        }
+      ],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "geometry.viewpoint_ball_radius_m",
+      "value": 2.0,
+      "input_pointer": "/joint_reference_profile/geometry/viewpoint_ball_radius_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "geometry.tower_cylinder_radius_m",
+      "value": 2.0,
+      "input_pointer": "/joint_reference_profile/geometry/tower_cylinder_radius_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "geometry.tower_height_m",
+      "value": 35.7378,
+      "input_pointer": "/joint_reference_profile/geometry/tower_height_m",
+      "source_kind": "transferred_reference_geometry_not_local_survey",
+      "source_ids": [
+        "KPLC25"
+      ],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "geometry.conductor_radius_m",
+      "value": 0.05,
+      "input_pointer": "/joint_reference_profile/geometry/conductor_radius_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "geometry.conductor_sag_reference_m",
+      "value": 5.0,
+      "input_pointer": "/joint_reference_profile/geometry/conductor_sag_reference_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "geometry.conductor_layers_m",
+      "value": [
+        34.2138,
+        31.0134,
+        25.908,
+        20.8026
+      ],
+      "input_pointer": "/joint_reference_profile/geometry/conductor_layers_m",
+      "source_kind": "transferred_reference_geometry_not_local_survey",
+      "source_ids": [
+        "KPLC25"
+      ],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "geometry.conductor_lateral_offsets_m",
+      "value": [
+        -4.8768,
+        4.8768
+      ],
+      "input_pointer": "/joint_reference_profile/geometry/conductor_lateral_offsets_m",
+      "source_kind": "transferred_reference_geometry_not_local_survey",
+      "source_ids": [
+        "KPLC25"
+      ],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "geometry.conductor_curve",
+      "value": "q(t)=(1-t)*endpoint_a+t*endpoint_b-[0,0,4*sag*t*(1-t)]; endpoints at tower/source node DEM plus layer and incident-axis lateral offset",
+      "input_pointer": "/joint_reference_profile/geometry/conductor_curve",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "geometry.vegetation_model",
+      "value": "none; not surveyed",
+      "input_pointer": "/joint_reference_profile/geometry/vegetation_model",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "aircraft.reference_family",
+      "value": "M300 geometry/endurance reference; no imported M100 learned model",
+      "input_pointer": "/joint_reference_profile/aircraft/reference_family",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "aircraft.mass_kg",
+      "value": 7.0,
+      "input_pointer": "/joint_reference_profile/aircraft/mass_kg",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "aircraft.body_radius_m",
+      "value": 0.6,
+      "input_pointer": "/joint_reference_profile/aircraft/body_radius_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "aircraft.ground_speed_max_mps",
+      "value": 5.0,
+      "input_pointer": "/joint_reference_profile/aircraft/ground_speed_max_mps",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "aircraft.air_speed_max_mps",
+      "value": 12.0,
+      "input_pointer": "/joint_reference_profile/aircraft/air_speed_max_mps",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "aircraft.vertical_speed_max_mps",
+      "value": 1.0,
+      "input_pointer": "/joint_reference_profile/aircraft/vertical_speed_max_mps",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "aircraft.acceleration_max_mps2",
+      "value": 3.0,
+      "input_pointer": "/joint_reference_profile/aircraft/acceleration_max_mps2",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "aircraft.jerk_max_mps3",
+      "value": 5.0,
+      "input_pointer": "/joint_reference_profile/aircraft/jerk_max_mps3",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "aircraft.tilt_max_deg",
+      "value": 25.0,
+      "input_pointer": "/joint_reference_profile/aircraft/tilt_max_deg",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "aircraft.body_rate_max_deg_s",
+      "value": 30.0,
+      "input_pointer": "/joint_reference_profile/aircraft/body_rate_max_deg_s",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "aircraft.thrust_min_N",
+      "value": 0.0,
+      "input_pointer": "/joint_reference_profile/aircraft/thrust_min_N",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "aircraft.thrust_max_N",
+      "value": 137.34,
+      "input_pointer": "/joint_reference_profile/aircraft/thrust_max_N",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "aircraft.drag_CdA_m2",
+      "value": 0.25,
+      "input_pointer": "/joint_reference_profile/aircraft/drag_CdA_m2",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "aircraft.tracking_error_m",
+      "value": 0.5,
+      "input_pointer": "/joint_reference_profile/aircraft/tracking_error_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "aircraft.map_error_m",
+      "value": 0.5,
+      "input_pointer": "/joint_reference_profile/aircraft/map_error_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "aircraft.inter_uav_clearance_m",
+      "value": 3.0,
+      "input_pointer": "/joint_reference_profile/aircraft/inter_uav_clearance_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "aircraft.obstacle_clearance_m",
+      "value": 3.0,
+      "input_pointer": "/joint_reference_profile/aircraft/obstacle_clearance_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.image_width_px",
+      "value": 5184,
+      "input_pointer": "/joint_reference_profile/camera/image_width_px",
+      "source_kind": "manufacturer_specification_or_derived_reference",
+      "source_ids": [
+        "H20"
+      ],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.image_height_px",
+      "value": 3888,
+      "input_pointer": "/joint_reference_profile/camera/image_height_px",
+      "source_kind": "manufacturer_specification_or_derived_reference",
+      "source_ids": [
+        "H20"
+      ],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.diagonal_fov_deg_at_wide",
+      "value": 66.6,
+      "input_pointer": "/joint_reference_profile/camera/diagonal_fov_deg_at_wide",
+      "source_kind": "manufacturer_specification_or_derived_reference",
+      "source_ids": [
+        "H20"
+      ],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.focal_length_mm_bounds",
+      "value": [
+        6.83,
+        119.94
+      ],
+      "input_pointer": "/joint_reference_profile/camera/focal_length_mm_bounds",
+      "source_kind": "manufacturer_specification_or_derived_reference",
+      "source_ids": [
+        "H20"
+      ],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.projection",
+      "value": "ideal square-pixel pinhole; fx(f)=hypot(width,height)/(2*tan(66.6deg/2))*f/6.83",
+      "input_pointer": "/joint_reference_profile/camera/projection",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.principal_point_px",
+      "value": [
+        2592,
+        1944
+      ],
+      "input_pointer": "/joint_reference_profile/camera/principal_point_px",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.distortion",
+      "value": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "input_pointer": "/joint_reference_profile/camera/distortion",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.mount_offset_m",
+      "value": [
+        0,
+        0,
+        0
+      ],
+      "input_pointer": "/joint_reference_profile/camera/mount_offset_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.gimbal_pitch_deg",
+      "value": [
+        -120,
+        30
+      ],
+      "input_pointer": "/joint_reference_profile/camera/gimbal_pitch_deg",
+      "source_kind": "manufacturer_specification_or_derived_reference",
+      "source_ids": [
+        "H20"
+      ],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.gimbal_yaw_deg",
+      "value": [
+        -320,
+        320
+      ],
+      "input_pointer": "/joint_reference_profile/camera/gimbal_yaw_deg",
+      "source_kind": "manufacturer_specification_or_derived_reference",
+      "source_ids": [
+        "H20"
+      ],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.gimbal_rate_max_deg_s",
+      "value": 30.0,
+      "input_pointer": "/joint_reference_profile/camera/gimbal_rate_max_deg_s",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.gimbal_acceleration_max_deg_s2",
+      "value": 30.0,
+      "input_pointer": "/joint_reference_profile/camera/gimbal_acceleration_max_deg_s2",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.yaw_rate_max_deg_s",
+      "value": 30.0,
+      "input_pointer": "/joint_reference_profile/camera/yaw_rate_max_deg_s",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.yaw_acceleration_max_deg_s2",
+      "value": 30.0,
+      "input_pointer": "/joint_reference_profile/camera/yaw_acceleration_max_deg_s2",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.focus_min_m",
+      "value": 8.0,
+      "input_pointer": "/joint_reference_profile/camera/focus_min_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.observation_max_m",
+      "value": 25.0,
+      "input_pointer": "/joint_reference_profile/camera/observation_max_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.incidence_angle_max_deg",
+      "value": 30.0,
+      "input_pointer": "/joint_reference_profile/camera/incidence_angle_max_deg",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.frame_border_px",
+      "value": 32,
+      "input_pointer": "/joint_reference_profile/camera/frame_border_px",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.gsd_max_m_per_px",
+      "value": 0.005,
+      "input_pointer": "/joint_reference_profile/camera/gsd_max_m_per_px",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.blur_max_px",
+      "value": 1.0,
+      "input_pointer": "/joint_reference_profile/camera/blur_max_px",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.exposure_bounds_s",
+      "value": [
+        0.001,
+        0.001
+      ],
+      "input_pointer": "/joint_reference_profile/camera/exposure_bounds_s",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.zoom_rate_max_mm_s",
+      "value": 10.0,
+      "input_pointer": "/joint_reference_profile/camera/zoom_rate_max_mm_s",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.required_frames",
+      "value": 1,
+      "input_pointer": "/joint_reference_profile/camera/required_frames",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.settle_focus_readout_min_s",
+      "value": 1.0,
+      "input_pointer": "/joint_reference_profile/camera/settle_focus_readout_min_s",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "camera.exposure_role",
+      "value": "fixed declared daylight reference; not calibrated low-light guarantee",
+      "input_pointer": "/joint_reference_profile/camera/exposure_role",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "vehicle.type",
+      "value": "reference_Ackermann",
+      "input_pointer": "/joint_reference_profile/vehicle/type",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/road/results.json",
+          "sha256": "aa9c3e356378262316c86b7aef36b48ada02940407840f79a7ab20dac15ab8ff"
+        }
+      ],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "vehicle.wheelbase_m",
+      "value": 2.5,
+      "input_pointer": "/joint_reference_profile/vehicle/wheelbase_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/road/results.json",
+          "sha256": "aa9c3e356378262316c86b7aef36b48ada02940407840f79a7ab20dac15ab8ff"
+        }
+      ],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "vehicle.length_m",
+      "value": 4.0,
+      "input_pointer": "/joint_reference_profile/vehicle/length_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/road/results.json",
+          "sha256": "aa9c3e356378262316c86b7aef36b48ada02940407840f79a7ab20dac15ab8ff"
+        }
+      ],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "vehicle.width_m",
+      "value": 1.8,
+      "input_pointer": "/joint_reference_profile/vehicle/width_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/road/results.json",
+          "sha256": "aa9c3e356378262316c86b7aef36b48ada02940407840f79a7ab20dac15ab8ff"
+        }
+      ],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "vehicle.height_m",
+      "value": 1.8,
+      "input_pointer": "/joint_reference_profile/vehicle/height_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/road/results.json",
+          "sha256": "aa9c3e356378262316c86b7aef36b48ada02940407840f79a7ab20dac15ab8ff"
+        }
+      ],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "vehicle.speed_max_mps",
+      "value": 2.7777777777777777,
+      "input_pointer": "/joint_reference_profile/vehicle/speed_max_mps",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/road/results.json",
+          "sha256": "aa9c3e356378262316c86b7aef36b48ada02940407840f79a7ab20dac15ab8ff"
+        }
+      ],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "vehicle.reverse_speed_max_mps",
+      "value": 0.0,
+      "input_pointer": "/joint_reference_profile/vehicle/reverse_speed_max_mps",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/road/results.json",
+          "sha256": "aa9c3e356378262316c86b7aef36b48ada02940407840f79a7ab20dac15ab8ff"
+        }
+      ],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "vehicle.acceleration_max_mps2",
+      "value": 1.0,
+      "input_pointer": "/joint_reference_profile/vehicle/acceleration_max_mps2",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/road/results.json",
+          "sha256": "aa9c3e356378262316c86b7aef36b48ada02940407840f79a7ab20dac15ab8ff"
+        }
+      ],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "vehicle.steering_max_deg",
+      "value": 35.0,
+      "input_pointer": "/joint_reference_profile/vehicle/steering_max_deg",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/road/results.json",
+          "sha256": "aa9c3e356378262316c86b7aef36b48ada02940407840f79a7ab20dac15ab8ff"
+        }
+      ],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "vehicle.steering_rate_max_deg_s",
+      "value": 20.0,
+      "input_pointer": "/joint_reference_profile/vehicle/steering_rate_max_deg_s",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/road/results.json",
+          "sha256": "aa9c3e356378262316c86b7aef36b48ada02940407840f79a7ab20dac15ab8ff"
+        }
+      ],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "vehicle.lateral_acceleration_max_mps2",
+      "value": 1.5,
+      "input_pointer": "/joint_reference_profile/vehicle/lateral_acceleration_max_mps2",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/road/results.json",
+          "sha256": "aa9c3e356378262316c86b7aef36b48ada02940407840f79a7ab20dac15ab8ff"
+        }
+      ],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "vehicle.road_corridor_width_m",
+      "value": 6.0,
+      "input_pointer": "/joint_reference_profile/vehicle/road_corridor_width_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/road/results.json",
+          "sha256": "aa9c3e356378262316c86b7aef36b48ada02940407840f79a7ab20dac15ab8ff"
+        }
+      ],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "vehicle.pad_offset_m",
+      "value": [
+        0,
+        0,
+        1.8
+      ],
+      "input_pointer": "/joint_reference_profile/vehicle/pad_offset_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/road/results.json",
+          "sha256": "aa9c3e356378262316c86b7aef36b48ada02940407840f79a7ab20dac15ab8ff"
+        }
+      ],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "vehicle.pad_region_radius_m",
+      "value": 3.0,
+      "input_pointer": "/joint_reference_profile/vehicle/pad_region_radius_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/road/results.json",
+          "sha256": "aa9c3e356378262316c86b7aef36b48ada02940407840f79a7ab20dac15ab8ff"
+        }
+      ],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "vehicle.moving_landing",
+      "value": false,
+      "input_pointer": "/joint_reference_profile/vehicle/moving_landing",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/road/results.json",
+          "sha256": "aa9c3e356378262316c86b7aef36b48ada02940407840f79a7ab20dac15ab8ff"
+        }
+      ],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "vehicle.charging_on_road",
+      "value": false,
+      "input_pointer": "/joint_reference_profile/vehicle/charging_on_road",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/road/results.json",
+          "sha256": "aa9c3e356378262316c86b7aef36b48ada02940407840f79a7ab20dac15ab8ff"
+        }
+      ],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "energy.pair_capacity_Wh",
+      "value": 548.0,
+      "input_pointer": "/joint_reference_profile/energy/pair_capacity_Wh",
+      "source_kind": "manufacturer_specification_or_derived_reference",
+      "source_ids": [
+        "M300"
+      ],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "energy.initial_SOC",
+      "value": 1.0,
+      "input_pointer": "/joint_reference_profile/energy/initial_SOC",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "energy.minimum_SOC",
+      "value": 0.2,
+      "input_pointer": "/joint_reference_profile/energy/minimum_SOC",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "energy.terminal_SOC",
+      "value": 0.2,
+      "input_pointer": "/joint_reference_profile/energy/terminal_SOC",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "energy.charge_efficiency",
+      "value": 0.9,
+      "input_pointer": "/joint_reference_profile/energy/charge_efficiency",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "energy.charge_tail_minutes",
+      "value": 20.0,
+      "input_pointer": "/joint_reference_profile/energy/charge_tail_minutes",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "energy.cooling_seconds",
+      "value": 0.0,
+      "input_pointer": "/joint_reference_profile/energy/cooling_seconds",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "energy.supply_max_W_per_vehicle",
+      "value": 1000.0,
+      "input_pointer": "/joint_reference_profile/energy/supply_max_W_per_vehicle",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "energy.idle_power_W",
+      "value": 0.0,
+      "input_pointer": "/joint_reference_profile/energy/idle_power_W",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "energy.temperature_capacity_model",
+      "value": "constant within declared 0..40C reference domain",
+      "input_pointer": "/joint_reference_profile/energy/temperature_capacity_model",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "energy.power_model",
+      "value": "reference_hover_plus_drag_and_positive_climb",
+      "input_pointer": "/joint_reference_profile/energy/power_model",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "energy.hover_power_W",
+      "value": 764.6511627906976,
+      "input_pointer": "/joint_reference_profile/energy/hover_power_W",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "energy.power_formula",
+      "value": "P=hover_W*sqrt(1.225/rho)+0.5*CdA*rho*norm(v_air)^3+mass*g*max(vz,0)/0.7",
+      "input_pointer": "/joint_reference_profile/energy/power_formula",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "energy.propulsion_efficiency",
+      "value": 0.7,
+      "input_pointer": "/joint_reference_profile/energy/propulsion_efficiency",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "energy.energy_boundary",
+      "value": "aircraft only; vehicle traction excluded",
+      "input_pointer": "/joint_reference_profile/energy/energy_boundary",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "energy.hardware_charge_control_verified",
+      "value": false,
+      "input_pointer": "/joint_reference_profile/energy/hardware_charge_control_verified",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "recovery.candidate_sites",
+      "value": "configured stops reached by assigned carrier before landing",
+      "input_pointer": "/joint_reference_profile/recovery/candidate_sites",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "recovery.reserve_rule",
+      "value": "E(t)>=energy_of_collision_free_recovery_trajectory(t,site)+0.2*548Wh",
+      "input_pointer": "/joint_reference_profile/recovery/reserve_rule",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "recovery.trajectory_conditions",
+      "value": "same flight, weather, terrain, obstacle and landing constraints as planned motion",
+      "input_pointer": "/joint_reference_profile/recovery/trajectory_conditions",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "recovery.preparation_seconds",
+      "value": 120.0,
+      "input_pointer": "/joint_reference_profile/recovery/preparation_seconds",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "recovery.recovery_seconds",
+      "value": 240.0,
+      "input_pointer": "/joint_reference_profile/recovery/recovery_seconds",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "recovery.initial_aircraft_state",
+      "value": "stationary on carrier pad",
+      "input_pointer": "/joint_reference_profile/recovery/initial_aircraft_state",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "recovery.terminal_vehicle_state",
+      "value": "stationary at initial depot; all assigned aircraft recovered",
+      "input_pointer": "/joint_reference_profile/recovery/terminal_vehicle_state",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "recovery.verification",
+      "value": "must provide recovery trajectory witness; distance-only estimate is insufficient",
+      "input_pointer": "/joint_reference_profile/recovery/verification",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "weather.source",
+      "value": "retained ERA5 replay; not an issued forecast",
+      "input_pointer": "/joint_reference_profile/weather/source",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "weather.time_step_s",
+      "value": 3600,
+      "input_pointer": "/joint_reference_profile/weather/time_step_s",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "weather.height_layers_agl_m",
+      "value": [
+        30,
+        60,
+        100
+      ],
+      "input_pointer": "/joint_reference_profile/weather/height_layers_agl_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "weather.temporal_interpolation",
+      "value": "left-hour piecewise constant; split integration at hour boundaries",
+      "input_pointer": "/joint_reference_profile/weather/temporal_interpolation",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "weather.vertical_interpolation",
+      "value": "linear between available reference heights; below30 use30, above100 forbidden",
+      "input_pointer": "/joint_reference_profile/weather/vertical_interpolation",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "weather.height_reference",
+      "value": "source layers above ERA5 grid terrain; local AGL mapped to these reference layers without terrain downscaling",
+      "input_pointer": "/joint_reference_profile/weather/height_reference",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "weather.missing_density_policy",
+      "value": "no flight in a layer/hour whose density is unresolved; interpolation requires both valid endpoints",
+      "input_pointer": "/joint_reference_profile/weather/missing_density_policy",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "weather.horizontal_interpolation",
+      "value": "nearest retained grid cell",
+      "input_pointer": "/joint_reference_profile/weather/horizontal_interpolation",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "weather.wind_vertical_ms",
+      "value": 0.0,
+      "input_pointer": "/joint_reference_profile/weather/wind_vertical_ms",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "weather.wind_vertical_kind",
+      "value": "unresolved -> declared zero reference",
+      "input_pointer": "/joint_reference_profile/weather/wind_vertical_kind",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "weather.wind_limit_mps",
+      "value": 10.0,
+      "input_pointer": "/joint_reference_profile/weather/wind_limit_mps",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "weather.gust10_limit_mps",
+      "value": 10.0,
+      "input_pointer": "/joint_reference_profile/weather/gust10_limit_mps",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "weather.air_temperature_C",
+      "value": [
+        0.0,
+        40.0
+      ],
+      "input_pointer": "/joint_reference_profile/weather/air_temperature_C",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "weather.charging_temperature_C",
+      "value": [
+        0.0,
+        40.0
+      ],
+      "input_pointer": "/joint_reference_profile/weather/charging_temperature_C",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "weather.maximum_previous_hour_precipitation_mm",
+      "value": 0.0,
+      "input_pointer": "/joint_reference_profile/weather/maximum_previous_hour_precipitation_mm",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "weather.require_daylight",
+      "value": true,
+      "input_pointer": "/joint_reference_profile/weather/require_daylight",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "weather.forecast_error_bound_mps",
+      "value": 0.0,
+      "input_pointer": "/joint_reference_profile/weather/forecast_error_bound_mps",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "weather.uncertainty_role",
+      "value": "deterministic hindcast reference, not robust weather guarantee",
+      "input_pointer": "/joint_reference_profile/weather/uncertainty_role",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "weather.ignore_original_M100_pass_flags",
+      "value": true,
+      "input_pointer": "/joint_reference_profile/weather/ignore_original_M100_pass_flags",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "numerical.position_basis",
+      "value": "degree7_Bernstein",
+      "input_pointer": "/joint_reference_profile/numerical/position_basis",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "numerical.max_subsegments_per_transfer",
+      "value": 3,
+      "input_pointer": "/joint_reference_profile/numerical/max_subsegments_per_transfer",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "numerical.samples_per_segment",
+      "value": 9,
+      "input_pointer": "/joint_reference_profile/numerical/samples_per_segment",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "numerical.integration",
+      "value": "Gauss-Legendre order9 per subsegment; split at weather/charge state boundaries",
+      "input_pointer": "/joint_reference_profile/numerical/integration",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "numerical.position_tolerance_m",
+      "value": 0.01,
+      "input_pointer": "/joint_reference_profile/numerical/position_tolerance_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "numerical.time_tolerance_s",
+      "value": 0.001,
+      "input_pointer": "/joint_reference_profile/numerical/time_tolerance_s",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "numerical.energy_tolerance_Wh",
+      "value": 0.01,
+      "input_pointer": "/joint_reference_profile/numerical/energy_tolerance_Wh",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "numerical.angle_tolerance_rad",
+      "value": 0.001,
+      "input_pointer": "/joint_reference_profile/numerical/angle_tolerance_rad",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "numerical.full_trajectory_verification",
+      "value": "interval/adaptive checks required before claiming continuous feasibility",
+      "input_pointer": "/joint_reference_profile/numerical/full_trajectory_verification",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "planning.horizon_seconds",
+      "value": 28800.0,
+      "input_pointer": "/joint_reference_profile/planning/horizon_seconds",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "planning.default_start_utc",
+      "value": "2025-01-01T08:00:00Z",
+      "input_pointer": "/joint_reference_profile/planning/default_start_utc",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "planning.reference_periods",
+      "value": [
+        "2025-01-01/2025-01-07",
+        "2025-07-01/2025-07-07"
+      ],
+      "input_pointer": "/joint_reference_profile/planning/reference_periods",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "planning.sortie_slots",
+      "value": "one optional slot per inspection task; not preassigned flights",
+      "input_pointer": "/joint_reference_profile/planning/sortie_slots",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "planning.fixed_six_tower_limit",
+      "value": false,
+      "input_pointer": "/joint_reference_profile/planning/fixed_six_tower_limit",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "planning.successor_domain",
+      "value": "all distinct task pairs plus launch/recovery anchors; lazy symbolic indexing, no fixed catalogue",
+      "input_pointer": "/joint_reference_profile/planning/successor_domain",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "planning.maximum_vehicle_visits",
+      "value": "2*number_of_sortie_slots+2",
+      "input_pointer": "/joint_reference_profile/planning/maximum_vehicle_visits",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "planning.objective",
+      "value": [
+        "weighted_incomplete_towers",
+        "fleet_return_makespan_s",
+        "aircraft_energy_Wh"
+      ],
+      "input_pointer": "/joint_reference_profile/planning/objective",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "planning.complete_tower_rule",
+      "value": "all9 planned image requirements; execution requires image acceptance",
+      "input_pointer": "/joint_reference_profile/planning/complete_tower_rule",
+      "source_kind": "declared_reference_model_or_policy",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "planning.pure_reposition_sorties",
+      "value": false,
+      "input_pointer": "/joint_reference_profile/planning/pure_reposition_sorties",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [],
+      "validation_scope": "only the named component checks; no full physics validation",
+      "role": "legacy deterministic reference profile, not automatically the revision8 complete profile"
+    },
+    {
+      "id": "revision8_reference.battery.capacity_Ah",
+      "value": 11.87,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "input_pointer": "/parameters/capacity_Ah",
+      "source_kind": "manufacturer_boundary_or_derived_pair_scale",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.battery.ocv_empty_V",
+      "value": 40.8,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "input_pointer": "/parameters/ocv_empty_V",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.battery.ocv_slope_V",
+      "value": 12.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "input_pointer": "/parameters/ocv_slope_V",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.battery.R0_ohm",
+      "value": 0.08,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "input_pointer": "/parameters/R0_ohm",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.battery.R1_ohm",
+      "value": 0.04,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "input_pointer": "/parameters/R1_ohm",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.battery.C1_F",
+      "value": 2500.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "input_pointer": "/parameters/C1_F",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.battery.resistance_temperature_coefficient_per_K",
+      "value": 0.02,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "input_pointer": "/parameters/resistance_temperature_coefficient_per_K",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.battery.reference_temperature_C",
+      "value": 25.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "input_pointer": "/parameters/reference_temperature_C",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.battery.thermal_capacity_J_per_K",
+      "value": 2700.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "input_pointer": "/parameters/thermal_capacity_J_per_K",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.battery.thermal_conductance_W_per_K",
+      "value": 6.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "input_pointer": "/parameters/thermal_conductance_W_per_K",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.battery.charge_efficiency",
+      "value": 0.9,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "input_pointer": "/parameters/charge_efficiency",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.battery.charge_current_max_A",
+      "value": 17.8,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "input_pointer": "/parameters/charge_current_max_A",
+      "source_kind": "manufacturer_boundary_or_derived_pair_scale",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.battery.discharge_current_max_A",
+      "value": 50.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "input_pointer": "/parameters/discharge_current_max_A",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.battery.terminal_voltage_max_V",
+      "value": 52.8,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "input_pointer": "/parameters/terminal_voltage_max_V",
+      "source_kind": "manufacturer_boundary_or_derived_pair_scale",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.battery.terminal_voltage_min_V",
+      "value": 36.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "input_pointer": "/parameters/terminal_voltage_min_V",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.battery.charger_input_max_W",
+      "value": 1000.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "input_pointer": "/parameters/charger_input_max_W",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.battery.soc_min",
+      "value": 0.2,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "input_pointer": "/parameters/soc_min",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.battery.soc_max",
+      "value": 1.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "input_pointer": "/parameters/soc_max",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.battery.charge_temperature_min_C",
+      "value": 5.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "input_pointer": "/parameters/charge_temperature_min_C",
+      "source_kind": "manufacturer_boundary_or_derived_pair_scale",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.battery.charge_temperature_max_C",
+      "value": 40.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "input_pointer": "/parameters/charge_temperature_max_C",
+      "source_kind": "manufacturer_boundary_or_derived_pair_scale",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.battery.charge_restart_temperature_C",
+      "value": 39.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "input_pointer": "/parameters/charge_restart_temperature_C",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.battery.flight_temperature_min_C",
+      "value": -20.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "input_pointer": "/parameters/flight_temperature_min_C",
+      "source_kind": "manufacturer_boundary_or_derived_pair_scale",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.battery.flight_temperature_max_C",
+      "value": 50.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "input_pointer": "/parameters/flight_temperature_max_C",
+      "source_kind": "manufacturer_boundary_or_derived_pair_scale",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.mass_kg",
+      "value": 7.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/parameters/mass_kg",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.gravity_mps2",
+      "value": 9.81,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/parameters/gravity_mps2",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.arm_radius_m",
+      "value": 0.4475,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/parameters/arm_radius_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.inertia_x",
+      "value": 0.18,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/parameters/inertia_x",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.inertia_y",
+      "value": 0.18,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/parameters/inertia_y",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.inertia_z",
+      "value": 0.3,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/parameters/inertia_z",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.drag_area_x_m2",
+      "value": 0.25,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/parameters/drag_area_x_m2",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.drag_area_y_m2",
+      "value": 0.25,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/parameters/drag_area_y_m2",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.drag_area_z_m2",
+      "value": 0.35,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/parameters/drag_area_z_m2",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.thrust_coefficient",
+      "value": 0.000107296875,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/parameters/thrust_coefficient",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.torque_coefficient",
+      "value": 2.1459375e-06,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/parameters/torque_coefficient",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.rotor_inertia_kg_m2",
+      "value": 0.0002,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/parameters/rotor_inertia_kg_m2",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.motor_efficiency",
+      "value": 0.8,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/parameters/motor_efficiency",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.auxiliary_power_W",
+      "value": 50.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/parameters/auxiliary_power_W",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.thrust_max_per_rotor_N",
+      "value": 34.335,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/parameters/thrust_max_per_rotor_N",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.thrust_rate_max_Nps",
+      "value": 100.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/parameters/thrust_rate_max_Nps",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.thrust_lag_s",
+      "value": 0.08,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/parameters/thrust_lag_s",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.position_gain_Npm",
+      "value": 10.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/parameters/position_gain_Npm",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.velocity_gain_Nspm",
+      "value": 10.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/parameters/velocity_gain_Nspm",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.attitude_gain_Nm",
+      "value": 6.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/parameters/attitude_gain_Nm",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.angular_velocity_gain_Nms",
+      "value": 1.8,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/parameters/angular_velocity_gain_Nms",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.pad_friction",
+      "value": 0.6,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/parameters/pad_friction",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.foot_radius_m",
+      "value": 0.3,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/parameters/foot_radius_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.allowed_position_error_m",
+      "value": 0.5,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/parameters/allowed_position_error_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.contact.foot_radius_m",
+      "value": 0.3,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/contact_parameters/foot_radius_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/platform_contact/results.json",
+          "sha256": "031d2fb8b108433df8920fb3291b9da0d4780c1c4ba20ec0cdc4bdfab98632ab"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/takeoff_landing/results.json",
+          "sha256": "3b5521c40b56acedcb88987660ca63ba7948636cfe81af0e2206ad6d550a9aa7"
+        }
+      ],
+      "validation_scope": "pointwise contact, ground-drive midpoint and calm28s programmed execution only",
+      "role": "reference contact/ground motor parameters; regional executor remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.contact.foot_vertical_offset_m",
+      "value": 0.6,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/contact_parameters/foot_vertical_offset_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/platform_contact/results.json",
+          "sha256": "031d2fb8b108433df8920fb3291b9da0d4780c1c4ba20ec0cdc4bdfab98632ab"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/takeoff_landing/results.json",
+          "sha256": "3b5521c40b56acedcb88987660ca63ba7948636cfe81af0e2206ad6d550a9aa7"
+        }
+      ],
+      "validation_scope": "pointwise contact, ground-drive midpoint and calm28s programmed execution only",
+      "role": "reference contact/ground motor parameters; regional executor remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.contact.friction_coefficient",
+      "value": 0.6,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/contact_parameters/friction_coefficient",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/platform_contact/results.json",
+          "sha256": "031d2fb8b108433df8920fb3291b9da0d4780c1c4ba20ec0cdc4bdfab98632ab"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/takeoff_landing/results.json",
+          "sha256": "3b5521c40b56acedcb88987660ca63ba7948636cfe81af0e2206ad6d550a9aa7"
+        }
+      ],
+      "validation_scope": "pointwise contact, ground-drive midpoint and calm28s programmed execution only",
+      "role": "reference contact/ground motor parameters; regional executor remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.contact.normal_force_limit_per_foot_N",
+      "value": 200.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/contact_parameters/normal_force_limit_per_foot_N",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/platform_contact/results.json",
+          "sha256": "031d2fb8b108433df8920fb3291b9da0d4780c1c4ba20ec0cdc4bdfab98632ab"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/takeoff_landing/results.json",
+          "sha256": "3b5521c40b56acedcb88987660ca63ba7948636cfe81af0e2206ad6d550a9aa7"
+        }
+      ],
+      "validation_scope": "pointwise contact, ground-drive midpoint and calm28s programmed execution only",
+      "role": "reference contact/ground motor parameters; regional executor remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.contact.pad_length_m",
+      "value": 4.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/contact_parameters/pad_length_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/platform_contact/results.json",
+          "sha256": "031d2fb8b108433df8920fb3291b9da0d4780c1c4ba20ec0cdc4bdfab98632ab"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/takeoff_landing/results.json",
+          "sha256": "3b5521c40b56acedcb88987660ca63ba7948636cfe81af0e2206ad6d550a9aa7"
+        }
+      ],
+      "validation_scope": "pointwise contact, ground-drive midpoint and calm28s programmed execution only",
+      "role": "reference contact/ground motor parameters; regional executor remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.contact.pad_width_m",
+      "value": 1.8,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/contact_parameters/pad_width_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/platform_contact/results.json",
+          "sha256": "031d2fb8b108433df8920fb3291b9da0d4780c1c4ba20ec0cdc4bdfab98632ab"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/takeoff_landing/results.json",
+          "sha256": "3b5521c40b56acedcb88987660ca63ba7948636cfe81af0e2206ad6d550a9aa7"
+        }
+      ],
+      "validation_scope": "pointwise contact, ground-drive midpoint and calm28s programmed execution only",
+      "role": "reference contact/ground motor parameters; regional executor remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.contact.ground_angular_acceleration_max_radps2",
+      "value": 2000.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/contact_parameters/ground_angular_acceleration_max_radps2",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/platform_contact/results.json",
+          "sha256": "031d2fb8b108433df8920fb3291b9da0d4780c1c4ba20ec0cdc4bdfab98632ab"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/takeoff_landing/results.json",
+          "sha256": "3b5521c40b56acedcb88987660ca63ba7948636cfe81af0e2206ad6d550a9aa7"
+        }
+      ],
+      "validation_scope": "pointwise contact, ground-drive midpoint and calm28s programmed execution only",
+      "role": "reference contact/ground motor parameters; regional executor remains separate"
+    },
+    {
+      "id": "revision8_reference.flight.contact.ground_motor_torque_max_Nm",
+      "value": 0.5,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "input_pointer": "/contact_parameters/ground_motor_torque_max_Nm",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/platform_contact/results.json",
+          "sha256": "031d2fb8b108433df8920fb3291b9da0d4780c1c4ba20ec0cdc4bdfab98632ab"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/takeoff_landing/results.json",
+          "sha256": "3b5521c40b56acedcb88987660ca63ba7948636cfe81af0e2206ad6d550a9aa7"
+        }
+      ],
+      "validation_scope": "pointwise contact, ground-drive midpoint and calm28s programmed execution only",
+      "role": "reference contact/ground motor parameters; regional executor remains separate"
+    },
+    {
+      "id": "revision8_reference.weather.valid_from_s",
+      "value": 0.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_weather_profile.json",
+        "sha256": "7a62160e1f9b4341e8a7a0accb6c155ea62b0af1074c09c4dbcf686dd844c1b6"
+      },
+      "input_pointer": "/packets/0/valid_from_s",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/results.json",
+          "sha256": "e7935a253128bbfc2a8c7fcb57402232856e0a7acc8ae0a6cc92dc911bc80e25"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.weather.valid_until_s",
+      "value": 28800.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_weather_profile.json",
+        "sha256": "7a62160e1f9b4341e8a7a0accb6c155ea62b0af1074c09c4dbcf686dd844c1b6"
+      },
+      "input_pointer": "/packets/0/valid_until_s",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/results.json",
+          "sha256": "e7935a253128bbfc2a8c7fcb57402232856e0a7acc8ae0a6cc92dc911bc80e25"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.weather.near_ground.model",
+      "value": "linear velocity ramp from zero at0m to retained30m value",
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_weather_profile.json",
+        "sha256": "7a62160e1f9b4341e8a7a0accb6c155ea62b0af1074c09c4dbcf686dd844c1b6"
+      },
+      "input_pointer": "/packets/0/near_ground/model",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/results.json",
+          "sha256": "e7935a253128bbfc2a8c7fcb57402232856e0a7acc8ae0a6cc92dc911bc80e25"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.weather.near_ground.height_m",
+      "value": [
+        0,
+        30
+      ],
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_weather_profile.json",
+        "sha256": "7a62160e1f9b4341e8a7a0accb6c155ea62b0af1074c09c4dbcf686dd844c1b6"
+      },
+      "input_pointer": "/packets/0/near_ground/height_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/results.json",
+          "sha256": "e7935a253128bbfc2a8c7fcb57402232856e0a7acc8ae0a6cc92dc911bc80e25"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.weather.near_ground.horizontal_bound_mps",
+      "value": 15.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_weather_profile.json",
+        "sha256": "7a62160e1f9b4341e8a7a0accb6c155ea62b0af1074c09c4dbcf686dd844c1b6"
+      },
+      "input_pointer": "/packets/0/near_ground/horizontal_bound_mps",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/results.json",
+          "sha256": "e7935a253128bbfc2a8c7fcb57402232856e0a7acc8ae0a6cc92dc911bc80e25"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.weather.near_ground.vertical_amplitude_mps",
+      "value": 0.4,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_weather_profile.json",
+        "sha256": "7a62160e1f9b4341e8a7a0accb6c155ea62b0af1074c09c4dbcf686dd844c1b6"
+      },
+      "input_pointer": "/packets/0/near_ground/vertical_amplitude_mps",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/results.json",
+          "sha256": "e7935a253128bbfc2a8c7fcb57402232856e0a7acc8ae0a6cc92dc911bc80e25"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.weather.visibility_m",
+      "value": 5000.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_weather_profile.json",
+        "sha256": "7a62160e1f9b4341e8a7a0accb6c155ea62b0af1074c09c4dbcf686dd844c1b6"
+      },
+      "input_pointer": "/packets/0/visibility_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/results.json",
+          "sha256": "e7935a253128bbfc2a8c7fcb57402232856e0a7acc8ae0a6cc92dc911bc80e25"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.weather.minimum_capture_visibility_m",
+      "value": 1000.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_weather_profile.json",
+        "sha256": "7a62160e1f9b4341e8a7a0accb6c155ea62b0af1074c09c4dbcf686dd844c1b6"
+      },
+      "input_pointer": "/packets/0/minimum_capture_visibility_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/results.json",
+          "sha256": "e7935a253128bbfc2a8c7fcb57402232856e0a7acc8ae0a6cc92dc911bc80e25"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.weather.wind_limit_mps",
+      "value": 10.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_weather_profile.json",
+        "sha256": "7a62160e1f9b4341e8a7a0accb6c155ea62b0af1074c09c4dbcf686dd844c1b6"
+      },
+      "input_pointer": "/packets/0/wind_limit_mps",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/results.json",
+          "sha256": "e7935a253128bbfc2a8c7fcb57402232856e0a7acc8ae0a6cc92dc911bc80e25"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.weather.gust10_limit_mps",
+      "value": 10.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_weather_profile.json",
+        "sha256": "7a62160e1f9b4341e8a7a0accb6c155ea62b0af1074c09c4dbcf686dd844c1b6"
+      },
+      "input_pointer": "/packets/0/gust10_limit_mps",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/results.json",
+          "sha256": "e7935a253128bbfc2a8c7fcb57402232856e0a7acc8ae0a6cc92dc911bc80e25"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.weather.temperature_range_C",
+      "value": [
+        0.0,
+        40.0
+      ],
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_weather_profile.json",
+        "sha256": "7a62160e1f9b4341e8a7a0accb6c155ea62b0af1074c09c4dbcf686dd844c1b6"
+      },
+      "input_pointer": "/packets/0/temperature_range_C",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/results.json",
+          "sha256": "e7935a253128bbfc2a8c7fcb57402232856e0a7acc8ae0a6cc92dc911bc80e25"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.weather.scenarios",
+      "value": [
+        {
+          "id": "nominal",
+          "residual_sign": 0.0,
+          "wind_residual_amplitude_mps": 2.0,
+          "temperature_residual_C": 2.0,
+          "power_residual_fraction": 0.05,
+          "available_observations": [
+            {
+              "available_at_s": 660.0,
+              "key": "observed_residual_sign",
+              "value": 0.0
+            }
+          ]
+        },
+        {
+          "id": "east_hot",
+          "residual_sign": 1.0,
+          "wind_residual_amplitude_mps": 2.0,
+          "temperature_residual_C": 2.0,
+          "power_residual_fraction": 0.1,
+          "available_observations": [
+            {
+              "available_at_s": 660.0,
+              "key": "observed_residual_sign",
+              "value": 1.0
+            }
+          ]
+        },
+        {
+          "id": "west_cool",
+          "residual_sign": -1.0,
+          "wind_residual_amplitude_mps": 2.0,
+          "temperature_residual_C": 2.0,
+          "power_residual_fraction": 0.0,
+          "available_observations": [
+            {
+              "available_at_s": 660.0,
+              "key": "observed_residual_sign",
+              "value": -1.0
+            }
+          ]
+        }
+      ],
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_weather_profile.json",
+        "sha256": "7a62160e1f9b4341e8a7a0accb6c155ea62b0af1074c09c4dbcf686dd844c1b6"
+      },
+      "input_pointer": "/packets/0/scenarios",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/results.json",
+          "sha256": "e7935a253128bbfc2a8c7fcb57402232856e0a7acc8ae0a6cc92dc911bc80e25"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.image_width_px",
+      "value": 5184,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/image_width_px",
+      "source_kind": "manufacturer_specification",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.image_height_px",
+      "value": 3888,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/image_height_px",
+      "source_kind": "manufacturer_specification",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.diagonal_fov_deg_at_wide",
+      "value": 66.6,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/diagonal_fov_deg_at_wide",
+      "source_kind": "manufacturer_specification",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.focal_length_mm_bounds",
+      "value": [
+        6.83,
+        119.94
+      ],
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/focal_length_mm_bounds",
+      "source_kind": "manufacturer_specification",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.projection",
+      "value": "ideal square-pixel pinhole; fx(f)=hypot(width,height)/(2*tan(66.6deg/2))*f/6.83",
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/projection",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.principal_point_px",
+      "value": [
+        2592,
+        1944
+      ],
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/principal_point_px",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.distortion",
+      "value": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/distortion",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.mount_offset_m",
+      "value": [
+        0,
+        0,
+        0
+      ],
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/mount_offset_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.gimbal_pitch_deg",
+      "value": [
+        -120,
+        30
+      ],
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/gimbal_pitch_deg",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.gimbal_yaw_deg",
+      "value": [
+        -320,
+        320
+      ],
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/gimbal_yaw_deg",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.gimbal_rate_max_deg_s",
+      "value": 30.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/gimbal_rate_max_deg_s",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.gimbal_acceleration_max_deg_s2",
+      "value": 30.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/gimbal_acceleration_max_deg_s2",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.yaw_rate_max_deg_s",
+      "value": 30.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/yaw_rate_max_deg_s",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.yaw_acceleration_max_deg_s2",
+      "value": 30.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/yaw_acceleration_max_deg_s2",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.focus_min_m",
+      "value": 8.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/focus_min_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.observation_max_m",
+      "value": 25.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/observation_max_m",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.incidence_angle_max_deg",
+      "value": 30.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/incidence_angle_max_deg",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.frame_border_px",
+      "value": 32,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/frame_border_px",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.gsd_max_m_per_px",
+      "value": 0.005,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/gsd_max_m_per_px",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.blur_max_px",
+      "value": 1.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/blur_max_px",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.exposure_bounds_s",
+      "value": [
+        0.001,
+        0.001
+      ],
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/exposure_bounds_s",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.zoom_rate_max_mm_s",
+      "value": 10.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/zoom_rate_max_mm_s",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.required_frames",
+      "value": 1,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/required_frames",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.settle_focus_readout_min_s",
+      "value": 1.0,
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/settle_focus_readout_min_s",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    },
+    {
+      "id": "revision8_reference.image.exposure_role",
+      "value": "fixed declared daylight reference; not calibrated low-light guarantee",
+      "input_file": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "input_pointer": "/parameters/exposure_role",
+      "source_kind": "declared_reference_assumption",
+      "source_ids": [],
+      "field_calibrated": false,
+      "validation_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        }
+      ],
+      "validation_scope": "declared finite component examples only",
+      "role": "active reference component profile; joint transcription parity remains separate"
+    }
+  ],
+  "source_catalog": [
+    {
+      "id": "KPLC25",
+      "title": "Kenya Power and Lighting Company. 132 kV suspension tower standard-height engineering drawing, 2025.",
+      "url": "https://kplc.co.ke/storage/01JQXMQ0QWCHBZKRQ1MBHAJADM.pdf",
+      "locator": "PDF p73, Appendix 1A-1",
+      "retrieved_at": null,
+      "sha256": "02ce896bda369022b33f2fdf10db0b568ea4e3818a50a8e838bb3ca7c6f9891f",
+      "bytes": 1359221,
+      "original_workspace_relative_path": "总结/07_证据与复现索引/综合报告检索/场景设置文献/kplc_2025_tower_specification.pdf",
+      "evidence_kind": "public_source",
+      "license": null,
+      "query": null,
+      "source_hash_verified": false,
+      "hash_verification_basis": "current retained source identity",
+      "package_path": null
+    },
+    {
+      "id": "M300",
+      "title": "DJI. Matrice 300 RTK User Manual, v3.4, 2023.",
+      "url": "https://dl.djicdn.com/downloads/matrice-300/20230526UM/M300_RTK_User_Manual_EN_v3.4.pdf",
+      "locator": "PDF pp30,32,35,95; 220–240 V; 700 g payload reference",
+      "retrieved_at": null,
+      "sha256": "d313aefbda4508c7dcc52d41f001a2d3be5de4b0dffd12d396ec05caab3c9a3e",
+      "bytes": 50894708,
+      "original_workspace_relative_path": "总结/07_证据与复现索引/综合报告检索/场景设置文献/dji_m300_manual.pdf",
+      "evidence_kind": "public_source",
+      "license": null,
+      "query": null,
+      "source_hash_verified": false,
+      "hash_verification_basis": "current retained source identity",
+      "package_path": null
+    },
+    {
+      "id": "H20",
+      "title": "DJI. Zenmuse H20 Series Specifications.",
+      "url": "https://enterprise.dji.com/zenmuse-h20-series/specs",
+      "locator": "H20: 678±5 g; 5184×3888; diagonal FOV 66.6–4 degrees",
+      "retrieved_at": null,
+      "sha256": "873526ce3ff57672ef71b9f84d327c3f1824bcfccbbd3f12f058a1b1fde3a4e0",
+      "bytes": 489574,
+      "original_workspace_relative_path": "总结/07_证据与复现索引/综合报告检索/场景设置文献/dji_h20_specs.html",
+      "evidence_kind": "public_source",
+      "license": null,
+      "query": null,
+      "source_hash_verified": false,
+      "hash_verification_basis": "current retained source identity",
+      "package_path": null
+    }
+  ],
+  "separate_measured_platform": {
+    "platform": "DJI_Matrice_100",
+    "profile": {
+      "path": "总结/03_实验数据/电池能耗公开机型验证/measured_calibration/power_profile.json",
+      "sha256": "98fd895412809b24956dd082a6207ae7d37335b9e7eb09522345d9857702737d"
+    },
+    "may_calibrate_M300": false,
+    "reason": "different airframe, payload, battery and training domain"
+  },
+  "reference_component_groups": [
+    {
+      "id": "target_platform_power",
+      "profile": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "evidence": {
+        "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+        "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+      },
+      "binding_kind": "declared_reference_component",
+      "field_calibrated": false,
+      "joint_runtime_parity_verified": false
+    },
+    {
+      "id": "rotor_inertia_allocation_lag_limits",
+      "profile": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "evidence": {
+        "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+        "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+      },
+      "binding_kind": "declared_reference_component",
+      "field_calibrated": false,
+      "joint_runtime_parity_verified": false
+    },
+    {
+      "id": "landing_contact",
+      "profile": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "evidence": {
+        "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+        "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+      },
+      "binding_kind": "declared_reference_component",
+      "field_calibrated": false,
+      "joint_runtime_parity_verified": false,
+      "additional_evidence": [
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/platform_contact/results.json",
+          "sha256": "031d2fb8b108433df8920fb3291b9da0d4780c1c4ba20ec0cdc4bdfab98632ab"
+        },
+        {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/takeoff_landing/results.json",
+          "sha256": "3b5521c40b56acedcb88987660ca63ba7948636cfe81af0e2206ad6d550a9aa7"
+        }
+      ]
+    },
+    {
+      "id": "controller_and_tracking",
+      "profile": {
+        "path": "Agent/Publication/inspection_reference_flight_profile.json",
+        "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+      },
+      "evidence": {
+        "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+        "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+      },
+      "binding_kind": "declared_reference_component",
+      "field_calibrated": false,
+      "joint_runtime_parity_verified": false
+    },
+    {
+      "id": "battery_electrothermal",
+      "profile": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "evidence": {
+        "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+        "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+      },
+      "binding_kind": "declared_reference_component",
+      "field_calibrated": false,
+      "joint_runtime_parity_verified": false
+    },
+    {
+      "id": "charger_controls",
+      "profile": {
+        "path": "Agent/Publication/inspection_reference_battery_profile.json",
+        "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+      },
+      "evidence": {
+        "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+        "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+      },
+      "binding_kind": "declared_reference_component",
+      "field_calibrated": false,
+      "joint_runtime_parity_verified": false
+    },
+    {
+      "id": "forecast_and_residuals",
+      "profile": {
+        "path": "Agent/Publication/inspection_reference_weather_profile.json",
+        "sha256": "7a62160e1f9b4341e8a7a0accb6c155ea62b0af1074c09c4dbcf686dd844c1b6"
+      },
+      "evidence": {
+        "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/results.json",
+        "sha256": "e7935a253128bbfc2a8c7fcb57402232856e0a7acc8ae0a6cc92dc911bc80e25"
+      },
+      "binding_kind": "declared_reference_component",
+      "field_calibrated": false,
+      "joint_runtime_parity_verified": false
+    },
+    {
+      "id": "near_ground_vertical_wind",
+      "profile": {
+        "path": "Agent/Publication/inspection_reference_weather_profile.json",
+        "sha256": "7a62160e1f9b4341e8a7a0accb6c155ea62b0af1074c09c4dbcf686dd844c1b6"
+      },
+      "evidence": {
+        "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/results.json",
+        "sha256": "e7935a253128bbfc2a8c7fcb57402232856e0a7acc8ae0a6cc92dc911bc80e25"
+      },
+      "binding_kind": "declared_reference_component",
+      "field_calibrated": false,
+      "joint_runtime_parity_verified": false
+    },
+    {
+      "id": "image_acceptance",
+      "profile": {
+        "path": "Agent/Publication/inspection_reference_image_profile.json",
+        "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+      },
+      "evidence": {
+        "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+        "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+      },
+      "binding_kind": "declared_reference_component",
+      "field_calibrated": false,
+      "joint_runtime_parity_verified": false
+    }
+  ],
+  "unbound_revision8_groups": [
+    {
+      "id": "target_platform_power",
+      "value": null,
+      "source_required": "same-platform whole-flight measurements and frozen domain",
+      "units": "W",
+      "reference_component_binding": {
+        "id": "target_platform_power",
+        "profile": {
+          "path": "Agent/Publication/inspection_reference_flight_profile.json",
+          "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+        },
+        "evidence": {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        },
+        "binding_kind": "declared_reference_component",
+        "field_calibrated": false,
+        "joint_runtime_parity_verified": false
+      },
+      "next_action": "same-platform calibration remains missing; reference profile is available for joint assembly and parity validation"
+    },
+    {
+      "id": "rotor_inertia_allocation_lag_limits",
+      "value": null,
+      "source_required": "manufacturer or identified same-airframe parameters including thrust/torque maps and motor efficiency",
+      "units": "kg m^2; m; s; N; 1",
+      "reference_component_binding": {
+        "id": "rotor_inertia_allocation_lag_limits",
+        "profile": {
+          "path": "Agent/Publication/inspection_reference_flight_profile.json",
+          "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+        },
+        "evidence": {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        },
+        "binding_kind": "declared_reference_component",
+        "field_calibrated": false,
+        "joint_runtime_parity_verified": false
+      },
+      "next_action": "same-platform calibration remains missing; reference profile is available for joint assembly and parity validation"
+    },
+    {
+      "id": "landing_contact",
+      "value": null,
+      "source_required": "same landing gear and platform friction/support tests",
+      "units": "1; m; N",
+      "reference_component_binding": {
+        "id": "landing_contact",
+        "profile": {
+          "path": "Agent/Publication/inspection_reference_flight_profile.json",
+          "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+        },
+        "evidence": {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        },
+        "binding_kind": "declared_reference_component",
+        "field_calibrated": false,
+        "joint_runtime_parity_verified": false,
+        "additional_evidence": [
+          {
+            "path": "总结/03_实验数据/工程化联合求解/module_validation/platform_contact/results.json",
+            "sha256": "031d2fb8b108433df8920fb3291b9da0d4780c1c4ba20ec0cdc4bdfab98632ab"
+          },
+          {
+            "path": "总结/03_实验数据/工程化联合求解/module_validation/takeoff_landing/results.json",
+            "sha256": "3b5521c40b56acedcb88987660ca63ba7948636cfe81af0e2206ad6d550a9aa7"
+          }
+        ]
+      },
+      "next_action": "same-platform calibration remains missing; reference profile is available for joint assembly and parity validation"
+    },
+    {
+      "id": "controller_and_tracking",
+      "value": null,
+      "source_required": "frozen controller and empirical response/error validation",
+      "units": "m; rad; s",
+      "reference_component_binding": {
+        "id": "controller_and_tracking",
+        "profile": {
+          "path": "Agent/Publication/inspection_reference_flight_profile.json",
+          "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+        },
+        "evidence": {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        },
+        "binding_kind": "declared_reference_component",
+        "field_calibrated": false,
+        "joint_runtime_parity_verified": false
+      },
+      "next_action": "same-platform calibration remains missing; reference profile is available for joint assembly and parity validation"
+    },
+    {
+      "id": "battery_electrothermal",
+      "value": null,
+      "source_required": "same battery electrical/thermal characterization",
+      "units": "Ah; V; ohm; F; J/K; W/K",
+      "reference_component_binding": {
+        "id": "battery_electrothermal",
+        "profile": {
+          "path": "Agent/Publication/inspection_reference_battery_profile.json",
+          "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+        },
+        "evidence": {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        },
+        "binding_kind": "declared_reference_component",
+        "field_calibrated": false,
+        "joint_runtime_parity_verified": false
+      },
+      "next_action": "same-platform calibration remains missing; reference profile is available for joint assembly and parity validation"
+    },
+    {
+      "id": "charger_controls",
+      "value": null,
+      "source_required": "actual CC/CV control interface and efficiency",
+      "units": "A; V; W; 1",
+      "reference_component_binding": {
+        "id": "charger_controls",
+        "profile": {
+          "path": "Agent/Publication/inspection_reference_battery_profile.json",
+          "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+        },
+        "evidence": {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        },
+        "binding_kind": "declared_reference_component",
+        "field_calibrated": false,
+        "joint_runtime_parity_verified": false
+      },
+      "next_action": "same-platform calibration remains missing; reference profile is available for joint assembly and parity validation"
+    },
+    {
+      "id": "forecast_and_residuals",
+      "value": null,
+      "source_required": "issued/received forecasts and geographically matched residual blocks",
+      "units": "UTC; m/s; K; Pa",
+      "reference_component_binding": {
+        "id": "forecast_and_residuals",
+        "profile": {
+          "path": "Agent/Publication/inspection_reference_weather_profile.json",
+          "sha256": "7a62160e1f9b4341e8a7a0accb6c155ea62b0af1074c09c4dbcf686dd844c1b6"
+        },
+        "evidence": {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/results.json",
+          "sha256": "e7935a253128bbfc2a8c7fcb57402232856e0a7acc8ae0a6cc92dc911bc80e25"
+        },
+        "binding_kind": "declared_reference_component",
+        "field_calibrated": false,
+        "joint_runtime_parity_verified": false
+      },
+      "next_action": "same-platform calibration remains missing; reference profile is available for joint assembly and parity validation"
+    },
+    {
+      "id": "near_ground_vertical_wind",
+      "value": null,
+      "source_required": "observations or explicitly validated bounded model",
+      "units": "m/s",
+      "reference_component_binding": {
+        "id": "near_ground_vertical_wind",
+        "profile": {
+          "path": "Agent/Publication/inspection_reference_weather_profile.json",
+          "sha256": "7a62160e1f9b4341e8a7a0accb6c155ea62b0af1074c09c4dbcf686dd844c1b6"
+        },
+        "evidence": {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/results.json",
+          "sha256": "e7935a253128bbfc2a8c7fcb57402232856e0a7acc8ae0a6cc92dc911bc80e25"
+        },
+        "binding_kind": "declared_reference_component",
+        "field_calibrated": false,
+        "joint_runtime_parity_verified": false
+      },
+      "next_action": "same-platform calibration remains missing; reference profile is available for joint assembly and parity validation"
+    },
+    {
+      "id": "image_acceptance",
+      "value": null,
+      "source_required": "camera calibration and inspection task quality requirement",
+      "units": "px; m/px",
+      "reference_component_binding": {
+        "id": "image_acceptance",
+        "profile": {
+          "path": "Agent/Publication/inspection_reference_image_profile.json",
+          "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+        },
+        "evidence": {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        },
+        "binding_kind": "declared_reference_component",
+        "field_calibrated": false,
+        "joint_runtime_parity_verified": false
+      },
+      "next_action": "same-platform calibration remains missing; reference profile is available for joint assembly and parity validation"
+    }
+  ],
+  "missing_field_calibration": [
+    {
+      "id": "target_surface_and_normals",
+      "value": null,
+      "unit": "mesh/m/unit_normal",
+      "required_source": "survey_or_verified_engineering_model",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "conductor_sag_vegetation_obstacles",
+      "value": null,
+      "unit": "m",
+      "required_source": "survey_with_uncertainty",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "energized_clearance_by_voltage",
+      "value": null,
+      "unit": "m",
+      "required_source": "applicable_operator_rule",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "camera_intrinsics_and_mount",
+      "value": null,
+      "unit": "px/rad/m",
+      "required_source": "camera_calibration",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "image_quality_acceptance",
+      "value": null,
+      "unit": "m_per_px/px/frame_count",
+      "required_source": "inspection_defect_requirement",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "airframe_loaded_envelope",
+      "value": null,
+      "unit": "m/s,m/s2,m/s3,N,rad/s",
+      "required_source": "manufacturer_mode_and_validation",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "airframe_power_model_and_domain",
+      "value": null,
+      "unit": "W",
+      "required_source": "same_platform_calibration_or_declared_bound",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "trajectory_tracking_error_bound",
+      "value": null,
+      "unit": "m",
+      "required_source": "controller_and_conditions_validation",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "vehicle_chassis_and_corridor",
+      "value": null,
+      "unit": "m/rad/m/s",
+      "required_source": "actual_vehicle_and_road_survey",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "battery_usable_capacity",
+      "value": null,
+      "unit": "Wh",
+      "required_source": "actual_pack_and_temperature_domain",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "charger_partial_charge_curve",
+      "value": null,
+      "unit": "W/efficiency",
+      "required_source": "actual_charger_verified_control",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "vehicle_power_supply",
+      "value": null,
+      "unit": "W",
+      "required_source": "actual_vehicle_electrical_spec",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "battery_terminal_energy",
+      "value": null,
+      "unit": "Wh",
+      "required_source": "next_shift_operating_requirement",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "forecast_available_at_and_error",
+      "value": null,
+      "unit": "UTC,m/s",
+      "required_source": "forecast_issue_and_validation",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "solver_discretization_tolerances",
+      "value": null,
+      "unit": "m/s/rad/Wh",
+      "required_source": "declared_numerical_accuracy",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "forecast_issue_archive",
+      "value": null,
+      "unit": "UTC and weather fields",
+      "required_source": "issue-and-receipt-timestamped forecast archive; reanalysis cannot substitute",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "power_error_scenarios",
+      "value": null,
+      "unit": "W",
+      "required_source": "held-out same-platform calibration residuals",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "replanning_period_and_event_thresholds",
+      "value": null,
+      "unit": "s and event-specific SI",
+      "required_source": "declared experiment configuration",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "state_estimation_and_takeover_error",
+      "value": null,
+      "unit": "m/rad/Wh/s",
+      "required_source": "controller and telemetry validation",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    }
+  ],
+  "summary": {
+    "parameter_entries": 224,
+    "source_kind_counts": {
+      "declared_reference_assumption": 169,
+      "transferred_reference_geometry_not_local_survey": 3,
+      "declared_reference_model_or_policy": 34,
+      "manufacturer_specification_or_derived_reference": 7,
+      "manufacturer_boundary_or_derived_pair_scale": 7,
+      "manufacturer_specification": 4
+    },
+    "legacy_parameter_entries": 132,
+    "reference_parameter_entries": 92,
+    "unresolved_field_calibration_groups": 9,
+    "reference_component_groups_bound": 9,
+    "full_numeric_instance_bound": false,
+    "legacy_zero_cooling_is_not_electrothermal_validation": true
+  },
+  "policy": "source-first; no invented measurements; declared assumptions allowed under user authorization, with sensitivity and component evidence"
+}

@@ -1,0 +1,9 @@
+# Original observed versions, except psutil 5.9.8 supplies a Python 3.11 wheel.
+numpy==1.26.4
+scipy==1.11.1
+pyscipopt==6.2.1
+pyproj==3.7.2
+psutil==5.9.8
+matplotlib==3.10.9
+pandas==2.3.3
+shapely==2.1.2

@@ -1,0 +1,163 @@
+\section{十二候选任务算例的参数}
+\label{sec:02_05}
+
+本节给出一个包含十二个候选任务的资源组合分配算例，将前述任务、资源、收益和关联关系落实为可以逐项检查的数值输入。算例由人为构造的教学数据组成，不是实测巡检数据，也不是公开基准实例。其调度范围为一个给定窗口：每种资源在该窗口内只有一份不可分割的可用量，一个任务只有完整获得所需资源组合才产生收益。窗口内不再划分执行时段，也不描述任务执行后释放资源并供其他任务复用的过程。因此，这里的资源占用表示整个窗口上的组合分配，不能据此推断实际作业时长或设备周转能力。
+
+\subsection{资源容量与任务收益}
+
+沿用资源为顶点、任务为带索引超边的约定，资源集合和候选任务集合分别为
+\begin{align}
+ V&=\{\mathrm{A},\mathrm{B},\mathrm{C},\mathrm{D},\mathrm{E},\mathrm{F},
+ \mathrm{G},\mathrm{H},\mathrm{I},\mathrm{J},\mathrm{K},\mathrm{L}\},
+ \label{s0205:resources}\\
+ E&=\{\mathrm{T01},\mathrm{T02},\mathrm{T03},\mathrm{T04},
+ \mathrm{T05},\mathrm{T06},\mathrm{T07},\mathrm{T08},
+ \mathrm{T09},\mathrm{T10},\mathrm{T11},\mathrm{T12}\}.
+ \label{s0205:tasks}
+\end{align}
+资源字母和任务编号都是身份标识，无物理单位；资源字母不对应特定型号的无人机、电池或其他设备。资源数与候选任务数为
+\begin{equation}
+ m=|V|=12,\qquad n=|E|=12.
+ \label{s0205:dimensions}
+\end{equation}
+这里仍以 $m$ 表示资源数、$n$ 表示候选数，二者在本例中恰好相等，并不改变它们各自的含义。
+
+表\ref{s0205:capacity_table}逐项列出资源容量。$b_v$ 表示资源 $v\in V$ 在该窗口内可分配的不可分割份数，单位为份，取值均为整数一。不同资源分别核算容量：一份资源 $\mathrm{A}$ 不能代替一份资源 $\mathrm{B}$，也不能将所有资源的容量相加后作为允许任意替代的统一容量。
+
+\begin{table}[htbp]
+ \centering
+ \caption{十二候选任务算例的资源容量}
+ \label{s0205:capacity_table}
+ \begin{tabular}{cccc}
+  \toprule
+  资源 $v$ & 容量 $b_v$（份） & 资源 $v$ & 容量 $b_v$（份）\\
+  \midrule
+  $\mathrm{A}$ & 1 & $\mathrm{G}$ & 1\\
+  $\mathrm{B}$ & 1 & $\mathrm{H}$ & 1\\
+  $\mathrm{C}$ & 1 & $\mathrm{I}$ & 1\\
+  $\mathrm{D}$ & 1 & $\mathrm{J}$ & 1\\
+  $\mathrm{E}$ & 1 & $\mathrm{K}$ & 1\\
+  $\mathrm{F}$ & 1 & $\mathrm{L}$ & 1\\
+  \bottomrule
+ \end{tabular}
+\end{table}
+
+表\ref{s0205:job_table}按原始输入顺序列出全部候选任务。对每个 $e\in E$，$R_e\subseteq V$ 为任务必须完整取得的资源集合，$w_e\in\mathbb R_{>0}$ 为任务被接受后取得的固定收益。收益采用无量纲教学数值，不代表货币、观测数量或实际巡检质量。表中的 $|R_e|$ 是该任务涉及的资源种类数，为无量纲整数计数；每种列入 $R_e$ 的资源均需要一份。变量 $x_e\in\{0,1\}$ 表示是否接受任务，因而该任务的收益贡献为 $w_ex_e$，不设置部分分配对应的分数收益。
+
+\begin{table}[htbp]
+ \centering
+ \caption{十二个候选任务的收益与完整资源需求}
+ \label{s0205:job_table}
+ \begin{tabular}{cccl}
+  \toprule
+  任务 $e$ & 收益 $w_e$（无量纲） & $|R_e|$ & 资源集合 $R_e$\\
+  \midrule
+  $\mathrm{T01}$ & 19 & 6 & $\{\mathrm{A},\mathrm{B},\mathrm{C},\mathrm{D},\mathrm{E},\mathrm{F}\}$\\
+  $\mathrm{T02}$ & 12 & 3 & $\{\mathrm{A},\mathrm{B},\mathrm{G}\}$\\
+  $\mathrm{T03}$ & 11 & 3 & $\{\mathrm{C},\mathrm{D},\mathrm{H}\}$\\
+  $\mathrm{T04}$ & 10 & 3 & $\{\mathrm{E},\mathrm{F},\mathrm{I}\}$\\
+  $\mathrm{T05}$ & 20 & 6 & $\{\mathrm{G},\mathrm{H},\mathrm{I},\mathrm{J},\mathrm{K},\mathrm{L}\}$\\
+  $\mathrm{T06}$ & 9 & 3 & $\{\mathrm{A},\mathrm{J},\mathrm{K}\}$\\
+  $\mathrm{T07}$ & 9 & 3 & $\{\mathrm{B},\mathrm{H},\mathrm{L}\}$\\
+  $\mathrm{T08}$ & 8 & 3 & $\{\mathrm{C},\mathrm{G},\mathrm{I}\}$\\
+  $\mathrm{T09}$ & 9 & 3 & $\{\mathrm{D},\mathrm{J},\mathrm{K}\}$\\
+  $\mathrm{T10}$ & 8 & 3 & $\{\mathrm{E},\mathrm{H},\mathrm{L}\}$\\
+  $\mathrm{T11}$ & 8 & 3 & $\{\mathrm{F},\mathrm{G},\mathrm{I}\}$\\
+  $\mathrm{T12}$ & 9 & 3 & $\{\mathrm{J},\mathrm{K},\mathrm{L}\}$\\
+  \bottomrule
+ \end{tabular}
+\end{table}
+
+例如，接受 $\mathrm{T01}$ 需要同时分配资源 $\mathrm{A}$ 至 $\mathrm{F}$ 各一份，此时才取得收益 19；仅分配其中五种资源不能构成该任务的有效选择。收益最小值为 8，由 $\mathrm{T08}$、$\mathrm{T10}$ 和 $\mathrm{T11}$ 取得；收益最大值为 20，对应 $\mathrm{T05}$。因此
+\begin{equation}
+ \min_{e\in E}w_e=8,\qquad
+ \max_{e\in E}w_e=20,\qquad
+ \frac{\max_{e\in E}w_e}{\min_{e\in E}w_e}=2.5.
+ \label{s0205:weight_range}
+\end{equation}
+该比值描述输入收益的跨度，不是算法性能比，也不是单位资源收益。
+
+\subsection{关联矩阵的逐行重建与规模核对}
+
+为固定矩阵和向量的排列方式，资源行依次按 $\mathrm{A}$ 至 $\mathrm{L}$ 排列，任务列依次按 $\mathrm{T01}$ 至 $\mathrm{T12}$ 排列。关联矩阵 $A\in\{0,1\}^{12\times12}$ 的元素 $A_{ve}$ 为无量纲指示量：任务 $e$ 需要资源 $v$ 时取一，否则取零。表\ref{s0205:incidence_rows}给出每一行中所有非零元素所在的任务列，未列出的列均为零，因而该表完整确定了矩阵的全部元素。
+
+\begin{table}[htbp]
+ \centering
+ \caption{关联矩阵各资源行的非零任务列}
+ \label{s0205:incidence_rows}
+ \begin{tabular}{clc}
+  \toprule
+  资源行 $v$ & 非零任务列集合 $N(v)$ & 行非零数 $|N(v)|$\\
+  \midrule
+  $\mathrm{A}$ & $\{\mathrm{T01},\mathrm{T02},\mathrm{T06}\}$ & 3\\
+  $\mathrm{B}$ & $\{\mathrm{T01},\mathrm{T02},\mathrm{T07}\}$ & 3\\
+  $\mathrm{C}$ & $\{\mathrm{T01},\mathrm{T03},\mathrm{T08}\}$ & 3\\
+  $\mathrm{D}$ & $\{\mathrm{T01},\mathrm{T03},\mathrm{T09}\}$ & 3\\
+  $\mathrm{E}$ & $\{\mathrm{T01},\mathrm{T04},\mathrm{T10}\}$ & 3\\
+  $\mathrm{F}$ & $\{\mathrm{T01},\mathrm{T04},\mathrm{T11}\}$ & 3\\
+  $\mathrm{G}$ & $\{\mathrm{T02},\mathrm{T05},\mathrm{T08},\mathrm{T11}\}$ & 4\\
+  $\mathrm{H}$ & $\{\mathrm{T03},\mathrm{T05},\mathrm{T07},\mathrm{T10}\}$ & 4\\
+  $\mathrm{I}$ & $\{\mathrm{T04},\mathrm{T05},\mathrm{T08},\mathrm{T11}\}$ & 4\\
+  $\mathrm{J}$ & $\{\mathrm{T05},\mathrm{T06},\mathrm{T09},\mathrm{T12}\}$ & 4\\
+  $\mathrm{K}$ & $\{\mathrm{T05},\mathrm{T06},\mathrm{T09},\mathrm{T12}\}$ & 4\\
+  $\mathrm{L}$ & $\{\mathrm{T05},\mathrm{T07},\mathrm{T10},\mathrm{T12}\}$ & 4\\
+  \bottomrule
+ \end{tabular}
+\end{table}
+
+具体地，读者可以先建立一个十二行、十二列的零矩阵，再对表\ref{s0205:incidence_rows}中每个资源行的所列任务列赋值为一。例如，资源 $\mathrm{G}$ 对应的行在第 2、5、8、11 列取一，故按上述列顺序有
+\begin{equation}
+ \bigl(A_{\mathrm{G},e}\bigr)_{e\in E}
+ =(0,1,0,0,1,0,0,1,0,0,1,0).
+ \label{s0205:row_g}
+\end{equation}
+反过来，表\ref{s0205:job_table}给出了每一列中所有非零元素所在的资源行。按任务表逐列构造与按资源表逐行构造应得到同一矩阵，这是检查资源需求抄录是否一致的直接方法。
+
+记 $\operatorname{nnz}(A)$ 为关联矩阵非零元素总数，即任务与资源之间的关联条数，为无量纲整数计数。表\ref{s0205:job_table}中有两个任务各涉及六种资源，其余十个任务各涉及三种资源；表\ref{s0205:incidence_rows}中有六种资源各关联三个任务，其余六种资源各关联四个任务。因此，从列和行两个方向计数均得到
+\begin{align}
+ \operatorname{nnz}(A)
+ &=\sum_{e\in E}|R_e|=2\times6+10\times3=42,
+ \label{s0205:nnz_columns}\\
+ \operatorname{nnz}(A)
+ &=\sum_{v\in V}|N(v)|=6\times3+6\times4=42.
+ \label{s0205:nnz_rows}
+\end{align}
+这里的 42 是候选关联总数，不是可同时分配的资源份数；同一种资源出现在多个候选中，正是需要通过容量约束处理竞争的原因。
+
+按第\ref{sec:02_04}节的定义，本例的最大超边大小和最大资源度分别为
+\begin{equation}
+ r=\max_{e\in E}|R_e|=6,\qquad
+ \Delta=\max_{v\in V}|N(v)|=4.
+ \label{s0205:rank_degree}
+\end{equation}
+$r=6$ 由 $\mathrm{T01}$ 和 $\mathrm{T05}$ 取得，表示单个候选最多同时需要六种资源；$\Delta=4$ 由资源 $\mathrm{G}$ 至 $\mathrm{L}$ 取得，表示同一种资源最多被四个候选需求。两者分别刻画列和行的关联规模，不能互换解释。资源 $\mathrm{J}$ 和 $\mathrm{K}$ 的关联任务集合相同，但它们仍是两种不同资源，原始输入分别保留其身份和容量。
+
+原始输入还规定了任务处理顺序，即依次处理 $\mathrm{T01}$ 至 $\mathrm{T12}$。该顺序与本节任务表和矩阵列顺序一致，可用于后续按输入次序处理候选的方法。它不是作业执行顺序，不引入任务之间的先后约束，也不改变本节给出的静态资源需求。
+
+\subsection{资源组合之间的竞争含义}
+
+任务 $\mathrm{T01}$ 对资源 $\mathrm{A}$ 至 $\mathrm{F}$ 的整体需求，分别与 $\mathrm{T02}$、$\mathrm{T03}$、$\mathrm{T04}$ 产生交集：
+\begin{align}
+ R_{\mathrm{T01}}\cap R_{\mathrm{T02}}
+ &=\{\mathrm{A},\mathrm{B}\},
+ \label{s0205:competition_01_02}\\
+ R_{\mathrm{T01}}\cap R_{\mathrm{T03}}
+ &=\{\mathrm{C},\mathrm{D}\},
+ \label{s0205:competition_01_03}\\
+ R_{\mathrm{T01}}\cap R_{\mathrm{T04}}
+ &=\{\mathrm{E},\mathrm{F}\}.
+ \label{s0205:competition_01_04}
+\end{align}
+由于这些资源的容量均为一，接受 $\mathrm{T01}$ 后，三个任务中的任何一个都不能再被接受。另一方面，$\mathrm{T02}$、$\mathrm{T03}$、$\mathrm{T04}$ 的资源集合彼此不交，它们之间没有资源竞争。这种关联结构说明，一个任务的选择会同时排除多个其他候选，而被排除的候选之间未必互斥。收益需要结合资源组合判断，不能仅凭某个任务的单项收益决定其是否应当入选。
+
+任务 $\mathrm{T05}$ 需要资源 $\mathrm{G}$ 至 $\mathrm{L}$，其中包含了 $\mathrm{T12}$ 的全部资源需求：
+\begin{equation}
+ R_{\mathrm{T12}}=\{\mathrm{J},\mathrm{K},\mathrm{L}\}
+ \subset R_{\mathrm{T05}},\qquad
+ R_{\mathrm{T05}}\cap R_{\mathrm{T12}}
+ =\{\mathrm{J},\mathrm{K},\mathrm{L}\}.
+ \label{s0205:competition_05_12}
+\end{equation}
+因此二者不能同时入选。不过，$w_{\mathrm{T05}}=20$ 大于 $w_{\mathrm{T12}}=9$，并不足以据此删除 $\mathrm{T12}$：选择 $\mathrm{T05}$ 还会占用 $\mathrm{G}$、$\mathrm{H}$、$\mathrm{I}$，而选择 $\mathrm{T12}$ 不占用这三种资源。具体而言，$\mathrm{T05}$ 分别通过 $\mathrm{G}$、$\mathrm{H}$、$\mathrm{I}$ 与 $\mathrm{T02}$、$\mathrm{T03}$、$\mathrm{T04}$ 冲突，$\mathrm{T12}$ 则与这三个任务均无资源交集。单项收益较低的任务可能保留更多其他任务的选择空间。
+
+与上述竞争关系相对应，$R_{\mathrm{T01}}\cap R_{\mathrm{T05}}=\varnothing$，说明两个资源需求均为六种的任务也可以彼此兼容。超边大小决定单个任务的需求规模，交集和容量共同决定任务间是否互斥。本例所有容量均为一，因此这些冲突仍满足第\ref{sec:02_04}节的两两冲突等价条件；$r=6$ 本身不构成不可约高阶耦合的证据。上述讨论仅解释输入参数产生的局部兼容与竞争关系，具体选择方案及其收益核验见第\ref{sec:02_07}节。

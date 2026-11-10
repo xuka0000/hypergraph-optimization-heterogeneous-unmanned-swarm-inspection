@@ -1,0 +1,2095 @@
+{
+  "schema_version": 1,
+  "model_id": "inspection_engineering_joint_model",
+  "revision": "8",
+  "observed_at": "2026-11-10T14:35:35.378739+08:00",
+  "user_request": "考虑能耗、连续无人机位姿航迹、天气、车-无人机协同的带重规划的大规模电力巡检决策（高细腻度决策）优化模型",
+  "status": "integrated_mathematical_definition_refined_runtime_and_parameter_closure_pending",
+  "joint_solver_implemented": false,
+  "deployment_ready": false,
+  "mathematical_source": "Agent/Publication/engineering_inspection_model.tex",
+  "mathematical_source_sha256": "6d0b69bda203ff9ef3062540e99bf24ab65f471de1ebd94558dbf514a05a7c61",
+  "report": "总结/06_论文初稿/工程化巡检联合数学模型.pdf",
+  "variables": [
+    {
+      "id": "task_assignment",
+      "symbol": "x_i_l",
+      "domain": "binary",
+      "indexing": "remaining observation x sortie"
+    },
+    {
+      "id": "task_success",
+      "symbol": "a_i",
+      "domain": "binary",
+      "indexing": "observation; accepted observations fixed0"
+    },
+    {
+      "id": "tower_complete",
+      "symbol": "z_g",
+      "domain": "binary",
+      "indexing": "all237 towers"
+    },
+    {
+      "id": "sortie_active",
+      "symbol": "b_l",
+      "domain": "binary",
+      "indexing": "2133 optional slots initially plus ongoing sorties on replanning"
+    },
+    {
+      "id": "aircraft_assignment",
+      "symbol": "y_u_l",
+      "domain": "binary",
+      "indexing": "4aircraft x sortie"
+    },
+    {
+      "id": "pack_assignment",
+      "symbol": "beta_p_l",
+      "domain": "binary",
+      "indexing": "8physical pairs x sortie"
+    },
+    {
+      "id": "successor",
+      "symbol": "h_i_j_l",
+      "domain": "binary",
+      "indexing": "all distinct tasks plus launch/recovery endpoints"
+    },
+    {
+      "id": "event_time",
+      "symbol": "s_l,e_l,t_i,s_exit_l,e_entry_l",
+      "domain": "continuous_s",
+      "indexing": "active event"
+    },
+    {
+      "id": "capture_duration",
+      "symbol": "d_i",
+      "domain": "continuous_positive_s",
+      "indexing": "selected observation"
+    },
+    {
+      "id": "transfer_duration",
+      "symbol": "T_i_j_l",
+      "domain": "continuous_nonnegative_s",
+      "indexing": "active successor"
+    },
+    {
+      "id": "position",
+      "symbol": "p_l(t)",
+      "domain": "continuous_m",
+      "indexing": "active sortie x absolute time x3"
+    },
+    {
+      "id": "velocity",
+      "symbol": "v_l(t)",
+      "domain": "continuous_mps",
+      "indexing": "active sortie x absolute time x3"
+    },
+    {
+      "id": "acceleration",
+      "symbol": "a_l(t)",
+      "domain": "continuous_mps2",
+      "indexing": "active sortie x absolute time x3"
+    },
+    {
+      "id": "jerk",
+      "symbol": "j_l(t)",
+      "domain": "bounded_measurable_mps3",
+      "indexing": "active sortie x absolute time x3"
+    },
+    {
+      "id": "attitude",
+      "symbol": "R_l(t)",
+      "domain": "SO3",
+      "indexing": "active sortie x absolute time"
+    },
+    {
+      "id": "body_rate",
+      "symbol": "omega_l(t)",
+      "domain": "bounded_radps",
+      "indexing": "active sortie x absolute time x3"
+    },
+    {
+      "id": "thrust",
+      "symbol": "sum_r f_l_r(t)",
+      "domain": "bounded_N",
+      "indexing": "active sortie x absolute time",
+      "role": "derived from individual actual rotor thrust states; not independent free total force"
+    },
+    {
+      "id": "gimbal",
+      "symbol": "Gamma_u(t);gamma_l(t)",
+      "domain": "continuous_rad",
+      "indexing": "whole-shift physical aircraft x2; bound to sortie"
+    },
+    {
+      "id": "focal_length",
+      "symbol": "F_u(t);f_l(t)",
+      "domain": "continuous_mm",
+      "indexing": "whole-shift physical aircraft; bound to sortie"
+    },
+    {
+      "id": "vehicle_state",
+      "symbol": "q_v,theta_v,V_v,delta_v",
+      "domain": "continuous_SI",
+      "indexing": "2vehicles x absolute time"
+    },
+    {
+      "id": "vehicle_control",
+      "symbol": "a_v,nu_v",
+      "domain": "bounded_mps2_radps",
+      "indexing": "2vehicles x absolute time"
+    },
+    {
+      "id": "road_mode",
+      "symbol": "mu_v",
+      "domain": "finite_switch_discrete",
+      "indexing": "source directed edge core / junction / stop"
+    },
+    {
+      "id": "road_progress",
+      "symbol": "zeta_v",
+      "domain": "continuous_m",
+      "indexing": "active directed edge core"
+    },
+    {
+      "id": "parking_occupancy",
+      "symbol": "eta_v_j(t)",
+      "domain": "binary",
+      "indexing": "vehicle x104candidates x time"
+    },
+    {
+      "id": "pack_SOC",
+      "symbol": "zeta_p(t)",
+      "domain": "continuous_dimensionless",
+      "indexing": "physical battery unit x common absolute time x scenario",
+      "unit": "1",
+      "role": "physical state; terminal Wh counters are separate"
+    },
+    {
+      "id": "pack_mode",
+      "symbol": "B_p_idle_pre_air_post_cool",
+      "domain": "binary_derived_and_idle",
+      "indexing": "physical pair x time"
+    },
+    {
+      "id": "charge_channel",
+      "symbol": "c_p(t)",
+      "domain": "binary",
+      "indexing": "physical pair x time"
+    },
+    {
+      "id": "charge_power",
+      "symbol": "P_in_p(t)",
+      "domain": "bounded_W",
+      "indexing": "physical pair x time"
+    },
+    {
+      "id": "flight_power",
+      "symbol": "P_l(t)",
+      "domain": "nonnegative_W_derived",
+      "indexing": "active sortie x time"
+    },
+    {
+      "id": "makespan",
+      "symbol": "C",
+      "domain": "continuous_s",
+      "indexing": "scenario"
+    },
+    {
+      "id": "objective_epigraph",
+      "symbol": "Z1,Z2,Z3",
+      "domain": "continuous_nonnegative",
+      "indexing": "three worst-case objectives"
+    },
+    {
+      "id": "rotor_thrust",
+      "domain": "continuous_N",
+      "indexing": "aircraft x rotor x time x scenario",
+      "symbol": "f_u_r"
+    },
+    {
+      "id": "rotor_command",
+      "domain": "continuous_N",
+      "indexing": "aircraft x rotor x time x scenario",
+      "symbol": "f_cmd_u_r"
+    },
+    {
+      "id": "pack_voltage",
+      "domain": "continuous_V",
+      "indexing": "battery x time x scenario",
+      "symbol": "U_p"
+    },
+    {
+      "id": "pack_current",
+      "domain": "continuous_A",
+      "indexing": "battery x time x scenario",
+      "symbol": "I_p"
+    },
+    {
+      "id": "pack_polarization",
+      "domain": "continuous_V",
+      "indexing": "battery x time x scenario",
+      "symbol": "V_pol_p"
+    },
+    {
+      "id": "pack_core_temperature",
+      "domain": "continuous_K",
+      "indexing": "battery x time x scenario",
+      "symbol": "T_core_p"
+    },
+    {
+      "id": "pack_cooling_duration",
+      "domain": "continuous_s",
+      "indexing": "battery x recovery event x scenario",
+      "symbol": "h_cool_p_l"
+    },
+    {
+      "id": "power_history",
+      "domain": "continuous_normalized",
+      "indexing": "aircraft x sample x 20 x 5 x scenario",
+      "symbol": "H_u_n"
+    },
+    {
+      "id": "terminal_energy_counters",
+      "domain": "continuous_Wh",
+      "indexing": "battery x time x scenario",
+      "symbol": "E_in_p,E_out_p"
+    },
+    {
+      "id": "controller_reference",
+      "domain": "continuous_mixed_SI",
+      "indexing": "aircraft x time x observable information branch",
+      "symbol": "r_u"
+    },
+    {
+      "id": "landing_contact_force",
+      "domain": "continuous_N",
+      "indexing": "aircraft x contact event x time x scenario",
+      "symbol": "F_c"
+    },
+    {
+      "id": "landing_contact_moment",
+      "domain": "continuous_Nm",
+      "indexing": "aircraft x contact event x time x scenario",
+      "symbol": "tau_c"
+    },
+    {
+      "id": "rotor_speed",
+      "domain": "derived_continuous_rad_per_s",
+      "indexing": "aircraft x rotor x time x scenario",
+      "symbol": "Omega_r"
+    }
+  ],
+  "constraint_families": [
+    {
+      "id": "task_assignment",
+      "equation_labels": [
+        "eng:eq:assign",
+        "eng:eq:fleet"
+      ],
+      "depends_on": [
+        "task_assignment",
+        "task_success",
+        "sortie_active",
+        "aircraft_assignment",
+        "pack_assignment"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "tower_completion",
+      "equation_labels": [
+        "eng:eq:complete"
+      ],
+      "depends_on": [
+        "task_success",
+        "tower_complete"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "task_order",
+      "equation_labels": [
+        "eng:eq:sequence"
+      ],
+      "depends_on": [
+        "successor",
+        "task_assignment",
+        "event_time",
+        "transfer_duration"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "time_and_capture_region",
+      "equation_labels": [
+        "eng:eq:window",
+        "eng:eq:viewregion",
+        "eng:eq:exposure"
+      ],
+      "depends_on": [
+        "task_assignment",
+        "event_time",
+        "position",
+        "capture_duration"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "continuous_state_joins",
+      "equation_labels": [
+        "eng:eq:statejoins"
+      ],
+      "depends_on": [
+        "position",
+        "velocity",
+        "acceleration",
+        "attitude",
+        "gimbal",
+        "focal_length"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "flight_kinematics",
+      "equation_labels": [
+        "eng:eq:kinematic"
+      ],
+      "depends_on": [
+        "position",
+        "velocity",
+        "acceleration",
+        "jerk",
+        "event_time"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "force_and_attitude",
+      "equation_labels": [
+        "eng:eq:attitude"
+      ],
+      "depends_on": [
+        "position",
+        "velocity",
+        "acceleration",
+        "attitude",
+        "body_rate",
+        "thrust",
+        "event_time",
+        "rotor_thrust"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "gimbal_and_zoom",
+      "equation_labels": [
+        "eng:eq:gimbal",
+        "eng:eq:cameraaxes"
+      ],
+      "depends_on": [
+        "attitude",
+        "gimbal",
+        "focal_length"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "camera_FOV_and_incidence",
+      "equation_labels": [
+        "eng:eq:fov",
+        "eng:eq:viewangle"
+      ],
+      "depends_on": [
+        "position",
+        "attitude",
+        "gimbal",
+        "focal_length",
+        "event_time"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "surface_resolution",
+      "equation_labels": [
+        "eng:eq:gsd"
+      ],
+      "depends_on": [
+        "position",
+        "attitude",
+        "gimbal",
+        "focal_length"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "exposure_blur",
+      "equation_labels": [
+        "eng:eq:blur"
+      ],
+      "depends_on": [
+        "position",
+        "velocity",
+        "attitude",
+        "body_rate",
+        "gimbal",
+        "focal_length",
+        "event_time"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "continuous_visibility",
+      "equation_labels": [
+        "eng:eq:visibility"
+      ],
+      "depends_on": [
+        "position",
+        "attitude",
+        "gimbal",
+        "vehicle_state",
+        "event_time"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "static_collision",
+      "equation_labels": [
+        "eng:eq:staticcollision"
+      ],
+      "depends_on": [
+        "position",
+        "event_time"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "simultaneous_collision",
+      "equation_labels": [
+        "eng:eq:collision",
+        "eng:eq:airvehicle"
+      ],
+      "depends_on": [
+        "position",
+        "vehicle_state",
+        "aircraft_assignment",
+        "event_time"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "contact_mode",
+      "equation_labels": [
+        "eng:eq:dock",
+        "eng:eq:padcontact"
+      ],
+      "depends_on": [
+        "position",
+        "vehicle_state",
+        "event_time",
+        "parking_occupancy"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "road_path_and_modes",
+      "equation_labels": [
+        "eng:eq:roadfull",
+        "eng:eq:roadtransition"
+      ],
+      "depends_on": [
+        "vehicle_state",
+        "road_mode",
+        "road_progress",
+        "parking_occupancy"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "vehicle_kinematics",
+      "equation_labels": [
+        "eng:eq:ugv"
+      ],
+      "depends_on": [
+        "vehicle_state",
+        "vehicle_control",
+        "road_mode"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "ground_conflict",
+      "equation_labels": [
+        "eng:eq:groundcollision",
+        "eng:eq:groundobstacle",
+        "eng:eq:parkingcapacity"
+      ],
+      "depends_on": [
+        "vehicle_state",
+        "parking_occupancy",
+        "event_time"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "vehicle_aircraft_rendezvous",
+      "equation_labels": [
+        "eng:eq:rendezvous",
+        "eng:eq:aircraftcontinuity"
+      ],
+      "depends_on": [
+        "position",
+        "attitude",
+        "gimbal",
+        "focal_length",
+        "vehicle_state",
+        "event_time",
+        "aircraft_assignment",
+        "parking_occupancy"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "handling_capacity",
+      "equation_labels": [
+        "eng:eq:pad"
+      ],
+      "depends_on": [
+        "aircraft_assignment",
+        "event_time"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "physical_pack_availability",
+      "equation_labels": [
+        "eng:eq:batteryavailability",
+        "eng:eq:batterylocation"
+      ],
+      "depends_on": [
+        "pack_assignment",
+        "pack_mode",
+        "event_time",
+        "charge_channel",
+        "position",
+        "vehicle_state"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "charging_capacity",
+      "equation_labels": [
+        "eng:eq:chargingcapacity"
+      ],
+      "depends_on": [
+        "charge_channel",
+        "charge_power",
+        "parking_occupancy",
+        "vehicle_state",
+        "event_time"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "battery_conservation",
+      "equation_labels": [
+        "eng:eq:battery",
+        "eng:eq:chargecurve",
+        "eng:eq:energyledger"
+      ],
+      "depends_on": [
+        "pack_SOC",
+        "pack_current",
+        "pack_voltage",
+        "pack_core_temperature",
+        "terminal_energy_counters",
+        "charge_channel",
+        "charge_power",
+        "flight_power",
+        "pack_assignment",
+        "event_time"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "weather_window",
+      "equation_labels": [
+        "eng:eq:weatherwindow"
+      ],
+      "depends_on": [
+        "position",
+        "event_time"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "weather_power",
+      "equation_labels": [
+        "eng:eq:power"
+      ],
+      "depends_on": [
+        "position",
+        "velocity",
+        "event_time",
+        "flight_power",
+        "attitude",
+        "power_history"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "planned_recovery_reserve",
+      "equation_labels": [
+        "eng:eq:return"
+      ],
+      "depends_on": [
+        "pack_SOC",
+        "pack_voltage",
+        "pack_current",
+        "pack_core_temperature",
+        "flight_power",
+        "event_time",
+        "pack_assignment",
+        "position",
+        "vehicle_state"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "initial_and_terminal",
+      "equation_labels": [
+        "eng:eq:initialstate",
+        "eng:eq:terminal"
+      ],
+      "depends_on": [
+        "vehicle_state",
+        "position",
+        "attitude",
+        "pack_SOC",
+        "pack_mode",
+        "event_time",
+        "makespan",
+        "charge_power",
+        "gimbal",
+        "focal_length",
+        "pack_polarization",
+        "pack_core_temperature",
+        "rotor_thrust",
+        "body_rate",
+        "power_history"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "commitment",
+      "equation_labels": [
+        "eng:eq:commitment"
+      ],
+      "depends_on": [
+        "vehicle_state",
+        "position",
+        "pack_mode",
+        "event_time",
+        "aircraft_assignment",
+        "pack_assignment",
+        "charge_power",
+        "pack_polarization",
+        "pack_core_temperature",
+        "rotor_thrust",
+        "body_rate",
+        "power_history"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "causal_information",
+      "equation_labels": [
+        "eng:eq:nonanticipativity",
+        "eng:eq:forecastcausality"
+      ],
+      "depends_on": [
+        "event_time",
+        "vehicle_control",
+        "jerk",
+        "body_rate",
+        "gimbal",
+        "charge_power",
+        "successor",
+        "task_assignment",
+        "rotor_command",
+        "controller_reference",
+        "charge_channel"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "execution_takeover",
+      "equation_labels": [
+        "eng:eq:takeover",
+        "eng:eq:execution",
+        "eng:eq:taskhistory"
+      ],
+      "depends_on": [
+        "position",
+        "vehicle_state",
+        "attitude",
+        "pack_SOC",
+        "event_time",
+        "task_success",
+        "pack_polarization",
+        "pack_core_temperature",
+        "rotor_thrust",
+        "body_rate",
+        "power_history"
+      ],
+      "status": "mathematically_defined",
+      "full_region_solver_implementation": "not_complete",
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "rigid_body_rotation",
+      "scope": "trajectory rotation rotor thrust control inertia disturbance contact actuator power",
+      "equation_labels": [
+        "eng:eq:rigidbody",
+        "eng:eq:actuator",
+        "eng:eq:contactdynamics",
+        "eng:eq:actuatorpower"
+      ],
+      "implementation": "mathematical_definition_refined; complete_runtime_not_verified",
+      "depends_on": [
+        "position",
+        "velocity",
+        "acceleration",
+        "attitude",
+        "body_rate",
+        "thrust",
+        "rotor_thrust",
+        "rotor_command",
+        "rotor_speed",
+        "landing_contact_force",
+        "landing_contact_moment",
+        "vehicle_state",
+        "event_time",
+        "flight_power"
+      ],
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "tracking_execution",
+      "scope": "controller setpoint actual state disturbance",
+      "equation_labels": [
+        "eng:eq:cmudynamics",
+        "eng:eq:trackingplant"
+      ],
+      "implementation": "mathematical_definition_refined; complete_runtime_not_verified",
+      "depends_on": [
+        "controller_reference",
+        "position",
+        "velocity",
+        "acceleration",
+        "attitude",
+        "body_rate",
+        "rotor_thrust",
+        "rotor_command",
+        "event_time"
+      ],
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "electrothermal_battery",
+      "scope": "SOC voltage polarization current temperature charging flight load",
+      "equation_labels": [
+        "eng:eq:ecm",
+        "eng:eq:thermal",
+        "eng:eq:powerport",
+        "eng:eq:powerbranch",
+        "eng:eq:coolingevent"
+      ],
+      "implementation": "mathematical_definition_refined; complete_runtime_not_verified",
+      "depends_on": [
+        "pack_SOC",
+        "pack_voltage",
+        "pack_current",
+        "pack_polarization",
+        "pack_core_temperature",
+        "pack_cooling_duration",
+        "charge_channel",
+        "charge_power",
+        "flight_power",
+        "pack_assignment",
+        "pack_mode",
+        "event_time",
+        "rotor_thrust",
+        "rotor_speed"
+      ],
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "weather_joint_scenarios",
+      "scope": "space time height common field residual information history",
+      "equation_labels": [
+        "eng:eq:weatherconversion",
+        "eng:eq:weatherheight",
+        "eng:eq:weatheruncertainty",
+        "eng:eq:jointscenario"
+      ],
+      "implementation": "mathematical_definition_refined; complete_runtime_not_verified",
+      "depends_on": [
+        "position",
+        "vehicle_state",
+        "event_time",
+        "flight_power",
+        "pack_SOC",
+        "pack_core_temperature"
+      ],
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "temporal_energy",
+      "scope": "trajectory pose airspeed normalized history frozen weights density load",
+      "equation_labels": [
+        "eng:eq:energyfeatures",
+        "eng:eq:energyhistory",
+        "eng:eq:power",
+        "eng:eq:continuouspower",
+        "eng:eq:powerdomain",
+        "eng:eq:historyboundary"
+      ],
+      "implementation": "mathematical_definition_refined; complete_runtime_not_verified",
+      "depends_on": [
+        "position",
+        "velocity",
+        "attitude",
+        "body_rate",
+        "power_history",
+        "flight_power",
+        "event_time",
+        "aircraft_assignment"
+      ],
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "state_handover",
+      "scope": "actual observed state delayed candidate committed prefix image evidence",
+      "equation_labels": [
+        "eng:eq:handoverstate",
+        "eng:eq:issuedpolicy",
+        "eng:eq:executedtower"
+      ],
+      "implementation": "mathematical_definition_refined; complete_runtime_not_verified",
+      "depends_on": [
+        "position",
+        "velocity",
+        "acceleration",
+        "attitude",
+        "body_rate",
+        "rotor_thrust",
+        "gimbal",
+        "focal_length",
+        "vehicle_state",
+        "vehicle_control",
+        "road_mode",
+        "road_progress",
+        "pack_SOC",
+        "pack_voltage",
+        "pack_current",
+        "pack_polarization",
+        "pack_core_temperature",
+        "pack_mode",
+        "charge_power",
+        "power_history",
+        "task_success",
+        "event_time",
+        "controller_reference",
+        "aircraft_assignment",
+        "pack_assignment"
+      ],
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "platform_model_binding",
+      "scope": "platform dynamics energy battery charger camera payload",
+      "equation_labels": [
+        "eng:eq:platformbinding"
+      ],
+      "implementation": "mathematical_definition_refined; complete_runtime_not_verified",
+      "depends_on": [
+        "attitude",
+        "body_rate",
+        "rotor_thrust",
+        "rotor_command",
+        "rotor_speed",
+        "flight_power",
+        "power_history",
+        "pack_SOC",
+        "pack_voltage",
+        "pack_current",
+        "pack_polarization",
+        "pack_core_temperature",
+        "charge_power",
+        "gimbal",
+        "focal_length"
+      ],
+      "dependency_semantics": "conservative variable-block support; scalar expression/activation extraction still required"
+    },
+    {
+      "id": "service_carryover",
+      "equation_labels": [
+        "eng:eq:servicecarryover"
+      ],
+      "depends_on": [
+        "task_assignment",
+        "aircraft_assignment",
+        "pack_assignment",
+        "event_time"
+      ],
+      "dependency_semantics": "conservative variable-block support; expression extraction pending"
+    }
+  ],
+  "objective": {
+    "order": [
+      "weighted_incomplete_components",
+      "fleet_return_makespan_seconds",
+      "aircraft_energy_Wh"
+    ],
+    "scenario_aggregation": "componentwise worst case over declared finite scenarios",
+    "probability_guarantee": false,
+    "hard_constraints": [
+      "safety",
+      "image_quality",
+      "energy_reserve"
+    ],
+    "battery_ageing_objective": false,
+    "success_threshold": null
+  },
+  "planning_scope": {
+    "fixed_flight_catalogue_required": false,
+    "fixed_six_tower_limit": false,
+    "continuous_trajectory_control_points": true,
+    "segment_durations_are_decisions": true,
+    "camera_viewpoints_are_decisions": true,
+    "partial_charge_allowed_if_hardware_verified": true,
+    "vehicle_path_and_stop_sequence_are_decisions": true,
+    "carrier_transfer": false,
+    "moving_platform_landing": false,
+    "direct_motor_command_optimization": true,
+    "replanning": true,
+    "all_configured_regional_tasks": true,
+    "full_source_road_and_stop_domain": true,
+    "state_resolution": "adaptive_event_anchored_piecewise_polynomial",
+    "weather_resolution": "retain_source_resolution_not_claimed_equal_to_trajectory_grid",
+    "old_candidates_role": "warm_start_only_not_feasible_domain",
+    "continuous_model_has_fixed_visit_limit": false,
+    "continuous_model_has_fixed_charge_event_limit": false,
+    "finite_transcription_is_separate": true,
+    "unassigned_new_sorties_require_at_least_one_task": true,
+    "rotor_commands_role": "internal physical feasibility variables; trajectory/pose references remain engineering outputs",
+    "full_rigid_body_and_actuator_dynamics": true,
+    "battery_electrothermal_state": true,
+    "temporal_power_model_inside_joint_constraints": true,
+    "scenario_shared_across_resources": true
+  },
+  "source_scenes": [
+    {
+      "scene_id": "ubeda_osm_060",
+      "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/ubeda_osm_060.json",
+      "sha256": "5585dc716867af2b682075d878db447bf92a782bb22a2847b88b411ddd834c32",
+      "statistics": {
+        "eligible_source_towers": 223,
+        "towers": 60,
+        "power_nodes": 60,
+        "power_ways": 3,
+        "power_segments": 57,
+        "road_nodes": 14490,
+        "road_edges": 26476,
+        "road_segments": 0,
+        "candidate_stops": 68,
+        "photo_tasks": 540,
+        "nonphoto_waypoints": 180,
+        "terrain_samples": 1491
+      },
+      "coordinate_reference": {
+        "geographic": "EPSG:4326",
+        "projected": "EPSG:32630",
+        "lon_lat_order": [
+          "longitude",
+          "latitude"
+        ],
+        "longitude_unit": "degree_east",
+        "latitude_unit": "degree_north",
+        "xy_unit": "m",
+        "z_unit": "m",
+        "projected_axis_order": [
+          "easting",
+          "northing"
+        ],
+        "vertical_datum": null,
+        "vertical_datum_status": "not independently verified in retained source metadata"
+      },
+      "source_status": "public_geography_with_declared_templates",
+      "observations_present": true,
+      "observed_geometry_is_as_built": false,
+      "original_scene_modified": false,
+      "task_geometry_locator": "/inspection_tasks/*/target",
+      "legacy_viewpoint_locator": "/inspection_tasks/*/(easting_m,northing_m,altitude_m)",
+      "legacy_camera_angles": "initialization_only_not_fixed_new_decisions",
+      "target_surface_mesh": null,
+      "target_surface_normals": null,
+      "conductors_and_vegetation_mesh": null,
+      "inspection_acceptance_profile": null,
+      "reference_inputs_complete": false,
+      "reference_profile": null,
+      "field_calibration_complete": false
+    },
+    {
+      "scene_id": "ubeda_osm_100",
+      "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/ubeda_osm_100.json",
+      "sha256": "cd1475d19c29dc4b5ec991e6bf0dff83cd04dc7e7b997b27bb69ebfb707d27a8",
+      "statistics": {
+        "eligible_source_towers": 223,
+        "towers": 100,
+        "power_nodes": 100,
+        "power_ways": 3,
+        "power_segments": 97,
+        "road_nodes": 27088,
+        "road_edges": 50762,
+        "road_segments": 0,
+        "candidate_stops": 115,
+        "photo_tasks": 900,
+        "nonphoto_waypoints": 300,
+        "terrain_samples": 1491
+      },
+      "coordinate_reference": {
+        "geographic": "EPSG:4326",
+        "projected": "EPSG:32630",
+        "lon_lat_order": [
+          "longitude",
+          "latitude"
+        ],
+        "longitude_unit": "degree_east",
+        "latitude_unit": "degree_north",
+        "xy_unit": "m",
+        "z_unit": "m",
+        "projected_axis_order": [
+          "easting",
+          "northing"
+        ],
+        "vertical_datum": null,
+        "vertical_datum_status": "not independently verified in retained source metadata"
+      },
+      "source_status": "public_geography_with_declared_templates",
+      "observations_present": true,
+      "observed_geometry_is_as_built": false,
+      "original_scene_modified": false,
+      "task_geometry_locator": "/inspection_tasks/*/target",
+      "legacy_viewpoint_locator": "/inspection_tasks/*/(easting_m,northing_m,altitude_m)",
+      "legacy_camera_angles": "initialization_only_not_fixed_new_decisions",
+      "target_surface_mesh": null,
+      "target_surface_normals": null,
+      "conductors_and_vegetation_mesh": null,
+      "inspection_acceptance_profile": null,
+      "reference_inputs_complete": false,
+      "reference_profile": null,
+      "field_calibration_complete": false
+    },
+    {
+      "scene_id": "ubeda_osm_150",
+      "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/ubeda_osm_150.json",
+      "sha256": "a9a62708032ccc043ad1f4705d12b42077dbc6e03517cf151d360cca66e6c08b",
+      "statistics": {
+        "eligible_source_towers": 223,
+        "towers": 150,
+        "power_nodes": 150,
+        "power_ways": 3,
+        "power_segments": 147,
+        "road_nodes": 42389,
+        "road_edges": 81438,
+        "road_segments": 0,
+        "candidate_stops": 147,
+        "photo_tasks": 1350,
+        "nonphoto_waypoints": 450,
+        "terrain_samples": 3167
+      },
+      "coordinate_reference": {
+        "geographic": "EPSG:4326",
+        "projected": "EPSG:32630",
+        "lon_lat_order": [
+          "longitude",
+          "latitude"
+        ],
+        "longitude_unit": "degree_east",
+        "latitude_unit": "degree_north",
+        "xy_unit": "m",
+        "z_unit": "m",
+        "projected_axis_order": [
+          "easting",
+          "northing"
+        ],
+        "vertical_datum": null,
+        "vertical_datum_status": "not independently verified in retained source metadata"
+      },
+      "source_status": "public_geography_with_declared_templates",
+      "observations_present": true,
+      "observed_geometry_is_as_built": false,
+      "original_scene_modified": false,
+      "task_geometry_locator": "/inspection_tasks/*/target",
+      "legacy_viewpoint_locator": "/inspection_tasks/*/(easting_m,northing_m,altitude_m)",
+      "legacy_camera_angles": "initialization_only_not_fixed_new_decisions",
+      "target_surface_mesh": null,
+      "target_surface_normals": null,
+      "conductors_and_vegetation_mesh": null,
+      "inspection_acceptance_profile": null,
+      "reference_inputs_complete": false,
+      "reference_profile": null,
+      "field_calibration_complete": false
+    },
+    {
+      "scene_id": "rommerskirchen",
+      "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/rommerskirchen.json",
+      "sha256": "d0c668d7cfeea2e7973e6ab387be38e499aea4e935a6530dfaf8900438b8520d",
+      "statistics": {
+        "geometric_crossings_outside_mapped_substations": 23,
+        "geometric_crossings_all": 25,
+        "towers": 237,
+        "power_nodes": 337,
+        "power_ways": 113,
+        "power_segments": 321,
+        "road_nodes": 13936,
+        "road_edges": 20455,
+        "road_segments": 14843,
+        "candidate_stops": 104,
+        "photo_tasks": 2133,
+        "nonphoto_waypoints": 711,
+        "terrain_samples": 1953,
+        "routing_nodes": 10000
+      },
+      "coordinate_reference": {
+        "geographic": "EPSG:4326",
+        "projected": "EPSG:32632",
+        "lon_lat_order": [
+          "longitude",
+          "latitude"
+        ],
+        "longitude_unit": "degree_east",
+        "latitude_unit": "degree_north",
+        "xy_unit": "m",
+        "z_unit": "m",
+        "projected_axis_order": [
+          "easting",
+          "northing"
+        ],
+        "vertical_datum": null,
+        "vertical_datum_status": "not independently verified in retained source metadata"
+      },
+      "source_status": "public_geography_with_declared_templates",
+      "observations_present": true,
+      "observed_geometry_is_as_built": false,
+      "original_scene_modified": true,
+      "task_geometry_locator": "/inspection_tasks/*/target",
+      "legacy_viewpoint_locator": "/inspection_tasks/*/(easting_m,northing_m,altitude_m)",
+      "legacy_camera_angles": "initialization_only_not_fixed_new_decisions",
+      "target_surface_mesh": "/inspection_tasks/*/target/surface_samples_utm_m",
+      "target_surface_normals": "/inspection_tasks/*/target/normal_world",
+      "conductors_and_vegetation_mesh": "/obstacle_model",
+      "inspection_acceptance_profile": "/joint_reference_profile/camera",
+      "reference_inputs_complete": true,
+      "reference_profile": "/joint_reference_profile",
+      "field_calibration_complete": false
+    },
+    {
+      "scene_id": "brauweiler",
+      "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/brauweiler.json",
+      "sha256": "c574467ac2095b89e150b453e98aac9a060483b5837d9dfc02c32a12f1830660",
+      "statistics": {
+        "geometric_crossings_outside_mapped_substations": 2,
+        "geometric_crossings_all": 9,
+        "towers": 185,
+        "power_nodes": 262,
+        "power_ways": 70,
+        "power_segments": 243,
+        "road_nodes": 25422,
+        "road_edges": 32773,
+        "road_segments": 26983,
+        "candidate_stops": 76,
+        "photo_tasks": 1665,
+        "nonphoto_waypoints": 555,
+        "terrain_samples": 1585,
+        "routing_nodes": 16598
+      },
+      "coordinate_reference": {
+        "geographic": "EPSG:4326",
+        "projected": "EPSG:32632",
+        "lon_lat_order": [
+          "longitude",
+          "latitude"
+        ],
+        "longitude_unit": "degree_east",
+        "latitude_unit": "degree_north",
+        "xy_unit": "m",
+        "z_unit": "m",
+        "projected_axis_order": [
+          "easting",
+          "northing"
+        ],
+        "vertical_datum": null,
+        "vertical_datum_status": "not independently verified in retained source metadata"
+      },
+      "source_status": "public_geography_with_declared_templates",
+      "observations_present": true,
+      "observed_geometry_is_as_built": false,
+      "original_scene_modified": true,
+      "task_geometry_locator": "/inspection_tasks/*/target",
+      "legacy_viewpoint_locator": "/inspection_tasks/*/(easting_m,northing_m,altitude_m)",
+      "legacy_camera_angles": "initialization_only_not_fixed_new_decisions",
+      "target_surface_mesh": "/inspection_tasks/*/target/surface_samples_utm_m",
+      "target_surface_normals": "/inspection_tasks/*/target/normal_world",
+      "conductors_and_vegetation_mesh": "/obstacle_model",
+      "inspection_acceptance_profile": "/joint_reference_profile/camera",
+      "reference_inputs_complete": true,
+      "reference_profile": "/joint_reference_profile",
+      "field_calibration_complete": false
+    },
+    {
+      "scene_id": "villevaude",
+      "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/villevaude.json",
+      "sha256": "d4f59f8d05689da540adafb1c080196a21e7289cd2959064f6e584553545689d",
+      "statistics": {
+        "geometric_crossings_outside_mapped_substations": 46,
+        "geometric_crossings_all": 46,
+        "towers": 343,
+        "power_nodes": 383,
+        "power_ways": 66,
+        "power_segments": 370,
+        "road_nodes": 29681,
+        "road_edges": 39656,
+        "road_segments": 31382,
+        "candidate_stops": 135,
+        "photo_tasks": 3087,
+        "nonphoto_waypoints": 1029,
+        "terrain_samples": 2411,
+        "routing_nodes": 22494
+      },
+      "coordinate_reference": {
+        "geographic": "EPSG:4326",
+        "projected": "EPSG:32631",
+        "lon_lat_order": [
+          "longitude",
+          "latitude"
+        ],
+        "longitude_unit": "degree_east",
+        "latitude_unit": "degree_north",
+        "xy_unit": "m",
+        "z_unit": "m",
+        "projected_axis_order": [
+          "easting",
+          "northing"
+        ],
+        "vertical_datum": null,
+        "vertical_datum_status": "not independently verified in retained source metadata"
+      },
+      "source_status": "public_geography_with_declared_templates",
+      "observations_present": true,
+      "observed_geometry_is_as_built": false,
+      "original_scene_modified": true,
+      "task_geometry_locator": "/inspection_tasks/*/target",
+      "legacy_viewpoint_locator": "/inspection_tasks/*/(easting_m,northing_m,altitude_m)",
+      "legacy_camera_angles": "initialization_only_not_fixed_new_decisions",
+      "target_surface_mesh": "/inspection_tasks/*/target/surface_samples_utm_m",
+      "target_surface_normals": "/inspection_tasks/*/target/normal_world",
+      "conductors_and_vegetation_mesh": "/obstacle_model",
+      "inspection_acceptance_profile": "/joint_reference_profile/camera",
+      "reference_inputs_complete": true,
+      "reference_profile": "/joint_reference_profile",
+      "field_calibration_complete": false
+    }
+  ],
+  "missing_required_parameters": [
+    {
+      "id": "target_surface_and_normals",
+      "value": null,
+      "unit": "mesh/m/unit_normal",
+      "required_source": "survey_or_verified_engineering_model",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "conductor_sag_vegetation_obstacles",
+      "value": null,
+      "unit": "m",
+      "required_source": "survey_with_uncertainty",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "energized_clearance_by_voltage",
+      "value": null,
+      "unit": "m",
+      "required_source": "applicable_operator_rule",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "camera_intrinsics_and_mount",
+      "value": null,
+      "unit": "px/rad/m",
+      "required_source": "camera_calibration",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "image_quality_acceptance",
+      "value": null,
+      "unit": "m_per_px/px/frame_count",
+      "required_source": "inspection_defect_requirement",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "airframe_loaded_envelope",
+      "value": null,
+      "unit": "m/s,m/s2,m/s3,N,rad/s",
+      "required_source": "manufacturer_mode_and_validation",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "airframe_power_model_and_domain",
+      "value": null,
+      "unit": "W",
+      "required_source": "same_platform_calibration_or_declared_bound",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "trajectory_tracking_error_bound",
+      "value": null,
+      "unit": "m",
+      "required_source": "controller_and_conditions_validation",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "vehicle_chassis_and_corridor",
+      "value": null,
+      "unit": "m/rad/m/s",
+      "required_source": "actual_vehicle_and_road_survey",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "battery_usable_capacity",
+      "value": null,
+      "unit": "Wh",
+      "required_source": "actual_pack_and_temperature_domain",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "charger_partial_charge_curve",
+      "value": null,
+      "unit": "W/efficiency",
+      "required_source": "actual_charger_verified_control",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "vehicle_power_supply",
+      "value": null,
+      "unit": "W",
+      "required_source": "actual_vehicle_electrical_spec",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "battery_terminal_energy",
+      "value": null,
+      "unit": "Wh",
+      "required_source": "next_shift_operating_requirement",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "forecast_available_at_and_error",
+      "value": null,
+      "unit": "UTC,m/s",
+      "required_source": "forecast_issue_and_validation",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "solver_discretization_tolerances",
+      "value": null,
+      "unit": "m/s/rad/Wh",
+      "required_source": "declared_numerical_accuracy",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "forecast_issue_archive",
+      "value": null,
+      "unit": "UTC and weather fields",
+      "required_source": "issue-and-receipt-timestamped forecast archive; reanalysis cannot substitute",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "power_error_scenarios",
+      "value": null,
+      "unit": "W",
+      "required_source": "held-out same-platform calibration residuals",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "replanning_period_and_event_thresholds",
+      "value": null,
+      "unit": "s and event-specific SI",
+      "required_source": "declared experiment configuration",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    },
+    {
+      "id": "state_estimation_and_takeover_error",
+      "value": null,
+      "unit": "m/rad/Wh/s",
+      "required_source": "controller and telemetry validation",
+      "scope": "field calibration; regional declared reference substitutes are bound separately"
+    }
+  ],
+  "regional_reference_input_profiles": [
+    {
+      "scene_id": "rommerskirchen",
+      "scene_sha256": "d0c668d7cfeea2e7973e6ab387be38e499aea4e935a6530dfaf8900438b8520d",
+      "profile": "/joint_reference_profile",
+      "complete_for_declared_reference_simulation": false,
+      "calibrated_for_deployment": false,
+      "forecast_issue_archive_available": false,
+      "rolling_joint_feasibility_verified": false,
+      "complete_for_legacy_declared_reference_simulation": true,
+      "scope": "original reference profile lacks revision8 same-platform dynamic, electrothermal and uncertainty bindings"
+    },
+    {
+      "scene_id": "brauweiler",
+      "scene_sha256": "c574467ac2095b89e150b453e98aac9a060483b5837d9dfc02c32a12f1830660",
+      "profile": "/joint_reference_profile",
+      "complete_for_declared_reference_simulation": false,
+      "calibrated_for_deployment": false,
+      "forecast_issue_archive_available": false,
+      "rolling_joint_feasibility_verified": false,
+      "complete_for_legacy_declared_reference_simulation": true,
+      "scope": "original reference profile lacks revision8 same-platform dynamic, electrothermal and uncertainty bindings"
+    },
+    {
+      "scene_id": "villevaude",
+      "scene_sha256": "d4f59f8d05689da540adafb1c080196a21e7289cd2959064f6e584553545689d",
+      "profile": "/joint_reference_profile",
+      "complete_for_declared_reference_simulation": false,
+      "calibrated_for_deployment": false,
+      "forecast_issue_archive_available": false,
+      "rolling_joint_feasibility_verified": false,
+      "complete_for_legacy_declared_reference_simulation": true,
+      "scope": "original reference profile lacks revision8 same-platform dynamic, electrothermal and uncertainty bindings"
+    }
+  ],
+  "manufacturer_boundaries": {
+    "source": "https://enterprise.dji.com/zenmuse-h20-series/specs",
+    "zoom_photo_pixels": [
+      5184,
+      3888
+    ],
+    "physical_focal_length_mm": [
+      6.83,
+      119.94
+    ],
+    "gimbal_pitch_deg": [
+      -120,
+      30
+    ],
+    "gimbal_yaw_deg": [
+      -320,
+      320
+    ],
+    "calibrated_fx_fy_px": null,
+    "field_image_quality_thresholds": null,
+    "role": "hardware_bounds_not_inspection_acceptance"
+  },
+  "inherited_reference_assumptions": {
+    "reserve_fraction": 0.2,
+    "horizon_seconds": 28800,
+    "vehicles": 2,
+    "uavs_per_vehicle": 2,
+    "battery_pairs_per_vehicle": 4,
+    "concurrent_charging_pairs_per_vehicle": 1,
+    "handling_positions_per_vehicle": 1,
+    "source": "shared_scene_parameters; design assumptions, not measured fleet inventory"
+  },
+  "output_contract": {
+    "trajectory": [
+      "vehicle_or_aircraft_id",
+      "time_UTC",
+      "local_xyz_m",
+      "geographic_lon_lat_alt_with_datum",
+      "velocity_mps",
+      "acceleration_mps2",
+      "body_orientation",
+      "gimbal_angles",
+      "segment_id",
+      "continuous_verification_status"
+    ],
+    "capture": [
+      "task_id",
+      "target_region_id",
+      "time_UTC",
+      "camera_intrinsics_id",
+      "exposure_s",
+      "planned_quality_margins",
+      "post_execution_acceptance"
+    ],
+    "resources": [
+      "aircraft_id",
+      "carrier_id",
+      "battery_pair_id",
+      "charge_interval",
+      "charge_power_W",
+      "terminal_energy_requirement",
+      "SOC_trace",
+      "terminal_voltage_V",
+      "current_A",
+      "polarization_voltage_V",
+      "core_temperature_K",
+      "terminal_Wh_in_and_out",
+      "cooling_and_reuse_events"
+    ],
+    "validation": [
+      "minimum_constraint_slack",
+      "source_identity",
+      "assumption_flags",
+      "continuous_vs_sampled_check",
+      "failure_reason",
+      "forecast_issue_time"
+    ],
+    "replanning": [
+      "information_time",
+      "state_revision_and_hash",
+      "source_scene_hash",
+      "forecast_issue_and_receipt_time",
+      "remaining_and_accepted_tasks",
+      "committed_prefix",
+      "solve_and_communication_delay",
+      "actual_takeover_state",
+      "candidate_acceptance_or_rejection"
+    ],
+    "mission_evaluation": [
+      "actual_accepted_components",
+      "actual_return_time",
+      "nonduplicated_actual_energy_Wh",
+      "violations",
+      "replanning_delays",
+      "failures"
+    ]
+  },
+  "replanning": {
+    "mode": "receding_horizon_joint_mixed_discrete_continuous_optimization",
+    "information": "only observed/received data available at each information time",
+    "state": "measured_or_estimated_vehicles_aircraft_batteries_tasks_and_commitments",
+    "dynamics": "same full joint physical model; continuous trajectories and durations remain variable",
+    "replanning": "periodic plus causal events; periods and thresholds are declared experimental parameters, not measured facts",
+    "horizon": "all remaining work through fixed mission end; shortened horizon requires an explicit terminal continuation model",
+    "uncertainty": "weather and power-residual scenarios with nonanticipativity; actual future weather and energy only in execution evaluator",
+    "risk_aggregation": "componentwise worst-case lexicographic objectives over the declared finite scenario set; not a probability guarantee",
+    "commitments": "executed actions and issued prefix fixed; ongoing aircraft/pack identities retained until safe recovery",
+    "takeover": "candidate must be replayed against actual takeover-time state; stale or unsafe candidate is not issued",
+    "objectives": [
+      "weighted_incomplete_components",
+      "fleet_return_makespan_seconds",
+      "aircraft_energy_Wh"
+    ],
+    "large_scale": "all configured tasks and full source road/stop domains; no9-task restriction",
+    "mathematical_definition": true,
+    "input_contract_implemented": true,
+    "full_joint_solver_implemented": false,
+    "closed_loop_large_scale_verified": false,
+    "forecast_issue_archive_available": false,
+    "measured_M300_calibration": false,
+    "source": "https://www.do-mpc.com/en/latest/theory_mpc.html",
+    "source_role": "receding horizon and nonanticipativity definitions; do-mpc is not claimed as the inspection solver",
+    "review_period_s": 300,
+    "energy_deficit_trigger_Wh": 10.96,
+    "threshold_kind": "declared_reference_not_optimized_or_measured",
+    "state_history_includes": [
+      "rotor_thrust",
+      "angular_velocity",
+      "SOC",
+      "polarization_voltage",
+      "core_temperature",
+      "20_sample_power_history"
+    ]
+  },
+  "hypergraph": {
+    "vertices": "scalar decision variables or explicitly declared blocks",
+    "hyperedges": "actual constraint scopes retaining functions bounds units activation",
+    "resource_candidate_dual": "only after specifying identical incidence, not automatic new complexity",
+    "rank_and_degree": null,
+    "hypergraph_advantage_established": false,
+    "matching_alone_is_full_solver": false,
+    "dependency_registration": {
+      "status": "variable_block_support_registered",
+      "scalar_incidence_verified": false,
+      "conservative_block_dependencies_are_not_hypergraph_size_statistics": true,
+      "objective_variables": [
+        "tower_complete",
+        "makespan",
+        "flight_power",
+        "objective_epigraph"
+      ],
+      "next_requirement": "extract indexed scalar constraint and objective factors, including conditional activation, from the same solver expressions"
+    }
+  },
+  "evidence": [
+    "research_quality/inspection_engineering_model_validation.json",
+    "research_quality/inspection_granularity_hypergraph_audit.json",
+    "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/results.json",
+    "总结/03_实验数据/天气因素建模/航段能耗联算/results.json",
+    "research_quality/inspection_replanning_validation.json",
+    "research_quality/inspection_integrated_definition_validation.json"
+  ],
+  "next_stage": "Bind compatible platform parameters, implement every refined equation in the joint executor and independent execution loop, then verify actual new joint and replanning results; no experiment launched by this modeling deliverable.",
+  "history": [
+    {
+      "revision": "2",
+      "observed_at": "2026-11-08T06:36:45.209490+00:00",
+      "mathematical_source_sha256": "78af5e90f870667e7bb8b19f4f408889994656d2ec048dc1cf36a9180848a00e",
+      "archive": "unified_implementation_code.json"
+    },
+    {
+      "revision": "3",
+      "observed_at": "2026-11-08T15:20:00.331103+00:00",
+      "mathematical_source_sha256": "b2d41d6e8c7cb31f78cc6de6b747c2d73de650b53ec7c4b580779cbad04678cf",
+      "status": "mathematical_specification_with_three_complete_declared_reference_inputs"
+    },
+    {
+      "revision": "4",
+      "mathematical_source_sha256": "a002a10f2e328ff1c2a6814dabf3ef5bb8476562283f507917c9f0912fce3973",
+      "superseded_at": "2026-11-09T03:15:29.515078+00:00",
+      "reason": "Explicit237-tower full mathematical model; old toy-domain event caps removed; original scientific/solver evidence retained",
+      "exact_source_archive": "总结/03_实验数据/工程化联合求解/unified_implementation_code.json"
+    },
+    {
+      "revision": "7",
+      "observed_at": "2026-11-09T12:55:51.585000+00:00",
+      "mathematical_source_sha256": "88b7e54dcb4e6a67a844b023b7af8b3c59695e4fd458f7f42e1ddeef69633285",
+      "status": "full237_reference_mathematical_definition_with_wire_surface_repair; numerical_solver_open"
+    }
+  ],
+  "completion_record": "research_quality/inspection_engineering_model_self_check.json",
+  "optimality_request": {
+    "relative_gap": 0.0,
+    "absolute_gap": 0.0,
+    "time_limit_seconds": null,
+    "node_limit": null,
+    "solution_limit": null,
+    "stagnation_limit": null,
+    "process_commit_limit_bytes": null,
+    "success": "all priorities optimal AND full-domain independent acceptance",
+    "resource_interrupt": "unfinished",
+    "scope": "uncapped offline reference; not a promise of zero-delay online replanning"
+  },
+  "mathematical_definition": {
+    "scope": "all237towers2133tasks and fullsource20455arcs; continuous hybrid optimal control",
+    "declared_reference_definition_complete": true,
+    "variable_blocks": 44,
+    "constraint_families": 37,
+    "source_bound_instance": "research_quality/inspection_regional_model_data.json",
+    "validation": "research_quality/inspection_integrated_definition_validation.json",
+    "mathematical_completeness_is_not_feasibility_or_global_optimality": true,
+    "definition_revision": "8",
+    "complete_numeric_instance_bound": false,
+    "source_bound_instance_role": "legacy geographic/reference data only; not a numerically closed revision8 instance"
+  },
+  "input_overrides": {
+    "geometry.target_support_offset_m": 0.01,
+    "vehicle.inter_vehicle_clearance_m": 0.5,
+    "vehicle.candidate_capacity": 1,
+    "vehicle.mode_transitions": "edge_core -> head_junction; tail_junction -> edge_core; junction <-> own_stop; no others",
+    "aircraft.docking_center_height_above_vehicle_ground_m": 2.4,
+    "aircraft.pad_full_clearance_height_above_vehicle_ground_m": 6.4,
+    "aircraft.simultaneous_center_separation_m": 5.2,
+    "weather.continuous_fields_interpolation": "linear time,height and spatial barycentric; one-cell uniform only when explicitly declared",
+    "weather.discrete_fields": "keep original accumulated precipitation/gust/daylight interval semantics",
+    "planning.maximum_vehicle_visits": null,
+    "planning.charging_event_limit": null,
+    "planning.replanning_review_period_s": 300,
+    "planning.energy_deficit_trigger_Wh": 10.96,
+    "planning.task_weights": 1,
+    "planning.scenario_probabilities": null,
+    "geometry.capture_domain": "physical_optics_visibility_clearance",
+    "geometry.viewpoint_ball_radius_m": null,
+    "geometry.nominal_viewpoint_role": "initialization_only"
+  },
+  "current_scene_binding": {
+    "source": {
+      "path": "总结/03_实验数据/真实地理巡检场景共享/scenes/rommerskirchen.json",
+      "sha256": "d0c668d7cfeea2e7973e6ab387be38e499aea4e935a6530dfaf8900438b8520d",
+      "immutable": true
+    },
+    "adapter": "scripts/build_inspection_regional_definition.py",
+    "derived": "research_quality/inspection_regional_model_data.json",
+    "source_tasks_modified_in_place": false,
+    "correction_count": 237,
+    "model_metrics": {
+      "n": null,
+      "m": null,
+      "N_I": null,
+      "r": null,
+      "d_max": null
+    }
+  },
+  "target_geometry_revision": {
+    "source_immutable": true,
+    "host_overview_tasks": 237,
+    "wire_target_tasks": 1896,
+    "wire_shift_m": [
+      0.06,
+      0.59
+    ],
+    "surface_samples_checked": 10665,
+    "source_wires": 2568,
+    "margin_m": 0.01,
+    "grid_m": 0.01,
+    "measurement_claim": false,
+    "evidence": "research_quality/inspection_regional_model_data.json",
+    "original_wire_audit": "research_quality/inspection_regional_target_wire_audit.json"
+  },
+  "capture_domain_revision": {
+    "authorization": "用户：冲突的地方开始修复 逐步一层层解决！ 不要局部报告！",
+    "prior_definition": "总结/03_实验数据/工程化联合求解/constraint_layers/revision6_domain_definition.json.gz",
+    "reason": "45 required capture balls exclude every position satisfying unchanged4.6m body clearance",
+    "evidence": "research_quality/inspection_viewpoint_conflict_certificates.json",
+    "manufacturer_measurement": false,
+    "raw_scene_unchanged": true
+  },
+  "integration_revision": {
+    "user_request": "这些缺口都是我之前说的要加的，而且之前天气、能耗、无人机模块单独建模的时候都考虑了！现在整合到一起肯定需要完整的！你帮我细化完整建模！",
+    "scope": "mathematical definition and source-bound interfaces; no optimization run",
+    "formal_model_complete_as_parameterized_definition": true,
+    "complete_numeric_instance_bound": false,
+    "runtime_parity_verified": false,
+    "closed_loop_verified": false,
+    "retained_regional_towers": 237,
+    "retained_photo_tasks": 2133,
+    "main_risk_policy": "finite-scenario worst-case lexicographic; no invented probability",
+    "old_solver_identity": "deterministic finite day-ahead development model, not this revision",
+    "old_solver_variables": 698280,
+    "old_solver_explicit_rows": 205605,
+    "new_model_counts": {
+      "n": null,
+      "m": null,
+      "N_I": null,
+      "r": null,
+      "d_max": null
+    },
+    "new_optimization_runs": 0,
+    "missing_parameter_groups": [
+      "target_platform_power_and_startup_domain",
+      "rotor_inertia_allocation_lag_limits",
+      "controller_and_tracking_calibration",
+      "battery_electrical_thermal_and_charger_maps",
+      "forecast_issue_receipt_and_residual_blocks",
+      "near_ground_vertical_wind",
+      "visibility_and_real_image_acceptance"
+    ],
+    "uncertainty_missing_behavior": "do not silently replace by one deterministic forecast and call complete",
+    "cross_platform_transfer_allowed": false,
+    "sources": [
+      {
+        "id": "cmu_power",
+        "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/input_audit.json",
+        "sha256": "d91cf46294d40915d2dae4badc4374fcedc2ff47657edd8915c1aa0ea2502b50"
+      },
+      {
+        "id": "cmu_power_results",
+        "path": "总结/03_实验数据/电池能耗公开机型验证/cmu_pretrained/results.json",
+        "sha256": "7e5b56946caafe2c820a5d9f56e498b11b5e88a1fbf221f19f728a2df77970e4"
+      },
+      {
+        "id": "m100_calibrated_power",
+        "path": "总结/03_实验数据/电池能耗公开机型验证/measured_calibration/power_profile.json",
+        "sha256": "98fd895412809b24956dd082a6207ae7d37335b9e7eb09522345d9857702737d"
+      },
+      {
+        "id": "m100_calibration_validation",
+        "path": "总结/03_实验数据/电池能耗公开机型验证/measured_calibration/independent_validation.json",
+        "sha256": "9cfbf3984769be92fc46f14ac25ae383025d5f7f4a3bec4444919705e7feea87"
+      },
+      {
+        "id": "weather_conversion",
+        "path": "Agent/Publication/weather_factors.py",
+        "sha256": "af8783d0368397d943a7f5f82c6974a51b16d6f6974a87304fe32354af05d2b6"
+      },
+      {
+        "id": "weather_execution",
+        "path": "Agent/Publication/weather_mission_adapter.py",
+        "sha256": "8078094091563d087e2e0e87c93453ba9f24fcb63fcdb03c11988736ad199cf8"
+      },
+      {
+        "id": "weather_energy_coupling",
+        "path": "总结/03_实验数据/天气因素建模/航段能耗联算/protocol.json",
+        "sha256": "29b60e3b2ecad0fe6c0b69334e3832b44f9837fde2a7b033fa7cba62d9b2ca22"
+      },
+      {
+        "id": "weather_energy_results",
+        "path": "总结/03_实验数据/天气因素建模/航段能耗联算/results.json",
+        "sha256": "8996001de3d2b6a87808424c1c0df6454aa5df3655169dd97c000f4d727b5f24"
+      },
+      {
+        "id": "replanning_interface",
+        "path": "Agent/Publication/engineering_replanning.py",
+        "sha256": "b594c872d938f218006e5e593a6a3c5446bb307ff31609a4b17c4e7c01f15c55"
+      }
+    ],
+    "unbound_parameters": [
+      {
+        "id": "target_platform_power",
+        "value": null,
+        "source_required": "same-platform whole-flight measurements and frozen domain",
+        "units": "W"
+      },
+      {
+        "id": "rotor_inertia_allocation_lag_limits",
+        "value": null,
+        "source_required": "manufacturer or identified same-airframe parameters including thrust/torque maps and motor efficiency",
+        "units": "kg m^2; m; s; N; 1"
+      },
+      {
+        "id": "landing_contact",
+        "value": null,
+        "source_required": "same landing gear and platform friction/support tests",
+        "units": "1; m; N"
+      },
+      {
+        "id": "controller_and_tracking",
+        "value": null,
+        "source_required": "frozen controller and empirical response/error validation",
+        "units": "m; rad; s"
+      },
+      {
+        "id": "battery_electrothermal",
+        "value": null,
+        "source_required": "same battery electrical/thermal characterization",
+        "units": "Ah; V; ohm; F; J/K; W/K"
+      },
+      {
+        "id": "charger_controls",
+        "value": null,
+        "source_required": "actual CC/CV control interface and efficiency",
+        "units": "A; V; W; 1"
+      },
+      {
+        "id": "forecast_and_residuals",
+        "value": null,
+        "source_required": "issued/received forecasts and geographically matched residual blocks",
+        "units": "UTC; m/s; K; Pa"
+      },
+      {
+        "id": "near_ground_vertical_wind",
+        "value": null,
+        "source_required": "observations or explicitly validated bounded model",
+        "units": "m/s"
+      },
+      {
+        "id": "image_acceptance",
+        "value": null,
+        "source_required": "camera calibration and inspection task quality requirement",
+        "units": "px; m/px"
+      }
+    ],
+    "reference_component_parameter_bindings": [
+      {
+        "id": "target_platform_power",
+        "profile": {
+          "path": "Agent/Publication/inspection_reference_flight_profile.json",
+          "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+        },
+        "evidence": {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        },
+        "binding_kind": "declared_reference_component",
+        "field_calibrated": false,
+        "joint_runtime_parity_verified": false
+      },
+      {
+        "id": "rotor_inertia_allocation_lag_limits",
+        "profile": {
+          "path": "Agent/Publication/inspection_reference_flight_profile.json",
+          "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+        },
+        "evidence": {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        },
+        "binding_kind": "declared_reference_component",
+        "field_calibrated": false,
+        "joint_runtime_parity_verified": false
+      },
+      {
+        "id": "landing_contact",
+        "profile": {
+          "path": "Agent/Publication/inspection_reference_flight_profile.json",
+          "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+        },
+        "evidence": {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        },
+        "binding_kind": "declared_reference_component",
+        "field_calibrated": false,
+        "joint_runtime_parity_verified": false,
+        "additional_evidence": [
+          {
+            "path": "总结/03_实验数据/工程化联合求解/module_validation/platform_contact/results.json",
+            "sha256": "031d2fb8b108433df8920fb3291b9da0d4780c1c4ba20ec0cdc4bdfab98632ab"
+          },
+          {
+            "path": "总结/03_实验数据/工程化联合求解/module_validation/takeoff_landing/results.json",
+            "sha256": "3b5521c40b56acedcb88987660ca63ba7948636cfe81af0e2206ad6d550a9aa7"
+          }
+        ]
+      },
+      {
+        "id": "controller_and_tracking",
+        "profile": {
+          "path": "Agent/Publication/inspection_reference_flight_profile.json",
+          "sha256": "a5c6baed88c958fed1a612660c5ab3cdcd7ba595d05cfb0154fad2331b0dd704"
+        },
+        "evidence": {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/flight/results.json",
+          "sha256": "7cbf7749df67e9e8861b98a7726be0fbe3ec6ea1ccd907affbdadc093a44c236"
+        },
+        "binding_kind": "declared_reference_component",
+        "field_calibrated": false,
+        "joint_runtime_parity_verified": false
+      },
+      {
+        "id": "battery_electrothermal",
+        "profile": {
+          "path": "Agent/Publication/inspection_reference_battery_profile.json",
+          "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+        },
+        "evidence": {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        },
+        "binding_kind": "declared_reference_component",
+        "field_calibrated": false,
+        "joint_runtime_parity_verified": false
+      },
+      {
+        "id": "charger_controls",
+        "profile": {
+          "path": "Agent/Publication/inspection_reference_battery_profile.json",
+          "sha256": "e1a480915208d379e51c699a317454fbe3a70e1ae7258efdaa7079e3c825dc86"
+        },
+        "evidence": {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/battery/results.json",
+          "sha256": "7df9f03793d98675e916e9b3dae83a1d09909c3d2da8b8c6688d363335d940f1"
+        },
+        "binding_kind": "declared_reference_component",
+        "field_calibrated": false,
+        "joint_runtime_parity_verified": false
+      },
+      {
+        "id": "forecast_and_residuals",
+        "profile": {
+          "path": "Agent/Publication/inspection_reference_weather_profile.json",
+          "sha256": "7a62160e1f9b4341e8a7a0accb6c155ea62b0af1074c09c4dbcf686dd844c1b6"
+        },
+        "evidence": {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/results.json",
+          "sha256": "e7935a253128bbfc2a8c7fcb57402232856e0a7acc8ae0a6cc92dc911bc80e25"
+        },
+        "binding_kind": "declared_reference_component",
+        "field_calibrated": false,
+        "joint_runtime_parity_verified": false
+      },
+      {
+        "id": "near_ground_vertical_wind",
+        "profile": {
+          "path": "Agent/Publication/inspection_reference_weather_profile.json",
+          "sha256": "7a62160e1f9b4341e8a7a0accb6c155ea62b0af1074c09c4dbcf686dd844c1b6"
+        },
+        "evidence": {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/weather/results.json",
+          "sha256": "e7935a253128bbfc2a8c7fcb57402232856e0a7acc8ae0a6cc92dc911bc80e25"
+        },
+        "binding_kind": "declared_reference_component",
+        "field_calibrated": false,
+        "joint_runtime_parity_verified": false
+      },
+      {
+        "id": "image_acceptance",
+        "profile": {
+          "path": "Agent/Publication/inspection_reference_image_profile.json",
+          "sha256": "d9521a1d730eac28b4219e303d86037ac1c15abf9dbf69e43179d86443f9b5ec"
+        },
+        "evidence": {
+          "path": "总结/03_实验数据/工程化联合求解/module_validation/capture_replanning/results.json",
+          "sha256": "d9a13348de292721475f7717c289cc465cbda9cdfe6257db413055a48d5af097"
+        },
+        "binding_kind": "declared_reference_component",
+        "field_calibrated": false,
+        "joint_runtime_parity_verified": false
+      }
+    ],
+    "reference_numeric_component_groups_bound": 9,
+    "field_calibration_unresolved": true,
+    "reference_binding_observed_at": "2026-11-10T09:08:28.712594+00:00"
+  },
+  "legacy_completion_record": "research_quality/inspection_unified_completion.json",
+  "teaching_module_execution": {
+    "owner": "paper11",
+    "parameter_policy": "public_data_plus_explicit_reference_values",
+    "source_pdf": false,
+    "geography_module": "总结/03_实验数据/工程化联合求解/module_validation/geography/results.json",
+    "full_joint_validation": false
+  }
+}
